@@ -12,6 +12,7 @@ permalink: pretty
 # Setup
 title: Eric Keilty
 tagline: "Aspiring Amature Mathematician"
+description: "Software Engineer/Aspiring Amature Mathematician"
 email: epkeilty@gmail.com
 baseurl: "" # the subpath of your site, e.g. /blog
 url: http://www.erickeilty.com
@@ -28,21 +29,22 @@ github:
   repo: github.com/ekeilty17/ekeilty17.github.io
 
 # Build settings
-#theme: jekyll-theme-minimal
 plugins:
   - jekyll-feed
   - jekyll-redirect-from
   - jekyll-paginate
-  #- jekyll-latex
 
 # the top bar of the webpage
 pages_list:
   About: '/about'
   Archive: '/archive'
 
-#exclude:
-#  - Gemfile
-#  - Gemfile.lock
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - .gitignore
+  - README.md
+  - CNAME
 
 # Custom vars
 version: 1.0.0
