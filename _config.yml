@@ -17,6 +17,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: http://www.erickeilty.com
 shorturl: erickeilty.com
 github_username: ekeilty17
+paginate: 1
 
 author:
   name: Eric Keilty
@@ -25,8 +26,6 @@ author:
 
 github:
   repo: github.com/ekeilty17/ekeilty17.github.io
-
-paginate: 1
 
 # Build settings
 theme: jekyll-theme-minimal
