@@ -1,8 +1,8 @@
-# Dependencies
+# Build Settings
 markdown: kramdown
 kramdown:
   extensions: ["tables"]
-
+usemathjax: true
 highlighter: true
 
 # Permalinks
@@ -28,14 +28,17 @@ github:
   repo: github.com/ekeilty17/ekeilty17.github.io
 
 # Build settings
-theme: jekyll-theme-minimal
+#theme: jekyll-theme-minimal
 plugins:
   - jekyll-feed
+  - jekyll-redirect-from
+  - jekyll-paginate
+  #- jekyll-latex
 
 # the top bar of the webpage
 pages_list:
-   About: '/about'
-   Archive: '/archive'
+  About: '/about'
+  Archive: '/archive'
 
 #exclude:
 #  - Gemfile
