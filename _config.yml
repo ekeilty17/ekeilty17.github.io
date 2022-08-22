@@ -38,9 +38,9 @@ pages_list:
    About: '/about'
    Archive: '/archive'
 
-exclude:
-  - Gemfile
-  - Gemfile.lock
+#exclude:
+#  - Gemfile
+#  - Gemfile.lock
 
 # Custom vars
 version: 1.0.0
