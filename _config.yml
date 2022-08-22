@@ -33,6 +33,11 @@ theme: jekyll-theme-minimal
 plugins:
   - jekyll-feed
 
+# the top bar of the webpage
+pages_list:
+   About: '/about'
+   Archive: '/archive'
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
