@@ -47,5 +47,6 @@ version: 1.0.0
 # Allow URL Redirects: 
 #  * https://help.github.com/articles/redirects-on-github-pages
 gems:
+  - jekyll-feed
   - jekyll-redirect-from
   - jekyll-paginate
