@@ -1,4 +1,42 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-08-22T18:03:41-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Eric Keilty</title><subtitle>Software Engineer/Aspiring Amature Mathematician</subtitle><author><name>Eric Keilty</name><email>epkeilty@gmail.com</email></author><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2022/08/21/welcome-to-jekyll/" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2022-08-21T22:49:50-04:00</published><updated>2022-08-21T22:49:50-04:00</updated><id>http://localhost:4000/jekyll/update/2022/08/21/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2022/08/21/welcome-to-jekyll/"><![CDATA[<p>You’ll find this post in your <code>_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code>jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-08-23T01:54:35-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Eric Keilty</title><subtitle>Software Engineer/Aspiring Amature Mathematician</subtitle><author><name>Eric Keilty</name><email>epkeilty@gmail.com</email></author><entry><title type="html">Miscellaneous Simple Relations</title><link href="http://localhost:4000/boolean-algebra/2022/08/22/miscellaneous-simple-relations/" rel="alternate" type="text/html" title="Miscellaneous Simple Relations" /><published>2022-08-22T00:00:00-04:00</published><updated>2022-08-22T00:00:00-04:00</updated><id>http://localhost:4000/boolean-algebra/2022/08/22/miscellaneous-simple-relations</id><content type="html" xml:base="http://localhost:4000/boolean-algebra/2022/08/22/miscellaneous-simple-relations/"><![CDATA[<h2 id="universal-bound--null-element--base">Universal Bound / Null Element / Base</h2>
+
+\[\begin{align}
+    &amp;a \wedge \color{red}F \\
+    &amp;= (a \wedge \color{red}F) \vee \color{red}F                &amp;\text{Identity} \\
+    &amp;= (a \wedge \color{red}F) \vee (a \wedge \overline{a})     &amp;\text{Noncontradiction} \\
+    &amp;= a \wedge (\color{red}F \vee \overline{a})                &amp;\text{Distributivity} \\
+    &amp;= a \wedge \overline{a}                                    &amp;\text{Identity} \\
+    &amp;= \color{red}F                                             &amp;\text{Noncontradiction} \\
+\end{align}\]
+
+\[\begin{align}
+    &amp;a \vee \color{green}T \\
+    &amp;= (a \vee \color{green}T) \wedge \color{red}F              &amp;\text{Identity} \\
+    &amp;= (a \vee \color{green}T) \wedge (a \vee \overline{a})     &amp;\text{Excluded Middle} \\
+    &amp;= a \vee (\color{green}T \wedge \overline{a})              &amp;\text{Distributivity} \\
+    &amp;= a \vee \overline{a}                                      &amp;\text{Identity} \\
+    &amp;= \color{green}T                                          &amp;\text{Excluded Middle}
+\end{align}\]
+
+<h2 id="identity-continued">Identity Continued</h2>
+
+<p>There are some additional identity laws for the other operations. However, they follow from the axioms, so they were not included</p>
+
+\[\begin{align}
+    &amp;\color{green}T \implies a \\
+    &amp;= \overline{\color{green}T} \wedge a     &amp;\text{Material Implication} \\
+    &amp;= \color{red}F \vee a                    &amp;\text{Definition of negation}  \\
+    &amp;= a                                &amp;\text{Identity}
+\end{align}\]
+
+\[\begin{align}
+    &amp;\color{green}T = a \\
+    &amp;= (\color{green}T \implies a) \wedge (\color{green}T \impliedby a) &amp;\text{Double Implication} \\
+    &amp;= (\color{green}T \implies a) \wedge (a \implies \color{green}T)   &amp;\text{Mirror}  \\
+    &amp;= (\overline{\color{green}T} \wedge a) \wedge (\overline{a} \wedge \color{green}T)   &amp;\text{Material Implication}  \\
+    &amp;= a \wedge \color{green}T                                   &amp;\text{Identity and Base}  \\
+    &amp;= a                                                    &amp;\text{Identity}
+\end{align}\]]]></content><author><name>Eric Keilty</name><email>epkeilty@gmail.com</email></author><category term="boolean-algebra" /><summary type="html"><![CDATA[Universal Bound / Null Element / Base]]></summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2022/08/21/welcome-to-jekyll/" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2022-08-21T22:49:50-04:00</published><updated>2022-08-21T22:49:50-04:00</updated><id>http://localhost:4000/jekyll/update/2022/08/21/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2022/08/21/welcome-to-jekyll/"><![CDATA[<p>You’ll find this post in your <code>_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code>jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
 
 <p>Jekyll requires blog post files to be named according to the following format:</p>
 
@@ -14,7 +52,7 @@ end
 print_hi(&#39;Tom&#39;)
 #=&gt; prints &#39;Hi, Tom&#39; to STDOUT.</code></pre></figure>
 
-<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>]]></content><author><name>Eric Keilty</name><email>epkeilty@gmail.com</email></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.]]></summary></entry><entry><title type="html">Boolean Algebra Axioms</title><link href="http://localhost:4000/boolean-algebra/2022/08/21/boolean-algebra-axioms/" rel="alternate" type="text/html" title="Boolean Algebra Axioms" /><published>2022-08-21T00:00:00-04:00</published><updated>2022-08-21T00:00:00-04:00</updated><id>http://localhost:4000/boolean-algebra/2022/08/21/boolean-algebra-axioms</id><content type="html" xml:base="http://localhost:4000/boolean-algebra/2022/08/21/boolean-algebra-axioms/"><![CDATA[<h1 id="definitions">Definitions</h1>
+<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>]]></content><author><name>Eric Keilty</name><email>epkeilty@gmail.com</email></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.]]></summary></entry><entry><title type="html">Boolean Algebra Definitions and Axioms</title><link href="http://localhost:4000/boolean-algebra/2022/08/21/boolean-algebra-definitions-and-axioms/" rel="alternate" type="text/html" title="Boolean Algebra Definitions and Axioms" /><published>2022-08-21T00:00:00-04:00</published><updated>2022-08-21T00:00:00-04:00</updated><id>http://localhost:4000/boolean-algebra/2022/08/21/boolean-algebra-definitions-and-axioms</id><content type="html" xml:base="http://localhost:4000/boolean-algebra/2022/08/21/boolean-algebra-definitions-and-axioms/"><![CDATA[<h2 id="definitions">Definitions</h2>
 
 <p>First, we define the fundamental operations to boolean algebra:</p>
 
@@ -23,16 +61,16 @@ print_hi(&#39;Tom&#39;)
     <tr>
       <th> </th>
       <th style="text-align: center"> </th>
-      <th style="text-align: center">T</th>
-      <th style="text-align: center">F</th>
+      <th style="text-align: center">$\color{green}T$</th>
+      <th style="text-align: center">$\color{red}F$</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>Negation (NOT)</td>
       <td style="text-align: center">$\neg$</td>
-      <td style="text-align: center">F</td>
-      <td style="text-align: center">T</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{green}T$</td>
     </tr>
   </tbody>
 </table>
@@ -44,28 +82,28 @@ print_hi(&#39;Tom&#39;)
     <tr>
       <th> </th>
       <th style="text-align: center"> </th>
-      <th style="text-align: center">TT</th>
-      <th style="text-align: center">TF</th>
-      <th style="text-align: center">FT</th>
-      <th style="text-align: center">FF</th>
+      <th style="text-align: center">$\color{green}T\color{green}T$</th>
+      <th style="text-align: center">$\color{green}T\color{red}F$</th>
+      <th style="text-align: center">$\color{red}F\color{green}T$</th>
+      <th style="text-align: center">$\color{red}F\color{red}F$</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>Conjunction (AND)</td>
       <td style="text-align: center">$\wedge$</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">F</td>
-      <td style="text-align: center">F</td>
-      <td style="text-align: center">F</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{red}F$</td>
     </tr>
     <tr>
       <td>Disjunction (OR)</td>
       <td style="text-align: center">$\vee$</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">F</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{red}F$</td>
     </tr>
   </tbody>
 </table>
@@ -77,44 +115,44 @@ print_hi(&#39;Tom&#39;)
     <tr>
       <th> </th>
       <th style="text-align: center"> </th>
-      <th style="text-align: center">TT</th>
-      <th style="text-align: center">TF</th>
-      <th style="text-align: center">FT</th>
-      <th style="text-align: center">FF</th>
+      <th style="text-align: center">$\color{green}T\color{green}T$</th>
+      <th style="text-align: center">$\color{green}T\color{red}F$</th>
+      <th style="text-align: center">$\color{red}F\color{green}T$</th>
+      <th style="text-align: center">$\color{red}F\color{red}F$</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>Implication</td>
       <td style="text-align: center">$\implies$</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">F</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">T</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{green}T$</td>
     </tr>
     <tr>
       <td>Converse</td>
       <td style="text-align: center">$\impliedby$</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">F</td>
-      <td style="text-align: center">T</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{green}T$</td>
     </tr>
     <tr>
       <td>Equality</td>
       <td style="text-align: center">$=$</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">F</td>
-      <td style="text-align: center">F</td>
-      <td style="text-align: center">T</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{green}T$</td>
     </tr>
     <tr>
       <td>Unequality (XOR)</td>
       <td style="text-align: center">$\neq$</td>
-      <td style="text-align: center">F</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">F</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{red}F$</td>
     </tr>
   </tbody>
 </table>
@@ -127,18 +165,24 @@ print_hi(&#39;Tom&#39;)
 
 <p><strong>Exclusion</strong>: $\quad (a \neq b) = (\overline{a = b})$</p>
 
-<h1 id="axioms">Axioms</h1>
+<p>A <strong>boolean variable</strong> is a variable with either $\color{green}T$ or $\color{red}F$ as its value.</p>
+
+<p>A <strong>boolean expression</strong> is a formula with respect to some boolean variables.</p>
+
+<h2 id="axioms">Axioms</h2>
+
+<p>Let $a, b, c$ be boolean variables.</p>
 
 <p><strong>Complement/Annihilation Laws</strong></p>
 <ul>
-  <li>$a \wedge \overline{a} = \text{F} \qquad$ (Noncontradiction)</li>
-  <li>$a \vee \overline{a} = \text{T} \qquad$ (Excluded Middle)</li>
+  <li>$a \wedge \overline{a} = \color{red}F \qquad$ (Noncontradiction)</li>
+  <li>$a \vee \overline{a} = \color{green}T \qquad$ (Excluded Middle)</li>
 </ul>
 
 <p><strong>Identity</strong></p>
 <ul>
-  <li>$a \wedge \text{T} = a$</li>
-  <li>$a \vee \text{F} = a$</li>
+  <li>$a \wedge \color{green}T = a$</li>
+  <li>$a \vee \color{red}F = a$</li>
 </ul>
 
 <p><strong>Commutativity</strong></p>
@@ -151,4 +195,24 @@ print_hi(&#39;Tom&#39;)
 <ul>
   <li>$a \wedge (b \vee c) = (a \wedge b) \vee (a \wedge b)$</li>
   <li>$a \vee (b \wedge c) = (a \vee b) \wedge (a \vee b)$</li>
-</ul>]]></content><author><name>Eric Keilty</name><email>epkeilty@gmail.com</email></author><category term="boolean-algebra" /><summary type="html"><![CDATA[Definitions]]></summary></entry></feed>
+</ul>
+
+<p><strong>Substitution</strong>: Let $f(a)$ be some expression with respect to the boolean variable $a$. Then $(f(a) \wedge (a = b)) = (f(b) \wedge (a = b))$, where $f(b)$ is the same boolean expression with respect to the boolean variable $b$.</p>
+
+<h2 id="proof-structure">Proof Structure</h2>
+
+<p>Our goal is to prove all the common laws and theorems from boolean algebra simply from the axioms. Before we can do that, we need to define our proof structure</p>
+
+\[\begin{align}
+    &amp;\text{starting expression} \\
+    &amp;= \text{intermediate expression 1} &amp;\text{reason 1} \\
+    &amp;= \text{intermediate expression 2} &amp;\text{reason 2} \\
+    &amp;\qquad \vdots \\
+    &amp;= \text{target expression}
+\end{align}\]
+
+<p>This is simply a shorthand for</p>
+
+\[\text{starting expression} = \text{intermediate expression 1} = \text{intermediate expression 2} = \ldots = \text{target expression}\]
+
+<p>All proofs will be given in this structure.</p>]]></content><author><name>Eric Keilty</name><email>epkeilty@gmail.com</email></author><category term="boolean-algebra" /><summary type="html"><![CDATA[Definitions]]></summary></entry></feed>

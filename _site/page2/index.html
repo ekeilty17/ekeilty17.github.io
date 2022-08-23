@@ -140,6 +140,10 @@
                 
             
           
+            
+                
+            
+          
 
           <li class="sidebar-nav-item"><a href="/assets/resume_for_web.pdf">Curriculum Vitae</a></li>
           <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
@@ -179,151 +183,31 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/boolean-algebra/2022/08/21/boolean-algebra-axioms/">
-        Boolean Algebra Axioms
+      <a href="/jekyll/update/2022/08/21/welcome-to-jekyll/">
+        Welcome to Jekyll!
       </a>
     </h1>
 
     <span class="post-date">21 Aug 2022</span>
 
-    <h1 id="definitions">Definitions</h1>
+    <p>You’ll find this post in your <code>_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code>jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
 
-<p>First, we define the fundamental operations to boolean algebra:</p>
+<p>Jekyll requires blog post files to be named according to the following format:</p>
 
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th style="text-align: center"> </th>
-      <th style="text-align: center">T</th>
-      <th style="text-align: center">F</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Negation (NOT)</td>
-      <td style="text-align: center">$\neg$</td>
-      <td style="text-align: center">F</td>
-      <td style="text-align: center">T</td>
-    </tr>
-  </tbody>
-</table>
+<p><code>YEAR-MONTH-DAY-title.MARKUP</code></p>
 
-<p>Instead of $\neg a$ we will write $\overline{a}$ to condence notation</p>
+<p>Where <code>YEAR</code> is a four-digit number, <code>MONTH</code> and <code>DAY</code> are both two-digit numbers, and <code>MARKUP</code> is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
 
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th style="text-align: center"> </th>
-      <th style="text-align: center">TT</th>
-      <th style="text-align: center">TF</th>
-      <th style="text-align: center">FT</th>
-      <th style="text-align: center">FF</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Conjunction (AND)</td>
-      <td style="text-align: center">$\wedge$</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">F</td>
-      <td style="text-align: center">F</td>
-      <td style="text-align: center">F</td>
-    </tr>
-    <tr>
-      <td>Disjunction (OR)</td>
-      <td style="text-align: center">$\vee$</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">F</td>
-    </tr>
-  </tbody>
-</table>
+<p>Jekyll also offers powerful support for code snippets:</p>
 
-<p>Now, we can define some other useful operations. These are simply syntatic sugar and can all be expressed in terms of conjuction, disjunction, and negation.</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">def print_hi(name)
+  puts &quot;Hi, #{name}&quot;
+end
+print_hi(&#39;Tom&#39;)
+#=&gt; prints &#39;Hi, Tom&#39; to STDOUT.</code></pre></figure>
 
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th style="text-align: center"> </th>
-      <th style="text-align: center">TT</th>
-      <th style="text-align: center">TF</th>
-      <th style="text-align: center">FT</th>
-      <th style="text-align: center">FF</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Implication</td>
-      <td style="text-align: center">$\implies$</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">F</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">T</td>
-    </tr>
-    <tr>
-      <td>Converse</td>
-      <td style="text-align: center">$\impliedby$</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">F</td>
-      <td style="text-align: center">T</td>
-    </tr>
-    <tr>
-      <td>Equality</td>
-      <td style="text-align: center">$=$</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">F</td>
-      <td style="text-align: center">F</td>
-      <td style="text-align: center">T</td>
-    </tr>
-    <tr>
-      <td>Unequality (XOR)</td>
-      <td style="text-align: center">$\neq$</td>
-      <td style="text-align: center">F</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">F</td>
-    </tr>
-  </tbody>
-</table>
+<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>
 
-<p><strong>Material Implication</strong>: $\quad (a \implies b) = (\overline{a} \vee b)$</p>
-
-<p><strong>Mirror</strong>: $\quad (a \impliedby b) = (b \implies a)$</p>
-
-<p><strong>Antisymmetry / Double Implication</strong>: $\quad (a = b) = (a \implies b) \wedge (a \impliedby b)$</p>
-
-<p><strong>Exclusion</strong>: $\quad (a \neq b) = (\overline{a = b})$</p>
-
-<h1 id="axioms">Axioms</h1>
-
-<p><strong>Complement/Annihilation Laws</strong></p>
-<ul>
-  <li>$a \wedge \overline{a} = \text{F} \qquad$ (Noncontradiction)</li>
-  <li>$a \vee \overline{a} = \text{T} \qquad$ (Excluded Middle)</li>
-</ul>
-
-<p><strong>Identity</strong></p>
-<ul>
-  <li>$a \wedge \text{T} = a$</li>
-  <li>$a \vee \text{F} = a$</li>
-</ul>
-
-<p><strong>Commutativity</strong></p>
-<ul>
-  <li>$a \wedge b = b \wedge a$</li>
-  <li>$a \vee b = b \vee a$</li>
-</ul>
-
-<p><strong>Distributivity/Factoring</strong></p>
-<ul>
-  <li>$a \wedge (b \vee c) = (a \wedge b) \vee (a \wedge b)$</li>
-  <li>$a \vee (b \wedge c) = (a \vee b) \wedge (a \vee b)$</li>
-</ul>
 
   </div>
   
@@ -331,7 +215,7 @@
 
 <div class="pagination">
   
-    <span class="pagination-item older">Older</span>
+    <a class="pagination-item older" href="/page3/">Older</a>
   
   
     

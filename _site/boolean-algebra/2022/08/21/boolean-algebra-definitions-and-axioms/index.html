@@ -10,7 +10,7 @@
 
   <title>
     
-      Boolean Algebra Axioms &middot; Eric Keilty
+      Boolean Algebra Definitions and Axioms &middot; Eric Keilty
     
   </title>
 
@@ -56,9 +56,9 @@
   <body>
     
     <div class="post">
-        <h1 class="post-title">Boolean Algebra Axioms</h1>
+        <h1 class="post-title">Boolean Algebra Definitions and Axioms</h1>
         <span class="post-date">21 Aug 2022</span>
-        <h1 id="definitions">Definitions</h1>
+        <h2 id="definitions">Definitions</h2>
 
 <p>First, we define the fundamental operations to boolean algebra:</p>
 
@@ -67,16 +67,16 @@
     <tr>
       <th> </th>
       <th style="text-align: center"> </th>
-      <th style="text-align: center">T</th>
-      <th style="text-align: center">F</th>
+      <th style="text-align: center">$\color{green}T$</th>
+      <th style="text-align: center">$\color{red}F$</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>Negation (NOT)</td>
       <td style="text-align: center">$\neg$</td>
-      <td style="text-align: center">F</td>
-      <td style="text-align: center">T</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{green}T$</td>
     </tr>
   </tbody>
 </table>
@@ -88,28 +88,28 @@
     <tr>
       <th> </th>
       <th style="text-align: center"> </th>
-      <th style="text-align: center">TT</th>
-      <th style="text-align: center">TF</th>
-      <th style="text-align: center">FT</th>
-      <th style="text-align: center">FF</th>
+      <th style="text-align: center">$\color{green}T\color{green}T$</th>
+      <th style="text-align: center">$\color{green}T\color{red}F$</th>
+      <th style="text-align: center">$\color{red}F\color{green}T$</th>
+      <th style="text-align: center">$\color{red}F\color{red}F$</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>Conjunction (AND)</td>
       <td style="text-align: center">$\wedge$</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">F</td>
-      <td style="text-align: center">F</td>
-      <td style="text-align: center">F</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{red}F$</td>
     </tr>
     <tr>
       <td>Disjunction (OR)</td>
       <td style="text-align: center">$\vee$</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">F</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{red}F$</td>
     </tr>
   </tbody>
 </table>
@@ -121,44 +121,44 @@
     <tr>
       <th> </th>
       <th style="text-align: center"> </th>
-      <th style="text-align: center">TT</th>
-      <th style="text-align: center">TF</th>
-      <th style="text-align: center">FT</th>
-      <th style="text-align: center">FF</th>
+      <th style="text-align: center">$\color{green}T\color{green}T$</th>
+      <th style="text-align: center">$\color{green}T\color{red}F$</th>
+      <th style="text-align: center">$\color{red}F\color{green}T$</th>
+      <th style="text-align: center">$\color{red}F\color{red}F$</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>Implication</td>
       <td style="text-align: center">$\implies$</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">F</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">T</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{green}T$</td>
     </tr>
     <tr>
       <td>Converse</td>
       <td style="text-align: center">$\impliedby$</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">F</td>
-      <td style="text-align: center">T</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{green}T$</td>
     </tr>
     <tr>
       <td>Equality</td>
       <td style="text-align: center">$=$</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">F</td>
-      <td style="text-align: center">F</td>
-      <td style="text-align: center">T</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{green}T$</td>
     </tr>
     <tr>
       <td>Unequality (XOR)</td>
       <td style="text-align: center">$\neq$</td>
-      <td style="text-align: center">F</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">T</td>
-      <td style="text-align: center">F</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{red}F$</td>
     </tr>
   </tbody>
 </table>
@@ -171,18 +171,24 @@
 
 <p><strong>Exclusion</strong>: $\quad (a \neq b) = (\overline{a = b})$</p>
 
-<h1 id="axioms">Axioms</h1>
+<p>A <strong>boolean variable</strong> is a variable with either $\color{green}T$ or $\color{red}F$ as its value.</p>
+
+<p>A <strong>boolean expression</strong> is a formula with respect to some boolean variables.</p>
+
+<h2 id="axioms">Axioms</h2>
+
+<p>Let $a, b, c$ be boolean variables.</p>
 
 <p><strong>Complement/Annihilation Laws</strong></p>
 <ul>
-  <li>$a \wedge \overline{a} = \text{F} \qquad$ (Noncontradiction)</li>
-  <li>$a \vee \overline{a} = \text{T} \qquad$ (Excluded Middle)</li>
+  <li>$a \wedge \overline{a} = \color{red}F \qquad$ (Noncontradiction)</li>
+  <li>$a \vee \overline{a} = \color{green}T \qquad$ (Excluded Middle)</li>
 </ul>
 
 <p><strong>Identity</strong></p>
 <ul>
-  <li>$a \wedge \text{T} = a$</li>
-  <li>$a \vee \text{F} = a$</li>
+  <li>$a \wedge \color{green}T = a$</li>
+  <li>$a \vee \color{red}F = a$</li>
 </ul>
 
 <p><strong>Commutativity</strong></p>
@@ -197,6 +203,26 @@
   <li>$a \vee (b \wedge c) = (a \vee b) \wedge (a \vee b)$</li>
 </ul>
 
+<p><strong>Substitution</strong>: Let $f(a)$ be some expression with respect to the boolean variable $a$. Then $(f(a) \wedge (a = b)) = (f(b) \wedge (a = b))$, where $f(b)$ is the same boolean expression with respect to the boolean variable $b$.</p>
+
+<h2 id="proof-structure">Proof Structure</h2>
+
+<p>Our goal is to prove all the common laws and theorems from boolean algebra simply from the axioms. Before we can do that, we need to define our proof structure</p>
+
+\[\begin{align}
+    &amp;\text{starting expression} \\
+    &amp;= \text{intermediate expression 1} &amp;\text{reason 1} \\
+    &amp;= \text{intermediate expression 2} &amp;\text{reason 2} \\
+    &amp;\qquad \vdots \\
+    &amp;= \text{target expression}
+\end{align}\]
+
+<p>This is simply a shorthand for</p>
+
+\[\text{starting expression} = \text{intermediate expression 1} = \text{intermediate expression 2} = \ldots = \text{target expression}\]
+
+<p>All proofs will be given in this structure.</p>
+
     </div>
 
   </body>
@@ -206,6 +232,15 @@
 <div class="related">
     <h2>Related Posts</h2>
     <ul class="related-posts">
+        
+        <li>
+            <h3>
+            <a href="/boolean-algebra/2022/08/22/miscellaneous-simple-relations/">
+                Miscellaneous Simple Relations
+                <small>22 Aug 2022</small>
+            </a>
+            </h3>
+        </li>
         
         <li>
             <h3>
