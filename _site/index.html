@@ -144,6 +144,14 @@
                 
             
           
+            
+                
+            
+          
+            
+                
+            
+          
 
           <li class="sidebar-nav-item"><a href="/assets/resume_for_web.pdf">Curriculum Vitae</a></li>
           <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
@@ -183,51 +191,24 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/boolean-algebra/2022/08/22/miscellaneous-simple-relations/">
-        Miscellaneous Simple Relations
+      <a href="/boolean-algebra/2022/08/23/associativity/">
+        Absorption and Simplification
       </a>
     </h1>
 
-    <span class="post-date">22 Aug 2022</span>
+    <span class="post-date">23 Aug 2022</span>
 
-    <h2 id="universal-bound--null-element--base">Universal Bound / Null Element / Base</h2>
-
-\[\begin{align}
-    &amp;a \wedge \color{red}F \\
-    &amp;= (a \wedge \color{red}F) \vee \color{red}F                &amp;\text{Identity} \\
-    &amp;= (a \wedge \color{red}F) \vee (a \wedge \overline{a})     &amp;\text{Noncontradiction} \\
-    &amp;= a \wedge (\color{red}F \vee \overline{a})                &amp;\text{Distributivity} \\
-    &amp;= a \wedge \overline{a}                                    &amp;\text{Identity} \\
-    &amp;= \color{red}F                                             &amp;\text{Noncontradiction} \\
-\end{align}\]
+    <p>$(a \vee b) \vee c \quad = \quad a \vee (b \vee c)$</p>
 
 \[\begin{align}
-    &amp;a \vee \color{green}T \\
-    &amp;= (a \vee \color{green}T) \wedge \color{red}F              &amp;\text{Identity} \\
-    &amp;= (a \vee \color{green}T) \wedge (a \vee \overline{a})     &amp;\text{Excluded Middle} \\
-    &amp;= a \vee (\color{green}T \wedge \overline{a})              &amp;\text{Distributivity} \\
-    &amp;= a \vee \overline{a}                                      &amp;\text{Identity} \\
-    &amp;= \color{green}T                                          &amp;\text{Excluded Middle}
-\end{align}\]
+    &amp;(a \vee b) \vee c \\
+    &amp;=[\color{red}(a \vee \color{blue}(a \wedge (b \vee c)\color{blue}) \color{red}) \vee \color{red}(b \vee (b \wedge a)\color{red})] \vee \color{red}(c \vee (c \wedge a)\color{red})   &amp;\text{Absorption 3 times} \\
+    
+    &amp;=[\color{red}(a \vee \color{blue}(a \wedge (b \vee c)\color{blue}) \color{red}) \vee \color{red}( \color{blue}(b \vee (b \wedge c)\color{blue}) \vee (b \wedge a)\color{red})] \vee \color{red}(\color{blue}(c \vee (c \wedge b)\color{blue}) \vee (c \wedge a)\color{red})   &amp;\text{Absorption 2 times} \\
 
-<h2 id="identity-continued">Identity Continued</h2>
+    &amp;=[\color{red}(a \vee \color{blue}(a \wedge (b \vee c)\color{blue}) \color{red}) \vee \color{red}( (b \wedge a) \vee \color{blue}(b \vee (b \wedge c)\color{blue}) \color{red})] \vee \color{red}((c \wedge a) \vee \color{blue}(c \vee (c \wedge b)\color{blue}) \color{red})   &amp;\text{Commutativity 2 times} \\
 
-<p>There are some additional identity laws for the other operations. However, they follow from the axioms, so they were not included</p>
-
-\[\begin{align}
-    &amp;\color{green}T \implies a \\
-    &amp;= \overline{\color{green}T} \wedge a     &amp;\text{Material Implication} \\
-    &amp;= \color{red}F \vee a                    &amp;\text{Definition of negation}  \\
-    &amp;= a                                &amp;\text{Identity}
-\end{align}\]
-
-\[\begin{align}
-    &amp;\color{green}T = a \\
-    &amp;= (\color{green}T \implies a) \wedge (\color{green}T \impliedby a) &amp;\text{Double Implication} \\
-    &amp;= (\color{green}T \implies a) \wedge (a \implies \color{green}T)   &amp;\text{Mirror}  \\
-    &amp;= (\overline{\color{green}T} \wedge a) \wedge (\overline{a} \wedge \color{green}T)   &amp;\text{Material Implication}  \\
-    &amp;= a \wedge \color{green}T                                   &amp;\text{Identity and Base}  \\
-    &amp;= a                                                    &amp;\text{Identity}
+    &amp;=[\color{red}(\color{blue}(a \vee a \color{blue}) \wedge \color{blue}(a \vee (b \vee c)\color{blue}) \color{red}) \vee \color{red}( (b \wedge a) \vee \color{blue}((b \vee b) \wedge (b \vee c)\color{blue}) \color{red})] \vee \color{red}((c \wedge a) \vee \color{blue}((c \vee c) \wedge (c \vee b)\color{blue}) \color{red})   &amp;\text{Commutativity 2 times} \\
 \end{align}\]
 
   </div>

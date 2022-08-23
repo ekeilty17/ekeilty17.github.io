@@ -191,118 +191,31 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/boolean-algebra/2022/08/22/miscellaneous-simple-relations/">
-        Miscellaneous Simple Relations
+      <a href="/jekyll/update/2022/08/21/welcome-to-jekyll/">
+        Welcome to Jekyll!
       </a>
     </h1>
 
-    <span class="post-date">22 Aug 2022</span>
+    <span class="post-date">21 Aug 2022</span>
 
-    <h2 id="universal-bound--null-element--base">Universal Bound / Null Element / Base</h2>
+    <p>You’ll find this post in your <code>_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code>jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
 
-<p>$a \wedge \color{red}F \quad = \quad \color{red}F$</p>
+<p>Jekyll requires blog post files to be named according to the following format:</p>
 
-\[\begin{align}
-    &amp;a \wedge \color{red}F \\
-    &amp;= (a \wedge \color{red}F) \vee \color{red}F                &amp;\text{Identity} \\
-    &amp;= (a \wedge \color{red}F) \vee (a \wedge \overline{a})     &amp;\text{Noncontradiction} \\
-    &amp;= a \wedge (\color{red}F \vee \overline{a})                &amp;\text{Distributivity} \\
-    &amp;= a \wedge \overline{a}                                    &amp;\text{Identity} \\
-    &amp;= \color{red}F                                             &amp;\text{Noncontradiction}
-\end{align}\]
+<p><code>YEAR-MONTH-DAY-title.MARKUP</code></p>
 
-<p>$a \vee \color{green}T \quad = \quad \color{green}T$</p>
+<p>Where <code>YEAR</code> is a four-digit number, <code>MONTH</code> and <code>DAY</code> are both two-digit numbers, and <code>MARKUP</code> is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
 
-\[\begin{align}
-    &amp;a \vee \color{green}T \\
-    &amp;= (a \vee \color{green}T) \wedge \color{red}F              &amp;\text{Identity} \\
-    &amp;= (a \vee \color{green}T) \wedge (a \vee \overline{a})     &amp;\text{Excluded Middle} \\
-    &amp;= a \vee (\color{green}T \wedge \overline{a})              &amp;\text{Distributivity} \\
-    &amp;= a \vee \overline{a}                                      &amp;\text{Identity} \\
-    &amp;= \color{green}T                                           &amp;\text{Excluded Middle}
-\end{align}\]
+<p>Jekyll also offers powerful support for code snippets:</p>
 
-<p>$\color{red}F \implies a \quad = \quad \color{green}T$</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">def print_hi(name)
+  puts &quot;Hi, #{name}&quot;
+end
+print_hi(&#39;Tom&#39;)
+#=&gt; prints &#39;Hi, Tom&#39; to STDOUT.</code></pre></figure>
 
-\[\begin{align}
-    &amp;\color{red}F \implies a \\
-    &amp;= \overline{\color{red}F} \vee a   &amp;\text{Material Implication} \\
-    &amp;= \color{green}T \vee a            &amp;\text{Definition of negation} \\
-    &amp;= a \vee \color{green}T            &amp;\text{Commutivity} \\
-    &amp;= \color{green}T                   &amp;\text{Base}
-\end{align}\]
+<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>
 
-<p>$a \implies \color{green}T \quad = \quad \color{green}T$</p>
-
-\[\begin{align}
-    &amp;a \implies \color{green}T \\
-    &amp;= \overline{a} \vee \color{green}T     &amp;\text{Material Implication} \\
-    &amp;= \color{green}T                       &amp;\text{Base}
-\end{align}\]
-
-<h2 id="idempotent">Idempotent</h2>
-
-<p>$a \wedge a \quad = \quad a$</p>
-
-\[\begin{align}
-    &amp;a \wedge a \\
-    &amp;= (a \wedge a) \vee \color{green}T             &amp;\text{Identity} \\
-    &amp;= (a \wedge a) \vee (a \wedge \overline{a})    &amp;\text{Noncontradiction} \\
-    &amp;= a \wedge (a \vee \overline{a})               &amp;\text{Distributivity} \\
-    &amp;= a \wedge \color{green}T                      &amp;\text{Noncontradiction} \\
-    &amp;= a                                            &amp;\text{Identity}
-\end{align}\]
-
-<p>$a \vee a \quad = \quad a$</p>
-
-\[\begin{align}
-    &amp;a \vee a \\
-    &amp;= (a \vee a) \wedge \color{green}T         &amp;\text{Identity} \\
-    &amp;= (a \vee a) \wedge (a \vee \overline{a})  &amp;\text{Excluded Middle} \\
-    &amp;= a \vee (a \wedge \overline{a})           &amp;\text{Distributivity} \\
-    &amp;= a \vee \color{red}F                      &amp;\text{Noncontradiction} \\
-    &amp;= a                                        &amp;\text{Identity}
-\end{align}\]
-
-<h2 id="reflexive">Reflexive</h2>
-
-<p>$a \implies a \quad = \quad \color{green}T$</p>
-
-\[\begin{align}
-    &amp;a \implies a \\
-    &amp;= (\overline{a} \vee a)    &amp;\text{Material Implications} \\
-    &amp;= \color{green}T           &amp;\text{Excluded Middle}
-\end{align}\]
-
-<p>$a = a \quad = \quad \color{green}T$</p>
-
-\[\begin{align}
-    &amp;a = a \\
-    &amp;= (a \implies a) \wedge (a \impliedby a)   &amp;\text{Double Implication} \\
-    &amp;= (a \implies a) \wedge (a \implies a)     &amp;\text{Mirror} \\
-    &amp;= \color{green}T \wedge \color{green}T     &amp;\text{Reflexive} \\
-    &amp;= \color{green}T                           &amp;\text{Definition of}\ \wedge
-\end{align}\]
-
-<h2 id="identity-continued">Identity Continued</h2>
-
-<p>There are some additional identity laws for the other operations. However, they follow from the axioms, so they were not included</p>
-
-\[\begin{align}
-    &amp;\color{green}T \implies a \\
-    &amp;= \overline{\color{green}T} \wedge a   &amp;\text{Material Implication} \\
-    &amp;= \color{red}F \vee a                  &amp;\text{Definition of negation} \\
-    &amp;= a                                    &amp;\text{Identity}
-\end{align}\]
-
-\[\begin{align}
-    &amp;\color{green}T = a \\
-    &amp;= (\color{green}T \implies a) \wedge (\color{green}T \impliedby a)                     &amp;\text{Double Implication} \\
-    &amp;= (\color{green}T \implies a) \wedge (a \implies \color{green}T)                       &amp;\text{Mirror} \\
-    &amp;= (\overline{\color{green}T} \wedge a) \wedge (\overline{a} \wedge \color{green}T)     &amp;\text{Material Implication}  \\
-    &amp;= a \wedge \color{green}T                                                              &amp;\text{Identity and Base}  \\
-    &amp;= a                                                                                    &amp;\text{Identity}
-\end{align}\]
 
   </div>
   
@@ -310,11 +223,11 @@
 
 <div class="pagination">
   
-    <a class="pagination-item older" href="/page4/">Older</a>
+    <a class="pagination-item older" href="/page5/">Older</a>
   
   
     
-      <a class="pagination-item newer" href="/page2/">Newer</a>
+      <a class="pagination-item newer" href="/page3/">Newer</a>
     
   
 </div>
