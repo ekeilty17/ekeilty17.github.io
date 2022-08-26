@@ -10,7 +10,7 @@
 
   <title>
     
-      Absorption and Simplification &middot; Eric Keilty
+      Proof Identities &middot; Eric Keilty
     
   </title>
 
@@ -56,52 +56,75 @@
   <body>
     
     <div class="post">
-        <h1 class="post-title">Absorption and Simplification</h1>
-        <span class="post-date">23 Aug 2022</span>
-        <h2 id="absorption">Absorption</h2>
+        <h1 class="post-title">Proof Identities</h1>
+        <span class="post-date">24 Aug 2022</span>
+        <h2 id="direct-proofs">Direct Proofs</h2>
 
-<p>This seemingly abscure relation turns out to be very useful in many proofs.</p>
+<p>These date back to as early as Aristotle and are very well known syllogisms.</p>
 
-<p>$a \wedge (a \vee b) = a$</p>
+<h3 id="modus-ponens">Modus Ponens</h3>
+
+<p>“Modus Ponens” is Latin for “method of affirming” and is also known as “affirming the consequent”.</p>
+
+<p>$(a \implies b) \wedge a \quad \implies \quad b$</p>
 
 \[\begin{align}
-    &amp;a \wedge (a \vee b) \\
-    &amp;= (a \vee \color{red}F) \wedge (a \vee b)  &amp;&amp;\text{Identity} \\
-    &amp;= a \vee (\color{red}F \wedge b)           &amp;&amp;\text{Distributivity} \\
-    &amp;= a \vee \color{red}F                      &amp;&amp;\text{Base} \\
-    &amp;= a                                        &amp;&amp;\text{Identity}
+    &amp;(a \implies b) \wedge a            &amp;&amp; \\
+    &amp;= (\overline{a} \vee b) \wedge a   &amp;&amp;\text{Material Implication} \\
+    &amp;= a \wedge (\overline{a} \vee b)   &amp;&amp;\text{Commutativity} \\
+    &amp;= a \wedge b                       &amp;&amp;\text{Simplification} \\
+    &amp;\implies b                         &amp;&amp;\text{Specialization}
 \end{align}\]
 
-<p>$a \vee (a \wedge b) = a$</p>
+<h3 id="modus-tollens">Modus Tollens</h3>
+
+<p>“Modus Tollens” is Latin for “method of denying” and is also known as “denying the consequent”.</p>
+
+<p>$(a \implies b) \wedge \overline{b} \quad \implies \quad \overline{a}$</p>
 
 \[\begin{align}
-    &amp;a \vee (a \wedge b) \\
-    &amp;= (a \wedge \color{green}T) \vee(a \wedge b)   &amp;&amp;\text{Identity} \\
-    &amp;= a \wedge (\color{green}T \vee b)             &amp;&amp;\text{Distributivity} \\
-    &amp;= a \wedge \color{green}T                      &amp;&amp;\text{Base} \\
-    &amp;= a                                            &amp;&amp;\text{Identity}
+    &amp;(a \implies b) \wedge \overline{b}             &amp;&amp; \\
+    &amp;= (\overline{a} \vee b) \wedge \overline{b}    &amp;&amp;\text{Material Implication} \\
+    &amp;= \overline{b} \wedge (b \vee \overline{a})    &amp;&amp;\text{Commutativity 2 times} \\
+    &amp;= \overline{b} \wedge \overline{a}             &amp;&amp;\text{Simplification} \\
+    &amp;\implies \overline{a}                          &amp;&amp;\text{Specialization}
 \end{align}\]
 
-<h2 id="simplification">Simplification</h2>
+<h3 id="dysjunctive-syllogism">Dysjunctive Syllogism</h3>
 
-<p>This is less common than Absorption, but is still useful in some proofs</p>
-
-<p>$a \wedge (\overline{a} \vee b) = a \wedge b$</p>
+<p>$(a \vee b) \wedge \overline{a} \quad \implies \quad b$</p>
 
 \[\begin{align}
-    &amp;a \wedge (\overline{a} \vee b) \\
-    &amp;= (a \wedge \overline{a}) \vee (a \wedge b)    &amp;&amp;\text{Distributivity} \\
-    &amp;= \color{red}F \vee (a \wedge b)               &amp;&amp;\text{Noncontradiction} \\
-    &amp;= a \wedge b                                   &amp;&amp;\text{Identity}
+    &amp;(a \vee b) \wedge \overline{a}         &amp;&amp; \\
+    &amp;= \overline{a} \wedge (a \vee b)       &amp;&amp;\text{Commutativity} \\
+    &amp;= \overline{a} \wedge b                &amp;&amp;\text{Simplification} \\
+    &amp;\implies b                             &amp;&amp;\text{Specialization}
 \end{align}\]
 
-<p>$a \vee (\overline{a} \wedge b) = a \vee b$</p>
+<h2 id="reductio-ad-adsurdum--proof-by-contradiction">Reductio ad Adsurdum / Proof by Contradiction</h2>
+
+<p>This is one of the most widely used proof methods. Now, we have a rigorous proof for it.</p>
+
+<p>$\overline{a} \implies \color{red}F \quad = \quad a$</p>
 
 \[\begin{align}
-    &amp;a \vee (\overline{a} \wedge b) \\
-    &amp;= (a \vee \overline{a}) \wedge (a \vee b)  &amp;&amp;\text{Distributivity} \\
-    &amp;= \color{green}T \wedge (a \vee b)         &amp;&amp;\text{Excluded Middle} \\
-    &amp;= a \vee b                                 &amp;&amp;\text{Identity}
+    &amp;\overline{a} \implies \color{red}F     &amp;&amp; \\
+    &amp;= a \vee \color{red}F                  &amp;&amp;\text{Material Implication and Double Negation} \\
+    &amp;= a                                    &amp;&amp;\text{Identity}
+\end{align}\]
+
+<h2 id="contrapositive">Contrapositive</h2>
+
+<p>This can be extremely useful in some proofs.</p>
+
+<p>$(a \implies b) \quad = \quad (\overline{b} \implies \overline{a})$</p>
+
+\[\begin{align}
+    &amp;a \implies b                                   &amp;&amp; \\
+    &amp;= \overline{a} \vee b                          &amp;&amp;\text{Material Implication} \\
+    &amp;= b \vee \overline{a}                          &amp;&amp;\text{Commutativity} \\
+    &amp;= \overline{(\overline{b})} \vee \overline{a}  &amp;&amp;\text{Double Negation} \\
+    &amp;= \overline{b} \implies \overline{a}           &amp;&amp;\text{Material Implication}
 \end{align}\]
 
     </div>

@@ -219,94 +219,31 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/boolean-algebra/2022/08/26/transitivity/">
-        Transitivity
+      <a href="/jekyll/update/2022/08/21/welcome-to-jekyll/">
+        Welcome to Jekyll!
       </a>
     </h1>
 
-    <span class="post-date">26 Aug 2022</span>
+    <span class="post-date">21 Aug 2022</span>
 
-    <p>$(a \wedge b) \wedge (b \wedge c) \quad \implies \quad (a \wedge c)$</p>
+    <p>You’ll find this post in your <code>_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code>jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
 
-\[\begin{align}
-    &amp;(a \wedge b) \wedge (b \wedge c)       &amp;&amp; \\
-    &amp;= (a \wedge c) \wedge (b \wedge b)     &amp;&amp;\text{Associativity and Commutativity} \\
-    &amp;\implies (a \wedge c)                  &amp;&amp;\text{Specialization}
-\end{align}\]
+<p>Jekyll requires blog post files to be named according to the following format:</p>
 
-<p>$(a \implies b) \wedge (b \implies c) \quad \implies \quad (a \implies c)$</p>
+<p><code>YEAR-MONTH-DAY-title.MARKUP</code></p>
 
-\[\begin{align}
-    &amp;(a \implies b) \wedge (b \implies c)
-    &amp;&amp; \\
+<p>Where <code>YEAR</code> is a four-digit number, <code>MONTH</code> and <code>DAY</code> are both two-digit numbers, and <code>MARKUP</code> is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
 
-    &amp;= (\overline{a} \vee b) \wedge (\overline{b} \vee c)
-    &amp;&amp;\text{Material Implication} \\
+<p>Jekyll also offers powerful support for code snippets:</p>
 
-    &amp;= (\overline{a} \wedge \overline{b}) \vee (\overline{a} \wedge c) \vee (b \wedge \overline{b}) \vee (b \wedge c)
-    &amp;&amp;\text{Distributivity and Associativity} \\
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">def print_hi(name)
+  puts &quot;Hi, #{name}&quot;
+end
+print_hi(&#39;Tom&#39;)
+#=&gt; prints &#39;Hi, Tom&#39; to STDOUT.</code></pre></figure>
 
-    &amp;= (\overline{a} \wedge \overline{b}) \vee (\overline{a} \wedge c) \vee \color{red}F \vee (b \wedge c)
-    &amp;&amp;\text{Noncontradiction} \\
+<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>
 
-    &amp;= (\overline{a} \wedge \overline{b}) \vee (\overline{a} \wedge c) \vee (b \wedge c)
-    &amp;&amp;\text{Identity} \\
-
-    &amp;= (\overline{a} \wedge \overline{b}) \vee (\overline{a} \wedge c) \vee (b \wedge (c \wedge (c \vee \overline{b})))
-    &amp;&amp;\text{Absportion} \\
-
-    &amp;= (\overline{a} \wedge \overline{b}) \vee (\overline{a} \wedge c) \vee ((b \wedge c) \wedge (\overline{b} \vee c))
-    &amp;&amp;\text{Associativity and Commutativity} \\
-
-    &amp;= (\overline{a} \wedge (\overline{b} \vee c)) \vee ((b \wedge c) \wedge (\overline{b} \vee c))
-    &amp;&amp;\text{Distributivity} \\
-
-    &amp;= (\overline{a} \vee (b \wedge c)) \wedge (\overline{b} \vee c)
-    &amp;&amp;\text{Distributivity} \\
-
-    &amp;= (\overline{a} \vee b) \wedge (\overline{a} \vee c) \wedge (\overline{b} \vee c)
-    &amp;&amp;\text{Distributivity and Associativity} \\
-
-    &amp;\implies (\overline{a} \vee c)
-    &amp;&amp;\text{Specialization} \\
-
-    &amp;= (a \implies c)
-    &amp;&amp;\text{Material Implication} \\
-\end{align}\]
-
-<p>$(a = b) \wedge (b = c) \quad \implies \quad (a = c)$</p>
-
-\[\begin{align}
-    &amp;(a = b) \wedge (b = c)       &amp;&amp; \\
-    &amp;= ((a \implies b) \wedge (a \impliedby b)) \wedge ((b \implies c) \wedge (b \impliedby c)) &amp;&amp;\text{Double Implication} \\
-    &amp;= ((a \implies b) \wedge (b \implies a)) \wedge ((b \implies c) \wedge (c \implies b)) &amp;&amp;\text{Mirror 2 times} \\
-    &amp;= ((a \implies b) \wedge (b \implies c)) \wedge ((c \implies b) \wedge (b \implies a)) &amp;&amp;\text{Associativity and Commutativity of} \ \wedge \\
-    &amp;= (a \implies c) \wedge (c \implies a) &amp;&amp;\text{Transitivity of } \ \implies \\
-    &amp;= (a \implies c) \wedge (a \impliedby c) &amp;&amp;\text{Mirror} \\
-    &amp;= (a = c) &amp;&amp;\text{Double Implication} \\
-\end{align}\]
-
-<p>$(a \implies b) \wedge (b = c) \quad \implies \quad (a \implies c)$</p>
-
-\[\begin{align}
-    &amp;(a \implies b) \wedge (b = c)                                      &amp;&amp; \\
-    &amp;= (a \implies b) \wedge ((b \implies c) \wedge (b \impliedby c))   &amp;&amp;\text{Double Implication} \\
-    &amp;= (a \implies b) \wedge ((b \implies c) \wedge (c \implies b))     &amp;&amp;\text{Mirror} \\
-    &amp;= ((a \implies b) \wedge (b \implies c)) \wedge (c \implies b)     &amp;&amp;\text{Associativity} \\
-    &amp;\implies (a \implies c) \wedge (c \implies b)                      &amp;&amp;\text{Transitivity of } \ \implies \\
-    &amp;\implies (a \implies c)                                            &amp;&amp;\text{Specialization}
-\end{align}\]
-
-<p>$(a = b) \wedge (b \implies c) \quad \implies \quad (a \implies c)$</p>
-
-\[\begin{align}
-    &amp;(a = b) \wedge (b \implies c)                                      &amp;&amp; \\
-    &amp;= ((a \implies b) \wedge (a \impliedby b)) \wedge (b \implies c)   &amp;&amp;\text{Double Implication} \\
-    &amp;= ((a \implies b) \wedge (b \implies a)) \wedge (b \implies c)     &amp;&amp;\text{Mirror} \\
-    &amp;= (b \implies a) \wedge ((a \implies b) \wedge (b \implies c))     &amp;&amp;\text{Commutativity and Associativity} \\
-    &amp;\implies (b \implies a) \wedge (a \implies c)                      &amp;&amp;\text{Transitivity of } \ \implies \\
-    &amp;\implies (a \implies c)                                            &amp;&amp;\text{Specialization}
-\end{align}\]
 
   </div>
   
@@ -314,10 +251,12 @@
 
 <div class="pagination">
   
-    <a class="pagination-item older" href="/page2/">Older</a>
+    <a class="pagination-item older" href="/page12/">Older</a>
   
   
-    <span class="pagination-item newer">Newer</span>
+    
+      <a class="pagination-item newer" href="/page10/">Newer</a>
+    
   
 </div>
 -->

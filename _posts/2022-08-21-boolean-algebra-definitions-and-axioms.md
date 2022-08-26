@@ -62,7 +62,7 @@ Let $a, b, c$ be boolean variables.
   * $a \wedge (b \vee c) = (a \wedge b) \vee (a \wedge b)$
   * $a \vee (b \wedge c) = (a \vee b) \wedge (a \vee b)$
 
-**Substitution**: Let $f(a)$ be some expression with respect to the boolean variable $a$. Then $(f(a) \wedge (a = b)) = (f(b) \wedge (a = b))$, where $f(b)$ is the same boolean expression with respect to the boolean variable $b$.
+<!-- **Substitution**: Let $f(a)$ be some expression with respect to the boolean variable $a$. Then $(f(a) \wedge (a = b)) = (f(b) \wedge (a = b))$, where $f(b)$ is the same boolean expression with respect to the boolean variable $b$. -->
 
 ## Proof Structure
 
@@ -71,8 +71,8 @@ Our goal is to prove all the common laws and theorems from boolean algebra simpl
 $$
 \begin{align}
     &\text{starting expression} \\
-    &= \text{intermediate expression 1} &\text{reason 1} \\
-    &= \text{intermediate expression 2} &\text{reason 2} \\
+    &= \text{intermediate expression 1}   &&\text{reason 1} \\
+    &= \text{intermediate expression 2}   &&\text{reason 2} \\
     &\qquad \vdots \\
     &= \text{target expression}
 \end{align}
