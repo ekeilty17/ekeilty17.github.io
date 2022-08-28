@@ -2,7 +2,7 @@
 layout: post
 title:  "Associativity"
 date:   2022-08-23
-chapter: 3
+part: 3
 categories: boolean-algebra
 ---
 

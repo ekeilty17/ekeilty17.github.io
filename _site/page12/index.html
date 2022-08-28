@@ -18,27 +18,9 @@
   <link rel="stylesheet" href="/public/css/poole.css">
   <link rel="stylesheet" href="/public/css/syntax.css">
   <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/custom.css">
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
-
-  <!-- Enable Latex support -->
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      jax: ["input/TeX","input/MathML","output/SVG", "output/CommonHTML"],
-      extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
-      TeX: {
-        extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
-      },
-      tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-          displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-          processEscapes: true,
-          processEnvironments: true
-        },
-        "HTML-CSS": { availableFonts: ["TeX"] }
-      });
-    </script>
-  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
 
   <!-- Icons -->
   <link rel="apple-touch-icon" sizes="180x180" href="public/favicon/terminal/apple-touch-icon.png">
@@ -52,7 +34,9 @@
   <!-- RSS 
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
 </head>
+  <!--
   
+  -->
 
   <body>
 
@@ -180,6 +164,18 @@
                 
             
           
+            
+                
+            
+          
+            
+                
+            
+          
+            
+                
+            
+          
 
           <li class="sidebar-nav-item"><a href="/assets/resume_for_web.pdf">Curriculum Vitae</a></li>
           <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
@@ -219,177 +215,58 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/boolean-algebra/2022/08/21/boolean-algebra-definitions-and-axioms/">
-        Boolean Algebra Definitions and Axioms
+      <a href="/boolean-algebra/2022/08/23/absorption-and-simplification/">
+        Absorption and Simplification
       </a>
     </h1>
 
-    <span class="post-date">21 Aug 2022</span>
+    <span class="post-date">23 Aug 2022</span>
 
-    <h2 id="definitions">Definitions</h2>
+    <h2 id="absorption">Absorption</h2>
 
-<p>First, we define the fundamental operations to boolean algebra:</p>
+<p>This seemingly abscure relation turns out to be very useful in many proofs.</p>
 
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th style="text-align: center"> </th>
-      <th style="text-align: center">$\color{green}T$</th>
-      <th style="text-align: center">$\color{red}F$</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Negation (NOT)</td>
-      <td style="text-align: center">$\neg$</td>
-      <td style="text-align: center">$\color{red}F$</td>
-      <td style="text-align: center">$\color{green}T$</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Instead of $\neg a$ we will write $\overline{a}$ to condence notation</p>
-
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th style="text-align: center"> </th>
-      <th style="text-align: center">$\color{green}T\color{green}T$</th>
-      <th style="text-align: center">$\color{green}T\color{red}F$</th>
-      <th style="text-align: center">$\color{red}F\color{green}T$</th>
-      <th style="text-align: center">$\color{red}F\color{red}F$</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Conjunction (AND)</td>
-      <td style="text-align: center">$\wedge$</td>
-      <td style="text-align: center">$\color{green}T$</td>
-      <td style="text-align: center">$\color{red}F$</td>
-      <td style="text-align: center">$\color{red}F$</td>
-      <td style="text-align: center">$\color{red}F$</td>
-    </tr>
-    <tr>
-      <td>Disjunction (OR)</td>
-      <td style="text-align: center">$\vee$</td>
-      <td style="text-align: center">$\color{green}T$</td>
-      <td style="text-align: center">$\color{green}T$</td>
-      <td style="text-align: center">$\color{green}T$</td>
-      <td style="text-align: center">$\color{red}F$</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Now, we can define some other useful operations. These are simply syntatic sugar and can all be expressed in terms of conjuction, disjunction, and negation.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th style="text-align: center"> </th>
-      <th style="text-align: center">$\color{green}T\color{green}T$</th>
-      <th style="text-align: center">$\color{green}T\color{red}F$</th>
-      <th style="text-align: center">$\color{red}F\color{green}T$</th>
-      <th style="text-align: center">$\color{red}F\color{red}F$</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Implication</td>
-      <td style="text-align: center">$\implies$</td>
-      <td style="text-align: center">$\color{green}T$</td>
-      <td style="text-align: center">$\color{red}F$</td>
-      <td style="text-align: center">$\color{green}T$</td>
-      <td style="text-align: center">$\color{green}T$</td>
-    </tr>
-    <tr>
-      <td>Converse</td>
-      <td style="text-align: center">$\impliedby$</td>
-      <td style="text-align: center">$\color{green}T$</td>
-      <td style="text-align: center">$\color{green}T$</td>
-      <td style="text-align: center">$\color{red}F$</td>
-      <td style="text-align: center">$\color{green}T$</td>
-    </tr>
-    <tr>
-      <td>Equality</td>
-      <td style="text-align: center">$=$</td>
-      <td style="text-align: center">$\color{green}T$</td>
-      <td style="text-align: center">$\color{red}F$</td>
-      <td style="text-align: center">$\color{red}F$</td>
-      <td style="text-align: center">$\color{green}T$</td>
-    </tr>
-    <tr>
-      <td>Unequality (XOR)</td>
-      <td style="text-align: center">$\neq$</td>
-      <td style="text-align: center">$\color{red}F$</td>
-      <td style="text-align: center">$\color{green}T$</td>
-      <td style="text-align: center">$\color{green}T$</td>
-      <td style="text-align: center">$\color{red}F$</td>
-    </tr>
-  </tbody>
-</table>
-
-<p><strong>Material Implication</strong>: $\quad (a \implies b) = (\overline{a} \vee b)$</p>
-
-<p><strong>Mirror</strong>: $\quad (a \impliedby b) = (b \implies a)$</p>
-
-<p><strong>Antisymmetry / Double Implication</strong>: $\quad (a = b) = (a \implies b) \wedge (a \impliedby b)$</p>
-
-<p><strong>Exclusion</strong>: $\quad (a \neq b) = (\overline{a = b})$</p>
-
-<p>A <strong>boolean variable</strong> is a variable with either $\color{green}T$ or $\color{red}F$ as its value.</p>
-
-<p>A <strong>boolean expression</strong> is a formula with respect to some boolean variables.</p>
-
-<h2 id="axioms">Axioms</h2>
-
-<p>Let $a, b, c$ be boolean variables.</p>
-
-<p><strong>Complement/Annihilation Laws</strong></p>
-<ul>
-  <li>$a \wedge \overline{a} = \color{red}F \qquad$ (Noncontradiction)</li>
-  <li>$a \vee \overline{a} = \color{green}T \qquad$ (Excluded Middle)</li>
-</ul>
-
-<p><strong>Identity</strong></p>
-<ul>
-  <li>$a \wedge \color{green}T = a$</li>
-  <li>$a \vee \color{red}F = a$</li>
-</ul>
-
-<p><strong>Commutativity</strong></p>
-<ul>
-  <li>$a \wedge b = b \wedge a$</li>
-  <li>$a \vee b = b \vee a$</li>
-</ul>
-
-<p><strong>Distributivity/Factoring</strong></p>
-<ul>
-  <li>$a \wedge (b \vee c) = (a \wedge b) \vee (a \wedge b)$</li>
-  <li>$a \vee (b \wedge c) = (a \vee b) \wedge (a \vee b)$</li>
-</ul>
-
-<!-- **Substitution**: Let $f(a)$ be some expression with respect to the boolean variable $a$. Then $(f(a) \wedge (a = b)) = (f(b) \wedge (a = b))$, where $f(b)$ is the same boolean expression with respect to the boolean variable $b$. -->
-
-<h2 id="proof-structure">Proof Structure</h2>
-
-<p>Our goal is to prove all the common laws and theorems from boolean algebra simply from the axioms. Before we can do that, we need to define our proof structure</p>
+<p>$a \wedge (a \vee b) = a$</p>
 
 \[\begin{align}
-    &amp;\text{starting expression} \\
-    &amp;= \text{intermediate expression 1}   &amp;&amp;\text{reason 1} \\
-    &amp;= \text{intermediate expression 2}   &amp;&amp;\text{reason 2} \\
-    &amp;\qquad \vdots \\
-    &amp;= \text{target expression}
+    &amp;a \wedge (a \vee b) \\
+    &amp;= (a \vee \color{red}F) \wedge (a \vee b)  &amp;&amp;\text{Identity} \\
+    &amp;= a \vee (\color{red}F \wedge b)           &amp;&amp;\text{Distributivity} \\
+    &amp;= a \vee \color{red}F                      &amp;&amp;\text{Base} \\
+    &amp;= a                                        &amp;&amp;\text{Identity}
 \end{align}\]
 
-<p>This is simply a shorthand for</p>
+<p>$a \vee (a \wedge b) = a$</p>
 
-\[\text{starting expression} = \text{intermediate expression 1} = \text{intermediate expression 2} = \ldots = \text{target expression}\]
+\[\begin{align}
+    &amp;a \vee (a \wedge b) \\
+    &amp;= (a \wedge \color{green}T) \vee(a \wedge b)   &amp;&amp;\text{Identity} \\
+    &amp;= a \wedge (\color{green}T \vee b)             &amp;&amp;\text{Distributivity} \\
+    &amp;= a \wedge \color{green}T                      &amp;&amp;\text{Base} \\
+    &amp;= a                                            &amp;&amp;\text{Identity}
+\end{align}\]
 
-<p>All proofs will be given in this structure.</p>
+<h2 id="simplification">Simplification</h2>
+
+<p>This is less common than Absorption, but is still useful in some proofs</p>
+
+<p>$a \wedge (\overline{a} \vee b) = a \wedge b$</p>
+
+\[\begin{align}
+    &amp;a \wedge (\overline{a} \vee b) \\
+    &amp;= (a \wedge \overline{a}) \vee (a \wedge b)    &amp;&amp;\text{Distributivity} \\
+    &amp;= \color{red}F \vee (a \wedge b)               &amp;&amp;\text{Noncontradiction} \\
+    &amp;= a \wedge b                                   &amp;&amp;\text{Identity}
+\end{align}\]
+
+<p>$a \vee (\overline{a} \wedge b) = a \vee b$</p>
+
+\[\begin{align}
+    &amp;a \vee (\overline{a} \wedge b) \\
+    &amp;= (a \vee \overline{a}) \wedge (a \vee b)  &amp;&amp;\text{Distributivity} \\
+    &amp;= \color{green}T \wedge (a \vee b)         &amp;&amp;\text{Excluded Middle} \\
+    &amp;= a \vee b                                 &amp;&amp;\text{Identity}
+\end{align}\]
 
   </div>
   
@@ -397,7 +274,7 @@
 
 <div class="pagination">
   
-    <span class="pagination-item older">Older</span>
+    <a class="pagination-item older" href="/page13/">Older</a>
   
   
     

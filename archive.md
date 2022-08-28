@@ -6,6 +6,8 @@ permalink: /archive/
 
 ## Blog Posts
 
-{% for post in site.posts %}
-  * {{ post.date | date_to_string }} &raquo; [ {{ post.title }} ]({{ post.url }})
+<!-- Boolean Algebra Series -->
+{% assign sorted_posts = site.posts | where: 'categories', 'boolean-algebra' | sort: 'part' %}
+{% for post in sorted_posts %}
+  * Part {{ post.part }}) [ {{ post.title }} ]({{ post.url }})
 {% endfor %}

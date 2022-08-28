@@ -2,7 +2,7 @@
 layout: post
 title:  "Duality / De Morgan's Law"
 date:   2022-08-24
-chapter: 5
+part: 5
 categories: boolean-algebra
 ---
 

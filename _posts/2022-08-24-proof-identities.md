@@ -2,7 +2,7 @@
 layout: post
 title:  "Proof Identities"
 date:   2022-08-24
-chapter: 7
+part: 7
 categories: boolean-algebra
 ---
 

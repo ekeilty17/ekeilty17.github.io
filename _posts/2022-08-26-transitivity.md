@@ -2,7 +2,7 @@
 layout: post
 title:  "Transitivity"
 date:   2022-08-26
-chapter: 10
+part: 10
 categories: boolean-algebra
 ---
 

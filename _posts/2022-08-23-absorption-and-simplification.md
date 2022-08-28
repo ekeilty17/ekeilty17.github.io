@@ -2,7 +2,7 @@
 layout: post
 title:  "Absorption and Simplification"
 date:   2022-08-23
-chapter: 2
+part: 2
 categories: boolean-algebra
 ---
 

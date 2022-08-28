@@ -215,80 +215,117 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/boolean-algebra/2022/08/24/proof-identities/">
-        Proof Identities
+      <a href="/boolean-algebra/2022/08/22/miscellaneous-simple-relations/">
+        Miscellaneous Simple Relations
       </a>
     </h1>
 
-    <span class="post-date">24 Aug 2022</span>
+    <span class="post-date">22 Aug 2022</span>
 
-    <h2 id="direct-proofs">Direct Proofs</h2>
+    <h2 id="universal-bound--null-element--base">Universal Bound / Null Element / Base</h2>
 
-<p>These date back to as early as Aristotle and are very well known syllogisms.</p>
-
-<h3 id="modus-ponens">Modus Ponens</h3>
-
-<p>“Modus Ponens” is Latin for “method of affirming” and is also known as “affirming the consequent”.</p>
-
-<p>$(a \implies b) \wedge a \quad \implies \quad b$</p>
+<p>$a \wedge \color{red}F \quad = \quad \color{red}F$</p>
 
 \[\begin{align}
-    &amp;(a \implies b) \wedge a            &amp;&amp; \\
-    &amp;= (\overline{a} \vee b) \wedge a   &amp;&amp;\text{Material Implication} \\
-    &amp;= a \wedge (\overline{a} \vee b)   &amp;&amp;\text{Commutativity} \\
-    &amp;= a \wedge b                       &amp;&amp;\text{Simplification} \\
-    &amp;\implies b                         &amp;&amp;\text{Specialization}
+    &amp;a \wedge \color{red}F \\
+    &amp;= (a \wedge \color{red}F) \vee \color{red}F                &amp;&amp;\text{Identity} \\
+    &amp;= (a \wedge \color{red}F) \vee (a \wedge \overline{a})     &amp;&amp;\text{Noncontradiction} \\
+    &amp;= a \wedge (\color{red}F \vee \overline{a})                &amp;&amp;\text{Distributivity} \\
+    &amp;= a \wedge \overline{a}                                    &amp;&amp;\text{Identity} \\
+    &amp;= \color{red}F                                             &amp;&amp;\text{Noncontradiction}
 \end{align}\]
 
-<h3 id="modus-tollens">Modus Tollens</h3>
-
-<p>“Modus Tollens” is Latin for “method of denying” and is also known as “denying the consequent”.</p>
-
-<p>$(a \implies b) \wedge \overline{b} \quad \implies \quad \overline{a}$</p>
+<p>$a \vee \color{green}T \quad = \quad \color{green}T$</p>
 
 \[\begin{align}
-    &amp;(a \implies b) \wedge \overline{b}             &amp;&amp; \\
-    &amp;= (\overline{a} \vee b) \wedge \overline{b}    &amp;&amp;\text{Material Implication} \\
-    &amp;= \overline{b} \wedge (b \vee \overline{a})    &amp;&amp;\text{Commutativity 2 times} \\
-    &amp;= \overline{b} \wedge \overline{a}             &amp;&amp;\text{Simplification} \\
-    &amp;\implies \overline{a}                          &amp;&amp;\text{Specialization}
+    &amp;a \vee \color{green}T \\
+    &amp;= (a \vee \color{green}T) \wedge \color{red}F              &amp;&amp;\text{Identity} \\
+    &amp;= (a \vee \color{green}T) \wedge (a \vee \overline{a})     &amp;&amp;\text{Excluded Middle} \\
+    &amp;= a \vee (\color{green}T \wedge \overline{a})              &amp;&amp;\text{Distributivity} \\
+    &amp;= a \vee \overline{a}                                      &amp;&amp;\text{Identity} \\
+    &amp;= \color{green}T                                           &amp;&amp;\text{Excluded Middle}
 \end{align}\]
 
-<h3 id="dysjunctive-syllogism">Dysjunctive Syllogism</h3>
-
-<p>$(a \vee b) \wedge \overline{a} \quad \implies \quad b$</p>
+<p>$\color{red}F \implies a \quad = \quad \color{green}T$</p>
 
 \[\begin{align}
-    &amp;(a \vee b) \wedge \overline{a}         &amp;&amp; \\
-    &amp;= \overline{a} \wedge (a \vee b)       &amp;&amp;\text{Commutativity} \\
-    &amp;= \overline{a} \wedge b                &amp;&amp;\text{Simplification} \\
-    &amp;\implies b                             &amp;&amp;\text{Specialization}
+    &amp;\color{red}F \implies a \\
+    &amp;= \overline{\color{red}F} \vee a   &amp;&amp;\text{Material Implication} \\
+    &amp;= \color{green}T \vee a            &amp;&amp;\text{Definition of negation} \\
+    &amp;= a \vee \color{green}T            &amp;&amp;\text{Commutativity} \\
+    &amp;= \color{green}T                   &amp;&amp;\text{Base}
 \end{align}\]
 
-<h2 id="reductio-ad-adsurdum--proof-by-contradiction">Reductio ad Adsurdum / Proof by Contradiction</h2>
-
-<p>This is one of the most widely used proof methods. Now, we have a rigorous proof for it.</p>
-
-<p>$\overline{a} \implies \color{red}F \quad = \quad a$</p>
+<p>$a \implies \color{green}T \quad = \quad \color{green}T$</p>
 
 \[\begin{align}
-    &amp;\overline{a} \implies \color{red}F     &amp;&amp; \\
-    &amp;= a \vee \color{red}F                  &amp;&amp;\text{Material Implication and Double Negation} \\
+    &amp;a \implies \color{green}T \\
+    &amp;= \overline{a} \vee \color{green}T     &amp;&amp;\text{Material Implication} \\
+    &amp;= \color{green}T                       &amp;&amp;\text{Base}
+\end{align}\]
+
+<h2 id="idempotent">Idempotent</h2>
+
+<p>$a \wedge a \quad = \quad a$</p>
+
+\[\begin{align}
+    &amp;a \wedge a \\
+    &amp;= (a \wedge a) \vee \color{green}T             &amp;&amp;\text{Identity} \\
+    &amp;= (a \wedge a) \vee (a \wedge \overline{a})    &amp;&amp;\text{Noncontradiction} \\
+    &amp;= a \wedge (a \vee \overline{a})               &amp;&amp;\text{Distributivity} \\
+    &amp;= a \wedge \color{green}T                      &amp;&amp;\text{Noncontradiction} \\
+    &amp;= a                                            &amp;&amp;\text{Identity}
+\end{align}\]
+
+<p>$a \vee a \quad = \quad a$</p>
+
+\[\begin{align}
+    &amp;a \vee a \\
+    &amp;= (a \vee a) \wedge \color{green}T         &amp;&amp;\text{Identity} \\
+    &amp;= (a \vee a) \wedge (a \vee \overline{a})  &amp;&amp;\text{Excluded Middle} \\
+    &amp;= a \vee (a \wedge \overline{a})           &amp;&amp;\text{Distributivity} \\
+    &amp;= a \vee \color{red}F                      &amp;&amp;\text{Noncontradiction} \\
+    &amp;= a                                        &amp;&amp;\text{Identity}
+\end{align}\]
+
+<h2 id="reflexive">Reflexive</h2>
+
+<p>$a \implies a \quad = \quad \color{green}T$</p>
+
+\[\begin{align}
+    &amp;a \implies a \\
+    &amp;= (\overline{a} \vee a)    &amp;&amp;\text{Material Implications} \\
+    &amp;= \color{green}T           &amp;&amp;\text{Excluded Middle}
+\end{align}\]
+
+<p>$a = a \quad = \quad \color{green}T$</p>
+
+\[\begin{align}
+    &amp;a = a \\
+    &amp;= (a \implies a) \wedge (a \impliedby a)   &amp;&amp;\text{Double Implication} \\
+    &amp;= (a \implies a) \wedge (a \implies a)     &amp;&amp;\text{Mirror} \\
+    &amp;= \color{green}T \wedge \color{green}T     &amp;&amp;\text{Reflexive} \\
+    &amp;= \color{green}T                           &amp;&amp;\text{Definition of}\ \wedge
+\end{align}\]
+
+<h2 id="identity-continued">Identity Continued</h2>
+
+<p>There are some additional identity laws for the other operations. However, they follow from the axioms, so they were not included</p>
+
+\[\begin{align}
+    &amp;\color{green}T \implies a \\
+    &amp;= \overline{\color{green}T} \wedge a   &amp;&amp;\text{Material Implication} \\
+    &amp;= \color{red}F \vee a                  &amp;&amp;\text{Definition of negation} \\
     &amp;= a                                    &amp;&amp;\text{Identity}
 \end{align}\]
 
-<h2 id="contrapositive">Contrapositive</h2>
-
-<p>This can be extremely useful in some proofs.</p>
-
-<p>$(a \implies b) \quad = \quad (\overline{b} \implies \overline{a})$</p>
-
 \[\begin{align}
-    &amp;a \implies b                                   &amp;&amp; \\
-    &amp;= \overline{a} \vee b                          &amp;&amp;\text{Material Implication} \\
-    &amp;= b \vee \overline{a}                          &amp;&amp;\text{Commutativity} \\
-    &amp;= \overline{(\overline{b})} \vee \overline{a}  &amp;&amp;\text{Double Negation} \\
-    &amp;= \overline{b} \implies \overline{a}           &amp;&amp;\text{Material Implication}
+    &amp;\color{green}T = a \\
+    &amp;= (\color{green}T \implies a) \wedge (\color{green}T \impliedby a)                     &amp;&amp;\text{Double Implication} \\
+    &amp;= (\color{green}T \implies a) \wedge (a \implies \color{green}T)                       &amp;&amp;\text{Mirror} \\
+    &amp;= (\overline{\color{green}T} \wedge a) \wedge (\overline{a} \wedge \color{green}T)     &amp;&amp;\text{Material Implication}  \\
+    &amp;= a \wedge \color{green}T                                                              &amp;&amp;\text{Identity and Base}  \\
+    &amp;= a                                                                                    &amp;&amp;\text{Identity}
 \end{align}\]
 
   </div>
@@ -297,11 +334,11 @@
 
 <div class="pagination">
   
-    <a class="pagination-item older" href="/page8/">Older</a>
+    <a class="pagination-item older" href="/page14/">Older</a>
   
   
     
-      <a class="pagination-item newer" href="/page6/">Newer</a>
+      <a class="pagination-item newer" href="/page12/">Newer</a>
     
   
 </div>

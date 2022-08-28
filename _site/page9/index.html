@@ -18,27 +18,9 @@
   <link rel="stylesheet" href="/public/css/poole.css">
   <link rel="stylesheet" href="/public/css/syntax.css">
   <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/custom.css">
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
-
-  <!-- Enable Latex support -->
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      jax: ["input/TeX","input/MathML","output/SVG", "output/CommonHTML"],
-      extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
-      TeX: {
-        extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
-      },
-      tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-          displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-          processEscapes: true,
-          processEnvironments: true
-        },
-        "HTML-CSS": { availableFonts: ["TeX"] }
-      });
-    </script>
-  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
 
   <!-- Icons -->
   <link rel="apple-touch-icon" sizes="180x180" href="public/favicon/terminal/apple-touch-icon.png">
@@ -52,7 +34,9 @@
   <!-- RSS 
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
 </head>
+  <!--
   
+  -->
 
   <body>
 
@@ -180,6 +164,18 @@
                 
             
           
+            
+                
+            
+          
+            
+                
+            
+          
+            
+                
+            
+          
 
           <li class="sidebar-nav-item"><a href="/assets/resume_for_web.pdf">Curriculum Vitae</a></li>
           <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
@@ -219,57 +215,205 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/boolean-algebra/2022/08/23/absorption-and-simplification/">
-        Absorption and Simplification
+      <a href="/boolean-algebra/2022/08/24/demorgans-law/">
+        Duality / De Morgan's Law
       </a>
     </h1>
 
-    <span class="post-date">23 Aug 2022</span>
+    <span class="post-date">24 Aug 2022</span>
 
-    <h2 id="absorption">Absorption</h2>
+    <h2 id="the-canonical-proof">The Canonical Proof</h2>
 
-<p>This seemingly abscure relation turns out to be very useful in many proofs.</p>
+<p>If you look up the proof of Duality / De Morgan’s Law this is what you will get.</p>
 
-<p>$a \wedge (a \vee b) = a$</p>
+<p>It is an argument based on the uniqueness of the complement. They use the fact that if $(x \vee y) = \color{green}T$ and $(x \wedge y) = \color{red}F$, then $y$ is the complement of $x$. Written formally, this is</p>
+
+\[(x \vee y) \wedge (\overline{x \wedge y}) \quad = \quad (y = \overline{x})\]
+
+<p>Using this expression, we can prove De Morgan’s Law in the following way:</p>
+<ol>
+  <li>Let $x = (a \wedge b)$</li>
+  <li>Let $y = (\overline{a} \vee \overline{b})$</li>
+  <li>We show $(x \vee y) = \color{green}T$</li>
+  <li>We show $(x \wedge y) = \color{red}F$</li>
+  <li>Using the above expression, we can then conclude that $y = \overline{x}$ or $(\overline{a} \vee \overline{b}) = (\overline{a \wedge b})$</li>
+</ol>
+
+<p>Steps 3. and 4. are proved below:</p>
+
+<p>$((a \wedge b) \vee (\overline{a} \vee \overline{b})) = \color{green}T$</p>
 
 \[\begin{align}
-    &amp;a \wedge (a \vee b) \\
-    &amp;= (a \vee \color{red}F) \wedge (a \vee b)  &amp;&amp;\text{Identity} \\
-    &amp;= a \vee (\color{red}F \wedge b)           &amp;&amp;\text{Distributivity} \\
-    &amp;= a \vee \color{red}F                      &amp;&amp;\text{Base} \\
-    &amp;= a                                        &amp;&amp;\text{Identity}
+    &amp;(a \wedge b) \vee (\overline{a} \vee \overline{b}) \\
+    &amp;= ((b \wedge a) \vee \overline{a}) \vee \overline{b}   &amp;&amp;\text{Associativity} \\
+    &amp;= (\overline{a} \vee (a \wedge b)) \vee \overline{b}   &amp;&amp;\text{Commutativity} \\
+    &amp;= (\overline{a} \vee b) \vee \overline{b}              &amp;&amp;\text{Simplification} \\
+    &amp;= \overline{a} \vee (b \vee \overline{b})              &amp;&amp;\text{Associativity} \\
+    &amp;= \overline{a} \vee \color{green}T                     &amp;&amp;\text{Excluded Middle} \\
+    &amp;= \color{green}T                                       &amp;&amp;\text{Base} \\
 \end{align}\]
 
-<p>$a \vee (a \wedge b) = a$</p>
+<p>$((a \wedge b) \wedge (\overline{a} \vee \overline{b})) = \color{red}F$</p>
 
 \[\begin{align}
-    &amp;a \vee (a \wedge b) \\
-    &amp;= (a \wedge \color{green}T) \vee(a \wedge b)   &amp;&amp;\text{Identity} \\
-    &amp;= a \wedge (\color{green}T \vee b)             &amp;&amp;\text{Distributivity} \\
-    &amp;= a \wedge \color{green}T                      &amp;&amp;\text{Base} \\
-    &amp;= a                                            &amp;&amp;\text{Identity}
+    &amp;(a \wedge b) \wedge (\overline{a} \vee \overline{b}) \\
+    &amp;= a \wedge (b \wedge (\overline{a} \vee \overline{b})) &amp;&amp;\text{Associativity} \\
+    &amp;= a \wedge (b \wedge (\overline{b} \vee \overline{a})) &amp;&amp;\text{Commutativity} \\
+    &amp;= a \wedge (b \wedge \overline{a})                     &amp;&amp;\text{Simplification} \\
+    &amp;= (a \wedge \overline{a}) \wedge b                     &amp;&amp;\text{Commutativity and Associativity} \\
+    &amp;= \color{red}F \wedge b                                &amp;&amp;\text{Noncontradiction} \\
+    &amp;= \color{red}F                                         &amp;&amp;\text{Base} \\
 \end{align}\]
 
-<h2 id="simplification">Simplification</h2>
+<p>And of course you can prove the other law $(\overline{a} \wedge \overline{b}) = (\overline{a \vee b})$ in the exact same way. My issue with this proof is that it relies on the expression</p>
 
-<p>This is less common than Absorption, but is still useful in some proofs</p>
+\[(x \vee y) \wedge (\overline{x \wedge y}) \quad = \quad (y = \overline{x})\]
 
-<p>$a \wedge (\overline{a} \vee b) = a \wedge b$</p>
+<p>being true. However, when you try to prove it using our rigorous proof style, you run into a problem. You need De Morgan’s Law to prove it. You can prove it without De Morgan’s Law using other methods such as proof by contradiction or completion arguments. However, if you want to prove it soley from the axioms and using strict logic, then I don’t believe you can. Thus, I have come up with an alternative.</p>
+
+<h2 id="my-proof">My Proof</h2>
+
+<p>As far as I can tell, this is a novel proof. I have never seen this anywhere else.</p>
+
+<p>The proof method is the following.</p>
+<ol>
+  <li>Show that $(\overline{a \vee b}) \implies (\overline{a} \wedge \overline{b})$</li>
+  <li>Show that $(\overline{a} \wedge \overline{b}) \implies (\overline{a \vee b})$</li>
+  <li>Show that $(\overline{a \vee b}) = (\overline{a} \wedge \overline{b})$</li>
+</ol>
+
+<p>First, we show 1.</p>
 
 \[\begin{align}
-    &amp;a \wedge (\overline{a} \vee b) \\
-    &amp;= (a \wedge \overline{a}) \vee (a \wedge b)    &amp;&amp;\text{Distributivity} \\
-    &amp;= \color{red}F \vee (a \wedge b)               &amp;&amp;\text{Noncontradiction} \\
-    &amp;= a \wedge b                                   &amp;&amp;\text{Identity}
+    &amp;(\overline{a \vee b}) &amp;&amp; &amp;&amp;\\
+    &amp;= (\overline{a \vee b}) \wedge \color{green}T
+    &amp;&amp;
+    &amp;&amp;\text{Identity} \\
+    
+    &amp;= [(\overline{a \vee b}) \wedge \color{green}T] 
+    &amp;\wedge&amp; [(\overline{a \vee b}) \wedge \color{green}T]
+    &amp;&amp;\text{Idempotent} \\
+    
+    &amp;= [(\overline{a \vee b}) \wedge (a \vee \overline{a})] 
+    &amp;\wedge&amp; [(\overline{a \vee b}) \wedge (b \vee \overline{b})]
+    &amp;&amp;\text{Excluded Middle} \\
+    
+    &amp;= [(\overline{a \vee b}) \wedge \color{red}( (a \wedge (a \vee b)) \vee \overline{a} \color{red})] 
+    &amp;\wedge&amp; [(\overline{a \vee b}) \wedge \color{red}( (b \wedge (a \vee b)) \vee \overline{b} \color{red})]
+    &amp;&amp;\text{Absorption} \\
+
+    &amp;= [\color{red}( (\overline{a \vee b}) \wedge (a \wedge (a \vee b)) \color{red}) \vee \color{red}( (\overline{a \vee b}) \wedge \overline{a} \color{red})] 
+    &amp;\wedge&amp; [\color{red}( (\overline{a \vee b}) \wedge (b \wedge (a \vee b)) \color{red}) \vee \color{red}( (\overline{a \vee b}) \wedge \overline{b} \color{red})] 
+    &amp;&amp;\text{Distributivity} \\
+
+    &amp;= [\color{red}( (\overline{a \vee b}) \wedge ((a \vee b) \wedge a) \color{red}) \vee \color{red}( (\overline{a \vee b}) \wedge \overline{a} \color{red})] 
+    &amp;\wedge&amp; [\color{red}( (\overline{a \vee b}) \wedge ((a \vee b) \wedge b) \color{red}) \vee \color{red}( (\overline{a \vee b}) \wedge \overline{b} \color{red})] 
+    &amp;&amp;\text{Commutativity} \\
+
+    &amp;= [\color{red}( ((\overline{a \vee b}) \wedge (a \vee b)) \wedge a \color{red}) \vee \color{red}( (\overline{a \vee b}) \wedge \overline{a} \color{red})] 
+    &amp;\wedge&amp; [\color{red}( ((\overline{a \vee b}) \wedge (a \vee b)) \wedge b \color{red}) \vee \color{red}( (\overline{a \vee b}) \wedge \overline{b} \color{red})] 
+    &amp;&amp;\text{Associativity} \\
+
+    &amp;= [\color{red}( \color{red}F \wedge a \color{red}) \vee \color{red}( (\overline{a \vee b}) \wedge \overline{a} \color{red})] 
+    &amp;\wedge&amp; [\color{red}( \color{red}F \wedge b \color{red}) \vee \color{red}( (\overline{a \vee b}) \wedge \overline{b} \color{red})] 
+    &amp;&amp;\text{Noncontradiction} \\
+
+    &amp;= [\color{red}F \vee \color{red}( (\overline{a \vee b}) \wedge \overline{a} \color{red})] 
+    &amp;\wedge&amp; [\color{red}F \vee \color{red}( (\overline{a \vee b}) \wedge \overline{b} \color{red})] 
+    &amp;&amp;\text{Base} \\
+
+    &amp;= [ (\overline{a \vee b}) \wedge \overline{a} ] 
+    &amp;\wedge&amp; [ (\overline{a \vee b}) \wedge \overline{b} ] 
+    &amp;&amp;\text{Identity} \\
+
+    &amp;= ( (\overline{a \vee b}) \wedge (\overline{a \vee b}) ) \wedge (\overline{a} \wedge \overline{b} )
+    &amp;&amp;
+    &amp;&amp;\text{Associativity and Commutativity} \\
+
+    &amp;= (\overline{a \vee b}) \wedge (\overline{a} \wedge \overline{b} )
+    &amp;&amp;
+    &amp;&amp;\text{Idempotent} \\
+
+    &amp;\implies \overline{a} \wedge \overline{b}
+    &amp;&amp;
+    &amp;&amp;\text{Specialization}
 \end{align}\]
 
-<p>$a \vee (\overline{a} \wedge b) = a \vee b$</p>
+<p>Next, we show 2.</p>
 
 \[\begin{align}
-    &amp;a \vee (\overline{a} \wedge b) \\
-    &amp;= (a \vee \overline{a}) \wedge (a \vee b)  &amp;&amp;\text{Distributivity} \\
-    &amp;= \color{green}T \wedge (a \vee b)         &amp;&amp;\text{Excluded Middle} \\
-    &amp;= a \vee b                                 &amp;&amp;\text{Identity}
+    &amp;\overline{a} \wedge \overline{b} &amp;&amp; \\
+    
+    &amp;= (\overline{a} \wedge \overline{b}) \wedge \color{green}T 
+    &amp;&amp;
+    &amp;&amp;\text{identity} \\
+
+    &amp;= (\overline{a} \wedge \overline{b}) \wedge \color{red}( (a \vee b) \vee (\overline{a \vee b}) \color{red})
+    &amp;&amp;
+    &amp;&amp;\text{Excluded Middle} \\
+
+    &amp;= \color{red}( (\overline{a} \wedge \overline{b}) \wedge (a \vee b) \color{red}) 
+    &amp;\vee&amp; \color{red}( (\overline{a} \wedge \overline{b}) \wedge (\overline{a \vee b}) \color{red})
+    &amp;&amp;\text{Distributivity} \\
+
+    &amp;= \color{red}( \overline{a} \wedge (\overline{b} \wedge (a \vee b)) \color{red}) 
+    &amp;\vee&amp; \color{red}( (\overline{a} \wedge \overline{b}) \wedge (\overline{a \vee b}) \color{red})
+    &amp;&amp;\text{Associativity} \\
+
+    &amp;= \color{red}( \overline{a} \wedge (\overline{b} \wedge (b \vee a)) \color{red}) 
+    &amp;\vee&amp; \color{red}( (\overline{a} \wedge \overline{b}) \wedge (\overline{a \vee b}) \color{red})
+    &amp;&amp;\text{Commutativity} \\
+
+    &amp;= \color{red}( \overline{a} \wedge (\overline{b} \wedge a) \color{red}) 
+    &amp;\vee&amp; \color{red}( (\overline{a} \wedge \overline{b}) \wedge (\overline{a \vee b}) \color{red})
+    &amp;&amp;\text{Simplification} \\
+
+    &amp;= \color{red}( (\overline{a} \wedge a) \wedge \overline{b} \color{red}) 
+    &amp;\vee&amp; \color{red}( (\overline{a} \wedge \overline{b}) \wedge (\overline{a \vee b}) \color{red})
+    &amp;&amp;\text{Commutativity and Associativity} \\
+
+    &amp;= \color{red}( \color{red}F \wedge \overline{b} \color{red}) 
+    &amp;\vee&amp; \color{red}( (\overline{a} \wedge \overline{b}) \wedge (\overline{a \vee b}) \color{red})
+    &amp;&amp;\text{Noncontradiction} \\
+
+    &amp;= \color{red}F
+    &amp;\vee&amp; \color{red}( (\overline{a} \wedge \overline{b}) \wedge (\overline{a \vee b}) \color{red})
+    &amp;&amp;\text{Base} \\
+
+    &amp;= (\overline{a} \wedge \overline{b}) \wedge (\overline{a \vee b})
+    &amp;&amp;
+    &amp;&amp;\text{Identity} \\
+
+    &amp;\implies (\overline{a \vee b})
+    &amp;&amp;
+    &amp;&amp;\text{Specialization}
+\end{align}\]
+
+<p>Finally, we prove 3. You could imagine this being written out as one giant proof where we insert the proofs for 1. and 2. between the 2nd and 3rd step.</p>
+
+\[\begin{align}
+    &amp;(\overline{a \vee b}) = (\overline{a} \wedge \overline{b}) \\
+    &amp;= ((\overline{a \vee b}) \implies (\overline{a} \wedge \overline{b})) \wedge ((\overline{a \vee b}) \impliedby (\overline{a} \wedge \overline{b})) &amp;&amp;\text{Double Implication} \\
+    &amp;= ((\overline{a \vee b}) \implies (\overline{a} \wedge \overline{b})) \wedge ((\overline{a} \wedge \overline{b}) \implies (\overline{a \vee b})) &amp;&amp;\text{Mirror} \\
+    &amp;= \color{green}T \wedge \color{green}T &amp;&amp;\text{By 1. and 2.} \\
+    &amp;= \color{green}T &amp;&amp;\text{Definition of} \ \wedge
+\end{align}\]
+
+<p>And of course you can prove the other law $(\overline{a} \wedge \overline{b}) = (\overline{a \vee b})$ in the exact same way. Exchange $\vee$ with $\wedge$, $\ \color{green}T$ with $\color{red}F$, $\ \implies$ with $\impliedby$, and Specialization with Generalization (and vice versa). I don’t think it is beneficial to anyone to write it out.</p>
+
+<h2 id="uniqueness-of-the-complement">Uniqueness of the Complement</h2>
+
+<p>Now, we can easily prove the complement law used in the canonical proof.</p>
+
+<p>$ (x \vee y) \wedge (\overline{x \wedge y}) \quad = \quad (y = \overline{x}) $</p>
+
+\[\begin{align}
+    &amp;(x \vee y) \wedge (\overline{x \wedge y})                      &amp;&amp; \\
+    &amp;= (x \vee y) \wedge (\overline{x} \vee \overline{y})           &amp;&amp;\text{De Morgan's Law} \\
+    &amp;= (\overline{y} \vee \overline{x}) \wedge (x \vee y)           &amp;&amp;\text{Commutativity 2 times} \\
+    &amp;= (y \implies \overline{x}) \wedge (\overline{x} \implies y)   &amp;&amp;\text{Material Implications} \\
+    &amp;= (y \implies \overline{x}) \wedge (y \impliedby \overline{x}) &amp;&amp;\text{Mirror} \\
+    &amp;= (y = \overline{x})                                           &amp;&amp;\text{Double Implication}
 \end{align}\]
 
   </div>

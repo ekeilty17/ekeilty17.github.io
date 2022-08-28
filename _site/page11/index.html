@@ -18,27 +18,9 @@
   <link rel="stylesheet" href="/public/css/poole.css">
   <link rel="stylesheet" href="/public/css/syntax.css">
   <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/custom.css">
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
-
-  <!-- Enable Latex support -->
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      jax: ["input/TeX","input/MathML","output/SVG", "output/CommonHTML"],
-      extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
-      TeX: {
-        extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
-      },
-      tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-          displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-          processEscapes: true,
-          processEnvironments: true
-        },
-        "HTML-CSS": { availableFonts: ["TeX"] }
-      });
-    </script>
-  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
 
   <!-- Icons -->
   <link rel="apple-touch-icon" sizes="180x180" href="public/favicon/terminal/apple-touch-icon.png">
@@ -52,7 +34,9 @@
   <!-- RSS 
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
 </head>
+  <!--
   
+  -->
 
   <body>
 
@@ -180,6 +164,18 @@
                 
             
           
+            
+                
+            
+          
+            
+                
+            
+          
+            
+                
+            
+          
 
           <li class="sidebar-nav-item"><a href="/assets/resume_for_web.pdf">Curriculum Vitae</a></li>
           <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
@@ -219,31 +215,186 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/jekyll/update/2022/08/21/welcome-to-jekyll/">
-        Welcome to Jekyll!
+      <a href="/boolean-algebra/2022/08/23/associativity/">
+        Associativity
       </a>
     </h1>
 
-    <span class="post-date">21 Aug 2022</span>
+    <span class="post-date">23 Aug 2022</span>
 
-    <p>You’ll find this post in your <code>_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code>jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+    <p>This is a very tedious proof. If you really want to understand it, I would recommend writing it out for yourself. I have added colored parenthesis to help keep track of the nested levels. Essentially, it makes clever use of distributivity and timely commutativity.</p>
 
-<p>Jekyll requires blog post files to be named according to the following format:</p>
+<p>$(a \wedge b) \wedge c \quad = \quad a \wedge (b \wedge c)$</p>
 
-<p><code>YEAR-MONTH-DAY-title.MARKUP</code></p>
+\[\begin{align}
+    &amp;(a \wedge b) \wedge c 
+    &amp;&amp;
+    &amp;&amp;
+    &amp;&amp; \\
 
-<p>Where <code>YEAR</code> is a four-digit number, <code>MONTH</code> and <code>DAY</code> are both two-digit numbers, and <code>MARKUP</code> is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
+    &amp;=[\color{red}(a \wedge \color{blue}(a \vee (b \wedge c)\color{blue}) \color{red}) 
+    &amp;\wedge&amp; \color{red}(b \wedge (b \vee a)\color{red})] 
+    &amp;\wedge&amp; \color{red}(c \wedge (c \vee a)\color{red})   
+    &amp;&amp;\text{Absorption 3 times} \\
+    
+    &amp;=[\color{red}(a \wedge \color{blue}(a \vee (b \wedge c)\color{blue}) \color{red}) 
+    &amp;\wedge&amp; \color{red}( \color{blue}(b \vee (b \wedge c)\color{blue}) \wedge (b \vee a)\color{red})] 
+    &amp;\wedge&amp; \color{red}(\color{blue}(c \vee (c \wedge b)\color{blue}) \wedge (c \vee a)\color{red})
+    &amp;&amp;\text{Absorption 2 times} \\
 
-<p>Jekyll also offers powerful support for code snippets:</p>
+    &amp;=[\color{red}(a \wedge \color{blue}(a \vee (b \wedge c)\color{blue}) \color{red}) 
+    &amp;\wedge&amp; \color{red}( (b \vee a) \wedge \color{blue}(b \vee (b \wedge c)\color{blue}) \color{red})]
+    &amp;\wedge&amp; \color{red}( (c \vee a) \wedge \color{blue}(c \vee (b \wedge c)\color{blue})\color{red})
+    &amp;&amp;\text{Commutativity 3 times} \\
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">def print_hi(name)
-  puts &quot;Hi, #{name}&quot;
-end
-print_hi(&#39;Tom&#39;)
-#=&gt; prints &#39;Hi, Tom&#39; to STDOUT.</code></pre></figure>
+    &amp;=[\color{red}( (a \vee a) \wedge \color{blue}(a \vee (b \wedge c)\color{blue}) \color{red}) 
+    &amp;\wedge&amp; \color{red}( (b \vee a) \wedge \color{blue}(b \vee (b \wedge c)\color{blue}) \color{red})]
+    &amp;\wedge&amp; \color{red}( (c \vee a) \wedge \color{blue}(c \vee (b \wedge c)\color{blue})\color{red})
+    &amp;&amp;\text{Idempotent} \\
 
-<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>
+    &amp;=[\color{red}( a \vee \color{blue}(a \wedge (b \wedge c)\color{blue}) \color{red})
+    &amp;\wedge&amp; \color{red}( b \vee \color{blue}(a \wedge (b \wedge c)\color{blue}) \color{red})]
+    &amp;\wedge&amp; \color{red}( c \vee \color{blue}(a \wedge (b \wedge c)\color{blue}) \color{red})
+    &amp;&amp;\text{Distributivity 3 times} \\
 
+    &amp;=[(a \wedge b) \vee \color{blue}(a \wedge (b \wedge c)\color{blue})] 
+    &amp;&amp;
+    &amp;\wedge&amp; \color{red}( c \vee \color{blue}(a \wedge (b \wedge c)\color{blue}) \color{red})
+    &amp;&amp;\text{Distributivity} \\
+
+    &amp;=\color{blue}( (a \wedge b) \wedge c \color{blue}) \vee \color{blue}( a \wedge (b \wedge c) \color{blue})
+    &amp;&amp;
+    &amp;&amp;
+    &amp;&amp;\text{Distributivity} \\
+
+    &amp;=\color{red}( \color{blue}((a \wedge b) \wedge c\color{blue}) \vee a \color{red}) 
+    &amp;\wedge&amp; [ \color{blue}((a \wedge b) \wedge c\color{blue}) \vee (b \wedge c)]
+    &amp;&amp;
+    &amp;&amp;\text{Distributivity} \\
+
+    &amp;=\color{red}( \color{blue}( (a \wedge b) \wedge c \color{blue}) \vee a \color{red})
+    &amp;\wedge&amp; [ \color{red}( \color{blue}( (a \wedge b) \wedge c \color{blue}) \vee b \color{red}) 
+    &amp;\wedge&amp; \color{red}( \color{blue}( (a \wedge b) \wedge c \color{blue}) \vee c \color{red}) ]
+    &amp;&amp;\text{Distributivity} \\
+
+    &amp;=\color{red}( a \vee \color{blue}( (a \wedge b) \wedge c \color{blue}) \color{red})
+    &amp;\wedge&amp; [ \color{red}( b \vee \color{blue}( (a \wedge b) \wedge c \color{blue}) \color{red}) 
+    &amp;\wedge&amp; \color{red}( c \vee \color{blue}( (a \wedge b) \wedge c \color{blue}) \color{red}) ]
+    &amp;&amp;\text{Commutativity 3 times} \\
+
+    &amp;=\color{red}( \color{blue}( a \vee (a \wedge b) \color{blue}) \wedge (a \vee c) \color{red})
+    &amp;\wedge&amp; [ \color{red}( \color{blue}( b \vee (a \wedge b) \color{blue}) \wedge (b \vee c) \color{red}) 
+    &amp;\wedge&amp; \color{red}( \color{blue}( c \vee (a \wedge b) \wedge (c \vee c) \color{blue}) \color{red}) ]
+    &amp;&amp;\text{Distributivity 3 times} \\
+
+    &amp;=\color{red}( \color{blue}( a \vee (a \wedge b) \color{blue}) \wedge (a \vee c) \color{red})
+    &amp;\wedge&amp; [ \color{red}( \color{blue}( b \vee (a \wedge b) \color{blue}) \wedge (b \vee c) \color{red}) 
+    &amp;\wedge&amp; \color{red}( \color{blue}( c \vee (a \wedge b) \wedge c \color{blue}) \color{red}) ]
+    &amp;&amp;\text{Idempotent} \\
+
+    &amp;=\color{red}( \color{blue}( a \vee (a \wedge b) \color{blue}) \wedge (a \vee c) \color{red})
+    &amp;\wedge&amp; [ \color{red}( \color{blue}( b \vee (b \wedge a) \color{blue}) \wedge (b \vee c) \color{red}) 
+    &amp;\wedge&amp; \color{red}( c \wedge \color{blue}( c \vee (a \wedge b) \color{blue}) \color{red}) ]
+    &amp;&amp;\text{Commutativity 2 times} \\
+
+    &amp;=\color{red}( a \wedge (a \vee c) \color{red})
+    &amp;\wedge&amp; [ \color{red}( b \wedge (b \vee c) \color{red}) 
+    &amp;\wedge&amp; \color{red}( c \wedge \color{blue}( c \vee (a \wedge b)  \color{blue}) \color{red}) ]
+    &amp;&amp;\text{Absorption 2 times} \\
+
+    &amp;=a \wedge (b \wedge c)
+    &amp;&amp;
+    &amp;&amp;
+    &amp;&amp;\text{Absorption 3 times}
+\end{align}\]
+
+<p>The proof for the associativity of $\vee$ is identical.</p>
+
+<p>$(a \vee b) \vee c \quad = \quad a \vee (b \vee c)$</p>
+
+\[\begin{align}
+    &amp;(a \vee b) \vee c 
+    &amp;&amp;
+    &amp;&amp;
+    &amp;&amp; \\
+
+    &amp;=[\color{red}(a \vee \color{blue}(a \wedge (b \vee c)\color{blue}) \color{red}) 
+    &amp;\vee&amp; \color{red}(b \vee (b \wedge a)\color{red})] 
+    &amp;\vee&amp; \color{red}(c \vee (c \wedge a)\color{red})   
+    &amp;&amp;\text{Absorption 3 times} \\
+    
+    &amp;=[\color{red}(a \vee \color{blue}(a \wedge (b \vee c)\color{blue}) \color{red}) 
+    &amp;\vee&amp; \color{red}( \color{blue}(b \wedge (b \vee c)\color{blue}) \vee (b \wedge a)\color{red})] 
+    &amp;\vee&amp; \color{red}(\color{blue}(c \wedge (c \vee b)\color{blue}) \vee (c \wedge a)\color{red})
+    &amp;&amp;\text{Absorption 2 times} \\
+
+    &amp;=[\color{red}(a \vee \color{blue}(a \wedge (b \vee c)\color{blue}) \color{red}) 
+    &amp;\vee&amp; \color{red}( (b \wedge a) \vee \color{blue}(b \wedge (b \vee c)\color{blue}) \color{red})]
+    &amp;\vee&amp; \color{red}( (c \wedge a) \vee \color{blue}(c \wedge (b \vee c)\color{blue})\color{red})
+    &amp;&amp;\text{Commutativity 3 times} \\
+
+    &amp;=[\color{red}( (a \wedge a) \vee \color{blue}(a \wedge (b \vee c)\color{blue}) \color{red}) 
+    &amp;\vee&amp; \color{red}( (b \wedge a) \vee \color{blue}(b \wedge (b \vee c)\color{blue}) \color{red})]
+    &amp;\vee&amp; \color{red}( (c \wedge a) \vee \color{blue}(c \wedge (b \vee c)\color{blue})\color{red})
+    &amp;&amp;\text{Idempotent} \\
+
+    &amp;=[\color{red}( a \wedge \color{blue}(a \vee (b \vee c)\color{blue}) \color{red})
+    &amp;\vee&amp; \color{red}( b \wedge \color{blue}(a \vee (b \vee c)\color{blue}) \color{red})]
+    &amp;\vee&amp; \color{red}( c \wedge \color{blue}(a \vee (b \vee c)\color{blue}) \color{red})
+    &amp;&amp;\text{Distributivity 3 times} \\
+
+    &amp;=[(a \vee b) \wedge \color{blue}(a \vee (b \vee c)\color{blue})] 
+    &amp;&amp;
+    &amp;\vee&amp; \color{red}( c \wedge \color{blue}(a \vee (b \vee c)\color{blue}) \color{red})
+    &amp;&amp;\text{Distributivity} \\
+
+    &amp;=\color{blue}( (a \vee b) \vee c \color{blue}) \wedge \color{blue}( a \vee (b \vee c) \color{blue})
+    &amp;&amp;
+    &amp;&amp;
+    &amp;&amp;\text{Distributivity} \\
+
+    &amp;=\color{red}( \color{blue}((a \vee b) \vee c\color{blue}) \wedge a \color{red}) 
+    &amp;\vee&amp; [ \color{blue}((a \vee b) \vee c\color{blue}) \wedge (b \vee c)]
+    &amp;&amp;
+    &amp;&amp;\text{Distributivity} \\
+
+    &amp;=\color{red}( \color{blue}( (a \vee b) \vee c \color{blue}) \wedge a \color{red})
+    &amp;\vee&amp; [ \color{red}( \color{blue}( (a \vee b) \vee c \color{blue}) \wedge b \color{red}) 
+    &amp;\vee&amp; \color{red}( \color{blue}( (a \vee b) \vee c \color{blue}) \wedge c \color{red}) ]
+    &amp;&amp;\text{Distributivity} \\
+
+    &amp;=\color{red}( a \wedge \color{blue}( (a \vee b) \vee c \color{blue}) \color{red})
+    &amp;\vee&amp; [ \color{red}( b \wedge \color{blue}( (a \vee b) \vee c \color{blue}) \color{red}) 
+    &amp;\vee&amp; \color{red}( c \wedge \color{blue}( (a \vee b) \vee c \color{blue}) \color{red}) ]
+    &amp;&amp;\text{Commutativity 3 times} \\
+
+    &amp;=\color{red}( \color{blue}( a \wedge (a \vee b) \color{blue}) \vee (a \wedge c) \color{red})
+    &amp;\vee&amp; [ \color{red}( \color{blue}( b \wedge (a \vee b) \color{blue}) \vee (b \wedge c) \color{red}) 
+    &amp;\vee&amp; \color{red}( \color{blue}( c \wedge (a \vee b) \vee (c \wedge c) \color{blue}) \color{red}) ]
+    &amp;&amp;\text{Distributivity 3 times} \\
+
+    &amp;=\color{red}( \color{blue}( a \wedge (a \vee b) \color{blue}) \vee (a \wedge c) \color{red})
+    &amp;\vee&amp; [ \color{red}( \color{blue}( b \wedge (a \vee b) \color{blue}) \vee (b \wedge c) \color{red}) 
+    &amp;\vee&amp; \color{red}( \color{blue}( c \wedge (a \vee b) \vee c \color{blue}) \color{red}) ]
+    &amp;&amp;\text{Idempotent} \\
+
+    &amp;=\color{red}( \color{blue}( a \wedge (a \vee b) \color{blue}) \vee (a \wedge c) \color{red})
+    &amp;\vee&amp; [ \color{red}( \color{blue}( b \wedge (b \vee a) \color{blue}) \vee (b \wedge c) \color{red}) 
+    &amp;\vee&amp; \color{red}( c \vee \color{blue}( c \wedge (a \vee b) \color{blue}) \color{red}) ]
+    &amp;&amp;\text{Commutativity 2 times} \\
+
+    &amp;=\color{red}( a \vee (a \wedge c) \color{red})
+    &amp;\vee&amp; [ \color{red}( b \vee (b \wedge c) \color{red}) 
+    &amp;\vee&amp; \color{red}( c \vee \color{blue}( c \wedge (a \vee b)  \color{blue}) \color{red}) ]
+    &amp;&amp;\text{Absorption 2 times} \\
+
+    &amp;=a \vee (b \vee c)
+    &amp;&amp;
+    &amp;&amp;
+    &amp;&amp;\text{Absorption 3 times}
+\end{align}\]
+
+<p>Now, in future proofs, if we have $(a \wedge b) \wedge c$ we can instead write $a \wedge b \wedge c$ without ambiguity. Likewise for $\vee$.</p>
 
   </div>
   

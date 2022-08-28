@@ -2,7 +2,7 @@
 layout: post
 title:  "Commutativity and Associativity Continued"
 date:   2022-08-25
-chapter: 8
+part: 8
 categories: boolean-algebra
 ---
 

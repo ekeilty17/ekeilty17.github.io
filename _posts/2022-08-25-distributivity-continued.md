@@ -2,7 +2,7 @@
 layout: post
 title:  "Distributivity Continued"
 date:   2022-08-24
-chapter: 9
+part: 9
 categories: boolean-algebra
 ---
 

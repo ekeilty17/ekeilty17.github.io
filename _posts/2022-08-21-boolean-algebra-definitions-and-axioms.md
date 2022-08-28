@@ -2,7 +2,7 @@
 layout: post
 title:  "Boolean Algebra Definitions and Axioms"
 date:   2022-08-21
-chapter: 0
+part: 0
 categories: boolean-algebra
 ---
 

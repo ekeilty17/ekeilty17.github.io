@@ -2,7 +2,7 @@
 layout: post
 title:  "Specialization and Generalization"
 date:   2022-08-23
-chapter: 4
+part: 4
 categories: boolean-algebra
 ---
 

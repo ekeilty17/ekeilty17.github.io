@@ -2,7 +2,7 @@
 layout: post
 title:  "Operation Identities"
 date:   2022-08-24
-chapter: 6
+part: 6
 categories: boolean-algebra
 ---
 

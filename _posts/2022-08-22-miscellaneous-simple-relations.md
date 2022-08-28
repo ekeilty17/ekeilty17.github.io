@@ -2,7 +2,7 @@
 layout: post
 title:  "Miscellaneous Simple Relations"
 date:   2022-08-22
-chapter: 1
+part: 1
 categories: boolean-algebra
 ---
 
