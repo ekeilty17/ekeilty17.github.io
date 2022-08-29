@@ -1,9 +1,12 @@
 ---
-layout: post
-title:  "Absorption and Simplification"
-date:   2022-08-23
-part: 2
-categories: boolean-algebra
+layout:     series
+title:      "Absorption and Simplification"
+date:       2022-08-23
+categories: blog boolean-algebra
+permalink:  ":categories/:title/"
+part:       2
+series:     boolean-algebra
+tags:       boolean algebra, absorption, simplification
 ---
 
 ## Absorption

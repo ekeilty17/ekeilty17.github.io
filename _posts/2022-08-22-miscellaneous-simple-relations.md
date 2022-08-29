@@ -1,9 +1,12 @@
 ---
-layout: post
-title:  "Miscellaneous Simple Relations"
-date:   2022-08-22
-part: 1
-categories: boolean-algebra
+layout:     series
+title:      "Miscellaneous Simple Relations"
+date:       2022-08-22
+categories: blog boolean-algebra
+permalink:  ":categories/:title/"
+part:       1
+series:     boolean-algebra
+tags:       boolean algebra, universal bound, idempotent, reflexive, identity
 ---
 
 ## Universal Bound / Null Element / Base

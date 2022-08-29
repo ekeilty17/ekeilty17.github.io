@@ -15,7 +15,7 @@ tagline: "Aspiring Amature Mathematician"
 description: "Software Engineer/Aspiring Amature Mathematician"
 email: epkeilty@gmail.com
 baseurl: "" # the subpath of your site, e.g. /blog
-url: http://www.erickeilty.com
+url: "" #http://www.erickeilty.com
 shorturl: erickeilty.com
 github_username: ekeilty17
 paginate: 1

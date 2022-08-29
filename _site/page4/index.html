@@ -107,7 +107,15 @@
             
                 
                 <li class="sidebar-nav-item">
-                    <a href="/archive/">Archive</a>
+                    <a href="/blog/">Archive</a>
+                </li>
+                
+            
+          
+            
+                
+                <li class="sidebar-nav-item">
+                    <a href="/blog/boolean-algebra/">Boolean Algebra Series</a>
                 </li>
                 
             
@@ -118,34 +126,6 @@
           
             
           
-            
-          
-            
-                
-            
-          
-            
-                
-            
-          
-            
-                
-            
-          
-            
-                
-            
-          
-            
-                
-            
-          
-            
-                
-            
-          
-            
-                
             
           
             
@@ -215,93 +195,42 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/boolean-algebra/2022/08/26/transitivity/">
-        Transitivity
+      <a href="/blog/boolean-algebra/specialization-and-generalization/">
+        Specialization and Generalization
       </a>
     </h1>
 
-    <span class="post-date">26 Aug 2022</span>
+    <span class="post-date">25 Aug 2022</span>
 
-    <p>$(a \wedge b) \wedge (b \wedge c) \quad \implies \quad (a \wedge c)$</p>
+    <p>Here, we are going to emplore a different style of proof. In all previous proofs we had an expression of the form $\text{LHS} = \text{RHS}$. We then start with the $\text{LHS}$ at the top and arrive at the $\text{RHS}$ at the bottom. In these expressions, there is are equals sign. Instead, we are going to start with the entire expression at the top and arrive at $\color{green}T$ at the bottom. Since the original statement is equivalent to $\color{green}T$, it must be a true expression.</p>
+
+<p>Similar to Absorption, these relations may seem simple and abscure, but they turn out to be very useful in practice.</p>
+
+<h2 id="specialization">Specialization</h2>
+
+<p>$(a \wedge b) \implies a$</p>
 
 \[\begin{align}
-    &amp;(a \wedge b) \wedge (b \wedge c)       &amp;&amp; \\
-    &amp;= (a \wedge c) \wedge (b \wedge b)     &amp;&amp;\text{Associativity and Commutativity} \\
-    &amp;\implies (a \wedge c)                  &amp;&amp;\text{Specialization}
+    &amp;(a \wedge b) \implies a \\
+    &amp;= (\overline{a \wedge b}) \vee a                                           &amp;&amp;\text{Material Implication} \\
+    &amp;= (\overline{a \wedge b}) \vee (a \wedge \color{green}T)                   &amp;&amp;\text{Identity} \\
+    &amp;= (\overline{a \wedge b}) \vee (a \wedge (b \vee \overline{b}))            &amp;&amp;\text{Excluded Middle} \\
+    &amp;= (\overline{a \wedge b}) \vee ((a \wedge b) \vee (a \wedge \overline{b})) &amp;&amp;\text{Distributivity} \\
+    &amp;= ((\overline{a \wedge b}) \vee (a \wedge b)) \vee (a \wedge \overline{b}) &amp;&amp;\text{Associativity} \\
+    &amp;= \color{green}T \vee (a \wedge \overline{b})                              &amp;&amp;\text{Associativity} \\
+    &amp;= \color{green}T                                                           &amp;&amp;\text{Base}
 \end{align}\]
 
-<p>$(a \implies b) \wedge (b \implies c) \quad \implies \quad (a \implies c)$</p>
+<h2 id="generalization">Generalization</h2>
+
+<p>$a \implies (a \vee b)$</p>
 
 \[\begin{align}
-    &amp;(a \implies b) \wedge (b \implies c)
-    &amp;&amp; \\
-
-    &amp;= (\overline{a} \vee b) \wedge (\overline{b} \vee c)
-    &amp;&amp;\text{Material Implication} \\
-
-    &amp;= (\overline{a} \wedge \overline{b}) \vee (\overline{a} \wedge c) \vee (b \wedge \overline{b}) \vee (b \wedge c)
-    &amp;&amp;\text{Distributivity and Associativity} \\
-
-    &amp;= (\overline{a} \wedge \overline{b}) \vee (\overline{a} \wedge c) \vee \color{red}F \vee (b \wedge c)
-    &amp;&amp;\text{Noncontradiction} \\
-
-    &amp;= (\overline{a} \wedge \overline{b}) \vee (\overline{a} \wedge c) \vee (b \wedge c)
-    &amp;&amp;\text{Identity} \\
-
-    &amp;= (\overline{a} \wedge \overline{b}) \vee (\overline{a} \wedge c) \vee (b \wedge (c \wedge (c \vee \overline{b})))
-    &amp;&amp;\text{Absportion} \\
-
-    &amp;= (\overline{a} \wedge \overline{b}) \vee (\overline{a} \wedge c) \vee ((b \wedge c) \wedge (\overline{b} \vee c))
-    &amp;&amp;\text{Associativity and Commutativity} \\
-
-    &amp;= (\overline{a} \wedge (\overline{b} \vee c)) \vee ((b \wedge c) \wedge (\overline{b} \vee c))
-    &amp;&amp;\text{Distributivity} \\
-
-    &amp;= (\overline{a} \vee (b \wedge c)) \wedge (\overline{b} \vee c)
-    &amp;&amp;\text{Distributivity} \\
-
-    &amp;= (\overline{a} \vee b) \wedge (\overline{a} \vee c) \wedge (\overline{b} \vee c)
-    &amp;&amp;\text{Distributivity and Associativity} \\
-
-    &amp;\implies (\overline{a} \vee c)
-    &amp;&amp;\text{Specialization} \\
-
-    &amp;= (a \implies c)
-    &amp;&amp;\text{Material Implication} \\
-\end{align}\]
-
-<p>$(a = b) \wedge (b = c) \quad \implies \quad (a = c)$</p>
-
-\[\begin{align}
-    &amp;(a = b) \wedge (b = c)       &amp;&amp; \\
-    &amp;= ((a \implies b) \wedge (a \impliedby b)) \wedge ((b \implies c) \wedge (b \impliedby c)) &amp;&amp;\text{Double Implication} \\
-    &amp;= ((a \implies b) \wedge (b \implies a)) \wedge ((b \implies c) \wedge (c \implies b)) &amp;&amp;\text{Mirror 2 times} \\
-    &amp;= ((a \implies b) \wedge (b \implies c)) \wedge ((c \implies b) \wedge (b \implies a)) &amp;&amp;\text{Associativity and Commutativity of} \ \wedge \\
-    &amp;= (a \implies c) \wedge (c \implies a) &amp;&amp;\text{Transitivity of } \ \implies \\
-    &amp;= (a \implies c) \wedge (a \impliedby c) &amp;&amp;\text{Mirror} \\
-    &amp;= (a = c) &amp;&amp;\text{Double Implication} \\
-\end{align}\]
-
-<p>$(a \implies b) \wedge (b = c) \quad \implies \quad (a \implies c)$</p>
-
-\[\begin{align}
-    &amp;(a \implies b) \wedge (b = c)                                      &amp;&amp; \\
-    &amp;= (a \implies b) \wedge ((b \implies c) \wedge (b \impliedby c))   &amp;&amp;\text{Double Implication} \\
-    &amp;= (a \implies b) \wedge ((b \implies c) \wedge (c \implies b))     &amp;&amp;\text{Mirror} \\
-    &amp;= ((a \implies b) \wedge (b \implies c)) \wedge (c \implies b)     &amp;&amp;\text{Associativity} \\
-    &amp;\implies (a \implies c) \wedge (c \implies b)                      &amp;&amp;\text{Transitivity of } \ \implies \\
-    &amp;\implies (a \implies c)                                            &amp;&amp;\text{Specialization}
-\end{align}\]
-
-<p>$(a = b) \wedge (b \implies c) \quad \implies \quad (a \implies c)$</p>
-
-\[\begin{align}
-    &amp;(a = b) \wedge (b \implies c)                                      &amp;&amp; \\
-    &amp;= ((a \implies b) \wedge (a \impliedby b)) \wedge (b \implies c)   &amp;&amp;\text{Double Implication} \\
-    &amp;= ((a \implies b) \wedge (b \implies a)) \wedge (b \implies c)     &amp;&amp;\text{Mirror} \\
-    &amp;= (b \implies a) \wedge ((a \implies b) \wedge (b \implies c))     &amp;&amp;\text{Commutativity and Associativity} \\
-    &amp;\implies (b \implies a) \wedge (a \implies c)                      &amp;&amp;\text{Transitivity of } \ \implies \\
-    &amp;\implies (a \implies c)                                            &amp;&amp;\text{Specialization}
+    &amp;a \implies (a \vee b) \\
+    &amp;= \overline{a} \vee (a \vee b)     &amp;&amp;\text{Material Implication} \\
+    &amp;= (\overline{a} \vee a) \vee b     &amp;&amp;\text{Associativity} \\
+    &amp;= \color{green}T \vee b            &amp;&amp;\text{Excluded Middle} \\
+    &amp;= \color{green}T                   &amp;&amp;\text{Base}
 \end{align}\]
 
   </div>
