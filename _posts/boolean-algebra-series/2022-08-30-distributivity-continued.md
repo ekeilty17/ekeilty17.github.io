@@ -1,10 +1,12 @@
 ---
-layout: post
-title:  "Distributivity Continued"
-date:   2022-08-24
-part: 9
+layout:     series
+title:      "Distributivity Continued"
+date:       2022-08-30
 categories: blog boolean-algebra
-permalink: ":categories/:title/"
+permalink:  ":categories/:title/"
+part:       9
+series:     boolean-algebra
+tags:       boolean algebra, distributivity
 ---
 
 $a \wedge (b \wedge c) \quad = \quad (a \wedge b) \wedge (a \wedge c)$

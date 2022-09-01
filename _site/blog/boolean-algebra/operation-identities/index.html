@@ -15,20 +15,22 @@
   </title>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/poole.css">
-  <link rel="stylesheet" href="/public/css/syntax.css">
-  <link rel="stylesheet" href="/public/css/hyde.css">
-  <link rel="stylesheet" href="/public/css/custom.css">
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
 
-  <!-- Icons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="public/favicon/terminal/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="public/favicon/terminal/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="public/favicon/terminal/favicon-16x16.png">
-  <link rel="manifest" href="public/favicon/terminal/site.webmanifest">
-  <link rel="mask-icon" href="public/favicon/terminal/safari-pinned-tab.svg" color="#5bbad5">
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
   <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
   <meta name="theme-color" content="#ffffff">
 
   <!-- RSS 
@@ -55,10 +57,26 @@
 
   <body>
     
-    <div class="series">
-        <h1 class="series-title">Operation Identities</h1>
-        <span class="series-date">27 Aug 2022</span>
-        <p>With the completion of De Morgan’s Law, we have proven most of the fundametal boolean algebra laws. Now, we will continue to some more practical laws that will help to speed up future proofs. This section essentially proves all of the things we intuitively know to be true.</p>
+    <div class="content container">
+
+        <div class="masthead">
+    <h3 class="masthead-title">
+    <a href="/" title="Home">Eric Keilty</a>
+
+    
+        &nbsp;&nbsp;&nbsp;<small><a href="/about">About</a></small>
+    
+        &nbsp;&nbsp;&nbsp;<small><a href="/archive">Archive</a></small>
+    
+
+    </h3>
+</div>
+
+        <div class="post">
+            <h1 class="post-title">Operation Identities</h1>
+            <!-- <span class="series-date">27 Aug 2022</span> -->
+            <time datetime="2022-08-27T00:00:00-04:00" class="post-date">27 Aug 2022</time>
+            <p>With the completion of De Morgan’s Law, we have proven most of the fundametal boolean algebra laws. Now, we will continue to some more practical laws that will help to speed up future proofs. This section essentially proves all of the things we intuitively know to be true.</p>
 
 <h2 id="double-negation">Double Negation</h2>
 
@@ -173,23 +191,24 @@
     &amp;= (a = \overline{b})                                                           &amp;&amp;\text{Double Implication}
 \end{align}\]
 
-    </div>
+        </div>
 
-    <!-- Adding the ability to move between parts of the series -->
-    
-    
-    
+        <!-- Adding the ability to move between parts of the series -->
+        
+        
+        
 
-    
-    
-    
-    <div class="pagination">
-        
-            <a class="pagination-item older" href="/blog/boolean-algebra/de-morgans-law/">Previous</a>
         
         
-            <a class="pagination-item newer" href="/blog/boolean-algebra/proof-identities/">Next</a>
         
+        <div class="pagination">
+            
+                <a class="pagination-item older" href="/blog/boolean-algebra/de-morgans-law/">Previous</a>
+            
+            
+                <a class="pagination-item newer" href="/blog/boolean-algebra/proof-identities/">Next</a>
+            
+        </div>
     </div>
     
   </body>

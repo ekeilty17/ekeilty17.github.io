@@ -1,10 +1,12 @@
 ---
-layout: post
-title:  "Miscellaneous"
-date:   2022-08-26
-part: 13
+layout:     post
+title:      "Miscellaneous"
+date:       2022-09-03
 categories: blog boolean-algebra
-permalink: ":categories/:title/"
+permalink:  ":categories/:title/"
+part:       13
+series:     boolean-algebra
+tags:       boolean algebra, inclusion, discharge, portation, conflation
 ---
 
 ## Inclusion

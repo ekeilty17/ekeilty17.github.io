@@ -1,10 +1,12 @@
 ---
-layout: post
-title:  "Consensus and Resolution"
-date:   2022-08-26
-part: 12
+layout:     series
+title:      "Consensus and Resolution"
+date:       2022-09-02
 categories: blog boolean-algebra
-permalink: ":categories/:title/"
+permalink:  ":categories/:title/"
+part:       12
+series:     boolean-algebra
+tags:       boolean algebra, consensus theorem, resolution
 ---
 
 ## The Consensus Theorem

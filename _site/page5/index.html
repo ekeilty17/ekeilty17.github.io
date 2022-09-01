@@ -15,20 +15,22 @@
   </title>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/poole.css">
-  <link rel="stylesheet" href="/public/css/syntax.css">
-  <link rel="stylesheet" href="/public/css/hyde.css">
-  <link rel="stylesheet" href="/public/css/custom.css">
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
 
-  <!-- Icons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="public/favicon/terminal/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="public/favicon/terminal/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="public/favicon/terminal/favicon-16x16.png">
-  <link rel="manifest" href="public/favicon/terminal/site.webmanifest">
-  <link rel="mask-icon" href="public/favicon/terminal/safari-pinned-tab.svg" color="#5bbad5">
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
   <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
   <meta name="theme-color" content="#ffffff">
 
   <!-- RSS 
@@ -107,7 +109,7 @@
             
                 
                 <li class="sidebar-nav-item">
-                    <a href="/blog/">Archive</a>
+                    <a href="/blog/">Blog Archive</a>
                 </li>
                 
             
@@ -126,6 +128,26 @@
           
             
           
+            
+          
+            
+                
+            
+          
+            
+                
+            
+          
+            
+                
+            
+          
+            
+                
+            
+          
+            
+                
             
           
             
@@ -195,186 +217,81 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/blog/boolean-algebra/associativity/">
-        Associativity
+      <a href="/blog/boolean-algebra/proof-identities/">
+        Proof Identities
       </a>
     </h1>
 
-    <span class="post-date">24 Aug 2022</span>
+    <span class="post-date">28 Aug 2022</span>
 
-    <p>This is a very tedious proof. If you really want to understand it, I would recommend writing it out for yourself. I have added colored parenthesis to help keep track of the nested levels. Essentially, it makes clever use of distributivity and timely commutativity.</p>
+    <h2 id="direct-proofs">Direct Proofs</h2>
 
-<p>$(a \wedge b) \wedge c \quad = \quad a \wedge (b \wedge c)$</p>
+<p>These date back to as early as Aristotle and are very well known syllogisms.</p>
 
-\[\begin{align}
-    &amp;(a \wedge b) \wedge c 
-    &amp;&amp;
-    &amp;&amp;
-    &amp;&amp; \\
+<h3 id="modus-ponens">Modus Ponens</h3>
 
-    &amp;=[\color{red}(a \wedge \color{blue}(a \vee (b \wedge c)\color{blue}) \color{red}) 
-    &amp;\wedge&amp; \color{red}(b \wedge (b \vee a)\color{red})] 
-    &amp;\wedge&amp; \color{red}(c \wedge (c \vee a)\color{red})   
-    &amp;&amp;\text{Absorption 3 times} \\
-    
-    &amp;=[\color{red}(a \wedge \color{blue}(a \vee (b \wedge c)\color{blue}) \color{red}) 
-    &amp;\wedge&amp; \color{red}( \color{blue}(b \vee (b \wedge c)\color{blue}) \wedge (b \vee a)\color{red})] 
-    &amp;\wedge&amp; \color{red}(\color{blue}(c \vee (c \wedge b)\color{blue}) \wedge (c \vee a)\color{red})
-    &amp;&amp;\text{Absorption 2 times} \\
+<p>“Modus Ponens” is Latin for “method of affirming” and is also known as “affirming the consequent”.</p>
 
-    &amp;=[\color{red}(a \wedge \color{blue}(a \vee (b \wedge c)\color{blue}) \color{red}) 
-    &amp;\wedge&amp; \color{red}( (b \vee a) \wedge \color{blue}(b \vee (b \wedge c)\color{blue}) \color{red})]
-    &amp;\wedge&amp; \color{red}( (c \vee a) \wedge \color{blue}(c \vee (b \wedge c)\color{blue})\color{red})
-    &amp;&amp;\text{Commutativity 3 times} \\
-
-    &amp;=[\color{red}( (a \vee a) \wedge \color{blue}(a \vee (b \wedge c)\color{blue}) \color{red}) 
-    &amp;\wedge&amp; \color{red}( (b \vee a) \wedge \color{blue}(b \vee (b \wedge c)\color{blue}) \color{red})]
-    &amp;\wedge&amp; \color{red}( (c \vee a) \wedge \color{blue}(c \vee (b \wedge c)\color{blue})\color{red})
-    &amp;&amp;\text{Idempotent} \\
-
-    &amp;=[\color{red}( a \vee \color{blue}(a \wedge (b \wedge c)\color{blue}) \color{red})
-    &amp;\wedge&amp; \color{red}( b \vee \color{blue}(a \wedge (b \wedge c)\color{blue}) \color{red})]
-    &amp;\wedge&amp; \color{red}( c \vee \color{blue}(a \wedge (b \wedge c)\color{blue}) \color{red})
-    &amp;&amp;\text{Distributivity 3 times} \\
-
-    &amp;=[(a \wedge b) \vee \color{blue}(a \wedge (b \wedge c)\color{blue})] 
-    &amp;&amp;
-    &amp;\wedge&amp; \color{red}( c \vee \color{blue}(a \wedge (b \wedge c)\color{blue}) \color{red})
-    &amp;&amp;\text{Distributivity} \\
-
-    &amp;=\color{blue}( (a \wedge b) \wedge c \color{blue}) \vee \color{blue}( a \wedge (b \wedge c) \color{blue})
-    &amp;&amp;
-    &amp;&amp;
-    &amp;&amp;\text{Distributivity} \\
-
-    &amp;=\color{red}( \color{blue}((a \wedge b) \wedge c\color{blue}) \vee a \color{red}) 
-    &amp;\wedge&amp; [ \color{blue}((a \wedge b) \wedge c\color{blue}) \vee (b \wedge c)]
-    &amp;&amp;
-    &amp;&amp;\text{Distributivity} \\
-
-    &amp;=\color{red}( \color{blue}( (a \wedge b) \wedge c \color{blue}) \vee a \color{red})
-    &amp;\wedge&amp; [ \color{red}( \color{blue}( (a \wedge b) \wedge c \color{blue}) \vee b \color{red}) 
-    &amp;\wedge&amp; \color{red}( \color{blue}( (a \wedge b) \wedge c \color{blue}) \vee c \color{red}) ]
-    &amp;&amp;\text{Distributivity} \\
-
-    &amp;=\color{red}( a \vee \color{blue}( (a \wedge b) \wedge c \color{blue}) \color{red})
-    &amp;\wedge&amp; [ \color{red}( b \vee \color{blue}( (a \wedge b) \wedge c \color{blue}) \color{red}) 
-    &amp;\wedge&amp; \color{red}( c \vee \color{blue}( (a \wedge b) \wedge c \color{blue}) \color{red}) ]
-    &amp;&amp;\text{Commutativity 3 times} \\
-
-    &amp;=\color{red}( \color{blue}( a \vee (a \wedge b) \color{blue}) \wedge (a \vee c) \color{red})
-    &amp;\wedge&amp; [ \color{red}( \color{blue}( b \vee (a \wedge b) \color{blue}) \wedge (b \vee c) \color{red}) 
-    &amp;\wedge&amp; \color{red}( \color{blue}( c \vee (a \wedge b) \wedge (c \vee c) \color{blue}) \color{red}) ]
-    &amp;&amp;\text{Distributivity 3 times} \\
-
-    &amp;=\color{red}( \color{blue}( a \vee (a \wedge b) \color{blue}) \wedge (a \vee c) \color{red})
-    &amp;\wedge&amp; [ \color{red}( \color{blue}( b \vee (a \wedge b) \color{blue}) \wedge (b \vee c) \color{red}) 
-    &amp;\wedge&amp; \color{red}( \color{blue}( c \vee (a \wedge b) \wedge c \color{blue}) \color{red}) ]
-    &amp;&amp;\text{Idempotent} \\
-
-    &amp;=\color{red}( \color{blue}( a \vee (a \wedge b) \color{blue}) \wedge (a \vee c) \color{red})
-    &amp;\wedge&amp; [ \color{red}( \color{blue}( b \vee (b \wedge a) \color{blue}) \wedge (b \vee c) \color{red}) 
-    &amp;\wedge&amp; \color{red}( c \wedge \color{blue}( c \vee (a \wedge b) \color{blue}) \color{red}) ]
-    &amp;&amp;\text{Commutativity 2 times} \\
-
-    &amp;=\color{red}( a \wedge (a \vee c) \color{red})
-    &amp;\wedge&amp; [ \color{red}( b \wedge (b \vee c) \color{red}) 
-    &amp;\wedge&amp; \color{red}( c \wedge \color{blue}( c \vee (a \wedge b)  \color{blue}) \color{red}) ]
-    &amp;&amp;\text{Absorption 2 times} \\
-
-    &amp;=a \wedge (b \wedge c)
-    &amp;&amp;
-    &amp;&amp;
-    &amp;&amp;\text{Absorption 3 times}
-\end{align}\]
-
-<p>The proof for the associativity of $\vee$ is identical.</p>
-
-<p>$(a \vee b) \vee c \quad = \quad a \vee (b \vee c)$</p>
+<p>$(a \implies b) \wedge a \quad \implies \quad b$</p>
 
 \[\begin{align}
-    &amp;(a \vee b) \vee c 
-    &amp;&amp;
-    &amp;&amp;
-    &amp;&amp; \\
-
-    &amp;=[\color{red}(a \vee \color{blue}(a \wedge (b \vee c)\color{blue}) \color{red}) 
-    &amp;\vee&amp; \color{red}(b \vee (b \wedge a)\color{red})] 
-    &amp;\vee&amp; \color{red}(c \vee (c \wedge a)\color{red})   
-    &amp;&amp;\text{Absorption 3 times} \\
-    
-    &amp;=[\color{red}(a \vee \color{blue}(a \wedge (b \vee c)\color{blue}) \color{red}) 
-    &amp;\vee&amp; \color{red}( \color{blue}(b \wedge (b \vee c)\color{blue}) \vee (b \wedge a)\color{red})] 
-    &amp;\vee&amp; \color{red}(\color{blue}(c \wedge (c \vee b)\color{blue}) \vee (c \wedge a)\color{red})
-    &amp;&amp;\text{Absorption 2 times} \\
-
-    &amp;=[\color{red}(a \vee \color{blue}(a \wedge (b \vee c)\color{blue}) \color{red}) 
-    &amp;\vee&amp; \color{red}( (b \wedge a) \vee \color{blue}(b \wedge (b \vee c)\color{blue}) \color{red})]
-    &amp;\vee&amp; \color{red}( (c \wedge a) \vee \color{blue}(c \wedge (b \vee c)\color{blue})\color{red})
-    &amp;&amp;\text{Commutativity 3 times} \\
-
-    &amp;=[\color{red}( (a \wedge a) \vee \color{blue}(a \wedge (b \vee c)\color{blue}) \color{red}) 
-    &amp;\vee&amp; \color{red}( (b \wedge a) \vee \color{blue}(b \wedge (b \vee c)\color{blue}) \color{red})]
-    &amp;\vee&amp; \color{red}( (c \wedge a) \vee \color{blue}(c \wedge (b \vee c)\color{blue})\color{red})
-    &amp;&amp;\text{Idempotent} \\
-
-    &amp;=[\color{red}( a \wedge \color{blue}(a \vee (b \vee c)\color{blue}) \color{red})
-    &amp;\vee&amp; \color{red}( b \wedge \color{blue}(a \vee (b \vee c)\color{blue}) \color{red})]
-    &amp;\vee&amp; \color{red}( c \wedge \color{blue}(a \vee (b \vee c)\color{blue}) \color{red})
-    &amp;&amp;\text{Distributivity 3 times} \\
-
-    &amp;=[(a \vee b) \wedge \color{blue}(a \vee (b \vee c)\color{blue})] 
-    &amp;&amp;
-    &amp;\vee&amp; \color{red}( c \wedge \color{blue}(a \vee (b \vee c)\color{blue}) \color{red})
-    &amp;&amp;\text{Distributivity} \\
-
-    &amp;=\color{blue}( (a \vee b) \vee c \color{blue}) \wedge \color{blue}( a \vee (b \vee c) \color{blue})
-    &amp;&amp;
-    &amp;&amp;
-    &amp;&amp;\text{Distributivity} \\
-
-    &amp;=\color{red}( \color{blue}((a \vee b) \vee c\color{blue}) \wedge a \color{red}) 
-    &amp;\vee&amp; [ \color{blue}((a \vee b) \vee c\color{blue}) \wedge (b \vee c)]
-    &amp;&amp;
-    &amp;&amp;\text{Distributivity} \\
-
-    &amp;=\color{red}( \color{blue}( (a \vee b) \vee c \color{blue}) \wedge a \color{red})
-    &amp;\vee&amp; [ \color{red}( \color{blue}( (a \vee b) \vee c \color{blue}) \wedge b \color{red}) 
-    &amp;\vee&amp; \color{red}( \color{blue}( (a \vee b) \vee c \color{blue}) \wedge c \color{red}) ]
-    &amp;&amp;\text{Distributivity} \\
-
-    &amp;=\color{red}( a \wedge \color{blue}( (a \vee b) \vee c \color{blue}) \color{red})
-    &amp;\vee&amp; [ \color{red}( b \wedge \color{blue}( (a \vee b) \vee c \color{blue}) \color{red}) 
-    &amp;\vee&amp; \color{red}( c \wedge \color{blue}( (a \vee b) \vee c \color{blue}) \color{red}) ]
-    &amp;&amp;\text{Commutativity 3 times} \\
-
-    &amp;=\color{red}( \color{blue}( a \wedge (a \vee b) \color{blue}) \vee (a \wedge c) \color{red})
-    &amp;\vee&amp; [ \color{red}( \color{blue}( b \wedge (a \vee b) \color{blue}) \vee (b \wedge c) \color{red}) 
-    &amp;\vee&amp; \color{red}( \color{blue}( c \wedge (a \vee b) \vee (c \wedge c) \color{blue}) \color{red}) ]
-    &amp;&amp;\text{Distributivity 3 times} \\
-
-    &amp;=\color{red}( \color{blue}( a \wedge (a \vee b) \color{blue}) \vee (a \wedge c) \color{red})
-    &amp;\vee&amp; [ \color{red}( \color{blue}( b \wedge (a \vee b) \color{blue}) \vee (b \wedge c) \color{red}) 
-    &amp;\vee&amp; \color{red}( \color{blue}( c \wedge (a \vee b) \vee c \color{blue}) \color{red}) ]
-    &amp;&amp;\text{Idempotent} \\
-
-    &amp;=\color{red}( \color{blue}( a \wedge (a \vee b) \color{blue}) \vee (a \wedge c) \color{red})
-    &amp;\vee&amp; [ \color{red}( \color{blue}( b \wedge (b \vee a) \color{blue}) \vee (b \wedge c) \color{red}) 
-    &amp;\vee&amp; \color{red}( c \vee \color{blue}( c \wedge (a \vee b) \color{blue}) \color{red}) ]
-    &amp;&amp;\text{Commutativity 2 times} \\
-
-    &amp;=\color{red}( a \vee (a \wedge c) \color{red})
-    &amp;\vee&amp; [ \color{red}( b \vee (b \wedge c) \color{red}) 
-    &amp;\vee&amp; \color{red}( c \vee \color{blue}( c \wedge (a \vee b)  \color{blue}) \color{red}) ]
-    &amp;&amp;\text{Absorption 2 times} \\
-
-    &amp;=a \vee (b \vee c)
-    &amp;&amp;
-    &amp;&amp;
-    &amp;&amp;\text{Absorption 3 times}
+    &amp;(a \implies b) \wedge a            &amp;&amp; \\
+    &amp;= (\overline{a} \vee b) \wedge a   &amp;&amp;\text{Material Implication} \\
+    &amp;= a \wedge (\overline{a} \vee b)   &amp;&amp;\text{Commutativity} \\
+    &amp;= a \wedge b                       &amp;&amp;\text{Simplification} \\
+    &amp;\implies b                         &amp;&amp;\text{Specialization}
 \end{align}\]
 
-<p>Now, in future proofs, if we have $(a \wedge b) \wedge c$ we can instead write $a \wedge b \wedge c$ without ambiguity. Likewise for $\vee$.</p>
+<h3 id="modus-tollens">Modus Tollens</h3>
+
+<p>“Modus Tollens” is Latin for “method of denying” and is also known as “denying the consequent”.</p>
+
+<p>$(a \implies b) \wedge \overline{b} \quad \implies \quad \overline{a}$</p>
+
+\[\begin{align}
+    &amp;(a \implies b) \wedge \overline{b}             &amp;&amp; \\
+    &amp;= (\overline{a} \vee b) \wedge \overline{b}    &amp;&amp;\text{Material Implication} \\
+    &amp;= \overline{b} \wedge (b \vee \overline{a})    &amp;&amp;\text{Commutativity 2 times} \\
+    &amp;= \overline{b} \wedge \overline{a}             &amp;&amp;\text{Simplification} \\
+    &amp;\implies \overline{a}                          &amp;&amp;\text{Specialization}
+\end{align}\]
+
+<h3 id="dysjunctive-syllogism">Dysjunctive Syllogism</h3>
+
+<p>$(a \vee b) \wedge \overline{a} \quad \implies \quad b$</p>
+
+\[\begin{align}
+    &amp;(a \vee b) \wedge \overline{a}         &amp;&amp; \\
+    &amp;= \overline{a} \wedge (a \vee b)       &amp;&amp;\text{Commutativity} \\
+    &amp;= \overline{a} \wedge b                &amp;&amp;\text{Simplification} \\
+    &amp;\implies b                             &amp;&amp;\text{Specialization}
+\end{align}\]
+
+<h2 id="reductio-ad-adsurdum--proof-by-contradiction">Reductio ad Adsurdum / Proof by Contradiction</h2>
+
+<p>This is one of the most widely used proof methods. Now, we have a rigorous proof for it.</p>
+
+<p>$\overline{a} \implies \color{red}F \quad = \quad a$</p>
+
+\[\begin{align}
+    &amp;\overline{a} \implies \color{red}F     &amp;&amp; \\
+    &amp;= a \vee \color{red}F                  &amp;&amp;\text{Material Implication and Double Negation} \\
+    &amp;= a                                    &amp;&amp;\text{Identity}
+\end{align}\]
+
+<h2 id="contrapositive">Contrapositive</h2>
+
+<p>This can be extremely useful in some proofs.</p>
+
+<p>$(a \implies b) \quad = \quad (\overline{b} \implies \overline{a})$</p>
+
+\[\begin{align}
+    &amp;a \implies b                                   &amp;&amp; \\
+    &amp;= \overline{a} \vee b                          &amp;&amp;\text{Material Implication} \\
+    &amp;= b \vee \overline{a}                          &amp;&amp;\text{Commutativity} \\
+    &amp;= \overline{(\overline{b})} \vee \overline{a}  &amp;&amp;\text{Double Negation} \\
+    &amp;= \overline{b} \implies \overline{a}           &amp;&amp;\text{Material Implication}
+\end{align}\]
 
   </div>
   

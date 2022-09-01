@@ -217,107 +217,117 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/blog/boolean-algebra/distributivity-continued/">
-        Distributivity Continued
+      <a href="/blog/boolean-algebra/miscellaneous-simple-relations/">
+        Miscellaneous Simple Relations
       </a>
     </h1>
 
-    <span class="post-date">30 Aug 2022</span>
+    <span class="post-date">22 Aug 2022</span>
 
-    <p>$a \wedge (b \wedge c) \quad = \quad (a \wedge b) \wedge (a \wedge c)$</p>
+    <h2 id="universal-bound--null-element--base">Universal Bound / Null Element / Base</h2>
+
+<p>$a \wedge \color{red}F \quad = \quad \color{red}F$</p>
 
 \[\begin{align}
-    &amp;a \wedge (b \wedge c)                  &amp;&amp;\\
-    &amp;= (a \wedge a) \wedge (b \wedge c)     &amp;&amp;\text{Idempotent} \\
-    &amp;= (a \wedge b) \wedge (a \wedge c)     &amp;&amp;\text{Commutativity and Associativity}
+    &amp;a \wedge \color{red}F \\
+    &amp;= (a \wedge \color{red}F) \vee \color{red}F                &amp;&amp;\text{Identity} \\
+    &amp;= (a \wedge \color{red}F) \vee (a \wedge \overline{a})     &amp;&amp;\text{Noncontradiction} \\
+    &amp;= a \wedge (\color{red}F \vee \overline{a})                &amp;&amp;\text{Distributivity} \\
+    &amp;= a \wedge \overline{a}                                    &amp;&amp;\text{Identity} \\
+    &amp;= \color{red}F                                             &amp;&amp;\text{Noncontradiction}
 \end{align}\]
 
-<p>$a \vee (b \vee c) \quad = \quad (a \vee b) \vee (a \vee c)$</p>
+<p>$a \vee \color{green}T \quad = \quad \color{green}T$</p>
 
 \[\begin{align}
-    &amp;a \vee (b \vee c)              &amp;&amp;\\
-    &amp;= (a \vee a) \vee (b \vee c)   &amp;&amp;\text{Idempotent} \\
-    &amp;= (a \vee b) \vee (a \vee c)   &amp;&amp;\text{Commutativity and Associativity}
+    &amp;a \vee \color{green}T \\
+    &amp;= (a \vee \color{green}T) \wedge \color{red}F              &amp;&amp;\text{Identity} \\
+    &amp;= (a \vee \color{green}T) \wedge (a \vee \overline{a})     &amp;&amp;\text{Excluded Middle} \\
+    &amp;= a \vee (\color{green}T \wedge \overline{a})              &amp;&amp;\text{Distributivity} \\
+    &amp;= a \vee \overline{a}                                      &amp;&amp;\text{Identity} \\
+    &amp;= \color{green}T                                           &amp;&amp;\text{Excluded Middle}
 \end{align}\]
 
-<p>$a \implies (b \wedge c) \quad = \quad (a \implies b) \wedge (a \implies c)$</p>
+<p>$\color{red}F \implies a \quad = \quad \color{green}T$</p>
 
 \[\begin{align}
-    &amp;a \implies (b \wedge c)                                &amp;&amp; \\
-    &amp;= \overline{a} \vee (b \wedge c)                       &amp;&amp;\text{Material Implication} \\
-    &amp;= (\overline{a} \vee b) \wedge (\overline{a} \vee c)   &amp;&amp;\text{Distributivity} \\
-    &amp;= (a \implies b) \wedge (a \implies c)                 &amp;&amp;\text{Material Implication 2 times}
+    &amp;\color{red}F \implies a \\
+    &amp;= \overline{\color{red}F} \vee a   &amp;&amp;\text{Material Implication} \\
+    &amp;= \color{green}T \vee a            &amp;&amp;\text{Definition of negation} \\
+    &amp;= a \vee \color{green}T            &amp;&amp;\text{Commutativity} \\
+    &amp;= \color{green}T                   &amp;&amp;\text{Base}
 \end{align}\]
 
-<p>$a \implies (b \vee c) \quad = \quad (a \implies b) \vee (a \implies c)$</p>
+<p>$a \implies \color{green}T \quad = \quad \color{green}T$</p>
 
 \[\begin{align}
-    &amp;a \implies (b \vee c)                              &amp;&amp; \\
-    &amp;= \overline{a} \vee (b \vee c)                     &amp;&amp;\text{Material Implication} \\
-    &amp;= (\overline{a} \vee b) \vee (\overline{a} \vee c) &amp;&amp;\text{Distributivity} \\
-    &amp;= (a \implies b) \vee (a \implies c)               &amp;&amp;\text{Material Implication 2 times}
+    &amp;a \implies \color{green}T \\
+    &amp;= \overline{a} \vee \color{green}T     &amp;&amp;\text{Material Implication} \\
+    &amp;= \color{green}T                       &amp;&amp;\text{Base}
 \end{align}\]
 
-<p>$(a \wedge b) \implies c \quad = \quad (a \implies c) \vee (b \implies c)$</p>
+<h2 id="idempotent">Idempotent</h2>
+
+<p>$a \wedge a \quad = \quad a$</p>
 
 \[\begin{align}
-    &amp;(a \wedge b) \implies c                            &amp;&amp; \\
-    &amp;= (\overline{a \wedge b}) \vee c                   &amp;&amp;\text{Material Implication} \\
-    &amp;= (\overline{a} \vee \overline{b}) \vee c          &amp;&amp;\text{De Morgan's Law} \\
-    &amp;= (\overline{a} \vee c) \vee (\overline{b} \vee c) &amp;&amp;\text{Distributivity} \\
-    &amp;= (a \implies c) \vee (b \implies c)               &amp;&amp;\text{Material Implication 2 times}
+    &amp;a \wedge a \\
+    &amp;= (a \wedge a) \vee \color{green}T             &amp;&amp;\text{Identity} \\
+    &amp;= (a \wedge a) \vee (a \wedge \overline{a})    &amp;&amp;\text{Noncontradiction} \\
+    &amp;= a \wedge (a \vee \overline{a})               &amp;&amp;\text{Distributivity} \\
+    &amp;= a \wedge \color{green}T                      &amp;&amp;\text{Noncontradiction} \\
+    &amp;= a                                            &amp;&amp;\text{Identity}
 \end{align}\]
 
-<p>$(a \vee b) \implies c \quad = \quad (a \implies c) \wedge (b \implies c)$</p>
+<p>$a \vee a \quad = \quad a$</p>
 
 \[\begin{align}
-    &amp;(a \vee b) \implies c                                  &amp;&amp; \\
-    &amp;= (\overline{a \vee b}) \vee c                         &amp;&amp;\text{Material Implication} \\
-    &amp;= (\overline{a} \wedge \overline{b}) \vee c            &amp;&amp;\text{De Morgan's Law} \\
-    &amp;= (\overline{a} \vee c) \wedge (\overline{b} \vee c)   &amp;&amp;\text{Distributivity} \\
-    &amp;= (a \implies c) \wedge (b \implies c)                 &amp;&amp;\text{Material Implication 2 times}
+    &amp;a \vee a \\
+    &amp;= (a \vee a) \wedge \color{green}T         &amp;&amp;\text{Identity} \\
+    &amp;= (a \vee a) \wedge (a \vee \overline{a})  &amp;&amp;\text{Excluded Middle} \\
+    &amp;= a \vee (a \wedge \overline{a})           &amp;&amp;\text{Distributivity} \\
+    &amp;= a \vee \color{red}F                      &amp;&amp;\text{Noncontradiction} \\
+    &amp;= a                                        &amp;&amp;\text{Identity}
 \end{align}\]
 
-<p>$a \vee (b \implies c) \quad = \quad (a \vee b) \implies (a \vee c)$</p>
+<h2 id="reflexive">Reflexive</h2>
+
+<p>$a \implies a \quad = \quad \color{green}T$</p>
 
 \[\begin{align}
-    &amp;a \vee (b \implies c)                                  &amp;&amp;\\
-    &amp;= a \vee (\overline{b} \vee c)                         &amp;&amp;\text{Material Implication} \\
-    &amp;= (a \vee \overline{b}) \vee c                         &amp;&amp;\text{Associativity} \\
-    &amp;= (a \vee (\overline{a} \wedge \overline{b})) \vee c   &amp;&amp;\text{Simplification} \\
-    &amp;= (\overline{a} \wedge \overline{b}) \vee (a \vee c)   &amp;&amp;\text{Commutativity and Associativity} \\
-    &amp;= (\overline{a \vee b}) \vee (a \vee c)                &amp;&amp;\text{De Morgan's Law} \\
-    &amp;= (a \vee b) \implies (a \vee c)                       &amp;&amp;\text{Material Implication}
+    &amp;a \implies a \\
+    &amp;= (\overline{a} \vee a)    &amp;&amp;\text{Material Implications} \\
+    &amp;= \color{green}T           &amp;&amp;\text{Excluded Middle}
 \end{align}\]
 
-<p>$a \vee (b = c) \quad = \quad (a \vee b) = (a \vee c)$</p>
+<p>$a = a \quad = \quad \color{green}T$</p>
 
 \[\begin{align}
-    &amp;a \vee (b = c)                                                                 &amp;&amp;\\
-    &amp;= a \vee ((b \implies c) \wedge (b \impliedby c))                              &amp;&amp;\text{Double Implication} \\
-    &amp;= a \vee ((b \implies c) \wedge (c \implies b))                                &amp;&amp;\text{Mirror} \\
-    &amp;= (a \vee (b \implies c)) \wedge (a \vee (c \implies b))                       &amp;&amp;\text{Distributivity of } \ \vee \\
-    &amp;= ((a \vee b) \implies (a \vee c)) \wedge ((a \vee c) \implies (a \vee b))     &amp;&amp;\text{Distributivity of} \ \vee \ \text{into} \ \implies \\
-    &amp;= ((a \vee b) \implies (a \vee c)) \wedge ((a \vee b) \impliedby (a \vee c))   &amp;&amp;\text{Mirror} \\
-    &amp;= ((a \vee b) = (a \vee c))                                                    &amp;&amp;\text{Double Implication}
+    &amp;a = a \\
+    &amp;= (a \implies a) \wedge (a \impliedby a)   &amp;&amp;\text{Double Implication} \\
+    &amp;= (a \implies a) \wedge (a \implies a)     &amp;&amp;\text{Mirror} \\
+    &amp;= \color{green}T \wedge \color{green}T     &amp;&amp;\text{Reflexive} \\
+    &amp;= \color{green}T                           &amp;&amp;\text{Definition of}\ \wedge
 \end{align}\]
 
-<p>$a \implies (b \implies c) \quad = \quad (a \implies b) \implies (a \implies c)$</p>
+<h2 id="identity-continued">Identity Continued</h2>
+
+<p>There are some additional identity laws for the other operations. However, they follow from the axioms, so they were not included</p>
 
 \[\begin{align}
-    &amp;a \implies (b \implies c)                              &amp;&amp;\\
-    &amp;= \overline{a} \vee (b \implies c)                     &amp;&amp;\text{Material Implication} \\
-    &amp;= (\overline{a} \vee b) \implies (\overline{a} \vee c) &amp;&amp;\text{Distributivity of} \ \vee \text{into} \ \implies \\
-    &amp;= (a \implies b) \implies (a \implies c)               &amp;&amp;\text{Material Implication 2 times}
+    &amp;\color{green}T \implies a \\
+    &amp;= \overline{\color{green}T} \wedge a   &amp;&amp;\text{Material Implication} \\
+    &amp;= \color{red}F \vee a                  &amp;&amp;\text{Definition of negation} \\
+    &amp;= a                                    &amp;&amp;\text{Identity}
 \end{align}\]
 
-<p>$a \implies (b = c) \quad = \quad (a \implies b) = (a \implies c)$</p>
-
 \[\begin{align}
-    &amp;a \implies (b = c)                                 &amp;&amp;\\
-    &amp;= \overline{a} \vee (b = c)                        &amp;&amp;\text{Material Implication} \\
-    &amp;= (\overline{a} \vee b) = (\overline{a} \vee c)    &amp;&amp;\text{Distributivity of} \ \vee \text{into} \ = \\
-    &amp;= (a \implies b) = (a \implies c)                  &amp;&amp;\text{Material Implication 2 times}
+    &amp;\color{green}T = a \\
+    &amp;= (\color{green}T \implies a) \wedge (\color{green}T \impliedby a)                     &amp;&amp;\text{Double Implication} \\
+    &amp;= (\color{green}T \implies a) \wedge (a \implies \color{green}T)                       &amp;&amp;\text{Mirror} \\
+    &amp;= (\overline{\color{green}T} \wedge a) \wedge (\overline{a} \wedge \color{green}T)     &amp;&amp;\text{Material Implication}  \\
+    &amp;= a \wedge \color{green}T                                                              &amp;&amp;\text{Identity and Base}  \\
+    &amp;= a                                                                                    &amp;&amp;\text{Identity}
 \end{align}\]
 
   </div>
@@ -326,11 +336,11 @@
 
 <div class="pagination">
   
-    <a class="pagination-item older" href="/page4/">Older</a>
+    <a class="pagination-item older" href="/page12/">Older</a>
   
   
     
-      <a class="pagination-item newer" href="/page2/">Newer</a>
+      <a class="pagination-item newer" href="/page10/">Newer</a>
     
   
 </div>

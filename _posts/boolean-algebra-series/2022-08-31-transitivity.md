@@ -1,10 +1,12 @@
 ---
-layout: post
-title:  "Transitivity"
-date:   2022-08-26
-part: 10
+layout:     series
+title:      "Transitivity"
+date:       2022-08-31
 categories: blog boolean-algebra
-permalink: ":categories/:title/"
+permalink:  ":categories/:title/"
+part:       10
+series:     boolean-algebra
+tags:       boolean algebra, transitivity
 ---
 
 $(a \wedge b) \wedge (b \wedge c) \quad \implies \quad (a \wedge c)$

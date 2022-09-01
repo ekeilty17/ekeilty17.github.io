@@ -1,10 +1,12 @@
 ---
-layout: post
-title:  "Monotonicity"
-date:   2022-08-26
-part: 11
+layout:     series
+title:      "Monotonicity"
+date:       2022-09-01
 categories: blog boolean-algebra
-permalink: ":categories/:title/"
+permalink:  ":categories/:title/"
+part:       11
+series:     boolean-algebra
+tags:       boolean algebra, monotonicity
 ---
 
 $(a \implies b) \quad \implies \quad (c \wedge a) \implies (c \wedge b)$

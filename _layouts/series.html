@@ -6,39 +6,45 @@
 
   <body>
     
-    <div class="series">
-        <h1 class="series-title">{{ page.title }}</h1>
-        <span class="series-date">{{ page.date | date_to_string }}</span>
-        {{ content }}
-    </div>
+    <div class="content container">
 
-    <!-- Adding the ability to move between parts of the series -->
-    {% assign sorted_posts = site.posts | where: 'series', page.series | sort: 'part' %}
-    {% assign previous_part = page.part | minus: 1 %}
-    {% assign next_part = page.part | plus: 1 %}
+        {% include menu.html %}
 
-    {% assign previous_post = false %}
-    {% assign next_post = false %}
-    {% for post in sorted_posts %}
-        {% if post.part == previous_part %}
-            {% assign previous_post = post %}
-        {% endif %}
+        <div class="post">
+            <h1 class="post-title">{{ page.title }}</h1>
+            <!-- <span class="series-date">{{ page.date | date_to_string }}</span> -->
+            <time datetime="{{ page.date | date_to_xmlschema }}" class="post-date">{{ page.date | date_to_string }}</time>
+            {{ content }}
+        </div>
 
-        {% if post.part == next_part %}
-            {% assign next_post = post %}
-        {% endif %}
-    {% endfor %}
-    <div class="pagination">
-        {% if previous_post %}
-            <a class="pagination-item older" href="{{previous_post.url}}">Previous</a>
-        {% else %}
-            <span class="pagination-item older">Previous</span>
-        {% endif %}
-        {% if next_post %}
-            <a class="pagination-item newer" href="{{next_post.url}}">Next</a>
-        {% else %}
-            <span class="pagination-item newer">Next</span>
-        {% endif %}
+        <!-- Adding the ability to move between parts of the series -->
+        {% assign sorted_posts = site.posts | where: 'series', page.series | sort: 'part' %}
+        {% assign previous_part = page.part | minus: 1 %}
+        {% assign next_part = page.part | plus: 1 %}
+
+        {% assign previous_post = false %}
+        {% assign next_post = false %}
+        {% for post in sorted_posts %}
+            {% if post.part == previous_part %}
+                {% assign previous_post = post %}
+            {% endif %}
+
+            {% if post.part == next_part %}
+                {% assign next_post = post %}
+            {% endif %}
+        {% endfor %}
+        <div class="pagination">
+            {% if previous_post %}
+                <a class="pagination-item older" href="{{previous_post.url}}">Previous</a>
+            {% else %}
+                <span class="pagination-item older">Previous</span>
+            {% endif %}
+            {% if next_post %}
+                <a class="pagination-item newer" href="{{next_post.url}}">Next</a>
+            {% else %}
+                <span class="pagination-item newer">Next</span>
+            {% endif %}
+        </div>
     </div>
     
   </body>

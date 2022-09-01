@@ -1,10 +1,12 @@
 ---
-layout: post
-title:  "Commutativity and Associativity Continued"
-date:   2022-08-25
-part: 8
+layout:     series
+title:      "Commutativity and Associativity Continued"
+date:       2022-08-29
 categories: blog boolean-algebra
-permalink: ":categories/:title/"
+permalink:  ":categories/:title/"
+part:       8
+series:     boolean-algebra
+tags:       boolean algebra, commutativity, associativity
 ---
 
 We know that commutativity holds for the operations $\wedge$ and $\vee$ from the axioms and we also proved associativity holds for these operations. Now that we have some more tools, we can prove some commutativity/associativity properties for the $=$ and $\neq$ operations.

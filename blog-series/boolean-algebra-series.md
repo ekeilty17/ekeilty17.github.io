@@ -1,8 +1,8 @@
 ---
-layout: page
-title: Boolean Algebra Series
+layout:     page
+title:      Boolean Algebra Series
 categories: blog
-permalink: /blog/boolean-algebra/
+permalink:  /blog/boolean-algebra/
 ---
 
 {% assign sorted_posts = site.posts | where: 'series', 'boolean-algebra' | sort: 'part' %}

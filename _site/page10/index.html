@@ -217,116 +217,58 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/blog/boolean-algebra/commutativity-and-associativity-continued/">
-        Commutativity and Associativity Continued
+      <a href="/blog/boolean-algebra/absorption-and-simplification/">
+        Absorption and Simplification
       </a>
     </h1>
 
-    <span class="post-date">29 Aug 2022</span>
+    <span class="post-date">23 Aug 2022</span>
 
-    <p>We know that commutativity holds for the operations $\wedge$ and $\vee$ from the axioms and we also proved associativity holds for these operations. Now that we have some more tools, we can prove some commutativity/associativity properties for the $=$ and $\neq$ operations.</p>
+    <h2 id="absorption">Absorption</h2>
 
-<h2 id="commutativity">Commutativity</h2>
+<p>This seemingly abscure relation turns out to be very useful in many proofs.</p>
 
-<p>$(a = b) \quad = \quad (b = a)$</p>
-
-\[\begin{align}
-    &amp;a = b                                                  &amp;&amp; \\
-    &amp;= (\overline{a} \vee b) \wedge (a \vee \overline{b})   &amp;&amp;\text{Equality} \\
-    &amp;= (a \vee \overline{b}) \wedge (\overline{a} \vee b)   &amp;&amp;\text{Commutativity of }\ \wedge \\
-    &amp;= (\overline{b} \vee a) \wedge (b \vee \overline{a})   &amp;&amp;\text{Commutativity of }\ \vee \ \text{2 times} \\
-    &amp;= (b = a)                                              &amp;&amp;\text{Equality}
-\end{align}\]
-
-<p>$(a \neq b) \quad = \quad (b \neq a)$</p>
+<p>$a \wedge (a \vee b) = a$</p>
 
 \[\begin{align}
-    &amp;a \neq b               &amp;&amp; \\
-    &amp;= (\overline{a = b})   &amp;&amp;\text{Exclusion} \\
-    &amp;= (\overline{b = a})   &amp;&amp;\text{Commutativity of } \ = \\
-    &amp;= (b \neq a)           &amp;&amp;\text{Exclusion}
+    &amp;a \wedge (a \vee b) \\
+    &amp;= (a \vee \color{red}F) \wedge (a \vee b)  &amp;&amp;\text{Identity} \\
+    &amp;= a \vee (\color{red}F \wedge b)           &amp;&amp;\text{Distributivity} \\
+    &amp;= a \vee \color{red}F                      &amp;&amp;\text{Base} \\
+    &amp;= a                                        &amp;&amp;\text{Identity}
 \end{align}\]
 
-<h2 id="associativity">Associativity</h2>
-
-<p>$(a = b) = c \quad = \quad a = (b = c)$</p>
+<p>$a \vee (a \wedge b) = a$</p>
 
 \[\begin{align}
-    &amp;(a = b) = c
-    &amp;&amp; \\
-
-    &amp;= [(\overline{a = b}) \vee c]
-    \wedge [(a = b) \vee \overline{c}]
-    &amp;&amp;\text{Equality} \\
-
-    &amp;= [(a \neq b) \vee c]
-    \wedge [(a = b) \vee \overline{c}]
-    &amp;&amp;\text{Exclusion} \\
-
-    &amp;= [\color{red}( (a \vee b) \wedge (\overline{a} \vee \overline{b}) \color{red}) \vee c]
-    \wedge [\color{red}( (\overline{a} \vee b) \wedge (a \vee \overline{b}) \color{red}) \vee \overline{c}]
-    &amp;&amp;\text{Equality and Difference} \\
-
-    &amp;= [\color{red}( (a \vee b) \vee c \color{red}) \wedge \color{red}( (\overline{a} \vee \overline{b}) \vee c \color{red})]
-    \wedge [\color{red}( (\overline{a} \vee b) \vee \overline{c} \color{red}) \wedge \color{red}( (a \vee \overline{b}) \vee \overline{c} \color{red})]
-    &amp;&amp;\text{Distributivity} \\
-
-    &amp;= (a \vee b \vee c) \wedge (\overline{a} \vee \overline{b} \vee c) \wedge (\overline{a} \vee b \vee \overline{c}) \wedge (a \vee \overline{b} \vee \overline{c})
-    &amp;&amp;\text{Associativity of}\ \wedge \ \text{and} \ \vee\\
-
-    &amp;= (\overline{a} \vee \overline{b} \vee c) \wedge (\overline{a} \vee b \vee \overline{c}) \wedge (a \vee b \vee c) \wedge (a \vee \overline{b} \vee \overline{c})
-    &amp;&amp;\text{Commutativity of}\ \wedge \\
-
-    &amp;= [\color{red}( \overline{a} \vee (\overline{b} \vee c) \color{red}) \wedge \color{red}( \overline{a} \vee (b \vee \overline{c}) \color{red})] 
-    \wedge [\color{red}( a \vee (b \vee c) \color{red} ) \wedge \color{red}( a \vee (\overline{b} \vee \overline{c}) \color{red})]
-    &amp;&amp;\text{Associativity of}\ \wedge \ \text{and} \ \vee\\
-
-    &amp;= [\overline{a} \vee \color{red}( (\overline{b} \vee c) \wedge (b \vee \overline{c}) \color{red})] 
-    \wedge [a \vee \color{red}( (b \vee c) \wedge (\overline{b} \vee \overline{c}) \color{red})]
-    &amp;&amp;\text{Distributivity} \\
-
-    &amp;= [\overline{a} \vee (b = c)] \wedge [a \vee (b \neq c)]
-    &amp;&amp;\text{Equality and Difference} \\
-
-    &amp;= [\overline{a} \vee (b = c)] \wedge [a \vee (\overline{b = c})]
-    &amp;&amp;\text{Exclusion} \\
-
-    &amp;= a = (b = c)
-    &amp;&amp;\text{Equality}
+    &amp;a \vee (a \wedge b) \\
+    &amp;= (a \wedge \color{green}T) \vee(a \wedge b)   &amp;&amp;\text{Identity} \\
+    &amp;= a \wedge (\color{green}T \vee b)             &amp;&amp;\text{Distributivity} \\
+    &amp;= a \wedge \color{green}T                      &amp;&amp;\text{Base} \\
+    &amp;= a                                            &amp;&amp;\text{Identity}
 \end{align}\]
 
-<p>$(a = b) \neq c \quad = \quad a = (b \neq c)$</p>
+<h2 id="simplification">Simplification</h2>
+
+<p>This is less common than Absorption, but is still useful in some proofs</p>
+
+<p>$a \wedge (\overline{a} \vee b) = a \wedge b$</p>
 
 \[\begin{align}
-    &amp;(a = b) \neq c             &amp;&amp; \\
-    &amp;= (a = b) = \overline{c}   &amp;&amp;\text{Exclusion} \\
-    &amp;= a = (b = \overline{c})   &amp;&amp;\text{Associativity of =} \\
-    &amp;= a = (b \neq c)           &amp;&amp;\text{Exclusion}
+    &amp;a \wedge (\overline{a} \vee b) \\
+    &amp;= (a \wedge \overline{a}) \vee (a \wedge b)    &amp;&amp;\text{Distributivity} \\
+    &amp;= \color{red}F \vee (a \wedge b)               &amp;&amp;\text{Noncontradiction} \\
+    &amp;= a \wedge b                                   &amp;&amp;\text{Identity}
 \end{align}\]
 
-<p>$(a \neq b) = c \quad = \quad a \neq (b = c)$</p>
+<p>$a \vee (\overline{a} \wedge b) = a \vee b$</p>
 
 \[\begin{align}
-    &amp;(a \neq b) = c             &amp;&amp; \\
-    &amp;= (\overline{a} = b) = c   &amp;&amp;\text{Exclusion} \\
-    &amp;= \overline{a} = (b = c)   &amp;&amp;\text{Associativity of =} \\
-    &amp;= a \neq (b = c)           &amp;&amp;\text{Exclusion}
+    &amp;a \vee (\overline{a} \wedge b) \\
+    &amp;= (a \vee \overline{a}) \wedge (a \vee b)  &amp;&amp;\text{Distributivity} \\
+    &amp;= \color{green}T \wedge (a \vee b)         &amp;&amp;\text{Excluded Middle} \\
+    &amp;= a \vee b                                 &amp;&amp;\text{Identity}
 \end{align}\]
-
-<p>$(a \neq b) \neq c \quad = \quad a \neq (b \neq c)$</p>
-
-\[\begin{align}
-    &amp;(a \neq b) \neq c                      &amp;&amp; \\
-    &amp;= (\overline{a = b}) \neq c            &amp;&amp;\text{Exclusion} \\
-    &amp;= \overline{(\overline{a = b})} = c    &amp;&amp;\text{Exclusion} \\
-    &amp;= (a = b) = c                          &amp;&amp;\text{Double Negation} \\
-    &amp;= a = (b = c)                          &amp;&amp;\text{Associativity of =} \\
-    &amp;= a = \overline{(\overline{b = c})}    &amp;&amp;\text{Double Negation} \\
-    &amp;= a \neq (\overline{b = c})            &amp;&amp;\text{Exclusion} \\
-    &amp;= a \neq (b \neq c)                    &amp;&amp;\text{Exclusion}
-\end{align}\]
-
-<p>I find this unintuitive, but you do not need parenthesis around strings of expressions containing the $=$ and the $\neq$ operators. Also interestingly, $(a \neq b \neq c) = (a = b = c)$. It is important to note that $(a \neq b \neq c)$ does not mean what you would think it means. I think many people would want it to mean $(a \neq b) \wedge (b \neq c) \wedge (c \neq a)$. But this is not equivalent and actually that latter statement evaluates to $\color{red}F$.</p>
 
   </div>
   
@@ -334,11 +276,11 @@
 
 <div class="pagination">
   
-    <a class="pagination-item older" href="/page5/">Older</a>
+    <a class="pagination-item older" href="/page11/">Older</a>
   
   
     
-      <a class="pagination-item newer" href="/page3/">Newer</a>
+      <a class="pagination-item newer" href="/page9/">Newer</a>
     
   
 </div>

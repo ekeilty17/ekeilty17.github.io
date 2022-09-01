@@ -15,20 +15,22 @@
   </title>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/poole.css">
-  <link rel="stylesheet" href="/public/css/syntax.css">
-  <link rel="stylesheet" href="/public/css/hyde.css">
-  <link rel="stylesheet" href="/public/css/custom.css">
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
 
-  <!-- Icons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="public/favicon/terminal/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="public/favicon/terminal/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="public/favicon/terminal/favicon-16x16.png">
-  <link rel="manifest" href="public/favicon/terminal/site.webmanifest">
-  <link rel="mask-icon" href="public/favicon/terminal/safari-pinned-tab.svg" color="#5bbad5">
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
   <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
   <meta name="theme-color" content="#ffffff">
 
   <!-- RSS 
@@ -107,7 +109,7 @@
             
                 
                 <li class="sidebar-nav-item">
-                    <a href="/blog/">Archive</a>
+                    <a href="/blog/">Blog Archive</a>
                 </li>
                 
             
@@ -126,6 +128,26 @@
           
             
           
+            
+          
+            
+                
+            
+          
+            
+                
+            
+          
+            
+                
+            
+          
+            
+                
+            
+          
+            
+                
             
           
             
@@ -195,177 +217,43 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/blog/boolean-algebra/definitions-and-axioms/">
-        Definitions and Axioms
+      <a href="/blog/boolean-algebra/specialization-and-generalization/">
+        Specialization and Generalization
       </a>
     </h1>
 
-    <span class="post-date">21 Aug 2022</span>
+    <span class="post-date">25 Aug 2022</span>
 
-    <h2 id="definitions">Definitions</h2>
+    <p>Here, we are going to emplore a different style of proof. In all previous proofs we had an expression of the form $\text{LHS} = \text{RHS}$. We then start with the $\text{LHS}$ at the top and arrive at the $\text{RHS}$ at the bottom. In these expressions, there is are equals sign. Instead, we are going to start with the entire expression at the top and arrive at $\color{green}T$ at the bottom. Since the original statement is equivalent to $\color{green}T$, it must be a true expression.</p>
 
-<p>First, we define the fundamental operations to boolean algebra:</p>
+<p>Similar to Absorption, these relations may seem simple and abscure, but they turn out to be very useful in practice.</p>
 
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th style="text-align: center"> </th>
-      <th style="text-align: center">$\color{green}T$</th>
-      <th style="text-align: center">$\color{red}F$</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Negation (NOT)</td>
-      <td style="text-align: center">$\neg$</td>
-      <td style="text-align: center">$\color{red}F$</td>
-      <td style="text-align: center">$\color{green}T$</td>
-    </tr>
-  </tbody>
-</table>
+<h2 id="specialization">Specialization</h2>
 
-<p>Instead of $\neg a$ we will write $\overline{a}$ to condence notation</p>
-
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th style="text-align: center"> </th>
-      <th style="text-align: center">$\color{green}T\color{green}T$</th>
-      <th style="text-align: center">$\color{green}T\color{red}F$</th>
-      <th style="text-align: center">$\color{red}F\color{green}T$</th>
-      <th style="text-align: center">$\color{red}F\color{red}F$</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Conjunction (AND)</td>
-      <td style="text-align: center">$\wedge$</td>
-      <td style="text-align: center">$\color{green}T$</td>
-      <td style="text-align: center">$\color{red}F$</td>
-      <td style="text-align: center">$\color{red}F$</td>
-      <td style="text-align: center">$\color{red}F$</td>
-    </tr>
-    <tr>
-      <td>Disjunction (OR)</td>
-      <td style="text-align: center">$\vee$</td>
-      <td style="text-align: center">$\color{green}T$</td>
-      <td style="text-align: center">$\color{green}T$</td>
-      <td style="text-align: center">$\color{green}T$</td>
-      <td style="text-align: center">$\color{red}F$</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Now, we can define some other useful operations. These are simply syntatic sugar and can all be expressed in terms of conjuction, disjunction, and negation.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th style="text-align: center"> </th>
-      <th style="text-align: center">$\color{green}T\color{green}T$</th>
-      <th style="text-align: center">$\color{green}T\color{red}F$</th>
-      <th style="text-align: center">$\color{red}F\color{green}T$</th>
-      <th style="text-align: center">$\color{red}F\color{red}F$</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Implication</td>
-      <td style="text-align: center">$\implies$</td>
-      <td style="text-align: center">$\color{green}T$</td>
-      <td style="text-align: center">$\color{red}F$</td>
-      <td style="text-align: center">$\color{green}T$</td>
-      <td style="text-align: center">$\color{green}T$</td>
-    </tr>
-    <tr>
-      <td>Converse</td>
-      <td style="text-align: center">$\impliedby$</td>
-      <td style="text-align: center">$\color{green}T$</td>
-      <td style="text-align: center">$\color{green}T$</td>
-      <td style="text-align: center">$\color{red}F$</td>
-      <td style="text-align: center">$\color{green}T$</td>
-    </tr>
-    <tr>
-      <td>Equality</td>
-      <td style="text-align: center">$=$</td>
-      <td style="text-align: center">$\color{green}T$</td>
-      <td style="text-align: center">$\color{red}F$</td>
-      <td style="text-align: center">$\color{red}F$</td>
-      <td style="text-align: center">$\color{green}T$</td>
-    </tr>
-    <tr>
-      <td>Unequality (XOR)</td>
-      <td style="text-align: center">$\neq$</td>
-      <td style="text-align: center">$\color{red}F$</td>
-      <td style="text-align: center">$\color{green}T$</td>
-      <td style="text-align: center">$\color{green}T$</td>
-      <td style="text-align: center">$\color{red}F$</td>
-    </tr>
-  </tbody>
-</table>
-
-<p><strong>Material Implication</strong>: $\quad (a \implies b) = (\overline{a} \vee b)$</p>
-
-<p><strong>Mirror</strong>: $\quad (a \impliedby b) = (b \implies a)$</p>
-
-<p><strong>Antisymmetry / Double Implication</strong>: $\quad (a = b) = (a \implies b) \wedge (a \impliedby b)$</p>
-
-<p><strong>Exclusion</strong>: $\quad (a \neq b) = (\overline{a = b})$</p>
-
-<p>A <strong>boolean variable</strong> is a variable with either $\color{green}T$ or $\color{red}F$ as its value.</p>
-
-<p>A <strong>boolean expression</strong> is a formula with respect to some boolean variables.</p>
-
-<h2 id="axioms">Axioms</h2>
-
-<p>Let $a, b, c$ be boolean variables.</p>
-
-<p><strong>Complement/Annihilation Laws</strong></p>
-<ul>
-  <li>$a \wedge \overline{a} = \color{red}F \qquad$ (Noncontradiction)</li>
-  <li>$a \vee \overline{a} = \color{green}T \qquad$ (Excluded Middle)</li>
-</ul>
-
-<p><strong>Identity</strong></p>
-<ul>
-  <li>$a \wedge \color{green}T = a$</li>
-  <li>$a \vee \color{red}F = a$</li>
-</ul>
-
-<p><strong>Commutativity</strong></p>
-<ul>
-  <li>$a \wedge b = b \wedge a$</li>
-  <li>$a \vee b = b \vee a$</li>
-</ul>
-
-<p><strong>Distributivity/Factoring</strong></p>
-<ul>
-  <li>$a \wedge (b \vee c) = (a \wedge b) \vee (a \wedge b)$</li>
-  <li>$a \vee (b \wedge c) = (a \vee b) \wedge (a \vee b)$</li>
-</ul>
-
-<!-- **Substitution**: Let $f(a)$ be some expression with respect to the boolean variable $a$. Then $(f(a) \wedge (a = b)) = (f(b) \wedge (a = b))$, where $f(b)$ is the same boolean expression with respect to the boolean variable $b$. -->
-
-<h2 id="proof-structure">Proof Structure</h2>
-
-<p>Our goal is to prove all the common laws and theorems from boolean algebra simply from the axioms. Before we can do that, we need to define our proof structure</p>
+<p>$(a \wedge b) \implies a$</p>
 
 \[\begin{align}
-    &amp;\text{starting expression} \\
-    &amp;= \text{intermediate expression 1}   &amp;&amp;\text{reason 1} \\
-    &amp;= \text{intermediate expression 2}   &amp;&amp;\text{reason 2} \\
-    &amp;\qquad \vdots \\
-    &amp;= \text{target expression}
+    &amp;(a \wedge b) \implies a \\
+    &amp;= (\overline{a \wedge b}) \vee a                                           &amp;&amp;\text{Material Implication} \\
+    &amp;= (\overline{a \wedge b}) \vee (a \wedge \color{green}T)                   &amp;&amp;\text{Identity} \\
+    &amp;= (\overline{a \wedge b}) \vee (a \wedge (b \vee \overline{b}))            &amp;&amp;\text{Excluded Middle} \\
+    &amp;= (\overline{a \wedge b}) \vee ((a \wedge b) \vee (a \wedge \overline{b})) &amp;&amp;\text{Distributivity} \\
+    &amp;= ((\overline{a \wedge b}) \vee (a \wedge b)) \vee (a \wedge \overline{b}) &amp;&amp;\text{Associativity} \\
+    &amp;= \color{green}T \vee (a \wedge \overline{b})                              &amp;&amp;\text{Associativity} \\
+    &amp;= \color{green}T                                                           &amp;&amp;\text{Base}
 \end{align}\]
 
-<p>This is simply a shorthand for</p>
+<h2 id="generalization">Generalization</h2>
 
-\[\text{starting expression} = \text{intermediate expression 1} = \text{intermediate expression 2} = \ldots = \text{target expression}\]
+<p>$a \implies (a \vee b)$</p>
 
-<p>All proofs will be given in this structure.</p>
+\[\begin{align}
+    &amp;a \implies (a \vee b) \\
+    &amp;= \overline{a} \vee (a \vee b)     &amp;&amp;\text{Material Implication} \\
+    &amp;= (\overline{a} \vee a) \vee b     &amp;&amp;\text{Associativity} \\
+    &amp;= \color{green}T \vee b            &amp;&amp;\text{Excluded Middle} \\
+    &amp;= \color{green}T                   &amp;&amp;\text{Base}
+\end{align}\]
 
   </div>
   
@@ -373,7 +261,7 @@
 
 <div class="pagination">
   
-    <span class="pagination-item older">Older</span>
+    <a class="pagination-item older" href="/page9/">Older</a>
   
   
     
