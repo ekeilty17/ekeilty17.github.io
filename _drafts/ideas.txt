@@ -1,0 +1,6 @@
+Ideas
+- All continuity proofs using delta-epsilon
+- All standard derivatives
+- All standard integrals
+- All Laplace transforms
+- Write up my algorithms course notes
