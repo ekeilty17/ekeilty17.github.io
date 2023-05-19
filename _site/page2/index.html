@@ -44,38 +44,70 @@
 
     <div class="sidebar">
     <div class="container">
-      <img src="/assets/sj-abstrakt-gimp.jpeg" class="responsive"  height="250">
-    </div>
-    
-    <div class="container sidebar-sticky">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
       <div class="sidebar-about">
         <h1>Eric Keilty</h1>
         <p class="lead">Software Engineer/Aspiring Amature Mathematician</p>
       </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item active">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/resume">R&eacute;sum&eacute;</a>
+          </li>
+        
+
+        <!-- <li class="sidebar-nav-item"><a href="/assets/resume_for_web.pdf">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
       <div id="social">
         <div id="social">
     
     
     <a title="Me on Github" href="https://github.com/ekeilty17">
       <i class="fa fa-github-square fa-2x"></i>
+      <i>&ensp;</i>
     </a>
     
     
     <!--
     
-  
+    -->
+    
+    <!--
     
     -->
 
-    
+    <!---->
     <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty">
-      <i class="fa fa-linkedin-square fa-2x"></i>
+      <i class="fa fa-linkedin fa-2x"></i>
+      <i>&ensp;</i>
     </a>
-    
+    <!---->
 
     <!--
     <a title="Atom feed" id="atom" href="/feed.xml">
       <i class="fa fa-rss-square fa-2x"></i>
+      <i>&ensp;</i>
     </a>
     -->
     <a title="Email me" href="mailto:epkeilty@gmail.com">
@@ -83,107 +115,8 @@
     </a>
   </div>
       </div>
+      <p>&copy; 2023 Eric Keilty </p>
 
-      <ul class="sidebar-nav">
-        
-
-      <ul class="sidebar-nav">
-          <li class="sidebar-nav-item active">
-              <a href="/">Home</a>
-          </li>
-
-          
-  
-          
-          
-            
-          
-            
-                
-                <li class="sidebar-nav-item">
-                    <a href="/about/">About</a>
-                </li>
-                
-            
-          
-            
-                
-                <li class="sidebar-nav-item">
-                    <a href="/blog/">Blog Archive</a>
-                </li>
-                
-            
-          
-            
-                
-                <li class="sidebar-nav-item">
-                    <a href="/blog/boolean-algebra/">Boolean Algebra Series</a>
-                </li>
-                
-            
-          
-            
-                
-            
-          
-            
-          
-            
-          
-            
-                
-            
-          
-            
-                
-            
-          
-            
-                
-            
-          
-            
-                
-            
-          
-            
-                
-            
-          
-            
-                
-            
-          
-            
-                
-            
-          
-            
-                
-            
-          
-            
-                
-            
-          
-            
-                
-            
-          
-            
-                
-            
-          
-            
-                
-            
-          
-
-          <li class="sidebar-nav-item"><a href="/assets/resume_for_web.pdf">Curriculum Vitae</a></li>
-          <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
-        </ul>
-  
-      <p>&copy; 2022 Eric Keilty. </p>
     </div>
   </div>
 
@@ -196,7 +129,9 @@
           
               &nbsp;&nbsp;&nbsp;<small><a href="/about">About</a></small>
           
-              &nbsp;&nbsp;&nbsp;<small><a href="/archive">Archive</a></small>
+              &nbsp;&nbsp;&nbsp;<small><a href="/blog">Blog</a></small>
+          
+              &nbsp;&nbsp;&nbsp;<small><a href="/resume">R&eacute;sum&eacute;</a></small>
           
 
         </h3>
@@ -207,9 +142,66 @@
   <h1 class="post-title">
     Eric Keilty's Personal Website
   </h1>
+  
+  <br>
+  
+  <h3>
+    Hi there! Not sure what brought you here. Let me show you around.
+  </h3>
+  
+  <br>
+  
+  <h3>
+    Maybe you want to <a href="/about">get to know</a> me.
+  </h3>
+  <h3>
+    Or maybe you want to <a href="https://github.com/ekeilty">hire</a> me.
+  </h3>
+  <h3>
+    Or see some of my <a href="https://github.com/ekeilty17">projects</a>.
+  </h3>
+  <h3>
+    Or read some stuff I <a href="/blog">wrote</a>.
+  </h3>
+
+  <br>
+  <br>
+
   <p>
-    Currently under development
+    In any case, I'm glad you came. For your trouble, here are some pictures of dogs and cats!
   </p>
+  
+  <center>
+    <button class="homepage-button", onclick="randomDogImage()">CLICK FOR DOG</button>
+    <br>
+    <img style="max-height:300px; height:auto; width:auto;" class="center" src="/assets/transparent.png" id="dog-image"/> 
+  </center>
+
+  <br>
+
+  <center>
+    <button class="homepage-button", onclick="randomCatImage()">CLICK FOR CAT</button>
+    <br>
+    <img style="max-height:300px; height:auto; width:auto;" class="center" src="/assets/transparent.png" id="cat-image"/> 
+  </center>
+
+  <script type="text/javascript">
+    // TODO: add more images, maybe get to like 30 each
+    var numDogImgs = 12;
+    var numCatImgs = 7;
+
+    function randomDogImage() {
+      var pic = document.getElementById("dog-image")
+      var randomNum = Math.floor(Math.random()*numDogImgs)
+      pic.src = "/assets/dogs/" + (randomNum + 1).toString() + ".jpg"
+    }
+    function randomCatImage() {
+      var pic = document.getElementById("cat-image")
+      var randomNum = Math.floor(Math.random()*numCatImgs)
+      pic.src = "/assets/cats/" + (randomNum + 1).toString() + ".jpg"
+    }
+  </script>
+
 </div>
 
 <!--
@@ -217,93 +209,134 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/blog/boolean-algebra/transitivity/">
-        Transitivity
+      <a href="/blog/boolean-algebra/consensus-and-resolution/">
+        Consensus and Resolution
       </a>
     </h1>
 
-    <span class="post-date">31 Aug 2022</span>
+    <span class="post-date">02 Sep 2022</span>
 
-    <p>$(a \wedge b) \wedge (b \wedge c) \quad \implies \quad (a \wedge c)$</p>
+    <h2 id="the-consensus-theorem">The Consensus Theorem</h2>
 
-\[\begin{align}
-    &amp;(a \wedge b) \wedge (b \wedge c)       &amp;&amp; \\
-    &amp;= (a \wedge c) \wedge (b \wedge b)     &amp;&amp;\text{Associativity and Commutativity} \\
-    &amp;\implies (a \wedge c)                  &amp;&amp;\text{Specialization}
-\end{align}\]
-
-<p>$(a \implies b) \wedge (b \implies c) \quad \implies \quad (a \implies c)$</p>
+<p>$((a \wedge b) \vee (\overline{a} \wedge c)) \vee (b \wedge c) \quad = \quad (a \wedge b) \vee (\overline{a} \wedge c)$</p>
 
 \[\begin{align}
-    &amp;(a \implies b) \wedge (b \implies c)
+    &amp;((a \wedge b) \vee (\overline{a} \wedge c)) \vee (b \wedge c) 
     &amp;&amp; \\
 
-    &amp;= (\overline{a} \vee b) \wedge (\overline{b} \vee c)
-    &amp;&amp;\text{Material Implication} \\
+    &amp;= \color{red}( (a \wedge b) \vee (\overline{a} \wedge c) \color{red}) \vee \color{red}( \color{green}T \wedge (b \wedge c) \color{red})
+    &amp;&amp; \text{Identity} \\
 
-    &amp;= (\overline{a} \wedge \overline{b}) \vee (\overline{a} \wedge c) \vee (b \wedge \overline{b}) \vee (b \wedge c)
-    &amp;&amp;\text{Distributivity and Associativity} \\
+    &amp;= \color{red}( (a \wedge b) \vee (\overline{a} \wedge c) \color{red}) \vee \color{red}( (a \vee \overline{a}) \wedge (b \wedge c) \color{red})
+    &amp;&amp; \text{Excluded Middle} \\
 
-    &amp;= (\overline{a} \wedge \overline{b}) \vee (\overline{a} \wedge c) \vee \color{red}F \vee (b \wedge c)
-    &amp;&amp;\text{Noncontradiction} \\
+    &amp;= \color{red}( (a \wedge b) \vee (\overline{a} \wedge c) \color{red}) \vee \color{red}( (a \wedge (b \wedge c)) \vee (\overline{a} \wedge (b \wedge c)) \color{red})
+    &amp;&amp; \text{Distributivity} \\
 
-    &amp;= (\overline{a} \wedge \overline{b}) \vee (\overline{a} \wedge c) \vee (b \wedge c)
+    &amp;= \color{red}( (a \wedge b) \vee (\overline{a} \wedge c) \color{red}) \vee \color{red}( ((a \wedge b) \wedge c) \vee ((\overline{a} \wedge c) \wedge b) \color{red})
+    &amp;&amp; \text{Associativity and Commutativity} \\
+
+    &amp;= \color{red}( (a \wedge b) \vee ((a \wedge b) \wedge c) \color{red}) \vee \color{red}((\overline{a} \wedge c) \vee ((\overline{a} \wedge c) \wedge b) \color{red})
+    &amp;&amp; \text{Associativity and Commutativity} \\
+
+    &amp;= (a \wedge b) \vee (\overline{a} \wedge c)
+    &amp;&amp; \text{Absorption 2 times} \\
+\end{align}\]
+
+<p>$((a \vee b) \wedge (\overline{a} \vee c)) \wedge (b \vee c) \quad = \quad (a \vee b) \wedge (\overline{a} \vee c)$</p>
+
+\[\begin{align}
+    &amp;((a \vee b) \wedge (\overline{a} \vee c)) \wedge (b \vee c) 
+    &amp;&amp; \\
+
+    &amp;= \color{red}( (a \vee b) \wedge (\overline{a} \vee c) \color{red}) \wedge \color{red}( \color{green}T \vee (b \vee c) \color{red})
+    &amp;&amp; \text{Identity} \\
+
+    &amp;= \color{red}( (a \vee b) \wedge (\overline{a} \vee c) \color{red}) \wedge \color{red}( (a \wedge \overline{a}) \vee (b \vee c) \color{red})
+    &amp;&amp; \text{Noncontradiction} \\
+
+    &amp;= \color{red}( (a \vee b) \wedge (\overline{a} \vee c) \color{red}) \wedge \color{red}( (a \vee (b \vee c)) \wedge (\overline{a} \vee (b \vee c)) \color{red})
+    &amp;&amp; \text{Distributivity} \\
+
+    &amp;= \color{red}( (a \vee b) \wedge (\overline{a} \vee c) \color{red}) \wedge \color{red}( ((a \vee b) \vee c) \wedge ((\overline{a} \vee c) \vee b) \color{red})
+    &amp;&amp; \text{Associativity and Commutativity} \\
+
+    &amp;= \color{red}( (a \vee b) \wedge ((a \vee b) \vee c) \color{red}) \wedge \color{red}((\overline{a} \vee c) \wedge ((\overline{a} \vee c) \vee b) \color{red})
+    &amp;&amp; \text{Associativity and Commutativity} \\
+
+    &amp;= (a \vee b) \wedge (\overline{a} \vee c)
+    &amp;&amp; \text{Absorption 2 times} \\
+\end{align}\]
+
+<h2 id="resolution">Resolution</h2>
+
+<p>$a \wedge c \quad \implies \quad (a \vee b) \wedge (\overline{b} \vee c) \quad = \quad (a \wedge \overline{b}) \vee (b \wedge c) \quad \implies \quad a \vee c$</p>
+
+<p>We will do this in parts</p>
+
+<p>$a \wedge c \quad \implies \quad (a \vee b) \wedge (\overline{b} \vee c)$</p>
+
+\[\begin{align}
+    &amp;a \wedge c
+    &amp;&amp; \\
+
+    &amp;\implies (a \wedge c) \vee ((a \wedge \overline{b}) \vee (b \wedge c))
+    &amp;&amp;\text{Generalization} \\
+
+    &amp;= (a \wedge c) \vee (a \wedge \overline{b}) \vee (b \wedge c)
+    &amp;&amp;\text{Associativity} \\
+
+    &amp;= ((a \wedge c) \vee (a \wedge \overline{b}) \vee (b \wedge c)) \vee \color{green}T 
     &amp;&amp;\text{Identity} \\
 
-    &amp;= (\overline{a} \wedge \overline{b}) \vee (\overline{a} \wedge c) \vee (b \wedge (c \wedge (c \vee \overline{b})))
-    &amp;&amp;\text{Absportion} \\
-
-    &amp;= (\overline{a} \wedge \overline{b}) \vee (\overline{a} \wedge c) \vee ((b \wedge c) \wedge (\overline{b} \vee c))
+    &amp;= (a \wedge \overline{b}) \vee (a \wedge c) \vee \color{green}T \vee (b \wedge c)
     &amp;&amp;\text{Associativity and Commutativity} \\
 
-    &amp;= (\overline{a} \wedge (\overline{b} \vee c)) \vee ((b \wedge c) \wedge (\overline{b} \vee c))
+    &amp;= (a \wedge \overline{b}) \vee (a \wedge c) \vee (\overline{b} \wedge b) \vee (b \wedge c)
+    &amp;&amp;\text{Excluded Middle} \\
+
+    &amp;= (a \vee b) \wedge (\overline{b} \vee c)
+    &amp;&amp;\text{Distributivity}
+\end{align}\]
+
+<p>$(a \vee b) \wedge (\overline{b} \vee c) \quad = \quad (a \wedge \overline{b}) \vee (b \wedge c)$</p>
+
+\[\begin{align}
+    &amp;= (a \vee b) \wedge (\overline{b} \vee c)
+    &amp;&amp; \\
+
+    &amp;= (a \wedge c) \vee (a \wedge \overline{b}) \vee (b \wedge c)
+    &amp;&amp;\text{Preform above proof in reverse} \\
+
+    &amp;= ((a \wedge \overline{b}) \vee (b \wedge c)) \vee (a \wedge c)
+    &amp;&amp;\text{Associativity and Commutativity} \\
+    
+    &amp;= (a \wedge \overline{b}) \vee (b \wedge c)
+    &amp;&amp;\text{The Consensus Theorem}
+\end{align}\]
+
+<p>$(a \wedge \overline{b}) \vee (b \wedge c) \quad \implies \quad a \vee c$</p>
+
+\[\begin{align}
+    &amp;= (a \wedge \overline{b}) \vee (b \wedge c)
+    &amp;&amp; \\
+
+    &amp;= (a \vee b) \wedge (a \vee c) \wedge (\overline{b} \vee b) \wedge (\overline{b} \vee c)
     &amp;&amp;\text{Distributivity} \\
 
-    &amp;= (\overline{a} \vee (b \wedge c)) \wedge (\overline{b} \vee c)
-    &amp;&amp;\text{Distributivity} \\
+    &amp;= (a \vee b) \wedge (a \vee c) \wedge \color{green}T \wedge (\overline{b} \vee c)
+    &amp;&amp;\text{Excluded Middle} \\
 
-    &amp;= (\overline{a} \vee b) \wedge (\overline{a} \vee c) \wedge (\overline{b} \vee c)
-    &amp;&amp;\text{Distributivity and Associativity} \\
+    &amp;= ((a \vee c) \wedge (a \vee b) \wedge (\overline{b} \vee c)) \wedge \color{green}T 
+    &amp;&amp;\text{Associativity and Commutativity} \\
 
-    &amp;\implies (\overline{a} \vee c)
-    &amp;&amp;\text{Specialization} \\
+    &amp;= (a \vee c) \wedge (a \vee b) \wedge (\overline{b} \vee c)
+    &amp;&amp;\text{Identity} \\
 
-    &amp;= (a \implies c)
-    &amp;&amp;\text{Material Implication} \\
-\end{align}\]
+    &amp;= (a \vee c) \wedge ((a \vee b) \wedge (\overline{b} \vee c))
+    &amp;&amp;\text{Associativity} \\
 
-<p>$(a = b) \wedge (b = c) \quad \implies \quad (a = c)$</p>
-
-\[\begin{align}
-    &amp;(a = b) \wedge (b = c)       &amp;&amp; \\
-    &amp;= ((a \implies b) \wedge (a \impliedby b)) \wedge ((b \implies c) \wedge (b \impliedby c)) &amp;&amp;\text{Double Implication} \\
-    &amp;= ((a \implies b) \wedge (b \implies a)) \wedge ((b \implies c) \wedge (c \implies b)) &amp;&amp;\text{Mirror 2 times} \\
-    &amp;= ((a \implies b) \wedge (b \implies c)) \wedge ((c \implies b) \wedge (b \implies a)) &amp;&amp;\text{Associativity and Commutativity of} \ \wedge \\
-    &amp;= (a \implies c) \wedge (c \implies a) &amp;&amp;\text{Transitivity of } \ \implies \\
-    &amp;= (a \implies c) \wedge (a \impliedby c) &amp;&amp;\text{Mirror} \\
-    &amp;= (a = c) &amp;&amp;\text{Double Implication} \\
-\end{align}\]
-
-<p>$(a \implies b) \wedge (b = c) \quad \implies \quad (a \implies c)$</p>
-
-\[\begin{align}
-    &amp;(a \implies b) \wedge (b = c)                                      &amp;&amp; \\
-    &amp;= (a \implies b) \wedge ((b \implies c) \wedge (b \impliedby c))   &amp;&amp;\text{Double Implication} \\
-    &amp;= (a \implies b) \wedge ((b \implies c) \wedge (c \implies b))     &amp;&amp;\text{Mirror} \\
-    &amp;= ((a \implies b) \wedge (b \implies c)) \wedge (c \implies b)     &amp;&amp;\text{Associativity} \\
-    &amp;\implies (a \implies c) \wedge (c \implies b)                      &amp;&amp;\text{Transitivity of } \ \implies \\
-    &amp;\implies (a \implies c)                                            &amp;&amp;\text{Specialization}
-\end{align}\]
-
-<p>$(a = b) \wedge (b \implies c) \quad \implies \quad (a \implies c)$</p>
-
-\[\begin{align}
-    &amp;(a = b) \wedge (b \implies c)                                      &amp;&amp; \\
-    &amp;= ((a \implies b) \wedge (a \impliedby b)) \wedge (b \implies c)   &amp;&amp;\text{Double Implication} \\
-    &amp;= ((a \implies b) \wedge (b \implies a)) \wedge (b \implies c)     &amp;&amp;\text{Mirror} \\
-    &amp;= (b \implies a) \wedge ((a \implies b) \wedge (b \implies c))     &amp;&amp;\text{Commutativity and Associativity} \\
-    &amp;\implies (b \implies a) \wedge (a \implies c)                      &amp;&amp;\text{Transitivity of } \ \implies \\
-    &amp;\implies (a \implies c)                                            &amp;&amp;\text{Specialization}
+    &amp;\implies a \vee c
 \end{align}\]
 
   </div>
@@ -327,7 +360,7 @@
     <!--
     <div class="footer">
       <p>
-        &copy; 2022. All rights reserved.
+        &copy; 2023. All rights reserved.
       </p>
     </div>
     -->

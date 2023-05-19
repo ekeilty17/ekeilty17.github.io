@@ -7,9 +7,66 @@ title: Home
   <h1 class="post-title">
     Eric Keilty's Personal Website
   </h1>
+  
+  <br>
+  
+  <h3>
+    Hi there! Not sure what brought you here. Let me show you around.
+  </h3>
+  
+  <br>
+  
+  <h3>
+    Maybe you want to <a href="/about">get to know</a> me.
+  </h3>
+  <h3>
+    Or maybe you want to <a href="https://github.com/{{ site.data.theme.social.linkedin }}">hire</a> me.
+  </h3>
+  <h3>
+    Or see some of my <a href="https://github.com/{{ site.data.theme.social.github }}">projects</a>.
+  </h3>
+  <h3>
+    Or read some stuff I <a href="/blog">wrote</a>.
+  </h3>
+
+  <br>
+  <br>
+
   <p>
-    Currently under development
+    In any case, I'm glad you came. For your trouble, here are some pictures of dogs and cats!
   </p>
+  
+  <center>
+    <button class="homepage-button", onclick="randomDogImage()">CLICK FOR DOG</button>
+    <br>
+    <img style="max-height:300px; height:auto; width:auto;" class="center" src="/assets/transparent.png" id="dog-image"/> 
+  </center>
+
+  <br>
+
+  <center>
+    <button class="homepage-button", onclick="randomCatImage()">CLICK FOR CAT</button>
+    <br>
+    <img style="max-height:300px; height:auto; width:auto;" class="center" src="/assets/transparent.png" id="cat-image"/> 
+  </center>
+
+  <script type="text/javascript">
+    // TODO: add more images, maybe get to like 30 each
+    var numDogImgs = 12;
+    var numCatImgs = 7;
+
+    function randomDogImage() {
+      var pic = document.getElementById("dog-image")
+      var randomNum = Math.floor(Math.random()*numDogImgs)
+      pic.src = "/assets/dogs/" + (randomNum + 1).toString() + ".jpg"
+    }
+    function randomCatImage() {
+      var pic = document.getElementById("cat-image")
+      var randomNum = Math.floor(Math.random()*numCatImgs)
+      pic.src = "/assets/cats/" + (randomNum + 1).toString() + ".jpg"
+    }
+  </script>
+
 </div>
 
 <!--

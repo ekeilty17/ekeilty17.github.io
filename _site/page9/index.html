@@ -44,38 +44,70 @@
 
     <div class="sidebar">
     <div class="container">
-      <img src="/assets/sj-abstrakt-gimp.jpeg" class="responsive"  height="250">
-    </div>
-    
-    <div class="container sidebar-sticky">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
       <div class="sidebar-about">
         <h1>Eric Keilty</h1>
         <p class="lead">Software Engineer/Aspiring Amature Mathematician</p>
       </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item active">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/resume">R&eacute;sum&eacute;</a>
+          </li>
+        
+
+        <!-- <li class="sidebar-nav-item"><a href="/assets/resume_for_web.pdf">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
       <div id="social">
         <div id="social">
     
     
     <a title="Me on Github" href="https://github.com/ekeilty17">
       <i class="fa fa-github-square fa-2x"></i>
+      <i>&ensp;</i>
     </a>
     
     
     <!--
     
-  
+    -->
+    
+    <!--
     
     -->
 
-    
+    <!---->
     <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty">
-      <i class="fa fa-linkedin-square fa-2x"></i>
+      <i class="fa fa-linkedin fa-2x"></i>
+      <i>&ensp;</i>
     </a>
-    
+    <!---->
 
     <!--
     <a title="Atom feed" id="atom" href="/feed.xml">
       <i class="fa fa-rss-square fa-2x"></i>
+      <i>&ensp;</i>
     </a>
     -->
     <a title="Email me" href="mailto:epkeilty@gmail.com">
@@ -83,107 +115,8 @@
     </a>
   </div>
       </div>
+      <p>&copy; 2023 Eric Keilty </p>
 
-      <ul class="sidebar-nav">
-        
-
-      <ul class="sidebar-nav">
-          <li class="sidebar-nav-item active">
-              <a href="/">Home</a>
-          </li>
-
-          
-  
-          
-          
-            
-          
-            
-                
-                <li class="sidebar-nav-item">
-                    <a href="/about/">About</a>
-                </li>
-                
-            
-          
-            
-                
-                <li class="sidebar-nav-item">
-                    <a href="/blog/">Blog Archive</a>
-                </li>
-                
-            
-          
-            
-                
-                <li class="sidebar-nav-item">
-                    <a href="/blog/boolean-algebra/">Boolean Algebra Series</a>
-                </li>
-                
-            
-          
-            
-                
-            
-          
-            
-          
-            
-          
-            
-                
-            
-          
-            
-                
-            
-          
-            
-                
-            
-          
-            
-                
-            
-          
-            
-                
-            
-          
-            
-                
-            
-          
-            
-                
-            
-          
-            
-                
-            
-          
-            
-                
-            
-          
-            
-                
-            
-          
-            
-                
-            
-          
-            
-                
-            
-          
-
-          <li class="sidebar-nav-item"><a href="/assets/resume_for_web.pdf">Curriculum Vitae</a></li>
-          <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
-        </ul>
-  
-      <p>&copy; 2022 Eric Keilty. </p>
     </div>
   </div>
 
@@ -196,7 +129,9 @@
           
               &nbsp;&nbsp;&nbsp;<small><a href="/about">About</a></small>
           
-              &nbsp;&nbsp;&nbsp;<small><a href="/archive">Archive</a></small>
+              &nbsp;&nbsp;&nbsp;<small><a href="/blog">Blog</a></small>
+          
+              &nbsp;&nbsp;&nbsp;<small><a href="/resume">R&eacute;sum&eacute;</a></small>
           
 
         </h3>
@@ -207,9 +142,66 @@
   <h1 class="post-title">
     Eric Keilty's Personal Website
   </h1>
+  
+  <br>
+  
+  <h3>
+    Hi there! Not sure what brought you here. Let me show you around.
+  </h3>
+  
+  <br>
+  
+  <h3>
+    Maybe you want to <a href="/about">get to know</a> me.
+  </h3>
+  <h3>
+    Or maybe you want to <a href="https://github.com/ekeilty">hire</a> me.
+  </h3>
+  <h3>
+    Or see some of my <a href="https://github.com/ekeilty17">projects</a>.
+  </h3>
+  <h3>
+    Or read some stuff I <a href="/blog">wrote</a>.
+  </h3>
+
+  <br>
+  <br>
+
   <p>
-    Currently under development
+    In any case, I'm glad you came. For your trouble, here are some pictures of dogs and cats!
   </p>
+  
+  <center>
+    <button class="homepage-button", onclick="randomDogImage()">CLICK FOR DOG</button>
+    <br>
+    <img style="max-height:300px; height:auto; width:auto;" class="center" src="/assets/transparent.png" id="dog-image"/> 
+  </center>
+
+  <br>
+
+  <center>
+    <button class="homepage-button", onclick="randomCatImage()">CLICK FOR CAT</button>
+    <br>
+    <img style="max-height:300px; height:auto; width:auto;" class="center" src="/assets/transparent.png" id="cat-image"/> 
+  </center>
+
+  <script type="text/javascript">
+    // TODO: add more images, maybe get to like 30 each
+    var numDogImgs = 12;
+    var numCatImgs = 7;
+
+    function randomDogImage() {
+      var pic = document.getElementById("dog-image")
+      var randomNum = Math.floor(Math.random()*numDogImgs)
+      pic.src = "/assets/dogs/" + (randomNum + 1).toString() + ".jpg"
+    }
+    function randomCatImage() {
+      var pic = document.getElementById("cat-image")
+      var randomNum = Math.floor(Math.random()*numCatImgs)
+      pic.src = "/assets/cats/" + (randomNum + 1).toString() + ".jpg"
+    }
+  </script>
+
 </div>
 
 <!--
@@ -217,186 +209,206 @@
   
   <div class="post">
     <h1 class="post-title">
-      <a href="/blog/boolean-algebra/associativity/">
-        Associativity
+      <a href="/blog/boolean-algebra/de-morgans-law/">
+        De Morgan's Law / Duality
       </a>
     </h1>
 
-    <span class="post-date">24 Aug 2022</span>
+    <span class="post-date">26 Aug 2022</span>
 
-    <p>This is a very tedious proof. If you really want to understand it, I would recommend writing it out for yourself. I have added colored parenthesis to help keep track of the nested levels. Essentially, it makes clever use of distributivity and timely commutativity.</p>
+    <h2 id="the-canonical-proof">The Canonical Proof</h2>
 
-<p>$(a \wedge b) \wedge c \quad = \quad a \wedge (b \wedge c)$</p>
+<p>If you look up the proof of Duality / De Morgan’s Law this is what you will get.</p>
 
-\[\begin{align}
-    &amp;(a \wedge b) \wedge c 
-    &amp;&amp;
-    &amp;&amp;
-    &amp;&amp; \\
+<p>It is an argument based on the uniqueness of the complement. They use the fact that if $(x \vee y) = \color{green}T$ and $(x \wedge y) = \color{red}F$, then $y$ is the complement of $x$. Written formally, this is</p>
 
-    &amp;=[\color{red}(a \wedge \color{blue}(a \vee (b \wedge c)\color{blue}) \color{red}) 
-    &amp;\wedge&amp; \color{red}(b \wedge (b \vee a)\color{red})] 
-    &amp;\wedge&amp; \color{red}(c \wedge (c \vee a)\color{red})   
-    &amp;&amp;\text{Absorption 3 times} \\
-    
-    &amp;=[\color{red}(a \wedge \color{blue}(a \vee (b \wedge c)\color{blue}) \color{red}) 
-    &amp;\wedge&amp; \color{red}( \color{blue}(b \vee (b \wedge c)\color{blue}) \wedge (b \vee a)\color{red})] 
-    &amp;\wedge&amp; \color{red}(\color{blue}(c \vee (c \wedge b)\color{blue}) \wedge (c \vee a)\color{red})
-    &amp;&amp;\text{Absorption 2 times} \\
+\[(x \vee y) \wedge (\overline{x \wedge y}) \quad = \quad (y = \overline{x})\]
 
-    &amp;=[\color{red}(a \wedge \color{blue}(a \vee (b \wedge c)\color{blue}) \color{red}) 
-    &amp;\wedge&amp; \color{red}( (b \vee a) \wedge \color{blue}(b \vee (b \wedge c)\color{blue}) \color{red})]
-    &amp;\wedge&amp; \color{red}( (c \vee a) \wedge \color{blue}(c \vee (b \wedge c)\color{blue})\color{red})
-    &amp;&amp;\text{Commutativity 3 times} \\
+<p>Using this expression, we can prove De Morgan’s Law in the following way:</p>
+<ol>
+  <li>Let $x = (a \wedge b)$</li>
+  <li>Let $y = (\overline{a} \vee \overline{b})$</li>
+  <li>We show $(x \vee y) = \color{green}T$</li>
+  <li>We show $(x \wedge y) = \color{red}F$</li>
+  <li>Using the above expression, we can then conclude that $y = \overline{x}$ or $(\overline{a} \vee \overline{b}) = (\overline{a \wedge b})$</li>
+</ol>
 
-    &amp;=[\color{red}( (a \vee a) \wedge \color{blue}(a \vee (b \wedge c)\color{blue}) \color{red}) 
-    &amp;\wedge&amp; \color{red}( (b \vee a) \wedge \color{blue}(b \vee (b \wedge c)\color{blue}) \color{red})]
-    &amp;\wedge&amp; \color{red}( (c \vee a) \wedge \color{blue}(c \vee (b \wedge c)\color{blue})\color{red})
-    &amp;&amp;\text{Idempotent} \\
+<p>Steps 3. and 4. are proved below:</p>
 
-    &amp;=[\color{red}( a \vee \color{blue}(a \wedge (b \wedge c)\color{blue}) \color{red})
-    &amp;\wedge&amp; \color{red}( b \vee \color{blue}(a \wedge (b \wedge c)\color{blue}) \color{red})]
-    &amp;\wedge&amp; \color{red}( c \vee \color{blue}(a \wedge (b \wedge c)\color{blue}) \color{red})
-    &amp;&amp;\text{Distributivity 3 times} \\
-
-    &amp;=[(a \wedge b) \vee \color{blue}(a \wedge (b \wedge c)\color{blue})] 
-    &amp;&amp;
-    &amp;\wedge&amp; \color{red}( c \vee \color{blue}(a \wedge (b \wedge c)\color{blue}) \color{red})
-    &amp;&amp;\text{Distributivity} \\
-
-    &amp;=\color{blue}( (a \wedge b) \wedge c \color{blue}) \vee \color{blue}( a \wedge (b \wedge c) \color{blue})
-    &amp;&amp;
-    &amp;&amp;
-    &amp;&amp;\text{Distributivity} \\
-
-    &amp;=\color{red}( \color{blue}((a \wedge b) \wedge c\color{blue}) \vee a \color{red}) 
-    &amp;\wedge&amp; [ \color{blue}((a \wedge b) \wedge c\color{blue}) \vee (b \wedge c)]
-    &amp;&amp;
-    &amp;&amp;\text{Distributivity} \\
-
-    &amp;=\color{red}( \color{blue}( (a \wedge b) \wedge c \color{blue}) \vee a \color{red})
-    &amp;\wedge&amp; [ \color{red}( \color{blue}( (a \wedge b) \wedge c \color{blue}) \vee b \color{red}) 
-    &amp;\wedge&amp; \color{red}( \color{blue}( (a \wedge b) \wedge c \color{blue}) \vee c \color{red}) ]
-    &amp;&amp;\text{Distributivity} \\
-
-    &amp;=\color{red}( a \vee \color{blue}( (a \wedge b) \wedge c \color{blue}) \color{red})
-    &amp;\wedge&amp; [ \color{red}( b \vee \color{blue}( (a \wedge b) \wedge c \color{blue}) \color{red}) 
-    &amp;\wedge&amp; \color{red}( c \vee \color{blue}( (a \wedge b) \wedge c \color{blue}) \color{red}) ]
-    &amp;&amp;\text{Commutativity 3 times} \\
-
-    &amp;=\color{red}( \color{blue}( a \vee (a \wedge b) \color{blue}) \wedge (a \vee c) \color{red})
-    &amp;\wedge&amp; [ \color{red}( \color{blue}( b \vee (a \wedge b) \color{blue}) \wedge (b \vee c) \color{red}) 
-    &amp;\wedge&amp; \color{red}( \color{blue}( c \vee (a \wedge b) \wedge (c \vee c) \color{blue}) \color{red}) ]
-    &amp;&amp;\text{Distributivity 3 times} \\
-
-    &amp;=\color{red}( \color{blue}( a \vee (a \wedge b) \color{blue}) \wedge (a \vee c) \color{red})
-    &amp;\wedge&amp; [ \color{red}( \color{blue}( b \vee (a \wedge b) \color{blue}) \wedge (b \vee c) \color{red}) 
-    &amp;\wedge&amp; \color{red}( \color{blue}( c \vee (a \wedge b) \wedge c \color{blue}) \color{red}) ]
-    &amp;&amp;\text{Idempotent} \\
-
-    &amp;=\color{red}( \color{blue}( a \vee (a \wedge b) \color{blue}) \wedge (a \vee c) \color{red})
-    &amp;\wedge&amp; [ \color{red}( \color{blue}( b \vee (b \wedge a) \color{blue}) \wedge (b \vee c) \color{red}) 
-    &amp;\wedge&amp; \color{red}( c \wedge \color{blue}( c \vee (a \wedge b) \color{blue}) \color{red}) ]
-    &amp;&amp;\text{Commutativity 2 times} \\
-
-    &amp;=\color{red}( a \wedge (a \vee c) \color{red})
-    &amp;\wedge&amp; [ \color{red}( b \wedge (b \vee c) \color{red}) 
-    &amp;\wedge&amp; \color{red}( c \wedge \color{blue}( c \vee (a \wedge b)  \color{blue}) \color{red}) ]
-    &amp;&amp;\text{Absorption 2 times} \\
-
-    &amp;=a \wedge (b \wedge c)
-    &amp;&amp;
-    &amp;&amp;
-    &amp;&amp;\text{Absorption 3 times}
-\end{align}\]
-
-<p>The proof for the associativity of $\vee$ is identical.</p>
-
-<p>$(a \vee b) \vee c \quad = \quad a \vee (b \vee c)$</p>
+<p>$((a \wedge b) \vee (\overline{a} \vee \overline{b})) = \color{green}T$</p>
 
 \[\begin{align}
-    &amp;(a \vee b) \vee c 
-    &amp;&amp;
-    &amp;&amp;
-    &amp;&amp; \\
-
-    &amp;=[\color{red}(a \vee \color{blue}(a \wedge (b \vee c)\color{blue}) \color{red}) 
-    &amp;\vee&amp; \color{red}(b \vee (b \wedge a)\color{red})] 
-    &amp;\vee&amp; \color{red}(c \vee (c \wedge a)\color{red})   
-    &amp;&amp;\text{Absorption 3 times} \\
-    
-    &amp;=[\color{red}(a \vee \color{blue}(a \wedge (b \vee c)\color{blue}) \color{red}) 
-    &amp;\vee&amp; \color{red}( \color{blue}(b \wedge (b \vee c)\color{blue}) \vee (b \wedge a)\color{red})] 
-    &amp;\vee&amp; \color{red}(\color{blue}(c \wedge (c \vee b)\color{blue}) \vee (c \wedge a)\color{red})
-    &amp;&amp;\text{Absorption 2 times} \\
-
-    &amp;=[\color{red}(a \vee \color{blue}(a \wedge (b \vee c)\color{blue}) \color{red}) 
-    &amp;\vee&amp; \color{red}( (b \wedge a) \vee \color{blue}(b \wedge (b \vee c)\color{blue}) \color{red})]
-    &amp;\vee&amp; \color{red}( (c \wedge a) \vee \color{blue}(c \wedge (b \vee c)\color{blue})\color{red})
-    &amp;&amp;\text{Commutativity 3 times} \\
-
-    &amp;=[\color{red}( (a \wedge a) \vee \color{blue}(a \wedge (b \vee c)\color{blue}) \color{red}) 
-    &amp;\vee&amp; \color{red}( (b \wedge a) \vee \color{blue}(b \wedge (b \vee c)\color{blue}) \color{red})]
-    &amp;\vee&amp; \color{red}( (c \wedge a) \vee \color{blue}(c \wedge (b \vee c)\color{blue})\color{red})
-    &amp;&amp;\text{Idempotent} \\
-
-    &amp;=[\color{red}( a \wedge \color{blue}(a \vee (b \vee c)\color{blue}) \color{red})
-    &amp;\vee&amp; \color{red}( b \wedge \color{blue}(a \vee (b \vee c)\color{blue}) \color{red})]
-    &amp;\vee&amp; \color{red}( c \wedge \color{blue}(a \vee (b \vee c)\color{blue}) \color{red})
-    &amp;&amp;\text{Distributivity 3 times} \\
-
-    &amp;=[(a \vee b) \wedge \color{blue}(a \vee (b \vee c)\color{blue})] 
-    &amp;&amp;
-    &amp;\vee&amp; \color{red}( c \wedge \color{blue}(a \vee (b \vee c)\color{blue}) \color{red})
-    &amp;&amp;\text{Distributivity} \\
-
-    &amp;=\color{blue}( (a \vee b) \vee c \color{blue}) \wedge \color{blue}( a \vee (b \vee c) \color{blue})
-    &amp;&amp;
-    &amp;&amp;
-    &amp;&amp;\text{Distributivity} \\
-
-    &amp;=\color{red}( \color{blue}((a \vee b) \vee c\color{blue}) \wedge a \color{red}) 
-    &amp;\vee&amp; [ \color{blue}((a \vee b) \vee c\color{blue}) \wedge (b \vee c)]
-    &amp;&amp;
-    &amp;&amp;\text{Distributivity} \\
-
-    &amp;=\color{red}( \color{blue}( (a \vee b) \vee c \color{blue}) \wedge a \color{red})
-    &amp;\vee&amp; [ \color{red}( \color{blue}( (a \vee b) \vee c \color{blue}) \wedge b \color{red}) 
-    &amp;\vee&amp; \color{red}( \color{blue}( (a \vee b) \vee c \color{blue}) \wedge c \color{red}) ]
-    &amp;&amp;\text{Distributivity} \\
-
-    &amp;=\color{red}( a \wedge \color{blue}( (a \vee b) \vee c \color{blue}) \color{red})
-    &amp;\vee&amp; [ \color{red}( b \wedge \color{blue}( (a \vee b) \vee c \color{blue}) \color{red}) 
-    &amp;\vee&amp; \color{red}( c \wedge \color{blue}( (a \vee b) \vee c \color{blue}) \color{red}) ]
-    &amp;&amp;\text{Commutativity 3 times} \\
-
-    &amp;=\color{red}( \color{blue}( a \wedge (a \vee b) \color{blue}) \vee (a \wedge c) \color{red})
-    &amp;\vee&amp; [ \color{red}( \color{blue}( b \wedge (a \vee b) \color{blue}) \vee (b \wedge c) \color{red}) 
-    &amp;\vee&amp; \color{red}( \color{blue}( c \wedge (a \vee b) \vee (c \wedge c) \color{blue}) \color{red}) ]
-    &amp;&amp;\text{Distributivity 3 times} \\
-
-    &amp;=\color{red}( \color{blue}( a \wedge (a \vee b) \color{blue}) \vee (a \wedge c) \color{red})
-    &amp;\vee&amp; [ \color{red}( \color{blue}( b \wedge (a \vee b) \color{blue}) \vee (b \wedge c) \color{red}) 
-    &amp;\vee&amp; \color{red}( \color{blue}( c \wedge (a \vee b) \vee c \color{blue}) \color{red}) ]
-    &amp;&amp;\text{Idempotent} \\
-
-    &amp;=\color{red}( \color{blue}( a \wedge (a \vee b) \color{blue}) \vee (a \wedge c) \color{red})
-    &amp;\vee&amp; [ \color{red}( \color{blue}( b \wedge (b \vee a) \color{blue}) \vee (b \wedge c) \color{red}) 
-    &amp;\vee&amp; \color{red}( c \vee \color{blue}( c \wedge (a \vee b) \color{blue}) \color{red}) ]
-    &amp;&amp;\text{Commutativity 2 times} \\
-
-    &amp;=\color{red}( a \vee (a \wedge c) \color{red})
-    &amp;\vee&amp; [ \color{red}( b \vee (b \wedge c) \color{red}) 
-    &amp;\vee&amp; \color{red}( c \vee \color{blue}( c \wedge (a \vee b)  \color{blue}) \color{red}) ]
-    &amp;&amp;\text{Absorption 2 times} \\
-
-    &amp;=a \vee (b \vee c)
-    &amp;&amp;
-    &amp;&amp;
-    &amp;&amp;\text{Absorption 3 times}
+    &amp;(a \wedge b) \vee (\overline{a} \vee \overline{b}) \\
+    &amp;= ((b \wedge a) \vee \overline{a}) \vee \overline{b}   &amp;&amp;\text{Associativity} \\
+    &amp;= (\overline{a} \vee (a \wedge b)) \vee \overline{b}   &amp;&amp;\text{Commutativity} \\
+    &amp;= (\overline{a} \vee b) \vee \overline{b}              &amp;&amp;\text{Simplification} \\
+    &amp;= \overline{a} \vee (b \vee \overline{b})              &amp;&amp;\text{Associativity} \\
+    &amp;= \overline{a} \vee \color{green}T                     &amp;&amp;\text{Excluded Middle} \\
+    &amp;= \color{green}T                                       &amp;&amp;\text{Base} \\
 \end{align}\]
 
-<p>Now, in future proofs, if we have $(a \wedge b) \wedge c$ we can instead write $a \wedge b \wedge c$ without ambiguity. Likewise for $\vee$.</p>
+<p>$((a \wedge b) \wedge (\overline{a} \vee \overline{b})) = \color{red}F$</p>
+
+\[\begin{align}
+    &amp;(a \wedge b) \wedge (\overline{a} \vee \overline{b}) \\
+    &amp;= a \wedge (b \wedge (\overline{a} \vee \overline{b})) &amp;&amp;\text{Associativity} \\
+    &amp;= a \wedge (b \wedge (\overline{b} \vee \overline{a})) &amp;&amp;\text{Commutativity} \\
+    &amp;= a \wedge (b \wedge \overline{a})                     &amp;&amp;\text{Simplification} \\
+    &amp;= (a \wedge \overline{a}) \wedge b                     &amp;&amp;\text{Commutativity and Associativity} \\
+    &amp;= \color{red}F \wedge b                                &amp;&amp;\text{Noncontradiction} \\
+    &amp;= \color{red}F                                         &amp;&amp;\text{Base} \\
+\end{align}\]
+
+<p>And of course you can prove the other law $(\overline{a} \wedge \overline{b}) = (\overline{a \vee b})$ in the exact same way. My issue with this proof is that it relies on the expression</p>
+
+\[(x \vee y) \wedge (\overline{x \wedge y}) \quad = \quad (y = \overline{x})\]
+
+<p>being true. However, when you try to prove it using our rigorous proof style, you run into a problem. You need De Morgan’s Law to prove it. You can prove it without De Morgan’s Law using other methods such as proof by contradiction or completion arguments. However, if you want to prove it soley from the axioms and using strict logic, then I don’t believe you can. Thus, I have come up with an alternative.</p>
+
+<h2 id="my-proof">My Proof</h2>
+
+<p>As far as I can tell, this is a novel proof. I have never seen this anywhere else.</p>
+
+<p>The proof method is the following.</p>
+<ol>
+  <li>Show that $(\overline{a \vee b}) \implies (\overline{a} \wedge \overline{b})$</li>
+  <li>Show that $(\overline{a} \wedge \overline{b}) \implies (\overline{a \vee b})$</li>
+  <li>Show that $(\overline{a \vee b}) = (\overline{a} \wedge \overline{b})$</li>
+</ol>
+
+<p>First, we show 1.</p>
+
+\[\begin{align}
+    &amp;(\overline{a \vee b}) &amp;&amp; &amp;&amp;\\
+    &amp;= (\overline{a \vee b}) \wedge \color{green}T
+    &amp;&amp;
+    &amp;&amp;\text{Identity} \\
+    
+    &amp;= [(\overline{a \vee b}) \wedge \color{green}T] 
+    &amp;\wedge&amp; [(\overline{a \vee b}) \wedge \color{green}T]
+    &amp;&amp;\text{Idempotent} \\
+    
+    &amp;= [(\overline{a \vee b}) \wedge (a \vee \overline{a})] 
+    &amp;\wedge&amp; [(\overline{a \vee b}) \wedge (b \vee \overline{b})]
+    &amp;&amp;\text{Excluded Middle} \\
+    
+    &amp;= [(\overline{a \vee b}) \wedge \color{red}( (a \wedge (a \vee b)) \vee \overline{a} \color{red})] 
+    &amp;\wedge&amp; [(\overline{a \vee b}) \wedge \color{red}( (b \wedge (a \vee b)) \vee \overline{b} \color{red})]
+    &amp;&amp;\text{Absorption} \\
+
+    &amp;= [\color{red}( (\overline{a \vee b}) \wedge (a \wedge (a \vee b)) \color{red}) \vee \color{red}( (\overline{a \vee b}) \wedge \overline{a} \color{red})] 
+    &amp;\wedge&amp; [\color{red}( (\overline{a \vee b}) \wedge (b \wedge (a \vee b)) \color{red}) \vee \color{red}( (\overline{a \vee b}) \wedge \overline{b} \color{red})] 
+    &amp;&amp;\text{Distributivity} \\
+
+    &amp;= [\color{red}( (\overline{a \vee b}) \wedge ((a \vee b) \wedge a) \color{red}) \vee \color{red}( (\overline{a \vee b}) \wedge \overline{a} \color{red})] 
+    &amp;\wedge&amp; [\color{red}( (\overline{a \vee b}) \wedge ((a \vee b) \wedge b) \color{red}) \vee \color{red}( (\overline{a \vee b}) \wedge \overline{b} \color{red})] 
+    &amp;&amp;\text{Commutativity} \\
+
+    &amp;= [\color{red}( ((\overline{a \vee b}) \wedge (a \vee b)) \wedge a \color{red}) \vee \color{red}( (\overline{a \vee b}) \wedge \overline{a} \color{red})] 
+    &amp;\wedge&amp; [\color{red}( ((\overline{a \vee b}) \wedge (a \vee b)) \wedge b \color{red}) \vee \color{red}( (\overline{a \vee b}) \wedge \overline{b} \color{red})] 
+    &amp;&amp;\text{Associativity} \\
+
+    &amp;= [\color{red}( \color{red}F \wedge a \color{red}) \vee \color{red}( (\overline{a \vee b}) \wedge \overline{a} \color{red})] 
+    &amp;\wedge&amp; [\color{red}( \color{red}F \wedge b \color{red}) \vee \color{red}( (\overline{a \vee b}) \wedge \overline{b} \color{red})] 
+    &amp;&amp;\text{Noncontradiction} \\
+
+    &amp;= [\color{red}F \vee \color{red}( (\overline{a \vee b}) \wedge \overline{a} \color{red})] 
+    &amp;\wedge&amp; [\color{red}F \vee \color{red}( (\overline{a \vee b}) \wedge \overline{b} \color{red})] 
+    &amp;&amp;\text{Base} \\
+
+    &amp;= [ (\overline{a \vee b}) \wedge \overline{a} ] 
+    &amp;\wedge&amp; [ (\overline{a \vee b}) \wedge \overline{b} ] 
+    &amp;&amp;\text{Identity} \\
+
+    &amp;= ( (\overline{a \vee b}) \wedge (\overline{a \vee b}) ) \wedge (\overline{a} \wedge \overline{b} )
+    &amp;&amp;
+    &amp;&amp;\text{Associativity and Commutativity} \\
+
+    &amp;= (\overline{a \vee b}) \wedge (\overline{a} \wedge \overline{b} )
+    &amp;&amp;
+    &amp;&amp;\text{Idempotent} \\
+
+    &amp;\implies \overline{a} \wedge \overline{b}
+    &amp;&amp;
+    &amp;&amp;\text{Specialization}
+\end{align}\]
+
+<p>Next, we show 2.</p>
+
+\[\begin{align}
+    &amp;\overline{a} \wedge \overline{b} &amp;&amp; \\
+    
+    &amp;= (\overline{a} \wedge \overline{b}) \wedge \color{green}T 
+    &amp;&amp;
+    &amp;&amp;\text{identity} \\
+
+    &amp;= (\overline{a} \wedge \overline{b}) \wedge \color{red}( (a \vee b) \vee (\overline{a \vee b}) \color{red})
+    &amp;&amp;
+    &amp;&amp;\text{Excluded Middle} \\
+
+    &amp;= \color{red}( (\overline{a} \wedge \overline{b}) \wedge (a \vee b) \color{red}) 
+    &amp;\vee&amp; \color{red}( (\overline{a} \wedge \overline{b}) \wedge (\overline{a \vee b}) \color{red})
+    &amp;&amp;\text{Distributivity} \\
+
+    &amp;= \color{red}( \overline{a} \wedge (\overline{b} \wedge (a \vee b)) \color{red}) 
+    &amp;\vee&amp; \color{red}( (\overline{a} \wedge \overline{b}) \wedge (\overline{a \vee b}) \color{red})
+    &amp;&amp;\text{Associativity} \\
+
+    &amp;= \color{red}( \overline{a} \wedge (\overline{b} \wedge (b \vee a)) \color{red}) 
+    &amp;\vee&amp; \color{red}( (\overline{a} \wedge \overline{b}) \wedge (\overline{a \vee b}) \color{red})
+    &amp;&amp;\text{Commutativity} \\
+
+    &amp;= \color{red}( \overline{a} \wedge (\overline{b} \wedge a) \color{red}) 
+    &amp;\vee&amp; \color{red}( (\overline{a} \wedge \overline{b}) \wedge (\overline{a \vee b}) \color{red})
+    &amp;&amp;\text{Simplification} \\
+
+    &amp;= \color{red}( (\overline{a} \wedge a) \wedge \overline{b} \color{red}) 
+    &amp;\vee&amp; \color{red}( (\overline{a} \wedge \overline{b}) \wedge (\overline{a \vee b}) \color{red})
+    &amp;&amp;\text{Commutativity and Associativity} \\
+
+    &amp;= \color{red}( \color{red}F \wedge \overline{b} \color{red}) 
+    &amp;\vee&amp; \color{red}( (\overline{a} \wedge \overline{b}) \wedge (\overline{a \vee b}) \color{red})
+    &amp;&amp;\text{Noncontradiction} \\
+
+    &amp;= \color{red}F
+    &amp;\vee&amp; \color{red}( (\overline{a} \wedge \overline{b}) \wedge (\overline{a \vee b}) \color{red})
+    &amp;&amp;\text{Base} \\
+
+    &amp;= (\overline{a} \wedge \overline{b}) \wedge (\overline{a \vee b})
+    &amp;&amp;
+    &amp;&amp;\text{Identity} \\
+
+    &amp;\implies (\overline{a \vee b})
+    &amp;&amp;
+    &amp;&amp;\text{Specialization}
+\end{align}\]
+
+<p>Finally, we prove 3. You could imagine this being written out as one giant proof where we insert the proofs for 1. and 2. between the 2nd and 3rd step.</p>
+
+\[\begin{align}
+    &amp;(\overline{a \vee b}) = (\overline{a} \wedge \overline{b}) \\
+    &amp;= ((\overline{a \vee b}) \implies (\overline{a} \wedge \overline{b})) \wedge ((\overline{a \vee b}) \impliedby (\overline{a} \wedge \overline{b})) &amp;&amp;\text{Double Implication} \\
+    &amp;= ((\overline{a \vee b}) \implies (\overline{a} \wedge \overline{b})) \wedge ((\overline{a} \wedge \overline{b}) \implies (\overline{a \vee b})) &amp;&amp;\text{Mirror} \\
+    &amp;= \color{green}T \wedge \color{green}T &amp;&amp;\text{By 1. and 2.} \\
+    &amp;= \color{green}T &amp;&amp;\text{Definition of} \ \wedge
+\end{align}\]
+
+<p>And of course you can prove the other law $(\overline{a} \wedge \overline{b}) = (\overline{a \vee b})$ in the exact same way. Exchange $\vee$ with $\wedge$, $\ \color{green}T$ with $\color{red}F$, $\ \implies$ with $\impliedby$, and Specialization with Generalization (and vice versa). I don’t think it is beneficial to anyone to write it out.</p>
+
+<h2 id="uniqueness-of-the-complement">Uniqueness of the Complement</h2>
+
+<p>Now, we can easily prove the complement law used in the canonical proof.</p>
+
+<p>$ (x \vee y) \wedge (\overline{x \wedge y}) \quad = \quad (y = \overline{x}) $</p>
+
+\[\begin{align}
+    &amp;(x \vee y) \wedge (\overline{x \wedge y})                      &amp;&amp; \\
+    &amp;= (x \vee y) \wedge (\overline{x} \vee \overline{y})           &amp;&amp;\text{De Morgan's Law} \\
+    &amp;= (\overline{y} \vee \overline{x}) \wedge (x \vee y)           &amp;&amp;\text{Commutativity 2 times} \\
+    &amp;= (y \implies \overline{x}) \wedge (\overline{x} \implies y)   &amp;&amp;\text{Material Implications} \\
+    &amp;= (y \implies \overline{x}) \wedge (y \impliedby \overline{x}) &amp;&amp;\text{Mirror} \\
+    &amp;= (y = \overline{x})                                           &amp;&amp;\text{Double Implication}
+\end{align}\]
 
   </div>
   
@@ -419,7 +431,7 @@
     <!--
     <div class="footer">
       <p>
-        &copy; 2022. All rights reserved.
+        &copy; 2023. All rights reserved.
       </p>
     </div>
     -->

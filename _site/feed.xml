@@ -1,4 +1,255 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-09-01T15:06:08-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Eric Keilty</title><subtitle>Software Engineer/Aspiring Amature Mathematician</subtitle><author><name>Eric Keilty</name><email>epkeilty@gmail.com</email></author><entry><title type="html">Monotonicity</title><link href="http://localhost:4000/blog/boolean-algebra/monotonicity/" rel="alternate" type="text/html" title="Monotonicity" /><published>2022-09-01T00:00:00-04:00</published><updated>2022-09-01T00:00:00-04:00</updated><id>http://localhost:4000/blog/boolean-algebra/monotonicity</id><content type="html" xml:base="http://localhost:4000/blog/boolean-algebra/monotonicity/"><![CDATA[<p>$(a \implies b) \quad \implies \quad (c \wedge a) \implies (c \wedge b)$</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-05-19T13:49:42-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Eric Keilty</title><subtitle>Software Engineer/Aspiring Amature Mathematician</subtitle><author><name>Eric Keilty</name><email>epkeilty@gmail.com</email></author><entry><title type="html">Miscellaneous</title><link href="http://localhost:4000/blog/boolean-algebra/mischellaneous/" rel="alternate" type="text/html" title="Miscellaneous" /><published>2022-09-03T00:00:00-04:00</published><updated>2022-09-03T00:00:00-04:00</updated><id>http://localhost:4000/blog/boolean-algebra/mischellaneous</id><content type="html" xml:base="http://localhost:4000/blog/boolean-algebra/mischellaneous/"><![CDATA[<h2 id="inclusion">Inclusion</h2>
+
+<p>$(a \wedge b) = a \quad = \quad (a \implies b)$</p>
+
+\[\begin{align}
+    &amp;(a \wedge b) = a                                                                       &amp;&amp; \\
+    &amp;= ((a \wedge b) \wedge a) \vee ((\overline{a \wedge b}) \wedge \overline{a})           &amp;&amp;\text{Equality} \\
+    &amp;= ((a \wedge b) \wedge a) \vee ((\overline{a} \vee \overline{b}) \wedge \overline{a})  &amp;&amp;\text{De Morgan's Law} \\
+    &amp;= ((a \wedge a) \wedge b) \vee (\overline{a} \wedge (\overline{a} \vee \overline{b}))  &amp;&amp;\text{Associativity and Commutativity} \\
+    &amp;= (a \wedge b) \vee (\overline{a} \wedge (\overline{a} \vee \overline{b}))             &amp;&amp;\text{Idempotent} \\
+    &amp;= (a \wedge b) \vee \overline{a}                                                       &amp;&amp;\text{Absorption} \\
+    &amp;= \overline{a} \vee (a \wedge b)                                                       &amp;&amp;\text{Commutativity} \\
+    &amp;= \overline{a} \vee b                                                                  &amp;&amp;\text{Simplification} \\
+    &amp;= a \implies b                                                                         &amp;&amp;\text{Material Implication}
+\end{align}\]
+
+<p>$(a \vee b) = b \quad = \quad (a \implies b)$</p>
+
+\[\begin{align}
+    &amp;(a \vee b) = b                                                                         &amp;&amp; \\
+    &amp;= ((a \vee b) \wedge b) \vee ((\overline{a \vee b}) \wedge \overline{b})               &amp;&amp;\text{Equality} \\
+    &amp;= ((a \vee b) \wedge b) \vee ((\overline{a} \wedge \overline{b}) \wedge \overline{b})  &amp;&amp;\text{De Morgan's Law} \\
+    &amp;= (b \wedge (b \vee a)) \vee ((\overline{b} \wedge \overline{b}) \wedge \overline{a})  &amp;&amp;\text{Associativity and Commutativity} \\
+    &amp;= (b \wedge (b \vee a)) \vee (\overline{b} \wedge \overline{a})                        &amp;&amp;\text{Idempotent} \\
+    &amp;= b \vee (\overline{b} \wedge \overline{a})                                            &amp;&amp;\text{Absorption} \\
+    &amp;= b \vee \overline{a}                                                                  &amp;&amp;\text{Simplification} \\
+    &amp;= \overline{a} \vee b                                                                  &amp;&amp;\text{Commutativity} \\
+    &amp;= a \implies b                                                                         &amp;&amp;\text{Material Implication}
+\end{align}\]
+
+<h2 id="discharge">Discharge</h2>
+
+<p>$a \wedge (a \implies b) \quad = \quad (a \wedge b)$</p>
+
+\[\begin{align}
+    &amp;a \wedge (a \implies b)            &amp;&amp; \\
+    &amp;= a \wedge (\overline{a} \vee b)   &amp;&amp;\text{Material Implication} \\
+    &amp;= a \wedge b                       &amp;&amp;\text{Simplification}
+\end{align}\]
+
+<p>$a \implies (a \wedge b) \quad = \quad (a \implies b)$</p>
+
+\[\begin{align}
+    &amp;a \implies (a \wedge b)            &amp;&amp; \\
+    &amp;= \overline{a} \vee (a \wedge b)   &amp;&amp;\text{Material Implication} \\
+    &amp;= \overline{a} \vee b              &amp;&amp;\text{Simplification} \\
+    &amp;= a \implies b                     &amp;&amp;\text{Material Implication}
+\end{align}\]
+
+<h2 id="portation">Portation</h2>
+
+<p>$(a \wedge b) \implies c \quad = \quad a \implies (b \implies c)$</p>
+
+\[\begin{align}
+    &amp;(a \wedge b) \implies c                    &amp;&amp; \\
+    &amp;= (\overline{a \wedge b}) \vee c           &amp;&amp;\text{Material Implication} \\
+    &amp;= (\overline{a} \vee \overline{b}) \vee c  &amp;&amp;\text{De Morgan's Law} \\
+    &amp;= \overline{a} \vee (\overline{b} \vee c)  &amp;&amp;\text{Associativity} \\
+    &amp;= \overline{a} \vee (b \implies c)         &amp;&amp;\text{Material Implication} \\
+    &amp;= a \implies (b \implies c)                &amp;&amp;\text{Material Implication}
+\end{align}\]
+
+<h2 id="conflation">Conflation</h2>
+
+<p>$(a \implies b) \wedge (c \implies d) \quad \implies \quad (a \wedge c) \implies (b \wedge d)$</p>
+
+\[\begin{align}
+    &amp;(a \implies b) \wedge (c \implies d)
+    &amp;&amp; \\
+
+    &amp;= (\overline{a} \vee b) \wedge (\overline{c} \vee d)
+    &amp;&amp;\text{Material Implication 2 times} \\
+
+    &amp;\implies ((\overline{a} \vee b) \wedge (\overline{c} \vee d)) \vee (\overline{a} \vee \overline{c})
+    &amp;&amp;\text{Generalization} \\
+
+    &amp;= ((\overline{a} \vee b) \vee (\overline{a} \vee \overline{c})) \wedge ((\overline{c} \vee d) \vee (\overline{a} \vee \overline{c}))
+    &amp;&amp;\text{Distributivity} \\
+
+    &amp;= ((\overline{a} \vee \overline{a}) \vee b \vee \overline{c}) \wedge (\overline{a} \vee (\overline{c} \vee \overline{c}) \vee d)
+    &amp;&amp;\text{Associativity and Commutativity} \\
+
+    &amp;= (\overline{a} \vee b \vee \overline{c}) \wedge (\overline{a} \vee \overline{c} \vee d)
+    &amp;&amp;\text{Idempotent 2 times} \\
+
+    &amp;= ((\overline{a} \vee \overline{c}) \vee b) \wedge ((\overline{a} \vee \overline{c}) \vee d)
+    &amp;&amp;\text{Associativity and Commutativity} \\
+
+    &amp;= (\overline{a} \vee \overline{c}) \vee (b \wedge d)
+    &amp;&amp;\text{Distributivity} \\
+
+    &amp;= (\overline{a \wedge c}) \vee (b \wedge d)
+    &amp;&amp;\text{De Morgan's Law} \\
+
+    &amp;= (a \wedge c) \implies (b \wedge d)
+    &amp;&amp;\text{Material Implication}
+\end{align}\]
+
+<p>$(a \implies b) \wedge (c \implies d) \quad \implies \quad (a \vee c) \implies (b \vee d)$</p>
+
+\[\begin{align}
+    &amp;(a \implies b) \wedge (c \implies d)
+    &amp;&amp; \\
+
+    &amp;= (\overline{a} \vee b) \wedge (\overline{c} \vee d)
+    &amp;&amp;\text{Material Implication 2 times} \\
+
+    &amp;\implies ((\overline{a} \vee b) \wedge (\overline{c} \vee d)) \vee (b \vee d)
+    &amp;&amp;\text{Generalization} \\
+
+    &amp;= ((\overline{a} \vee b) \vee (b \vee d)) \wedge ((\overline{c} \vee d) \vee (b \vee d))
+    &amp;&amp;\text{Distributivity} \\
+
+    &amp;= (\overline{a} \vee (b \vee b) \vee d) \wedge (b \vee \overline{c} \vee (d \vee d))
+    &amp;&amp;\text{Associativity and Commutativity} \\
+
+    &amp;= (\overline{a} \vee b \vee d) \wedge (b \vee \overline{c} \vee d)
+    &amp;&amp;\text{Idempotent 2 times} \\
+
+    &amp;= (\overline{a} \vee (b \vee d)) \wedge (\overline{c} \vee (b \vee d))
+    &amp;&amp;\text{Associativity and Commutativity} \\
+
+    &amp;= (\overline{a} \vee \overline{c}) \vee (b \wedge d)
+    &amp;&amp;\text{Distributivity} \\
+
+    &amp;= (\overline{a \wedge c}) \vee (b \wedge d)
+    &amp;&amp;\text{De Morgan's Law} \\
+
+    &amp;= (a \wedge c) \implies (b \wedge d)
+    &amp;&amp;\text{Material Implication}
+\end{align}\]]]></content><author><name>Eric Keilty</name><email>epkeilty@gmail.com</email></author><category term="blog" /><category term="boolean-algebra" /><category term="boolean" /><category term="algebra," /><category term="inclusion," /><category term="discharge," /><category term="portation," /><category term="conflation" /><summary type="html"><![CDATA[Inclusion]]></summary></entry><entry><title type="html">Consensus and Resolution</title><link href="http://localhost:4000/blog/boolean-algebra/consensus-and-resolution/" rel="alternate" type="text/html" title="Consensus and Resolution" /><published>2022-09-02T00:00:00-04:00</published><updated>2022-09-02T00:00:00-04:00</updated><id>http://localhost:4000/blog/boolean-algebra/consensus-and-resolution</id><content type="html" xml:base="http://localhost:4000/blog/boolean-algebra/consensus-and-resolution/"><![CDATA[<h2 id="the-consensus-theorem">The Consensus Theorem</h2>
+
+<p>$((a \wedge b) \vee (\overline{a} \wedge c)) \vee (b \wedge c) \quad = \quad (a \wedge b) \vee (\overline{a} \wedge c)$</p>
+
+\[\begin{align}
+    &amp;((a \wedge b) \vee (\overline{a} \wedge c)) \vee (b \wedge c) 
+    &amp;&amp; \\
+
+    &amp;= \color{red}( (a \wedge b) \vee (\overline{a} \wedge c) \color{red}) \vee \color{red}( \color{green}T \wedge (b \wedge c) \color{red})
+    &amp;&amp; \text{Identity} \\
+
+    &amp;= \color{red}( (a \wedge b) \vee (\overline{a} \wedge c) \color{red}) \vee \color{red}( (a \vee \overline{a}) \wedge (b \wedge c) \color{red})
+    &amp;&amp; \text{Excluded Middle} \\
+
+    &amp;= \color{red}( (a \wedge b) \vee (\overline{a} \wedge c) \color{red}) \vee \color{red}( (a \wedge (b \wedge c)) \vee (\overline{a} \wedge (b \wedge c)) \color{red})
+    &amp;&amp; \text{Distributivity} \\
+
+    &amp;= \color{red}( (a \wedge b) \vee (\overline{a} \wedge c) \color{red}) \vee \color{red}( ((a \wedge b) \wedge c) \vee ((\overline{a} \wedge c) \wedge b) \color{red})
+    &amp;&amp; \text{Associativity and Commutativity} \\
+
+    &amp;= \color{red}( (a \wedge b) \vee ((a \wedge b) \wedge c) \color{red}) \vee \color{red}((\overline{a} \wedge c) \vee ((\overline{a} \wedge c) \wedge b) \color{red})
+    &amp;&amp; \text{Associativity and Commutativity} \\
+
+    &amp;= (a \wedge b) \vee (\overline{a} \wedge c)
+    &amp;&amp; \text{Absorption 2 times} \\
+\end{align}\]
+
+<p>$((a \vee b) \wedge (\overline{a} \vee c)) \wedge (b \vee c) \quad = \quad (a \vee b) \wedge (\overline{a} \vee c)$</p>
+
+\[\begin{align}
+    &amp;((a \vee b) \wedge (\overline{a} \vee c)) \wedge (b \vee c) 
+    &amp;&amp; \\
+
+    &amp;= \color{red}( (a \vee b) \wedge (\overline{a} \vee c) \color{red}) \wedge \color{red}( \color{green}T \vee (b \vee c) \color{red})
+    &amp;&amp; \text{Identity} \\
+
+    &amp;= \color{red}( (a \vee b) \wedge (\overline{a} \vee c) \color{red}) \wedge \color{red}( (a \wedge \overline{a}) \vee (b \vee c) \color{red})
+    &amp;&amp; \text{Noncontradiction} \\
+
+    &amp;= \color{red}( (a \vee b) \wedge (\overline{a} \vee c) \color{red}) \wedge \color{red}( (a \vee (b \vee c)) \wedge (\overline{a} \vee (b \vee c)) \color{red})
+    &amp;&amp; \text{Distributivity} \\
+
+    &amp;= \color{red}( (a \vee b) \wedge (\overline{a} \vee c) \color{red}) \wedge \color{red}( ((a \vee b) \vee c) \wedge ((\overline{a} \vee c) \vee b) \color{red})
+    &amp;&amp; \text{Associativity and Commutativity} \\
+
+    &amp;= \color{red}( (a \vee b) \wedge ((a \vee b) \vee c) \color{red}) \wedge \color{red}((\overline{a} \vee c) \wedge ((\overline{a} \vee c) \vee b) \color{red})
+    &amp;&amp; \text{Associativity and Commutativity} \\
+
+    &amp;= (a \vee b) \wedge (\overline{a} \vee c)
+    &amp;&amp; \text{Absorption 2 times} \\
+\end{align}\]
+
+<h2 id="resolution">Resolution</h2>
+
+<p>$a \wedge c \quad \implies \quad (a \vee b) \wedge (\overline{b} \vee c) \quad = \quad (a \wedge \overline{b}) \vee (b \wedge c) \quad \implies \quad a \vee c$</p>
+
+<p>We will do this in parts</p>
+
+<p>$a \wedge c \quad \implies \quad (a \vee b) \wedge (\overline{b} \vee c)$</p>
+
+\[\begin{align}
+    &amp;a \wedge c
+    &amp;&amp; \\
+
+    &amp;\implies (a \wedge c) \vee ((a \wedge \overline{b}) \vee (b \wedge c))
+    &amp;&amp;\text{Generalization} \\
+
+    &amp;= (a \wedge c) \vee (a \wedge \overline{b}) \vee (b \wedge c)
+    &amp;&amp;\text{Associativity} \\
+
+    &amp;= ((a \wedge c) \vee (a \wedge \overline{b}) \vee (b \wedge c)) \vee \color{green}T 
+    &amp;&amp;\text{Identity} \\
+
+    &amp;= (a \wedge \overline{b}) \vee (a \wedge c) \vee \color{green}T \vee (b \wedge c)
+    &amp;&amp;\text{Associativity and Commutativity} \\
+
+    &amp;= (a \wedge \overline{b}) \vee (a \wedge c) \vee (\overline{b} \wedge b) \vee (b \wedge c)
+    &amp;&amp;\text{Excluded Middle} \\
+
+    &amp;= (a \vee b) \wedge (\overline{b} \vee c)
+    &amp;&amp;\text{Distributivity}
+\end{align}\]
+
+<p>$(a \vee b) \wedge (\overline{b} \vee c) \quad = \quad (a \wedge \overline{b}) \vee (b \wedge c)$</p>
+
+\[\begin{align}
+    &amp;= (a \vee b) \wedge (\overline{b} \vee c)
+    &amp;&amp; \\
+
+    &amp;= (a \wedge c) \vee (a \wedge \overline{b}) \vee (b \wedge c)
+    &amp;&amp;\text{Preform above proof in reverse} \\
+
+    &amp;= ((a \wedge \overline{b}) \vee (b \wedge c)) \vee (a \wedge c)
+    &amp;&amp;\text{Associativity and Commutativity} \\
+    
+    &amp;= (a \wedge \overline{b}) \vee (b \wedge c)
+    &amp;&amp;\text{The Consensus Theorem}
+\end{align}\]
+
+<p>$(a \wedge \overline{b}) \vee (b \wedge c) \quad \implies \quad a \vee c$</p>
+
+\[\begin{align}
+    &amp;= (a \wedge \overline{b}) \vee (b \wedge c)
+    &amp;&amp; \\
+
+    &amp;= (a \vee b) \wedge (a \vee c) \wedge (\overline{b} \vee b) \wedge (\overline{b} \vee c)
+    &amp;&amp;\text{Distributivity} \\
+
+    &amp;= (a \vee b) \wedge (a \vee c) \wedge \color{green}T \wedge (\overline{b} \vee c)
+    &amp;&amp;\text{Excluded Middle} \\
+
+    &amp;= ((a \vee c) \wedge (a \vee b) \wedge (\overline{b} \vee c)) \wedge \color{green}T 
+    &amp;&amp;\text{Associativity and Commutativity} \\
+
+    &amp;= (a \vee c) \wedge (a \vee b) \wedge (\overline{b} \vee c)
+    &amp;&amp;\text{Identity} \\
+
+    &amp;= (a \vee c) \wedge ((a \vee b) \wedge (\overline{b} \vee c))
+    &amp;&amp;\text{Associativity} \\
+
+    &amp;\implies a \vee c
+\end{align}\]]]></content><author><name>Eric Keilty</name><email>epkeilty@gmail.com</email></author><category term="blog" /><category term="boolean-algebra" /><category term="boolean" /><category term="algebra," /><category term="consensus" /><category term="theorem," /><category term="resolution" /><summary type="html"><![CDATA[The Consensus Theorem]]></summary></entry><entry><title type="html">Monotonicity</title><link href="http://localhost:4000/blog/boolean-algebra/monotonicity/" rel="alternate" type="text/html" title="Monotonicity" /><published>2022-09-01T00:00:00-04:00</published><updated>2022-09-01T00:00:00-04:00</updated><id>http://localhost:4000/blog/boolean-algebra/monotonicity</id><content type="html" xml:base="http://localhost:4000/blog/boolean-algebra/monotonicity/"><![CDATA[<p>$(a \implies b) \quad \implies \quad (c \wedge a) \implies (c \wedge b)$</p>
 
 \[\begin{align}
     &amp;a \implies b                                           &amp;&amp; \\
@@ -727,220 +978,4 @@
     &amp;= (\overline{a} \vee a) \vee b     &amp;&amp;\text{Associativity} \\
     &amp;= \color{green}T \vee b            &amp;&amp;\text{Excluded Middle} \\
     &amp;= \color{green}T                   &amp;&amp;\text{Base}
-\end{align}\]]]></content><author><name>Eric Keilty</name><email>epkeilty@gmail.com</email></author><category term="blog" /><category term="boolean-algebra" /><category term="boolean" /><category term="algebra," /><category term="specialization," /><category term="generalization" /><summary type="html"><![CDATA[Here, we are going to emplore a different style of proof. In all previous proofs we had an expression of the form $\text{LHS} = \text{RHS}$. We then start with the $\text{LHS}$ at the top and arrive at the $\text{RHS}$ at the bottom. In these expressions, there is are equals sign. Instead, we are going to start with the entire expression at the top and arrive at $\color{green}T$ at the bottom. Since the original statement is equivalent to $\color{green}T$, it must be a true expression.]]></summary></entry><entry><title type="html">Associativity</title><link href="http://localhost:4000/blog/boolean-algebra/associativity/" rel="alternate" type="text/html" title="Associativity" /><published>2022-08-24T00:00:00-04:00</published><updated>2022-08-24T00:00:00-04:00</updated><id>http://localhost:4000/blog/boolean-algebra/associativity</id><content type="html" xml:base="http://localhost:4000/blog/boolean-algebra/associativity/"><![CDATA[<p>This is a very tedious proof. If you really want to understand it, I would recommend writing it out for yourself. I have added colored parenthesis to help keep track of the nested levels. Essentially, it makes clever use of distributivity and timely commutativity.</p>
-
-<p>$(a \wedge b) \wedge c \quad = \quad a \wedge (b \wedge c)$</p>
-
-\[\begin{align}
-    &amp;(a \wedge b) \wedge c 
-    &amp;&amp;
-    &amp;&amp;
-    &amp;&amp; \\
-
-    &amp;=[\color{red}(a \wedge \color{blue}(a \vee (b \wedge c)\color{blue}) \color{red}) 
-    &amp;\wedge&amp; \color{red}(b \wedge (b \vee a)\color{red})] 
-    &amp;\wedge&amp; \color{red}(c \wedge (c \vee a)\color{red})   
-    &amp;&amp;\text{Absorption 3 times} \\
-    
-    &amp;=[\color{red}(a \wedge \color{blue}(a \vee (b \wedge c)\color{blue}) \color{red}) 
-    &amp;\wedge&amp; \color{red}( \color{blue}(b \vee (b \wedge c)\color{blue}) \wedge (b \vee a)\color{red})] 
-    &amp;\wedge&amp; \color{red}(\color{blue}(c \vee (c \wedge b)\color{blue}) \wedge (c \vee a)\color{red})
-    &amp;&amp;\text{Absorption 2 times} \\
-
-    &amp;=[\color{red}(a \wedge \color{blue}(a \vee (b \wedge c)\color{blue}) \color{red}) 
-    &amp;\wedge&amp; \color{red}( (b \vee a) \wedge \color{blue}(b \vee (b \wedge c)\color{blue}) \color{red})]
-    &amp;\wedge&amp; \color{red}( (c \vee a) \wedge \color{blue}(c \vee (b \wedge c)\color{blue})\color{red})
-    &amp;&amp;\text{Commutativity 3 times} \\
-
-    &amp;=[\color{red}( (a \vee a) \wedge \color{blue}(a \vee (b \wedge c)\color{blue}) \color{red}) 
-    &amp;\wedge&amp; \color{red}( (b \vee a) \wedge \color{blue}(b \vee (b \wedge c)\color{blue}) \color{red})]
-    &amp;\wedge&amp; \color{red}( (c \vee a) \wedge \color{blue}(c \vee (b \wedge c)\color{blue})\color{red})
-    &amp;&amp;\text{Idempotent} \\
-
-    &amp;=[\color{red}( a \vee \color{blue}(a \wedge (b \wedge c)\color{blue}) \color{red})
-    &amp;\wedge&amp; \color{red}( b \vee \color{blue}(a \wedge (b \wedge c)\color{blue}) \color{red})]
-    &amp;\wedge&amp; \color{red}( c \vee \color{blue}(a \wedge (b \wedge c)\color{blue}) \color{red})
-    &amp;&amp;\text{Distributivity 3 times} \\
-
-    &amp;=[(a \wedge b) \vee \color{blue}(a \wedge (b \wedge c)\color{blue})] 
-    &amp;&amp;
-    &amp;\wedge&amp; \color{red}( c \vee \color{blue}(a \wedge (b \wedge c)\color{blue}) \color{red})
-    &amp;&amp;\text{Distributivity} \\
-
-    &amp;=\color{blue}( (a \wedge b) \wedge c \color{blue}) \vee \color{blue}( a \wedge (b \wedge c) \color{blue})
-    &amp;&amp;
-    &amp;&amp;
-    &amp;&amp;\text{Distributivity} \\
-
-    &amp;=\color{red}( \color{blue}((a \wedge b) \wedge c\color{blue}) \vee a \color{red}) 
-    &amp;\wedge&amp; [ \color{blue}((a \wedge b) \wedge c\color{blue}) \vee (b \wedge c)]
-    &amp;&amp;
-    &amp;&amp;\text{Distributivity} \\
-
-    &amp;=\color{red}( \color{blue}( (a \wedge b) \wedge c \color{blue}) \vee a \color{red})
-    &amp;\wedge&amp; [ \color{red}( \color{blue}( (a \wedge b) \wedge c \color{blue}) \vee b \color{red}) 
-    &amp;\wedge&amp; \color{red}( \color{blue}( (a \wedge b) \wedge c \color{blue}) \vee c \color{red}) ]
-    &amp;&amp;\text{Distributivity} \\
-
-    &amp;=\color{red}( a \vee \color{blue}( (a \wedge b) \wedge c \color{blue}) \color{red})
-    &amp;\wedge&amp; [ \color{red}( b \vee \color{blue}( (a \wedge b) \wedge c \color{blue}) \color{red}) 
-    &amp;\wedge&amp; \color{red}( c \vee \color{blue}( (a \wedge b) \wedge c \color{blue}) \color{red}) ]
-    &amp;&amp;\text{Commutativity 3 times} \\
-
-    &amp;=\color{red}( \color{blue}( a \vee (a \wedge b) \color{blue}) \wedge (a \vee c) \color{red})
-    &amp;\wedge&amp; [ \color{red}( \color{blue}( b \vee (a \wedge b) \color{blue}) \wedge (b \vee c) \color{red}) 
-    &amp;\wedge&amp; \color{red}( \color{blue}( c \vee (a \wedge b) \wedge (c \vee c) \color{blue}) \color{red}) ]
-    &amp;&amp;\text{Distributivity 3 times} \\
-
-    &amp;=\color{red}( \color{blue}( a \vee (a \wedge b) \color{blue}) \wedge (a \vee c) \color{red})
-    &amp;\wedge&amp; [ \color{red}( \color{blue}( b \vee (a \wedge b) \color{blue}) \wedge (b \vee c) \color{red}) 
-    &amp;\wedge&amp; \color{red}( \color{blue}( c \vee (a \wedge b) \wedge c \color{blue}) \color{red}) ]
-    &amp;&amp;\text{Idempotent} \\
-
-    &amp;=\color{red}( \color{blue}( a \vee (a \wedge b) \color{blue}) \wedge (a \vee c) \color{red})
-    &amp;\wedge&amp; [ \color{red}( \color{blue}( b \vee (b \wedge a) \color{blue}) \wedge (b \vee c) \color{red}) 
-    &amp;\wedge&amp; \color{red}( c \wedge \color{blue}( c \vee (a \wedge b) \color{blue}) \color{red}) ]
-    &amp;&amp;\text{Commutativity 2 times} \\
-
-    &amp;=\color{red}( a \wedge (a \vee c) \color{red})
-    &amp;\wedge&amp; [ \color{red}( b \wedge (b \vee c) \color{red}) 
-    &amp;\wedge&amp; \color{red}( c \wedge \color{blue}( c \vee (a \wedge b)  \color{blue}) \color{red}) ]
-    &amp;&amp;\text{Absorption 2 times} \\
-
-    &amp;=a \wedge (b \wedge c)
-    &amp;&amp;
-    &amp;&amp;
-    &amp;&amp;\text{Absorption 3 times}
-\end{align}\]
-
-<p>The proof for the associativity of $\vee$ is identical.</p>
-
-<p>$(a \vee b) \vee c \quad = \quad a \vee (b \vee c)$</p>
-
-\[\begin{align}
-    &amp;(a \vee b) \vee c 
-    &amp;&amp;
-    &amp;&amp;
-    &amp;&amp; \\
-
-    &amp;=[\color{red}(a \vee \color{blue}(a \wedge (b \vee c)\color{blue}) \color{red}) 
-    &amp;\vee&amp; \color{red}(b \vee (b \wedge a)\color{red})] 
-    &amp;\vee&amp; \color{red}(c \vee (c \wedge a)\color{red})   
-    &amp;&amp;\text{Absorption 3 times} \\
-    
-    &amp;=[\color{red}(a \vee \color{blue}(a \wedge (b \vee c)\color{blue}) \color{red}) 
-    &amp;\vee&amp; \color{red}( \color{blue}(b \wedge (b \vee c)\color{blue}) \vee (b \wedge a)\color{red})] 
-    &amp;\vee&amp; \color{red}(\color{blue}(c \wedge (c \vee b)\color{blue}) \vee (c \wedge a)\color{red})
-    &amp;&amp;\text{Absorption 2 times} \\
-
-    &amp;=[\color{red}(a \vee \color{blue}(a \wedge (b \vee c)\color{blue}) \color{red}) 
-    &amp;\vee&amp; \color{red}( (b \wedge a) \vee \color{blue}(b \wedge (b \vee c)\color{blue}) \color{red})]
-    &amp;\vee&amp; \color{red}( (c \wedge a) \vee \color{blue}(c \wedge (b \vee c)\color{blue})\color{red})
-    &amp;&amp;\text{Commutativity 3 times} \\
-
-    &amp;=[\color{red}( (a \wedge a) \vee \color{blue}(a \wedge (b \vee c)\color{blue}) \color{red}) 
-    &amp;\vee&amp; \color{red}( (b \wedge a) \vee \color{blue}(b \wedge (b \vee c)\color{blue}) \color{red})]
-    &amp;\vee&amp; \color{red}( (c \wedge a) \vee \color{blue}(c \wedge (b \vee c)\color{blue})\color{red})
-    &amp;&amp;\text{Idempotent} \\
-
-    &amp;=[\color{red}( a \wedge \color{blue}(a \vee (b \vee c)\color{blue}) \color{red})
-    &amp;\vee&amp; \color{red}( b \wedge \color{blue}(a \vee (b \vee c)\color{blue}) \color{red})]
-    &amp;\vee&amp; \color{red}( c \wedge \color{blue}(a \vee (b \vee c)\color{blue}) \color{red})
-    &amp;&amp;\text{Distributivity 3 times} \\
-
-    &amp;=[(a \vee b) \wedge \color{blue}(a \vee (b \vee c)\color{blue})] 
-    &amp;&amp;
-    &amp;\vee&amp; \color{red}( c \wedge \color{blue}(a \vee (b \vee c)\color{blue}) \color{red})
-    &amp;&amp;\text{Distributivity} \\
-
-    &amp;=\color{blue}( (a \vee b) \vee c \color{blue}) \wedge \color{blue}( a \vee (b \vee c) \color{blue})
-    &amp;&amp;
-    &amp;&amp;
-    &amp;&amp;\text{Distributivity} \\
-
-    &amp;=\color{red}( \color{blue}((a \vee b) \vee c\color{blue}) \wedge a \color{red}) 
-    &amp;\vee&amp; [ \color{blue}((a \vee b) \vee c\color{blue}) \wedge (b \vee c)]
-    &amp;&amp;
-    &amp;&amp;\text{Distributivity} \\
-
-    &amp;=\color{red}( \color{blue}( (a \vee b) \vee c \color{blue}) \wedge a \color{red})
-    &amp;\vee&amp; [ \color{red}( \color{blue}( (a \vee b) \vee c \color{blue}) \wedge b \color{red}) 
-    &amp;\vee&amp; \color{red}( \color{blue}( (a \vee b) \vee c \color{blue}) \wedge c \color{red}) ]
-    &amp;&amp;\text{Distributivity} \\
-
-    &amp;=\color{red}( a \wedge \color{blue}( (a \vee b) \vee c \color{blue}) \color{red})
-    &amp;\vee&amp; [ \color{red}( b \wedge \color{blue}( (a \vee b) \vee c \color{blue}) \color{red}) 
-    &amp;\vee&amp; \color{red}( c \wedge \color{blue}( (a \vee b) \vee c \color{blue}) \color{red}) ]
-    &amp;&amp;\text{Commutativity 3 times} \\
-
-    &amp;=\color{red}( \color{blue}( a \wedge (a \vee b) \color{blue}) \vee (a \wedge c) \color{red})
-    &amp;\vee&amp; [ \color{red}( \color{blue}( b \wedge (a \vee b) \color{blue}) \vee (b \wedge c) \color{red}) 
-    &amp;\vee&amp; \color{red}( \color{blue}( c \wedge (a \vee b) \vee (c \wedge c) \color{blue}) \color{red}) ]
-    &amp;&amp;\text{Distributivity 3 times} \\
-
-    &amp;=\color{red}( \color{blue}( a \wedge (a \vee b) \color{blue}) \vee (a \wedge c) \color{red})
-    &amp;\vee&amp; [ \color{red}( \color{blue}( b \wedge (a \vee b) \color{blue}) \vee (b \wedge c) \color{red}) 
-    &amp;\vee&amp; \color{red}( \color{blue}( c \wedge (a \vee b) \vee c \color{blue}) \color{red}) ]
-    &amp;&amp;\text{Idempotent} \\
-
-    &amp;=\color{red}( \color{blue}( a \wedge (a \vee b) \color{blue}) \vee (a \wedge c) \color{red})
-    &amp;\vee&amp; [ \color{red}( \color{blue}( b \wedge (b \vee a) \color{blue}) \vee (b \wedge c) \color{red}) 
-    &amp;\vee&amp; \color{red}( c \vee \color{blue}( c \wedge (a \vee b) \color{blue}) \color{red}) ]
-    &amp;&amp;\text{Commutativity 2 times} \\
-
-    &amp;=\color{red}( a \vee (a \wedge c) \color{red})
-    &amp;\vee&amp; [ \color{red}( b \vee (b \wedge c) \color{red}) 
-    &amp;\vee&amp; \color{red}( c \vee \color{blue}( c \wedge (a \vee b)  \color{blue}) \color{red}) ]
-    &amp;&amp;\text{Absorption 2 times} \\
-
-    &amp;=a \vee (b \vee c)
-    &amp;&amp;
-    &amp;&amp;
-    &amp;&amp;\text{Absorption 3 times}
-\end{align}\]
-
-<p>Now, in future proofs, if we have $(a \wedge b) \wedge c$ we can instead write $a \wedge b \wedge c$ without ambiguity. Likewise for $\vee$.</p>]]></content><author><name>Eric Keilty</name><email>epkeilty@gmail.com</email></author><category term="blog" /><category term="boolean-algebra" /><category term="boolean" /><category term="algebra," /><category term="associativity" /><summary type="html"><![CDATA[This is a very tedious proof. If you really want to understand it, I would recommend writing it out for yourself. I have added colored parenthesis to help keep track of the nested levels. Essentially, it makes clever use of distributivity and timely commutativity.]]></summary></entry><entry><title type="html">Absorption and Simplification</title><link href="http://localhost:4000/blog/boolean-algebra/absorption-and-simplification/" rel="alternate" type="text/html" title="Absorption and Simplification" /><published>2022-08-23T00:00:00-04:00</published><updated>2022-08-23T00:00:00-04:00</updated><id>http://localhost:4000/blog/boolean-algebra/absorption-and-simplification</id><content type="html" xml:base="http://localhost:4000/blog/boolean-algebra/absorption-and-simplification/"><![CDATA[<h2 id="absorption">Absorption</h2>
-
-<p>This seemingly abscure relation turns out to be very useful in many proofs.</p>
-
-<p>$a \wedge (a \vee b) = a$</p>
-
-\[\begin{align}
-    &amp;a \wedge (a \vee b) \\
-    &amp;= (a \vee \color{red}F) \wedge (a \vee b)  &amp;&amp;\text{Identity} \\
-    &amp;= a \vee (\color{red}F \wedge b)           &amp;&amp;\text{Distributivity} \\
-    &amp;= a \vee \color{red}F                      &amp;&amp;\text{Base} \\
-    &amp;= a                                        &amp;&amp;\text{Identity}
-\end{align}\]
-
-<p>$a \vee (a \wedge b) = a$</p>
-
-\[\begin{align}
-    &amp;a \vee (a \wedge b) \\
-    &amp;= (a \wedge \color{green}T) \vee(a \wedge b)   &amp;&amp;\text{Identity} \\
-    &amp;= a \wedge (\color{green}T \vee b)             &amp;&amp;\text{Distributivity} \\
-    &amp;= a \wedge \color{green}T                      &amp;&amp;\text{Base} \\
-    &amp;= a                                            &amp;&amp;\text{Identity}
-\end{align}\]
-
-<h2 id="simplification">Simplification</h2>
-
-<p>This is less common than Absorption, but is still useful in some proofs</p>
-
-<p>$a \wedge (\overline{a} \vee b) = a \wedge b$</p>
-
-\[\begin{align}
-    &amp;a \wedge (\overline{a} \vee b) \\
-    &amp;= (a \wedge \overline{a}) \vee (a \wedge b)    &amp;&amp;\text{Distributivity} \\
-    &amp;= \color{red}F \vee (a \wedge b)               &amp;&amp;\text{Noncontradiction} \\
-    &amp;= a \wedge b                                   &amp;&amp;\text{Identity}
-\end{align}\]
-
-<p>$a \vee (\overline{a} \wedge b) = a \vee b$</p>
-
-\[\begin{align}
-    &amp;a \vee (\overline{a} \wedge b) \\
-    &amp;= (a \vee \overline{a}) \wedge (a \vee b)  &amp;&amp;\text{Distributivity} \\
-    &amp;= \color{green}T \wedge (a \vee b)         &amp;&amp;\text{Excluded Middle} \\
-    &amp;= a \vee b                                 &amp;&amp;\text{Identity}
-\end{align}\]]]></content><author><name>Eric Keilty</name><email>epkeilty@gmail.com</email></author><category term="blog" /><category term="boolean-algebra" /><category term="boolean" /><category term="algebra," /><category term="absorption," /><category term="simplification" /><summary type="html"><![CDATA[Absorption]]></summary></entry></feed>
+\end{align}\]]]></content><author><name>Eric Keilty</name><email>epkeilty@gmail.com</email></author><category term="blog" /><category term="boolean-algebra" /><category term="boolean" /><category term="algebra," /><category term="specialization," /><category term="generalization" /><summary type="html"><![CDATA[Here, we are going to emplore a different style of proof. In all previous proofs we had an expression of the form $\text{LHS} = \text{RHS}$. We then start with the $\text{LHS}$ at the top and arrive at the $\text{RHS}$ at the bottom. In these expressions, there is are equals sign. Instead, we are going to start with the entire expression at the top and arrive at $\color{green}T$ at the bottom. Since the original statement is equivalent to $\color{green}T$, it must be a true expression.]]></summary></entry></feed>

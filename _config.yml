@@ -34,10 +34,11 @@ plugins:
   - jekyll-redirect-from
   - jekyll-paginate
 
-# the top bar of the webpage
+# navigation in the side bar
 pages_list:
   About: '/about'
-  Archive: '/archive'
+  Blog: '/blog'
+  R&eacute;sum&eacute;: '/resume'
 
 exclude:
   - Gemfile
@@ -50,8 +51,9 @@ exclude:
 version: 1.0.0
 
 # Allow URL Redirects: 
-#  * https://help.github.com/articles/redirects-on-github-pages
+
 gems:
+  - jekyll-redirect-from    # allows URL redirections - https://help.github.com/articles/redirects-on-github-pages
+  # I don't actually know what these do...I don't think I use them
   - jekyll-feed
-  - jekyll-redirect-from
   - jekyll-paginate

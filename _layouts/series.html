@@ -6,9 +6,9 @@
 
   <body>
     
-    <div class="content container">
+    {% include sidebar.html %}
 
-        {% include menu.html %}
+    <div class="content container">
 
         <div class="post">
             <h1 class="post-title">{{ page.title }}</h1>
@@ -33,7 +33,22 @@
                 {% assign next_post = post %}
             {% endif %}
         {% endfor %}
-        <div class="pagination">
+
+        <!-- Getting capitalized title for series -->
+        {% assign words = page.series | split: '-' %}
+        {% capture series_title %}
+            {% for word in words %}
+                {{ word | capitalize }}
+            {% endfor %}
+        {% endcapture %}
+        
+        <!-- Getting url for series, which is just the page url with the last /... removed -->
+        {% assign series_url = page.url | split: '/' | reverse | shift | reverse | join: '/' %}
+
+        <h3 style="text-align:center; margin-bottom:1em;">
+            <a href="{{series_url}}">{{ series_title }} Series</a>
+        </h3>
+        <div class="pagination" style="margin-top:1em;">
             {% if previous_post %}
                 <a class="pagination-item older" href="{{previous_post.url}}">Previous</a>
             {% else %}
