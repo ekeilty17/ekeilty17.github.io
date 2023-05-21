@@ -62,7 +62,7 @@ $$
 Then, we can use our scaling property to see that 
 
 $$
-\mathcal{L}\{ \sin(bt) \} = \frac{1}{b} \frac{1}{(s/b)^2+1} = \frac{1}{s^2 + b^2}
+\mathcal{L}\{ \sin(bt) \} = \frac{1}{b} \frac{1}{(s/b)^2+1} = \frac{b}{s^2 + b^2}
 $$
 
 <br>

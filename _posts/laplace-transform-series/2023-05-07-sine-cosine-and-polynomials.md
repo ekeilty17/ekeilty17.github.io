@@ -9,7 +9,7 @@ series:     laplace-transform
 tags:       laplace-transform, trig, trigonometry, sine, cosine, monomials, polynomials, summations
 ---
 
-There is another way to solve this Laplace Transform involving derivatives (which we will do later). I am also aware that you can do a similar trick to what I did in the previous post where you decompose the trig functions into exponentials. However, this proof is a bit unrigorous because $$\mathcal{L} \{ \cdot \}$$ is supposed to take a real-valued function as input, yet we decomposed it into two complex-valued functions. Thus, I prove it rigorously here. Also, my proof gives a closed-form solution in terms of a summation, which I've never seen before, so I thought I'd share.
+There is another way to solve this Laplace Transform involving derivatives (which we will do in a future post). I am also aware that you can do a similar trick to what I did in the previous post where you decompose the trig functions into exponentials. However, this proof is a bit unrigorous because $$\mathcal{L} \{ \cdot \}$$ is supposed to take a real-valued function as input, yet we decomposed it into two complex-valued functions. Thus, I prove it rigorously here. Also, my proof gives a closed-form solution in terms of a summation, which I've never seen before, so I thought I'd share.
 
 ## Deriving a Recurrence
 
