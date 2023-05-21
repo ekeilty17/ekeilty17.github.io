@@ -77,11 +77,11 @@ $$
     = \frac{1}{s} - \frac{1}{s} \mathcal{L}\{ \sin(t) \}
     = \frac{1}{s} - \frac{1}{s^2} \mathcal{L}\{ \cos(t) \} \\[10pt]
 
-    &\left( 1 + \frac{1}{s^2} \right ) \mathcal{L}\{ \sin(t) \} = \frac{1}{s} \\[10pt]
+    &\left( 1 + \frac{1}{s^2} \right ) \mathcal{L}\{ \cos(t) \} = \frac{1}{s} \\[10pt]
 
-    &\left( \frac{s^2 + 1}{s^2} \right ) \mathcal{L}\{ \sin(t) \} = \frac{1}{s} \\[10pt]
+    &\left( \frac{s^2 + 1}{s^2} \right ) \mathcal{L}\{ \cos(t) \} = \frac{1}{s} \\[10pt]
 
-    &\mathcal{L}\{ \sin(t) \} = \frac{s}{s^2+1}
+    &\mathcal{L}\{ \cos(t) \} = \frac{s}{s^2+1}
 \end{align}
 $$
 
