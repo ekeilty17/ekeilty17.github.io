@@ -11,7 +11,7 @@ tags:       laplace-transform, trig, trigonometry, sine, cosine
 
 ## Sine
 
-Recall the identity $$\sin(x) = \frac{e^{it} - e^{-it}}{2i}$$
+Recall the identity $$\sin(t) = \frac{e^{it} - e^{-it}}{2i}$$
 
 Given $f(t) = \sin(t)$
 
@@ -38,7 +38,7 @@ $$
 
 ## Cosine
 
-Recall the identity $$\cos(x) = \frac{e^{it} + e^{-it}}{2}$$
+Recall the identity $$\cos(t) = \frac{e^{it} + e^{-it}}{2}$$
 
 Given $f(t) = \cos(t)$
 
