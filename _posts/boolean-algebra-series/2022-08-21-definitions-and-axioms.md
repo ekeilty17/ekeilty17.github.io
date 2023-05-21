@@ -11,20 +11,20 @@ tags:       boolean algebra, axioms, definitions, complement, identity, commutat
 
 ## Definitions
 
-First, we define the fundamental operations to boolean algebra:
+First, we define the fundamental operations of boolean algebra:
 
 |                |        | $\color{green}T$ | $\color{red}F$   |
 |----------------|:------:|:----------------:|:----------------:|
 | Negation (NOT) | $\neg$ | $\color{red}F$   | $\color{green}T$ |
 
-Instead of $\neg a$ we will write $\overline{a}$ to condence notation
+Instead of $\neg a$ we will write $\overline{a}$ to condense notation
 
 |                   |          | $\color{green}T\color{green}T$ | $\color{green}T\color{red}F$ | $\color{red}F\color{green}T$ | $\color{red}F\color{red}F$ |
 |-------------------|:--------:|:------------------------------:|:----------------------------:|:----------------------------:|:--------------------------:|
 | Conjunction (AND) | $\wedge$ | $\color{green}T$               | $\color{red}F$               | $\color{red}F$               | $\color{red}F$             |
 | Disjunction (OR)  | $\vee$   | $\color{green}T$               | $\color{green}T$             | $\color{green}T$             | $\color{red}F$             |
 
-Now, we can define some other useful operations. These are simply syntatic sugar and can all be expressed in terms of conjuction, disjunction, and negation.
+Now, we can define some other useful operations. These are simply syntactic sugar and can all be expressed in terms of conjunction, disjunction, and negation.
 
 |                   |              | $\color{green}T\color{green}T$ | $\color{green}T\color{red}F$ | $\color{red}F\color{green}T$ | $\color{red}F\color{red}F$ |
 |-------------------|:------------:|:------------------------------:|:----------------------------:|:----------------------------:|:--------------------------:|
