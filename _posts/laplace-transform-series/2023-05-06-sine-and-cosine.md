@@ -9,47 +9,79 @@ series:     laplace-transform
 tags:       laplace-transform, trig, trigonometry, sine, cosine
 ---
 
-## Sine
+I am also aware that you can do a similar trick to what I did in the previous post where you decompose the trig functions into exponentials. However, this proof is a bit unrigorous because $$\mathcal{L} \{ \cdot \}$$ is supposed to take a real-valued function as input, yet we decomposed it into two complex-valued functions. Thus, I prove it rigorously here.
 
-Recall the identity $$\sin(t) = \frac{e^{it} - e^{-it}}{2i}$$
+## Integration by Parts
 
-Given $f(t) = \sin(t)$
+We have to prove these identities in tandem with each other (we will see why shortly)
 
 $$
 \begin{align}
     \mathcal{L}\{ \sin(t) \}
-    &= \mathcal{L} \left \{ \frac{1}{2i} (e^{it} - e^{-it}) \right \} \\[10pt]
-    &= \frac{1}{2i} \left ( \mathcal{L}\{ e^{it} \} - \mathcal{L}\{ e^{-it} \} \right ) \\[10pt]
-    &= \frac{1}{2i} \left ( \frac{1}{s-i} - \frac{1}{s+i} \right ) \\[10pt]
-    &= \frac{1}{2i} \frac{(s+i) - (s-i)}{s^2+1}  \\[10pt]
-    &= \frac{1}{s^2+1}
+    &= \int_{0}^{\infty} \sin(t) e^{-st} \; dt \qquad \text{(using integration by parts)} \\[10pt]
+    &= \frac{1}{s} f(0) - \frac{1}{s} \lim_{t \rightarrow \infty} f(t)e^{-st} + \frac{1}{s} \int_{0}^{\infty} f'(t)e^{-st} \ dt \\[10pt]
+    &= \frac{1}{s} \sin(0) - \frac{1}{s} \lim_{t \rightarrow \infty} \sin(t) e^{-st} + \frac{1}{s} \int_{0}^{\infty} \cos(t) e^{-st} \ dt \\[10pt]
+    &= \frac{1}{s} \int_{0}^{\infty} \cos(t) e^{-st} \ dt \\[10pt]
+    &= \frac{1}{s} \mathcal{L}\{ \cos(t) \}
+\end{align}
+$$
+
+Similarly
+
+$$
+\begin{align}
+    \mathcal{L}\{ \cos(t) \}
+    &= \int_{0}^{\infty} \cos(t) e^{-st} \; dt \qquad \text{(using integration by parts)} \\[10pt]
+    &= \frac{1}{s} f(0) - \frac{1}{s} \lim_{t \rightarrow \infty} f(t)e^{-st} + \frac{1}{s} \int_{0}^{\infty} f'(t)e^{-st} \ dt \\[10pt]
+    &= \frac{1}{s} \cos(0) - \frac{1}{s} \lim_{t \rightarrow \infty} \cos(t) e^{-st} + \frac{1}{s} \int_{0}^{\infty} (-\sin(t)) e^{-st} \ dt \\[10pt]
+    &= \frac{1}{s} - \frac{1}{s} \int_{0}^{\infty} \sin(t) e^{-st} \ dt \\[10pt]
+    &= \frac{1}{s} - \frac{1}{s} \mathcal{L}\{ \sin(t) \}
+\end{align}
+$$
+
+<br>
+
+## Sine
+
+Combining the two results from above, we get
+
+$$
+\begin{align}
+    &\mathcal{L}\{ \sin(t) \}
+    = \frac{1}{s} \mathcal{L}\{ \cos(t) \}
+    = \frac{1}{s} \left ( \frac{1}{s} - \frac{1}{s} \mathcal{L}\{ \sin(t) \} \right ) \\[10pt]
+
+    &\left( 1 + \frac{1}{s^2} \right ) \mathcal{L}\{ \sin(t) \} = \frac{1}{s^2} \\[10pt]
+
+    &\left( \frac{s^2 + 1}{s^2} \right ) \mathcal{L}\{ \sin(t) \} = \frac{1}{s^2} \\[10pt]
+
+    &\mathcal{L}\{ \sin(t) \} = \frac{1}{s^2+1}
 \end{align}
 $$
 
 Then, we can use our scaling property to see that 
 
 $$
-\mathcal{L}\{ \sin(bt) \} = \frac{1}{b} \frac{1}{(s/b)^2+1} = \frac{b}{s^2 + b^2}
+\mathcal{L}\{ \sin(bt) \} = \frac{1}{b} \frac{1}{(s/b)^2+1} = \frac{1}{s^2 + b^2}
 $$
 
 <br>
 
-
-
 ## Cosine
 
-Recall the identity $$\cos(t) = \frac{e^{it} + e^{-it}}{2}$$
-
-Given $f(t) = \cos(t)$
+Similarly
 
 $$
 \begin{align}
-    \mathcal{L}\{ \cos(t) \}
-    &= \mathcal{L} \left \{ \frac{1}{2} (e^{it} + e^{-it}) \right \} \\[10pt]
-    &= \frac{1}{2} \left ( \mathcal{L}\{ e^{it} \} + \mathcal{L}\{ e^{-it} \} \right ) \\[10pt]
-    &= \frac{1}{2} \left ( \frac{1}{s-i} + \frac{1}{s+i} \right ) \\[10pt]
-    &= \frac{1}{2} \frac{(s+i) + (s-i)}{s^2+1} \\[10pt]
-    &= \frac{s}{s^2+1}
+    &\mathcal{L}\{ \cos(t) \}
+    = \frac{1}{s} - \frac{1}{s} \mathcal{L}\{ \sin(t) \}
+    = \frac{1}{s} - \frac{1}{s^2} \mathcal{L}\{ \cos(t) \} \\[10pt]
+
+    &\left( 1 + \frac{1}{s^2} \right ) \mathcal{L}\{ \sin(t) \} = \frac{1}{s} \\[10pt]
+
+    &\left( \frac{s^2 + 1}{s^2} \right ) \mathcal{L}\{ \sin(t) \} = \frac{1}{s} \\[10pt]
+
+    &\mathcal{L}\{ \sin(t) \} = \frac{s}{s^2+1}
 \end{align}
 $$
 

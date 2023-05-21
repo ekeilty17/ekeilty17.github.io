@@ -38,6 +38,6 @@ $$
 
 ## Discussion
 
-Notice that the above result agrees with the special case we proved for $f(t) = t^n$. However, this proof is a bit unrigorous because $$\mathcal{L} \{ \cdot \}$$ is supposed to take a  real-valued function as input, yet we decomposed it into two complex-valued functions. 
+Notice that the above result agrees with the special case we proved for $f(t) = t^n$. However, this proof is a bit unrigorous because $$\mathcal{L} \{ \cdot \}$$ is supposed to take a real-valued function as input, yet we decomposed it into two complex-valued functions. 
 
 However, since this derivation holds for any polynomial (proved rigorously in the previous post), then it should also hold for any analytic function, i.e. is equal to its power series representation.
