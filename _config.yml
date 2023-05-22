@@ -31,7 +31,7 @@ github:
 # Build settings
 plugins:
   - jekyll-feed
-  - jekyll-redirect-from
+  - jekyll-redirect-from    # allows URL redirections - https://help.github.com/articles/redirects-on-github-pages
   - jekyll-paginate
 
 # navigation in the side bar
@@ -49,11 +49,3 @@ exclude:
 
 # Custom vars
 version: 1.0.0
-
-# Allow URL Redirects: 
-
-gems:
-  - jekyll-redirect-from    # allows URL redirections - https://help.github.com/articles/redirects-on-github-pages
-  # I don't actually know what these do...I don't think I use them
-  - jekyll-feed
-  - jekyll-paginate
