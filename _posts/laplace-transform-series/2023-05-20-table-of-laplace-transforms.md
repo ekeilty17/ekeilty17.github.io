@@ -1,12 +1,10 @@
 ---
-layout:     page
+layout:     post
 title:      "Table of Laplace Transforms"
 categories: blog laplace-transforms
 permalink:  ":categories/:title/"
 tags:       laplace-transform, table
 ---
-
-{% include latex.html %}
 
 This is a table of bare functions. Using these functions in addition to the results in other tables, we can build up more complicated functions
 
