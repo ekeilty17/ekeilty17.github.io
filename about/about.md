@@ -4,6 +4,15 @@ title: About
 permalink: /about/
 ---
 
+I imagine different people would come here for different reasons.
+
+You might want to know my [academic background](/about/academic-career).
+
+You might want to learn about my past [work experience](/about/professional-career).
+
+Or you might just want to get to [know me](/about/personal-interests) as a person.
+
+
 ## Too Long; Didn't Read
 
 Here, I'll give an executive summary of my academic background, my professional background, and my personality. 
