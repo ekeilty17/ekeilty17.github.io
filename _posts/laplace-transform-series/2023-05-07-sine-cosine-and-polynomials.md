@@ -2,10 +2,10 @@
 layout:     series
 title:      "Sine, Cosine, and Polynomials"
 date:       2023-05-07
-categories: blog laplace-transform
+categories: blog laplace-transforms
 permalink:  ":categories/:title/"
 part:       6
-series:     laplace-transform
+series:     laplace-transforms
 tags:       laplace-transform, trig, trigonometry, sine, cosine, monomials, polynomials, summations
 ---
 
@@ -166,7 +166,7 @@ $$
     &= \frac{1}{b^n}\mathcal{L}\{ (bt)^n \cos (bt) \} \\[10pt]
     &= \frac{1}{b^n} \cdot \frac{1}{b}\frac{n!}{((s/b)^2 + 1)^{n+1}} \sum_{k=0}^{n+1} A(n{-}k{+1}) \binom{n+1}{k} (s/b)^k \\[10pt]
     &= b^{n+1} \cdot \frac{n!}{(s^2 + b^2)^{n+1}} \sum_{k=0}^{n+1} A(n{-}k{+1}) \binom{n+1}{k} (s/b)^k \\[10pt]
-    &= \frac{n!}{(s^2 + b^2)^{n+1}} \sum_{k=0}^{n+1} A(n{-}k{+1}) \binom{n+1}{k} s^k b^{n-k+2}
+    &= \frac{n!}{(s^2 + b^2)^{n+1}} \sum_{k=0}^{n+1} A(n{-}k{+1}) \binom{n+1}{k} s^k b^{n-k+1}
 \end{align}
 $$
 

@@ -2,10 +2,10 @@
 layout:     series
 title:      "Sine and Cosine"
 date:       2023-05-06
-categories: blog laplace-transform
+categories: blog laplace-transforms
 permalink:  ":categories/:title/"
 part:       5
-series:     laplace-transform
+series:     laplace-transforms
 tags:       laplace-transform, trig, trigonometry, sine, cosine
 ---
 

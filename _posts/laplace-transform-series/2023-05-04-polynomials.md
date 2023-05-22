@@ -2,10 +2,10 @@
 layout:     series
 title:      "Polynomials"
 date:       2023-05-04
-categories: blog laplace-transform
+categories: blog laplace-transforms
 permalink:  ":categories/:title/"
 part:       3
-series:     laplace-transform
+series:     laplace-transforms
 tags:       laplace-transform, polynomials
 ---
 

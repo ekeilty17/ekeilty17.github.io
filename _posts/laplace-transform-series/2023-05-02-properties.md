@@ -1,11 +1,11 @@
 ---
 layout:     series
-title:      "Properties I"
+title:      "Properties"
 date:       2023-05-02
-categories: blog laplace-transform
+categories: blog laplace-transforms
 permalink:  ":categories/:title/"
 part:       1
-series:     laplace-transform
+series:     laplace-transforms
 tags:       laplace-transform, properties, constant
 ---
 

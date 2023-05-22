@@ -2,10 +2,10 @@
 layout:     series
 title:      "Exponentials"
 date:       2023-05-05
-categories: blog laplace-transform
+categories: blog laplace-transforms
 permalink:  ":categories/:title/"
 part:       4
-series:     laplace-transform
+series:     laplace-transforms
 tags:       laplace-transform, exponentials
 ---
 

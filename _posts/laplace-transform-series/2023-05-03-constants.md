@@ -2,10 +2,10 @@
 layout:     series
 title:      "Constants"
 date:       2023-05-03
-categories: blog laplace-transform
+categories: blog laplace-transforms
 permalink:  ":categories/:title/"
 part:       2
-series:     laplace-transform
+series:     laplace-transforms
 tags:       laplace-transform, zero, one, constants
 ---
 
