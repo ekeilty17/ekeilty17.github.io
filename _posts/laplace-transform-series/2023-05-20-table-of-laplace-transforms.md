@@ -8,7 +8,7 @@ tags:       laplace-transform, table
 
 {% include latex.html %}
 
-This is a tbale of bare functions. Useing tehse functions in addition to the results in other tables, we can build up more complicated functions
+This is a table of bare functions. Using these functions in addition to the results in other tables, we can build up more complicated functions
 
 | **Given Function**    | **Laplace Transform**     | **Condition**     |
 |:---------------------:|:-------------------------:|:-----------------:|
@@ -23,14 +23,14 @@ This is a tbale of bare functions. Useing tehse functions in addition to the res
 
 <br>
 
-Now I give a table which lets us manipulate laplace transformation addition and scalar multiplcation
+Now I give a table that lets us manipulate Laplace transformation addition and scalar multiplication
 
 | **Given Function**    | **Laplace Transform**     | **Condition**     |
 |:---------------------:|:-------------------------:|:-----------------:|
 | $f(t) \pm g(t)$       | $F(s) \pm G(s)$           |            |
-| $f(-t)$       | $F(-s)$           |            |
-| $f(bt)$       | $\frac{1}{b}F(s/b)$           |  $b > 0$          |
-| $e^{at} f(t)$         | $F(s-a)$                          | $s > a$ (_what does thiis mean_) |
+| $f(-t)$               | $F(-s)$                   |            |
+| $f(bt)$               | $\frac{1}{b}F(s/b)$       |  $b > 0$          |
+| $e^{at} f(t)$         | $F(s-a)$                  | $s > a$ (_what does thiis mean_) |
 
 <br>
 
@@ -42,12 +42,12 @@ Now, I give function multiplication. The trig ones aren't super useful, but I pr
 | $\cos(t) f(t)$        | $\frac{1}{2}(F(s+i) + F(s-i))$    |   |
 | $\sinh(t) f(t)$       | $\frac{1}{2}(F(s+1) - F(s-1))$   |   |
 | $\cosh(t) f(t)$       | $\frac{1}{2}(F(s+1) + F(s-1))$    |   |
-| $\theta(t-c)f(t-c)$       | $e^{-cs} F(s)$    |   |
-| $\delta(t-c)f(t-d)$       | $e^{-cs} f(c-d)$    | $c \geq 0$  |
+| $\theta(t-c)f(t-c)$   | $e^{-cs} F(s)$    |   |
+| $\delta(t-c)f(t-d)$   | $e^{-cs} f(c-d)$    | $c \geq 0$  |
 
 <br>
 
-Next, I provide the interaction between laplace transforms, derivatives, and integrals
+Next, I provide the interaction between Laplace transforms, derivatives, and integrals
 
 | **Given Function**    | **Laplace Transform**     | **Condition**     |
 |:---------------------:|:-------------------------:|:-----------------:|

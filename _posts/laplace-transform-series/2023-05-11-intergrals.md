@@ -11,7 +11,7 @@ tags:       laplace-transform, itegrals
 
 In keeping with the notation I've been using throughout the series. Suppose we are function $f(t)$ with Laplace Transform $F(s)$.
 
-## Integrals of of f(t)
+## Integrals of f(t)
 
 Consider the following integral $$\int_{0}^{t} f(u) \ du$$. Assuming $f(t)$ is continuous and differentiable, by definition  $$\frac{d}{dt} \int_{0}^{t} f(u) \ du = f(t)$$.
 

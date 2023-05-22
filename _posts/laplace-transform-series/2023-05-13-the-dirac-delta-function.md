@@ -11,7 +11,7 @@ tags:       laplace-transform, delta-function, dirac-delta-step-function, dirac,
 
 ## Background
 
-The Dirac delta function, also called the unit impulse function, is a bit weird. It's defined by two properties. First, it's value is $0$ everywhere except at the impulse point.
+The Dirac delta function, also called the unit impulse function, is a bit weird. It's defined by two properties. First, its value is $0$ everywhere except at the impulse point.
 
 $$
 \delta(t) = \begin{cases}

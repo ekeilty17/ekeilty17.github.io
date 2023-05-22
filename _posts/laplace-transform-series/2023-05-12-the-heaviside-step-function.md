@@ -50,4 +50,4 @@ $$
 \end{align}
 $$
 
-This turns out to be very useful because so long as we don't care about the negative values of $f(t)$, translation is very simple. Since in applications, $t$ represents time, this is not an outlandist assumption.
+This turns out to be very useful because so long as we don't care about the negative values of $f(t)$, translation is very simple. Since in applications, $t$ represents time, this is not an outlandish assumption.
