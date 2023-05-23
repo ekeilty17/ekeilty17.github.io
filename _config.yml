@@ -1,4 +1,3 @@
-plugins_dir: ./_plugins
 #plugins:
 exclude:
   - Gemfile
