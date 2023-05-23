@@ -3,6 +3,7 @@
 .jekyll-metadata/
 .sass-cache/
 _tikz_tmp
+_site
 
 ## Macbook ##
 .DS_Store
