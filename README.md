@@ -1,6 +1,6 @@
 # Eric Keilty's Website
 
-This is the personal website of me, Eric Keilty, You can find it at [www.erickeilty.com](www.erickeilty.com).
+This is the personal website of me, Eric Keilty, You can find it at [https://erickeilty.com/](https://erickeilty.com/).
 
 ## Local Development
 
