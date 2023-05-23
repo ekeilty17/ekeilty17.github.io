@@ -1,0 +1,14 @@
+name: Install pdf2svg
+
+on:
+  push:
+    branches:
+      - main  # Adjust this if your main branch has a different name
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up build environment
+        run: sudo apt-get install -y texlive-full
