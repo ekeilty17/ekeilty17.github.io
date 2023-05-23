@@ -1,3 +1,19 @@
-This is the personal website of Eric Keilty, hosted by GitHub Pages and built using Jekyll. You can find it at [www.erickeilty.com](www.erickeilty.com)
+# Eric Keilty's Website
 
-Execute `gem install jekyll bundler` to build the project, and then `bundle exec jekyll serve` to run locally on port [http://127.0.0.1:4000/](http://127.0.0.1:4000/).
+This is the personal website of me, Eric Keilty, You can find it at [www.erickeilty.com](www.erickeilty.com).
+
+## Local Development
+
+Install gems (found in `Gemfile`)
+```
+bundle install
+```
+
+Run the local server, listening on port [http://127.0.0.1:4000/](http://127.0.0.1:4000/).
+```
+bundle exec jekyll serve
+``` 
+
+## Deployment
+
+This website is hosted by GitHub Pages and built using Jekyll
