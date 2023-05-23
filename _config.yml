@@ -1,7 +1,4 @@
-plugins:
-  - jekyll-feed
-  - jekyll-redirect-from    # allows URL redirections - https://help.github.com/articles/redirects-on-github-pages
-  - jekyll-paginate
+#plugins:
 exclude:
   - Gemfile
   - Gemfile.lock
