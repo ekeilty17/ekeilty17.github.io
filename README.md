@@ -1,6 +1,8 @@
-# Eric Keilty's Website
+# Eric Keilty's Personal Website
 
-This is the personal website of me, Eric Keilty. You can find it at [https://erickeilty.com/](https://erickeilty.com/).
+This is the personal website of me, Eric Keilty. You can find it at [https://erickeilty.com/](https://erickeilty.com/). 
+
+In a way, this website is for me more than anyone else. Here, I catalog all of the stuff I've done in my life, so that way I won't forget about them! I also host my blog, where I discuss various unrelated topics that interest me. I don't expect anyone will ever read it, but I personally find writing them enjoyable.
 
 ## Local Development
 
