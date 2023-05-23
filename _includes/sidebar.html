@@ -5,8 +5,8 @@
       -->
       
       <div class="sidebar-about">
-        <h1>{{ site.title }}</h1>
-        <p class="lead">{{ site.description }}</p>
+        <h1>{{ site.author }}</h1>
+        <p class="lead">{{ site.tagline }}</p>
       </div>
     </div>
     
@@ -30,7 +30,7 @@
       <div id="social">
         {% include social.html %}
       </div>
-      <p>&copy; {{ site.time | date: '%Y' }} Eric Keilty </p>
+      <p>&copy; {{ site.time | date: '%Y' }} {{ site.author }} </p>
 
     </div>
   </div>

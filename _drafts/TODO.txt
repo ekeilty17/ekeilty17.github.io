@@ -1,11 +1,12 @@
-Webiste Improvements
-- I need to figure out the best way to write up posts. I don't think I want to use the built-in latex in Jekyll because it doesn't have all the features and it's not easy to export elsewhere. One possibliity is to write them as a latex PDF and just upload the PDF, but those might not look as good on the webpage. Experimentation is needed.
-- Simplify the layout on the homepage. Something more playful like "see my projects", "read some stuff", etc.
-- need to upload mt resume, although again that's a bit tricky because I've done a bunch of random things.
+Website Improvements
+- Write my about page
+- I would really like to be able to write tikz code in markdown files. 
+  This seems promising, https://gist.github.com/AlexBobkov/d419863e610fce7c8db5714b665b009e, but I haven't gotten it to work
+- need to upload my resume, although again that's a bit tricky because I've done a bunch of random things.
+- reformat the blog archive page and make it look nicer
 
 Blog Ideas
 - All continuity proofs using delta-epsilon
 - All standard derivatives
 - All standard integrals
-- All Laplace transforms
 - Write up my algorithms course notes
