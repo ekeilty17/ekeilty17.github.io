@@ -5,4 +5,6 @@ categories: blog
 permalink:  /blog/trigonometric-identities/
 ---
 
-test
+{% tikz test %}
+  \draw (0,0) circle (1in);
+{% endtikz %}
