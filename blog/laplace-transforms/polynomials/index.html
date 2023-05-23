@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Polynomials &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded Latex support -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX","input/MathML","output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!-- Enable Tikz support -->
+<link rel="stylesheet" type="text/css" href="http://tikzjax.com/v1/fonts.css">
+<script src="http://tikzjax.com/v1/tikzjax.js"></script>
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">Software Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/resume">R&eacute;sum&eacute;</a>
+          </li>
+        
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2023 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">Polynomials</h1>
+            <!-- <span class="series-date">04 May 2023</span> -->
+            <time datetime="2023-05-04T00:00:00-04:00" class="post-date">04 May 2023</time>
+            <h2 id="linear-functions">Linear Functions</h2>
+
+<p>Given $f(t) = t$</p>
+
+\[\begin{align}
+    \mathcal{L}\{ t \} = F(s) 
+    &amp;= \int_{0}^{\infty} t \ e^{-st} \; dt \qquad \text{(using integration by parts)} \\[10pt]
+    &amp;= \frac{1}{s} f(0) - \frac{1}{s} \lim_{t \rightarrow \infty} f(t)e^{-st} + \frac{1}{s} \int_{0}^{\infty} f'(t)e^{-st} \ dt \\[10pt]
+    &amp;= \frac{1}{s} \lim_{t \rightarrow \infty} te^{-st} + \frac{1}{s} \int_{0}^{\infty} e^{-st} \ dt \\[10pt]
+    &amp;= \frac{1}{s} \cdot 0 + \frac{1}{s} \cdot \mathcal{L}\{ 1 \} \\[10pt]
+    &amp;= \frac{1}{s^2}
+\end{align}\]
+
+<p><strong>Condition</strong>: $s &gt; 0$    (this comes from \(\mathcal{L}\{ 1 \}\))</p>
+
+<p>To complete the proof, we will quickly show the evaluation of the limit. It is an easy application of L’Hôpital’s rule.</p>
+
+\[\begin{align}
+    \lim_{t \rightarrow \infty} te^{-st}
+    &amp;= \lim_{t \rightarrow \infty} \frac{t}{e^{st}} \\[10pt]
+    &amp;= \lim_{t \rightarrow \infty} \frac{1}{se^{st}} \\[10pt]
+    &amp;= 0
+\end{align}\]
+
+<h2 id="monomials">Monomials</h2>
+
+<p>Given $f(t) = t^n$ for any integer $n &gt; 0$</p>
+
+\[\begin{align}
+    \mathcal{L}\{ t^n \} = F(s) 
+    &amp;= \int_{0}^{\infty} t^n \ e^{-st} \; dt \qquad \text{(using integration by parts)} \\[10pt]
+    &amp;= \frac{1}{s} f(0) - \frac{1}{s} \lim_{t \rightarrow \infty} f(t)e^{-st} + \frac{1}{s} \int_{0}^{\infty} f'(t)e^{-st} \ dt \\[10pt]
+    &amp;= \frac{1}{s} \lim_{t \rightarrow \infty} t^ne^{-st} + \frac{n}{s} \int_{0}^{\infty} t^{n-1} e^{-st} \ dt \\[10pt]
+    &amp;= \frac{n}{s} \int_{0}^{\infty} t^{n-1} e^{-st} \ dt \\[10pt]
+    &amp;\text{Now, we just recurrively apply this result} \\[10pt]
+    &amp;= \frac{n!}{s^n} \int_{0}^{\infty} e^{-st} \ dt \\[10pt]
+    &amp;= \frac{n!}{s^n} \mathcal{L}\{ 1 \} \\[10pt]
+    &amp;= \frac{n!}{s^{n+1}}
+\end{align}\]
+
+<p><strong>Condition</strong>: $s &gt; 0$    (this comes from \(\mathcal{L}\{ 1 \}\))</p>
+
+<p>Again, to complete the proof, we will quickly show the evaluation of the limit. It’s just successive applications of L’Hôpital’s rule.</p>
+
+\[\begin{align}
+    \lim_{t \rightarrow \infty} t^n e^{-st}
+    &amp;= \lim_{t \rightarrow \infty} \frac{t^n}{e^{st}} \\[10pt]
+    &amp;= \lim_{t \rightarrow \infty} \frac{1}{s^n e^{st}} \\[10pt]
+    &amp;= 0
+\end{align}\]
+
+<h2 id="polynomials">Polynomials</h2>
+
+<p>Given $\displaystyle f(t) = \sum_{k=0}^n a_k t^k = a_0 + a_1 t + a_2 t^2 + \ldots + a_n t^n$ for any integer $n \geq 0$</p>
+
+\[\begin{align}
+    \mathcal{L} \left \{ \sum_{k=0}^n a_k t^k \right \} = F(s) 
+    &amp;= \int_{0}^{\infty} \sum_{k=0}^n a_k t^k \ e^{-st} \; dt \qquad \text{(using linearity of integrals)} \\[10pt]
+    &amp;= \sum_{k=0}^n a_k \int_{0}^{\infty} t^k \ e^{-st} \; dt \\[10pt]
+    &amp;= \sum_{k=0}^n a_k \mathcal{L}\{ t^k \} \\[10pt]
+    &amp;= \sum_{k=0}^n \frac{k! \ a_k}{s^{k+1}}
+\end{align}\]
+
+<p><strong>Condition</strong>: $s &gt; 0$    (this comes from \(\mathcal{L}\{ t^k \}\))</p>
+
+<h2 id="scaling-and-translation">Scaling and Translation</h2>
+
+<p>First, we notice that translation will not affect the Laplace transform of a polynomial. If we look at the Monomial proof, and consider $(t+c)^n$, it will not affect the derivative and it will eventually go to $1$ as we iteratively take derivatives. Combining this with the scaling property, we get the following.</p>
+
+\[\mathcal{L}\{ (bt+c)^n \} = \mathcal{L}\{ (bt)^n \} = \frac{1}{b^n} \frac{n!}{(s/b^n)^{n+1}} = \frac{b^{n^2} n!}{s^{n+1}}\]
+
+        </div>
+
+        <!-- Adding the ability to move between parts of the series -->
+        
+        
+        
+
+        
+        
+        
+
+        <!-- Getting capitalized title for series -->
+        
+        
+        
+        <!-- Getting url for series, which is just the page url with the last /... removed -->
+        
+
+        <div class="pagination" style="margin-top:1em;">
+            
+                <a class="pagination-item older" href="/blog/laplace-transforms/constants/">Previous</a>
+            
+            
+                <a class="pagination-item newer" href="/blog/laplace-transforms/exponentials/">Next</a>
+            
+        </div>
+        <h3 style="text-align:center; margin-bottom:1em;">
+            <a href="/blog/laplace-transforms">
+            
+                Laplace
+            
+                Transforms
+            
+         Series</a>
+        </h3>
+    </div>
+    
+  </body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Solving The Pell Equation Efficently &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded Latex support -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX","input/MathML","output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!-- Enable Tikz support -->
+<link rel="stylesheet" type="text/css" href="http://tikzjax.com/v1/fonts.css">
+<script src="http://tikzjax.com/v1/tikzjax.js"></script>
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">Software Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/resume">R&eacute;sum&eacute;</a>
+          </li>
+        
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2023 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">Solving The Pell Equation Efficently</h1>
+            <!-- <span class="post-date">01 Aug 2022</span> -->
+            <time datetime="2022-08-01T00:00:00-04:00" class="post-date">01 Aug 2022</time>
+            <p>The Pell Equation is an equation of the form $x^2 - D y^2 = 1$ for $D &gt; 0$. Our task is to find <strong>integer</strong> solutions to this equation. I was first introduced to this problem by <a href="https://projecteuler.net/problem=66">Project Euler #66</a>, and I think the solution is beautiful and would like to share it. Much of this post is inspired by <a href="http://library.msri.org/books/Book44/files/01lenstra.pdf">this paper</a> by Hendrik W. Lenstra, Jr.</p>
+
+<h2 id="reframing-the-problem">Reframing the Problem</h2>
+
+<p>First, we note two key facts:</p>
+
+<ul>
+  <li>$\mathbb{Z}[\sqrt{D}] =$ { $x + \sqrt{D} y \ \ \vert \ \ x, y \in \mathbb{Z}$ } forms a <strong>ring</strong> on operations addition and multiplication</li>
+  <li>$\vert x + \sqrt{D} y \vert = x^2 - D y^2$ is a <strong>norm</strong> of this ring</li>
+</ul>
+
+<p>Both of these claims will be proved in an appendix at the end of the post for completeness sake, but these details are not focus. What is important is that we notice the Pell Equation can be factored as the following.</p>
+
+\[(x + \sqrt{D} y) (x - \sqrt{D} y) = 1\]
+
+<p>Thus, can reframe finding the solutions to the Pell Equation as finding the <strong>nontrivial</strong> unit of the ring $\mathbb{Z}[\sqrt{D}]$ of norm 1.</p>
+
+<p>This gives us is a way of generating new solutions from a given solution. Suppose that $(x_1, y_1)$ is a solution to the Pell Equation. We notice that</p>
+
+\[\vert x_1 + \sqrt{D} y_1 \vert = 1 \implies \vert x_1 + \sqrt{D} y_1 \vert^k = 1 \quad \text{for all} \ k \geq 1\]
+
+<p>Using properties of norms, we have</p>
+
+\[\vert x_1 + \sqrt{D} y_1 \vert^k = \vert (x_1 + \sqrt{D} y_1)^k \vert\]
+
+<p>Since $\mathbb{Z}[\sqrt{D}]$ forms a ring, $(x_1 + \sqrt{D} y_1)^k = x_k + \sqrt{D} y_k$ for some $x_k, y_k \in \mathbb{Z}$. Putting it all together we have</p>
+
+\[\vert x_1 + \sqrt{D} y_1 \vert = 1 \implies 1 = \vert x_1 + \sqrt{D} y_1 \vert^k = \vert (x_1 + \sqrt{D} y_1)^k \vert = \vert x_k + \sqrt{D} y_k \vert = x_k^2 - D y_k^2\]
+
+<p>Thus, $(x_k, y_k)$ is also a solution to the Pell Equation for all $k \geq 1$.
+In fact, <a href="https://faculty.math.illinois.edu/~r-ash/Ant/AntChapter6.pdf">Dirichlet’s Unit Theorem</a> tells us that given $(x_1, y_1)$ are the <strong>fundamental solutions</strong> to the Pell Equation, this method will generate <strong>every</strong> solution. The fundametal solution is the <strong>nontrivial</strong> solution with the smallest $x$ or $y$ component.</p>
+
+<p>So once we have the fundamental solution, we have a <em>very</em> efficient algorithm for generating the remaining solutions. if $(x_1, y_1)$ is the fundamental solution, then</p>
+
+\[(x_{k+1} - \sqrt{D} y_{k+1}) = (x_1 - \sqrt{D} y_1)^{k+1} = (x_1 - \sqrt{D} y_1) \cdot (x_1 - \sqrt{D} y_1)^k = (x_1 - \sqrt{D} y_1) \cdot (x_k - \sqrt{D} y_k)\]
+
+<p>Multiplying out the far right-hand side and equating it to the far left-hand side gives the recursive identity</p>
+
+\[(x_{k+1}, y_{k+1}) = (x_1 x_k + D y_1 y_k, x_1 y_k + x_k y_1)\]
+
+<p>Note that $(1, 0)$ is considered a trivial solution. If we attempt to use the recursive formula defined above, we will see that we just get $(1, 0)$ back. Thus, this is not a fundamental solution.</p>
+
+<h2 id="continued-fractions">Continued Fractions</h2>
+
+<p>We have to take a quick detour into continued fractions as they play an important role in the solution. A continued fraction takes the form</p>
+
+\[a_0 + \frac{1}{a_1 + \frac{1}{a_2 + \frac{1}{a_3 + \ldots}}}\]
+
+<p>I think they are best explained by an example.</p>
+
+\[\sqrt{3} = 1 + (\sqrt{3} - 1) = 3 + \frac{2}{\sqrt{3} + 1} = 3 + \frac{1}{\frac{\sqrt{3} + 1}{2}} = 3 + \frac{1}{1 + \frac{\sqrt{3} - 1}{2}} = 3 + \frac{1}{1 + \frac{1}{\sqrt{3} + 1}} = 3 + \frac{1}{1 + \frac{1}{2 + (\sqrt{3} - 1)}}\]
+
+<p>Notice in the last part, we arrived at the same expression as when we started: $\sqrt{3} - 1$. Therefore, everything after that point will be exactly the same, so we’ve arrived as a repeating expression. If a continued fraction has this property, it is called <strong>periodic</strong>. It turns out that $\sqrt{n}$ where $n$ is an integer is always periodic. The proof for this could be it’s own post. For the curious refer <a href="https://sites.millersville.edu/bikenaga/number-theory/periodic-continued-fractions/periodic-continued-fractions.html">here</a>. Thus, we can write the continued fraction in a sort-hand notation.</p>
+
+\[\sqrt{3} = 1 + \frac{1}{1 + \frac{1}{2 + \frac{1}{1 + \frac{1}{2 + \ldots}}}} = [1; 1, 2, 1, 2, \ldots] = [1; \overline{1, 2}]\]
+
+<h2 id="finding-the-fundamental-solution">Finding the Fundamental Solution</h2>
+
+<p>This part of the solution is the reason I needed to share this problem. It is so shocking, yet so beautiful.</p>
+
+<p>It turns out, the fundamental solution is the</p>
+
+<h2 id="appendix">Appendix</h2>
+
+<h3 id="mathbbzsqrtd-forms-a-ring-on-addition-and-multiplication">$\mathbb{Z}[\sqrt{D}]$ Forms a Ring on Addition and Multiplication</h3>
+
+<p>We define the operations $+$ and $\cdot$ as you would expect. Let $(a, b)$ be short-hand for $a + \sqrt{D}b$</p>
+
+\[(a, b) + (c, d) = (a+c, \ b+d) \qquad \text{and} \qquad (a, b) \cdot (c, d) = (ac + Dbd, \ ad + bc)\]
+
+<p>The ring axioms are as follows</p>
+<ol>
+  <li>Addition is associative</li>
+  <li>Addition is commutative</li>
+  <li>$\mathbb{Z}[\sqrt{D}]$ contains the additive identity</li>
+  <li>$\mathbb{Z}[\sqrt{D}]$ contains the additive inverse for all elements</li>
+  <li>Multiplication is associative</li>
+  <li>$\mathbb{Z}[\sqrt{D}]$ contians the multiplicative identity</li>
+  <li>Multiplication is distributive with respect to addition, i.e. $\ a \cdot (b + c) = (a \cdot b) + (a \cdot c)$ and $\ (b + c) \cdot a = (b \cdot a) + (c \cdot a)$</li>
+</ol>
+
+<p>Axioms 1, 2, 3, and 4 are inherited from their counterparts for the integers.</p>
+
+<p>$1.$</p>
+
+\[\begin{align}
+    ((a, b) + (c, d)) + (e, f) 
+    &amp;= (a+c, \ b+d) + (e, f) \\
+    &amp;= ((a+c)+e, \ (b+d)+f) \\
+    &amp;= (a+(c+e), \ b+(d+f)) \\
+    &amp;= (a, b) + ((c, d) + (e, f)) 
+\end{align}\]
+
+<p>$2.$</p>
+
+\[(a, b) + (c, d) = (a+c, \ b+d) = (c+a, \ d+b) = (c, d) + (a, b)\]
+
+<p>$3.$ The additive identity is $(0, 0)$, which is contained in $\mathbb{Z}[\sqrt{D}]$</p>
+
+\[(a, b) + (0, 0) = (a+0, \ b+0) = (a, b)\]
+
+<p>$4.$ The additive inverse is $(-a, -b)$, which is contained in $\mathbb{Z}[\sqrt{D}]$</p>
+
+\[(a, b) + (-a, -b) = (a+(-a), \ b+(-b)) = (0, 0)\]
+
+<p>Axioms 5, 6, and 7 are inherited by the fact that the integers form a ring.</p>
+
+<p>$5.$</p>
+
+\[\begin{align}
+    ((a, b) \cdot (c, d)) \cdot (e, f) 
+    &amp;= (ac + Dbd, \ ad + bc) + (e, f) \\
+    &amp;= ((ac + Dbd)e + D(ad + bc)f , \ (ac + Dbd)f + (ad + bc)e ) \\
+    &amp;= (a(ce + Ddf) + Db(cf + de) , \ a(cf + de) + b(ce + Ddf) ) \\
+    &amp;= (a, b) \cdot (ce + Ddf, cf + de) \\
+    &amp;= (a, b) \cdot ((c, d) \cdot (e, f))
+\end{align}\]
+
+<p>$6.$ The multiplicative identity is $(1, 0)$, which is contained in $\mathbb{Z}[\sqrt{D}]$</p>
+
+\[(a, b) \cdot (1, 0) = (a \cdot 1 + Db \cdot 0, \ a \cdot 0 + b \cdot 1) = (a, b)\]
+
+<p>$7.$</p>
+
+\[\begin{align}
+    (a, b) \cdot ((c, d) + (e, f))
+    &amp;= (a, b) \cdot (c+e, \ d+f) \\
+    &amp;= (a(c+e) + Db(d+f), \ a(d+f) + b(c+e)) \\
+    &amp;= (ae + Dbf, \ af + be) + (ce + Ddf, \ cf + de) \\
+    &amp;= ((a, b) \cdot (e, f)) + ((c, d) \cdot (e, f))
+\end{align}\]
+
+<p>We can see that in this case multiplication is actually also commutative</p>
+
+\[(a, b) \cdot (c, d) = (ac + Dbd, \ ad + bc) = (ca + Ddb, \ cb + da) = (c, d) \cdot (a, b)\]
+
+<p>So we get</p>
+
+\[((c, d) + (e, f)) \cdot (a, b) = (a, b) \cdot ((c, d) + (e, f)) = ((a, b) \cdot (e, f)) + ((c, d) \cdot (e, f)) =\]
+
+<p>for free.</p>
+
+<h3 id="vert-x--sqrtd-y-vert--x2---d-y2-is-a-multiplicative-norm-of-this-ring">$\vert x + \sqrt{D} y \vert = x^2 - D y^2$ is a Multiplicative Norm of this Ring</h3>
+
+<p>The axioms of a multiplicative norm $N(x)$ on a ring is the following:</p>
+<ol>
+  <li>$N(u) = 0 \iff u = 0 + \sqrt{d} \cdot 0$</li>
+  <li>$N(u \cdot v) = N(u) N(v) \quad \text{for all} \ u, v \in \mathbb{Z}[\sqrt{D}]$</li>
+  <li>$N(u + v) = N(u) + N(v) \quad \text{for all} \ u, v \in \mathbb{Z}[\sqrt{D}]$</li>
+</ol>
+
+<p>$1.$</p>
+
+\[\vert u \vert = 0 \iff \vert x_u + \sqrt{D} y_u \vert = 0 \iff x_u^2 + D y_u^2 = 0 \iff x_u = y_u = 0 \iff u = 0 + \sqrt{d} \cdot 0\]
+
+<p>$2.$</p>
+
+\[\begin{align}
+    \vert u \cdot v \vert 
+    &amp;= \vert (x_u - \sqrt{D} y_u) \cdot (x_v - \sqrt{D} y_v) \vert \\
+    &amp;= \vert (x_u x_v + D y_u y_v) - \sqrt{D} ( x_u y_v + x_v y_u )  \vert \\
+    &amp;= (x_u x_v + D y_u y_v)^2 - D ( x_u y_v + x_v y_u )^2 \\
+    &amp;= (x_u^2 x_v^2 + D^2 y_u^2 y_v^2 + 2 D x_u x_v y_u y_v) - D ( x_u^2 y_v^2 + x_v^2 y_u^2 + 2 x_u x_v y_u y_v ) \\
+    &amp;= x_u^2 x_v^2 + D^2 y_u^2 y_v^2 - D x_u^2 y_v^2 - D x_v^2 y_u^2 \\
+    &amp;= (x_u^2 - D y_u^2) (x_v^2 - D y_v^2) \\
+    &amp;= \vert u \vert \vert v \vert
+\end{align}\]
+
+<p>$3.$</p>
+
+\[\begin{align}
+    \vert u \cdot v \vert 
+    &amp;= \vert (x_u - \sqrt{D} y_u) + (x_v - \sqrt{D} y_v) \vert \\
+    &amp;= \vert (x_u + x_v) - \sqrt{D} (y_u + y_v) \vert \\
+    &amp;= (x_u + x_v)^2 - D (y_u + y_v)^2 \\
+    &amp;= (x_u^2 + x_v^2 + 2 x_u x_v) - D (y_u^2 + y_v^2 + 2 y_u y_v) \\
+    &amp;= (x_u^2 + x_v^2 + 2 x_u x_v) - D (y_u^2 + y_v^2 + 2 y_u y_v) \\
+\end{align}\]
+
+
+        </div>
+    </div>
+    
+  </body>
+</html>
