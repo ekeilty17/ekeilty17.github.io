@@ -168,7 +168,7 @@ $$
 
 ## Opposite Angles
 
-Recall that $\theta \equiv \theta + 2 \pi k$ for any integer $k$, and in particular $2 \pi - \theta \equiv - \theta$.
+Recall that $\theta \equiv \theta + 2 \pi k$ for any integer $k$, and in particular $(2 \pi - \theta) \equiv - \theta$.
 
 <center>
 {% tikz opposite-angle %}

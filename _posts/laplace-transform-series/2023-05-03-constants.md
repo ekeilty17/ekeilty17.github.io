@@ -35,26 +35,23 @@ $$
     &= \int_{0}^{\infty} e^{-st} \; dt \\[10pt]
     &= -\frac{1}{s} e^{-st} \biggr\rvert_{0}^{\infty} \\[10pt]
     &=  \left ( \lim_{t \rightarrow \infty} -\frac{1}{s} e^{-st} \right ) - \left ( - \frac{1}{s} e^{0} \right ) \\[10pt]
-    &\text{We must assume } s > 0 \text{ otherwise the limit goes to } -\infty \\[10pt]
+    &\text{We must assume } \lvert s \rvert > 0 \text{ otherwise the limit goes to } -\infty \\[10pt]
     &= -\frac{1}{s} \cdot 0 + \frac{1}{s} \cdot 1 \\[10pt]
     &= \frac{1}{s}
 \end{align}
 $$
 
-**Condition**: $s > 0$
-
 ## Any Constant
 
-Given $f(t) = c$ for any constant $c \in \mathbb{R}$
+Given $f(t) = \alpha$ for any constant $\alpha \in \mathbb{R}$
 
 $$
 \begin{align}
-    \mathcal{L}\{ c \} = F(s) 
-    &= \int_{0}^{\infty} c \ e^{-st} \; dt \\[10pt]
-    &= c \ \int_{0}^{\infty} e^{-st} \; dt \\[10pt]
-    &= c \cdot \mathcal{L}\{ 1 \} \\[10pt]
-    &= \frac{c}{s}
+    \mathcal{L}\{ \alpha \} = F(s) 
+    &= \int_{0}^{\infty} \alpha \ e^{-st} \; dt \\[10pt]
+    &= \alpha \ \int_{0}^{\infty} e^{-st} \; dt \\[10pt]
+    &\text{assume } \lvert s \rvert > 0 \text{ as part of the condition on } \mathcal{L}\{ 1 \}\\[10pt]
+    &= \alpha \cdot \mathcal{L}\{ 1 \} \\[10pt]
+    &= \frac{\alpha}{s}
 \end{align}
 $$
-
-**Condition**: $s > 0$ if $c \neq 0$ otherwise any $s \in \mathbb{C}$

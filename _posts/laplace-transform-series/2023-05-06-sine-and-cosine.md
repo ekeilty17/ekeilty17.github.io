@@ -9,11 +9,11 @@ series:     laplace-transforms
 tags:       laplace-transform, trig, trigonometry, sine, cosine
 ---
 
-I am also aware that you can do a similar trick to what I did in the previous post where you decompose the trig functions into exponentials. However, this proof is a bit unrigorous because $$\mathcal{L} \{ \cdot \}$$ is supposed to take a real-valued function as input, yet we decomposed it into two complex-valued functions. Thus, I prove it rigorously here.
+I am also aware that decompose the trig functions into exponentials. I will do that in this [post](http://127.0.0.1:4000/blog/laplace-transforms/sine-cosine-and-any-function/). However, I want to do it without complex numbers for now just to show that you don't need them. Also, the recursive trick used is a nice technique I want to showcase.
 
 ## Integration by Parts
 
-We have to prove these identities in tandem with each other (we will see why shortly)
+We have to prove these identities in tandem with each other (we will see why shortly).
 
 $$
 \begin{align}
@@ -38,6 +38,8 @@ $$
     &= \frac{1}{s} - \frac{1}{s} \mathcal{L}\{ \sin(t) \}
 \end{align}
 $$
+
+We've now expressed both Laplace transforms in terms of each other. So now it's like we have a system of two equations and two unknowns.
 
 <br>
 

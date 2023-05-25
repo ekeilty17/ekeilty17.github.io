@@ -73,8 +73,3 @@ $$
 $$
 
 Note that we have to assume that f(t) is continuous in order to interchange the derivative and the integral.
-
-<br>
-
-## Revising Past Results
-

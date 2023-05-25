@@ -9,7 +9,11 @@ series:     laplace-transforms
 tags:       laplace-transform, trig, trigonometry, sine, cosine, monomials, polynomials, summations
 ---
 
-There is another way to solve this Laplace Transform involving derivatives (which we will do in a future post). I am also aware that you can do a similar trick to what I did in the previous post where you decompose the trig functions into exponentials. However, this proof is a bit unrigorous because $$\mathcal{L} \{ \cdot \}$$ is supposed to take a real-valued function as input, yet we decomposed it into two complex-valued functions. Thus, I prove it rigorously here. Also, my proof gives a closed-form solution in terms of a summation, which I've never seen before, so I thought I'd share.
+There is another way to solve this Laplace transform involving derivatives (which we will do in a future post). I am also aware that we can decompose $\sin$ and $\cos$ into exponents using Eulier's identity. I do this in the next [post](http://127.0.0.1:4000/blog/laplace-transforms/sine-cosine-and-any-function/). However, I came up with this proof when I was 14 and before I had a good understanding of complex numbers. So, I wanted to showcase it.
+
+One benefit of this proof is that I give a closed-form polynomial rather than an addition/subtraction of two polynomials. This form may be easier to use in certain applications.
+
+<br?>
 
 ## Deriving a Recurrence
 
@@ -170,6 +174,7 @@ $$
 \end{align}
 $$
 
+<br>
 
 ## Translation
 
@@ -181,6 +186,7 @@ $$\cos(\theta + \phi) = \cos(\theta)\cos(\phi) - \sin(\theta)\sin(\phi)$$
 
 Thus, we have all of the ingredients to write a closed-form solution to $$\mathcal{L}\{ t^n \sin (bt+c) \} $$ and $$\mathcal{L}\{ t^n \cos (bt+c) \}$$. But I'll leave that up to you if you so choose.
 
+<br>
 
 ## Alternative Forms
 
@@ -193,11 +199,11 @@ $$
 Another alternative is to get rid of the summations altogether. We can do this as follows
 
 $$
-\mathcal{L}\{ t^n \sin (bt) \} = \frac{n!}{(s^2 + 1)^{n+1}} \cdot \frac{ (s + ib)^{n+1} - (s - ib)^{n+1} }{2i}
+\mathcal{L}\{ t^n \sin (bt) \} = \frac{n!}{(s^2 + b^2)^{n+1}} \cdot \frac{ (s + ib)^{n+1} - (s - ib)^{n+1} }{2i}
 $$
 
 $$
-\mathcal{L}\{ t^n \cos (bt) \} = \frac{n!}{(s^2 + 1)^{n+1}} \cdot \frac{ (s + ib)^{n+1} + (s - ib)^{n+1} }{2}
+\mathcal{L}\{ t^n \cos (bt) \} = \frac{n!}{(s^2 + b^2)^{n+1}} \cdot \frac{ (s + ib)^{n+1} + (s - ib)^{n+1} }{2}
 $$
 
 Notice that all terms will be real because the imaginary terms always cancel out.
