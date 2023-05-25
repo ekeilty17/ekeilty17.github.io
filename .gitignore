@@ -1,0 +1,5 @@
+.DS_Store
+_site/
+_site_ghpages/
+_tikz_tmp/
+.jekyll-cache/
