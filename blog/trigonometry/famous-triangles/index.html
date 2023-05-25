@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Famous Triangles &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded Latex support -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX","input/MathML","output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!-- Enable Tikz support -->
+<link rel="stylesheet" type="text/css" href="http://tikzjax.com/v1/fonts.css">
+<script src="http://tikzjax.com/v1/tikzjax.js"></script>
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">Software Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/resume">R&eacute;sum&eacute;</a>
+          </li>
+        
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2023 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">Famous Triangles</h1>
+            <!-- <span class="series-date">06 Aug 2022</span> -->
+            <time datetime="2022-08-06T00:00:00-04:00" class="post-date">06 Aug 2022</time>
+            <p>These triangles are so commonly found in geometry, trigonometry, and higher mathematics, they deserve their own post. They form the building blocks of other more complicated structures.</p>
+
+<p><br /></p>
+
+<h2 id="30-60-90-triangles">30-60-90 Triangles</h2>
+
+<p>Consider an <strong>equilateral triangle</strong> with all side-lengths of $s$. A result in geometry is that all the internal angles of a triangle add up to $180^{\circ} = \pi \ \text{rad}$. By symmetry, it must be the case that all the angles of an equilateral triangle are equal, and thus must be $60^{\circ} = \pi/3 \ \text{rad}$.</p>
+
+<p>Now, draw the perpendoicular bisector of one of the angles, which will cut the triangle in half. The result is a $30{-}60{-}90$ triangle.</p>
+
+<center>
+<embed src="/svg/famous-triangles/30-60-90-triangle.svg" type="image/svg+xml" />
+</center>
+
+<p>Using the Pythagorean theorem, we can easliy compute the value of $h$.</p>
+
+\[\begin{align}
+    (s/2)^2 + h^2 &amp;= s^2 \\[10pt]
+    \frac{1}{4}s^2 + h^2 &amp;= s^2 \\[10pt]
+    h^2 = \frac{3}{4} s^2 \\[10pt]
+    h = \frac{\sqrt{3}}{2} s
+\end{align}\]
+
+<p>Now, consider a $30{-}60{-}90$ triangle on the unit circle.</p>
+
+<center>
+<embed src="/svg/famous-triangles/30-60-90-unit-circle1.svg" type="image/svg+xml" />
+&emsp;&emsp;
+<embed src="/svg/famous-triangles/30-60-90-unit-circle2.svg" type="image/svg+xml" />
+</center>
+
+<p><br /></p>
+
+<p>Thus, we’ve now learned that all of the following specific values.</p>
+
+\[\begin{align}
+    &amp;\sin 30^{\circ} = \sin \frac{\pi}{6} = \frac{1}{2} 
+        \qquad\qquad &amp;&amp;\sin 60^{\circ} = \sin \frac{\pi}{3} = \frac{\sqrt{3}}{2}\\[10pt]
+    &amp;\cos 30^{\circ} = \cos \frac{\pi}{6} = \frac{\sqrt{3}}{2} 
+        \qquad\qquad &amp;&amp;\cos 60^{\circ} = \cos \frac{\pi}{3} = \frac{1}{2}\\[10pt]
+    &amp;\tan 30^{\circ} = \tan \frac{\pi}{6} = \frac{1}{\sqrt{3}}
+        \qquad\qquad &amp;&amp;\tan 60^{\circ} = \tan \frac{\pi}{3} = \sqrt{3}\\[10pt]
+    &amp;\sec 30^{\circ} = \sec \frac{\pi}{6} = 2 
+        \qquad\qquad &amp;&amp;\sec 60^{\circ} = \sec \frac{\pi}{3} = \frac{2}{\sqrt{3}}\\[10pt]
+    &amp;\csc 30^{\circ} = \csc \frac{\pi}{6} = \frac{2}{\sqrt{3}} 
+        \qquad\qquad &amp;&amp;\csc 60^{\circ} = \csc \frac{\pi}{3} = 2\\[10pt]
+    &amp;\cot 30^{\circ} = \cot \frac{\pi}{6} = \sqrt{3}
+        \qquad\qquad &amp;&amp;\cot 60^{\circ} = \cot \frac{\pi}{3} = \frac{1}{\sqrt{3}}
+\end{align}\]
+
+<p><br /></p>
+
+<h2 id="45-45-90-triangles">45-45-90 Triangles</h2>
+
+<p>Consider a <strong>right, isosceles triangle</strong>. Given the length of the hypotenuse there is only one way to construct this triangle, which is given below.</p>
+
+<center>
+<embed src="/svg/famous-triangles/45-45-90-triangle.svg" type="image/svg+xml" />
+</center>
+
+<p>Again, using the Pythagorean theorem, we can easliy compute the value of $x$.</p>
+
+\[\begin{align}
+    x^2 + x^2 = s^2 \\[10pt]
+    2x^2 = s^2 \\[10pt]
+    x = \frac{1}{\sqrt{2}} s
+\end{align}\]
+
+<p>Now, consider a $45{-}45{-}90$ triangle on the unit circle.</p>
+
+<center>
+<embed src="/svg/famous-triangles/45-45-90-unit-circle.svg" type="image/svg+xml" />
+
+</center>
+
+<p><br /></p>
+
+<p>Thus, we’ve now learned that all of the following specific values.</p>
+
+\[\begin{align}
+    &amp;\sin 45^{\circ} = \sin \frac{\pi}{4} = \frac{1}{\sqrt{2}} = \frac{\sqrt{2}}{2} \\[10pt]
+    &amp;\cos 45^{\circ} = \cos \frac{\pi}{4} = \frac{1}{\sqrt{2}} = \frac{\sqrt{2}}{2} \\[10pt]
+    &amp;\tan 45^{\circ} = \tan \frac{\pi}{4} = 1 \\[10pt]
+    &amp;\sec 45^{\circ} = \sec \frac{\pi}{4} = \sqrt{2} \\[10pt]
+    &amp;\csc 45^{\circ} = \csc \frac{\pi}{4} = \sqrt{2} \\[10pt]
+    &amp;\cot 45^{\circ} = \cot \frac{\pi}{4} = 1
+\end{align}\]
+
+        </div>
+
+        <!-- Adding the ability to move between parts of the series -->
+        
+        
+        
+
+        
+        
+        
+
+        <!-- Getting capitalized title for series -->
+        
+        
+        
+        <!-- Getting url for series, which is just the page url with the last /... removed -->
+        
+
+        <div class="pagination" style="margin-top:1em;">
+            
+                <a class="pagination-item older" href="/blog/trigonometry/pythagorean-identities/">Previous</a>
+            
+            
+                <a class="pagination-item newer" href="/blog/trigonometry/difference-identity-for-cosine/">Next</a>
+            
+        </div>
+        <h3 style="text-align:center; margin-bottom:1em;">
+            <a href="/blog/trigonometry">
+            
+                Trigonometry
+            
+         Series</a>
+        </h3>
+    </div>
+    
+  </body>
+</html>

@@ -10,7 +10,7 @@
 
   <title>
     
-      Blog Archive &middot; Eric Keilty
+      Law of Sines &middot; Eric Keilty
     
   </title>
 
@@ -36,9 +36,31 @@
   <!-- RSS 
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
 </head>
+  <!-- Enable embedded Latex support -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX","input/MathML","output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!-- Enable Tikz support -->
+<link rel="stylesheet" type="text/css" href="http://tikzjax.com/v1/fonts.css">
+<script src="http://tikzjax.com/v1/tikzjax.js"></script>
 
   <body>
-
+    
     <div class="sidebar">
     <div class="container">
       <!--
@@ -101,32 +123,47 @@
   </div>
 
     <div class="content container">
-      <div class="page">
-          <h1 class="page-title">Blog Archive</h1>
-          <h2 id="series">Series</h2>
 
-<ul>
-  <li>
-    <p><a href="/blog/boolean-algebra/"> Boolean Algebra Series </a></p>
-  </li>
-  <li>
-    <p><a href="/blog/laplace-transforms/"> Laplace Transform Derivations </a></p>
-  </li>
-  <li>
-    <p><a href="/blog/trigonometry/"> Trigonometric Identities Derivations </a></p>
-  </li>
-</ul>
+        <div class="post">
+            <h1 class="post-title">Law of Sines</h1>
+            <!-- <span class="series-date">15 Aug 2022</span> -->
+            <time datetime="2022-08-15T00:00:00-04:00" class="post-date">15 Aug 2022</time>
+            <p><strong>TODO</strong></p>
 
-<h2 id="stand-alone">Stand Alone</h2>
+        </div>
 
-<ul>
-  <li><a href="/blog/the-pell-equation/"> Solving The Pell Equation Efficently </a></li>
-</ul>
+        <!-- Adding the ability to move between parts of the series -->
+        
+        
+        
 
+        
+        
+        
 
-      </div>
+        <!-- Getting capitalized title for series -->
+        
+        
+        
+        <!-- Getting url for series, which is just the page url with the last /... removed -->
+        
+
+        <div class="pagination" style="margin-top:1em;">
+            
+                <a class="pagination-item older" href="/blog/trigonometry/sum-to-product-copy/">Previous</a>
+            
+            
+                <span class="pagination-item newer">Next</span>
+            
+        </div>
+        <h3 style="text-align:center; margin-bottom:1em;">
+            <a href="/blog/trigonometry">
+            
+                Trigonometry
+            
+         Series</a>
+        </h3>
     </div>
     
   </body>
 </html>
-

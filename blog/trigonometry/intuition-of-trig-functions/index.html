@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Intuition of Trigonometric Functions &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded Latex support -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX","input/MathML","output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!-- Enable Tikz support -->
+<link rel="stylesheet" type="text/css" href="http://tikzjax.com/v1/fonts.css">
+<script src="http://tikzjax.com/v1/tikzjax.js"></script>
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">Software Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/resume">R&eacute;sum&eacute;</a>
+          </li>
+        
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2023 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">Intuition of Trigonometric Functions</h1>
+            <!-- <span class="series-date">02 Aug 2022</span> -->
+            <time datetime="2022-08-02T00:00:00-04:00" class="post-date">02 Aug 2022</time>
+            <h2 id="the-etymology-of-sine">The Etymology of Sine</h2>
+
+<p>The English word “sine” originates from Hindu works which used the Sanskrit word <em>jya-ardha</em> meaning “half chord”. This was often shortened to <em>jya</em> or <em>jiva</em>. Later, the Arabs translated the word phonetically as <em>jiba</em>, which is meaningless in Arabic. Since, the Arabic language use accents instead of characters to represent vowels, over time the consonants <em>jb</em> were mistakened for the word <em>jaib</em>, meaning bosom or breast. When Arabic works were eventaully translated into Latin, <em>jaib</em> was translated into the equivalent Latin word <em>sinus</em>. Finally, this Latin word was anglicized into the word <em>sine</em>, which we now use in English.</p>
+
+<p><br /></p>
+
+<h2 id="relationship-to-the-unit-circle">Relationship to the Unit Circle</h2>
+
+<p>I’m not sure how helpful these diagrams are in terms of a greater understanding of trigonometry, but they at least help explain where the rest of the trigonometric functions get their names.</p>
+
+<center>
+<embed src="/svg/intuition-of-trig-functions/interpretation1.svg" type="image/svg+xml" />
+&emsp;&emsp;&emsp;
+<embed src="/svg/intuition-of-trig-functions/interpretation2.svg" type="image/svg+xml" />
+</center>
+
+<p>These relationships can be easily proved using similar triangles and the definitions of the functions. I will leave that for the reader to work out.</p>
+
+<p><br /></p>
+
+<h2 id="where-the-trigonometric-functions-get-their-names">Where the Trigonometric Functions Get Their Names</h2>
+
+<p>First, I need to give some definitions.</p>
+
+<center>
+<embed src="/svg/intuition-of-trig-functions/terms.svg" type="image/svg+xml" />
+</center>
+
+<p>A <strong>tangent</strong> intersects the circumference of a circle at one point. A <strong>chord</strong> is a line segment whose endpoints both lie on the circumference of the circle. A <strong>secant</strong> is the extension of a chord.</p>
+
+<p>Now, hopefully, the names of the rest of the trigonometric functions are clear. “Sine” and “cosine” are both half-chords of the circle (which is ultimately the origin of their confused etymology). “Secant” and “Cosecant” are both half-secants of the circle. Finally, “Tangent” and “cotangent” are both half-tangents of the circle.</p>
+
+<p>Also notice that \(\{ \sin \theta, \sec \theta, \tan \theta \}\) and \(\{\cos \theta, \csc \theta, \cot \theta \}\) are duals of each other. You will see in the identities of later posts, there is always a symmetry between these functions, which is a direct result of the symmetry of their geometry.</p>
+
+<p><br /></p>
+
+<h2 id="graphs">Graphs</h2>
+
+<p>Finally, I provide the graphs of the trigonometric functions. It’s nice to keep these in mind when interpreting the consequences of trig identities.</p>
+
+<center>
+<embed src="/svg/intuition-of-trig-functions/sin-graph.svg" type="image/svg+xml" />
+&emsp;&emsp;&emsp;&emsp;
+<embed src="/svg/intuition-of-trig-functions/cos-graph.svg" type="image/svg+xml" />
+</center>
+
+<p><br /></p>
+
+<center>
+<embed src="/svg/intuition-of-trig-functions/sec-graph.svg" type="image/svg+xml" />
+&emsp;&emsp;&emsp;&emsp;
+<embed src="/svg/intuition-of-trig-functions/csc-graph.svg" type="image/svg+xml" />
+</center>
+
+<p><br /></p>
+
+<center>
+<embed src="/svg/intuition-of-trig-functions/tan-graph.svg" type="image/svg+xml" />
+&emsp;&emsp;&emsp;&emsp;
+<embed src="/svg/intuition-of-trig-functions/cot-graph.svg" type="image/svg+xml" />
+</center>
+
+<p><br /></p>
+
+<p>Notice the asymptotes in $\sec$, $\csc$, $\tan$, and $\cot$. See if you can determine which values of $\theta$ cause these asymptotes.</p>
+
+        </div>
+
+        <!-- Adding the ability to move between parts of the series -->
+        
+        
+        
+
+        
+        
+        
+
+        <!-- Getting capitalized title for series -->
+        
+        
+        
+        <!-- Getting url for series, which is just the page url with the last /... removed -->
+        
+
+        <div class="pagination" style="margin-top:1em;">
+            
+                <a class="pagination-item older" href="/blog/trigonometry/introduction/">Previous</a>
+            
+            
+                <a class="pagination-item newer" href="/blog/trigonometry/reciprocal-and-ratio/">Next</a>
+            
+        </div>
+        <h3 style="text-align:center; margin-bottom:1em;">
+            <a href="/blog/trigonometry">
+            
+                Trigonometry
+            
+         Series</a>
+        </h3>
+    </div>
+    
+  </body>
+</html>

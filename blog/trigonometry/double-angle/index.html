@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Double Angle Identities &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded Latex support -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX","input/MathML","output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!-- Enable Tikz support -->
+<link rel="stylesheet" type="text/css" href="http://tikzjax.com/v1/fonts.css">
+<script src="http://tikzjax.com/v1/tikzjax.js"></script>
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">Software Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/resume">R&eacute;sum&eacute;</a>
+          </li>
+        
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2023 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">Double Angle Identities</h1>
+            <!-- <span class="series-date">10 Aug 2022</span> -->
+            <time datetime="2022-08-10T00:00:00-04:00" class="post-date">10 Aug 2022</time>
+            <p>These identities are just a special case of the sum identities. However, they are used so often that they warrent their own post.</p>
+
+<h2 id="cosine">Cosine</h2>
+
+\[\begin{align}
+    \cos(2\theta) 
+    &amp;= \cos(\theta + \theta) \\[10pt]
+    &amp;= \cos(\theta)\cos(\theta) - \sin(\theta)\sin(\theta) \\[10pt]
+    &amp;= \cos^2 \theta - \sin^2 \theta
+\end{align}\]
+
+<p>There are a few other forms of this identity using the pythagorean identity</p>
+
+\[\begin{align}
+    \cos(2\theta) 
+    &amp;= \cos^2 \theta - \sin^2 \theta \\[10pt]
+    &amp;= (1 - \sin^2 \theta) - \sin^2 \theta \\[10pt]
+    &amp;= 1 - 2\sin^2 \theta
+\end{align}\]
+
+<p>Similarly</p>
+
+\[\begin{align}
+    \cos(2\theta) 
+    &amp;= \cos^2 \theta - \sin^2 \theta \\[10pt]
+    &amp;= \cos^2 \theta - (1 - \cos^2 \theta) \\[10pt]
+    &amp;= 2\cos^2 \theta - 1
+\end{align}\]
+
+<h2 id="sine">Sine</h2>
+
+\[\begin{align}
+    \sin(2\theta) 
+    &amp;= \sin(\theta + \theta) \\[10pt]
+    &amp;= \sin(\theta)\cos(\theta) - \cos(\theta)\sin(\theta) \\[10pt]
+    &amp;= 2 \sin \theta \cos \theta
+\end{align}\]
+
+<h2 id="tangent">Tangent</h2>
+
+\[\begin{align}
+    \tan(2\theta) 
+    &amp;= \tan(\theta + \theta) \\[10pt]
+    &amp;= \frac{\tan(\theta) + \tan(\theta)}{1 - \tan(\theta)\tan(\theta)} \\[10pt]
+    &amp;= \frac{2\tan \theta}{1 - \tan^2 \theta}
+\end{align}\]
+
+<p>And we could also take this one more step to get</p>
+
+\[\tan(2 \theta) = \frac{2}{\cot \theta - \tan \theta}\]
+
+<h2 id="secant">Secant</h2>
+
+<p>We have the standard looking double angle formula for secant.</p>
+
+\[\begin{align}
+    \sec(2 \theta)
+    &amp;= \sec(\theta + \theta) \\[10pt]
+    &amp;= \frac{\sec(\theta)\sec(\theta)\csc(\theta)\csc(\theta)}{\csc(\theta)\csc(\theta) - \sec(\theta)\sec(\theta)} \\[10pt]
+    &amp;= \frac{\sec^2 \theta \csc^2 \theta}{\csc^2 \theta - \sec^2 \theta}
+\end{align}\]
+
+<p>Although, this is quite messy. So more often you will see this form.</p>
+
+\[\begin{align}
+    \sec(2 \theta) 
+    &amp;= \frac{1}{\cos(2 \theta)} \\[10pt]
+    &amp;= \frac{1}{\cos^2 \theta - \sin^2 \theta} \\[10pt]
+    &amp;= \frac{\cos^2 \theta + \sin^2 \theta}{\cos^2 \theta - \sin^2 \theta} \\[10pt]
+    &amp;= \frac{1 + \tan^2 \theta}{1 - \tan^2 \theta}
+\end{align}\]
+
+<p>This is an identity that is sometimes used when evaluating integrals.</p>
+
+<h2 id="cosecant">Cosecant</h2>
+
+<p>We have the standard looking double angle formula for cosecant.</p>
+
+\[\csc(2 \theta) = \frac{1}{\sin(2 \theta)} = \frac{1}{2 \sin \theta \cos \theta} = \frac{1}{2}\sec \theta \csc \theta\]
+
+<p>But we also have this one.</p>
+
+\[\begin{align}
+    \csc(2 \theta) 
+    &amp;= \frac{1}{\sin(2 \theta)} \\[10pt]
+    &amp;= \frac{1}{2 \sin \theta \cos \theta} \\[10pt]
+    &amp;= \frac{1}{2} \frac{\sin^2 \theta + \cos^2 \theta}{\sin \theta \cos \theta} \\[10pt]
+    &amp;= \frac{1}{2} \left ( \frac{\sin \theta}{\cos \theta} + \frac{\cos \theta}{\sin \theta} \right ) \\[10pt]
+    &amp;= \frac{1}{2} \left ( \tan \theta + \cot \theta \right ) \\[10pt]
+\end{align}\]
+
+<h2 id="cotangent">Cotangent</h2>
+
+\[\begin{align}
+    \cot(2 \theta)
+    &amp;= \cot(\theta + \theta) \\[10pt]
+    &amp;= \frac{\cot(\theta) \cot(\theta) - 1}{\cot(\theta) + \cot(\theta)} \\[10pt]
+    &amp;= \frac{\cot^2 \theta - 1}{2\cot \theta}
+\end{align}\]
+
+<p>And we could also take this one more step to get</p>
+
+\[\cot(2 \theta) = \frac{1}{2} (\cot \theta - \tan \theta)\]
+
+        </div>
+
+        <!-- Adding the ability to move between parts of the series -->
+        
+        
+        
+
+        
+        
+        
+
+        <!-- Getting capitalized title for series -->
+        
+        
+        
+        <!-- Getting url for series, which is just the page url with the last /... removed -->
+        
+
+        <div class="pagination" style="margin-top:1em;">
+            
+                <a class="pagination-item older" href="/blog/trigonometry/sum-and-difference/">Previous</a>
+            
+            
+                <a class="pagination-item newer" href="/blog/trigonometry/power-reduction/">Next</a>
+            
+        </div>
+        <h3 style="text-align:center; margin-bottom:1em;">
+            <a href="/blog/trigonometry">
+            
+                Trigonometry
+            
+         Series</a>
+        </h3>
+    </div>
+    
+  </body>
+</html>

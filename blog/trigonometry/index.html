@@ -10,7 +10,7 @@
 
   <title>
     
-      Blog Archive &middot; Eric Keilty
+      Trigonometric Identities Derivations &middot; Eric Keilty
     
   </title>
 
@@ -36,9 +36,31 @@
   <!-- RSS 
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
 </head>
+  <!-- Enable embedded Latex support -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX","input/MathML","output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!-- Enable Tikz support -->
+<link rel="stylesheet" type="text/css" href="http://tikzjax.com/v1/fonts.css">
+<script src="http://tikzjax.com/v1/tikzjax.js"></script>
 
   <body>
-
+    
     <div class="sidebar">
     <div class="container">
       <!--
@@ -101,32 +123,66 @@
   </div>
 
     <div class="content container">
-      <div class="page">
-          <h1 class="page-title">Blog Archive</h1>
-          <h2 id="series">Series</h2>
+
+        <div class="post">
+            <h1 class="post-title">Trigonometric Identities Derivations</h1>
+            <!-- <span class="post-date"></span> -->
+            <time datetime="" class="post-date"></time>
+            <p><a href="/blog/trigonometry/table-of-trig-identities">Summary Table of Trigonometric Identities</a></p>
 
 <ul>
   <li>
-    <p><a href="/blog/boolean-algebra/"> Boolean Algebra Series </a></p>
+    <p>Part 0) <a href="/blog/trigonometry/introduction/"> Introduction </a></p>
   </li>
   <li>
-    <p><a href="/blog/laplace-transforms/"> Laplace Transform Derivations </a></p>
+    <p>Part 1) <a href="/blog/trigonometry/intuition-of-trig-functions/"> Intuition of Trigonometric Functions </a></p>
   </li>
   <li>
-    <p><a href="/blog/trigonometry/"> Trigonometric Identities Derivations </a></p>
+    <p>Part 2) <a href="/blog/trigonometry/reciprocal-and-ratio/"> Reciprocal and Ratio Identities </a></p>
+  </li>
+  <li>
+    <p>Part 3) <a href="/blog/trigonometry/axis-values/"> Axis Values </a></p>
+  </li>
+  <li>
+    <p>Part 4) <a href="/blog/trigonometry/pythagorean-identities/"> Pythagorean Identities </a></p>
+  </li>
+  <li>
+    <p>Part 5) <a href="/blog/trigonometry/famous-triangles/"> Famous Triangles </a></p>
+  </li>
+  <li>
+    <p>Part 6) <a href="/blog/trigonometry/difference-identity-for-cosine/"> Difference Identity for Cosine </a></p>
+  </li>
+  <li>
+    <p>Part 7) <a href="/blog/trigonometry/complementary-supplementary-and-opposite-angles/"> Complementary, Supplementary, and Opposite Angles </a></p>
+  </li>
+  <li>
+    <p>Part 8) <a href="/blog/trigonometry/sum-and-difference/"> Sum and Difference Identities </a></p>
+  </li>
+  <li>
+    <p>Part 9) <a href="/blog/trigonometry/double-angle/"> Double Angle Identities </a></p>
+  </li>
+  <li>
+    <p>Part 10) <a href="/blog/trigonometry/power-reduction/"> Power Reduction Identities </a></p>
+  </li>
+  <li>
+    <p>Part 11) <a href="/blog/trigonometry/half-angle/"> Half Angle Identities </a></p>
+  </li>
+  <li>
+    <p>Part 12) <a href="/blog/trigonometry/product-to-sum/"> Product to Sum Identities </a></p>
+  </li>
+  <li>
+    <p>Part 13) <a href="/blog/trigonometry/sum-to-product-copy/"> Sum to Product Identities </a></p>
+  </li>
+  <li>
+    <p>Part 14) <a href="/blog/trigonometry/law-of-sines/"> Law of Sines </a></p>
+  </li>
+  <li>
+    <p>Part 14) <a href="/blog/trigonometry/law-of-cosines/"> Law of Cosines </a></p>
   </li>
 </ul>
 
-<h2 id="stand-alone">Stand Alone</h2>
-
-<ul>
-  <li><a href="/blog/the-pell-equation/"> Solving The Pell Equation Efficently </a></li>
-</ul>
-
-
-      </div>
+        </div>
     </div>
     
   </body>
 </html>
-

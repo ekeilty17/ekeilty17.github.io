@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Introduction &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded Latex support -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX","input/MathML","output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!-- Enable Tikz support -->
+<link rel="stylesheet" type="text/css" href="http://tikzjax.com/v1/fonts.css">
+<script src="http://tikzjax.com/v1/tikzjax.js"></script>
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">Software Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/resume">R&eacute;sum&eacute;</a>
+          </li>
+        
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2023 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">Introduction</h1>
+            <!-- <span class="series-date">01 Aug 2022</span> -->
+            <time datetime="2022-08-01T00:00:00-04:00" class="post-date">01 Aug 2022</time>
+            <p>In this series, I will be proving all of the trigonometric identities. I’ve found that the higher you go in mathematics, the more useful these identities become, as $\sin$ and $\cos$ are intimately related to $e$ and complex numbers.</p>
+
+<h2 id="definition-of-an-angle">Definition of an Angle</h2>
+
+<p>Intuitively, an <strong>angle</strong> between two lines that share one endpoint is the distance between them. However, the “distance between the lines” increases as you move farther away from the shared point as the figure below shows.</p>
+
+<center>
+<embed src="/svg/introduction/angle-between-two-lines.svg" type="image/svg+xml" />
+</center>
+
+<p>Thus, we need to do some normalization to have a consistent measure. First, rotate the lines until one of them is purely horizontal and pointing to the right. Then, to normalize the “distance between the lines” we consider a circle of radius $1$ centered at the shared point. This is called the <strong>unit circle</strong>. The <strong>angle</strong> between the lines is defined as <strong>the length of the arc of this circle</strong> between these two lines in the <strong>counter-clockwise</strong> direction. See the figures below.</p>
+
+<center>
+<embed src="/svg/introduction/Q1angle.svg" type="image/svg+xml" />
+&emsp;&emsp;
+<embed src="/svg/introduction/Q2angle.svg" type="image/svg+xml" />
+&emsp;&emsp;
+<embed src="/svg/introduction/Q3angle.svg" type="image/svg+xml" />
+&emsp;&emsp;
+<embed src="/svg/introduction/Q4angle.svg" type="image/svg+xml" />
+</center>
+
+<p><br /></p>
+
+<p>Why do we choose counter-clockwise and not clockwise? Ultimately, this convention comes from the convention that rightward and upward are positive. Rightward being considered positive most likely comes from the fact that western languages write left-to-right. Upward being considered positive most likely comes from gravity.</p>
+
+<p><br /></p>
+
+<h2 id="units-of-an-angle">Units of an Angle</h2>
+
+<p>The above definition of an angle gives a length in the units of <strong>radians</strong>. Another commonly used unit for measuring angles is <strong>degrees</strong>, which are defined as follows.</p>
+
+\[\theta_{deg} = \frac{180}{\pi} \cdot \theta_{rad}\]
+
+<p>Recall the circumference of a circle is $2 \pi r$. Thus, there are $2 \pi$ radians and $360$ degrees in a circle. Thus, an angle will always be in the interval $[0, 2\pi)$ radians or $[0, 360)$ degrees. Given an angle outside this range, we can always normalize it to be within the interval by adding or subtracting $2 \pi k$ for some integer $k$. Intuitively, this is akin to saying if you walk all the way around the circle, you are back to where you started and thus it’s like you didn’t move. We can summarize the above with the following statement.</p>
+
+\[\theta \equiv \theta + 2 \pi k \qquad k \in \mathbb{Z}\]
+
+<p>Here, $\equiv$ means <em>equivalent</em>, but not necessarily equal. For the purposes of trigonometry, equivalent angles are indistringuishable.</p>
+
+<p><br /></p>
+
+<h2 id="trigonometric-function-definitions">Trigonometric Function Definitions</h2>
+
+<p>Now, consider the Cartesian plane. Place a circle with radius $r$ centered at the origin, $(0, 0)$. Extend a line from the origin with an angle $\theta$. This line intersects the circumference of the circle at some unique point. This point is described by the coordinates $(x, y)$. See the figures below.</p>
+
+<center>
+<embed src="/svg/introduction/Q1circle.svg" type="image/svg+xml" />
+&emsp;&emsp;&emsp;
+<embed src="/svg/introduction/Q2circle.svg" type="image/svg+xml" />
+</center>
+
+<p>Notice that each pair $(r, \theta)$ uniquely defines a pair $(x, y)$ and vice versa. Trigonometry provides the link between $(r, \theta)$ and $(x, y)$. In particular, we look at the ratios between $x$, $y$, and $r$. There are six possible ratios and each of them is designated a function.</p>
+
+\[\begin{align}
+
+    &amp;\cos(\theta) := \frac{x}{r}   \qquad\qquad &amp;&amp;\sec(\theta) := \frac{r}{x} \\[10pt]
+
+    &amp;\sin(\theta) := \frac{y}{r}    \qquad\qquad &amp;&amp;\csc(\theta) := \frac{r}{y} \\[10pt]
+    
+    &amp;\tan(\theta) := \frac{y}{x}    \qquad\quad &amp;&amp;\cot(\theta) := \frac{x}{y}
+
+\end{align}\]
+
+<p>The origin and meanings of these functions will be discussed in the next post.</p>
+
+<p><br /></p>
+
+<h2 id="notation">Notation</h2>
+
+<p>Differentiating between the units <em>degrees</em> and <em>radians</em> can often be done just by context. Radians tend to have a factor of $\pi$ while degrees tend to be larger numbers. However, in order to minimize confusion, I will use the symbol $^{\circ}$ when the angle is in degrees. If the angle is in radians, then there will be no symbol. For example, $\cos(30^{\circ}) = \cos(\pi / 6)$.</p>
+
+<p>Another bit of weird notation that is standard in trigonometry is that $\sin^2 \theta := (\sin \theta)^2$. This notation is also used for all other trigonometric functions and any exponent.</p>
+
+        </div>
+
+        <!-- Adding the ability to move between parts of the series -->
+        
+        
+        
+
+        
+        
+        
+
+        <!-- Getting capitalized title for series -->
+        
+        
+        
+        <!-- Getting url for series, which is just the page url with the last /... removed -->
+        
+
+        <div class="pagination" style="margin-top:1em;">
+            
+                <span class="pagination-item older">Previous</span>
+            
+            
+                <a class="pagination-item newer" href="/blog/trigonometry/intuition-of-trig-functions/">Next</a>
+            
+        </div>
+        <h3 style="text-align:center; margin-bottom:1em;">
+            <a href="/blog/trigonometry">
+            
+                Trigonometry
+            
+         Series</a>
+        </h3>
+    </div>
+    
+  </body>
+</html>
