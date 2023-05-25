@@ -128,7 +128,11 @@
             <h1 class="post-title">Sine, Cosine, and Polynomials</h1>
             <!-- <span class="series-date">07 May 2023</span> -->
             <time datetime="2023-05-07T00:00:00-04:00" class="post-date">07 May 2023</time>
-            <p>There is another way to solve this Laplace Transform involving derivatives (which we will do in a future post). I am also aware that you can do a similar trick to what I did in the previous post where you decompose the trig functions into exponentials. However, this proof is a bit unrigorous because \(\mathcal{L} \{ \cdot \}\) is supposed to take a real-valued function as input, yet we decomposed it into two complex-valued functions. Thus, I prove it rigorously here. Also, my proof gives a closed-form solution in terms of a summation, which I’ve never seen before, so I thought I’d share.</p>
+            <p>There is another way to solve this Laplace transform involving derivatives (which we will do in a future post). I am also aware that we can decompose $\sin$ and $\cos$ into exponents using Eulier’s identity. I do this in the next <a href="http://127.0.0.1:4000/blog/laplace-transforms/sine-cosine-and-any-function/">post</a>. However, I came up with this proof when I was 14 and before I had a good understanding of complex numbers. So, I wanted to showcase it.</p>
+
+<p>One benefit of this proof is that I give a closed-form polynomial rather than an addition/subtraction of two polynomials. This form may be easier to use in certain applications.</p>
+
+<p>&lt;br?&gt;</p>
 
 <h2 id="deriving-a-recurrence">Deriving a Recurrence</h2>
 
@@ -263,6 +267,8 @@ It gives an alternating series (positive/negative) for the even values of $m$, a
     &amp;= \frac{n!}{(s^2 + b^2)^{n+1}} \sum_{k=0}^{n+1} A(n{-}k{+1}) \binom{n+1}{k} s^k b^{n-k+1}
 \end{align}\]
 
+<p><br /></p>
+
 <h2 id="translation">Translation</h2>
 
 <p>Same as in the previous post, we can use the identities</p>
@@ -273,6 +279,8 @@ It gives an alternating series (positive/negative) for the even values of $m$, a
 
 <p>Thus, we have all of the ingredients to write a closed-form solution to \(\mathcal{L}\{ t^n \sin (bt+c) \}\) and \(\mathcal{L}\{ t^n \cos (bt+c) \}\). But I’ll leave that up to you if you so choose.</p>
 
+<p><br /></p>
+
 <h2 id="alternative-forms">Alternative Forms</h2>
 
 <p>As I stated earlier, there are various ways to represent $A(m)$. Algebraically, I think these are the most straightforward.</p>
@@ -281,9 +289,9 @@ It gives an alternating series (positive/negative) for the even values of $m$, a
 
 <p>Another alternative is to get rid of the summations altogether. We can do this as follows</p>
 
-\[\mathcal{L}\{ t^n \sin (bt) \} = \frac{n!}{(s^2 + 1)^{n+1}} \cdot \frac{ (s + ib)^{n+1} - (s - ib)^{n+1} }{2i}\]
+\[\mathcal{L}\{ t^n \sin (bt) \} = \frac{n!}{(s^2 + b^2)^{n+1}} \cdot \frac{ (s + ib)^{n+1} - (s - ib)^{n+1} }{2i}\]
 
-\[\mathcal{L}\{ t^n \cos (bt) \} = \frac{n!}{(s^2 + 1)^{n+1}} \cdot \frac{ (s + ib)^{n+1} + (s - ib)^{n+1} }{2}\]
+\[\mathcal{L}\{ t^n \cos (bt) \} = \frac{n!}{(s^2 + b^2)^{n+1}} \cdot \frac{ (s + ib)^{n+1} + (s - ib)^{n+1} }{2}\]
 
 <p>Notice that all terms will be real because the imaginary terms always cancel out.</p>
 

@@ -130,28 +130,31 @@
             <time datetime="2023-05-05T00:00:00-04:00" class="post-date">05 May 2023</time>
             <h2 id="translation-of-inverse-laplace-transforms">Translation of Inverse Laplace Transforms</h2>
 
-<p>Given function $f(t)$ with Laplace Transform $F(s)$ and constant $b \in \mathbb{R}$</p>
+<p>Given function $f(t)$ with Laplace transform $F(s)$ and constant $\alpha \in \mathbb{C}$</p>
 
 \[\begin{align}
-    \mathcal{L}\{ e^{bt}f(t) \}
-    &amp;= \int_{0}^{\infty} e^{bt}f(t) \cdot e^{-st} \; dt \\[10pt]
-    &amp;= \int_{0}^{\infty} f(t) e^{-(s-b)t} \; dt \\[10pt]
-    &amp;= F(s-b)
+    \mathcal{L}\{ e^{\alpha t}f(t) \}
+    &amp;= \int_{0}^{\infty} e^{\alpha t}f(t) \cdot e^{-st} \; dt \\[10pt]
+    &amp;= \int_{0}^{\infty} f(t) e^{-(s-\alpha)t} \; dt \\[10pt]
+    &amp;=\text{assme that } \lvert s \rvert &gt; \lvert \alpha \rvert \text{ as otherwise the integral will not converge} \\[10pt]
+    &amp;= F(s-\alpha)
 \end{align}\]
 
-<p>This is a really nice property that is extremely useful for inverse Laplace Transforms. This property also effectively solves any function f(t) that involves an exponential. For example, applying this result to polynomials gives us</p>
+<p>This is a really nice property that is extremely useful for inverse Laplace transforms. This property also effectively solves any function f(t) that involves an exponential. For example, applying this result to polynomials gives us</p>
 
-\[\mathcal{L} \{ e^{bt} \} = \frac{1}{s-b}\]
+\[\mathcal{L} \{ e^{\alpha t} \} = \frac{1}{s-\alpha}\]
 
-\[\mathcal{L} \{ e^{bt}t^n \} = \frac{n!}{(s-b)^{n+1}}\]
+\[\mathcal{L} \{ e^{\alpha t}t^n \} = \frac{n!}{(s- \alpha)^{n+1}}\]
 
-\[\mathcal{L} \left \{ e^{bt} \sum_{k=0}^n a_k t^k \right \} = \sum_{k=0}^n \frac{k! \ a_k}{(s-b)^{k+1}}\]
+\[\mathcal{L} \left \{ e^{\alpha t} \sum_{k=0}^n a_k t^k \right \} = \sum_{k=0}^n \frac{k! \ a_k}{(s- \alpha)^{k+1}}\]
+
+<p><br /></p>
 
 <h2 id="translation-in-the-exponent">Translation in the Exponent</h2>
 
-<p>Notice that \(e^{bt+c} = e^c \cdot e^{bt}\), so</p>
+<p>Notice that \(e^{\alpha t + \beta} = e^{\beta} \cdot e^{\alpha t}\), so in general we have</p>
 
-\[\mathcal{L}\{ e^{bt+c}f(t) \} = e^c \cdot F(s-b)\]
+\[\mathcal{L}\{ e^{\alpha t + \beta}f(t) \} = e^{\beta} \cdot F(s-\alpha)\]
 
         </div>
 

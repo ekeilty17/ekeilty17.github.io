@@ -128,7 +128,7 @@
             <h1 class="post-title">Properties</h1>
             <!-- <span class="series-date">02 May 2023</span> -->
             <time datetime="2023-05-02T00:00:00-04:00" class="post-date">02 May 2023</time>
-            <p>We are going to prove some quick and dirty properties of Laplace Transforms, which will be helpful later on.</p>
+            <p>To start off, we will prove some easy general properties of Laplace transforms, which will be helpful later on.</p>
 
 <h2 id="linearity">Linearity</h2>
 
@@ -141,36 +141,84 @@
     &amp;= \alpha \mathcal{L}\{ f(t) \}  \ \pm \ \beta \mathcal{L}\{ g(t) \} 
 \end{align}\]
 
+<p><br /></p>
+
 <h2 id="scaling">Scaling</h2>
 
-<p>Given function $f(t)$ with Laplace Transform $F(s)$ and constant $b \in \mathbb{R}$ such that $b \neq 0$</p>
+<p>Given function $f(t)$ with Laplace transform $F(s)$ and constant $b \in \mathbb{R}$ such that $b &gt; 0$</p>
 
 \[\begin{align}
     \mathcal{L}\{ f(bt) \}
     &amp;= \int_{0}^{\infty} f(bt) \cdot e^{-st} \; dt \\[10pt]
     &amp;\text{let } u = bt \implies du = b \cdot dt \\[10pt]
-    &amp;= \int_{0}^{\infty} f(u) e^{-su/b} \; \frac{1}{b} du \\[10pt]
+    &amp;= \int_{0}^{\infty} f(u) e^{-s(u/b)} \; \left ( \frac{1}{b} du \right ) \\[10pt]
+    &amp;= \frac{1}{b} \int_{0}^{\infty} f(u) e^{-(s/b)u} \; du \\[10pt]
     &amp;= \frac{1}{b} F(s/b)
 \end{align}\]
 
-<p>Written another way, we could expression this rule as \(\mathcal{L}\{ f(t/b) \} = bF(bs)\)</p>
+<p>The reason we had to assume $b &gt; 0$ is because we need $(u/b)$ to tend towards infinty in order to be consistent with the definition of Laplace transforms. If $b &lt; 0$ then there would be an implicit negative sign.</p>
+
+<p><br /></p>
+
+<p>Given function $f(t)$ with Laplace transform $F(s)$ and constant $b \in \mathbb{R}$ such that $b &gt; 0$</p>
+
+\[\begin{align}
+    \mathcal{L}\{ f(-bt) \}
+    &amp;= \int_{0}^{\infty} f(-bt) \cdot e^{-st} \; dt \\[10pt]
+    &amp;\text{let } u = -bt \implies du = -b \cdot dt \\[10pt]
+    &amp;= \int_{0}^{\infty} f(u) e^{-s(u/-b)} \; \left ( -\frac{1}{b} du \right ) \\[10pt]
+    &amp;= -\frac{1}{b} \int_{0}^{\infty} f(u) e^{-(-s/b)u} \; du \\[10pt]
+    &amp;= -\frac{1}{b} F(-s/b)
+\end{align}\]
+
+<p><br /></p>
+
+<p>We can summarize the results as the following. Given function $f(t)$ with Laplace transform $F(s)$ and constant $b \in \mathbb{R}$ such that $b \neq 0$.</p>
+
+\[\mathcal{L}\{ f(bt) \} = \frac{1}{\lvert b \rvert} F(s/b)\]
+
+<p>Or written another way</p>
+
+\[\mathcal{L}\{ f(t/b) \} = \lvert b \rvert F(bs)\]
+
+<p>To take a special case, we also have</p>
+
+\[\mathcal{L}\{ f(-t) \} = F(-s)\]
+
+<p><br /></p>
 
 <h2 id="translation">Translation</h2>
-
-<p>Unfortunately, there does not seem to be a nice way to simplify $f(t-c)$, but this is the closest that I can get.</p>
 
 <p>Given function $f(t)$ and constant $c \in \mathbb{R}$</p>
 
 \[\begin{align}
     \mathcal{L}\{ f(t-c) \}
-    &amp;= \int_{0}^{\infty} f(t-c) \ e^{-s(t-c)} \; dt \\[10pt]
+    &amp;= \int_{0}^{\infty} f(t-c) \ e^{-st} \; dt \\[10pt]
     &amp;\text{let } u = t-c \implies du = dt \\[10pt]
-    &amp;= \int_{-c}^{\infty} f(u) e^{-su} \; du \\[10pt]
-    &amp;= \int_{-c}^{0} f(u) e^{-su} \; du + \int_{0}^{\infty} f(u) e^{-su} \; du \\[10pt]
-    &amp;= \int_{-c}^{0} f(u) e^{-su} \; du + \mathcal{L}\{ f(t) \}
+    &amp;= \int_{-c}^{\infty} f(u) e^{-s(u+c)} \; du \\[10pt]
+    &amp;= \int_{-c}^{0} f(u) e^{-s(u+c)} \; du + e^{-cs}\int_{0}^{\infty} f(u) e^{-su} \; du \\[10pt]
+    &amp;= \int_{-c}^{0} f(u) e^{-su} \; du + e^{-cs}\mathcal{L}\{ f(t) \}
 \end{align}\]
 
-<p>This is somewhat useful, but not really. There is another version of the translation rule that involves step functions where we do get a nice result, which we will do later. Due to this, we don’t really concern ourselves with the Laplace Transforms of translations.</p>
+<p>If we assume that $f(t) = 0 \quad \forall t &lt; 0$, then the left integral goes away, and we get</p>
+
+\[\mathcal{L}\{ f(t-c) \} = e^{-cs}\mathcal{L}\{ f(t) \}\]
+
+<p>For functions that do not meet this assumption, we can use the step function. We derive this result in a <a href="/blog/laplace-transforms/the-heaviside-step-function/">later post</a>.</p>
+
+<p><br /></p>
+
+<h2 id="complex-conjugation">Complex Conjugation</h2>
+
+<p>Recall that $f(t)$ produces a complex output. Thus, let $f^*(t)$ denote the complex conjugate of the output. Given Given function $f(t)$ with Laplace transform $F(s)$</p>
+
+\[\begin{align}
+    \mathcal{L}\{ f^*(t) \}
+    &amp;= \int_{0}^{\infty} f^*(t) \ e^{-st} \; dt \\[10pt]
+    &amp;= \int_{0}^{\infty} \left [ f(t) \ e^{-s^*t} \right ]^* \; dt \\[10pt]
+    &amp;= \left [ \int_{0}^{\infty} f(t) \ e^{-s^*t} \; dt \right ]^* \\[10pt]
+    &amp;= F^* (s^*)
+\end{align}\]
 
         </div>
 

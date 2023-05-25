@@ -128,11 +128,11 @@
             <h1 class="post-title">Sine and Cosine</h1>
             <!-- <span class="series-date">06 May 2023</span> -->
             <time datetime="2023-05-06T00:00:00-04:00" class="post-date">06 May 2023</time>
-            <p>I am also aware that you can do a similar trick to what I did in the previous post where you decompose the trig functions into exponentials. However, this proof is a bit unrigorous because \(\mathcal{L} \{ \cdot \}\) is supposed to take a real-valued function as input, yet we decomposed it into two complex-valued functions. Thus, I prove it rigorously here.</p>
+            <p>I am also aware that decompose the trig functions into exponentials. I will do that in this <a href="http://127.0.0.1:4000/blog/laplace-transforms/sine-cosine-and-any-function/">post</a>. However, I want to do it without complex numbers for now just to show that you don’t need them. Also, the recursive trick used is a nice technique I want to showcase.</p>
 
 <h2 id="integration-by-parts">Integration by Parts</h2>
 
-<p>We have to prove these identities in tandem with each other (we will see why shortly)</p>
+<p>We have to prove these identities in tandem with each other (we will see why shortly).</p>
 
 \[\begin{align}
     \mathcal{L}\{ \sin(t) \}
@@ -153,6 +153,8 @@
     &amp;= \frac{1}{s} - \frac{1}{s} \int_{0}^{\infty} \sin(t) e^{-st} \ dt \\[10pt]
     &amp;= \frac{1}{s} - \frac{1}{s} \mathcal{L}\{ \sin(t) \}
 \end{align}\]
+
+<p>We’ve now expressed both Laplace transforms in terms of each other. So now it’s like we have a system of two equations and two unknowns.</p>
 
 <p><br /></p>
 

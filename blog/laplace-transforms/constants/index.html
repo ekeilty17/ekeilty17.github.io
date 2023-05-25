@@ -151,26 +151,23 @@
     &amp;= \int_{0}^{\infty} e^{-st} \; dt \\[10pt]
     &amp;= -\frac{1}{s} e^{-st} \biggr\rvert_{0}^{\infty} \\[10pt]
     &amp;=  \left ( \lim_{t \rightarrow \infty} -\frac{1}{s} e^{-st} \right ) - \left ( - \frac{1}{s} e^{0} \right ) \\[10pt]
-    &amp;\text{We must assume } s &gt; 0 \text{ otherwise the limit goes to } -\infty \\[10pt]
+    &amp;\text{We must assume } \lvert s \rvert &gt; 0 \text{ otherwise the limit goes to } -\infty \\[10pt]
     &amp;= -\frac{1}{s} \cdot 0 + \frac{1}{s} \cdot 1 \\[10pt]
     &amp;= \frac{1}{s}
 \end{align}\]
 
-<p><strong>Condition</strong>: $s &gt; 0$</p>
-
 <h2 id="any-constant">Any Constant</h2>
 
-<p>Given $f(t) = c$ for any constant $c \in \mathbb{R}$</p>
+<p>Given $f(t) = \alpha$ for any constant $\alpha \in \mathbb{R}$</p>
 
 \[\begin{align}
-    \mathcal{L}\{ c \} = F(s) 
-    &amp;= \int_{0}^{\infty} c \ e^{-st} \; dt \\[10pt]
-    &amp;= c \ \int_{0}^{\infty} e^{-st} \; dt \\[10pt]
-    &amp;= c \cdot \mathcal{L}\{ 1 \} \\[10pt]
-    &amp;= \frac{c}{s}
+    \mathcal{L}\{ \alpha \} = F(s) 
+    &amp;= \int_{0}^{\infty} \alpha \ e^{-st} \; dt \\[10pt]
+    &amp;= \alpha \ \int_{0}^{\infty} e^{-st} \; dt \\[10pt]
+    &amp;\text{assume } \lvert s \rvert &gt; 0 \text{ as part of the condition on } \mathcal{L}\{ 1 \}\\[10pt]
+    &amp;= \alpha \cdot \mathcal{L}\{ 1 \} \\[10pt]
+    &amp;= \frac{\alpha}{s}
 \end{align}\]
-
-<p><strong>Condition</strong>: $s &gt; 0$ if $c \neq 0$ otherwise any $s \in \mathbb{C}$</p>
 
         </div>
 

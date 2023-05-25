@@ -10,7 +10,7 @@
 
   <title>
     
-      Derivatives &middot; Eric Keilty
+      Periodic Functions &middot; Eric Keilty
     
   </title>
 
@@ -125,61 +125,38 @@
     <div class="content container">
 
         <div class="post">
-            <h1 class="post-title">Derivatives</h1>
-            <!-- <span class="series-date">10 May 2023</span> -->
-            <time datetime="2023-05-10T00:00:00-04:00" class="post-date">10 May 2023</time>
-            <p>In keeping with the notation I’ve been using throughout the series. Suppose we are function $f(t)$ with Laplace Transform $F(s)$.</p>
+            <h1 class="post-title">Periodic Functions</h1>
+            <!-- <span class="series-date">14 May 2023</span> -->
+            <time datetime="2023-05-14T00:00:00-04:00" class="post-date">14 May 2023</time>
+            <h2 id="background">Background</h2>
 
-<h2 id="derivatives-of-ft">Derivatives of f(t)</h2>
+<p>We say $f(t)$ is $T$-periodic if $f(t+T) = f(t) \quad \forall t \in \mathbb{R}$</p>
 
-<p>Let $f^{(n)}(t)$ denote the $n$th derivative of $f(t)$ with respect to $t$. We will prove the following result using induction on $n \geq 0$ where $f^{(0)}(t) = f(t)$.</p>
+<p>An interesting fact is that if $T$ is irrational, then $f$ must be a constant function. Thus, you can restrict $T \in \mathbb{N}$ for all non-trivial cases. However, this will not affect our proof.</p>
 
-\[\mathcal{L}\{ f^{(n)}(t) \} = s^n F(s) - \sum_{k=0}^{n-1} s^{n-k-1} f^{(k)}(0)\]
+<h2 id="the-laplace-transform-proof">The Laplace Transform Proof</h2>
 
-<p>First, checking the base-case $n=0$ gives</p>
-
-\[s^0 F(s) - \sum_{k=0}^{0-1} s^{0-k-1} f^{(k)}(0) = F(s) = \mathcal{L}\{ f(t) \}\]
-
-<p>Now, we check the induction step by evaluating \(\mathcal{L}\{ f^{(n+1)}(t) \}\), assuming that the equation above holds for \(\mathcal{L}\{ f^{(n)}(t) \}\).</p>
+<p>Given a $T$-periodic function $f(t)$</p>
 
 \[\begin{align}
-    \mathcal{L}\{ f^{(n+1)}(t) \}
-    &amp;= \int_{0}^{\infty} f^{(n+1)}(t) e^{-st} \; dt \qquad \text{(using integration by parts)} \\[10pt]
-    &amp;= f^{(n)}(t)e^{-st} \biggr\rvert_{0}^{\infty} - \int_{0}^{\infty} f^{(n)}(t) (-s \cdot e^{-st}) \; dt \\[10pt]
-    &amp;= \left( \lim_{t \rightarrow \infty} f^{(n)}(t) e^{-st} \right ) - f^{(n)}(0) + s \int_{0}^{\infty} f^{(n)}(t) \cdot e^{-st} \; dt \\[10pt]
-    &amp;\text{assuming } f^{(n)}(t) = o(e^t) \text{ as otherwise the Lapalce Transform would not exist} \\[10pt]
-    &amp;= s \cdot \mathcal{L}\{ f^{(n)}(t) \} - f^{(n)}(0) \\[10pt]
-    &amp;= s \cdot \left [ s^n F(s) - \sum_{k=0}^{n-1} s^{n-k-1} f^{(k)}(0) \right ] - f^{(n)}(0) \\[10pt]
-    &amp;= s^{n+1} F(s) - \sum_{k=0}^{n-1} s^{n-k} f^{(k)}(0) - s^0 f^{(n)}(0) \\[10pt]
-    &amp;= s^{n+1} F(s) - \sum_{k=0}^{n} s^{n-k} f^{(k)}(0)
+    \mathcal{L}\{ f(t) \} 
+    &amp;= \int_{0}^{\infty} f(t) e^{-st} \ dt \\[10pt]
+
+    &amp;= \int_{0}^{T} f(t) e^{-st} \ dt + \int_{T}^{\infty} f(t) e^{-st} \ dt \\[10pt]
+
+    &amp;\text{let } \tau = t - T \implies dt = d\tau \\[10pt]
+
+    &amp;= \int_{0}^{T} f(t) e^{-st} \ dt + \int_{0}^{\infty} f(\tau+T) e^{-s(\tau+T)} \ d\tau \\[10pt]
+
+    &amp;= \int_{0}^{T} f(t) e^{-st} \ dt + e^{-sT}\int_{0}^{\infty} f(\tau) e^{-s\tau} \ d\tau \\[10pt]
+
+    &amp;= \int_{0}^{T} f(t) e^{-st} \ dt + e^{-sT}\mathcal{L}\{ f(t) \}    
 \end{align}\]
 
-<p><br /></p>
+<p>Now, we do a little algebra to isolate $\mathcal{L}{ f(t) }$, and we get</p>
 
-<h2 id="derivatives-of-fs">Derivatives of F(s)</h2>
+\[\mathcal{L}\{ f(t) \} = \frac{1}{1-e^{-sT}} \int_{0}^{T} f(t) e^{-st} \ dt\]
 
-<p>Let $F^{(n)}(s)$ denote the $n$th derivative of $F(s)$ with respect to $s$. We will prove the following result using induction on $n \geq 0$ where $F^{(0)}(s) = F(s)$.</p>
-
-\[\mathcal{L}\{ t^n f(t) \} = (-1)^n F^{(n)}(s)\]
-
-<p>First, checking the base-case $n=0$ gives</p>
-
-\[(-1)^0 F^{(0)}(s) = F(s) = \mathcal{L}\{ f(t) \}\]
-
-<p>Now, we check the induction step by evaluating \(\mathcal{L}\{ t^{n+1} f(t) \}\), assuming that the equation above holds for \(\mathcal{L}\{ t^n f(t) \}\).</p>
-
-\[\begin{align}
-    (-1)^{n+1} F^{(n+1)}(s) 
-    &amp;= - \frac{d}{ds} \left [ (-1)^{n} F^{(n)}(s) \right ] \\[10pt]
-    &amp;= - \frac{d}{ds} \mathcal{L}\{ t^n f(t) \} \\[10pt]
-    &amp;= - \frac{d}{ds} \int_{0}^{\infty} t^n f(t) e^{-st} \; dt \\[10pt]
-    &amp;= - \int_{0}^{\infty} t^n f(t) \left( \frac{\partial}{\partial s} e^{-st} \right ) \; dt \\[10pt]
-    &amp;= - \int_{0}^{\infty} t^n f(t) \left( -t \cdot e^{-st} \right ) \; dt \\[10pt]
-    &amp;= \int_{0}^{\infty} t^{n+1} f(t) e^{-st} \; dt \\[10pt]
-    &amp;= \mathcal{L}\{ t^{n+1} f(t) \}
-\end{align}\]
-
-<p>Note that we have to assume that f(t) is continuous in order to interchange the derivative and the integral.</p>
 
         </div>
 
@@ -201,10 +178,10 @@
 
         <div class="pagination" style="margin-top:1em;">
             
-                <a class="pagination-item older" href="/blog/laplace-transforms/hyperbolic-sine-and-cosine/">Previous</a>
+                <a class="pagination-item older" href="/blog/laplace-transforms/the-dirac-delta-function/">Previous</a>
             
             
-                <a class="pagination-item newer" href="/blog/laplace-transforms/intergrals/">Next</a>
+                <a class="pagination-item newer" href="/blog/laplace-transforms/convolution/">Next</a>
             
         </div>
         <h3 style="text-align:center; margin-bottom:1em;">
