@@ -11,15 +11,20 @@
 # The directory is temporaly changed to "PUSH_FOLDER". 
 # In the directory it 
 
+# I (Eric Keilty) did not originally make this, but I have edited it
+
 BUILD_FOLDER="_site";
 PUSH_FOLDER="_site_ghpages"; 
 COMMIT_MESSAGE=$1
 
-
-
 #Remove all the content from the "PUSH_FOLDER".
 function removeAllContentFromPushFolder(){
         echo $(rm -r $PUSH_FOLDER/*);
+}
+
+# Delete the "PUSH_FOLDER"
+function deletePushFolder(){
+        echo $(rm -rf $PUSH_FOLDER);
 }
 
 #Create the folder "PUSH_FOLDER".
@@ -40,14 +45,14 @@ function cloneGhpages(){
 function prepareThePushFolder(){
     if [[ -d ./$PUSH_FOLDER ]]
     then
-        #Remove all the content from the folder "PUSH_FOLDER".
-        removeAllContentFromPushFolder
+        #Delete "PUSH_FOLDER".
+        deletePushFolder
     else
         #Create the folder "PUSH_FOLDER" if it doesn't exist.
         createFolderToPush
-        #Call the function that clone the branch "gh-pages" to the folder "PUSH_FOLDER". 
-        cloneGhpages
     fi
+    #Call the function that clone the branch "gh-pages" to the folder "PUSH_FOLDER". 
+    cloneGhpages
     #Call the function that copy all the content from the folder _site to "PUSH_FOLDER".
     copySiteToFolder
 }
