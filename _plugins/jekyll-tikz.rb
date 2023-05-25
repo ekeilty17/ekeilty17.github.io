@@ -17,9 +17,9 @@
 # 
 # And then return this in your HTML output file:
 #   
-#   <embed src="/img/post-title-from-filename/tikz-filename.svg" type="image/svg+xml" />
+#   <embed src="/svg/post-title-from-filename/tikz-filename.svg" type="image/svg+xml" />
 #   
-# Note that it will generate a /_tikz_tmp directory to save tmp files.
+# Note that it will generate a /_tikz_tmp/ directory to save tmp files.
 #
 
 module Jekyll
@@ -31,6 +31,7 @@ module Jekyll
 
         @header = <<-'END'
         \documentclass{standalone}
+        \usepackage{amsmath}
         \usepackage{tikz}
         \begin{document}
         \begin{tikzpicture}

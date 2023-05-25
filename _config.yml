@@ -33,4 +33,6 @@ pages_list:
 
 version: 1.0.0
 
-pdf2svg: 'pdf2svg'
+pdf2svg: 'pdf2svg'    # This is required for the jekyll-tikz custom plugin
+                      # it is the 'path to pdf2svg' on your local machine, i.e. how you call the package in the terminal
+                      # e.g. `pdf2svg file.pdg file.svg`

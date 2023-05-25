@@ -11,11 +11,19 @@ Install gems (found in `Gemfile`)
 bundle install
 ```
 
-Run the local server, listening on port [4000](http://127.0.0.1:4000/).
+Compile the website and run the local server, listening on port [4000](http://127.0.0.1:4000/).
 ```
 bundle exec jekyll serve
 ``` 
 
 ## Deployment
 
-This website is hosted by GitHub Pages and built using Jekyll
+This website is hosted by GitHub Pages and built using Jekyll.
+
+There is a script called `push_ghpages.sh`. What this does is it copies the locally compiled site files (found in `_site/`) and pushed them into the branch `gh-pages`. These are the files that actually generate the website. The reason for this is to allow **custom plugins**. Github operates on safe-mode and only allows approved jekyll plugins to run at deployment. This was the cleanest and most straightforward workaround that I could find. Other solutions included creating custom Github actions in order to simulate a local environment at deployment. This just felt way too hacky and opening the possibility for bugs that I don't want to fix.
+
+Thus, committing to the `main` branch will not change the website. Only once we execute
+```
+./push_ghpages.sh
+```
+will the website update.
