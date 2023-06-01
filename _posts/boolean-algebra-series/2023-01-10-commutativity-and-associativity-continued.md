@@ -1,7 +1,7 @@
 ---
 layout:     series
 title:      "Commutativity and Associativity Continued"
-date:       2022-08-29
+date:       2023-01-10
 categories: blog boolean-algebra
 permalink:  ":categories/:title/"
 part:       9

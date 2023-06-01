@@ -1,7 +1,7 @@
 ---
 layout:     series
 title:      "Associativity"
-date:       2022-08-24
+date:       2023-01-05
 categories: blog boolean-algebra
 permalink:  ":categories/:title/"
 part:       4

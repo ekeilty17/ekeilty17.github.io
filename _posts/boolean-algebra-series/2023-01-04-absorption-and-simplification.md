@@ -1,7 +1,7 @@
 ---
 layout:     series
 title:      "Absorption and Simplification"
-date:       2022-08-23
+date:       2023-01-04
 categories: blog boolean-algebra
 permalink:  ":categories/:title/"
 part:       3

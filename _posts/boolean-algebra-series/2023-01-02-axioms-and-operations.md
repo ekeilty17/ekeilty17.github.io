@@ -1,7 +1,7 @@
 ---
 layout:     series
 title:      "Axioms and Operations"
-date:       2022-08-21
+date:       2023-01-02
 categories: blog boolean-algebra
 permalink:  ":categories/:title/"
 part:       1
@@ -24,7 +24,9 @@ The purpose of Boolean algebra is to define the rules for manipulating Boolean e
 
 ## The Minimal Set of Axioms
 
-Now, there are a couple of ways you can define the axioms of Boolean algebra. One way is to define the behavior of $\color{green}T$ and $\color{red}F$ via truth tables. Then, using a completion argument with truth tables you can start creating laws. I, instead, want to start with some axioms and obtain the definitions of the Boolean operators and their truth tables as a consequence.
+Now, there are a couple of ways you can define the axioms of Boolean algebra. One way is to define the behavior of $\color{green}T$ and $\color{red}F$ via truth tables. Then, using a completion argument with truth tables you can start creating laws. I, instead, want to start with some axioms and obtain the definitions of the Boolean operators and their truth tables as a consequence. 
+
+Below are the axioms, and I claim this is a minimal set. Removing any would mean some laws could not be proved. Another way to look at it, removing any would result in gaps in the truth tables.
 
 **Complement/Annihilation**
   * $a \wedge (\neg a) = \color{red}F \qquad$ (Noncontradiction)

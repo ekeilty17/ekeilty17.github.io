@@ -1,7 +1,7 @@
 ---
 layout:     series
 title:      "Miscellaneous"
-date:       2022-09-03
+date:       2023-01-15
 categories: blog boolean-algebra
 permalink:  ":categories/:title/"
 part:       14

@@ -1,16 +1,28 @@
 Website Improvements
-- Write my about page
-- need to upload my resume, although again that's a bit tricky because I've done a bunch of random things.
-- reformat the blog archive page and make it look nicer
+    - Write my about page
+    - need to upload my resume, although again that's a bit tricky because I've done a bunch of random things.
+    - reformat the blog archive page and make it look nicer
 
 Blog Ideas
-- All continuity proofs using delta-epsilon
-- All standard derivatives
-- All standard integrals
-- Write up my algorithms course notes
-- Tau vs Pi, compare formulas and see if there's actually a difference
-- Solid of revolutions
-- arc lengths, could throw in the calculus of variations
-- optimization? Linear/convex/nonconvex? Not sure what I'd include
-- probability theory? again, not sure what I'd include
-- center of mass / rotational inertia intergals. These really fun
+    Series
+        - All continuity proofs using delta-epsilon
+        - All standard derivatives
+        - All standard integrals
+        - Write up my algorithms course notes
+        - Solid of revolutions
+        - arc lengths, could throw in the calculus of variations
+        - optimization? Linear/convex/nonconvex? Not sure what I'd include
+        - probability theory? again, not sure what I'd include
+        - center of mass / rotational inertia intergals. These really fun
+
+    Stand-Alone
+        - Tau vs Pi, compare formulas and see if there's actually a difference
+        - Rubik's cube commutators and creating your own algorithms (although that will require a lot of animation)
+        - Rubik's cube patterns...and the small number of interesting ones
+        - The physics of Newton's cradle (with better diagrams than currently exist)
+        - I want to do some stuff with country data...
+        - I also want to do some stuff with NHL data...
+
+
+Other
+    - I need to change all of the dates in the Boolean algebra series to Jan 2023

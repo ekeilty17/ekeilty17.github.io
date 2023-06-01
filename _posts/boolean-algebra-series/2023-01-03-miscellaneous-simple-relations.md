@@ -1,7 +1,7 @@
 ---
 layout:     series
 title:      "Miscellaneous Simple Relations"
-date:       2022-08-22
+date:       2023-01-03
 categories: blog boolean-algebra
 permalink:  ":categories/:title/"
 part:       2

@@ -1,7 +1,7 @@
 ---
 layout:     series
 title:      "Proof Identities"
-date:       2022-08-28
+date:       2023-01-09
 categories: blog boolean-algebra
 permalink:  ":categories/:title/"
 part:       8

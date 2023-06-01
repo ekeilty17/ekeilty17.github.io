@@ -1,7 +1,7 @@
 ---
 layout:     series
 title:      "Transitivity"
-date:       2022-08-31
+date:       2023-01-12
 categories: blog boolean-algebra
 permalink:  ":categories/:title/"
 part:       11

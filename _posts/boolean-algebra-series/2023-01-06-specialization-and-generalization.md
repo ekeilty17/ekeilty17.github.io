@@ -1,7 +1,7 @@
 ---
 layout:     series
 title:      "Specialization and Generalization"
-date:       2022-08-25
+date:       2023-01-06
 categories: blog boolean-algebra
 permalink:  ":categories/:title/"
 part:       5

@@ -1,7 +1,7 @@
 ---
 layout:     series
 title:      "Operation Identities"
-date:       2022-08-27
+date:       2023-01-08
 categories: blog boolean-algebra
 permalink:  ":categories/:title/"
 part:       7

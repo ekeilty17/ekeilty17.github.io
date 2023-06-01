@@ -1,7 +1,7 @@
 ---
 layout:     series
 title:      "Distributivity Continued"
-date:       2022-08-30
+date:       2023-01-11
 categories: blog boolean-algebra
 permalink:  ":categories/:title/"
 part:       10

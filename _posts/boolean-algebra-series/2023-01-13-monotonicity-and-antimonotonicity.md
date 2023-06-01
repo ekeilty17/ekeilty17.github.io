@@ -1,7 +1,7 @@
 ---
 layout:     series
 title:      "Monotonicity and Antimonotonicity"
-date:       2022-09-01
+date:       2023-01-13
 categories: blog boolean-algebra
 permalink:  ":categories/:title/"
 part:       12

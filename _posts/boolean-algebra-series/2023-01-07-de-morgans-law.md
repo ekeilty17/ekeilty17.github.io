@@ -1,7 +1,7 @@
 ---
 layout:     series
 title:      "De Morgan's Law / Duality"
-date:       2022-08-26
+date:       2023-01-07
 categories: blog boolean-algebra
 permalink:  ":categories/:title/"
 part:       6

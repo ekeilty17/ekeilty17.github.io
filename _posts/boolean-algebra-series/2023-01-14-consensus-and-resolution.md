@@ -1,7 +1,7 @@
 ---
 layout:     series
 title:      "Consensus and Resolution"
-date:       2022-09-02
+date:       2023-01-14
 categories: blog boolean-algebra
 permalink:  ":categories/:title/"
 part:       13
