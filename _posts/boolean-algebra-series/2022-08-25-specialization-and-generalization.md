@@ -4,22 +4,26 @@ title:      "Specialization and Generalization"
 date:       2022-08-25
 categories: blog boolean-algebra
 permalink:  ":categories/:title/"
-part:       4
+part:       5
 series:     boolean-algebra
 tags:       boolean algebra, specialization, generalization
 ---
 
-Here, we are going to emplore a different style of proof. In all previous proofs we had an expression of the form $\text{LHS} = \text{RHS}$. We then start with the $\text{LHS}$ at the top and arrive at the $\text{RHS}$ at the bottom. In these expressions, there is are equals sign. Instead, we are going to start with the entire expression at the top and arrive at $\color{green}T$ at the bottom. Since the original statement is equivalent to $\color{green}T$, it must be a true expression.
+Here, we are going to implore a different style of proof. In all previous proofs we had an expression of the form $\text{LHS} = \text{RHS}$. We then start with the $\text{LHS}$ at the top and arrive at the $\text{RHS}$ at the bottom. In these expressions, there is are equals sign. Instead, we are going to start with the entire expression at the top and arrive at $\color{green}T$ at the bottom. Since the original statement is equivalent to $\color{green}T$, it must be a true expression. We are essentially using the identity law 
 
-Similar to Absorption, these relations may seem simple and abscure, but they turn out to be very useful in practice.
+$$a = \color{green}T \quad = \quad a$$
+
+Similar to Absorption, these relations may seem simple and obscure, but they turn out to be very useful in practice.
+
+<br>
 
 ## Specialization
 
-$(a \wedge b) \implies a$
+$(a \wedge b) \Rightarrow a$
 
 $$
 \begin{align}
-    &(a \wedge b) \implies a \\
+    &(a \wedge b) \Rightarrow a \\
     &= (\overline{a \wedge b}) \vee a                                           &&\text{Material Implication} \\
     &= (\overline{a \wedge b}) \vee (a \wedge \color{green}T)                   &&\text{Identity} \\
     &= (\overline{a \wedge b}) \vee (a \wedge (b \vee \overline{b}))            &&\text{Excluded Middle} \\
@@ -30,13 +34,15 @@ $$
 \end{align}
 $$
 
+<br>
+
 ## Generalization
 
-$a \implies (a \vee b)$
+$a \Rightarrow (a \vee b)$
 
 $$
 \begin{align}
-    &a \implies (a \vee b) \\
+    &a \Rightarrow (a \vee b) \\
     &= \overline{a} \vee (a \vee b)     &&\text{Material Implication} \\
     &= (\overline{a} \vee a) \vee b     &&\text{Associativity} \\
     &= \color{green}T \vee b            &&\text{Excluded Middle} \\

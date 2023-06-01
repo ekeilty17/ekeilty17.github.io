@@ -4,14 +4,14 @@ title:      "Absorption and Simplification"
 date:       2022-08-23
 categories: blog boolean-algebra
 permalink:  ":categories/:title/"
-part:       2
+part:       3
 series:     boolean-algebra
 tags:       boolean algebra, absorption, simplification
 ---
 
 ## Absorption
 
-This seemingly abscure relation turns out to be very useful in many proofs.
+This seemingly obscure relation turns out to be very useful in many proofs.
 
 $a \wedge (a \vee b) = a$
 
@@ -25,6 +25,8 @@ $$
 \end{align}
 $$
 
+<br>
+
 $a \vee (a \wedge b) = a$
 
 $$
@@ -37,6 +39,8 @@ $$
 \end{align}
 $$
 
+
+<br>
 
 ## Simplification
 
@@ -52,6 +56,8 @@ $$
     &= a \wedge b                                   &&\text{Identity}
 \end{align}
 $$
+
+<br>
 
 $a \vee (\overline{a} \wedge b) = a \vee b$
 

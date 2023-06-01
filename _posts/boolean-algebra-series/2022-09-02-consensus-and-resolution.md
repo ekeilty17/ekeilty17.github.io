@@ -4,7 +4,7 @@ title:      "Consensus and Resolution"
 date:       2022-09-02
 categories: blog boolean-algebra
 permalink:  ":categories/:title/"
-part:       12
+part:       13
 series:     boolean-algebra
 tags:       boolean algebra, consensus theorem, resolution
 ---
@@ -38,6 +38,8 @@ $$
 \end{align}
 $$
 
+<br>
+
 $((a \vee b) \wedge (\overline{a} \vee c)) \wedge (b \vee c) \quad = \quad (a \vee b) \wedge (\overline{a} \vee c)$
 
 $$
@@ -65,20 +67,24 @@ $$
 \end{align}
 $$
 
+<br>
+
 ## Resolution
 
-$a \wedge c \quad \implies \quad (a \vee b) \wedge (\overline{b} \vee c) \quad = \quad (a \wedge \overline{b}) \vee (b \wedge c) \quad \implies \quad a \vee c$
+Resolution is extremely important in the field of logic. It allows for a sound and complete proof system for preposition logic.
 
-We will do this in parts
+$a \wedge c \quad \Rightarrow \quad (a \vee b) \wedge (\overline{b} \vee c) \quad = \quad (a \wedge \overline{b}) \vee (b \wedge c) \quad \Rightarrow \quad a \vee c$
 
-$a \wedge c \quad \implies \quad (a \vee b) \wedge (\overline{b} \vee c)$
+We will do this in parts.
+
+$a \wedge c \quad \Rightarrow \quad (a \vee b) \wedge (\overline{b} \vee c)$
 
 $$
 \begin{align}
     &a \wedge c
     && \\
 
-    &\implies (a \wedge c) \vee ((a \wedge \overline{b}) \vee (b \wedge c))
+    &\Rightarrow (a \wedge c) \vee ((a \wedge \overline{b}) \vee (b \wedge c))
     &&\text{Generalization} \\
 
     &= (a \wedge c) \vee (a \wedge \overline{b}) \vee (b \wedge c)
@@ -98,6 +104,8 @@ $$
 \end{align}
 $$
 
+<br>
+
 $(a \vee b) \wedge (\overline{b} \vee c) \quad = \quad (a \wedge \overline{b}) \vee (b \wedge c)$
 
 $$
@@ -116,7 +124,9 @@ $$
 \end{align}
 $$
 
-$(a \wedge \overline{b}) \vee (b \wedge c) \quad \implies \quad a \vee c$
+<br>
+
+$(a \wedge \overline{b}) \vee (b \wedge c) \quad \Rightarrow \quad a \vee c$
 
 $$
 \begin{align}
@@ -138,6 +148,6 @@ $$
     &= (a \vee c) \wedge ((a \vee b) \wedge (\overline{b} \vee c))
     &&\text{Associativity} \\
 
-    &\implies a \vee c
+    &\Rightarrow a \vee c
 \end{align}
 $$

@@ -4,12 +4,12 @@ title:      "Associativity"
 date:       2022-08-24
 categories: blog boolean-algebra
 permalink:  ":categories/:title/"
-part:       3
+part:       4
 series:     boolean-algebra
 tags:       boolean algebra, associativity
 ---
 
-This is a very tedious proof. If you really want to understand it, I would recommend writing it out for yourself. I have added colored parenthesis to help keep track of the nested levels. Essentially, it makes clever use of distributivity and timely commutativity.
+This is a very tedious proof. If you really want to understand it, I would recommend writing it out for yourself. I have added colored parenthesis to help keep track of the nested levels. Essentially, it makes clever use of distributivity and commutativity.
 
 $(a \wedge b) \wedge c \quad = \quad a \wedge (b \wedge c)$
 
@@ -96,6 +96,8 @@ $$
     &&\text{Absorption 3 times}
 \end{align}
 $$
+
+<br>
 
 The proof for the associativity of $\vee$ is identical.
 
@@ -184,5 +186,7 @@ $$
     &&\text{Absorption 3 times}
 \end{align}
 $$
+
+<br>
 
 Now, in future proofs, if we have $(a \wedge b) \wedge c$ we can instead write $a \wedge b \wedge c$ without ambiguity. Likewise for $\vee$.

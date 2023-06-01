@@ -69,9 +69,9 @@ Convolution is a bit of a funny operation, but it has a lot of great application
         font={\fontsize{14pt}{12}\selectfont}
     }
 
-    \fill[yellow!50] (-1cm, 0) -- (-1cm, 0.5cm) -- (-0.283151, {2^(0.283151}) -- (-0.283151, 0) -- cycle;
+    \fill[yellow!50] (-1cm, 0) -- (-1cm, 0.5cm) -- (-0.283151, {2^(0.283151)}) -- (-0.283151, 0) -- cycle;
     \fill[yellow!50, domain=-0.283151:0.5, variable=\x] 
-        (-0.283151, 0) -- (-0.283151, {2^(0.283151}) -- plot ({\x}, {2^(-\x)}) -- (0.5cm, 0) -- cycle;
+        (-0.283151, 0) -- (-0.283151, {2^(0.283151)}) -- plot ({\x}, {2^(-\x)}) -- (0.5cm, 0) -- cycle;
 
     \draw[thick, blue] (-1cm, 0) -- (-1cm, 2cm);
     \draw[scale=1, domain=-1:5, smooth, variable=\x, blue, thick] plot ({\x}, {2^(-\x)});

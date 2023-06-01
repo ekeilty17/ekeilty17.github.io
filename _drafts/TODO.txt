@@ -1,7 +1,5 @@
 Website Improvements
 - Write my about page
-- I would really like to be able to write tikz code in markdown files. 
-  This seems promising, https://gist.github.com/AlexBobkov/d419863e610fce7c8db5714b665b009e, but I haven't gotten it to work
 - need to upload my resume, although again that's a bit tricky because I've done a bunch of random things.
 - reformat the blog archive page and make it look nicer
 
@@ -10,3 +8,9 @@ Blog Ideas
 - All standard derivatives
 - All standard integrals
 - Write up my algorithms course notes
+- Tau vs Pi, compare formulas and see if there's actually a difference
+- Solid of revolutions
+- arc lengths, could throw in the calculus of variations
+- optimization? Linear/convex/nonconvex? Not sure what I'd include
+- probability theory? again, not sure what I'd include
+- center of mass / rotational inertia intergals. These really fun

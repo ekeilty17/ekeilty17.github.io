@@ -66,6 +66,8 @@ Finally, we have two miscellaneous identities for periodic functions and convolu
 | $f(t)$        | $\frac{1}{1 - e^{-Ts}} \int_{0}^T f(t) e^{-st} \ dt$   | $f(t)$ is $T$-periodic |
 | $f(t) * g(t)$ | $F(s) \cdot G(s)$ | $f(t) = g(t) = 0 \quad \forall t < 0$ |
 
+<br>
+
 <h3 style="text-align:center; margin-bottom:1em;">
     <a href="/blog/laplace-transforms">Laplace Transforms Series</a>
 </h3>

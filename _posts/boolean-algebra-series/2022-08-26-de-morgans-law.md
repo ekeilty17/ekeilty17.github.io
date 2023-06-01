@@ -4,14 +4,14 @@ title:      "De Morgan's Law / Duality"
 date:       2022-08-26
 categories: blog boolean-algebra
 permalink:  ":categories/:title/"
-part:       5
+part:       6
 series:     boolean-algebra
 tags:       boolean algebra, de morgans law, duality
 ---
 
 ## The Canonical Proof
 
-If you look up the proof of Duality / De Morgan's Law this is what you will get.
+If you look up the proof of De Morgan's Law / Duality this is what you will get.
 
 It is an argument based on the uniqueness of the complement. They use the fact that if $(x \vee y) = \color{green}T$ and $(x \wedge y) = \color{red}F$, then $y$ is the complement of $x$. Written formally, this is 
 
@@ -55,19 +55,21 @@ $$
 $$
 
 
-And of course you can prove the other law $(\overline{a} \wedge \overline{b}) = (\overline{a \vee b})$ in the exact same way. My issue with this proof is that it relies on the expression 
+And of course, you can prove the other law $(\overline{a} \wedge \overline{b}) = (\overline{a \vee b})$ in the exact same way. My issue with this proof is that it relies on the expression 
 
 $$ (x \vee y) \wedge (\overline{x \wedge y}) \quad = \quad (y = \overline{x}) $$ 
 
-being true. However, when you try to prove it using our rigorous proof style, you run into a problem. You need De Morgan's Law to prove it. You can prove it without De Morgan's Law using other methods such as proof by contradiction or completion arguments. However, if you want to prove it soley from the axioms and using strict logic, then I don't believe you can. Thus, I have come up with an alternative.
+being true. However, when you try to prove it using our rigorous proof style, you run into a problem. You need De Morgan's Law to prove it! You can prove it without De Morgan's Law using other methods such as proof by contradiction or completion arguments. However, if you want to prove it solely from the axioms and using strict logic, then I don't believe you can. Thus, I have come up with an alternative.
+
+<br>
 
 ## My Proof
 
-As far as I can tell, this is a novel proof. I have never seen this anywhere else.
+As far as I can tell, this is a novel proof. I have never seen this anywhere else. It is pretty complicated and contrived, so if you can find a shorter proof, then please let me know.
 
 The proof method is the following.
-1. Show that $(\overline{a \vee b}) \implies (\overline{a} \wedge \overline{b})$
-2. Show that $(\overline{a} \wedge \overline{b}) \implies (\overline{a \vee b})$
+1. Show that $(\overline{a \vee b}) \Rightarrow (\overline{a} \wedge \overline{b})$
+2. Show that $(\overline{a} \wedge \overline{b}) \Rightarrow (\overline{a \vee b})$
 3. Show that $(\overline{a \vee b}) = (\overline{a} \wedge \overline{b})$
 
 First, we show 1.
@@ -123,7 +125,7 @@ $$
     &&
     &&\text{Idempotent} \\
 
-    &\implies \overline{a} \wedge \overline{b}
+    &\Rightarrow \overline{a} \wedge \overline{b}
     &&
     &&\text{Specialization}
 \end{align}
@@ -175,7 +177,7 @@ $$
     &&
     &&\text{Identity} \\
 
-    &\implies (\overline{a \vee b})
+    &\Rightarrow (\overline{a \vee b})
     &&
     &&\text{Specialization}
 \end{align}
@@ -186,15 +188,16 @@ Finally, we prove 3. You could imagine this being written out as one giant proof
 $$
 \begin{align}
     &(\overline{a \vee b}) = (\overline{a} \wedge \overline{b}) \\
-    &= ((\overline{a \vee b}) \implies (\overline{a} \wedge \overline{b})) \wedge ((\overline{a \vee b}) \impliedby (\overline{a} \wedge \overline{b})) &&\text{Double Implication} \\
-    &= ((\overline{a \vee b}) \implies (\overline{a} \wedge \overline{b})) \wedge ((\overline{a} \wedge \overline{b}) \implies (\overline{a \vee b})) &&\text{Mirror} \\
+    &= ((\overline{a \vee b}) \Rightarrow (\overline{a} \wedge \overline{b})) \wedge ((\overline{a \vee b}) \Leftarrow (\overline{a} \wedge \overline{b})) &&\text{Double Implication} \\
+    &= ((\overline{a \vee b}) \Rightarrow (\overline{a} \wedge \overline{b})) \wedge ((\overline{a} \wedge \overline{b}) \Rightarrow (\overline{a \vee b})) &&\text{Mirror} \\
     &= \color{green}T \wedge \color{green}T &&\text{By 1. and 2.} \\
     &= \color{green}T &&\text{Definition of} \ \wedge
 \end{align}
 $$
 
-And of course you can prove the other law $(\overline{a} \wedge \overline{b}) = (\overline{a \vee b})$ in the exact same way. Exchange $\vee$ with $\wedge$, $\ \color{green}T$ with $\color{red}F$, $\ \implies$ with $\impliedby$, and Specialization with Generalization (and vice versa). I don't think it is beneficial to anyone to write it out.
+And of course, you can prove the other law $(\overline{a} \wedge \overline{b}) = (\overline{a \vee b})$ in the exact same way. Exchange $\vee$ with $\wedge$, $\ \color{green}T$ with $\color{red}F$, $\ \Rightarrow$ with $\Leftarrow$, and Specialization with Generalization (and vice versa). I don't think it is beneficial to anyone to write it out.
 
+<br>
 
 ## Uniqueness of the Complement
 
@@ -204,11 +207,15 @@ $ (x \vee y) \wedge (\overline{x \wedge y}) \quad = \quad (y = \overline{x}) $
 
 $$
 \begin{align}
-    &(x \vee y) \wedge (\overline{x \wedge y})                      && \\
-    &= (x \vee y) \wedge (\overline{x} \vee \overline{y})           &&\text{De Morgan's Law} \\
-    &= (\overline{y} \vee \overline{x}) \wedge (x \vee y)           &&\text{Commutativity 2 times} \\
-    &= (y \implies \overline{x}) \wedge (\overline{x} \implies y)   &&\text{Material Implications} \\
-    &= (y \implies \overline{x}) \wedge (y \impliedby \overline{x}) &&\text{Mirror} \\
-    &= (y = \overline{x})                                           &&\text{Double Implication}
+    &(x \vee y) \wedge (\overline{x \wedge y})                              && \\
+    &= (x \vee y) \wedge (\overline{x} \vee \overline{y})                   &&\text{De Morgan's Law} \\
+    &= (\overline{y} \vee \overline{x}) \wedge (x \vee y)                   &&\text{Commutativity 2 times} \\
+    &= (y \Rightarrow \overline{x}) \wedge (\overline{x} \Rightarrow y)     &&\text{Material Implications} \\
+    &= (y \Rightarrow \overline{x}) \wedge (y \Leftarrow \overline{x})      &&\text{Mirror} \\
+    &= (y = \overline{x})                                                   &&\text{Double Implication}
 \end{align}
 $$
+
+<br>
+
+To unroll what this law is saying. Suppose we fix $x$ and we find a variable $y$ such that $(x \vee y) = \color{green}T$ and $(x \wedge y) = \color{red}F$. Then it must be the case that $y$ is a complement of $x$.

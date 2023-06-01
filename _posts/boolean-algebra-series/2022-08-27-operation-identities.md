@@ -4,12 +4,14 @@ title:      "Operation Identities"
 date:       2022-08-27
 categories: blog boolean-algebra
 permalink:  ":categories/:title/"
-part:       6
+part:       7
 series:     boolean-algebra
 tags:       boolean algebra, double negation, material implication, equality, difference, exclusion
 ---
 
-With the completion of De Morgan's Law, we have proven most of the fundametal boolean algebra laws. Now, we will continue to some more practical laws that will help to speed up future proofs. This section essentially proves all of the things we intuitively know to be true.
+With the completion of De Morgan's Law, we have proven most of the fundamental boolean algebra laws. Now, we will continue to some more practical laws that will help to speed up future proofs. This section essentially proves all of the things we intuitively know to be true.
+
+<br>
 
 ## Double Negation
 
@@ -43,7 +45,7 @@ $$
 \end{align}
 $$
 
-Now, we prove the desired result. In each step where the justification is "Above", you could imagine inserting the above logic to arive at the next line. Separating the logic out just improves the readability.
+Now, we prove the desired result. In each step where the justification is "Above", you could imagine inserting the above logic to arrive at the next line. Separating the logic out just improves the readability.
 
 $\overline{(\overline{a})} = a$
 
@@ -58,21 +60,24 @@ $$
 \end{align}
 $$
 
+<br>
 
 ## Material Implication
 
-You may recall that Material Implication is one of that axioms that states $(a \implies b) = (\overline{a} \vee b)$. This is an extension of that axiom.
+You may recall that Material Implication is a definition, which states $(a \Rightarrow b) = (\overline{a} \vee b)$. This is an extension of that axiom.
 
-$(a \impliedby b) \quad = \quad (a \vee \overline{b})$
+$(a \Leftarrow b) \quad = \quad (a \vee \overline{b})$
 
 $$
 \begin{align}
-    &a \impliedby b             && \\
-    &= b \implies a             &&\text{Mirror} \\
+    &a \Leftarrow b             && \\
+    &= b \Rightarrow a          &&\text{Mirror} \\
     &= \overline{b} \vee a      &&\text{Material Implication} \\
     &= a \vee \overline{b}      &&\text{Commutativity}
 \end{align}
 $$
+
+<br>
 
 ## Equality
 
@@ -81,8 +86,9 @@ $(a = b) \quad = \quad (\overline{a} \vee b) \wedge (a \vee \overline{b}) \quad 
 $$
 \begin{align}
     &a = b                                                                                  && \\
-    &= (a \implies b) \wedge (a \impliedby b)                                               &&\text{Double Implication} \\
+    &= (a \Rightarrow b) \wedge (a \Leftarrow b)                                            &&\text{Double Implication} \\
     &= (\overline{a} \vee b) \wedge (a \vee \overline{b})                                   &&\text{Material Implication} \\
+    & \\
     &= (\overline{a} \wedge (a \vee \overline{b})) \vee (b \wedge (a \vee \overline{b}))    &&\text{Distributivity} \\
     &= (\overline{a} \wedge (a \vee \overline{b})) \vee (b \wedge (\overline{b} \vee a))    &&\text{Commutativity} \\
     &= (\overline{a} \wedge \overline{b}) \vee (b \wedge a)                                 &&\text{Simplification 2 times} \\
@@ -90,6 +96,7 @@ $$
 \end{align}
 $$
 
+<br>
 
 ## Difference
 
@@ -106,6 +113,8 @@ $$
 \end{align}
 $$
 
+<br>
+
 $$
 \begin{align}
     &a \neq b                                                                       && \\
@@ -117,9 +126,11 @@ $$
 \end{align}
 $$
 
+<br>
+
 ## Exclusion
 
-You may recall that exclusion was one of the axioms, which states that $(a \neq b) = (\overline{a = b})$. This is an extention of that axiom.
+You may recall that exclusion is a definition, which states that $(a \neq b) = (\overline{a = b})$. This is an extension of that axiom.
 
 $(a \neq b) \quad = \quad (a = \overline{b}) \quad = \quad (\overline{a} = b)$
 
@@ -128,18 +139,20 @@ $$
     &a \neq b                                                                       && \\
     &= (a \vee b) \wedge (\overline{a} \vee \overline{b})                           &&\text{Difference} \\
     &= (\overline{(\overline{a})} \vee b) \wedge (\overline{a} \vee \overline{b})   &&\text{Double Negation} \\
-    &= (\overline{a} \implies b) \wedge (\overline{a} \impliedby b)                 &&\text{Material Implication 2 times} \\
+    &= (\overline{a} \Rightarrow b) \wedge (\overline{a} \Leftarrow b)              &&\text{Material Implication 2 times} \\
     &= (\overline{a} = b)                                                           &&\text{Double Implication}
 \end{align}
 $$
+
+<br>
 
 $$
 \begin{align}
     &a \neq b                                                                       && \\
     &= (a \vee b) \wedge (\overline{a} \vee \overline{b})                           &&\text{Difference} \\
     &= (a \vee \overline{(\overline{b})}) \wedge (\overline{a} \vee \overline{b})   &&\text{Double Negation} \\
-    &= (a \impliedby \overline{b}) \wedge (a \implies \overline{b})                 &&\text{Material Implication 2 times} \\
-    &= (a \implies \overline{b}) \wedge (a \impliedby \overline{b})                 &&\text{Commutativity} \\
+    &= (a \Leftarrow \overline{b}) \wedge (a \Rightarrow \overline{b})              &&\text{Material Implication 2 times} \\
+    &= (a \Rightarrow \overline{b}) \wedge (a \Leftarrow \overline{b})              &&\text{Commutativity} \\
     &= (a = \overline{b})                                                           &&\text{Double Implication}
 \end{align}
 $$

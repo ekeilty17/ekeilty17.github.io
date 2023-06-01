@@ -32,8 +32,8 @@ Recall that given an $(x, y)$ coordinate on the circumference of the unit circle
     \draw[very thick, fill=black] (0, -\r) circle (\pointradius) node[xshift=25, yshift=-10] {$(0, -1)$};
 
     % draw the axes
-    \draw[->] ($ (-\r,0) - (0.5cm, 0) $) -- ($ (\r, 0cm) + (0.5cm, 0) $) node[right] {$$};
-    \draw[->] ($ (0,-\r) - (0, 0.5cm) $) -- ($ (0,\r) + (0, 0.5cm) $) node[above] {$$};
+    \draw[->] ($ (-\r,0) - (1cm, 0) $) -- ($ (\r, 0cm) + (1cm, 0) $) node[right] {$$};
+    \draw[->] ($ (0,-\r) - (0, 1cm) $) -- ($ (0,\r) + (0, 1cm) $) node[above] {$$};
 {% endtikz %}
 </center>
 
@@ -41,12 +41,12 @@ Recall that given an $(x, y)$ coordinate on the circumference of the unit circle
 
 From the above circle, we can obtain the values for $\sin$ and $\cos$. Then we can use the reciprocal and ratio identities, we can derive the rest. I won't bother doing all the tedious proofs since they are very easy. The results are summarized below.
 
-| **angle**                 | **sin**   | **cos**   | **tan**       | **sec**       | **csc**       | **cot**       |
-|:-------------------------:|:---------:|:---------:|:-------------:|:-------------:|:-------------:|:-------------:|
-| $0^{\circ} = 0$           | $0$       | $1$       | $0$           | $1$           | _undefined_   | _undefined_   |
-| $90^{\circ} = \pi/2$      | $1$       | $0$       | _undefined_   | _undefined_   | $1$           | $0$           |
-| $180^{\circ} = \pi$       | $0$       | $-1$      | $0$           | $1$           | _undefined_   | _undefined_   |
-| $270^{\circ} = 3\pi/2$    | $-1$      | $0$       | _undefined_   | _undefined_   | $1$           | $0$           |
+| **Degrees**   | **Radians**   |   | **cos**   | **sin**   | **tan**       | **sec**       | **csc**       | **cot**       |
+|:-------------:|:-------------:|:-:|:---------:|:---------:|:-------------:|:-------------:|:-------------:|:-------------:|
+| $0^{\circ}$   | $0$           |   | $1$       | $0$       | $0$           | $1$           | _undefined_   | _undefined_   |
+| $90^{\circ}$  | $\pi/2$       |   | $0$       | $1$       | _undefined_   | _undefined_   | $1$           | $0$           |
+| $180^{\circ}$ | $\pi$         |   | $-1$      | $0$       | $0$           | $1$           | _undefined_   | _undefined_   |
+| $270^{\circ}$ | $3\pi/2$      |   | $0$       | $-1$      | _undefined_   | _undefined_   | $1$           | $0$           |
 
 <br>
 

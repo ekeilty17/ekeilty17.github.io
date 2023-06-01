@@ -4,7 +4,7 @@ title:      "Commutativity and Associativity Continued"
 date:       2022-08-29
 categories: blog boolean-algebra
 permalink:  ":categories/:title/"
-part:       8
+part:       9
 series:     boolean-algebra
 tags:       boolean algebra, commutativity, associativity
 ---
@@ -25,6 +25,7 @@ $$
 \end{align}
 $$
 
+<br>
 
 $(a \neq b) \quad = \quad (b \neq a)$
 
@@ -37,6 +38,7 @@ $$
 \end{align}
 $$
 
+<br>
 
 ## Associativity
 
@@ -88,6 +90,8 @@ $$
 \end{align}
 $$
 
+<br>
+
 $(a = b) \neq c \quad = \quad a = (b \neq c)$
 
 $$
@@ -98,6 +102,8 @@ $$
     &= a = (b \neq c)           &&\text{Exclusion}
 \end{align}
 $$
+
+<br>
 
 $(a \neq b) = c \quad = \quad a \neq (b = c)$
 
@@ -110,6 +116,7 @@ $$
 \end{align}
 $$
 
+<br>
 
 $(a \neq b) \neq c \quad = \quad a \neq (b \neq c)$
 
@@ -125,5 +132,7 @@ $$
     &= a \neq (b \neq c)                    &&\text{Exclusion}
 \end{align}
 $$
+
+<br>
 
 I find this unintuitive, but you do not need parenthesis around strings of expressions containing the $=$ and the $\neq$ operators. Also interestingly, $(a \neq b \neq c) = (a = b = c)$. It is important to note that $(a \neq b \neq c)$ does not mean what you would think it means. I think many people would want it to mean $(a \neq b) \wedge (b \neq c) \wedge (c \neq a)$. But this is not equivalent and actually that latter statement evaluates to $\color{red}F$.

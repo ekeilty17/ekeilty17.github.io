@@ -1,11 +1,11 @@
 ---
 layout:     post
-title:      Trigonometric Identities Derivations
+title:      Trigonometry Series
 categories: blog
 permalink:  /blog/trigonometry/
 ---
 
-[Summary Table of Trigonometric Identities](/blog/trigonometry/table-of-trig-identities)
+[Summary of Trigonometric Identities](/blog/trigonometry/summary-of-trig-identities)
 
 {% assign sorted_posts = site.posts | where: 'series', 'trigonometry' | sort: 'part' %}
 {% for post in sorted_posts %}

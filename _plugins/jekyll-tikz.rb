@@ -32,6 +32,7 @@ module Jekyll
         @header = <<-'END'
         \documentclass{standalone}
         \usepackage{amsmath}
+        \usepackage{amsfonts}
         \usepackage{tikz}
         \begin{document}
         \begin{tikzpicture}

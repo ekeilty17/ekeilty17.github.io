@@ -22,7 +22,7 @@ $$
 \end{align}
 $$
 
-Thus, we can summarize both identities as.
+Thus, we can summarize both identities as
 
 $$
 \cos(\alpha \pm \beta) = \cos(\alpha)\cos(\beta) \mp \sin(\alpha)\sin(\beta)

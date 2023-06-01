@@ -1,6 +1,6 @@
 ---
 layout:     page
-title:      Laplace Transform Derivations
+title:      Laplace Transform Derivations Series
 categories: blog
 permalink:  /blog/laplace-transforms/
 ---

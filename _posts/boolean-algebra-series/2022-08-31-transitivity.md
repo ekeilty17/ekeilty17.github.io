@@ -4,26 +4,32 @@ title:      "Transitivity"
 date:       2022-08-31
 categories: blog boolean-algebra
 permalink:  ":categories/:title/"
-part:       10
+part:       11
 series:     boolean-algebra
 tags:       boolean algebra, transitivity
 ---
 
-$(a \wedge b) \wedge (b \wedge c) \quad \implies \quad (a \wedge c)$
+In this post we prove various transitivity laws.
+
+<br>
+
+$(a \wedge b) \wedge (b \wedge c) \quad \Rightarrow \quad (a \wedge c)$
 
 $$
 \begin{align}
     &(a \wedge b) \wedge (b \wedge c)       && \\
     &= (a \wedge c) \wedge (b \wedge b)     &&\text{Associativity and Commutativity} \\
-    &\implies (a \wedge c)                  &&\text{Specialization}
+    &\Rightarrow (a \wedge c)                  &&\text{Specialization}
 \end{align}
 $$
 
-$(a \implies b) \wedge (b \implies c) \quad \implies \quad (a \implies c)$
+<br>
+
+$(a \Rightarrow b) \wedge (b \Rightarrow c) \quad \Rightarrow \quad (a \Rightarrow c)$
 
 $$
 \begin{align}
-    &(a \implies b) \wedge (b \implies c)
+    &(a \Rightarrow b) \wedge (b \Rightarrow c)
     && \\
 
     &= (\overline{a} \vee b) \wedge (\overline{b} \vee c)
@@ -53,50 +59,56 @@ $$
     &= (\overline{a} \vee b) \wedge (\overline{a} \vee c) \wedge (\overline{b} \vee c)
     &&\text{Distributivity and Associativity} \\
 
-    &\implies (\overline{a} \vee c)
+    &\Rightarrow (\overline{a} \vee c)
     &&\text{Specialization} \\
 
-    &= (a \implies c)
+    &= (a \Rightarrow c)
     &&\text{Material Implication} \\
 \end{align}
 $$
 
-$(a = b) \wedge (b = c) \quad \implies \quad (a = c)$
+<br>
+
+$(a = b) \wedge (b = c) \quad \Rightarrow \quad (a = c)$
 
 $$
 \begin{align}
     &(a = b) \wedge (b = c)       && \\
-    &= ((a \implies b) \wedge (a \impliedby b)) \wedge ((b \implies c) \wedge (b \impliedby c)) &&\text{Double Implication} \\
-    &= ((a \implies b) \wedge (b \implies a)) \wedge ((b \implies c) \wedge (c \implies b)) &&\text{Mirror 2 times} \\
-    &= ((a \implies b) \wedge (b \implies c)) \wedge ((c \implies b) \wedge (b \implies a)) &&\text{Associativity and Commutativity of} \ \wedge \\
-    &= (a \implies c) \wedge (c \implies a) &&\text{Transitivity of } \ \implies \\
-    &= (a \implies c) \wedge (a \impliedby c) &&\text{Mirror} \\
+    &= ((a \Rightarrow b) \wedge (a \Leftarrow b)) \wedge ((b \Rightarrow c) \wedge (b \Leftarrow c)) &&\text{Double Implication} \\
+    &= ((a \Rightarrow b) \wedge (b \Rightarrow a)) \wedge ((b \Rightarrow c) \wedge (c \Rightarrow b)) &&\text{Mirror 2 times} \\
+    &= ((a \Rightarrow b) \wedge (b \Rightarrow c)) \wedge ((c \Rightarrow b) \wedge (b \Rightarrow a)) &&\text{Associativity and Commutativity of} \ \wedge \\
+    &= (a \Rightarrow c) \wedge (c \Rightarrow a) &&\text{Transitivity of } \ \Rightarrow \\
+    &= (a \Rightarrow c) \wedge (a \Leftarrow c) &&\text{Mirror} \\
     &= (a = c) &&\text{Double Implication} \\
 \end{align}
 $$
 
-$(a \implies b) \wedge (b = c) \quad \implies \quad (a \implies c)$
+<br>
+
+$(a \Rightarrow b) \wedge (b = c) \quad \Rightarrow \quad (a \Rightarrow c)$
 
 $$
 \begin{align}
-    &(a \implies b) \wedge (b = c)                                      && \\
-    &= (a \implies b) \wedge ((b \implies c) \wedge (b \impliedby c))   &&\text{Double Implication} \\
-    &= (a \implies b) \wedge ((b \implies c) \wedge (c \implies b))     &&\text{Mirror} \\
-    &= ((a \implies b) \wedge (b \implies c)) \wedge (c \implies b)     &&\text{Associativity} \\
-    &\implies (a \implies c) \wedge (c \implies b)                      &&\text{Transitivity of } \ \implies \\
-    &\implies (a \implies c)                                            &&\text{Specialization}
+    &(a \Rightarrow b) \wedge (b = c)                                      && \\
+    &= (a \Rightarrow b) \wedge ((b \Rightarrow c) \wedge (b \Leftarrow c))   &&\text{Double Implication} \\
+    &= (a \Rightarrow b) \wedge ((b \Rightarrow c) \wedge (c \Rightarrow b))     &&\text{Mirror} \\
+    &= ((a \Rightarrow b) \wedge (b \Rightarrow c)) \wedge (c \Rightarrow b)     &&\text{Associativity} \\
+    &\Rightarrow (a \Rightarrow c) \wedge (c \Rightarrow b)                      &&\text{Transitivity of } \ \Rightarrow \\
+    &\Rightarrow (a \Rightarrow c)                                            &&\text{Specialization}
 \end{align}
 $$
 
-$(a = b) \wedge (b \implies c) \quad \implies \quad (a \implies c)$
+<br>
+
+$(a = b) \wedge (b \Rightarrow c) \quad \Rightarrow \quad (a \Rightarrow c)$
 
 $$
 \begin{align}
-    &(a = b) \wedge (b \implies c)                                      && \\
-    &= ((a \implies b) \wedge (a \impliedby b)) \wedge (b \implies c)   &&\text{Double Implication} \\
-    &= ((a \implies b) \wedge (b \implies a)) \wedge (b \implies c)     &&\text{Mirror} \\
-    &= (b \implies a) \wedge ((a \implies b) \wedge (b \implies c))     &&\text{Commutativity and Associativity} \\
-    &\implies (b \implies a) \wedge (a \implies c)                      &&\text{Transitivity of } \ \implies \\
-    &\implies (a \implies c)                                            &&\text{Specialization}
+    &(a = b) \wedge (b \Rightarrow c)                                      && \\
+    &= ((a \Rightarrow b) \wedge (a \Leftarrow b)) \wedge (b \Rightarrow c)   &&\text{Double Implication} \\
+    &= ((a \Rightarrow b) \wedge (b \Rightarrow a)) \wedge (b \Rightarrow c)     &&\text{Mirror} \\
+    &= (b \Rightarrow a) \wedge ((a \Rightarrow b) \wedge (b \Rightarrow c))     &&\text{Commutativity and Associativity} \\
+    &\Rightarrow (b \Rightarrow a) \wedge (a \Rightarrow c)                      &&\text{Transitivity of } \ \Rightarrow \\
+    &\Rightarrow (a \Rightarrow c)                                            &&\text{Specialization}
 \end{align}
 $$

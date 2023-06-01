@@ -255,7 +255,7 @@ $$
 \begin{align}
   &\sin^2 \theta + \cos^2 \theta = 1 \\[10pt]
   &\frac{1}{\cos^2 \theta} [ \sin^2 \theta + \cos^2 \theta ] = \frac{1}{\cos^2 \theta} [1] \\[10pt]
-  &\tan^2 \theta + 1 = \sec^2 \theta \\[10pt]
+  &\tan^2 \theta + 1 = \sec^2 \theta
 \end{align}
 $$
 
@@ -265,6 +265,6 @@ $$
 \begin{align}
   &\sin^2 \theta + \cos^2 \theta = 1 \\[10pt]
   &\frac{1}{\sin^2 \theta} [ \sin^2 \theta + \cos^2 \theta ] = \frac{1}{\sin^2 \theta} [1] \\[10pt]
-  &1 + \cot^2 \theta = \csc^2 \theta \\[10pt]
+  &1 + \cot^2 \theta = \csc^2 \theta
 \end{align}
 $$

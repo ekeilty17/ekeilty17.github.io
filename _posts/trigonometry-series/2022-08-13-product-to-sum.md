@@ -20,7 +20,7 @@ $$
     &= \frac{1}{2} (\cos \alpha \cos \beta + \cos \alpha \cos \beta) \\[10pt]
     &= \frac{1}{2} (\cos \alpha \cos \beta + \cos \alpha \cos \beta + \sin \alpha \sin \beta - \sin \alpha \sin \beta) \\[10pt]
     &= \frac{1}{2} ((\cos \alpha \cos \beta + \sin \alpha \sin \beta) + (\cos \alpha \cos \beta - \sin \alpha \sin \beta)) \\[10pt]
-    &= \frac{1}{2} (\cos(\alpha - \beta) + \cos(\alpha + \beta)) \\[10pt]
+    &= \frac{1}{2} (\cos(\alpha - \beta) + \cos(\alpha + \beta))
 \end{align}
 $$
 
@@ -35,7 +35,7 @@ $$
     &= \frac{1}{2} (\sin \alpha \sin \beta + \sin \alpha \sin \beta) \\[10pt]
     &= \frac{1}{2} (\sin \alpha \sin \beta + \sin \alpha \sin \beta + \cos \alpha \cos \beta - \cos \alpha \cos \beta) \\[10pt]
     &= \frac{1}{2} ((\cos \alpha \cos \beta + \sin \alpha \sin \beta) - (\cos \alpha \cos \beta - \sin \alpha \sin \beta)) \\[10pt]
-    &= \frac{1}{2} (\cos(\alpha - \beta) - \cos(\alpha + \beta)) \\[10pt]
+    &= \frac{1}{2} (\cos(\alpha - \beta) - \cos(\alpha + \beta))
 \end{align}
 $$
 
@@ -50,7 +50,7 @@ $$
     &= \frac{1}{2} (\sin \alpha \cos \beta + \sin \alpha \cos \beta) \\[10pt]
     &= \frac{1}{2} (\sin \alpha \cos \beta + \sin \alpha \cos \beta + \cos \alpha \sin \beta - \cos \alpha \sin \beta) \\[10pt]
     &= \frac{1}{2} ((\sin \alpha \cos \beta + \cos \alpha \sin \beta) + (\sin \alpha \cos \beta - \cos \alpha \sin \beta)) \\[10pt]
-    &= \frac{1}{2} (\sin(\alpha + \beta) + \sin(\alpha - \beta)) \\[10pt]
+    &= \frac{1}{2} (\sin(\alpha + \beta) + \sin(\alpha - \beta))
 \end{align}
 $$
 
@@ -65,6 +65,6 @@ $$
     &= \frac{1}{2} (\cos \alpha \sin \beta + \cos \alpha \sin \beta) \\[10pt]
     &= \frac{1}{2} (\cos \alpha \sin \beta + \cos \alpha \sin \beta + \sin \alpha \cos \beta - \sin \alpha \cos \beta) \\[10pt]
     &= \frac{1}{2} ((\sin \alpha \cos \beta + \cos \alpha \sin \beta) - (\sin \alpha \cos \beta - \cos \alpha \sin \beta)) \\[10pt]
-    &= \frac{1}{2} (\sin(\alpha + \beta) - \sin(\alpha - \beta)) \\[10pt]
+    &= \frac{1}{2} (\sin(\alpha + \beta) - \sin(\alpha - \beta))
 \end{align}
 $$

@@ -9,7 +9,13 @@ series:     trigonometry
 tags:       trigonometry, angle, radians, degrees, definitions
 ---
 
+## Purpose of this Series
+
 In this series, I will be proving all of the trigonometric identities. I've found that the higher you go in mathematics, the more useful these identities become, as $\sin$ and $\cos$ are intimately related to $e$ and complex numbers.
+
+I feel that because trigonometry is taught at a young age and is relatively simple compared to higher mathematics, there is often a lack of rigor in explanations. In this series, I want to derive all the trigonometric identities from first principles in a logical manner. Also, I hope to provide some beautiful and informative diagrams.
+
+<br>
 
 ## Definition of an Angle
 

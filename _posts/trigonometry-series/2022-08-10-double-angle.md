@@ -9,7 +9,7 @@ series:     trigonometry
 tags:       trigonometry, double-angle
 ---
 
-These identities are just a special case of the sum identities. However, they are used so often that they warrent their own post.
+These identities are just a special case of the sum identities. However, they are used so often that they warrant their own post.
 
 ## Cosine
 
@@ -22,7 +22,7 @@ $$
 \end{align}
 $$
 
-There are a few other forms of this identity using the pythagorean identity
+There are a few other forms of this identity using the Pythagorean identity
 
 $$
 \begin{align}
@@ -97,11 +97,11 @@ $$
 \end{align}
 $$
 
-This is an identity that is sometimes used when evaluating integrals.
+This is an identity that is sometimes used when evaluating integrals. It's also used to parameterize hyperbolic curves.
 
 ## Cosecant
 
-We have the standard looking double angle formula for cosecant.
+We have the standard-looking double angle formula for cosecant.
 
 $$
 \csc(2 \theta) = \frac{1}{\sin(2 \theta)} = \frac{1}{2 \sin \theta \cos \theta} = \frac{1}{2}\sec \theta \csc \theta
