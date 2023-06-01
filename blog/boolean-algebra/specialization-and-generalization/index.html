@@ -42,7 +42,7 @@
         jax: ["input/TeX","input/MathML","output/SVG", "output/CommonHTML"],
         extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
         TeX: {
-            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js", "cancel.js"]
         },
         tex2jax: {
             inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -128,16 +128,20 @@
             <h1 class="post-title">Specialization and Generalization</h1>
             <!-- <span class="series-date">25 Aug 2022</span> -->
             <time datetime="2022-08-25T00:00:00-04:00" class="post-date">25 Aug 2022</time>
-            <p>Here, we are going to emplore a different style of proof. In all previous proofs we had an expression of the form $\text{LHS} = \text{RHS}$. We then start with the $\text{LHS}$ at the top and arrive at the $\text{RHS}$ at the bottom. In these expressions, there is are equals sign. Instead, we are going to start with the entire expression at the top and arrive at $\color{green}T$ at the bottom. Since the original statement is equivalent to $\color{green}T$, it must be a true expression.</p>
+            <p>Here, we are going to implore a different style of proof. In all previous proofs we had an expression of the form $\text{LHS} = \text{RHS}$. We then start with the $\text{LHS}$ at the top and arrive at the $\text{RHS}$ at the bottom. In these expressions, there is are equals sign. Instead, we are going to start with the entire expression at the top and arrive at $\color{green}T$ at the bottom. Since the original statement is equivalent to $\color{green}T$, it must be a true expression. We are essentially using the identity law</p>
 
-<p>Similar to Absorption, these relations may seem simple and abscure, but they turn out to be very useful in practice.</p>
+\[a = \color{green}T \quad = \quad a\]
+
+<p>Similar to Absorption, these relations may seem simple and obscure, but they turn out to be very useful in practice.</p>
+
+<p><br /></p>
 
 <h2 id="specialization">Specialization</h2>
 
-<p>$(a \wedge b) \implies a$</p>
+<p>$(a \wedge b) \Rightarrow a$</p>
 
 \[\begin{align}
-    &amp;(a \wedge b) \implies a \\
+    &amp;(a \wedge b) \Rightarrow a \\
     &amp;= (\overline{a \wedge b}) \vee a                                           &amp;&amp;\text{Material Implication} \\
     &amp;= (\overline{a \wedge b}) \vee (a \wedge \color{green}T)                   &amp;&amp;\text{Identity} \\
     &amp;= (\overline{a \wedge b}) \vee (a \wedge (b \vee \overline{b}))            &amp;&amp;\text{Excluded Middle} \\
@@ -147,12 +151,14 @@
     &amp;= \color{green}T                                                           &amp;&amp;\text{Base}
 \end{align}\]
 
+<p><br /></p>
+
 <h2 id="generalization">Generalization</h2>
 
-<p>$a \implies (a \vee b)$</p>
+<p>$a \Rightarrow (a \vee b)$</p>
 
 \[\begin{align}
-    &amp;a \implies (a \vee b) \\
+    &amp;a \Rightarrow (a \vee b) \\
     &amp;= \overline{a} \vee (a \vee b)     &amp;&amp;\text{Material Implication} \\
     &amp;= (\overline{a} \vee a) \vee b     &amp;&amp;\text{Associativity} \\
     &amp;= \color{green}T \vee b            &amp;&amp;\text{Excluded Middle} \\

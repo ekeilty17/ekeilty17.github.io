@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Trigonometric Functions &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded Latex support -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX","input/MathML","output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js", "cancel.js"]
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!-- Enable Tikz support -->
+<link rel="stylesheet" type="text/css" href="http://tikzjax.com/v1/fonts.css">
+<script src="http://tikzjax.com/v1/tikzjax.js"></script>
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">Software Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/resume">R&eacute;sum&eacute;</a>
+          </li>
+        
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2023 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">Trigonometric Functions</h1>
+            <!-- <span class="series-date">07 Jan 2023</span> -->
+            <time datetime="2023-01-07T00:00:00-05:00" class="post-date">07 Jan 2023</time>
+            <h2 id="sine">Sine</h2>
+
+\[\begin{align}
+    \frac{d}{dx} \sin (x)
+    &amp;= \lim_{h \rightarrow 0} \ \frac{\sin(x+h) - \sin(x)}{h} \\[10pt]
+    &amp;= \lim_{h \rightarrow 0} \ \frac{\sin(x)\cos(h) + \sin(h)\cos(x) - \sin(x)}{h} \\[10pt]
+    &amp;= \lim_{h \rightarrow 0} \ \frac{\sin(x)(\cos(h)-1) + \sin(h)\cos(x)}{h} \\[10pt]
+    &amp;= \sin(x) \left ( \lim_{h \rightarrow 0} \ \frac{\cos(h)-1}{h} \right ) + \cos(x) \left ( \lim_{h \rightarrow 0} \ \frac{\sin(h)}{h} \right ) \\[10pt]
+    &amp;= \sin(x) \cdot 0 + \cos(x) \cdot 1 \\[10pt]
+    &amp;= \cos(x)
+\end{align}\]
+
+<p><br /></p>
+
+<h2 id="cosine">Cosine</h2>
+
+\[\begin{align}
+    \frac{d}{dx} \cos (x)
+    &amp;= \lim_{h \rightarrow 0} \ \frac{\cos(x+h) - \cos(x)}{h} \\[10pt]
+    &amp;= \lim_{h \rightarrow 0} \ \frac{\cos(x)\cos(h) - \sin(x)\sin(h) - \cos(x)}{h} \\[10pt]
+    &amp;= \lim_{h \rightarrow 0} \ \frac{\cos(x)(\cos(h)-1) - \sin(x)\sin(h)}{h} \\[10pt]
+    &amp;= \cos(x) \left ( \lim_{h \rightarrow 0} \ \frac{\cos(h)-1}{h} \right ) - \sin(x) \left ( \lim_{h \rightarrow 0} \ \frac{\sin(h)}{h} \right ) \\[10pt]
+    &amp;= \cos(x) \cdot 0 - \sin(x) \cdot 1 \\[10pt]
+    &amp;= - \sin(x)
+\end{align}\]
+
+<p><br /></p>
+
+<h2 id="tangent">Tangent</h2>
+
+<p>Using the quotient rule.</p>
+
+\[\begin{align}
+    \frac{d}{dx} \tan (x)
+    &amp;= \frac{d}{dx} \frac{\sin(x)}{\cos(x)} \\[10pt]
+    &amp;= \frac{\frac{d}{dx} \left [ \sin(x) \right ] \cdot \cos(x) - \sin(x) \cdot \frac{d}{dx} \left [ \cos(x) \right ]}{\left ( \cos(x) \right )^2} \\[10pt]
+    &amp;= \frac{\cos(x) \cdot \cos(x) - \sin(x) \cdot (-\sin(x))}{\cos^2(x)} \\[10pt]
+    &amp;= \frac{\cos^2(x) + \sin^2(x)}{\cos^2(x)} \\[10pt]
+    &amp;= \frac{1}{\cos^2(x)} \\[10pt]
+    &amp;= \sec^2(x) \\[10pt]
+\end{align}\]
+
+<p><br /></p>
+
+<h2 id="secant">Secant</h2>
+
+<p>Using reciprocal rule</p>
+
+\[\begin{align}
+    \frac{d}{dx} \sec (x)
+    &amp;= \frac{d}{dx} \frac{1}{\cos(x)} \\[10pt]
+    &amp;= - \frac{\frac{d}{dx} \cos (x)}{(\cos(x))^2} \\[10pt]
+    &amp;= - \frac{- \sin (x)}{\cos^2(x)} \\[10pt]
+    &amp;= \tan(x)\sec(x)
+\end{align}\]
+
+<h2 id="cosecant">Cosecant</h2>
+
+<p>Using reciprocal rule</p>
+
+\[\begin{align}
+    \frac{d}{dx} \csc (x)
+    &amp;= \frac{d}{dx} \frac{1}{\sin(x)} \\[10pt]
+    &amp;= - \frac{\frac{d}{dx} \sin (x)}{(\sin(x))^2} \\[10pt]
+    &amp;= - \frac{\cos (x)}{\sin^2(x)} \\[10pt]
+    &amp;= - \cot(x)\csc(x)
+\end{align}\]
+
+<h2 id="cotangent">Cotangent</h2>
+
+<p>Using the quotient rule.</p>
+
+\[\begin{align}
+    \frac{d}{dx} \cot (x)
+    &amp;= \frac{d}{dx} \frac{\cos(x)}{\sin(x)} \\[10pt]
+    &amp;= \frac{\frac{d}{dx} \left [ \cos(x) \right ] \cdot \sin(x) - \cos(x) \cdot \frac{d}{dx} \left [ \sin(x) \right ]}{\left ( \sin(x) \right )^2} \\[10pt]
+    &amp;= \frac{(- \sin(x)) \cdot \sin(x) - \cos(x) \cdot \cos(x)}{\sin^2(x)} \\[10pt]
+    &amp;= - \frac{\sin^2(x) + \cos^2(x)}{\sin^2(x)} \\[10pt]
+    &amp;= -\frac{1}{\sin^2(x)} \\[10pt]
+    &amp;= -\csc^2(x) \\[10pt]
+\end{align}\]
+
+        </div>
+
+        <!-- Adding the ability to move between parts of the series -->
+        
+        
+        
+
+        
+        
+        
+
+        <!-- Getting capitalized title for series -->
+        
+        
+        
+        <!-- Getting url for series, which is just the page url with the last /... removed -->
+        
+
+        <div class="pagination" style="margin-top:1em;">
+            
+                <a class="pagination-item older" href="/blog/derivative-proofs/squeeze-theorem/">Previous</a>
+            
+            
+                <a class="pagination-item newer" href="/blog/derivative-proofs/inverse-trigonometric-functions/">Next</a>
+            
+        </div>
+        <h3 style="text-align:center; margin-bottom:1em;">
+            <a href="/blog/derivative-proofs">
+            
+                Derivative
+            
+                Proofs
+            
+         Series</a>
+        </h3>
+    </div>
+    
+  </body>
+</html>

@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Summary of Laws &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded Latex support -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX","input/MathML","output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js", "cancel.js"]
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!-- Enable Tikz support -->
+<link rel="stylesheet" type="text/css" href="http://tikzjax.com/v1/fonts.css">
+<script src="http://tikzjax.com/v1/tikzjax.js"></script>
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">Software Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/resume">R&eacute;sum&eacute;</a>
+          </li>
+        
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2023 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">Summary of Laws</h1>
+            <!-- <span class="post-date">10 Sep 2022</span> -->
+            <time datetime="2022-09-10T00:00:00-04:00" class="post-date">10 Sep 2022</time>
+            <h2 id="definitions-of-operations">Definitions of Operations</h2>
+
+<p>The operations $\neg$, $\vee$, and $\wedge$ are the fundamental operations with which we can define all other operations/</p>
+
+<p>  <strong>Material Implication</strong>: $\hspace{3.5cm} (a \Rightarrow b) = (\overline{a} \vee b)$</p>
+
+<p>  <strong>Mirror</strong>: $\hspace{6cm} (a \Leftarrow b) = (b \Rightarrow a)$</p>
+
+<p>  <strong>Antisymmetry / Double Implication</strong>: $\hspace{0.8cm} (a = b) = (a \Rightarrow b) \wedge (a \Leftarrow b)$</p>
+
+<p>  <strong>Exclusion</strong>: $\hspace{5.5cm} (a \neq b) = (\overline{a = b}) = (a = \overline{b}) = (\overline{a} = b)$</p>
+
+<p><br /></p>
+
+<p>For equality and unequality, we have additional simplifications to get them completely in terms of $\neg$, $\vee$, and $\wedge$.</p>
+
+\[\begin{align}
+    &amp;(a = b) &amp;\quad = \quad&amp; (\overline{a} \vee b) \wedge (a \vee \overline{b}) &amp;\quad = \quad&amp; (a \wedge b) \vee (\overline{a} \wedge \overline{b}) \\
+    &amp;(a \neq b) &amp;\quad = \quad&amp; (a \vee b) \wedge (\overline{a} \vee \overline{b}) &amp;\quad = \quad&amp; (\overline{a} \wedge b) \vee (a \wedge \overline{b})
+\end{align}\]
+
+<p><br /></p>
+
+<h2 id="truth-tables">Truth Tables</h2>
+
+<p>The following defined how boolean values interact with each other via our defined operations. These truth tables can be derived from the axioms. They are not definitions.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center">$\color{green}T$</th>
+      <th style="text-align: center">$\color{red}F$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Negation (NOT)</td>
+      <td style="text-align: center">$\neg$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center">$\color{green}T\color{green}T$</th>
+      <th style="text-align: center">$\color{green}T\color{red}F$</th>
+      <th style="text-align: center">$\color{red}F\color{green}T$</th>
+      <th style="text-align: center">$\color{red}F\color{red}F$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Conjunction (AND)</td>
+      <td style="text-align: center">$\wedge$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+    </tr>
+    <tr>
+      <td>Disjunction (OR)</td>
+      <td style="text-align: center">$\vee$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+    </tr>
+    <tr>
+      <td>Implication</td>
+      <td style="text-align: center">$\Rightarrow$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+    </tr>
+    <tr>
+      <td>Converse</td>
+      <td style="text-align: center">$\Leftarrow$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+    </tr>
+    <tr>
+      <td>Equality</td>
+      <td style="text-align: center">$=$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+    </tr>
+    <tr>
+      <td>Unequality (XOR)</td>
+      <td style="text-align: center">$\neq$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<h2 id="boolean-variables-interacting-with-boolean-value">Boolean Variables Interacting with Boolean Value</h2>
+
+<p>This is a combination of base, identity, and anti-identity laws. Two of them are axioms, labeled with an asterisk.</p>
+
+\[\begin{align}
+    &amp;a \wedge \color{green}T \quad=\quad a \ \ \ ^*            &amp;\qquad\qquad&amp;    a \wedge \color{red}F \quad=\quad \color{red}F \\
+    &amp;a \vee \color{green}T \quad=\quad \color{green}T           &amp;\qquad\qquad&amp;    a \vee \color{red}F \quad=\quad a \ \ \ ^* \\[10pt]
+    &amp;a \Rightarrow \color{green}T \quad=\quad \color{green}T    &amp;\qquad\qquad&amp;    a \Rightarrow \color{red}F \quad=\quad \overline{a} \\
+    &amp;a \Leftarrow \color{green}T \quad=\quad a                  &amp;\qquad\qquad&amp;    a \Leftarrow \color{red}F \quad=\quad \color{green}T \\[10pt]
+    &amp;a = \color{green}T \quad=\quad a                           &amp;\qquad\qquad&amp;    a = \color{red}F \quad=\quad \overline{a} \\
+    &amp;a \neq \color{green}T \quad=\quad \overline{a}             &amp;\qquad\qquad&amp;    a \neq \color{red}F \quad=\quad a \\
+\end{align}\]
+
+<p><br /></p>
+
+<h2 id="boolean-variables-interacting-with-themselves">Boolean Variables Interacting with Themselves</h2>
+
+<p>This is called double negation</p>
+
+\[\overline{(\overline{a})} = a\]
+
+<p>This is a combination of idempotent, reflexive, and anti-reflective laws.</p>
+
+\[\begin{align}
+    &amp;a \wedge a \quad=\quad a
+        &amp;\qquad\qquad&amp;      a \Rightarrow a \quad=\quad \color{green}T
+        &amp;\qquad\qquad&amp;      a = a \quad=\quad \color{green}T\\
+    &amp;a \vee a \quad=\quad a
+        &amp;\qquad\qquad&amp;      a \Leftarrow a \quad=\quad \color{green}T
+        &amp;\qquad\qquad&amp;      a \neq a \quad=\quad \color{red}F
+\end{align}\]
+
+<p>This is a combination of the law of the excluded middle, the law of non-contradiction, exclusion, and indirect proofs. The ones that are axioms are labeled with an asterisk.</p>
+
+\[\begin{align}
+    &amp;a \wedge \overline{a} \quad=\quad \color{red}F \ \ \ ^*
+        &amp;\qquad\qquad&amp;      a \Rightarrow \overline{a} \quad=\quad \overline{a}
+        &amp;\qquad\qquad&amp;      a = \overline{a} \quad=\quad \color{red}F\\
+    &amp;a \vee \overline{a} \quad=\quad \color{green}T \ \ \ ^*
+        &amp;\qquad\qquad&amp;      a \Leftarrow \overline{a} \quad=\quad a
+        &amp;\qquad\qquad&amp;      a \neq \overline{a} \quad=\quad \color{green}T
+\end{align}\]
+
+<p><br /></p>
+
+<h2 id="commutativity-and-contrapositive">Commutativity and Contrapositive</h2>
+
+<p>The commonality here is that we are flipping the order of arguments. The ones that are axioms are labeled with an asterisk.</p>
+
+\[\begin{align}
+    &amp;a \wedge b \quad=\quad b \wedge a \ \ \ ^*
+        &amp;\qquad\qquad&amp;      a \Rightarrow b \quad=\quad \overline{b} \Rightarrow \overline{a}
+        &amp;\qquad\qquad&amp;      a = b \quad=\quad b = a \\
+    &amp;a \vee b \quad=\quad b \vee a \ \ \ ^*
+        &amp;\qquad\qquad&amp;      a \Leftarrow b \quad=\quad \overline{b} \Leftarrow \overline{a}
+        &amp;\qquad\qquad&amp;      a \neq b \quad=\quad b \neq a
+\end{align}\]
+
+<p><br /></p>
+
+<h2 id="associativity">Associativity</h2>
+
+\[\begin{align}
+    &amp;a \wedge (b \wedge c) \quad = \quad (a \wedge b) \wedge c      &amp;\qquad\qquad&amp;      a \vee (b \vee c) \quad = \quad (a \vee b) \vee c \\[10pt]
+    &amp;a = (b = c) \quad = \quad (a = b) = c                          &amp;\qquad\qquad&amp;      a \neq (b = c) \quad = \quad (a = b) \neq c \\
+    &amp;a \neq (b \neq c) \quad = \quad (a \neq b) \neq c              &amp;\qquad\qquad&amp;      a = (b \neq c) \quad = \quad (a = b) \neq c \\
+\end{align}\]
+
+<p>There is no associativity for $\Rightarrow$ and $\Leftarrow$. The same form of expression actually falls under distributivity.</p>
+
+<p><br /></p>
+
+<h2 id="distributivity--factoring">Distributivity / Factoring</h2>
+
+<p>The combinations that I left out, I left out for good reasons. Maybe you can figure out why. For example, I never include expressions with $\neq$ since $(a \neq b) = (a = \overline{b})$. The laws labeled with an asterisk are axioms.</p>
+
+\[\begin{align}
+    &amp;a \wedge (b \wedge c) \quad = \quad (a \wedge b) \wedge (a \wedge c)       &amp;\qquad\qquad&amp;      a \vee (b \vee c) \quad = \quad (a \vee b) \vee (a \vee c) \\
+    &amp;a \wedge (b \vee c) \quad = \quad (a \wedge b) \vee (a \wedge c) \ \ \ ^*  &amp;\qquad\qquad&amp;      a \vee (b \wedge c) \quad = \quad (a \vee b) \wedge (a \vee c) \ \ \ ^* \\
+    &amp;a \wedge (b \Rightarrow c) \quad = \quad \text{not useful}                 &amp;\qquad\qquad&amp;      a \vee (b \Rightarrow c) \quad = \quad (a \vee b) \Rightarrow (a \vee c) \\
+    &amp;a \wedge (b = c) \quad = \quad \text{not useful}                           &amp;\qquad\qquad&amp;      a \vee (b = c) \quad = \quad (a \vee b) = (a \vee c) \\[10pt]
+
+    &amp;a \Rightarrow (b \wedge c) \quad = \quad (a \Rightarrow b) \wedge (a \Rightarrow c)                &amp;\qquad\qquad&amp;      a \Leftarrow (b \wedge c) \quad = \quad (a \Leftarrow b) \vee (a \Leftarrow c)\\
+    &amp;a \Rightarrow (b \vee c) \quad = \quad (a \Rightarrow b) \vee (a \Rightarrow c)                    &amp;\qquad\qquad&amp;      a \Leftarrow (b \vee c) \quad = \quad (a \Leftarrow b) \wedge (a \Leftarrow c)\\
+    &amp;a \Rightarrow (b \Rightarrow c) \quad = \quad (a \Rightarrow b) \Rightarrow (a \Rightarrow c)      &amp;\qquad\qquad&amp;      a \Leftarrow (b \Rightarrow c) \quad = \quad \text{not useful}\\
+    &amp;a \Rightarrow (b = c) \quad = \quad (a \Rightarrow b) = (a \Rightarrow c)                          &amp;\qquad\qquad&amp;      a \Leftarrow (b = c) \quad = \quad \text{not useful}\\
+
+\end{align}\]
+
+<p>If I write “not useful”, it means that the left-hand side doesn’t simplify to a nice form that matches the pattern of distributivity. Also, there are no good laws of the form $a = (b \circ c)$ where $\circ$ is any boolean operation. Thus, they were omitted.</p>
+
+<p><br /></p>
+
+<h2 id="absorption-and-simplification">Absorption and Simplification</h2>
+
+<p>We can think of these are special cases of distributivity. They occur so frequently that they are given their own names.</p>
+
+\[\begin{align}
+    &amp;a \wedge (a \vee b) \quad=\quad a                      &amp;\qquad\qquad&amp;      a \wedge (\overline{a} \vee b) \quad=\quad a \wedge b \\
+    &amp;a \vee (a \wedge b) \quad=\quad a                      &amp;\qquad\qquad&amp;      a \vee (\overline{a} \wedge b) \quad=\quad a \vee b
+\end{align}\]
+
+<p><br /></p>
+
+<h2 id="de-morgans-law--duality">De Morgan’s Law / Duality</h2>
+
+<p>This is like a form of distributivity, but it’s used so often that it’s given its own name and section</p>
+
+\[\overline{(a \wedge b)} = \overline{a} \vee \overline{b} \qquad\qquad \overline{(a \vee b)} = \overline{a} \wedge \overline{b}\]
+
+<p><br /></p>
+
+<h2 id="generalization-and-specialization">Generalization and Specialization</h2>
+
+<p>Again, these are very simple, but they are very useful in proofs.</p>
+
+\[(a \wedge b) \Rightarrow a \qquad\qquad a \Rightarrow (a \vee b)\]
+
+<p><br /></p>
+
+<h2 id="transitivity">Transitivity</h2>
+
+\[\begin{align}
+    &amp;(a \wedge b) \wedge (b \wedge c) \quad \Rightarrow \quad (a \wedge c)                      &amp;\qquad\qquad&amp;      (a \vee b) \wedge (b \vee c) \quad \Rightarrow \quad \text{see below} \\
+    &amp;(a \Rightarrow b) \wedge (b \Rightarrow c) \quad \Rightarrow \quad (a \Rightarrow c)       &amp;\qquad\qquad&amp;      (a \Leftarrow b) \wedge (b \Leftarrow c) \quad \Rightarrow \quad (a \Leftarrow c) \\[10pt]
+    &amp;(a \Rightarrow b) \wedge (b = c) \quad \Rightarrow \quad (a \Rightarrow c)                 &amp;\qquad\qquad&amp;  (a = b) \wedge (b \Rightarrow c) \quad \Rightarrow \quad (a \Rightarrow c) \\
+    &amp;(a = b) \wedge (b = c) \quad \Rightarrow \quad (a = c)                                     &amp;\qquad\qquad&amp;  (a \neq b) \wedge (b \neq c) \quad \Rightarrow \quad (a = c)
+\end{align}\]
+
+<p><br /></p>
+
+<p>$(a \vee b) \vee (b \vee c) = (a \wedge c) \vee b$, which does not really fit the pattern of transitivity. The best you can do is apply specialization to the left-hand side.</p>
+
+<p><br /></p>
+
+<h2 id="direct-proofs">Direct Proofs</h2>
+
+<p>The reason these get their own section is due to their history. They are some of the oldest logical syllogisms that exist.</p>
+
+<p>  <strong>Modus Ponens</strong>: $\hspace{3cm}(a \Rightarrow b) \wedge a \quad \Rightarrow \quad b$</p>
+
+<p>  <strong>Modus Tollens</strong>: $\hspace{3cm}(a \Rightarrow b) \wedge \overline{b} \quad \Rightarrow \quad \overline{a}$</p>
+
+<p>  <strong>Disjunctive Syllogism</strong>: $\hspace{1.75cm}(a \vee b) \wedge \overline{a} \quad \Rightarrow \quad b$</p>
+
+<p><br /></p>
+
+<h2 id="monotonicity-and-antimonotonicity">Monotonicity and Antimonotonicity</h2>
+
+\[\begin{align}
+    &amp;(a \Rightarrow b) \quad \Rightarrow \quad (c \wedge a) \Rightarrow (c \wedge b)                     &amp;\qquad\qquad&amp;      (a \Rightarrow b) \quad \Rightarrow \quad (c \vee a) \Rightarrow (c \vee b) \\
+    &amp;(a \Rightarrow b) \quad \Rightarrow \quad (c \Rightarrow a) \Rightarrow (c \Rightarrow b)       &amp;\qquad\qquad&amp;      (a \Rightarrow b) \quad \Rightarrow \quad (a \Rightarrow c) \Leftarrow (b \Rightarrow c)
+\end{align}\]
+
+<p>We say that $\wedge$, and $\vee$ are monotonic because the direction of the implication is preserved. $\Rightarrow$ is monotonic in its antecedent. We say that $\Rightarrow$ is anti-monotonic because the implication needed to flip. This is similar to how multiplying by a negative number flips equality signs.</p>
+
+<p>Note that $=$ and $\neq$ are neither monotonic nor antimonotonic. Their expressions of this form don’t have a nice simplification.</p>
+
+<p><br /></p>
+
+<h2 id="miscellaneous">Miscellaneous</h2>
+
+<p>Finally, we have all of the laws that I couldn’t find a nice classification for.</p>
+
+<p><strong>Uniqueness of the Complement</strong></p>
+
+<ul>
+  <li>$(a \vee b) \wedge \overline{(a \wedge b)} \quad = \quad (b = \overline{a})$</li>
+</ul>
+
+<p><strong>Inclusion</strong></p>
+
+<ul>
+  <li>
+    <p>$(a \wedge b) = a \quad = \quad (a \Rightarrow b)$</p>
+  </li>
+  <li>
+    <p>$(a \vee b) = b \quad = \quad (a \Rightarrow b)$</p>
+  </li>
+</ul>
+
+<p><strong>Discharge</strong></p>
+
+<ul>
+  <li>$a \wedge (a \Rightarrow b) \quad = \quad a \wedge b$</li>
+  <li>$a \Rightarrow (a \wedge b) \quad = \quad a \Rightarrow b$</li>
+</ul>
+
+<p><strong>Portation</strong></p>
+
+<ul>
+  <li>
+    <p>$(a \wedge b) \Rightarrow c \quad = \quad a \Rightarrow (b \Rightarrow c)$</p>
+  </li>
+  <li>
+    <p>$(a \wedge b) \Rightarrow c \quad = \quad a \Rightarrow (\overline{b} \vee c)$</p>
+  </li>
+</ul>
+
+<p><strong>Consensus Theorem</strong></p>
+
+<ul>
+  <li>
+    <p>$((a \wedge b) \vee (\overline{a} \wedge c)) \vee (b \wedge c) \quad = \quad (a \wedge b) \vee (\overline{a} \wedge c)$</p>
+  </li>
+  <li>
+    <p>$((a \vee b) \wedge (\overline{a} \vee c)) \wedge (b \vee c) \quad = \quad (a \vee b) \wedge (\overline{a} \vee c)$</p>
+  </li>
+</ul>
+
+<p><strong>Resolution</strong></p>
+
+<ul>
+  <li>$a \wedge c \quad \Rightarrow \quad (a \vee b) \wedge (\overline{b} \vee c) \quad = \quad (a \wedge \overline{b}) \vee (b \wedge c) \quad \Rightarrow \quad a \vee c$</li>
+</ul>
+
+<p><strong>Conflation</strong></p>
+
+<ul>
+  <li>
+    <p>$(a \Rightarrow b) \wedge (c \Rightarrow d) \quad \Rightarrow \quad (a \wedge c) \Rightarrow (b \wedge d)$</p>
+  </li>
+  <li>
+    <p>$(a \Rightarrow b) \wedge (c \Rightarrow d) \quad \Rightarrow \quad (a \vee c) \Rightarrow (b \vee d)$</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h3 style="text-align:center; margin-bottom:1em;">
+    <a href="/blog/boolean-algebra/">Boolean Algebra Series</a>
+</h3>
+
+        </div>
+    </div>
+    
+  </body>
+</html>

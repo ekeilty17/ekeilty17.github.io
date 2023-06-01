@@ -42,7 +42,7 @@
         jax: ["input/TeX","input/MathML","output/SVG", "output/CommonHTML"],
         extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
         TeX: {
-            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js", "cancel.js"]
         },
         tex2jax: {
             inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -155,6 +155,8 @@
     &amp;&amp; \text{Absorption 2 times} \\
 \end{align}\]
 
+<p><br /></p>
+
 <p>$((a \vee b) \wedge (\overline{a} \vee c)) \wedge (b \vee c) \quad = \quad (a \vee b) \wedge (\overline{a} \vee c)$</p>
 
 \[\begin{align}
@@ -180,19 +182,23 @@
     &amp;&amp; \text{Absorption 2 times} \\
 \end{align}\]
 
+<p><br /></p>
+
 <h2 id="resolution">Resolution</h2>
 
-<p>$a \wedge c \quad \implies \quad (a \vee b) \wedge (\overline{b} \vee c) \quad = \quad (a \wedge \overline{b}) \vee (b \wedge c) \quad \implies \quad a \vee c$</p>
+<p>Resolution is extremely important in the field of logic. It allows for a sound and complete proof system for preposition logic.</p>
 
-<p>We will do this in parts</p>
+<p>$a \wedge c \quad \Rightarrow \quad (a \vee b) \wedge (\overline{b} \vee c) \quad = \quad (a \wedge \overline{b}) \vee (b \wedge c) \quad \Rightarrow \quad a \vee c$</p>
 
-<p>$a \wedge c \quad \implies \quad (a \vee b) \wedge (\overline{b} \vee c)$</p>
+<p>We will do this in parts.</p>
+
+<p>$a \wedge c \quad \Rightarrow \quad (a \vee b) \wedge (\overline{b} \vee c)$</p>
 
 \[\begin{align}
     &amp;a \wedge c
     &amp;&amp; \\
 
-    &amp;\implies (a \wedge c) \vee ((a \wedge \overline{b}) \vee (b \wedge c))
+    &amp;\Rightarrow (a \wedge c) \vee ((a \wedge \overline{b}) \vee (b \wedge c))
     &amp;&amp;\text{Generalization} \\
 
     &amp;= (a \wedge c) \vee (a \wedge \overline{b}) \vee (b \wedge c)
@@ -211,6 +217,8 @@
     &amp;&amp;\text{Distributivity}
 \end{align}\]
 
+<p><br /></p>
+
 <p>$(a \vee b) \wedge (\overline{b} \vee c) \quad = \quad (a \wedge \overline{b}) \vee (b \wedge c)$</p>
 
 \[\begin{align}
@@ -227,7 +235,9 @@
     &amp;&amp;\text{The Consensus Theorem}
 \end{align}\]
 
-<p>$(a \wedge \overline{b}) \vee (b \wedge c) \quad \implies \quad a \vee c$</p>
+<p><br /></p>
+
+<p>$(a \wedge \overline{b}) \vee (b \wedge c) \quad \Rightarrow \quad a \vee c$</p>
 
 \[\begin{align}
     &amp;= (a \wedge \overline{b}) \vee (b \wedge c)
@@ -248,7 +258,7 @@
     &amp;= (a \vee c) \wedge ((a \vee b) \wedge (\overline{b} \vee c))
     &amp;&amp;\text{Associativity} \\
 
-    &amp;\implies a \vee c
+    &amp;\Rightarrow a \vee c
 \end{align}\]
 
         </div>
@@ -271,10 +281,10 @@
 
         <div class="pagination" style="margin-top:1em;">
             
-                <a class="pagination-item older" href="/blog/boolean-algebra/monotonicity/">Previous</a>
+                <a class="pagination-item older" href="/blog/boolean-algebra/monotonicity-and-antimonotonicity/">Previous</a>
             
             
-                <a class="pagination-item newer" href="/blog/boolean-algebra/mischellaneous/">Next</a>
+                <a class="pagination-item newer" href="/blog/boolean-algebra/miscellaneous/">Next</a>
             
         </div>
         <h3 style="text-align:center; margin-bottom:1em;">

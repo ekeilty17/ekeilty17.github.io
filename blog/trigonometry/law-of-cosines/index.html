@@ -42,7 +42,7 @@
         jax: ["input/TeX","input/MathML","output/SVG", "output/CommonHTML"],
         extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
         TeX: {
-            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js", "cancel.js"]
         },
         tex2jax: {
             inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -126,9 +126,100 @@
 
         <div class="post">
             <h1 class="post-title">Law of Cosines</h1>
-            <!-- <span class="series-date">15 Aug 2022</span> -->
-            <time datetime="2022-08-15T00:00:00-04:00" class="post-date">15 Aug 2022</time>
-            <p><strong>TODO</strong></p>
+            <!-- <span class="series-date">16 Aug 2022</span> -->
+            <time datetime="2022-08-16T00:00:00-04:00" class="post-date">16 Aug 2022</time>
+            <p>If $A$, $B$, and $C$ are the angles of a triangle and $a$, $b$, and $c$ are the corresponding opposing side lengths, then the Law of Cosines states</p>
+
+\[a^2 = b^2 + c^2 - 2bc \cos(A) \\ 
+b^2 = a^2 + c^2 - 2ac \cos(B) \\
+c^2 = a^2 + b^2 - 2ab \cos(C)\]
+
+<p>Interestingly, this gives us a set of formulas for the cosine of all the angles of a triangle given its side lengths.</p>
+
+<p>Just like in the Law of Sines, we have to break the proof up into 3 cases: acute triangles, right triangles, and obtuse triangles.</p>
+
+<p><br /></p>
+
+<h2 id="acute-triangles">Acute Triangles</h2>
+
+<center>
+<embed src="/svg/law-of-cosines/LoC-acute-triangle.svg" type="image/svg+xml" />
+</center>
+
+<p>Using the definition of $\sin$, the definition of $\cos$, and the Pythagorean Theorem, we have the following observations.</p>
+
+<ol>
+  <li>$x + y = a$</li>
+  <li>$x = c \cos B$</li>
+  <li>$h = c \sin B$</li>
+  <li>$x^2 + h^2 = c^2$</li>
+</ol>
+
+<p>There are a couple of ways to do this. One way is to first substitute (1) into (4)</p>
+
+\[(a - y)^2 + h ^2 = c^2\]
+
+<p>Then substitute (2) and (3) into to get</p>
+
+\[(a - b \cos C)^2 + (b \sin C)^2 = c^2\]
+
+<p>Now, we do some algebra to simplify and utilize the Pythagorean identity ($\cos^2 \theta + \sin^2 \theta = 1$)</p>
+
+\[\begin{align}
+    c^2 
+    &amp;= (a - b \cos C)^2 + (b \sin C)^2 \\[10pt]
+    &amp;= a^2 - 2ab\cos C + b^2 \cos^2 C + b^2 \sin^2 C \\[10pt]
+    &amp;= a^2 + b^2 (\cos^2 C + \sin^2 C) - 2ab\cos C  \\[10pt]
+    &amp;= a^2 + b^2 - 2ab\cos C
+\end{align}\]
+
+<p>The argument works symmetrically for the other two laws.</p>
+
+<p><br /></p>
+
+<h2 id="right-triangles">Right Triangles</h2>
+
+<center>
+<embed src="/svg/law-of-cosines/LoC-right-triangle.svg" type="image/svg+xml" />
+</center>
+
+<p>The right triangle case just reduces to the Pythagorean Theorem, which we have already proven to be true.</p>
+
+\[b^2 = a^2 + c^2 - 2ac \cos(90^{\circ}) = a^2 + c^2 - 2ac \cdot 0 = a^2 + c^2\]
+
+<p>The proof for the other two angles is exactly the same as the acute triangle case.</p>
+
+<p><br /></p>
+
+<h2 id="obtuse-triangles">Obtuse Triangles</h2>
+
+<center>
+<embed src="/svg/law-of-cosines/LoC-obtuse-triangle.svg" type="image/svg+xml" />
+</center>
+
+<p>Using the definition of $\sin$, the definition of $\cos$, the Pythagorean Theorem, and the supplementary angle identity for $\cos$, we have the following observations.</p>
+
+<ol>
+  <li>$x = c \cos (180 - B) = - c \cos B$</li>
+  <li>$h = c \sin B$</li>
+  <li>$(a + x)^2 + h^2 = b^2$</li>
+</ol>
+
+<p>Substituting (1) and (2) into (3) gives</p>
+
+\[(c \cos B + a)^2 + (- c \sin B)^2 = b^2\]
+
+<p>Now, we do some algebra to simplify and utilize the Pythagorean identity ($\cos^2 \theta + \sin^2 \theta = 1$)</p>
+
+\[\begin{align}
+    b^2 
+    &amp;= (a - c \cos B)^2 + (c \sin B)^2 \\[10pt]
+    &amp;=  a^2 - 2 ac \cos B + c^2 \cos^2 B + c^2 \sin^2 B \\[10pt]
+    &amp;= a^2 + c^2 (\cos^2 B + \sin^2 B) - 2 ac \cos B \\[10pt]
+    &amp;= a^2 + c^2 - 2 ac \cos B
+\end{align}\]
+
+<p>The proof for the other two angles is exactly the same as the acute triangle case.</p>
 
         </div>
 
@@ -150,10 +241,10 @@
 
         <div class="pagination" style="margin-top:1em;">
             
-                <a class="pagination-item older" href="/blog/trigonometry/sum-to-product/">Previous</a>
+                <a class="pagination-item older" href="/blog/trigonometry/law-of-sines/">Previous</a>
             
             
-                <span class="pagination-item newer">Next</span>
+                <a class="pagination-item newer" href="/blog/trigonometry/inverse-trig-functions/">Next</a>
             
         </div>
         <h3 style="text-align:center; margin-bottom:1em;">

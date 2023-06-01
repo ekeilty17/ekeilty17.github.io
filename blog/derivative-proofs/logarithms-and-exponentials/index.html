@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Logarithms and Exponentials &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded Latex support -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX","input/MathML","output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js", "cancel.js"]
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!-- Enable Tikz support -->
+<link rel="stylesheet" type="text/css" href="http://tikzjax.com/v1/fonts.css">
+<script src="http://tikzjax.com/v1/tikzjax.js"></script>
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">Software Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/resume">R&eacute;sum&eacute;</a>
+          </li>
+        
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2023 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">Logarithms and Exponentials</h1>
+            <!-- <span class="series-date">05 Jan 2023</span> -->
+            <time datetime="2023-01-05T00:00:00-05:00" class="post-date">05 Jan 2023</time>
+            <p>Some textbooks will define $e$ by its derivative, others define it by its Taylor expansion. For this series, I am going to use the limit definition</p>
+
+\[e^x = \lim_{n \rightarrow \infty} \left ( 1 + \frac{x}{n} \right )^n\]
+
+<h2 id="logarithms">Logarithms</h2>
+
+<p>I will assume the reader is comfortable with the properties if logarithms. Let $b \in \mathbb{R}$ and $b &gt; 1$.</p>
+
+\[\begin{align}
+    \frac{d}{dx} \log_b (x)
+    &amp;= \lim_{h \rightarrow 0} \ \frac{\log_b(x+h) - \log(x)}{h} \\[10pt]
+    &amp;= \lim_{h \rightarrow 0} \ \frac{1}{h} \log_b((x+h)/x)  \\[10pt]
+    &amp;= \lim_{h \rightarrow 0} \ \log_b \left ( \left ( 1 + \frac{h}{x} \right )^{1/h} \right )  \\[10pt]
+    &amp;\text{let } n = x/h \text{ therefore } n \rightarrow \infty \text{ as } h \rightarrow 0 \text{ since } x \text{ is fixed and finite} \\[10pt]
+    &amp;= \lim_{n \rightarrow \infty} \ \log_b \left ( \left ( 1 + \frac{1}{n} \right )^{n/x} \right )  \\[10pt]
+    &amp;= \log_b \left ( \lim_{n \rightarrow \infty} \ \left ( 1 + \frac{1}{n} \right )^{n} \right )^{1/x}  \\[10pt]
+    &amp;= \log_b \left ( e \right )^{1/x}  \\[10pt]
+    &amp;= \frac{1}{x} \log_b \left ( e \right )  \\[10pt]
+    &amp;= \frac{1}{x \ln b}
+\end{align}\]
+
+<p>In particular, if we let $b = e$, then</p>
+
+\[\frac{d}{dx} \ln (x) = \frac{1}{x}\]
+
+<h2 id="exponentials">Exponentials</h2>
+
+<p>Now, we use the fact that $\log_b (b^x) = x$ and the inverse function derivative property.</p>
+
+\[\begin{align}
+    \frac{d}{dx} \log_b (b^x)
+    &amp;= \frac{1}{b^x \ln b} \cdot \frac{d}{dx} b^x
+\end{align}\]
+
+<p>Since the left-hand side is $\frac{d}{dx} \log_b (b^x) = \frac{d}{dx} x = 1$, we have.</p>
+
+\[\frac{d}{dx} b^x = b^x \ln b\]
+
+<p>In particular, if we let $b = e$, then</p>
+
+\[\frac{d}{dx} e^x = e^x\]
+
+<p>This is what makes $e$ such a special constant. It represents the fixed-point of the derivative operation.</p>
+
+        </div>
+
+        <!-- Adding the ability to move between parts of the series -->
+        
+        
+        
+
+        
+        
+        
+
+        <!-- Getting capitalized title for series -->
+        
+        
+        
+        <!-- Getting url for series, which is just the page url with the last /... removed -->
+        
+
+        <div class="pagination" style="margin-top:1em;">
+            
+                <a class="pagination-item older" href="/blog/derivative-proofs/absolute-value/">Previous</a>
+            
+            
+                <a class="pagination-item newer" href="/blog/derivative-proofs/squeeze-theorem/">Next</a>
+            
+        </div>
+        <h3 style="text-align:center; margin-bottom:1em;">
+            <a href="/blog/derivative-proofs">
+            
+                Derivative
+            
+                Proofs
+            
+         Series</a>
+        </h3>
+    </div>
+    
+  </body>
+</html>

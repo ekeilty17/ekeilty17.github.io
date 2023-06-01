@@ -42,7 +42,7 @@
         jax: ["input/TeX","input/MathML","output/SVG", "output/CommonHTML"],
         extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
         TeX: {
-            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js", "cancel.js"]
         },
         tex2jax: {
             inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -142,6 +142,8 @@
     &amp;= (b = a)                                              &amp;&amp;\text{Equality}
 \end{align}\]
 
+<p><br /></p>
+
 <p>$(a \neq b) \quad = \quad (b \neq a)$</p>
 
 \[\begin{align}
@@ -150,6 +152,8 @@
     &amp;= (\overline{b = a})   &amp;&amp;\text{Commutativity of } \ = \\
     &amp;= (b \neq a)           &amp;&amp;\text{Exclusion}
 \end{align}\]
+
+<p><br /></p>
 
 <h2 id="associativity">Associativity</h2>
 
@@ -199,6 +203,8 @@
     &amp;&amp;\text{Equality}
 \end{align}\]
 
+<p><br /></p>
+
 <p>$(a = b) \neq c \quad = \quad a = (b \neq c)$</p>
 
 \[\begin{align}
@@ -208,6 +214,8 @@
     &amp;= a = (b \neq c)           &amp;&amp;\text{Exclusion}
 \end{align}\]
 
+<p><br /></p>
+
 <p>$(a \neq b) = c \quad = \quad a \neq (b = c)$</p>
 
 \[\begin{align}
@@ -216,6 +224,8 @@
     &amp;= \overline{a} = (b = c)   &amp;&amp;\text{Associativity of =} \\
     &amp;= a \neq (b = c)           &amp;&amp;\text{Exclusion}
 \end{align}\]
+
+<p><br /></p>
 
 <p>$(a \neq b) \neq c \quad = \quad a \neq (b \neq c)$</p>
 
@@ -229,6 +239,8 @@
     &amp;= a \neq (\overline{b = c})            &amp;&amp;\text{Exclusion} \\
     &amp;= a \neq (b \neq c)                    &amp;&amp;\text{Exclusion}
 \end{align}\]
+
+<p><br /></p>
 
 <p>I find this unintuitive, but you do not need parenthesis around strings of expressions containing the $=$ and the $\neq$ operators. Also interestingly, $(a \neq b \neq c) = (a = b = c)$. It is important to note that $(a \neq b \neq c)$ does not mean what you would think it means. I think many people would want it to mean $(a \neq b) \wedge (b \neq c) \wedge (c \neq a)$. But this is not equivalent and actually that latter statement evaluates to $\color{red}F$.</p>
 

@@ -42,7 +42,7 @@
         jax: ["input/TeX","input/MathML","output/SVG", "output/CommonHTML"],
         extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
         TeX: {
-            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js", "cancel.js"]
         },
         tex2jax: {
             inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -130,7 +130,7 @@
             <time datetime="2022-08-23T00:00:00-04:00" class="post-date">23 Aug 2022</time>
             <h2 id="absorption">Absorption</h2>
 
-<p>This seemingly abscure relation turns out to be very useful in many proofs.</p>
+<p>This seemingly obscure relation turns out to be very useful in many proofs.</p>
 
 <p>$a \wedge (a \vee b) = a$</p>
 
@@ -142,6 +142,8 @@
     &amp;= a                                        &amp;&amp;\text{Identity}
 \end{align}\]
 
+<p><br /></p>
+
 <p>$a \vee (a \wedge b) = a$</p>
 
 \[\begin{align}
@@ -151,6 +153,8 @@
     &amp;= a \wedge \color{green}T                      &amp;&amp;\text{Base} \\
     &amp;= a                                            &amp;&amp;\text{Identity}
 \end{align}\]
+
+<p><br /></p>
 
 <h2 id="simplification">Simplification</h2>
 
@@ -164,6 +168,8 @@
     &amp;= \color{red}F \vee (a \wedge b)               &amp;&amp;\text{Noncontradiction} \\
     &amp;= a \wedge b                                   &amp;&amp;\text{Identity}
 \end{align}\]
+
+<p><br /></p>
 
 <p>$a \vee (\overline{a} \wedge b) = a \vee b$</p>
 

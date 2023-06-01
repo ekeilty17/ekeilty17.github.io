@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Axioms and Operations &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded Latex support -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX","input/MathML","output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js", "cancel.js"]
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!-- Enable Tikz support -->
+<link rel="stylesheet" type="text/css" href="http://tikzjax.com/v1/fonts.css">
+<script src="http://tikzjax.com/v1/tikzjax.js"></script>
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">Software Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/resume">R&eacute;sum&eacute;</a>
+          </li>
+        
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2023 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">Axioms and Operations</h1>
+            <!-- <span class="series-date">21 Aug 2022</span> -->
+            <time datetime="2022-08-21T00:00:00-04:00" class="post-date">21 Aug 2022</time>
+            <h2 id="boolean-expressions">Boolean Expressions</h2>
+
+<p>The purpose of Boolean algebra is to define the rules for manipulating Boolean expressions. Thus, we must define what a Boolean expression is. We first do this syntactically. Let $\neg$ be a unary operation (takes one variable as an argument). Let $\vee$ and $\wedge$ be binary operations (take two variables as arguments). Let $a$ be a boolean variable and $A, B$ be boolean expressions. Then all of the following are boolean expressions.</p>
+
+<ol>
+  <li>$\color{green}T$</li>
+  <li>$\color{red}F$</li>
+  <li>$a$</li>
+  <li>$\neg A$</li>
+  <li>$A \wedge B$</li>
+  <li>$A \vee B$</li>
+</ol>
+
+<p><br /></p>
+
+<h2 id="axioms">Axioms</h2>
+
+<p>Now, there are a couple of ways you can define the axioms of Boolean algebra. One way is to define the behavior of $\color{green}T$ and $\color{red}F$. Then, using a completion argument with truth tables you can start creating laws. I, instead, want to start with some axioms and obtain the definitions of the Boolean operators as a consequence.</p>
+
+<p><strong>Complement/Annihilation Laws</strong></p>
+<ul>
+  <li>$a \wedge (\neg a) = \color{red}F \qquad$ (Noncontradiction)</li>
+  <li>$a \vee (\neg a) = \color{green}T \qquad$ (Excluded Middle)</li>
+</ul>
+
+<p><strong>Identity</strong></p>
+<ul>
+  <li>$\color{green}T \wedge a = a$</li>
+  <li>$\color{red}F \vee a = a$</li>
+</ul>
+
+<p><strong>Commutativity</strong></p>
+<ul>
+  <li>$a \wedge b = b \wedge a$</li>
+  <li>$a \vee b = b \vee a$</li>
+</ul>
+
+<p><strong>Distributivity/Factoring</strong></p>
+<ul>
+  <li>$a \wedge (b \vee c) = (a \wedge b) \vee (a \wedge c)$</li>
+  <li>$a \vee (b \wedge c) = (a \vee b) \wedge (a \vee c)$</li>
+</ul>
+
+<!-- **Substitution**: Let $f(a)$ be some expression with respect to the boolean variable $a$. Then $(f(a) \wedge (a = b)) = (f(b) \wedge (a = b))$, where $f(b)$ is the same boolean expression with respect to the boolean variable $b$. -->
+
+<p><br /></p>
+
+<h2 id="fundamental-operations">Fundamental Operations</h2>
+
+<p>The above axioms define the behavior of the operations $\neg$, $\wedge$, and $\vee$. Given these axioms, these operations are forced. We can show this via a <strong>truth table</strong>, which shows all possible combinations of inputs to the operations.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center">$\color{green}T$</th>
+      <th style="text-align: center">$\color{red}F$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Negation (NOT)</td>
+      <td style="text-align: center">$\neg$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center">$\color{green}T\color{green}T$</th>
+      <th style="text-align: center">$\color{green}T\color{red}F$</th>
+      <th style="text-align: center">$\color{red}F\color{green}T$</th>
+      <th style="text-align: center">$\color{red}F\color{red}F$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Conjunction (AND)</td>
+      <td style="text-align: center">$\wedge$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+    </tr>
+    <tr>
+      <td>Disjunction (OR)</td>
+      <td style="text-align: center">$\vee$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>These truth tables can be derived from the axioms and some laws we prove in the next post. The negation truth table is a consequence of identity and annihilation laws. Commutativity and distributivity are required to fully define the conjunction and disjunction truth tables.</p>
+
+<p>Note, going forward, instead of writing $\neg a$ I will write $\overline{a}$ to condense expressions.</p>
+
+<p><br /></p>
+
+<h2 id="useful-operations">Useful Operations</h2>
+
+<p>Now, we can define some other useful operations. These are simply syntactic sugar and can all be expressed in terms of conjunction, disjunction, and negation. Thus, we get “laws” that are true by definition. Since these laws are so fundamental, they are used very often (especially material implication). Thus, it’s important to highlight them.</p>
+
+<p>  <strong>Material Implication</strong>: $\hspace{3.5cm} (a \Rightarrow b) = (\overline{a} \vee b)$</p>
+
+<p>  <strong>Mirror</strong>: $\hspace{6cm} (a \Leftarrow b) = (b \Rightarrow a)$</p>
+
+<p>  <strong>Antisymmetry / Double Implication</strong>: $\hspace{0.8cm} (a = b) = (a \Rightarrow b) \wedge (a \Leftarrow b)$</p>
+
+<p>  <strong>Exclusion</strong>: $\hspace{5.5cm} (a \neq b) = (\overline{a = b})$</p>
+
+<p>We can express these operations via truth table.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center">$\color{green}T\color{green}T$</th>
+      <th style="text-align: center">$\color{green}T\color{red}F$</th>
+      <th style="text-align: center">$\color{red}F\color{green}T$</th>
+      <th style="text-align: center">$\color{red}F\color{red}F$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Implication</td>
+      <td style="text-align: center">$\Rightarrow$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+    </tr>
+    <tr>
+      <td>Converse</td>
+      <td style="text-align: center">$\Leftarrow$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+    </tr>
+    <tr>
+      <td>Equality</td>
+      <td style="text-align: center">$=$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+    </tr>
+    <tr>
+      <td>Unequality (XOR)</td>
+      <td style="text-align: center">$\neq$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Again, we will never use these truth tables, but they are helpful to understand what these operations mean.</p>
+
+<p><br /></p>
+
+<h2 id="useless-operations">Useless Operations</h2>
+
+<p>There are $4$ different possible unary operations and $16$ different possible binary operations. Above, we have defined $1$ unary operation and $6$ binary operations. Thus, just for completeness, I will define the others. I think it provides an interesting perspective on which operations we decided to give importance to.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center">$\color{green}T$</th>
+      <th style="text-align: center">$\color{red}F$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Maximum</td>
+      <td style="text-align: center">$\uparrow$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+    </tr>
+    <tr>
+      <td>Identity</td>
+      <td style="text-align: center">$\sqcup$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+    </tr>
+    <tr>
+      <td>Negation</td>
+      <td style="text-align: center">$\neg$</td>
+      <td style="text-align: center">$\color{green}F$</td>
+      <td style="text-align: center">$\color{red}T$</td>
+    </tr>
+    <tr>
+      <td>Minimum</td>
+      <td style="text-align: center">$\downarrow$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center">$\color{green}T\color{green}T$</th>
+      <th style="text-align: center">$\color{green}T\color{red}F$</th>
+      <th style="text-align: center">$\color{red}F\color{green}T$</th>
+      <th style="text-align: center">$\color{red}F\color{red}F$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Maximum</td>
+      <td style="text-align: center">$\Uparrow$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+    </tr>
+    <tr>
+      <td>OR</td>
+      <td style="text-align: center">$\vee$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+    </tr>
+    <tr>
+      <td>Converse</td>
+      <td style="text-align: center">$\Leftarrow$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+    </tr>
+    <tr>
+      <td>Left</td>
+      <td style="text-align: center">$\leftarrow$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+    </tr>
+    <tr>
+      <td>Implication</td>
+      <td style="text-align: center">$\Rightarrow$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+    </tr>
+    <tr>
+      <td>Right</td>
+      <td style="text-align: center">$\rightarrow$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+    </tr>
+    <tr>
+      <td>Equality</td>
+      <td style="text-align: center">$=$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+    </tr>
+    <tr>
+      <td>AND</td>
+      <td style="text-align: center">$\wedge$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+    </tr>
+    <tr>
+      <td>NAND</td>
+      <td style="text-align: center">$\cancel{\wedge}$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+    </tr>
+    <tr>
+      <td>Unequlaity (XOR)</td>
+      <td style="text-align: center">$\neq$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+    </tr>
+    <tr>
+      <td>Negated Right</td>
+      <td style="text-align: center">$\cancel{\rightarrow}$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+    </tr>
+    <tr>
+      <td>Negated Implication</td>
+      <td style="text-align: center">$\cancel{\Rightarrow}$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+    </tr>
+    <tr>
+      <td>Negated Left</td>
+      <td style="text-align: center">$\cancel{\leftarrow}$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+    </tr>
+    <tr>
+      <td>Negated Converse</td>
+      <td style="text-align: center">$\cancel{\Leftarrow}$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+    </tr>
+    <tr>
+      <td>NOR</td>
+      <td style="text-align: center">$\cancel{\vee}$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{green}T$</td>
+    </tr>
+    <tr>
+      <td>Minimum</td>
+      <td style="text-align: center">$\Downarrow$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+      <td style="text-align: center">$\color{red}F$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<p>Note that a lot of these symbols I’ve assigned to the operators are not standard and just my invention. For example, the Identity operator is supposed to represent an empty space, since applying the operator is the same as applying no operator at all.</p>
+
+        </div>
+
+        <!-- Adding the ability to move between parts of the series -->
+        
+        
+        
+
+        
+        
+        
+
+        <!-- Getting capitalized title for series -->
+        
+        
+        
+        <!-- Getting url for series, which is just the page url with the last /... removed -->
+        
+
+        <div class="pagination" style="margin-top:1em;">
+            
+                <a class="pagination-item older" href="/blog/boolean-algebra/introduction/">Previous</a>
+            
+            
+                <a class="pagination-item newer" href="/blog/boolean-algebra/miscellaneous-simple-relations/">Next</a>
+            
+        </div>
+        <h3 style="text-align:center; margin-bottom:1em;">
+            <a href="/blog/boolean-algebra">
+            
+                Boolean
+            
+                Algebra
+            
+         Series</a>
+        </h3>
+    </div>
+    
+  </body>
+</html>

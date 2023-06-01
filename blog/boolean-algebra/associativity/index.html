@@ -42,7 +42,7 @@
         jax: ["input/TeX","input/MathML","output/SVG", "output/CommonHTML"],
         extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
         TeX: {
-            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js", "cancel.js"]
         },
         tex2jax: {
             inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -128,7 +128,7 @@
             <h1 class="post-title">Associativity</h1>
             <!-- <span class="series-date">24 Aug 2022</span> -->
             <time datetime="2022-08-24T00:00:00-04:00" class="post-date">24 Aug 2022</time>
-            <p>This is a very tedious proof. If you really want to understand it, I would recommend writing it out for yourself. I have added colored parenthesis to help keep track of the nested levels. Essentially, it makes clever use of distributivity and timely commutativity.</p>
+            <p>This is a very tedious proof. If you really want to understand it, I would recommend writing it out for yourself. I have added colored parenthesis to help keep track of the nested levels. Essentially, it makes clever use of distributivity and commutativity.</p>
 
 <p>$(a \wedge b) \wedge c \quad = \quad a \wedge (b \wedge c)$</p>
 
@@ -213,6 +213,8 @@
     &amp;&amp;
     &amp;&amp;\text{Absorption 3 times}
 \end{align}\]
+
+<p><br /></p>
 
 <p>The proof for the associativity of $\vee$ is identical.</p>
 
@@ -299,6 +301,8 @@
     &amp;&amp;
     &amp;&amp;\text{Absorption 3 times}
 \end{align}\]
+
+<p><br /></p>
 
 <p>Now, in future proofs, if we have $(a \wedge b) \wedge c$ we can instead write $a \wedge b \wedge c$ without ambiguity. Likewise for $\vee$.</p>
 

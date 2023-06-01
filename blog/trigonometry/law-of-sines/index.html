@@ -42,7 +42,7 @@
         jax: ["input/TeX","input/MathML","output/SVG", "output/CommonHTML"],
         extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
         TeX: {
-            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js", "cancel.js"]
         },
         tex2jax: {
             inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -128,7 +128,89 @@
             <h1 class="post-title">Law of Sines</h1>
             <!-- <span class="series-date">15 Aug 2022</span> -->
             <time datetime="2022-08-15T00:00:00-04:00" class="post-date">15 Aug 2022</time>
-            <p><strong>TODO</strong></p>
+            <p>If $A$, $B$, and $C$ are the angles of a triangle and $a$, $b$, and $c$ are the corresponding opposing side lengths, then the Law of Sines states</p>
+
+\[\frac{\sin A}{a} = \frac{\sin B}{b} = \frac{\sin C}{c}\]
+
+<p>The easiest way to prove the Law of Sines is to break it up into 3 cases: acute, right, and obtuse triangles. An <strong>acute</strong> angle is an angle less than $90^{\circ}$. A <strong>right angle</strong> is an angle that is exactly $90^{\circ}$. An <strong>obtuse angle</strong> is an angle greater than $90^{\circ}$. An <strong>acute triangle</strong> is a triangle with all acute angles. A <strong>right triangle</strong> is a triangle with one right angle. An <strong>obtuse triangle</strong> is a triangle with one obtuse angle.</p>
+
+<p><br /></p>
+
+<h2 id="acute-triangles">Acute Triangles</h2>
+
+<center>
+<embed src="/svg/law-of-sines/LoS-acute-triangle1.svg" type="image/svg+xml" />
+&emsp;&emsp;&emsp;&emsp;
+<embed src="/svg/law-of-sines/LoS-acute-triangle2.svg" type="image/svg+xml" />
+</center>
+
+<p><br /></p>
+
+<p>Using the definition of sine on the left triangle</p>
+
+\[\sin B = \frac{h_A}{c} \qquad\qquad \sin C = \frac{h_A}{b}\]
+
+<p>Therefore,</p>
+
+\[\frac{\sin B}{b} = \frac{\sin C}{c}\]
+
+<p>Likewise, using the definition of sine on the right triangle</p>
+
+\[\sin A = \frac{h_B}{c} \qquad\qquad \sin C = \frac{h_B}{a}\]
+
+<p>Therefore,</p>
+
+\[\frac{\sin A}{a} = \frac{\sin C}{c}\]
+
+<p>This completes the proof.</p>
+
+<p><br /></p>
+
+<h2 id="right-triangles">Right Triangles</h2>
+
+<center>
+<embed src="/svg/law-of-sines/LoS-right-triangle.svg" type="image/svg+xml" />
+</center>
+
+<p><br /></p>
+
+<p>Using the definition of sine on angles $A$, $B$, and $C$.</p>
+
+\[\sin A = \frac{a}{b} \qquad \sin B = \sin 90^{\circ} = 1 \qquad \sin C = \frac{c}{b}\]
+
+<p>Therefore</p>
+
+\[\frac{\sin A}{a} = \frac{\sin C}{c} = \frac{1}{b} = \frac{\sin B}{b}\]
+
+<p><br /></p>
+
+<h2 id="obtuse-triangles">Obtuse Triangles</h2>
+
+<center>
+<embed src="/svg/law-of-sines/LoS-obtuse-triangle1.svg" type="image/svg+xml" />
+&emsp;&emsp;&emsp;&emsp;
+<embed src="/svg/law-of-sines/LoS-obtuse-triangle2.svg" type="image/svg+xml" />
+</center>
+
+<p><br /></p>
+
+<p>This proof is the same as the acute triangle case. Using the definition of sine on the left triangle</p>
+
+\[\sin B = \frac{h_A}{c} \qquad\qquad \sin C = \frac{h_A}{b}\]
+
+<p>Therefore,</p>
+
+\[\frac{\sin B}{b} = \frac{\sin C}{c}\]
+
+<p>Likewise, using the definition of sine on the right triangle</p>
+
+\[\sin A = \frac{h_B}{c} \qquad\qquad \sin C = \frac{h_B}{a}\]
+
+<p>Therefore,</p>
+
+\[\frac{\sin A}{a} = \frac{\sin C}{c}\]
+
+<p>This completes the proof.</p>
 
         </div>
 
@@ -153,7 +235,7 @@
                 <a class="pagination-item older" href="/blog/trigonometry/sum-to-product/">Previous</a>
             
             
-                <span class="pagination-item newer">Next</span>
+                <a class="pagination-item newer" href="/blog/trigonometry/law-of-cosines/">Next</a>
             
         </div>
         <h3 style="text-align:center; margin-bottom:1em;">

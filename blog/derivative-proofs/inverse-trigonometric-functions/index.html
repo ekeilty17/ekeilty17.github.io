@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Inverse Trigonometric Functions &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded Latex support -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX","input/MathML","output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js", "cancel.js"]
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!-- Enable Tikz support -->
+<link rel="stylesheet" type="text/css" href="http://tikzjax.com/v1/fonts.css">
+<script src="http://tikzjax.com/v1/tikzjax.js"></script>
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">Software Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/resume">R&eacute;sum&eacute;</a>
+          </li>
+        
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2023 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">Inverse Trigonometric Functions</h1>
+            <!-- <span class="series-date">08 Jan 2023</span> -->
+            <time datetime="2023-01-08T00:00:00-05:00" class="post-date">08 Jan 2023</time>
+            <p>All proofs will be using the inverse derivative property</p>
+
+<h2 id="sine">Sine</h2>
+
+\[\begin{align}
+    \frac{d}{dx} \sin^{-1} (x)
+    &amp;= \frac{1}{\frac{d}{dz} \sin(z) \bigg\rvert_{z=\sin^{-1} (x)} } \\[10pt]
+    &amp;= \frac{1}{\cos(z) \bigg\rvert_{z=\sin^{-1} (x)} } \\[10pt]
+    &amp;= \frac{1}{\cos(\sin^{-1} (x))} \\[10pt]
+    &amp;= \frac{1}{\sqrt{\cos^2(\sin^{-1} (x))}} \\[10pt]
+    &amp;= \frac{1}{\sqrt{1 - \sin^2(\sin^{-1} (x))}} \\[10pt]
+    &amp;= \frac{1}{\sqrt{1 - x^2}}
+\end{align}\]
+
+<p><br /></p>
+
+<h2 id="cosine">Cosine</h2>
+
+\[\begin{align}
+    \frac{d}{dx} \cos^{-1} (x)
+    &amp;= \frac{1}{\frac{d}{dz} \cos(z) \bigg\rvert_{z=\cos^{-1} (x)} } \\[10pt]
+    &amp;= \frac{1}{-\sin(z) \bigg\rvert_{z=\cos^{-1} (x)} } \\[10pt]
+    &amp;= - \frac{1}{\sin(\cos^{-1} (x))} \\[10pt]
+    &amp;= - \frac{1}{\sqrt{\sin^2(\cos^{-1} (x))}} \\[10pt]
+    &amp;= - \frac{1}{\sqrt{1 - \cos^2(\cos^{-1} (x))}} \\[10pt]
+    &amp;= - \frac{1}{\sqrt{1 - x^2}}
+\end{align}\]
+
+<p><br /></p>
+
+<h2 id="tangent">Tangent</h2>
+
+\[\begin{align}
+    \frac{d}{dx} \tan^{-1} (x)
+    &amp;= \frac{1}{\frac{d}{dz} \tan(z) \bigg\rvert_{z=\tan^{-1} (x)} } \\[10pt]
+    &amp;= \frac{1}{\sec^2(z) \bigg\rvert_{z=\tan^{-1} (x)} } \\[10pt]
+    &amp;= \frac{1}{\sec^2(\tan^{-1} (x))} \\[10pt]
+    &amp;= \frac{1}{1 + \tan^2(\tan^{-1} (x))} \\[10pt]
+    &amp;= \frac{1}{1 + x^2}
+\end{align}\]
+
+<p><br /></p>
+
+<h2 id="secant">Secant</h2>
+
+\[\begin{align}
+    \frac{d}{dx} \sec^{-1} (x)
+    &amp;= \frac{1}{\frac{d}{dz} \sec(z) \bigg\rvert_{z=\sec^{-1} (x)} } \\[10pt]
+    &amp;= \frac{1}{\sec(z) \tan(z) \bigg\rvert_{z=\sec^{-1} (x)} } \\[10pt]
+    &amp;= \frac{1}{\sec(\sec^{-1} (x)) \tan(\sec^{-1} (x)) } \\[10pt]
+    &amp;= \frac{1}{x \sqrt{\tan^2(\sec^{-1} (x))} } \\[10pt]
+    &amp;= \frac{1}{x \sqrt{1 + \sec^2(\sec^{-1} (x))} } \\[10pt]
+    &amp;= \frac{1}{x \sqrt{1 + x^2} } \\[10pt]
+\end{align}\]
+
+<p><strong>TODO</strong> need to explain why we get an absolute value sign</p>
+
+<p><br /></p>
+
+<h2 id="cosecant">Cosecant</h2>
+
+\[\begin{align}
+    \frac{d}{dx} \csc^{-1} (x)
+    &amp;= \frac{1}{\frac{d}{dz} \csc(z) \bigg\rvert_{z=\csc^{-1} (x)} } \\[10pt]
+    &amp;= \frac{1}{- \csc(z) \cot(z) \bigg\rvert_{z=\csc^{-1} (x)} } \\[10pt]
+    &amp;= - \frac{1}{\csc(\csc^{-1} (x)) \cot(\csc^{-1} (x)) } \\[10pt]
+    &amp;= - \frac{1}{x \sqrt{\cot^2(\csc^{-1} (x))} } \\[10pt]
+    &amp;= - \frac{1}{x \sqrt{1 + \csc^2(\csc^{-1} (x))} } \\[10pt]
+    &amp;= - \frac{1}{x \sqrt{1 + x^2} } \\[10pt]
+\end{align}\]
+
+<p><strong>TODO</strong> need to explain why we get an absolute value sign</p>
+
+<p><br /></p>
+
+<h2 id="cotangent">Cotangent</h2>
+
+\[\begin{align}
+    \frac{d}{dx} \cot^{-1} (x)
+    &amp;= \frac{1}{\frac{d}{dz} \cot(z) \bigg\rvert_{z=\cot^{-1} (x)} } \\[10pt]
+    &amp;= \frac{1}{- \csc^2(z) \bigg\rvert_{z=\cot^{-1} (x)} } \\[10pt]
+    &amp;= - \frac{1}{\csc^2(\cot^{-1} (x))} \\[10pt]
+    &amp;= - \frac{1}{1 + \cot^2(\cot^{-1} (x))} \\[10pt]
+    &amp;= - \frac{1}{1 + x^2}
+\end{align}\]
+
+        </div>
+
+        <!-- Adding the ability to move between parts of the series -->
+        
+        
+        
+
+        
+        
+        
+
+        <!-- Getting capitalized title for series -->
+        
+        
+        
+        <!-- Getting url for series, which is just the page url with the last /... removed -->
+        
+
+        <div class="pagination" style="margin-top:1em;">
+            
+                <a class="pagination-item older" href="/blog/derivative-proofs/trigonometric-functions/">Previous</a>
+            
+            
+                <a class="pagination-item newer" href="/blog/derivative-proofs/function-to-the-power-of-a-function/">Next</a>
+            
+        </div>
+        <h3 style="text-align:center; margin-bottom:1em;">
+            <a href="/blog/derivative-proofs">
+            
+                Derivative
+            
+                Proofs
+            
+         Series</a>
+        </h3>
+    </div>
+    
+  </body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Monotonicity and Antimonotonicity &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded Latex support -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX","input/MathML","output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js", "cancel.js"]
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!-- Enable Tikz support -->
+<link rel="stylesheet" type="text/css" href="http://tikzjax.com/v1/fonts.css">
+<script src="http://tikzjax.com/v1/tikzjax.js"></script>
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">Software Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/resume">R&eacute;sum&eacute;</a>
+          </li>
+        
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2023 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">Monotonicity and Antimonotonicity</h1>
+            <!-- <span class="series-date">01 Sep 2022</span> -->
+            <time datetime="2022-09-01T00:00:00-04:00" class="post-date">01 Sep 2022</time>
+            <p>The easiest way to explain monotonicity is to make an analogy with inequalities in algebra. Suppose I had the expression $x \geq y$. Adding any number $a$ to both sides preserves the direction of the inequality. Thus, addition is called <strong>monotonic</strong>. However, if I multiply by a negative number or take the reciprocals, then the direction of the inequality flips. Thus, these operations are called <strong>antimonotonic</strong>. We have the same concept in Boolean Algebra with $\Rightarrow$ and $\Leftarrow$.</p>
+
+<h2 id="monotonic-operations">Monotonic Operations</h2>
+
+<p>$(a \Rightarrow b) \quad \Rightarrow \quad (c \wedge a) \Rightarrow (c \wedge b)$</p>
+
+\[\begin{align}
+    &amp;a \Rightarrow b                                           &amp;&amp; \\
+    &amp;= \overline{a} \vee b                                  &amp;&amp;\text{Material Implication} \\
+    &amp;\Rightarrow (\overline{a} \vee b) \vee \overline{c}       &amp;&amp;\text{Generalization} \\
+    &amp;= \overline{a} \vee (\overline{c} \vee b)              &amp;&amp;\text{Associativity and Commutativity} \\
+    &amp;= \overline{a} \vee (\overline{c} \vee (c \wedge b))   &amp;&amp;\text{Simplification} \\
+    &amp;= (\overline{c} \vee \overline{a}) \vee (c \wedge b)   &amp;&amp;\text{Associativity and Commutativity} \\
+    &amp;= (\overline{c \wedge a}) \vee (c \wedge b)            &amp;&amp;\text{De Morgan's Law} \\
+    &amp;= (c \wedge a) \Rightarrow (c \wedge b)                   &amp;&amp;\text{Material Implication}
+\end{align}\]
+
+<p><br /></p>
+
+<p>$(a \Rightarrow b) \quad \Rightarrow \quad (c \vee a) \Rightarrow (c \vee b)$</p>
+
+\[\begin{align}
+    &amp;a \Rightarrow b                                           &amp;&amp; \\
+    &amp;= \overline{a} \vee b                                  &amp;&amp;\text{Material Implication} \\
+    &amp;\Rightarrow (\overline{a} \vee b) \vee c                  &amp;&amp;\text{Generalization} \\
+    &amp;= (c \vee \overline{a}) \vee b                         &amp;&amp;\text{Associativity and Commutativity} \\
+    &amp;= (c \vee (\overline{c} \wedge \overline{a})) \vee b   &amp;&amp;\text{Simplification} \\
+    &amp;= (\overline{c} \wedge \overline{a}) \vee (c \vee b)   &amp;&amp;\text{Associativity and Commutativity} \\
+    &amp;= (\overline{c \vee a}) \vee (c \vee b)                &amp;&amp;\text{De Morgan's Law} \\
+    &amp;= (c \vee a) \Rightarrow (c \vee b)                       &amp;&amp;\text{Material Implication}
+\end{align}\]
+
+<p><br /></p>
+
+<p>$(a \Rightarrow b) \quad \Rightarrow \quad (c \Rightarrow a) \Rightarrow (c \Rightarrow b)$</p>
+
+\[\begin{align}
+    &amp;a \Rightarrow b                                                   &amp;&amp; \\
+    &amp;= \overline{a} \vee b                                          &amp;&amp;\text{Material Implication} \\
+    &amp;\Rightarrow (\overline{a} \vee b) \vee \overline{c}               &amp;&amp;\text{Generalization} \\
+    &amp;= (\overline{c} \vee \overline{a}) \vee b                      &amp;&amp;\text{Associativity and Commutativity} \\
+    &amp;= (\overline{c} \vee (c \wedge \overline{a})) \vee b           &amp;&amp;\text{Simplification} \\
+    &amp;= (c \wedge \overline{a}) \vee (\overline{c} \vee b)           &amp;&amp;\text{Associativity and Commutativity} \\
+    &amp;= (\overline{\overline{c} \vee a}) \vee (\overline{c} \vee b)  &amp;&amp;\text{De Morgan's Law} \\
+    &amp;= (\overline{c \Rightarrow a}) \vee (c \Rightarrow b)                &amp;&amp;\text{Material Implication 2 times} \\
+    &amp;= (c \Rightarrow a) \Rightarrow (c \Rightarrow b)                       &amp;&amp;\text{Material Implication}
+\end{align}\]
+
+<p><br /></p>
+
+<p>Thus, $\wedge$ and $\vee$ are monotonic. $\Rightarrow$ is monotonic in its antecedent.</p>
+
+<h2 id="antimonotonic-operations">Antimonotonic Operations</h2>
+
+<p>$(a \Rightarrow b) \quad \Rightarrow \quad (a \Rightarrow c) \Leftarrow (b \Rightarrow c)$</p>
+
+\[\begin{align}
+    &amp;a \Rightarrow b                                                   &amp;&amp; \\
+    &amp;= \overline{a} \vee b                                          &amp;&amp;\text{Material Implication} \\
+    &amp;\Rightarrow (\overline{a} \vee b) \vee c               &amp;&amp;\text{Generalization} \\
+    &amp;= (c \vee b) \vee \overline{a}                      &amp;&amp;\text{Associativity and Commutativity} \\
+    &amp;= (c \vee (\overline{c} \wedge b)) \vee \overline{a}           &amp;&amp;\text{Simplification} \\
+    &amp;= (b \wedge \overline{c}) \vee (\overline{a} \vee c)           &amp;&amp;\text{Associativity and Commutativity} \\
+    &amp;= (\overline{\overline{b} \vee c}) \vee (\overline{a} \vee c)  &amp;&amp;\text{De Morgan's Law} \\
+    &amp;= (\overline{b \Rightarrow c}) \vee (a \Rightarrow c)                &amp;&amp;\text{Material Implication 2 times} \\
+    &amp;= (c \Rightarrow a) \Rightarrow (c \Rightarrow b)                       &amp;&amp;\text{Material Implication} \\
+    &amp;= (a \Rightarrow c) \Leftarrow (b \Rightarrow c)                       &amp;&amp;\text{Mirror}
+\end{align}\]
+
+<p>Thus, we see that $\Rightarrow$ is antimonotonic in its consequent.</p>
+
+<p>Note that $=$ and $\neq$ are neither monotonic nor antimonotonic.</p>
+
+        </div>
+
+        <!-- Adding the ability to move between parts of the series -->
+        
+        
+        
+
+        
+        
+        
+
+        <!-- Getting capitalized title for series -->
+        
+        
+        
+        <!-- Getting url for series, which is just the page url with the last /... removed -->
+        
+
+        <div class="pagination" style="margin-top:1em;">
+            
+                <a class="pagination-item older" href="/blog/boolean-algebra/transitivity/">Previous</a>
+            
+            
+                <a class="pagination-item newer" href="/blog/boolean-algebra/consensus-and-resolution/">Next</a>
+            
+        </div>
+        <h3 style="text-align:center; margin-bottom:1em;">
+            <a href="/blog/boolean-algebra">
+            
+                Boolean
+            
+                Algebra
+            
+         Series</a>
+        </h3>
+    </div>
+    
+  </body>
+</html>

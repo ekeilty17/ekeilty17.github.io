@@ -42,7 +42,7 @@
         jax: ["input/TeX","input/MathML","output/SVG", "output/CommonHTML"],
         extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
         TeX: {
-            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js", "cancel.js"]
         },
         tex2jax: {
             inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -128,7 +128,9 @@
             <h1 class="post-title">Operation Identities</h1>
             <!-- <span class="series-date">27 Aug 2022</span> -->
             <time datetime="2022-08-27T00:00:00-04:00" class="post-date">27 Aug 2022</time>
-            <p>With the completion of De Morgan’s Law, we have proven most of the fundametal boolean algebra laws. Now, we will continue to some more practical laws that will help to speed up future proofs. This section essentially proves all of the things we intuitively know to be true.</p>
+            <p>With the completion of De Morgan’s Law, we have proven most of the fundamental boolean algebra laws. Now, we will continue to some more practical laws that will help to speed up future proofs. This section essentially proves all of the things we intuitively know to be true.</p>
+
+<p><br /></p>
 
 <h2 id="double-negation">Double Negation</h2>
 
@@ -158,7 +160,7 @@
     &amp;= \overline{(\overline{a})} \wedge a                                                           &amp;&amp;\text{identity}
 \end{align}\]
 
-<p>Now, we prove the desired result. In each step where the justification is “Above”, you could imagine inserting the above logic to arive at the next line. Separating the logic out just improves the readability.</p>
+<p>Now, we prove the desired result. In each step where the justification is “Above”, you could imagine inserting the above logic to arrive at the next line. Separating the logic out just improves the readability.</p>
 
 <p>$\overline{(\overline{a})} = a$</p>
 
@@ -171,18 +173,22 @@
     &amp;= a                                                &amp;&amp;\text{Absorption}
 \end{align}\]
 
+<p><br /></p>
+
 <h2 id="material-implication">Material Implication</h2>
 
-<p>You may recall that Material Implication is one of that axioms that states $(a \implies b) = (\overline{a} \vee b)$. This is an extension of that axiom.</p>
+<p>You may recall that Material Implication is a definition, which states $(a \Rightarrow b) = (\overline{a} \vee b)$. This is an extension of that axiom.</p>
 
-<p>$(a \impliedby b) \quad = \quad (a \vee \overline{b})$</p>
+<p>$(a \Leftarrow b) \quad = \quad (a \vee \overline{b})$</p>
 
 \[\begin{align}
-    &amp;a \impliedby b             &amp;&amp; \\
-    &amp;= b \implies a             &amp;&amp;\text{Mirror} \\
+    &amp;a \Leftarrow b             &amp;&amp; \\
+    &amp;= b \Rightarrow a          &amp;&amp;\text{Mirror} \\
     &amp;= \overline{b} \vee a      &amp;&amp;\text{Material Implication} \\
     &amp;= a \vee \overline{b}      &amp;&amp;\text{Commutativity}
 \end{align}\]
+
+<p><br /></p>
 
 <h2 id="equality">Equality</h2>
 
@@ -190,13 +196,16 @@
 
 \[\begin{align}
     &amp;a = b                                                                                  &amp;&amp; \\
-    &amp;= (a \implies b) \wedge (a \impliedby b)                                               &amp;&amp;\text{Double Implication} \\
+    &amp;= (a \Rightarrow b) \wedge (a \Leftarrow b)                                            &amp;&amp;\text{Double Implication} \\
     &amp;= (\overline{a} \vee b) \wedge (a \vee \overline{b})                                   &amp;&amp;\text{Material Implication} \\
+    &amp; \\
     &amp;= (\overline{a} \wedge (a \vee \overline{b})) \vee (b \wedge (a \vee \overline{b}))    &amp;&amp;\text{Distributivity} \\
     &amp;= (\overline{a} \wedge (a \vee \overline{b})) \vee (b \wedge (\overline{b} \vee a))    &amp;&amp;\text{Commutativity} \\
     &amp;= (\overline{a} \wedge \overline{b}) \vee (b \wedge a)                                 &amp;&amp;\text{Simplification 2 times} \\
     &amp;= (a \wedge b) \vee (\overline{a} \wedge \overline{b})                                 &amp;&amp;\text{Commutativity 2 times}
 \end{align}\]
+
+<p><br /></p>
 
 <h2 id="difference">Difference</h2>
 
@@ -211,6 +220,8 @@
     &amp;= (\overline{a} \wedge b) \vee (a \wedge \overline{b})                     &amp;&amp;\text{Commutativity}
 \end{align}\]
 
+<p><br /></p>
+
 \[\begin{align}
     &amp;a \neq b                                                                       &amp;&amp; \\
     &amp;= (\overline{a = b})                                                           &amp;&amp;\text{Exclusion} \\
@@ -220,9 +231,11 @@
     &amp;= (a \vee b) \wedge (\overline{a} \vee \overline{b})                           &amp;&amp;\text{Commutativity}
 \end{align}\]
 
+<p><br /></p>
+
 <h2 id="exclusion">Exclusion</h2>
 
-<p>You may recall that exclusion was one of the axioms, which states that $(a \neq b) = (\overline{a = b})$. This is an extention of that axiom.</p>
+<p>You may recall that exclusion is a definition, which states that $(a \neq b) = (\overline{a = b})$. This is an extension of that axiom.</p>
 
 <p>$(a \neq b) \quad = \quad (a = \overline{b}) \quad = \quad (\overline{a} = b)$</p>
 
@@ -230,16 +243,18 @@
     &amp;a \neq b                                                                       &amp;&amp; \\
     &amp;= (a \vee b) \wedge (\overline{a} \vee \overline{b})                           &amp;&amp;\text{Difference} \\
     &amp;= (\overline{(\overline{a})} \vee b) \wedge (\overline{a} \vee \overline{b})   &amp;&amp;\text{Double Negation} \\
-    &amp;= (\overline{a} \implies b) \wedge (\overline{a} \impliedby b)                 &amp;&amp;\text{Material Implication 2 times} \\
+    &amp;= (\overline{a} \Rightarrow b) \wedge (\overline{a} \Leftarrow b)              &amp;&amp;\text{Material Implication 2 times} \\
     &amp;= (\overline{a} = b)                                                           &amp;&amp;\text{Double Implication}
 \end{align}\]
+
+<p><br /></p>
 
 \[\begin{align}
     &amp;a \neq b                                                                       &amp;&amp; \\
     &amp;= (a \vee b) \wedge (\overline{a} \vee \overline{b})                           &amp;&amp;\text{Difference} \\
     &amp;= (a \vee \overline{(\overline{b})}) \wedge (\overline{a} \vee \overline{b})   &amp;&amp;\text{Double Negation} \\
-    &amp;= (a \impliedby \overline{b}) \wedge (a \implies \overline{b})                 &amp;&amp;\text{Material Implication 2 times} \\
-    &amp;= (a \implies \overline{b}) \wedge (a \impliedby \overline{b})                 &amp;&amp;\text{Commutativity} \\
+    &amp;= (a \Leftarrow \overline{b}) \wedge (a \Rightarrow \overline{b})              &amp;&amp;\text{Material Implication 2 times} \\
+    &amp;= (a \Rightarrow \overline{b}) \wedge (a \Leftarrow \overline{b})              &amp;&amp;\text{Commutativity} \\
     &amp;= (a = \overline{b})                                                           &amp;&amp;\text{Double Implication}
 \end{align}\]
 

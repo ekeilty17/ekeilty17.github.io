@@ -42,7 +42,7 @@
         jax: ["input/TeX","input/MathML","output/SVG", "output/CommonHTML"],
         extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
         TeX: {
-            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js", "cancel.js"]
         },
         tex2jax: {
             inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -128,7 +128,37 @@
             <h1 class="post-title">Miscellaneous Simple Relations</h1>
             <!-- <span class="series-date">22 Aug 2022</span> -->
             <time datetime="2022-08-22T00:00:00-04:00" class="post-date">22 Aug 2022</time>
-            <h2 id="universal-bound--null-element--base">Universal Bound / Null Element / Base</h2>
+            <p>As I stated in the previous post, the truth tables can be derived from the axioms. This is essentially the purpose of this post. It contains a lot of very simple laws. The proofs are very cute, so I urge you to try them for yourself. Moreover, since the laws are so simple, they are some of the most commonly used laws.</p>
+
+<p>I also recognize that this post is very long. So I have a summary of all of the results at the end.</p>
+
+<p><br /></p>
+
+<h2 id="boolean-negation">Boolean Negation</h2>
+
+<p>$\overline{ \color{green}T } \quad = \quad \color{red}F$</p>
+
+\[\begin{align}
+    &amp; \overline{ \color{green}T } \\
+    &amp;= \color{green}T \wedge \overline{ \color{green}T }        &amp;&amp;\text{Identity} \\
+    &amp;= \color{red}F                                             &amp;&amp;\text{Noncontradiction}
+\end{align}\]
+
+<p><br /></p>
+
+<p>$\overline{ \color{red}F } \quad = \quad \color{green}T$</p>
+
+\[\begin{align}
+    &amp; \overline{ \color{red}F } \\
+    &amp;= \color{red}F  \vee \overline{ \color{red}F }     &amp;&amp;\text{Identity} \\
+    &amp;= \color{green}T                                   &amp;&amp;\text{Excluded Middle}
+\end{align}\]
+
+<p>This proves the negation truth table given in the previous post.</p>
+
+<p><br /></p>
+
+<h2 id="universal-bound--null-element--base">Universal Bound / Null Element / Base</h2>
 
 <p>$a \wedge \color{red}F \quad = \quad \color{red}F$</p>
 
@@ -141,6 +171,8 @@
     &amp;= \color{red}F                                             &amp;&amp;\text{Noncontradiction}
 \end{align}\]
 
+<p><br /></p>
+
 <p>$a \vee \color{green}T \quad = \quad \color{green}T$</p>
 
 \[\begin{align}
@@ -152,23 +184,31 @@
     &amp;= \color{green}T                                           &amp;&amp;\text{Excluded Middle}
 \end{align}\]
 
-<p>$\color{red}F \implies a \quad = \quad \color{green}T$</p>
+<p>Coupled with the Identity and Commutativity axioms for $\vee$ and $\wedge$, this proves their truth tables given in the previous post.</p>
+
+<p><br /></p>
+
+<p>$\color{red}F \Rightarrow a \quad = \quad \color{green}T$</p>
 
 \[\begin{align}
-    &amp;\color{red}F \implies a \\
+    &amp;\color{red}F \Rightarrow a \\
     &amp;= \overline{\color{red}F} \vee a   &amp;&amp;\text{Material Implication} \\
-    &amp;= \color{green}T \vee a            &amp;&amp;\text{Definition of negation} \\
+    &amp;= \color{green}T \vee a            &amp;&amp;\text{Boolean Negation} \\
     &amp;= a \vee \color{green}T            &amp;&amp;\text{Commutativity} \\
     &amp;= \color{green}T                   &amp;&amp;\text{Base}
 \end{align}\]
 
-<p>$a \implies \color{green}T \quad = \quad \color{green}T$</p>
+<p><br /></p>
+
+<p>$a \Rightarrow \color{green}T \quad = \quad \color{green}T$</p>
 
 \[\begin{align}
-    &amp;a \implies \color{green}T \\
+    &amp;a \Rightarrow \color{green}T \\
     &amp;= \overline{a} \vee \color{green}T     &amp;&amp;\text{Material Implication} \\
     &amp;= \color{green}T                       &amp;&amp;\text{Base}
 \end{align}\]
+
+<p><br /></p>
 
 <h2 id="idempotent">Idempotent</h2>
 
@@ -183,6 +223,8 @@
     &amp;= a                                            &amp;&amp;\text{Identity}
 \end{align}\]
 
+<p><br /></p>
+
 <p>$a \vee a \quad = \quad a$</p>
 
 \[\begin{align}
@@ -194,44 +236,159 @@
     &amp;= a                                        &amp;&amp;\text{Identity}
 \end{align}\]
 
+<p><br /></p>
+
 <h2 id="reflexive">Reflexive</h2>
 
-<p>$a \implies a \quad = \quad \color{green}T$</p>
+<p>$a \Rightarrow a \quad = \quad \color{green}T$</p>
 
 \[\begin{align}
-    &amp;a \implies a \\
+    &amp;a \Rightarrow a \\
     &amp;= (\overline{a} \vee a)    &amp;&amp;\text{Material Implications} \\
     &amp;= \color{green}T           &amp;&amp;\text{Excluded Middle}
 \end{align}\]
+
+<p><br /></p>
 
 <p>$a = a \quad = \quad \color{green}T$</p>
 
 \[\begin{align}
     &amp;a = a \\
-    &amp;= (a \implies a) \wedge (a \impliedby a)   &amp;&amp;\text{Double Implication} \\
-    &amp;= (a \implies a) \wedge (a \implies a)     &amp;&amp;\text{Mirror} \\
-    &amp;= \color{green}T \wedge \color{green}T     &amp;&amp;\text{Reflexive} \\
-    &amp;= \color{green}T                           &amp;&amp;\text{Definition of}\ \wedge
+    &amp;= (a \Rightarrow a) \wedge (a \Leftarrow a)    &amp;&amp;\text{Double Implication} \\
+    &amp;= (a \Rightarrow a) \wedge (a \Rightarrow a)   &amp;&amp;\text{Mirror} \\
+    &amp;= \color{green}T \wedge \color{green}T         &amp;&amp;\text{Reflexive} \\
+    &amp;= \color{green}T                               &amp;&amp;\text{Identity}
 \end{align}\]
+
+<p><br /></p>
+
+<h2 id="anti-reflective">Anti-Reflective</h2>
+
+<p>$a \neq a \quad = \quad \color{red}F$</p>
+
+\[\begin{align}
+    &amp;a \neq a \\
+    &amp;= \overline{(a = a)}               &amp;&amp;\text{Exclusion} \\
+    &amp;= \overline{\color{green}T}        &amp;&amp;\text{Reflexive} \\
+    &amp;= \color{red}F                     &amp;&amp;\text{Boolean Negation}
+\end{align}\]
+
+<p><br /></p>
 
 <h2 id="identity-continued">Identity Continued</h2>
 
-<p>There are some additional identity laws for the other operations. However, they follow from the axioms, so they were not included</p>
+<p>This is <em>continued</em> because the identity laws for $\wedge$ and $\vee$ were axioms.</p>
+
+<p>$\color{green}T \Rightarrow a \quad = \quad a$</p>
 
 \[\begin{align}
-    &amp;\color{green}T \implies a \\
-    &amp;= \overline{\color{green}T} \wedge a   &amp;&amp;\text{Material Implication} \\
-    &amp;= \color{red}F \vee a                  &amp;&amp;\text{Definition of negation} \\
+    &amp;\color{green}T \Rightarrow a \\
+    &amp;= \overline{\color{green}T} \vee a     &amp;&amp;\text{Material Implication} \\
+    &amp;= \color{red}F \vee a                  &amp;&amp;\text{Boolean Negation} \\
     &amp;= a                                    &amp;&amp;\text{Identity}
 \end{align}\]
 
+<p><br /></p>
+
+<p>$\color{green}T = a \quad = \quad a$</p>
+
 \[\begin{align}
     &amp;\color{green}T = a \\
-    &amp;= (\color{green}T \implies a) \wedge (\color{green}T \impliedby a)                     &amp;&amp;\text{Double Implication} \\
-    &amp;= (\color{green}T \implies a) \wedge (a \implies \color{green}T)                       &amp;&amp;\text{Mirror} \\
-    &amp;= (\overline{\color{green}T} \wedge a) \wedge (\overline{a} \wedge \color{green}T)     &amp;&amp;\text{Material Implication}  \\
-    &amp;= a \wedge \color{green}T                                                              &amp;&amp;\text{Identity and Base}  \\
-    &amp;= a                                                                                    &amp;&amp;\text{Identity}
+    &amp;= (\color{green}T \Rightarrow a) \wedge (\color{green}T \Leftarrow a)              &amp;&amp;\text{Double Implication} \\
+    &amp;= (\color{green}T \Rightarrow a) \wedge (a \Rightarrow \color{green}T)             &amp;&amp;\text{Mirror} \\
+    &amp;= (\overline{\color{green}T} \vee a) \wedge (\overline{a} \vee \color{green}T)     &amp;&amp;\text{Material Implication}  \\
+    &amp;= (\color{red}F \vee a) \wedge (\overline{a} \vee \color{green}T)                  &amp;&amp;\text{Boolean Negation}  \\
+    &amp;= a \wedge \color{green}T                                                          &amp;&amp;\text{Identity and Base}  \\
+    &amp;= \color{green}T \wedge a                                                          &amp;&amp;\text{Commutativity}  \\
+    &amp;= a                                                                                &amp;&amp;\text{Identity}
+\end{align}\]
+
+<p><br /></p>
+
+<p>$\color{red}F \neq a \quad = \quad a$</p>
+
+\[\begin{align}
+    &amp;\color{red}F \neq a \\
+    &amp;= \overline{(\color{red}F = a)}                                                            &amp;&amp;\text{Exclusion} \\
+    &amp;= \overline{ (\color{red}F \Rightarrow a) \wedge (\color{red}F \Leftarrow a) }             &amp;&amp;\text{Double Implication} \\
+    &amp;= \overline{ (\color{red}F \Rightarrow a) \wedge (a \Rightarrow \color{red}F) }            &amp;&amp;\text{Mirror} \\
+    &amp;= \overline{ (\overline{\color{red}F} \vee a) \wedge (\overline{a} \vee \color{red}F) }    &amp;&amp;\text{Material Implication}  \\
+    &amp;= \overline{ (\color{green}T \vee a) \wedge (\overline{a} \vee \color{red}F) }             &amp;&amp;\text{Boolean Negation}  \\
+    &amp;= \overline{ (a \vee \color{green}T) \wedge (\color{red}F \vee \overline{a}) }             &amp;&amp;\text{Commutativity 2 times}  \\
+    &amp;= \overline{ (\color{green}T \wedge \overline{a}) }                                        &amp;&amp;\text{Identity and Base}  \\
+    &amp;= \overline{ (\overline{a}) }                                                              &amp;&amp;\text{Identity}  \\
+    &amp;= a                                                                                        &amp;&amp;\text{Double Negation}
+\end{align}\]
+
+<p>Note, I prove double negative in a <a href="/blog/boolean-algebra/operation-identities/">later post</a>, and it does not require this law. Thus, it is not circular.</p>
+
+<p><br /></p>
+
+<h2 id="anti-identity">Anti-Identity</h2>
+
+<p>$\color{red}F \Leftarrow a \quad = \quad \overline{a}$</p>
+
+\[\begin{align}
+    &amp;\color{red}F \Leftarrow a \\
+    &amp;= a \Rightarrow \color{red}F           &amp;&amp;\text{Mirror} \\
+    &amp;= \overline{a} \vee \color{red}F       &amp;&amp;\text{Material Implication} \\
+    &amp;= \overline{a}                         &amp;&amp;\text{Identity}
+\end{align}\]
+
+<p><br /></p>
+
+<p>$\color{red}F = a \quad = \quad \overline{a}$</p>
+
+\[\begin{align}
+    &amp;\color{red}F = a \\
+    &amp;= (\color{red}F \Rightarrow a) \wedge (\color{red}F \Leftarrow a)              &amp;&amp;\text{Double Implication} \\
+    &amp;= (\color{red}F \Rightarrow a) \wedge (a \Rightarrow \color{red}F)             &amp;&amp;\text{Mirror} \\
+    &amp;= (\overline{\color{red}F} \vee a) \wedge (\overline{a} \vee \color{red}F)     &amp;&amp;\text{Material Implication}  \\
+    &amp;= (\color{green}T \vee a) \wedge (\overline{a} \vee \color{red}F)              &amp;&amp;\text{Boolean Negation}  \\
+    &amp;= \color{green}T \wedge \overline{a}                                           &amp;&amp;\text{Identity and Base}  \\
+    &amp;= \color{red}F \wedge \overline{a}                                             &amp;&amp;\text{Commutativity}  \\
+    &amp;= \overline{a}                                                                 &amp;&amp;\text{Identity}
+\end{align}\]
+
+<p><br /></p>
+
+<p>$\color{green}T \neq a \quad = \quad \overline{a}$</p>
+
+\[\begin{align}
+    &amp;\color{green}T \neq a \\
+    &amp;= \overline{(\color{green}T = a)}                                                              &amp;&amp;\text{Exclusion} \\
+    &amp;= \overline{ (\color{green}T \Rightarrow a) \wedge (\color{green}T \Leftarrow a) }             &amp;&amp;\text{Double Implication} \\
+    &amp;= \overline{ (\color{green}T \Rightarrow a) \wedge (a \Rightarrow \color{green}T) }            &amp;&amp;\text{Mirror} \\
+    &amp;= \overline{ (\overline{\color{green}T} \vee a) \wedge (\overline{a} \vee \color{green}T) }    &amp;&amp;\text{Material Implication}  \\
+    &amp;= \overline{ (\color{red}F \vee a) \wedge (\overline{a} \vee \color{green}T) }                 &amp;&amp;\text{Boolean Negation}  \\
+    &amp;= \overline{ (a \wedge \color{green}T) }                                                       &amp;&amp;\text{Identity and Base}  \\
+    &amp;= \overline{a}                                                                                 &amp;&amp;\text{Identity}
+\end{align}\]
+
+<p><br /></p>
+
+<p>Notice that if we exchange $a$ and $\overline{a}$, then these laws are methods of “proof by contradiction”.</p>
+
+<p><br /></p>
+
+<h2 id="summary">Summary</h2>
+
+<p>There are a lot of micro-laws going on here. Essentially, these laws are encoding the truth tables. I just wanted to summarize all of the results. Below is a combination of base, identity, and anti-identity laws.</p>
+
+\[\begin{align}
+    &amp;a \wedge \color{green}T \quad=\quad a                      &amp;\qquad\qquad&amp;    a \wedge \color{red}F \quad=\quad \color{red}F \\
+    &amp;a \vee \color{green}T \quad=\quad \color{green}T           &amp;\qquad\qquad&amp;    a \vee \color{red}F \quad=\quad a \\[10pt]
+    &amp;a \Rightarrow \color{green}T \quad=\quad \color{green}T    &amp;\qquad\qquad&amp;    a \Rightarrow \color{red}F \quad=\quad \overline{a} \\
+    &amp;a \Leftarrow \color{green}T \quad=\quad a                  &amp;\qquad\qquad&amp;    a \Leftarrow \color{red}F \quad=\quad \color{green}T \\[10pt]
+    &amp;a = \color{green}T \quad=\quad a                           &amp;\qquad\qquad&amp;    a = \color{red}F \quad=\quad \overline{a} \\
+    &amp;a \neq \color{green}T \quad=\quad \overline{a}             &amp;\qquad\qquad&amp;    a \neq \color{red}F \quad=\quad a \\
+\end{align}\]
+
+<p>Likewise, below is a combination of idempotent, reflexive, and anti-reflexive laws.</p>
+
+\[\begin{align}
+    &amp;a \wedge a \quad=\quad a           &amp;\qquad\qquad&amp;      a \Rightarrow a \quad=\quad \color{green}T      &amp;\qquad\qquad&amp;  a    = a \quad=\quad \color{green}T\\
+    &amp;a \vee a \quad=\quad a             &amp;\qquad\qquad&amp;      a \Leftarrow a \quad=\quad \color{green}T       &amp;\qquad\qquad&amp;      a \neq a \quad=\quad \color{red}F
 \end{align}\]
 
         </div>
@@ -254,7 +411,7 @@
 
         <div class="pagination" style="margin-top:1em;">
             
-                <a class="pagination-item older" href="/blog/boolean-algebra/definitions-and-axioms/">Previous</a>
+                <a class="pagination-item older" href="/blog/boolean-algebra/axioms-and-operations/">Previous</a>
             
             
                 <a class="pagination-item newer" href="/blog/boolean-algebra/absorption-and-simplification/">Next</a>

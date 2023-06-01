@@ -42,7 +42,7 @@
         jax: ["input/TeX","input/MathML","output/SVG", "output/CommonHTML"],
         extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
         TeX: {
-            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js", "cancel.js"]
         },
         tex2jax: {
             inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -130,71 +130,81 @@
             <time datetime="2022-08-28T00:00:00-04:00" class="post-date">28 Aug 2022</time>
             <h2 id="direct-proofs">Direct Proofs</h2>
 
-<p>These date back to as early as Aristotle and are very well known syllogisms.</p>
+<p>These date back to as early as Aristotle and are very well-known syllogisms.</p>
+
+<p><br /></p>
 
 <h3 id="modus-ponens">Modus Ponens</h3>
 
 <p>“Modus Ponens” is Latin for “method of affirming” and is also known as “affirming the consequent”.</p>
 
-<p>$(a \implies b) \wedge a \quad \implies \quad b$</p>
+<p>$(a \Rightarrow b) \wedge a \quad \Rightarrow \quad b$</p>
 
 \[\begin{align}
-    &amp;(a \implies b) \wedge a            &amp;&amp; \\
+    &amp;(a \Rightarrow b) \wedge a            &amp;&amp; \\
     &amp;= (\overline{a} \vee b) \wedge a   &amp;&amp;\text{Material Implication} \\
     &amp;= a \wedge (\overline{a} \vee b)   &amp;&amp;\text{Commutativity} \\
     &amp;= a \wedge b                       &amp;&amp;\text{Simplification} \\
-    &amp;\implies b                         &amp;&amp;\text{Specialization}
+    &amp;\Rightarrow b                         &amp;&amp;\text{Specialization}
 \end{align}\]
+
+<p><br /></p>
 
 <h3 id="modus-tollens">Modus Tollens</h3>
 
 <p>“Modus Tollens” is Latin for “method of denying” and is also known as “denying the consequent”.</p>
 
-<p>$(a \implies b) \wedge \overline{b} \quad \implies \quad \overline{a}$</p>
+<p>$(a \Rightarrow b) \wedge \overline{b} \quad \Rightarrow \quad \overline{a}$</p>
 
 \[\begin{align}
-    &amp;(a \implies b) \wedge \overline{b}             &amp;&amp; \\
+    &amp;(a \Rightarrow b) \wedge \overline{b}             &amp;&amp; \\
     &amp;= (\overline{a} \vee b) \wedge \overline{b}    &amp;&amp;\text{Material Implication} \\
     &amp;= \overline{b} \wedge (b \vee \overline{a})    &amp;&amp;\text{Commutativity 2 times} \\
     &amp;= \overline{b} \wedge \overline{a}             &amp;&amp;\text{Simplification} \\
-    &amp;\implies \overline{a}                          &amp;&amp;\text{Specialization}
+    &amp;\Rightarrow \overline{a}                          &amp;&amp;\text{Specialization}
 \end{align}\]
 
-<h3 id="dysjunctive-syllogism">Dysjunctive Syllogism</h3>
+<p><br /></p>
 
-<p>$(a \vee b) \wedge \overline{a} \quad \implies \quad b$</p>
+<h3 id="disjunctive-syllogism">Disjunctive Syllogism</h3>
+
+<p>$(a \vee b) \wedge \overline{a} \quad \Rightarrow \quad b$</p>
 
 \[\begin{align}
     &amp;(a \vee b) \wedge \overline{a}         &amp;&amp; \\
     &amp;= \overline{a} \wedge (a \vee b)       &amp;&amp;\text{Commutativity} \\
     &amp;= \overline{a} \wedge b                &amp;&amp;\text{Simplification} \\
-    &amp;\implies b                             &amp;&amp;\text{Specialization}
+    &amp;\Rightarrow b                             &amp;&amp;\text{Specialization}
 \end{align}\]
+
+<p><br /></p>
 
 <h2 id="reductio-ad-adsurdum--proof-by-contradiction">Reductio ad Adsurdum / Proof by Contradiction</h2>
 
 <p>This is one of the most widely used proof methods. Now, we have a rigorous proof for it.</p>
 
-<p>$\overline{a} \implies \color{red}F \quad = \quad a$</p>
+<p>$\overline{a} \Rightarrow \color{red}F \quad = \quad a$</p>
 
 \[\begin{align}
-    &amp;\overline{a} \implies \color{red}F     &amp;&amp; \\
+    &amp;\overline{a} \Rightarrow \color{red}F     &amp;&amp; \\
     &amp;= a \vee \color{red}F                  &amp;&amp;\text{Material Implication and Double Negation} \\
     &amp;= a                                    &amp;&amp;\text{Identity}
 \end{align}\]
+
+<p><br /></p>
 
 <h2 id="contrapositive">Contrapositive</h2>
 
 <p>This can be extremely useful in some proofs.</p>
 
-<p>$(a \implies b) \quad = \quad (\overline{b} \implies \overline{a})$</p>
+<p>$(a \Rightarrow b) \quad = \quad (\overline{b} \Rightarrow \overline{a})$</p>
 
 \[\begin{align}
-    &amp;a \implies b                                   &amp;&amp; \\
+    &amp;a \Rightarrow b                                   &amp;&amp; \\
     &amp;= \overline{a} \vee b                          &amp;&amp;\text{Material Implication} \\
     &amp;= b \vee \overline{a}                          &amp;&amp;\text{Commutativity} \\
     &amp;= \overline{(\overline{b})} \vee \overline{a}  &amp;&amp;\text{Double Negation} \\
-    &amp;= \overline{b} \implies \overline{a}           &amp;&amp;\text{Material Implication}
+    &amp;= \overline{b} \Rightarrow \overline{a}           &amp;&amp;\text{Material Implication}
 \end{align}\]
 
         </div>

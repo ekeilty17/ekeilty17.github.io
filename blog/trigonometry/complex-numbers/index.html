@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Complex Numbers &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded Latex support -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX","input/MathML","output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js", "cancel.js"]
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!-- Enable Tikz support -->
+<link rel="stylesheet" type="text/css" href="http://tikzjax.com/v1/fonts.css">
+<script src="http://tikzjax.com/v1/tikzjax.js"></script>
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">Software Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/resume">R&eacute;sum&eacute;</a>
+          </li>
+        
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2023 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">Complex Numbers</h1>
+            <!-- <span class="series-date">18 Aug 2022</span> -->
+            <time datetime="2022-08-18T00:00:00-04:00" class="post-date">18 Aug 2022</time>
+            <p>I originally wasn’t going to make a post about this topic, but I realized that trigonometry is so connected to complex numbers, that it is an extremely natural follow-up.</p>
+
+<p><br /></p>
+
+<h2 id="definitions-of-the-complex-numbers">Definitions of the Complex Numbers</h2>
+
+<p>The normal numbers that we use on a daily basis ($0$, $1$, $2$, $-1/12$, $\pi$, etc) are called <strong>real numbers</strong>. The set of all real numbers is denoted with the symbol $\mathbb{R}$. One property of squaring real numbers is that the result is always positive. There is seemingly no square root of a negative real number. Thus, mathematicians decided to define such a number into existence. The variable $i$ is defined as</p>
+
+\[i^2 + 1 = 0 \qquad\text{or}\qquad i^2 = -1\]
+
+<p>$i$ is called an <strong>imaginary number</strong>. The set of all imaginary numbers is denoted with the symbol $\mathbb{I}$. Now, suppose we want to take the square root of $-64$, we can do that as follows</p>
+
+\[\sqrt{-64} \ = \ \sqrt{64 \cdot (-1)} \ = \ \sqrt{64} \cdot \sqrt{-1} \ = \ 8i\]
+
+<p>Consider what happens when we combine real and imaginary numbers.</p>
+
+\[z = x + iy      \qquad\text{For any } x, y \in \mathbb{R}\]
+
+<p>Notice that there is no way to further simplify the right-hand side because real numbers and imaginary numbers do not interact via addition/subtraction. We call $z$ a <strong>complex number</strong> because it contains a real number component and an imaginary number component. The set of all real numbers is denoted with the symbol $\mathbb{C}$.</p>
+
+<p><br /></p>
+
+<h2 id="the-complex-plane">The Complex Plane</h2>
+
+<p>Since the real and imaginary components of complex numbers are independent of each other, we can think of complex numbers as points on the 2D plane. The x-axis is the real number line, and the y-axis is the imaginary number line. This is called the <strong>complex plane</strong>.</p>
+
+<center>
+<embed src="/svg/complex-numbers/complex-plane.svg" type="image/svg+xml" />
+</center>
+
+<p>This should look very familiar. We could instead express this same point using the real 2D plane.</p>
+
+<center>
+<embed src="/svg/complex-numbers/real-plane.svg" type="image/svg+xml" />
+</center>
+
+<p>Therefore, we can instead express complex numbers as the following</p>
+
+\[z = r\cos \theta + i r \sin \theta = r(\cos \theta + i \sin \theta) \qquad\text{For } r, \theta \in \mathbb{R} \text{ and } r &gt; 0\]
+
+<p>Now, instead of thinking of complex numbers as one real component and one imaginary component, we can think of them as a magnitude and a direction in the complex plane. Thus, the above is often shorted as $z = r \ cis \ (\theta)$.</p>
+
+<p>We now have two different, but equivalent, ways to write a complex number. $z = x + iy$ is call the <strong>Cartesian form</strong> and $z = r \ cis \ \theta$ is called <strong>polar form</strong>. It’s important to know how to translate between them because they are useful in different situations. This is just a simple application of trigonometry and the Pythagorean theorem.</p>
+
+\[\begin{align}
+    &amp;x = r \cos \theta   &amp;\qquad\qquad&amp;    r = \sqrt{x^2 + y^2} \\[10pt]
+    &amp;y = r \sin \theta   &amp;\qquad\qquad&amp;    \tan \theta = \frac{y}{x}
+\end{align}\]
+
+<p><br /></p>
+
+<h2 id="addition-multiplication-and-exponentiation-of-complex-numbers">Addition, Multiplication, and Exponentiation of Complex Numbers</h2>
+
+<p>The addition of complex numbers occurs component-wise, thus we should use Cartesian form. If $z = x + i y$ and $w = a + i b$, then</p>
+
+\[z + w = (x + a) + i (y + b)\]
+
+<p><br /></p>
+
+<p>Multiplication of complex numbers is where things get interesting. Here, it is best to use polar forms. If $z = r(\cos \theta + i \sin \theta)$ and $w = s (\cos \phi + i \sin \phi)$, then</p>
+
+\[\begin{align}
+    z \cdot w 
+    &amp;= r(\cos \theta + i \sin \theta) \cdot s (\cos \phi + i \sin \phi) \\[10pt]
+    &amp;= rs(\cos \theta \cos \phi + i \sin \theta \cos \phi + i \sin \phi \cos \theta + i^2 \sin \theta \sin \phi) \\[10pt]
+    &amp;= rs((\cos \theta \cos \phi - \sin \theta \sin \phi) + i (\sin \theta \cos \phi + \sin \phi \cos \theta)) \\[10pt]
+    &amp;= rs(\cos (\theta + \phi) + i \sin (\theta + \phi)) \\[10pt]
+\end{align}\]
+
+<p>Thus, multiplying $z$ by $w$ <strong>rotated</strong> $z$ by the angle of $w$ and <strong>scaled</strong> $z$ by the magnitude of $w$.</p>
+
+<p><br /></p>
+
+<p>Finally, we take a special case of the multiplication rule to get the <strong>power rule</strong>. If $z = r (\cos \theta + i \sin \theta)$ is a complex number, and $n$ is a positive integer, then</p>
+
+\[z^n = r^n (\cos(n \theta) + i \sin(n \theta))\]
+
+<p><br /></p>
+
+        </div>
+
+        <!-- Adding the ability to move between parts of the series -->
+        
+        
+        
+
+        
+        
+        
+
+        <!-- Getting capitalized title for series -->
+        
+        
+        
+        <!-- Getting url for series, which is just the page url with the last /... removed -->
+        
+
+        <div class="pagination" style="margin-top:1em;">
+            
+                <a class="pagination-item older" href="/blog/trigonometry/inverse-trig-functions/">Previous</a>
+            
+            
+                <a class="pagination-item newer" href="/blog/trigonometry/eulers-identity/">Next</a>
+            
+        </div>
+        <h3 style="text-align:center; margin-bottom:1em;">
+            <a href="/blog/trigonometry">
+            
+                Trigonometry
+            
+         Series</a>
+        </h3>
+    </div>
+    
+  </body>
+</html>
