@@ -5,7 +5,7 @@ categories: blog
 permalink:  /blog/laplace-transforms/
 ---
 
-[Summary Table of all Laplace Transforms](/blog/laplace-transforms/table-of-laplace-transforms)
+[Summary Table of Laplace Transforms](/blog/laplace-transforms/table-of-laplace-transforms)
 
 {% assign sorted_posts = site.posts | where: 'series', 'laplace-transforms' | sort: 'part' %}
 {% for post in sorted_posts %}

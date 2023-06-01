@@ -43,6 +43,8 @@ permalink: /about/personal-interests
 
 ## Favorite Textbooks
 
+These are my favorite textbooks both due to the subject matter, but also due to the thoughtfulness and execution of the presentation.
+
 * "Introduction to the Theory of Computation" - Michael Sipser
 * "Introduction to Electrodynamics" and "Introduction to quantum mechanics" - David J. Griffiths
 * "Analysis I" and "Analysis II" - Terence Tao

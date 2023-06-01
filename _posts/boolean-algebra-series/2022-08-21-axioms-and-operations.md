@@ -22,11 +22,11 @@ The purpose of Boolean algebra is to define the rules for manipulating Boolean e
 
 <br>
 
-## Axioms
+## The Minimal Set of Axioms
 
-Now, there are a couple of ways you can define the axioms of Boolean algebra. One way is to define the behavior of $\color{green}T$ and $\color{red}F$. Then, using a completion argument with truth tables you can start creating laws. I, instead, want to start with some axioms and obtain the definitions of the Boolean operators as a consequence.
+Now, there are a couple of ways you can define the axioms of Boolean algebra. One way is to define the behavior of $\color{green}T$ and $\color{red}F$ via truth tables. Then, using a completion argument with truth tables you can start creating laws. I, instead, want to start with some axioms and obtain the definitions of the Boolean operators and their truth tables as a consequence.
 
-**Complement/Annihilation Laws**
+**Complement/Annihilation**
   * $a \wedge (\neg a) = \color{red}F \qquad$ (Noncontradiction)
   * $a \vee (\neg a) = \color{green}T \qquad$ (Excluded Middle)
 
@@ -42,7 +42,8 @@ Now, there are a couple of ways you can define the axioms of Boolean algebra. On
   * $a \wedge (b \vee c) = (a \wedge b) \vee (a \wedge c)$
   * $a \vee (b \wedge c) = (a \vee b) \wedge (a \vee c)$
 
-<!-- **Substitution**: Let $f(a)$ be some expression with respect to the boolean variable $a$. Then $(f(a) \wedge (a = b)) = (f(b) \wedge (a = b))$, where $f(b)$ is the same boolean expression with respect to the boolean variable $b$. -->
+
+For those well-versed in abstract algebra, these axioms may look awfully similar to those of a [field](http://people.reed.edu/~mayer/math112.html/html1/node16.html)...hmm suspicious.
 
 <br>
 

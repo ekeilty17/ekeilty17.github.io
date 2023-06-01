@@ -8,7 +8,7 @@ tags:       boolean-algebra, table, laws, theorems
 
 ## Definitions of Operations
 
-The operations $\neg$, $\vee$, and $\wedge$ are the fundamental operations with which we can define all other operations/
+The operations $\neg$, $\vee$, and $\wedge$ are the fundamental operations with which we can define all other operations. Note that $\overline{a}$ is used to represent $\neg a$ in order to make expressions more readable.
 
 &emsp;&emsp;**Material Implication**: $\hspace{3.5cm} (a \Rightarrow b) = (\overline{a} \vee b)$
 
