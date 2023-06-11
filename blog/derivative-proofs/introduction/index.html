@@ -126,16 +126,57 @@
 
         <div class="post">
             <h1 class="post-title">Introduction</h1>
-            <!-- <span class="series-date">01 Jan 2023</span> -->
-            <time datetime="2023-01-01T00:00:00-05:00" class="post-date">01 Jan 2023</time>
-            <p><strong>TODO</strong></p>
+            <!-- <span class="series-date">01 Jan 2022</span> -->
+            <time datetime="2022-01-01T00:00:00-05:00" class="post-date">01 Jan 2022</time>
+            <h2 id="purpose-of-this-series">Purpose of this Series</h2>
 
-<ul>
-  <li>need to give the definition of limits</li>
-  <li>need to give limit properties, i.e. can distribute across addition, multiplication, etc. Just assert them as fact, and say I will prove them when I do a series on continuity.</li>
-</ul>
+<p>In this series, I want to prove all of the main single-variable derivative relations from calculus. This has been done a thousand times in a thousand different ways, so I don’t think I’m adding anything to the space. I guess this is mainly just for my own enjoyment.</p>
+
+<p>I am going to keep the proofs at the level of first or second-year calculus. I don’t want to get into Cauchy series, continuity, and delta-epsilon definitions. I think I will save those for a different series.</p>
+
+<p><br /></p>
+
+<h2 id="intuition-of-a-derivative">Intuition of a Derivative</h2>
+
+<p>There is a precise delta-epsilon definition of a derivative, but again I don’t want to get into that stuff in this series. Thus, I am going to just assert the limit definition and give a general intuition.</p>
+
+<p>Often we are interested in the <strong>rate of change</strong> of a function. The meaning of this is exactly as the name would imply. It is a measure of how much the function is changing over some interval. Suppose \(f\) is a function. Then the <strong>average rate of change</strong> between two points $a$ and $b$ is</p>
+
+\[\frac{\Delta f}{\Delta x} = \frac{f(b) - f(a)}{b - a}\]
+
+<p>Geometrically, the average rate of change is the <strong>slope of the secant line</strong> through $f$ from $a$ and $b$.</p>
+
+<center>
+<embed src="/svg/introduction/rate-of-change.svg" type="image/svg+xml" />
+</center>
+
+<p>We want to define a notion of <strong>instantaneous rate of change</strong>, i.e. the amount a function is changing at a single point. On the surface, this doesn’t make any sense. How can we define a change in $f$ if we don’t have a change in $x$? We can imagine the coordinate $(b, f(b))$ sliding down the curve towards $(a, f(a))$. As it does so, the secant line approaches a line that just touches the function as a single point. This is called a <strong>tangent line</strong>. The <strong>slope of the tangent line</strong> is our instantaneous rate of change.</p>
+
+<center>
+<embed src="/svg/introduction/instantaneous-rate-of-change.svg" type="image/svg+xml" />
+</center>
+
+<p>Intuitively, what we are saying is that if we zoom far enough into the point $(a, f(a))$, then the function $f$ will look like a straight line, which has a constant rate of change. Thus, the instantaneous rate of change is well-defined.</p>
+
+<p><br /></p>
+
+<h2 id="the-definition-of-a-derivative">The Definition of a Derivative</h2>
+
+<p>We can rigorously define this notation of “zooming in far enough” by considering a point very, very close to $(a, f(a))$. As we get closer and closer to $(a, f(a))$, the secant line will converge to a tangent line. That is the slope we are interested in. In other words, we want the limit as two points of a secant line become one point of a tangent line. There are two equivalent ways to define this.</p>
+
+\[\frac{df}{dx}\bigg\rvert_{x=a} = f'(a) = \lim_{x \rightarrow a} \frac{f(x) - f(a)}{x - a} \qquad\qquad\qquad \frac{df}{dx} = f'(x) = \lim_{h \rightarrow 0} \frac{f(x+h) - f(x)}{h}\]
+
+<p>Notice the different notations. I will be using both throughout the series.</p>
+
+<p>In the left definition, we fix coordinate $(a, f(a))$ and we consider the secant line from that point to the point $(x, f(x))$. Then, we take the limit as $(x, f(x))$ comes closer and closer to $(a, f(a))$. In the right definition, we fix coordinate $(x, f(x))$. Then, we consider another coordinate a small distance away $(x+h, f(x+h))$ and the corresponding secant line. We see what happens as $h$ approaches $0$, and thus the secant line becomes a tangent line.</p>
+
+<p>In practice, it turns out the right definition is easier to compute since we’ve decoupled the limit from the particular coordinate. Also, the limit of things approaching $0$ is simplier than approaching some arbitrary number $a$.</p>
+
+<p><br /></p>
 
 <h2 id="limit-laws">Limit Laws</h2>
+
+<p>Limits have a precise and technical definition. However, I do not want to explain/prove this in the series. Thus, I will just assert these properties of limits, which we will use. Maybe I will prove them in another series.</p>
 
 <p>Let $f$ and $g$ be functions. Let $c \in \mathbb{R}$ be any constant.</p>
 
@@ -156,6 +197,14 @@
 
 \[\lim_{x \rightarrow a} f(x) = f(a) \\[10pt]
 \lim_{x \rightarrow a} f(g(x)) = f \left ( \lim_{x \rightarrow a} g(x) \right ) \\[10pt]\]
+
+<p>If both $f$ and $g$ are continuous, then</p>
+
+\[\lim_{x \rightarrow a} f(g(x)) = \lim_{g(x) \rightarrow g(a)} f(g(x))\]
+
+<p>Suppose $f$ is a continuous two-variable function, then</p>
+
+\[\lim_{x \rightarrow a} \lim_{y \rightarrow b} f(x, y) = \lim_{y \rightarrow b} \lim_{x \rightarrow a} f(x, y)\]
 
         </div>
 

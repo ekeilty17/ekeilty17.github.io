@@ -126,8 +126,8 @@
 
         <div class="post">
             <h1 class="post-title">Absolute Value</h1>
-            <!-- <span class="series-date">04 Jan 2023</span> -->
-            <time datetime="2023-01-04T00:00:00-05:00" class="post-date">04 Jan 2023</time>
+            <!-- <span class="series-date">04 Jan 2022</span> -->
+            <time datetime="2022-01-04T00:00:00-05:00" class="post-date">04 Jan 2022</time>
             <p>The absolute value is defined as</p>
 
 \[\lvert x \rvert = \begin{cases}
@@ -139,12 +139,19 @@ x &amp;\qquad \text{ if } x \geq 0 \\
 
 <p>If $x &gt; 0$, then $\lvert x \rvert = x$, thus $\frac{d}{dx} \lvert x \rvert = 1 \cdot x^0 = 1$. If $x &lt; 0$, then $\lvert x \rvert = -x$, thus $\frac{d}{dx} \lvert x \rvert = -1 \cdot x^0 = -1$.</p>
 
-<p>Therefore, the derivative is the following</p>
+<p>Therefore, the derivative is the following. There are a few ways we can express it.</p>
 
-\[\frac{d}{dx} \lvert x \rvert = \begin{cases}
-1 &amp;\qquad \text{ if } x \geq 0 \\
+\[\frac{d}{dx} \lvert x \rvert =  \frac{x}{\lvert x \rvert} = \text{sign}(x) = \begin{cases}
+1 &amp;\qquad \text{ if } x &gt; 0 \\
 -1 &amp;\qquad \text{ if } x &lt; 0
 \end{cases}\]
+
+<p>Note that the derivative at $x=0$ does not exist, since the left-hand limit would give a value of ${-}1$ and the right-hand limit would give a value of ${+}1$.</p>
+
+<h2 id="something-silly">Something Silly</h2>
+
+<p>Just for fun, lets take the second derivative of $\lvert x \rvert$. We know that this should be $0$, but let’s see if the math works out.</p>
+
 
         </div>
 

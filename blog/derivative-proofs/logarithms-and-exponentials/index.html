@@ -126,8 +126,8 @@
 
         <div class="post">
             <h1 class="post-title">Logarithms and Exponentials</h1>
-            <!-- <span class="series-date">05 Jan 2023</span> -->
-            <time datetime="2023-01-05T00:00:00-05:00" class="post-date">05 Jan 2023</time>
+            <!-- <span class="series-date">05 Jan 2022</span> -->
+            <time datetime="2022-01-05T00:00:00-05:00" class="post-date">05 Jan 2022</time>
             <p>Some textbooks will define $e$ by its derivative, others define it by its Taylor expansion. For this series, I am going to use the limit definition</p>
 
 \[e^x = \lim_{n \rightarrow \infty} \left ( 1 + \frac{x}{n} \right )^n\]
@@ -158,19 +158,17 @@
 <p>Now, we use the fact that $\log_b (b^x) = x$ and the inverse function derivative property.</p>
 
 \[\begin{align}
-    \frac{d}{dx} \log_b (b^x)
-    &amp;= \frac{1}{b^x \ln b} \cdot \frac{d}{dx} b^x
+    \frac{d}{dx} b^x
+    \quad=\quad \frac{1}{\frac{d}{dz} \log_b (z) \bigg\rvert_{z=b^x} }
+    \quad=\quad \frac{1}{\frac{1}{z \ln b} \bigg\rvert_{z=b^x} }
+    \quad=\quad b^x \ln b
 \end{align}\]
-
-<p>Since the left-hand side is $\frac{d}{dx} \log_b (b^x) = \frac{d}{dx} x = 1$, we have.</p>
-
-\[\frac{d}{dx} b^x = b^x \ln b\]
 
 <p>In particular, if we let $b = e$, then</p>
 
 \[\frac{d}{dx} e^x = e^x\]
 
-<p>This is what makes $e$ such a special constant. It represents the fixed-point of the derivative operation.</p>
+<p>This is what makes $e$ such a special constant. It represents the fixed-point of the derivative operation. In fact, it is the unique fixed point. Thus, if another function is found to also be a fixed-point, then it must be equal to $e^x$.</p>
 
         </div>
 

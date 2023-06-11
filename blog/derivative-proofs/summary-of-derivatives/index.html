@@ -126,9 +126,246 @@
 
         <div class="post">
             <h1 class="post-title">Summary of Derivatives</h1>
-            <!-- <span class="post-date">31 Jan 2023</span> -->
-            <time datetime="2023-01-31T00:00:00-05:00" class="post-date">31 Jan 2023</time>
-            <p><strong>TODO</strong></p>
+            <!-- <span class="post-date">31 Jan 2022</span> -->
+            <time datetime="2022-01-31T00:00:00-05:00" class="post-date">31 Jan 2022</time>
+            <p>Let $c$ be any constant. Let the derivative of a function $f(x)$ be denoted by $\frac{d}{dx} f(x) = f’(x)$. The following are general properties of the derivative operation</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><strong>Function</strong></th>
+      <th style="text-align: center"><strong>Derivative</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">$c \cdot f(x)$</td>
+      <td style="text-align: center">$c \cdot f’(x)$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$f(x) \pm g(x)$</td>
+      <td style="text-align: center">$f’(x) \pm g’(x)$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$f(x) \cdot g(x)$</td>
+      <td style="text-align: center">$f’(x) \cdot g(x) + f(x) \cdot g’(x)$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\frac{1}{f(x)}$</td>
+      <td style="text-align: center">$-\frac{f’(x)}{(f(x))^2}$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\frac{f(x)}{g(x)}$</td>
+      <td style="text-align: center">$\frac{f’(x) \cdot g(x) - f(x) \cdot g’(x)}{(g(x))^2}$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$f^{-1}(x)$</td>
+      <td style="text-align: center">$\frac{1}{f’(f^{-1}(x))}$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$f(g(x))$</td>
+      <td style="text-align: center">$f’(g(x)) \cdot g’(x)$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Let the $n$th derivative of a function $f(x)$ be denoted by $\frac{d^n}{dx^n} f(x) = f^{(n)}(x)$. An additional less commonly used, but interesting property</p>
+
+\[\frac{d^n}{dx^n} [f(x) \cdot g(x)] = \sum_{k=0}^{n} \binom{n}{k} f^{(n-k)}(x) g^{(k)}(x)\]
+
+<p><br /></p>
+
+<p>Let $c$ and $r$ be any constant. Let $b &gt; 1$ be any constant. Let $e$ be Euler’s number and $\ln x = \log_e x$ be the natural logarithm. The following are derivatives of some particular functions.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><strong>Function</strong></th>
+      <th style="text-align: center"><strong>Derivative</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">$c$</td>
+      <td style="text-align: center">$0$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$x$</td>
+      <td style="text-align: center">$1$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$x^r$</td>
+      <td style="text-align: center">$r x^{r-1}$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\frac{1}{x}$</td>
+      <td style="text-align: center">$-\frac{1}{x^2}$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\sqrt{x}$</td>
+      <td style="text-align: center">$\frac{1}{2 \sqrt{x}}$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\lvert x \rvert$</td>
+      <td style="text-align: center">$\frac{x}{\lvert x \rvert}$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$b^x$</td>
+      <td style="text-align: center">$b^x \ln b$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$e^x$</td>
+      <td style="text-align: center">$e^x$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\log_b x$</td>
+      <td style="text-align: center">$\frac{1}{x \ln b}$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\ln x$</td>
+      <td style="text-align: center">$\frac{1}{x}$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<p>We have derivatives of the trigonometric and inverse trigonometric functions.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><strong>Function</strong></th>
+      <th style="text-align: center"><strong>Derivative</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">$\sin x$</td>
+      <td style="text-align: center">$\cos x$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\cos x$</td>
+      <td style="text-align: center">$- \sin x$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\tan x$</td>
+      <td style="text-align: center">$\sec^2 x$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\sec x$</td>
+      <td style="text-align: center">$\tan x \sec x$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\csc x$</td>
+      <td style="text-align: center">$- \cot x \csc x$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\cot x$</td>
+      <td style="text-align: center">$-\csc^2 x$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\sin^{-1} x$</td>
+      <td style="text-align: center">$\frac{1}{\sqrt{1 - x^2}}$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\cos^{-1} x$</td>
+      <td style="text-align: center">$- \frac{1}{\sqrt{1 - x^2}}$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\tan^{-1} x$</td>
+      <td style="text-align: center">$\frac{1}{1 + x^2}$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\sec^{-1} x$</td>
+      <td style="text-align: center">$\frac{1}{\lvert x \rvert \sqrt{x^2 - 1} }$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\csc^{-1} x$</td>
+      <td style="text-align: center">$- \frac{1}{\lvert x \rvert \sqrt{x^2 - 1} }$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\cot^{-1} x$</td>
+      <td style="text-align: center">$- \frac{1}{1 + x^2}$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<p>We have derivatives of the hyperbolic trigonometric and inverse hyperbolic trigonometric functions.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><strong>Function</strong></th>
+      <th style="text-align: center"><strong>Derivative</strong></th>
+      <th style="text-align: center"><strong>Condition</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">$\sinh x$</td>
+      <td style="text-align: center">$\cosh x$</td>
+      <td style="text-align: center"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\cosh x$</td>
+      <td style="text-align: center">$\sinh x$</td>
+      <td style="text-align: center"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\tanh x$</td>
+      <td style="text-align: center">$\color{black}{\text{sech}}^2 \, x$</td>
+      <td style="text-align: center"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\color{black}{\text{sech}} \ x$</td>
+      <td style="text-align: center">$-\tanh x \ \color{black}{\text{sech}} \ x$</td>
+      <td style="text-align: center"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\color{black}{\text{csch}} \ x$</td>
+      <td style="text-align: center">$- \color{black}{\text{csch}}^2 \, x$</td>
+      <td style="text-align: center"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\coth x$</td>
+      <td style="text-align: center">$- \coth x \ \color{black}{\text{csch}} \ x$</td>
+      <td style="text-align: center"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\sinh^{-1} x$</td>
+      <td style="text-align: center">$\frac{1}{\sqrt{1 + x^2}}$</td>
+      <td style="text-align: center"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\cosh^{-1} x$</td>
+      <td style="text-align: center">$\frac{1}{\sqrt{x^2 - 1}}$</td>
+      <td style="text-align: center">$x &gt; 1$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\tanh^{-1} x$</td>
+      <td style="text-align: center">$\frac{1}{1-x^2}$</td>
+      <td style="text-align: center">$\lvert x \rvert &lt; 1$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\color{black}{\text{sech}}^{-1} \ x$</td>
+      <td style="text-align: center">$- \frac{1}{\lvert x \rvert \sqrt{1 + x^2} }$</td>
+      <td style="text-align: center"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\color{black}{\text{csch}}^{-1} \ x$</td>
+      <td style="text-align: center">$- \frac{1}{\lvert x \rvert \sqrt{1 - x^2} }$</td>
+      <td style="text-align: center"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">$\coth^{-1} x$</td>
+      <td style="text-align: center">$\frac{1}{1-x^2}$</td>
+      <td style="text-align: center">$\lvert x \rvert &gt; 1$</td>
+    </tr>
+  </tbody>
+</table>
 
 <p><br /></p>
 

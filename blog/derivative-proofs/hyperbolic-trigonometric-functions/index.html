@@ -10,7 +10,7 @@
 
   <title>
     
-      L'H&ocirc;pital's Rule &middot; Eric Keilty
+      Hyperbolic Trigonometric Functions &middot; Eric Keilty
     
   </title>
 
@@ -125,73 +125,90 @@
     <div class="content container">
 
         <div class="post">
-            <h1 class="post-title">L'H&ocirc;pital's Rule</h1>
-            <!-- <span class="series-date">11 Jan 2022</span> -->
-            <time datetime="2022-01-11T00:00:00-05:00" class="post-date">11 Jan 2022</time>
-            <p>If the result of direct substitution does not yield enough information to determine a limit, then we say it is an <strong>indeterminant form</strong>. The following are examples of indeterminant forms.</p>
-
-\[\frac{0}{0} \qquad \frac{\infty}{\infty} \qquad 0 \cdot \infty \qquad \infty - \infty \qquad 0^0 \qquad 1^{\infty} \qquad \infty^0\]
-
-<p><br /></p>
-
-<p>Suppose $f$ and $g$ are differentiable functions on an open interval containing \(a \in \mathbb{R} \cup \{ - \infty, \infty \}\). Then <strong>L’Hôpital’s Rule</strong> states that if $\displaystyle \lim_{x \rightarrow a} \frac{f(x)}{g(x)}$ is indeterminant, and $\displaystyle \lim_{x \rightarrow a} \frac{f’(x)}{g’(x)} = \frac{f’(a)}{g’(a)}$ exists and is not indeterminant, then</p>
-
-\[\lim_{x \rightarrow a} \frac{f(x)}{g(x)} = \lim_{x \rightarrow a} \frac{f'(x)}{g'(x)}\]
-
-<p><br /></p>
-
-<h2 id="proof">Proof</h2>
-
-<p>There are only two possible indeterminant forms: $\frac{0}{0}$ and $\pm \frac{\infty}{\infty}$. Thus, again without loss of generality, we can assume that $f(a) = g(a) = 0$. If instead, $f(a) = g(a) = \pm \infty$, we consider $F(x) = \frac{1}{f(x)}$ and $G(x) = \frac{1}{g(x)}$. Now the proof is the same.</p>
-
-<p><br /></p>
-
-<p>First, I want to explain the meaning of $\displaystyle \lim_{x \rightarrow a} \frac{f’(x)}{g’(x)} = \frac{f’(a)}{g’(a)}$. You have to be careful with equality and limits. A limit is only defined to equal a value <strong>if</strong> the limit exists. This is why we need the two assumptions that $\displaystyle \lim_{x \rightarrow a} \frac{f’(x)}{g’(x)}$ exists and $\displaystyle \frac{f’(a)}{g’(a)}$ is not indeterminant.</p>
+            <h1 class="post-title">Hyperbolic Trigonometric Functions</h1>
+            <!-- <span class="series-date">09 Jan 2022</span> -->
+            <time datetime="2022-01-09T00:00:00-05:00" class="post-date">09 Jan 2022</time>
+            <h2 id="sine">Sine</h2>
 
 \[\begin{align}
-    \lim_{x \rightarrow a} \frac{f'(x)}{g'(x)} 
-    &amp;= \frac{f'(a)}{g'(a)} \\[10pt]
-    &amp;= \frac{\lim_{x \rightarrow a} \frac{f(x) - f(a)}{x-a}}{\lim_{x \rightarrow a} \frac{g(x) - g(a)}{x-a}} \\[10pt]
-    &amp;= \lim_{x \rightarrow a} \frac{\frac{f(x) - f(a)}{x-a}}{\frac{g(x) - g(a)}{x-a}} \\[10pt]
-    &amp;= \lim_{x \rightarrow a} \frac{f(x) - f(a)}{g(x) - g(a)} \\[10pt]
-    &amp;= \lim_{x \rightarrow a} \frac{f(x) - 0}{g(x) - 0} \\[10pt]
-    &amp;= \lim_{x \rightarrow a} \frac{f(x)}{g(x)}
+    \frac{d}{dx} \sin (x)
+    &amp;= \lim_{h \rightarrow 0} \ \frac{\sin(x+h) - \sin(x)}{h} \\[10pt]
+    &amp;= \lim_{h \rightarrow 0} \ \frac{\sin(x)\cos(h) + \sin(h)\cos(x) - \sin(x)}{h} \\[10pt]
+    &amp;= \lim_{h \rightarrow 0} \ \frac{\sin(x)(\cos(h)-1) + \sin(h)\cos(x)}{h} \\[10pt]
+    &amp;= \sin(x) \left ( \lim_{h \rightarrow 0} \ \frac{\cos(h)-1}{h} \right ) + \cos(x) \left ( \lim_{h \rightarrow 0} \ \frac{\sin(h)}{h} \right ) \\[10pt]
+    &amp;= \sin(x) \cdot 0 + \cos(x) \cdot 1 \\[10pt]
+    &amp;= \cos(x)
 \end{align}\]
 
-<p>Therefore,</p>
-
-\[\lim_{x \rightarrow a} \frac{f(x)}{g(x)} = \lim_{x \rightarrow a} \frac{f'(x)}{g'(x)}\]
-
 <p><br /></p>
 
-<p><strong>TODO</strong> The above proof is messy because I need the assume the RHS is not an indeterminate form. Ideally, all I need to assume is that the limit exists.</p>
-
-<p><br /></p>
-
-<h2 id="corollary">Corollary</h2>
-
-<p>Suppose $\displaystyle \lim_{x \rightarrow a} \frac{f(x)}{g(x)}, \ \lim_{x \rightarrow a} \frac{f’(x)}{g’(x)}, \ \lim_{x \rightarrow a} \frac{f’‘(x)}{g’‘(x)}, \ \ldots, \ \lim_{x \rightarrow a} \frac{f^{(n-1)}(x)}{g^{(n-1)}(x)}$ are indeterminant, and $\displaystyle \lim_{x \rightarrow a} \frac{f^{(n)}(x)}{g^{(n)}(x)} = \frac{f^{(n)}(a)}{g^{(n)}(a)}$ exists and is not indeterminant. Then</p>
-
-\[\lim_{x \rightarrow a} \frac{f(x)}{g(x)} = \lim_{x \rightarrow a} \frac{f'(x)}{g'(x)} = \lim_{x \rightarrow a} \frac{f''(x)}{g''(x)} = \ldots = \lim_{x \rightarrow a} \frac{f^{(n-1)}(x)}{g^{(n-1)}(x)} = \lim_{x \rightarrow a} \frac{f^{(n)}(x)}{g^{(n)}(x)}\]
-
-<p>i.e. we can successively take derivatives until we arrive at a non-indeterminant form. Note that here equality is well-defined because all limits exist.</p>
-
-<p><br /></p>
-
-<p>We prove this by reverse induction on $n$.</p>
-
-<p><strong>Base Case</strong>:  By assumption $\displaystyle \lim_{x \rightarrow a} \frac{f^{(n)}(x)}{g^{(n)}(x)} = \frac{f^{(n)}(a)}{g^{(n)}(a)}$ exists and is not indeterminant.</p>
-
-<p><strong>Induction Hypothesis</strong>: Assume that $\displaystyle \lim_{x \rightarrow a} \frac{f^{(k)}(x)}{g^{(k)}(x)} = \frac{f^{(n)}(a)}{g^{(n)}(a)}$, for some $0 &lt; k &lt; n$</p>
-
-<p><strong>Induction Step</strong>: Since $\displaystyle \lim_{x \rightarrow a} \frac{f^{(k)}(x)}{g^{(k)}(x)}$ exists, we can apply L’Hôpital’s Rule to</p>
+<h2 id="cosine">Cosine</h2>
 
 \[\begin{align}
-    \lim_{x \rightarrow a} \frac{f^{(k)}(x)}{g^{(k)}(x)} 
-    &amp;= \frac{f^{(n)}(a)}{g^{(n)}(a)} \\[10pt]
+    \frac{d}{dx} \cos (x)
+    &amp;= \lim_{h \rightarrow 0} \ \frac{\cos(x+h) - \cos(x)}{h} \\[10pt]
+    &amp;= \lim_{h \rightarrow 0} \ \frac{\cos(x)\cos(h) - \sin(x)\sin(h) - \cos(x)}{h} \\[10pt]
+    &amp;= \lim_{h \rightarrow 0} \ \frac{\cos(x)(\cos(h)-1) - \sin(x)\sin(h)}{h} \\[10pt]
+    &amp;= \cos(x) \left ( \lim_{h \rightarrow 0} \ \frac{\cos(h)-1}{h} \right ) - \sin(x) \left ( \lim_{h \rightarrow 0} \ \frac{\sin(h)}{h} \right ) \\[10pt]
+    &amp;= \cos(x) \cdot 0 - \sin(x) \cdot 1 \\[10pt]
+    &amp;= - \sin(x)
 \end{align}\]
 
-<p>get $\displaystyle \lim_{x \rightarrow a} \frac{f^{(k-1)}(x)}{g^{(k-1)}(x)} = \lim_{x \rightarrow a} \frac{f^{(k)}(x)}{g^{(k)}(x)}$. Therefore, by the induction hypothesis, we have proved the result.</p>
+<p><br /></p>
+
+<h2 id="tangent">Tangent</h2>
+
+<p>Using the quotient rule.</p>
+
+\[\begin{align}
+    \frac{d}{dx} \tan (x)
+    &amp;= \frac{d}{dx} \frac{\sin(x)}{\cos(x)} \\[10pt]
+    &amp;= \frac{\frac{d}{dx} \left [ \sin(x) \right ] \cdot \cos(x) - \sin(x) \cdot \frac{d}{dx} \left [ \cos(x) \right ]}{\left ( \cos(x) \right )^2} \\[10pt]
+    &amp;= \frac{\cos(x) \cdot \cos(x) - \sin(x) \cdot (-\sin(x))}{\cos^2(x)} \\[10pt]
+    &amp;= \frac{\cos^2(x) + \sin^2(x)}{\cos^2(x)} \\[10pt]
+    &amp;= \frac{1}{\cos^2(x)} \\[10pt]
+    &amp;= \sec^2(x) \\[10pt]
+\end{align}\]
+
+<p><br /></p>
+
+<h2 id="secant">Secant</h2>
+
+<p>Using reciprocal rule</p>
+
+\[\begin{align}
+    \frac{d}{dx} \sec (x)
+    &amp;= \frac{d}{dx} \frac{1}{\cos(x)} \\[10pt]
+    &amp;= - \frac{\frac{d}{dx} \cos (x)}{(\cos(x))^2} \\[10pt]
+    &amp;= - \frac{- \sin (x)}{\cos^2(x)} \\[10pt]
+    &amp;= \tan(x)\sec(x)
+\end{align}\]
+
+<h2 id="cosecant">Cosecant</h2>
+
+<p>Using reciprocal rule</p>
+
+\[\begin{align}
+    \frac{d}{dx} \csc (x)
+    &amp;= \frac{d}{dx} \frac{1}{\sin(x)} \\[10pt]
+    &amp;= - \frac{\frac{d}{dx} \sin (x)}{(\sin(x))^2} \\[10pt]
+    &amp;= - \frac{\cos (x)}{\sin^2(x)} \\[10pt]
+    &amp;= - \cot(x)\csc(x)
+\end{align}\]
+
+<h2 id="cotangent">Cotangent</h2>
+
+<p>Using the quotient rule.</p>
+
+\[\begin{align}
+    \frac{d}{dx} \cot (x)
+    &amp;= \frac{d}{dx} \frac{\cos(x)}{\sin(x)} \\[10pt]
+    &amp;= \frac{\frac{d}{dx} \left [ \cos(x) \right ] \cdot \sin(x) - \cos(x) \cdot \frac{d}{dx} \left [ \sin(x) \right ]}{\left ( \sin(x) \right )^2} \\[10pt]
+    &amp;= \frac{(- \sin(x)) \cdot \sin(x) - \cos(x) \cdot \cos(x)}{\sin^2(x)} \\[10pt]
+    &amp;= - \frac{\sin^2(x) + \cos^2(x)}{\sin^2(x)} \\[10pt]
+    &amp;= -\frac{1}{\sin^2(x)} \\[10pt]
+    &amp;= -\csc^2(x) \\[10pt]
+\end{align}\]
 
         </div>
 
@@ -213,10 +230,10 @@
 
         <div class="pagination" style="margin-top:1em;">
             
-                <a class="pagination-item older" href="/blog/derivative-proofs/function-to-the-power-of-a-function/">Previous</a>
+                <a class="pagination-item older" href="/blog/derivative-proofs/inverse-trigonometric-functions/">Previous</a>
             
             
-                <span class="pagination-item newer">Next</span>
+                <a class="pagination-item newer" href="/blog/derivative-proofs/function-to-the-power-of-a-function/">Next</a>
             
         </div>
         <h3 style="text-align:center; margin-bottom:1em;">

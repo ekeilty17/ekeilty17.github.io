@@ -126,21 +126,100 @@
 
         <div class="post">
             <h1 class="post-title">Squeeze Theorem</h1>
-            <!-- <span class="series-date">06 Jan 2023</span> -->
-            <time datetime="2023-01-06T00:00:00-05:00" class="post-date">06 Jan 2023</time>
-            <p><strong>TODO</strong></p>
+            <!-- <span class="series-date">06 Jan 2022</span> -->
+            <time datetime="2022-01-06T00:00:00-05:00" class="post-date">06 Jan 2022</time>
+            <p>We don’t prove any derivatives in this post, but we need these results in order to evaluate the trigonometric derivatives in the next part. We also get to showcase a very useful theorem in calculus.</p>
 
-<p>There are not derivatives, but we need these results in order to evaluate the trigonometric derivatives in the next part.</p>
+<p><br /></p>
 
-<h2 id="sin-x--x">sin x / x</h2>
+<h2 id="the-statement-of-the-squeeze-theorem">The Statement of the Squeeze Theorem</h2>
 
-\[\sin x \leq x \leq \tan x \\[10pt]
-1 \leq \frac{x}{\sin x} \leq \frac{1}{\cos x} \\[10pt]
-1 \geq \frac{\sin x}{x} \geq \cos x\]
+<p>Let $a \leq c \leq b$. Suppose $g(x) \leq f(x) \leq h(x)$ for all $x \in (a, c) \cup (c, b)$. Then</p>
 
-\[\lim_{x \rightarrow 0} \frac{\sin x}{x} = 1\]
+\[\lim_{x \rightarrow c} g(x) \leq \lim_{x \rightarrow c} f(x) \leq \lim_{x \rightarrow c} h(x)\]
 
-<h2 id="1---cos-x--x">(1 - cos x) / x</h2>
+<p><br /></p>
+
+<p>A corollary to the theorem is that if $\displaystyle \lim_{x \rightarrow c} g(x) = \lim_{x \rightarrow c} h(x) = L$, the $\displaystyle \lim_{x \rightarrow c} f(x) = L$.</p>
+
+<p>Intuitively, $g(x)$ serves as a lower-bound and $h(x)$ an upper-bound for $f(x)$ in the neighborhood around $c$. Thus, these bounds are preserved in the limit. Thus, if the limits are equal, the upper and lower-bound <em>squeeze</em> the limit of $f$ to a single number.</p>
+
+<p><br /></p>
+
+<h2 id="applying-the-squeeze-theorem">Applying the Squeeze Theorem</h2>
+
+<p>First, we use the squeeze theorem to compute $\displaystyle \lim_{x \rightarrow 0} \frac{\sin x}{x}$. Notice that direct substitution yields $\frac{0}{0}$, which does not give us any information on the actual value of the limit.</p>
+
+<p>The proof hinges on the inequality, $\displaystyle \cos x \leq \frac{\sin x}{x} \leq 1$ for all $x \in (-\frac{\pi}{2}, 0) \cup (0, \frac{\pi}{2})$. Then, we just apply the squeeze theorem to see that</p>
+
+\[\begin{align}
+    &amp;\lim_{x \rightarrow 0} \cos x &amp;\leq&amp; \quad \lim_{x \rightarrow 0} \frac{\sin x}{x} &amp;\leq&amp; \quad \lim_{x \rightarrow 0} 1 \\[10pt]
+    &amp;1 &amp;\leq&amp; \quad \lim_{x \rightarrow 0} \frac{\sin x}{x} &amp;\leq&amp; \quad 1
+\end{align}\]
+
+<p>Therefore, $\displaystyle \lim_{x \rightarrow 0} \frac{\sin x}{x} = 1$.</p>
+
+<p>Now all that is left is to prove the original inequality. Consider the following construction on a unit circle. From this, we obtain three areas. Please refer to <a href="/blog/trigonometry/intuition-of-trig-functions/">this post</a> for how the heights of the top and bottom triangles are derived. Hint: use the definitions of the trigonometric functions and similar triangles.</p>
+
+<center>
+<embed src="/svg/squeeze-theorem/unit-circle.svg" type="image/svg+xml" />
+&emsp;&emsp;&emsp;&emsp;
+<embed src="/svg/squeeze-theorem/areas.svg" type="image/svg+xml" />
+</center>
+
+<p><br /></p>
+
+<p>Label the three areas $A_1$, $A_2$, and $A_3$ from bottom to top. We apply the appropriate area formulas to see that</p>
+
+\[\begin{align}
+    &amp;A_1 &amp;\quad=\quad&amp; \frac{1}{2}bh &amp;\quad=\quad&amp; \frac{1}{2} \cdot 1 \cdot \sin x &amp;\quad=\quad&amp; \frac{1}{2} \sin x \\[10pt]
+    &amp;A_2 &amp;\quad=\quad&amp; \frac{1}{2} r^2 \theta &amp;\quad=\quad&amp; \frac{1}{2} \cdot 1^2 \cdot x &amp;\quad=\quad&amp; \frac{1}{2} x\\[10pt]
+    &amp;A_3 &amp;\quad=\quad&amp; \frac{1}{2}bh &amp;\quad=\quad&amp; \frac{1}{2} \cdot 1 \cdot \tan x &amp;\quad=\quad&amp; \frac{1}{2} \tan x
+\end{align}\]
+
+<p>Clearly, $A_1 \leq A_2 \leq A_3$, since each area can be contained inside the other. Therefore,</p>
+
+\[\begin{align}
+    &amp;A_1 \leq A_2 \leq A_3 \\[10pt]
+    &amp;\frac{1}{2} \sin x \leq \frac{1}{2}x \leq \frac{1}{2} \tan x \\[10pt]
+    &amp;\sin x \leq x \leq \tan x
+\end{align}\]
+
+<p>Now, this is only true on the interval, $(0, \frac{\pi}{2})$, since outside this interval, our geometric argument breaks down. Observe that $\sin x$, $x$, and $\tan x$ are all odd functions. Recall that any odd function $f$ has the property that $f(-x) = -f(x)$. Therefore,</p>
+
+\[\begin{align}
+    &amp;\sin x \leq x \leq \tan x\\[10pt]
+    &amp;-\sin x \geq -x \geq -\tan x\\[10pt]
+    &amp;\sin (-x) \geq -x \geq \tan (-x) \\
+\end{align}\]
+
+<p>Thus, we get the following result</p>
+
+\[\begin{cases}
+    \sin x \leq x \leq \tan x &amp;\qquad\text{if } 0 &lt; x &lt; \frac{\pi}{2} \\
+    \sin x \geq x \geq \tan x &amp;\qquad\text{if } -\frac{\pi}{2} &lt; x &lt; 0
+\end{cases}\]
+
+<p>Divide all parts of the equations by $\sin(x)$. Notice, that in the case where $-\frac{\pi}{2} &lt; x &lt; 0$, this value is always negative and thus the inequality will flip. Thus, both cases will be the same, and we get this result for all $x \in (-\frac{\pi}{2}, 0) \cup (0, \frac{\pi}{2})$.</p>
+
+\[\begin{align}
+    &amp;1 \leq \frac{x}{\sin x} \leq \frac{1}{\cos x}\\[10pt]
+    &amp;1 \geq \frac{\sin x}{x} \geq \cos x
+\end{align}\]
+
+<p>Which is the result we needed to prove. Below is a graphical representation of this proof. We can see how the light blue line is bounded by the other two lines in the neighborhood around $0$.</p>
+
+<center>
+<embed src="/svg/squeeze-theorem/squeeze-1.svg" type="image/svg+xml" />
+&emsp;&emsp;&emsp;
+<embed src="/svg/squeeze-theorem/squeeze-2.svg" type="image/svg+xml" />
+</center>
+
+<p><br /></p>
+
+<h2 id="corollary">Corollary</h2>
+
+<p>As a corollary, we can compute $\displaystyle \lim_{x \rightarrow 0} \frac{1 - \cos x}{x}$. Notice that direct substitution yields $\frac{0}{0}$, which does not give us any information on the actual value of the limit.</p>
 
 \[\begin{align}
     \lim_{x \rightarrow 0} \frac{1 - \cos x}{x} 
