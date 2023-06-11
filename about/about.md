@@ -22,7 +22,7 @@ Or you might just want to get to [know me](/about/personal-interests) as a perso
 
 ## How to Pronounce My Name
 
-Almost everyone mispronounces my last name. It seems to be that pesky "i" that messes everyone up. Below I've given the phonetic pronunciation and the IPA representation of my name, which you could copy-paste into an [IPA reader](http://ipa-reader.xyz/).
+Almost everyone mispronounces my last name. It seems to be that pesky "i" that messes everyone up. Below I've given the phonetic pronunciation and the IPA representation of my name, which you could copy-paste into an <a href="http://ipa-reader.xyz/" target="_blank">IPA reader</a>.
 
 <center>
     Eric Keilty &ensp;&ensp;&ensp;&ensp; (air-ik kel-tee) &ensp;&ensp;&ensp;&ensp; /&epsilon;rIk k&epsilon;lti/
