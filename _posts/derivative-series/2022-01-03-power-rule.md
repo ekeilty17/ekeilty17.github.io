@@ -1,7 +1,7 @@
 ---
 layout:     series
 title:      "Power Rule"
-date:       2023-01-03
+date:       2022-01-03
 categories: blog derivative-proofs
 permalink:  ":categories/:title/"
 part:       2
@@ -21,7 +21,7 @@ $$
 \end{align}
 $$
 
-Therefore, $\frac{d}{dx} x^0 = \frac{d}{dx} 1 = 0$$
+Therefore, $\frac{d}{dx} x^0 = \frac{d}{dx} 1 = 0$
 
 <br>
 

@@ -9,6 +9,8 @@ series:     trigonometry
 tags:       trigonometry, hyperbolic, hyperbola
 ---
 
+**TODO**
+
 ## Definition of Hyperbolic Trigonometric Functions
 
 <center>
@@ -118,3 +120,17 @@ $$
     &x^2 - y^2 = r^2  &\qquad\qquad&  (r \cosh \alpha, \ r \sinh \alpha) \qquad \alpha \in (\infty, \infty)
 \end{align}
 $$
+
+<br>
+
+## Relation to the Regular Trigonometric Functions
+
+$$
+\begin{align}
+    &\sinh x = -i \sin (i x) &\qquad\qquad& \color{black}{\text{sech}} \ x = \sec (i x) \\[10pt]
+    &\cosh x = \cos (i x) &\qquad\qquad& \color{black}{\text{csch}} \ x = i \csc (i x) \\[10pt]
+    &\tanh x = -i \tan (i x) &\qquad\qquad& \coth x = i \cot (i x)
+\end{align}
+$$
+
+Now, all properties and identities of the hyperbolic trigonometric functions can be easily derived from the regular trigonometric functions. 

@@ -229,7 +229,7 @@ $$
 \end{align}
 $$
 
-Note, I prove double negative in a [later post](/blog/boolean-algebra/operation-identities/), and it does not require this law. Thus, it is not circular.
+Note, I prove double negation in a [later post](/blog/boolean-algebra/operation-identities/), and it does not require this law. Thus, it is not circular.
 
 <br>
 

@@ -1,7 +1,7 @@
 ---
 layout:     series
 title:      "Logarithms and Exponentials"
-date:       2023-01-05
+date:       2022-01-05
 categories: blog derivative-proofs
 permalink:  ":categories/:title/"
 part:       4
@@ -47,15 +47,11 @@ Now, we use the fact that $\log_b (b^x) = x$ and the inverse function derivative
 
 $$
 \begin{align}
-    \frac{d}{dx} \log_b (b^x)
-    &= \frac{1}{b^x \ln b} \cdot \frac{d}{dx} b^x
+    \frac{d}{dx} b^x
+    \quad=\quad \frac{1}{\frac{d}{dz} \log_b (z) \bigg\rvert_{z=b^x} }
+    \quad=\quad \frac{1}{\frac{1}{z \ln b} \bigg\rvert_{z=b^x} }
+    \quad=\quad b^x \ln b
 \end{align}
-$$
-
-Since the left-hand side is $\frac{d}{dx} \log_b (b^x) = \frac{d}{dx} x = 1$, we have.
-
-$$
-\frac{d}{dx} b^x = b^x \ln b
 $$
 
 In particular, if we let $b = e$, then 
@@ -64,4 +60,4 @@ $$
 \frac{d}{dx} e^x = e^x
 $$
 
-This is what makes $e$ such a special constant. It represents the fixed-point of the derivative operation.
+This is what makes $e$ such a special constant. It represents the fixed-point of the derivative operation. In fact, it is the unique fixed point. Thus, if another function is found to also be a fixed-point, then it must be equal to $e^x$.

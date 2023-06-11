@@ -1,7 +1,7 @@
 ---
 layout:     series
 title:      "Inverse Trigonometric Functions"
-date:       2023-01-08
+date:       2022-01-08
 categories: blog derivative-proofs
 permalink:  ":categories/:title/"
 part:       7

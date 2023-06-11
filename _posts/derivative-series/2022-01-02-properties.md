@@ -1,7 +1,7 @@
 ---
 layout:     series
 title:      "Properties"
-date:       2023-01-02
+date:       2022-01-02
 categories: blog derivative-proofs
 permalink:  ":categories/:title/"
 part:       1
@@ -9,7 +9,7 @@ series:     derivative-proofs
 tags:       derivatives, linearity, chain-rule, product-rule, quotient-rule, inverse-functions
 ---
 
-Let $f$ and $g$ be continuous functions and $c$ a constant.
+Let $f$ and $g$ be differntiable functions and $c$ a constant.
 
 ## Scalar Multiplication
 

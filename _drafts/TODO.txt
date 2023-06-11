@@ -22,7 +22,11 @@ Blog Ideas
         - The physics of Newton's cradle (with better diagrams than currently exist)
         - I want to do some stuff with country data...
         - I also want to do some stuff with NHL data...
+        - GOAT/BOAT debate in hockey 
+        - Polynomials, if the discriminant is negative, then it has no real solutions. When does it have only imaginary solutions? What does that look like graphically?
+        - Explaining the BlackJack basic strategy table, the actual math and maybe some rules of thumb
 
 
 Other
     - I need to change all of the dates in the Boolean algebra series to Jan 2023
+    - This website contains all the NHL stats: https://gitlab.com/dword4/nhlapi

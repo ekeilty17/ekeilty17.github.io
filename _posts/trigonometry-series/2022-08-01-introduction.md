@@ -78,7 +78,7 @@ Thus, we need to do some normalization to have a consistent measure. First, rota
 
     % draw lines
     \draw[very thick, ->] (O) -- (\linelength, 0);
-    \draw[very thick, ->] (O) -- ({\linelength * cos(\angle)}, {\linelength * sin(\angle});
+    \draw[very thick, ->] (O) -- ({\linelength * cos(\angle)}, {\linelength * sin(\angle)});
 
     % labeling radius
     \def\eps{1mm}
@@ -226,7 +226,7 @@ $$
 \theta \equiv \theta + 2 \pi k \qquad k \in \mathbb{Z}
 $$
 
-Here, $\equiv$ means _equivalent_, but not necessarily equal. For the purposes of trigonometry, equivalent angles are indistringuishable.
+Here, $\equiv$ means _equivalent_, but not necessarily equal. For the purposes of trigonometry, equivalent angles are indistinguishable.
 
 <br>
 
