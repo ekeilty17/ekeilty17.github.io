@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Addition and Subtraction &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded Latex support -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX","input/MathML","output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js", "cancel.js"]
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!-- Enable Tikz support -->
+<link rel="stylesheet" type="text/css" href="http://tikzjax.com/v1/fonts.css">
+<script src="http://tikzjax.com/v1/tikzjax.js"></script>
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">Software Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/resume">R&eacute;sum&eacute;</a>
+          </li>
+        
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2023 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">Addition and Subtraction</h1>
+            <!-- <span class="series-date">05 Oct 2022</span> -->
+            <time datetime="2022-10-05T00:00:00-04:00" class="post-date">05 Oct 2022</time>
+            <p>For this post, assume that $f$ and $g$ are functions whose limits exist at $a \in \mathbb{R}$. Let $L, M \in \mathbb{R}$ such that $\displaystyle \lim_{x \rightarrow a} f(x) = L$ and $\displaystyle \lim_{x \rightarrow a} g(x) = M$. Therefore, by the definition of limits, we have</p>
+
+\[\forall \epsilon_f &gt; 0 \quad \exists \delta_f &gt; 0 \quad \text{s.t.} \quad 0 &lt; \lvert x - a \rvert &lt; \delta_f \implies \lvert f(x) - L \rvert &lt; \epsilon_f\]
+
+\[\forall \epsilon_g &gt; 0 \quad \exists \delta_g &gt; 0 \quad \text{s.t.} \quad 0 &lt; \lvert x - a \rvert &lt; \delta_g \implies \lvert g(x) - M \rvert &lt; \epsilon_g\]
+
+<p><br /></p>
+
+<h2 id="scalar-additionsubtraction">Scalar Addition/Subtraction</h2>
+
+<p>Let $c \in \mathbb{R}$. We wish to show that</p>
+
+\[\lim_{x \rightarrow a} (f(x) \pm c) = L \pm c\]
+
+<p>Fix any $\epsilon &gt; 0$. In the limit definition of $f(x)$ we fix particular $\epsilon_f = \epsilon$. Therefore, we have</p>
+
+\[\exists \delta_f &gt; 0 \quad \text{s.t.} \quad 0 &lt; \lvert x - a \rvert &lt; \delta_f \implies \lvert f(x) - L \rvert &lt; \epsilon\]
+
+<p>let $\delta = \delta_f$. Therefore,</p>
+
+\[\begin{align}
+    &amp;\exists \delta &gt; 0 \quad \text{s.t.} \quad 0 &lt; \lvert x - a \rvert &lt; \delta \implies \lvert f(x) - L \rvert &lt; \epsilon \\[10pt]
+    &amp;\exists \delta &gt; 0 \quad \text{s.t.} \quad 0 &lt; \lvert x - a \rvert &lt; \delta \implies \lvert f(x) \pm (c - c) - L \rvert &lt; \epsilon \\[10pt]
+    &amp;\exists \delta &gt; 0 \quad \text{s.t.} \quad 0 &lt; \lvert x - a \rvert &lt; \delta \implies \lvert (f(x) \pm c) - (L \pm c) \rvert &lt; \epsilon
+\end{align}\]
+
+<p>which proves the result.</p>
+
+<p><br /></p>
+
+<p>Written in a more general notation, we have the scalar addition/subtraction law of limits.</p>
+
+\[\lim_{x \rightarrow a} (f(x) \pm c) = \left ( \lim_{x \rightarrow a} f(x) \right ) \pm c\]
+
+<p><br /></p>
+
+<h2 id="function-addition">Function Addition</h2>
+
+<p>We wish to show that</p>
+
+\[\lim_{x \rightarrow a} (f(x) + g(x)) = L + M\]
+
+<p>Fix any $\epsilon &gt; 0$. In the limit definitions of $f(x)$ and $g(x)$ we fix particular $\epsilon_f = \epsilon_g = \frac{\epsilon}{2}$. Therefore, we have</p>
+
+\[\exists \delta_f &gt; 0 \quad \text{s.t.} \quad 0 &lt; \lvert x - a \rvert &lt; \delta_f \implies \lvert f(x) - L \rvert &lt; \frac{\epsilon}{2}\]
+
+\[\exists \delta_g &gt; 0 \quad \text{s.t.} \quad 0 &lt; \lvert x - a \rvert &lt; \delta_g \implies \lvert g(x) - M \rvert &lt; \frac{\epsilon}{2}\]
+
+<p>Let $\delta = \min(\delta_f, \delta_g)$. Therefore,</p>
+
+\[\begin{align}
+    &amp;\exists \delta &gt; 0 \quad\text{s.t.}\quad 0 &lt; \lvert x - a \rvert &lt; \delta \quad \implies \quad \lvert f(x) - L \rvert &lt; \frac{\epsilon}{2} \quad\text{and}\quad \lvert g(x) - M \rvert &lt; \frac{\epsilon}{2} \\[10pt]
+    &amp;\exists \delta &gt; 0 \quad\text{s.t.}\quad 0 &lt; \lvert x - a \rvert &lt; \delta \quad \implies \quad \lvert f(x) - L \rvert + \lvert g(x) - M \rvert &lt; \frac{\epsilon}{2} + \frac{\epsilon}{2} \\[10pt]
+    &amp;\exists \delta &gt; 0 \quad\text{s.t.}\quad 0 &lt; \lvert x - a \rvert &lt; \delta \quad \implies \quad \lvert f(x) - L \rvert + \lvert g(x) - M \rvert &lt; \epsilon \\[10pt]
+    &amp;\exists \delta &gt; 0 \quad\text{s.t.}\quad 0 &lt; \lvert x - a \rvert &lt; \delta \quad \implies \quad \lvert (f(x) - L) + (g(x) - M) \rvert &lt; \epsilon \\[10pt]
+    &amp;\exists \delta &gt; 0 \quad\text{s.t.}\quad 0 &lt; \lvert x - a \rvert &lt; \delta \quad \implies \quad \lvert (f(x) + g(x)) - (L + M) \rvert &lt; \epsilon
+\end{align}\]
+
+<p>which proves the result.</p>
+
+<p><br /></p>
+
+<p>Written in a more general notation, we have the addition law of limits.</p>
+
+\[\lim_{x \rightarrow a} (f(x) + g(x)) = \left ( \lim_{x \rightarrow a} f(x) \right ) + \left ( \lim_{x \rightarrow a} g(x) \right )\]
+
+<p><br /></p>
+
+<h2 id="function-subtraction">Function Subtraction</h2>
+
+<p>We can show the subtraction law of limits using the addition and scalar multiplication limit laws.</p>
+
+\[\begin{align}
+    \lim_{x \rightarrow a} (f(x) - g(x)) 
+    &amp;= \lim_{x \rightarrow a} (f(x) + ((-1) \cdot g(x)))\\[10pt]
+    &amp;= \left ( \lim_{x \rightarrow a} f(x) \right ) + \left ( \lim_{x \rightarrow a} (-1) \cdot g(x) \right )\\[10pt]
+    &amp;= \left ( \lim_{x \rightarrow a} f(x) \right ) + (-1) \cdot \left ( \lim_{x \rightarrow a} g(x) \right )\\[10pt]
+    &amp;= \left ( \lim_{x \rightarrow a} f(x) \right ) - \left ( \lim_{x \rightarrow a} g(x) \right )
+\end{align}\]
+
+<p><br /></p>
+
+<h2 id="linearity">Linearity</h2>
+
+<p>Combining the addition, subtraction, and scalar multiplication laws, we have shown that limits are a linear operation. Let $f$ and $g$ be functions and $\alpha, \beta \in \mathbb{R}$ be constants, then</p>
+
+\[\lim_{x \rightarrow a} (\alpha f(x) + \beta g(x))  = \alpha \left ( \lim_{x \rightarrow a} f(x) \right ) + \beta \left ( \lim_{x \rightarrow a} g(x) \right )\]
+
+<p><br /></p>
+
+<p>Note, this gives an alternative proof for the scalar addition/subtraction. Let $\alpha = 1$, $\beta = \pm 1$, and $g(x) = c$.</p>
+
+        </div>
+
+        <!-- Adding the ability to move between parts of the series -->
+        
+        
+        
+
+        
+        
+        
+
+        <!-- Getting capitalized title for series -->
+        
+        
+        
+        <!-- Getting url for series, which is just the page url with the last /... removed -->
+        
+
+        <div class="pagination" style="margin-top:1em;">
+            
+                <a class="pagination-item older" href="/blog/limits-and-continuity/multiplication/">Previous</a>
+            
+            
+                <a class="pagination-item newer" href="/blog/limits-and-continuity/reciprocal-and-division/">Next</a>
+            
+        </div>
+        <h3 style="text-align:center; margin-bottom:1em;">
+            <a href="/blog/limits-and-continuity">
+            
+                Limits
+            
+                And
+            
+                Continuity
+            
+         Series</a>
+        </h3>
+    </div>
+    
+  </body>
+</html>

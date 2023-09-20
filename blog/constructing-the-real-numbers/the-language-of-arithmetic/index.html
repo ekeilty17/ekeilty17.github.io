@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      The Language of Arithmetic &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded Latex support -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX","input/MathML","output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js", "cancel.js"]
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!-- Enable Tikz support -->
+<link rel="stylesheet" type="text/css" href="http://tikzjax.com/v1/fonts.css">
+<script src="http://tikzjax.com/v1/tikzjax.js"></script>
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">Software Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/resume">R&eacute;sum&eacute;</a>
+          </li>
+        
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2023 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">The Language of Arithmetic</h1>
+            <!-- <span class="series-date">02 Jul 2023</span> -->
+            <time datetime="2023-07-02T00:00:00-04:00" class="post-date">02 Jul 2023</time>
+            <p>This post is quite technical (and longer than I expected). Its content is not required in order to understand the rest of the series. Logicians spent a very long time attempting to ground mathematics in first-order logic, and ultimately failed (damn you Gödel). Some may find it interesting to see what they came up with.</p>
+
+<p><br /></p>
+
+<h2 id="a-brief-background-in-logic">A Brief Background in Logic</h2>
+
+<h3 id="languages-and-structures">Languages and Structures</h3>
+
+<p>Here we provide some terminology.</p>
+
+<p>A <strong>language</strong>/<strong>vocabulary</strong> in logic, denoted by $\mathcal{L}$, consists of the following</p>
+<ul>
+  <li>A set of <strong>functions</strong>/<strong>operations</strong> of various <a href="https://en.wikipedia.org/wiki/Arity" target="_blank">arity</a>. Note that a function with an arity of $0$ is called a <strong>constant</strong>.</li>
+  <li>A set of <strong>predicates</strong> of various <a href="https://en.wikipedia.org/wiki/Arity" target="_blank">arity</a>. Note that a predicate with an arity of $0$ is called a <strong>propositional atom</strong>.</li>
+</ul>
+
+<p>Essentially, a language is specifying the <strong>syntax</strong> of the logic. It tells what symbols are allowed to be combined with others. We will see an example when I describe the language of arithmetic.</p>
+
+<p>A <strong>structure</strong>/<strong>model</strong> in logic, denoted by $\mathcal{M}$, consists of the following</p>
+<ul>
+  <li>A nonempty set $M$ called the <strong>universe of discourse</strong> (or just the universe)</li>
+  <li>For each function symbol $f$ in $\mathcal{L}$, an associated function $f^{\mathcal{M}}$</li>
+  <li>For each predicate symbol $P$ in $\mathcal{L}$, an associated function $P^{\mathcal{M}}$</li>
+</ul>
+
+<p>Essentially, a structure is specifying the <strong>semantics</strong> of the logic. It tells you how symbols are to be interpreted. An analogy with programming is that the language is like an interface or an abstract class, and the structure is like the implementation. Again, we will see an example when I describe the standard model of arithmetic.</p>
+
+<p><br /></p>
+
+<h3 id="theories">Theories</h3>
+
+<p>Using a given language $\mathcal{L}$, we can write logical statements. We can bundle together a set of $\mathcal{L}$-statements into a set, $\Phi$. We can ask the question, what are all of the $\mathcal{L}$-statements that are a <strong>logical consequence</strong>, denoted by $\models$, of a set $\Phi$? This set is called the <strong>theory</strong> of $\Phi$.</p>
+
+\[Th(\Phi) = \{ A: \Phi \models A \}\]
+
+<p>The meaning of $\Phi \models A$ requires too much explanation to provide here. Intuitively, it means that $A$ is implied by/logically follows from the axioms in $\Phi$.</p>
+
+<p><br /></p>
+
+<p>Using a given model of a language $\mathcal{M}$, we can now interpret $\mathcal{L}$-statements. Now we can ask the question, what are all of the $\mathcal{L}$-statements that are <strong>true</strong> under model $\mathcal{M}$? This is called the <strong>theory</strong> induced by the model $\mathcal{M}$.</p>
+
+\[Th(\mathcal{M}) = \{ A: \mathcal{M} \models A \}\]
+
+<p>Again, the meaning of $\mathcal{M} \models A$ requires too much explanation to provide here. Intuitively, it means all statements $A$, which evaluate to <em>true</em> under the interpretation provided by the model $\mathcal{M}$.</p>
+
+<p><br /></p>
+
+<p>A natural question to ask is, given a model $\mathcal{M}$, can I find a set of axioms $\Phi$ such that $Th(\mathcal{M}) = Th(\Phi)$? If we found such a set, it would be called an <strong>axiomatization</strong> of $\mathcal{M}$. In some cases this is possible, and in others, it is not.</p>
+
+<p><br /></p>
+
+<h3 id="further-reading">Further Reading</h3>
+
+<p>I learned this while taking a course in mathematical logic. If you are interested in filling in the gaps that I have left out of the above, you can find the course notes <a href="https://www.cs.toronto.edu/~sacook/csc438h/" target="_blank">here</a>. I can’t promise they are the best, but they will get the job done. If you have any better recommendations, please <a href="mailto:epkeilty@gmail.com">let me know</a>.</p>
+
+<p><br /></p>
+
+<h2 id="the-language-of-arithmetic">The Language of Arithmetic</h2>
+
+<p>The language of arithmetic $\mathcal{L}_{A}$ consists of the following</p>
+<ul>
+  <li>$0$ - a constant called <em>zero</em></li>
+  <li>$s(\cdot)$ - a unary operation called the <em>successor function</em></li>
+  <li>$+(\cdot, \cdot)$ - a binary operation called <em>addition</em></li>
+  <li>$*(\cdot, \cdot)$ - a binary function called <em>multiplication</em></li>
+  <li>$=(\cdot, \cdot)$ - a binary predicate called <em>equality</em></li>
+  <li>$&lt;(\cdot, \cdot)$ - a binary predicate called <em>less than</em> (this one is sometimes left out)</li>
+</ul>
+
+<p>As a short-hand, we can write $\mathcal{L}_{A} = [0, s, +, *; =, &lt;]$. You can also define other predicates such as \(\{ \neq, &gt;, \leq, \geq \}\), but we will see from the axioms typically associated with these operations that they are simply syntactic sugar. These can all be expressed in terms of the predicates \(\{=, &lt; \}\). Thus, logically speaking we do not gain anything from these.</p>
+
+<p><br /></p>
+
+<h2 id="the-standard-model-of-arithmetic">The Standard Model of Arithmetic</h2>
+
+<p>The standard model of arithmetic is the natural numbers which we are all familiar with</p>
+
+\[\mathbb{N} = \{ 0, 1, 2, 3, \ldots \}\]
+
+<p>Recall that $0$ is a constant given by the language. $1$ is just a short-hand to mean $s(0)$. $2$ is just a short-hand to mean $s(s(0))$. and in general, the number $n$ is short-hand to mean apply the successor function $n$ times to $0$. The operators/predicates \(\{ +, *; =, &lt; \}\) are all the standard definitions we learned in school.</p>
+
+<p>The theory induced by this model is called <strong>True Arithmetic</strong> is the set of all true statements that can be made about the natural numbers.</p>
+
+<p>\(TA = Th(\mathbb{N}) = \{ A : \mathbb{N} \models A \}\)
+What 20th-century mathematicians wanted was to create a set of axioms from which all true statements about $\mathbb{N}$ could be derived. If they could succeed in doing so, then all of mathematics could be rigorously grounded in logic.</p>
+
+<p><br /></p>
+
+<h2 id="the-peano-axioms">The Peano Axioms</h2>
+
+<p>The <strong>Peano Axioms</strong>, denotes $\Phi_{PA}$, are the following set of axioms in the language of arithmetic $\mathcal{L}_{A}$. This is the mathematicians’ attempt to create an axiomatization of $\mathbb{N}$.</p>
+
+\[\begin{align}
+    &amp;1)   &amp;\neg (\forall n \qquad&amp; s(n) = 0) \\
+    &amp;2)   &amp;\forall n \ \forall m \qquad&amp; s(n) = s(m) \implies n = m \\
+    &amp;3)   &amp;\forall n \qquad&amp; n + 0 = n \\
+    &amp;4)   &amp;\forall n \ \forall m \qquad&amp; n + s(m) = s(n+m) \\
+    &amp;5)   &amp;\forall n \qquad&amp; n \cdot 0 = 0 \\
+    &amp;6)   &amp;\forall n \ \forall m \qquad&amp; n \cdot s(m) = (n \cdot m) + n \\
+\end{align}\]
+
+<p>We also need the first-order induction axiom (which is actually a countably infinite number of axioms. One for each first-order formula). Let $A(n)$ be a first-order formula that uses variable $n$.</p>
+
+\[7_A) \qquad \Big ( \ A(0) \wedge \big ( \forall n \quad A(n) \implies A(s(n)) \big ) \ \Big ) \implies \Big ( \forall m \quad A(m) \Big )\]
+
+<p>Also, we have the standard axioms of equality. Let $f(\cdot)$ denote any function in the language. In the above case, $s$, $+$, and $\cdot$. Let $P(\cdot)$ denote any predicate other than equality in the language. In the above case, we have $&lt;$. Let $\vec{x} = (x_1, x_2, \ldots, x_n)$ and $\vec{y} = (y_1, y_2, \ldots, y_n)$ denote sets of variables. I am using letters $x, y, z$ to indicate that these are standard and not specific to the Peano Axioms.</p>
+
+\[\begin{align}
+    &amp;1)   &amp;\forall x \qquad&amp; x = x &amp;&amp;\qquad\text{Reflexivity} \\
+    &amp;2)   &amp;\forall x \ \forall y \qquad&amp; x = y \implies y = x &amp;&amp;\qquad\text{Commutativity} \\
+    &amp;3)   &amp;\forall x \ \forall y \ \forall z \qquad&amp; (x = y \wedge y = z) \implies x = z &amp;&amp;\qquad\text{Transitivity} \\
+    &amp;4)   &amp;\forall \vec{x} \ \forall \vec{y} \qquad&amp; \vec{x} = \vec{y} \implies f(\vec{x}) = f(\vec{y}) &amp;&amp; \\
+    &amp;5)   &amp;\forall \vec{x} \ \forall \vec{y} \qquad&amp; \vec{x} = \vec{y} \implies P(\vec{x}) = P(\vec{y}) &amp;&amp;
+\end{align}\]
+
+<p>Finally, we have the standard axioms of a <em>strict total ordering</em>. I am using letters $x, y, z$ to indicate that these are standard and not specific to the Peano Axioms.</p>
+
+\[\begin{align}
+    &amp;1)   &amp;\neg (\forall x \qquad&amp; x &lt; x) &amp;&amp;\qquad\text{Irreflexivity} \\
+    &amp;2)   &amp;\forall x \ \forall y \qquad&amp; x &lt; y \implies \neg (y &lt; x) &amp;&amp;\qquad\text{Asymmetric} \\
+    &amp;3)   &amp;\forall x \ \forall y \ \forall z \qquad&amp; (x &lt; y \wedge y &lt; z) \implies x &lt; z &amp;&amp;\qquad\text{Transitivity}
+\end{align}\]
+
+<p>Specific to the Peano Axioms, we have</p>
+
+\[4) \qquad\forall n \qquad n &lt; s(n)\]
+
+<p><br /></p>
+
+<h3 id="consequences-of-the-peano-axioms">Consequences of the Peano Axioms</h3>
+
+<p>It is easy to show these two nice consequences of the axioms, which align with the typical notion of these operations.</p>
+
+\[s(n) = s(n + 0) = n + s(0) = n + 1\]
+
+\[n * 1 = n * s(0) = (n * 0) + n = 0 + n = n\]
+
+<p>We can summarize the properties of addition that result from these axioms. These are very fun to prove and not too difficult, so I will leave that to you. Hint, you need to use induction on some of them.</p>
+
+\[\begin{align}
+    &amp;\textbf{Identity:} &amp;\forall n \qquad &amp;n + 0 = n \\
+    &amp;\textbf{Successor:} &amp;\forall n \qquad &amp;n + 1 = s(n) \\
+    &amp;\textbf{Commutativity:} &amp;\forall n \forall m \qquad &amp;n + m = m + n \\
+    &amp;\textbf{Associativity:} &amp;\forall n \forall m \forall r \qquad &amp;(n + m) + r = n + (m + r)
+\end{align}\]
+
+<p>We can do likewise for properties of multiplication. Again, these are not difficult to prove, so I will leave that to you. Hint, you need to use induction on some of them.</p>
+
+\[\begin{align}
+    &amp;\textbf{Zero:} &amp;\forall n \qquad &amp;n * 0 = 0 \\
+    &amp;\textbf{Identity:} &amp;\forall n \qquad &amp;n * 1 = n \\
+    &amp;\textbf{Commutativity:} &amp;\forall n \forall m \qquad &amp;n * m = m * n \\
+    &amp;\textbf{Associativity:} &amp;\forall n \forall m \forall r \qquad &amp;(n * m) * r = n * (m * r) \\
+    &amp;\textbf{Distibutivity:} &amp;\forall n \forall m \forall r \qquad &amp;n * (m + r) = (n * m) + (n * r)
+\end{align}\]
+
+<p>Finally, we have some properties relating to ordering. There are probably others, but these seem fundamental.</p>
+
+\[\begin{align}
+    &amp;\textbf{Tricholomy:} &amp;\forall n \forall m \qquad &amp;(n &lt; m) \vee (n = m) \vee (m &lt; n) \\
+    &amp;\textbf{Addition:} &amp;\forall n \forall m \forall r \qquad &amp;(n &lt; m) \implies (n + r &lt; m + r) \\
+    &amp;\textbf{Multiplication:} &amp;\forall n \forall m \forall r \qquad &amp;((0 &lt; r) \wedge (n &lt; m)) \implies (n * r &lt; m * r) \\
+    &amp;\textbf{Minimum:} &amp;\forall n \qquad &amp;(n = 0) \vee (0 &lt; n)
+\end{align}\]
+
+<p>So far, things are looking good.</p>
+
+<p><br /></p>
+
+<h3 id="gödels-incompleteness-theorem">Gödel’s Incompleteness Theorem</h3>
+
+<p>Is it true that $\Phi_{PA}$ is an axiomatization of $\mathbb{N}$? i.e. does $Th(\mathbb{N}) = Th(\Phi_{PA})$? Unfortunately, the answer is no. This was famously shown by Kurt Gödel’s incompleteness theorems. The actual statements of his theorems are quite technical, but the upshot is that $Th(\Phi_{PA}) \subset Th(\mathbb{N})$ (proper subset), and in fact there does not exist any axiomatization of $\mathbb{N}$.</p>
+
+<p>This has some profound philosophical ramifications. For all intents and purposes, the Peano axioms are the foundation of modern number theory. This means that there exist some true statements about the natural numbers which cannot be proved. For example, it could be the case that the Riemann hypothesis is true and that there does not exist a proof for it.</p>
+
+<p><br /></p>
+
+<p>To give my perspective on this. Typically these “true statement which has no proof” require heavy self-reference, which ultimately results in self-contradiction; similar to the statement “this statement is false”. I have never seen an instance of a “true statement which has no proof” that is not utterly contrived and frankly a statement no one cares about. I conjecture that any “well-behaved” true statement which does not contain self-reference will contain a proof. And I believe this is the standard consensus among mathematicians.</p>
+
+<p><br /></p>
+
+<h3 id="nonstandard-models-of-arithmetic">Nonstandard Models of Arithmetic</h3>
+
+<p>As an additional aside, while $\mathbb{N}$ certainly satisfies all of the Peano axioms; unfortunately, there exist nonstandard models of arithmetic which also satisfy them. This fact is implied by the compactness theorem. Moreover, the upward Lowenheim-Skolem theorem shows that there are nonstandard models of all infinite cardinalities. These models are pretty complicated. Tennenbaum’s theorem shows that there is no countable nonstandard model of the Peano Axioms in which either the addition or multiplication operation is computable. So I will not describe these models here.</p>
+
+        </div>
+
+        <!-- Adding the ability to move between parts of the series -->
+        
+        
+        
+
+        
+        
+        
+
+        <!-- Getting capitalized title for series -->
+        
+        
+        
+        <!-- Getting url for series, which is just the page url with the last /... removed -->
+        
+
+        <div class="pagination" style="margin-top:1em;">
+            
+                <a class="pagination-item older" href="/blog/constructing-the-real-numbers/introduction/">Previous</a>
+            
+            
+                <a class="pagination-item newer" href="/blog/constructing-the-real-numbers/the-natural-numbers/">Next</a>
+            
+        </div>
+        <h3 style="text-align:center; margin-bottom:1em;">
+            <a href="/blog/constructing-the-real-numbers">
+            
+                Constructing
+            
+                The
+            
+                Real
+            
+                Numbers
+            
+         Series</a>
+        </h3>
+    </div>
+    
+  </body>
+</html>

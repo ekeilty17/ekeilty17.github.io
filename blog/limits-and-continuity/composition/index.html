@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Composition &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded Latex support -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX","input/MathML","output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js", "cancel.js"]
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!-- Enable Tikz support -->
+<link rel="stylesheet" type="text/css" href="http://tikzjax.com/v1/fonts.css">
+<script src="http://tikzjax.com/v1/tikzjax.js"></script>
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">Software Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/resume">R&eacute;sum&eacute;</a>
+          </li>
+        
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2023 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">Composition</h1>
+            <!-- <span class="series-date">07 Oct 2022</span> -->
+            <time datetime="2022-10-07T00:00:00-04:00" class="post-date">07 Oct 2022</time>
+            <p>Let $f: B \rightarrow C$ be a continuous function. This means that $\lim_{z \rightarrow b} f(z) = f(b)$ for all $b \in B$. Therefore</p>
+
+\[\forall \epsilon_f &gt; 0 \quad \exists \delta_f &gt; 0 \quad \text{s.t.} \quad 0 &lt; \lvert z - b \rvert &lt; \delta_f \implies \lvert f(z) - f(b) \rvert &lt; \epsilon_f\]
+
+<p>Let $g: A \rightarrow B$ be any function whose limit exists at $a \in A$. Let $M \in B$ such that $\lim_{x \rightarrow a} g(x) = M$. Therefore</p>
+
+\[\forall \epsilon_g &gt; 0 \quad \exists \delta_g &gt; 0 \quad \text{s.t.} \quad 0 &lt; \lvert x - a \rvert &lt; \delta_g \implies \lvert g(x) - M \rvert &lt; \epsilon_g\]
+
+<p><br /></p>
+
+<p>We wish to show that</p>
+
+\[\lim_{x \rightarrow a} f(g(x)) = f \left ( M \right )\]
+
+<p><br /></p>
+
+<p>Fix and $\epsilon &gt; 0$. In the limit definition of $f(z)$ we fix a particular $\epsilon_f = \epsilon$. Also, choose the particular $b = M$. Therefore, we have</p>
+
+\[\exists \delta_f &gt; 0 \quad \text{s.t.} \quad 0 &lt; \lvert z - M \rvert &lt; \delta_f \implies \lvert f(z) - f(M) \rvert &lt; \epsilon\]
+
+<p>Now, in the limit definition of $g(x)$ we fix a particular $\epsilon_g = \delta_f$. Therefore, we have</p>
+
+\[\exists \delta_g &gt; 0 \quad \text{s.t.} \quad 0 &lt; \lvert x - a \rvert &lt; \delta_g \implies \lvert g(x) - M \rvert &lt; \delta_f\]
+
+<p>Now, let $z = g(x)$ and let $\delta = \delta_g$. Therefore</p>
+
+\[\exists \delta &gt; 0 \quad \text{s.t.} \quad 0 &lt; \lvert x - a \rvert &lt; \delta \implies \lvert g(x) - M \rvert &lt; \delta_f \implies \lvert z - M \rvert &lt; \delta_f \implies \lvert f(z) - f(M) \rvert &lt; \epsilon\]
+
+<p>which proves the result.</p>
+
+<p><br /></p>
+
+<p>Written in a more general notation, we have the composition law of limits</p>
+
+\[\lim_{x \rightarrow a} f(g(x)) = f \left ( \lim_{x \rightarrow a} g(x) \right )\]
+
+<p><br /></p>
+
+<h2 id="general-counter-example">General Counter-Example</h2>
+
+<p>The composition law of limits does not hold if $f$ is not continuous. To show this, we provide a simple counter-example.</p>
+
+<p><br /></p>
+
+<p>Suppose
+\(f(x) = \begin{cases} 
+    0       &amp;\quad\text{if } x \leq 0 \\
+    1       &amp;\quad\text{if } x &lt; 0
+\end{cases}\) 
+is the unit step function, and $g(x) = x$. Then, $f(g(x)) = f(x)$</p>
+
+<p><br /></p>
+
+<p>The composition law would suggest that $\displaystyle \lim_{x \rightarrow 0} f(x) = \lim_{x \rightarrow 0} f(g(x)) = f \left ( \lim_{x \rightarrow 0} g(x) \right ) = f \left ( \lim_{x \rightarrow 0} x \right ) = f(0) = 0$. However, using the definition of $\lim_{x \rightarrow 0} f(x) = 0$, we can show this leads to a contradiction.</p>
+
+\[\begin{align}
+    &amp;\forall \epsilon &gt; 0 \quad \exists \delta &gt; 0 \quad \text{s.t.} \quad 0 &lt; \lvert x - 0 \rvert &lt; \delta \implies \lvert f(x) - 0 \rvert &lt; \epsilon \\[10pt]
+    &amp;\forall \epsilon &gt; 0 \quad \exists \delta &gt; 0 \quad \text{s.t.} \quad  0 &lt; \lvert x \rvert &lt; \delta \implies \lvert f(x) \rvert &lt; \epsilon
+\end{align}\]
+
+<p>If $\epsilon = 1$ and $0 &lt; x &lt; \delta$, then $\lvert f(x) \rvert = \lvert 1 \rvert = 1 \not&lt; 1 = \epsilon$.</p>
+
+<p><br /></p>
+
+<p>The issue here is that the left-handed limit and the right-handed limit do not equal. In particular</p>
+
+\[\lim_{x \rightarrow 0^{-}} f(x) = 0 \quad\qquad\text{and}\qquad\quad \lim_{x \rightarrow 0^{+}} f(x) = 1\]
+
+<p>This issue does not happen if the function is continuous.</p>
+
+        </div>
+
+        <!-- Adding the ability to move between parts of the series -->
+        
+        
+        
+
+        
+        
+        
+
+        <!-- Getting capitalized title for series -->
+        
+        
+        
+        <!-- Getting url for series, which is just the page url with the last /... removed -->
+        
+
+        <div class="pagination" style="margin-top:1em;">
+            
+                <a class="pagination-item older" href="/blog/limits-and-continuity/reciprocal-and-division/">Previous</a>
+            
+            
+                <a class="pagination-item newer" href="/blog/limits-and-continuity/inverse-functions/">Next</a>
+            
+        </div>
+        <h3 style="text-align:center; margin-bottom:1em;">
+            <a href="/blog/limits-and-continuity">
+            
+                Limits
+            
+                And
+            
+                Continuity
+            
+         Series</a>
+        </h3>
+    </div>
+    
+  </body>
+</html>

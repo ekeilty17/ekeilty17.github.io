@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Introduction &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded Latex support -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX","input/MathML","output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js", "cancel.js"]
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!-- Enable Tikz support -->
+<link rel="stylesheet" type="text/css" href="http://tikzjax.com/v1/fonts.css">
+<script src="http://tikzjax.com/v1/tikzjax.js"></script>
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">Software Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/resume">R&eacute;sum&eacute;</a>
+          </li>
+        
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2023 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">Introduction</h1>
+            <!-- <span class="series-date">01 Oct 2022</span> -->
+            <time datetime="2022-10-01T00:00:00-04:00" class="post-date">01 Oct 2022</time>
+            <p><strong>TODO</strong> This entire series probably needs to be polished, but the content is mostly already here.</p>
+
+<h2 id="motivation">Motivation</h2>
+
+<p>When writing my <a href="/blog/derivative-proofs/">derivative proofs series</a>, in the <a href="blog/derivative-proofs/introduction/">introduction</a> I assert without proof the limit laws that we would need. Here, I would like to take the time to rigorously prove these limit laws using the epsilon-delta definition, in order to provide the proper foundation for my derivative proofs series.</p>
+
+<p>I remember when taking first-year calculus in university that $\epsilon - \delta$ proofs was one of the most dreaded topics. However, when reading Terence Tao’s  <a href="https://link.springer.com/content/pdf/10.1007/978-981-10-1789-6.pdf" target="_blank">real analysis textbook</a>, I begin to appreciate their elegance. This series gives me an excuse to revisit $\epsilon - \delta$ proofs, and helped me gain a better understanding of the foundation of modern calculus.</p>
+
+<p><br /></p>
+
+<h2 id="a-little-history">A Little History</h2>
+
+<p>The concept of a <em>limit</em> has been around for a very long time. As far back as the greeks gives the famous <a href="https://www.youtube.com/watch?v=u7Z9UnWOJNY" target="_blank">Zeno’s Paradox and Achilles and the Tortoise</a> thought experiments, wrestling with the idea of infinite sequences. Famously, the genius of antiquity <a href="https://en.wikipedia.org/wiki/Archimedes" target="_blank">Archimedes</a> almost discovered integration when studying <a href="https://archive.org/details/worksofarchimede029517mbp/page/232/mode/2up" target="_blank">quadratures of the parabola</a>. Moreover, there were a number of <a href="https://www.youtube.com/watch?v=R1HUtt2oo7A" target="_blank">unrigorous proofs</a> for the area of a circle, which used limit-like arguments.</p>
+
+<p>When calculus was first invented by <a href="https://en.wikipedia.org/wiki/Isaac_Newton" target="_blank">Newton</a> and <a href="https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz" target="_blank">Leibniz</a>, its foundation was largely heuristic, based on this concept of <a href="https://en.wikipedia.org/wiki/Infinitesimal" target="_blank">infinitesimals</a>, as can be seen in the notation $\frac{dy}{dx}$. The issue with this approach is that the foundation of calculus were these numbers that seemingly did not exist and could not be rigorously established. Eventually, <a href="https://en.wikipedia.org/wiki/Augustin-Louis_Cauchy" target="_blank">Cauchy</a> proposed his $\epsilon - \delta$ formulation of limits. It was quickly realized that <strong>all</strong> of calculus could be rigorously rooted in these definitions. Thus, they are what are taught today.</p>
+
+<p>For further reading, I recommend <a href="http://users.uoa.gr/~spapast/TomeasDidaktikhs/Caychy/GrabinerOriginsofCauchysRigorousCalculus.pdf" target="_blank">The Origins of Cauchy’s Rigorous Calculus</a> and <a href="https://authors.library.caltech.edu/75428/1/NON-STANDARD%20ANALYSIS-ROBINSONS%20THEORY%20OF%20INFINITESIMALS-1962.pdf" target="_blank">Lectures of A Robinson’s Theory of Infinitesimals and Infinitely Large Numbers</a>.</p>
+
+<p><br /></p>
+
+<h2 id="a-short-reflection">A Short Reflection</h2>
+
+<p>A theme with all of my series has been that often I find places where the typical proofs found in courses or textbooks are unrigorous or circular. This series is no exception. The proofs for the continuity of $e^x$ and $\sin(x)$ often implicitly assume their continuity within them. In the case of $e^x$, proofs typically require the continuity of $\ln(x)$, which derives its continuity from $e^x$. In the case of $\sin(x)$, arguments typically require the fact that $\lvert \sin(x) \rvert \leq \lvert x \rvert$, which is often proved using the derivatve of $\sin(x)$, whose proof requires the continuity of $\sin(x)$ at $x = 0$. In this series, fix these circularities and provide a completely rigorous formulation.</p>
+
+<!-- Using the power series definitions fixes all of these problems, but that's not as fun. -->
+
+<p><br /></p>
+
+<h2 id="definition-of-limits">Definition of Limits</h2>
+
+<p>Let $f$ be any function, $a \in \mathbb{R}$ not necessarily in the domain of $f$, and $L \in \mathbb{R}$ not necessarily in the range of $f$.</p>
+
+<p>The notation $\displaystyle \lim_{x \rightarrow a} f(x) = L$ is read as “the limit of $f$ as $x$ approaches $a$ is $L$” is syntactic sugar that actually means</p>
+
+\[\forall \epsilon &gt; 0 \quad \exists \delta &gt; 0 \quad \text{s.t.} \quad 0 &lt; \lvert x - a \rvert &lt; \delta \implies \lvert f(x) - L \rvert &lt; \epsilon\]
+
+<p><br /></p>
+
+<p>We have to be extremely careful with what we mean by equality here. <strong>If</strong> such an $L$ satisfies the above, then the limit <strong>exists</strong> and is equal to $L$, otherwise, the limit does not exist and equality is left undefined.</p>
+
+<p>For example, $\displaystyle \lim_{x \rightarrow 0} \frac{1}{x}$ does not exist. Thus, there is no such $L \in \mathbb{R}$ such that $\displaystyle \lim_{x \rightarrow 0} \frac{1}{x} = L$. Therefore, $\displaystyle \lim_{x \rightarrow 0} \frac{1}{x}$ is left undefined</p>
+
+<p><br /></p>
+
+<h2 id="definition-of-continuity">Definition of Continuity</h2>
+
+<p>We say that $f$ is <strong>continuous</strong> at $a$ if $\displaystyle \lim_{x \rightarrow a} f(x) = f(a)$. Written using the limit definition,</p>
+
+\[\forall \epsilon &gt; 0 \quad \exists \delta &gt; 0 \quad \text{s.t.} \quad 0 &lt; \lvert x - a \rvert &lt; \delta \implies \lvert f(x) - f(a) \rvert &lt; \epsilon\]
+
+<p><br /></p>
+
+<p>We say that $f$ is <strong>continuous</strong> if it is continuous for all $a$ in the domain of $f$.</p>
+
+<p><br /></p>
+
+<p>Intuitively, a function is continuous if you can draw it without picking up your pencil. This is what the definition is essentially saying. If the limit is always equal to the value of the function, then locally the function always equals what it is approaching.</p>
+
+<p><br /></p>
+
+<h2 id="the-triangle-inequality">The Triangle Inequality</h2>
+
+<p>In proofs, we will often use the <strong>triangle inequality</strong></p>
+
+\[\lvert a + b \rvert \leq \lvert a \rvert + \lvert b \rvert\]
+
+<p>and the <strong>subtraction triangle inequality</strong></p>
+
+\[\Big \lvert \lvert a \rvert - \lvert b \rvert \Big \rvert \leq \lvert a - b \rvert\]
+
+<p><strong>TODO</strong> Find a source which proves this.</p>
+
+<p><br /></p>
+
+<h2 id="bounding-convergent-functions">Bounding Convergent Functions</h2>
+
+<p>If $\displaystyle \lim_{x \rightarrow a} f(x)$ exists, then $f(x)$ is bounded in a small neighborhood around $a$. Very often we will fix a particular $\epsilon &gt; 0$ and say</p>
+
+\[\begin{align}
+    &amp;\exists \delta &gt; 0 \quad \text{s.t.} \quad 0 &lt; \lvert x - a \rvert &lt; \delta \quad\implies\quad \lvert f(x) - L \rvert &lt; \epsilon \\[10pt]
+    &amp;\exists \delta &gt; 0 \quad \text{s.t.} \quad 0 &lt; \lvert x - a \rvert &lt; \delta \quad\implies\quad \Big \lvert \lvert f(x) \rvert - \lvert L \rvert \Big \rvert &lt; \epsilon \\[10pt]
+    &amp;\exists \delta &gt; 0 \quad \text{s.t.} \quad 0 &lt; \lvert x - a \rvert &lt; \delta \quad\implies\quad -\epsilon &lt; \lvert f(x) \rvert - \lvert L \rvert &lt; \epsilon \\[10pt]
+    &amp;\exists \delta &gt; 0 \quad \text{s.t.} \quad 0 &lt; \lvert x - a \rvert &lt; \delta \quad\implies\quad \lvert L \rvert - \epsilon &lt;  \lvert f(x) \rvert &lt; \lvert L \rvert + \epsilon
+\end{align}\]
+
+<p>Now, we can set $\epsilon$ can be anything we want, for example $\epsilon = \frac{\lvert L \rvert}{2}$.</p>
+
+        </div>
+
+        <!-- Adding the ability to move between parts of the series -->
+        
+        
+        
+
+        
+        
+        
+
+        <!-- Getting capitalized title for series -->
+        
+        
+        
+        <!-- Getting url for series, which is just the page url with the last /... removed -->
+        
+
+        <div class="pagination" style="margin-top:1em;">
+            
+                <span class="pagination-item older">Previous</span>
+            
+            
+                <a class="pagination-item newer" href="/blog/limits-and-continuity/intuition-of-limits-and-continuity/">Next</a>
+            
+        </div>
+        <h3 style="text-align:center; margin-bottom:1em;">
+            <a href="/blog/limits-and-continuity">
+            
+                Limits
+            
+                And
+            
+                Continuity
+            
+         Series</a>
+        </h3>
+    </div>
+    
+  </body>
+</html>

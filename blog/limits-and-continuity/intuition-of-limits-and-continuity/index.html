@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Intuition of Limits and Continuity &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded Latex support -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX","input/MathML","output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js", "cancel.js"]
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!-- Enable Tikz support -->
+<link rel="stylesheet" type="text/css" href="http://tikzjax.com/v1/fonts.css">
+<script src="http://tikzjax.com/v1/tikzjax.js"></script>
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">Software Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/resume">R&eacute;sum&eacute;</a>
+          </li>
+        
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2023 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">Intuition of Limits and Continuity</h1>
+            <!-- <span class="series-date">02 Oct 2022</span> -->
+            <time datetime="2022-10-02T00:00:00-04:00" class="post-date">02 Oct 2022</time>
+            <h2 id="discontinuity">Discontinuity</h2>
+
+<p>The easiest way to understand <strong>continuity</strong> is to understand <strong>discontinuity</strong>. There are four types of discontinuities - removeable, jump, infinite, and oscillating - which we will showcase here.</p>
+
+<p><br /></p>
+
+<p>The funciton below shows a <strong>removeable discontinuity</strong> at $x = 3$.</p>
+
+<center>
+<embed src="/svg/intuition-of-limits-and-continuity/removeable-discontinuity.svg" type="image/svg+xml" />
+</center>
+
+<p><br /></p>
+
+<p>The function is equal to the blue curve, except at $x = 3$. Instead of equation equal to $2$ as the blue curve would suggest, it instead is equal to $2$. The function is also sometimes said to contain a <strong>hole</strong> at $x = 3$.</p>
+
+<p><br /></p>
+
+<p>The function below is said to contain an <strong>finite/jump discontinuity</strong> at $x = 3$.</p>
+
+<center>
+<embed src="/svg/intuition-of-limits-and-continuity/jump-discontinuity.svg" type="image/svg+xml" />
+</center>
+
+<p>In this example, the function stops at the point $(3, 1)$ and starts back up again at a different point $(3, 3)$.</p>
+
+<p><br /></p>
+
+<p>The function below is said to contain an <strong>infinite discontinuity</strong> at $x = 3$.</p>
+
+<center>
+<embed src="/svg/intuition-of-limits-and-continuity/infinite-discontinuity.svg" type="image/svg+xml" />
+</center>
+
+<p>In this example, there is a vertical asymptote at $x = 3$, meaning the function tends to infinity around $x = 3$.</p>
+
+<p><br /></p>
+
+<p>The function below is said to contain an <strong>oscillating discontinuity</strong> at $x = 3$.</p>
+
+<center>
+<embed src="/svg/intuition-of-limits-and-continuity/oscillating-discontinuity.svg" type="image/svg+xml" />
+</center>
+
+<p>In this example, the value of $f(x)$ is undefined at $x = 3$ because the function oscillates between the $y$-values $0$ and $4$. As the function gets closer to the point $x = 3$, it oscillates more and more, tending towards infinity. Thus, there is no defineable value for the function to take at $x = 3$.</p>
+
+<p><br /></p>
+
+<h2 id="intuition-of-limits">Intuition of Limits</h2>
+
+<p>Consider the removeable discontinuity example, denote the function $f(x)$. Even though by definition $f(x) = 3$, there is a sense that saying $f(x) = 2$ is more useful information. If you consider the point $f(x + \epsilon)$ for a very small $\epsilon$, you would be much closer to the point $(3, 2)$ than $(3, 3)$. In other words, if we approach $x = 3$ along the curve of the function, we will approach the point $(3, 2)$.</p>
+
+<center>
+<embed src="/svg/intuition-of-limits-and-continuity/limit-intuition-1.svg" type="image/svg+xml" />
+&emsp;&emsp;&emsp;&emsp;
+<embed src="/svg/intuition-of-limits-and-continuity/limit-intuition-2.svg" type="image/svg+xml" />
+</center>
+
+<p><br /></p>
+
+<p>Consider the jump discontinuity example. There is actually no definable limit in this situation. From the perspective of the left curve, the limit seems to tend towards $1$ as $x$ approaches $3$. However, from the perspective of the right curve, the limit seems to tend towards $3$ as $x$ approaches $3$. Thus, the total limit does not exist. However, this should give an intuition for the concept of a <em>left-handed</em> and <em>righ-handed</em> limit.</p>
+
+<center>
+<embed src="/svg/intuition-of-limits-and-continuity/limit-intuition-3.svg" type="image/svg+xml" />
+&emsp;&emsp;&emsp;&emsp;
+<embed src="/svg/intuition-of-limits-and-continuity/limit-intuition-4.svg" type="image/svg+xml" />
+</center>
+
+<p><br /></p>
+
+<p>The infinite discontinuity occurs due to limits that tend towards infinity, which I am not going to cover in this series. The oscillating discontinuity is actually pretty complex. There is a really good video analyzing this function <a href="https://www.youtube.com/watch?v=1QAqxiO8VHM" target="_blank">here</a>.</p>
+
+<p><br /></p>
+
+<h2 id="definition-of-finite-limits">Definition of Finite Limits</h2>
+
+<p>Let $f$ be any function, $a \in \mathbb{R}$ not necessarily in the domain of $f$, and $L \in \mathbb{R}$ not necessarily in the range of $f$.</p>
+
+<p>The notation $\displaystyle \lim_{x \rightarrow a^-} f(x) = L$ defines the <strong>left-hand limit</strong>, and it means</p>
+
+\[\forall \epsilon &gt; 0 \quad \exists \delta &gt; 0 \quad \text{s.t.} \quad x &gt; a - \delta \implies \lvert f(x) - L \rvert &lt; \epsilon\]
+
+<p><br /></p>
+
+<p>The notation $\displaystyle \lim_{x \rightarrow a^+} f(x) = L$ defines the <strong>right-hand limit</strong>, and it means</p>
+
+\[\forall \epsilon &gt; 0 \quad \exists \delta &gt; 0 \quad \text{s.t.} \quad x &lt; a + \delta \implies \lvert f(x) - L \rvert &lt; \epsilon\]
+
+<p><br /></p>
+
+<p>The notation $\displaystyle \lim_{x \rightarrow a} f(x) = L$ defines the <strong>limit</strong>, and it means</p>
+
+\[\forall \epsilon &gt; 0 \quad \exists \delta &gt; 0 \quad \text{s.t.} \quad 0 &lt; \lvert x - a \rvert &lt; \delta \implies \lvert f(x) - L \rvert &lt; \epsilon\]
+
+<p><br /></p>
+
+<p>Notice that $\displaystyle \lim_{x \rightarrow a} f(x) = L$ if and only if $\displaystyle \lim_{x \rightarrow a^-} f(x) = L$ and $\displaystyle \lim_{x \rightarrow a^+} f(x) = L$</p>
+
+<p><br /></p>
+
+<p><strong>If</strong> such an $L$ satisfies the above, then the limit <strong>exists</strong> and is equal to $L$, otherwise, the limit does not exist and equality is left undefined.</p>
+
+<p><br /></p>
+
+<h2 id="definition-of-continuity">Definition of Continuity</h2>
+
+<p>We say that $f$ is <strong>continuous</strong> at $a$ if $\displaystyle \lim_{x \rightarrow a} f(x) = f(a)$. Written using the limit definition,</p>
+
+\[\forall \epsilon &gt; 0 \quad \exists \delta &gt; 0 \quad \text{s.t.} \quad 0 &lt; \lvert x - a \rvert &lt; \delta \implies \lvert f(x) - f(a) \rvert &lt; \epsilon\]
+
+<p><br /></p>
+
+<p>We say that $f$ is <strong>continuous</strong> if it is continuous for all $a$ in the domain of $f$.</p>
+
+<p><br /></p>
+
+<p>Intuitively, a function is continuous if you can draw it without picking up your pencil. This is what the definition is essentially saying. If the limit is always equal to the value of the function, then locally the function always equals what it is approaching.</p>
+
+        </div>
+
+        <!-- Adding the ability to move between parts of the series -->
+        
+        
+        
+
+        
+        
+        
+
+        <!-- Getting capitalized title for series -->
+        
+        
+        
+        <!-- Getting url for series, which is just the page url with the last /... removed -->
+        
+
+        <div class="pagination" style="margin-top:1em;">
+            
+                <a class="pagination-item older" href="/blog/limits-and-continuity/introduction/">Previous</a>
+            
+            
+                <a class="pagination-item newer" href="/blog/limits-and-continuity/constant-and-identity-functions/">Next</a>
+            
+        </div>
+        <h3 style="text-align:center; margin-bottom:1em;">
+            <a href="/blog/limits-and-continuity">
+            
+                Limits
+            
+                And
+            
+                Continuity
+            
+         Series</a>
+        </h3>
+    </div>
+    
+  </body>
+</html>

@@ -130,6 +130,8 @@
             <time datetime="2022-08-01T00:00:00-04:00" class="post-date">01 Aug 2022</time>
             <p>The Pell Equation is an equation of the form $x^2 - D y^2 = 1$ for $D &gt; 0$. Our task is to find <strong>integer</strong> solutions to this equation. I was first introduced to this problem by <a href="https://projecteuler.net/problem=66">Project Euler #66</a>, and I think the solution is beautiful and would like to share it. Much of this post is inspired by <a href="http://library.msri.org/books/Book44/files/01lenstra.pdf">this paper</a> by Hendrik W. Lenstra, Jr.</p>
 
+<p><br /></p>
+
 <h2 id="reframing-the-problem">Reframing the Problem</h2>
 
 <p>First, we note two key facts:</p>
@@ -143,7 +145,7 @@
 
 \[(x + \sqrt{D} y) (x - \sqrt{D} y) = 1\]
 
-<p>Thus, can reframe finding the solutions to the Pell Equation as finding the <strong>nontrivial</strong> unit of the ring $\mathbb{Z}[\sqrt{D}]$ of norm 1.</p>
+<p>Thus, we can reframe finding the solutions to the Pell Equation as finding the <strong>nontrivial</strong> unit of the ring $\mathbb{Z}[\sqrt{D}]$ of norm 1.</p>
 
 <p>This gives us is a way of generating new solutions from a given solution. Suppose that $(x_1, y_1)$ is a solution to the Pell Equation. We notice that</p>
 
@@ -158,7 +160,7 @@
 \[\vert x_1 + \sqrt{D} y_1 \vert = 1 \implies 1 = \vert x_1 + \sqrt{D} y_1 \vert^k = \vert (x_1 + \sqrt{D} y_1)^k \vert = \vert x_k + \sqrt{D} y_k \vert = x_k^2 - D y_k^2\]
 
 <p>Thus, $(x_k, y_k)$ is also a solution to the Pell Equation for all $k \geq 1$.
-In fact, <a href="https://faculty.math.illinois.edu/~r-ash/Ant/AntChapter6.pdf">Dirichlet’s Unit Theorem</a> tells us that given $(x_1, y_1)$ are the <strong>fundamental solutions</strong> to the Pell Equation, this method will generate <strong>every</strong> solution. The fundametal solution is the <strong>nontrivial</strong> solution with the smallest $x$ or $y$ component.</p>
+In fact, <a href="https://faculty.math.illinois.edu/~r-ash/Ant/AntChapter6.pdf">Dirichlet’s Unit Theorem</a> tells us that given $(x_1, y_1)$ is the <strong>fundamental solution</strong> to the Pell Equation, this method will generate <strong>every</strong> solution. The fundamental solution is the <strong>nontrivial</strong> solution with the smallest $x$ or $y$ component.</p>
 
 <p>So once we have the fundamental solution, we have a <em>very</em> efficient algorithm for generating the remaining solutions. if $(x_1, y_1)$ is the fundamental solution, then</p>
 
@@ -170,6 +172,8 @@ In fact, <a href="https://faculty.math.illinois.edu/~r-ash/Ant/AntChapter6.pdf">
 
 <p>Note that $(1, 0)$ is considered a trivial solution. If we attempt to use the recursive formula defined above, we will see that we just get $(1, 0)$ back. Thus, this is not a fundamental solution.</p>
 
+<p><br /></p>
+
 <h2 id="continued-fractions">Continued Fractions</h2>
 
 <p>We have to take a quick detour into continued fractions as they play an important role in the solution. A continued fraction takes the form</p>
@@ -180,15 +184,117 @@ In fact, <a href="https://faculty.math.illinois.edu/~r-ash/Ant/AntChapter6.pdf">
 
 \[\sqrt{3} = 1 + (\sqrt{3} - 1) = 3 + \frac{2}{\sqrt{3} + 1} = 3 + \frac{1}{\frac{\sqrt{3} + 1}{2}} = 3 + \frac{1}{1 + \frac{\sqrt{3} - 1}{2}} = 3 + \frac{1}{1 + \frac{1}{\sqrt{3} + 1}} = 3 + \frac{1}{1 + \frac{1}{2 + (\sqrt{3} - 1)}}\]
 
-<p>Notice in the last part, we arrived at the same expression as when we started: $\sqrt{3} - 1$. Therefore, everything after that point will be exactly the same, so we’ve arrived as a repeating expression. If a continued fraction has this property, it is called <strong>periodic</strong>. It turns out that $\sqrt{n}$ where $n$ is an integer is always periodic. The proof for this could be it’s own post. For the curious refer <a href="https://sites.millersville.edu/bikenaga/number-theory/periodic-continued-fractions/periodic-continued-fractions.html">here</a>. Thus, we can write the continued fraction in a sort-hand notation.</p>
+<p>Notice in the last part, we arrived at the same expression as when we started: $\sqrt{3} - 1$. Therefore, everything after that point will be exactly the same, so we’ve arrived at a repeating expression. If a continued fraction has this property, it is called <strong>periodic</strong>. It turns out that $\sqrt{n}$ where $n$ is an integer is always periodic. The proof for this could be it’s own post. For the curious refer <a href="https://sites.millersville.edu/bikenaga/number-theory/periodic-continued-fractions/periodic-continued-fractions.html">here</a>. Thus, we can write the continued fraction in a sort-hand notation.</p>
 
 \[\sqrt{3} = 1 + \frac{1}{1 + \frac{1}{2 + \frac{1}{1 + \frac{1}{2 + \ldots}}}} = [1; 1, 2, 1, 2, \ldots] = [1; \overline{1, 2}]\]
+
+<p><br /></p>
 
 <h2 id="finding-the-fundamental-solution">Finding the Fundamental Solution</h2>
 
 <p>This part of the solution is the reason I needed to share this problem. It is so shocking, yet so beautiful.</p>
 
-<p>It turns out, the fundamental solution is the</p>
+<p>It turns out, the fundamental solution can be calculated by the following procedure</p>
+
+<ol>
+  <li>Compute the continued fraction of \(\sqrt{D}\), suppose it has the form \([a_0; \overline{a_1, \ldots, a_k}]\)</li>
+  <li>
+    <p>Compute the following truncated continued fraction</p>
+
+\[\frac{x}{y} = \begin{cases}
+     [a_0; a_1, \ldots, a_{k-1}] \quad &amp;\text{if } k \text{ is even} \\
+     [a_0; a_1, \ldots, a_{2k-1}] \quad &amp;\text{if } k \text{ is odd}
+     \end{cases}\]
+  </li>
+  <li>\((x, y)\) is the fundamental solution, i.e. \(x^2 - D y^2 = 1\).</li>
+</ol>
+
+<p>A different but equivalent approach (more practical for code) is following:</p>
+
+<ol>
+  <li>Compute the continued fraction of \(\sqrt{D}\), suppose it has the form \([a_0; \overline{a_1, \ldots, a_k}]\)</li>
+  <li>Compute the following truncated continued fraction \(\frac{x}{y} = [a_0; a_1, \ldots, a_k]\)</li>
+  <li>Evaluate \(x^2 - D y^2\). If it equals $-1$, then square the solution (\(x' = x^2 + Dy^2, y' = 2xy\)) and that is the fundamental solution.</li>
+</ol>
+
+<p><br /></p>
+
+<p>Let’s do an example using \(\sqrt{3}\). The truncated continued fraction and it’s reduced fraction form is the following</p>
+
+\[\sqrt{3} = 3 + \frac{1}{1 + \frac{1}{2 + (\sqrt{3} - 1)}} \quad\rightarrow\quad 1 + \frac{1}{1 + 0} = \frac{2}{1}\]
+
+<p>Now, we test the solution \((x, y) = (2, 1)\).</p>
+
+\[2^2 - 3 \cdot 1^2 = 4 - 3 = 1\]
+
+<p>And indeed, it’s the fundamental solution. This can be used to generate every solution extremely efficiently.</p>
+
+\[(x_{k+1}, y_{k+1}) = (2 x_k + 3 y_k, x_k + 2 y_k)\]
+
+<h3 id="why-does-that-work">Why Does That Work?</h3>
+
+<p>Intuitively, the reason this works is because the continued fraction is a very good approximation \(\sqrt{D}\). By truncating it at its periodic point, we take advantage of a number of properties which ensures it’s an extremely good approximation. Thus, when we run it through the Pell Equation, we only get a difference of \(1\).</p>
+
+<p>To add a bit more detail, I am going to give a proof sketch. For a complete proof, you can refer <a href="https://ir.canterbury.ac.nz/server/api/core/bitstreams/7f14fb64-bc37-46b8-9d2d-0d705cab0319/content">here</a>.</p>
+
+<p>Let continued fraction of \(\sqrt{D}\) be \([a_0; \overline{a_1, \ldots, a_k}]\). Let \(p_n / q_n = [a_0; a_1, \ldots, a_n]\) denote the \(n\)th truncation of the continued fraction. I am going to assert the following equality (you can check it yourself).</p>
+
+\[\sqrt{D} = \frac{(a_0 + \sqrt{D}) p_{k-1} + p_{k-2}}{(a_0 + \sqrt{D})q_{k-1} + q_{k-2}}\]
+
+<p>Expanding, we get</p>
+
+\[q_{k-1} D + (a_0 q_{k-1} + q_{k-2})\sqrt{D} = a_0 p_{k-1} + p_{k-2} + p_{k-1} \sqrt{D}\]
+
+<p>Since $\mathbb{Z}[\sqrt{D}]$ is a field, we have</p>
+
+\[q_{k-1} D = a_0 p_{k-1} + p_{k-2} \qquad\text{and}\qquad p_{k-1} = a_0 q_{k-1} + q_{k-2}\]
+
+<p>Therefore</p>
+
+\[p_{k-2} = q_{k-1} D - a_0 p_{k-1} \qquad\text{and}\qquad q_{k-2} = p_{k-1} - a_0 q_{k-1}\]
+
+<p>Another fact I will state without proof is that $p_{i+1}q_i - p_iq_{i+1} = (-1)^i$ for any $i$. This is not too difficult to verify for yourself using induction. Now, substitute $i = k-2$ and combine with the above to get</p>
+
+\[(-1)^{k-2} = p_{k-1}(p_{k-1} - a_0 q_{k-1}) - (q_{k-1} D - a_0 p_{k-1})q_{k-1}\]
+
+<p>Thus,</p>
+
+\[p_{k-1}^2 - D q_{k-1}^2 = (-1)^k\]
+
+<p>i.e. $(p_{k-1}, q_{k-1})$ is a solution to the Pell Equation if $k$ is even. You can use exactly the same argument to find that $(p_{2k-1}, q_{2k-1})$ is a solution if $k$ is odd.</p>
+
+<p>A detail I have left out is why this gives the <em>fundamental</em> solution. Intuitively this is because $[a_0; a_1, \ldots, a_{k-1}]$ is the first truncation that gives a solution. Therefore, it will result in the smallest resulting solution. To prove this formally is too much math for an already long post.</p>
+
+<p><br /></p>
+
+<h2 id="implementation">Implementation</h2>
+
+<p>All this theory provides an extremely simple, elegant, and efficient algorithm for solving the Pell Equation. The pseudocode is given below. I have also implemented this fully on my <a href="https://github.com/ekeilty17/Project_Euler/blob/master/P066.py">GitHub</a>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">fundamental_solution_of_pell_equation</span><span class="p">(</span><span class="n">D</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">is_perfect_square</span><span class="p">(</span><span class="n">D</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">None</span>     <span class="c1"># perfect squares have no solution
+</span>
+    <span class="n">L</span> <span class="o">=</span> <span class="n">continued_fraction</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>      <span class="c1"># [a_0, a_1, ..., a_k]
+</span>    <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">collapse_continued_fraction</span><span class="p">(</span><span class="n">L</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">x0</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">D</span> <span class="o">*</span> <span class="n">y0</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">x0</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">D</span><span class="o">*</span><span class="n">y0</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">x0</span><span class="o">*</span><span class="n">y0</span>
+    
+    <span class="k">return</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">generate_kth_solution</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x0</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">D</span><span class="o">*</span><span class="n">y0</span><span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="n">x0</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="n">x</span><span class="o">*</span><span class="n">y0</span>
+    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+</code></pre></div></div>
+
+<p>There are faster algorithms than this, but the theory behind them are much beyond me.</p>
+
+<p><br /></p>
+
+<hr />
 
 <h2 id="appendix">Appendix</h2>
 
@@ -266,9 +372,11 @@ In fact, <a href="https://faculty.math.illinois.edu/~r-ash/Ant/AntChapter6.pdf">
 
 <p>So we get</p>
 
-\[((c, d) + (e, f)) \cdot (a, b) = (a, b) \cdot ((c, d) + (e, f)) = ((a, b) \cdot (e, f)) + ((c, d) \cdot (e, f)) =\]
+\[((c, d) + (e, f)) \cdot (a, b) = (a, b) \cdot ((c, d) + (e, f)) = ((a, b) \cdot (e, f)) + ((c, d) \cdot (e, f))\]
 
 <p>for free.</p>
+
+<p><br /></p>
 
 <h3 id="vert-x--sqrtd-y-vert--x2---d-y2-is-a-multiplicative-norm-of-this-ring">$\vert x + \sqrt{D} y \vert = x^2 - D y^2$ is a Multiplicative Norm of this Ring</h3>
 

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      The Integers &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded Latex support -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX","input/MathML","output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js", "cancel.js"]
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!-- Enable Tikz support -->
+<link rel="stylesheet" type="text/css" href="http://tikzjax.com/v1/fonts.css">
+<script src="http://tikzjax.com/v1/tikzjax.js"></script>
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">Software Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/resume">R&eacute;sum&eacute;</a>
+          </li>
+        
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2023 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">The Integers</h1>
+            <!-- <span class="series-date">04 Jul 2023</span> -->
+            <time datetime="2023-07-04T00:00:00-04:00" class="post-date">04 Jul 2023</time>
+            <p><strong>TODO</strong></p>
+
+<h2 id="too-long-didnt-read">Too Long Didn’t Read</h2>
+
+<p>The intuitive (but unrigorous) way to define the integers is the following</p>
+
+\[\mathbb{Z} = (- \mathbb{N}) \cup \mathbb{N} = \{ \ldots, \ -3, \ -2, \ -1, \ 0, \ 1, \ 2, \ 3, \ \ldots \}\]
+
+<p>where $(- \mathbb{N})$ is the negated natural numbers using the notion of negation that we were taught in school.</p>
+
+<p>However, if we want to rigorously define what “$-3$” means, then we have to do a bit more work.</p>
+
+<p><br /></p>
+
+<h2 id="subtraction-of-natural-numbers">Subtraction of Natural Numbers</h2>
+
+<p>In the previous post, we defined the addition operation. However, it might be nice to have a dual operation that “undoes” the addition. This operation is called <em>subtraction</em>. Similar to how we recursively defined the addition operation, we do likewise for the subtraction of natural numbers.</p>
+
+\[\begin{align}
+    &amp;\textbf{Rule } 1. &amp;\qquad&amp; n - 0 = n \\
+    &amp;\textbf{Rule } 2. &amp;\qquad&amp; s(n) - s(m) = s(n - s(m)) = n - m
+\end{align}\]
+
+<p>In some cases, this definition works great. For example</p>
+
+\[\begin{align}
+    5 - 2 
+    &amp;= s(5) - s(1) &amp;\qquad&amp;\text{definition of the natural numbers } 5 \text{ and } 2 \\
+    &amp;= 4 - 1 &amp;\qquad&amp;\text{Rule } 2. \\
+    &amp;= s(3) - s(0) &amp;\qquad&amp;\text{definition of the natural numbers } 4 \text{ and } 1 \\
+    &amp;= 3 - 0 &amp;\qquad&amp;\text{Rule } 2. \\
+    &amp;= 3 &amp;\qquad&amp;\text{Rule } 1.
+\end{align}\]
+
+<p>The issue arises when the right number is larger than the left number. If we run the same procedure on $2 - 5$, then we will end with the expression $0 - 3$, which we do not know how to evaluate. I claim that this expression cannot equal a natural number. Suppose by way of contradiction that we declared $0 - 3 = n$ where $n$ is any natural number. Then</p>
+
+\[s(s(s(n))) = n+3 = s(s(s(0 - 3))) = s(s(s(0))) - 3 = 3 - 3 = 0\]
+
+<p>Thus, we have shown that there exists a natural number whose successor is $0$, which our axioms say cannot exist. Obviously, the same argument can be applied to $0 - m$ for any non-zero natural number $m$.</p>
+
+<p>From here, we have two options. 1) we can leave the expression $0 - 3$ undefined. This is perfectly fine, and in fact what humanity chose to do for thousands of years. Or 2) we can define a new type of number that can be assigned to these types of expressions. Obviously, I choose the latter.</p>
+
+<p><br /></p>
+
+<h2 id="addition">Addition</h2>
+
+<p>Suppose we define $n - m$ as a new type of number. If $n \geq m$, then this is equivalent to the corresponding natural number. We now need to investigate its properties when $n &lt; m$.</p>
+
+<p>We assume the axioms of addition apply to these new numbers. In particular</p>
+
+\[\begin{align}
+    &amp;\textbf{Axiom } 1. &amp;\qquad&amp; s(n - m) + s(j - k) \implies (n - m) = (j - k) \\
+    &amp;\textbf{Axiom } 2. &amp;\qquad&amp; (n - m) + (0 - 0) = (n - m) \\
+    &amp;\textbf{Axiom } 3. &amp;\qquad&amp; (n - m) + s(j - k) = s( (n - m) + (j - k) ) \\
+    &amp;\textbf{Axiom } 4. &amp;\qquad&amp; (n - m) * (0 - 0) = (0 - 0) \\
+    &amp;\textbf{Axiom } 5. &amp;\qquad&amp; (n - m) * s(j - k) = ((n - m)*(j - k)) + (n - m)
+\end{align}\]
+
+<p>Now we are going to prove $(n - m) + (j - k) = (n+j) - (m+k)$. We fix $n - m$ and do induction on $k$</p>
+
+\[(n - m) + (0 - 0) =  n - m = (n + 0) - (m + 0)\]
+
+\[\begin{align}
+    s((n - m) + (0 - s(k))) 
+    &amp;= (n - m) + s((0 - s(k))) \\
+    &amp;= (n - m) + (0 - k) \\
+    &amp;= (n + 0) - (m + k) \\
+    &amp;= n - (m + k) \\
+    &amp;= s(n - s(m + k)) \\
+    &amp;= s(n - (m + s(k)))
+\end{align}\]
+
+<p>Therefore,</p>
+
+\[s((n - m) + (0 - s(k))) = s(n - (m + s(k))) \implies (n - m) + (0 - s(k)) = n - (m + s(k))\]
+
+<p>Now we prove the entire result by fixing a particular $k$ and doing induction on $j$</p>
+
+\[(n - m) + (0 - k) =  n - (m + k) = (n + 0) - (m + k)\]
+
+\[\begin{align}
+    (n - m) + (s(j) - k)  
+    &amp;= (n - m) + s(j - k) \\
+    &amp;= s((n - m) + (j - k)) \\
+    &amp;= s((n + j) - (m + k)) \\
+    &amp;= s(n + j) - (m + k) \\
+    &amp;= (n + s(j)) - (m + k)
+\end{align}\]
+
+<h2 id="multiplication">Multiplication</h2>
+
+<p>To make the equations more readable, I will use the convention that $ab = a * b$. Now I want to prove that $(n - m) * (j - k) = (nj + mk) - (nk + mj)$. We first use induction on $k$.</p>
+
+\[(n - m) * (0 - 0) = (0 - 0) = (n*0 + m*0) - (n*0 + m*0)\]
+
+\[\begin{align}
+    (n - m) * (0 - s(k))  
+    &amp;= ((n - m)*(0 - s(k))) + (n - m)
+\end{align}\]
+
+<p>Now we prove the main result by induction on $j$.</p>
+
+\[(n - m) * (0 - k) = m*k - n*k = (n*0 + m*k) - (n*k + m*0)\]
+
+\[\begin{align}
+    (n - m) * (s(j) - k)  
+    &amp;= (n - m) * s(j - k) \\ 
+    &amp;= ((n - m)*(j - k)) + (n - m) \\
+    &amp;= ((nj + mk) - (nk + mj)) + (n - m) \\ 
+    &amp;= (nj + mk + n) - (nk + mj + m) \\
+    &amp;= (n * s(j) + mk) - (nk + m * s(j))
+\end{align}\]
+
+<h2 id="negation">Negation</h2>
+
+\[(0 - 0) - (n - m) = (m - n)\]
+
+<p>We fix $n$ and do induction on $m$.</p>
+
+\[(0 - 0) - (n - 0) = (0 - 0) - n = 0 - n\]
+
+\[\begin{align}
+    (0 - 0) - (n - s(m)) 
+    &amp;= s(0 - 0) - s(n - s(m)) \\
+    &amp;= s(0 - 0) - (n - m) \\
+    &amp;= s(0 - 0) + (m - n) \\
+    &amp;= (0 - 0) + s(m - n) \\
+    &amp;= s(m - n) \\
+    &amp;= s(m) - n
+\end{align}\]
+
+<p>Now, we can define subtraction</p>
+
+\[(n - m) - (j - k) = (n - m) + (- (j - k))\]
+
+<p>We can actually prove these rather than assert them as definitions. For addition, show that $(n-m) + (0-k) = n - (m + k)$ using induction on $k$. Then show $(n-m) + (j-k) = (n+j) - (m-k)$ using induction on $j$.</p>
+
+<p>I think you can do the same for multiplication. I haven’t thought that one out, but I would be surprised if you couldn’t.</p>
+
+<p>For $-a$, I think we instead want to show that $0 - (n - m)$ = $m - n$. Again, I think you can do this by induction. You might have to split it into cases, $n &lt; m$, $n = m$, and $n &gt; m$.</p>
+
+<h2 id="the-formal-construction-of-the-integers">The Formal Construction of the Integers</h2>
+
+<p><strong>TODO</strong> Move this to the very end. Above just give the intuition</p>
+
+<p>Consider any tuple $(n, m) \in \mathbb{N}^2$. You should imagine that $(n, m)$ means $n - m$. We have not yet formally defined subtraction, so we cannot yet say this. However, this should guide your intuition for the definitions that are given. You have to prove the reflective, commutative, and transitive properties.</p>
+
+<p>Let’s define a notion of equivalence between two tuples.</p>
+
+\[(n, m) \equiv (j, k) \quad\iff\quad n + k = j + m\]
+
+<p>Note that $(n, m) \neq (j, k)$ as they are two different elements of the set $\mathbb{N}^2$. However, given our interpretation of what the tuples represent, they are equivalent. I will leave it to you that this is a true equivalence relation.</p>
+
+<p>Now, we define the equivalence classes with respect to this operation.</p>
+
+\[[(n, m)] = \{ (j, k) \ : \ (n, m) \equiv (j, k) \quad \text{for } (j, k) \in \mathbb{N}^2 \}\]
+
+<p>These equivalence classes partition the space $\mathbb{N}^2$. Now, formally the <strong>integers</strong> are defined as the set of all equivalence classes under the predicate $\equiv$.</p>
+
+\[\mathbb{Z} = (\mathbb{N}^2 / \equiv) = \{ [(n, m)] : (n, m) \in \mathbb{N}^2 \}\]
+
+<p>Now, $a \in \mathbb{Z}$ is an equivalence class from which we can choose any representative $(n, m) \in a$.</p>
+
+<p><br /></p>
+
+<h2 id="addition-and-multiplication-of-integers">Addition and Multiplication of Integers</h2>
+
+<p>Let $a = [(n, m)]$ and $b = [(j, k)]$ be any integers. We define addition as</p>
+
+\[a + b = [(n, m)] + [(j, k)] = [(n+j, \ m+k)]\]
+
+<p>We define multiplication as</p>
+
+\[a * b = [(n, m)] * [(j, k)] = [(n*j + m*k, \ n*k + m*j)]\]
+
+<p>Finally, we define <strong>negation</strong> as</p>
+
+\[-a = -[(n,m)] = [(m, n)]\]
+
+<p>I’ll leave it to you to check that all of these operations are well-defined.</p>
+
+<p><br /></p>
+
+<h2 id="definition-of-subtraction">Definition of Subtraction</h2>
+
+<p>Now, we define subtraction as</p>
+
+\[a - b = a + (-b)\]
+
+<h2 id="notes">Notes</h2>
+
+<p>In the natural numbers, we have the addition operation. It would be nice to have an operation that “undoes” addition. This is the familiar operation of <strong>subtraction</strong>. For example, since $3 + 2 = 5$, then $5 - 2 = 3$. The issue with this operation is that it becomes undefined with the left-hand side is smaller than the right-hand side. For example, what is $2 - 5$? It implies we need something that comes before $0$, but no such object exists in the natural numbers. This motivates the <em>extension</em> of the natural numbers into the integers.</p>
+
+<p>I’m going to be pretty technical in my construction. However, it is exactly the intuition that I described above.</p>
+
+<p>So basically an integer is any number of the form $n - m$ where $n, m \in \mathbb{N}$. and a binary operation $-$. Then we define equality under this operation. $n - m = r - s$ if an only if $n + s = r + m$. Now, we can define a set of equivalence classes</p>
+
+\[\mathbb{Z} = (\mathbb{N}^2 / \equiv) = \{ [a] : a \equiv n - m \text{ for } n, m \in \mathbb{N} \}\]
+
+<p><strong>TODO</strong> I need better symbols than $r$ and $s$ probably</p>
+
+<p>The upshot is that, give any integer $a \in \mathbb{Z}$ there exists $n, m \in \mathbb{N}$ such that $a = n - m$.</p>
+
+<p>Somewhere in here, we need to define that $n - m = n + (-m)$ where $(-m)$ refers to the additive inverse of the natural number $m$. So somewhere I have to define the concept of an additive inverse without being recursive.</p>
+
+        </div>
+
+        <!-- Adding the ability to move between parts of the series -->
+        
+        
+        
+
+        
+        
+        
+
+        <!-- Getting capitalized title for series -->
+        
+        
+        
+        <!-- Getting url for series, which is just the page url with the last /... removed -->
+        
+
+        <div class="pagination" style="margin-top:1em;">
+            
+                <a class="pagination-item older" href="/blog/constructing-the-real-numbers/the-natural-numbers/">Previous</a>
+            
+            
+                <a class="pagination-item newer" href="/blog/constructing-the-real-numbers/the-rational-numbers/">Next</a>
+            
+        </div>
+        <h3 style="text-align:center; margin-bottom:1em;">
+            <a href="/blog/constructing-the-real-numbers">
+            
+                Constructing
+            
+                The
+            
+                Real
+            
+                Numbers
+            
+         Series</a>
+        </h3>
+    </div>
+    
+  </body>
+</html>
