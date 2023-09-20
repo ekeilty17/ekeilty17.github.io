@@ -1,12 +1,12 @@
 #! /bin/bash
 
 # This script is used to automate the process of push to the branch gh-pages from github.
-# The main purpose of the "manually" deploying is to allow the use of a "Thirt Party Plugin", that don't work with automatic deploy. 
+# The main purpose of the "manually" deploying is to allow the use of a "Third Party Plugin", that don't work with automatic deploy. 
 #
 # This script dependents from a branch previously created "gh-pages" on github and the folder "_site" were the build content must be.
 # 
 # Description:
-# Fist it creates a folder called "PUSH_FOLDER", 
+# First it creates a folder called "PUSH_FOLDER", 
 # then it's cloned only the branch "gh-pages" from github.
 # The directory is temporaly changed to "PUSH_FOLDER". 
 # In the directory it 
