@@ -45,7 +45,7 @@ Finally, here are some miscellaneous achievements.
 
 My most proud high school awards and achievements:
 
-* **Valedictorian / Highest GPA** (<a href="https://www.fosters.com/story/news/education/2017/05/17/st-thomas-aquinas-announces-top-10/20900104007/" target="_blank">News article</a>, <a href="/files/awards/high school/Valedictorian Senate Letter.pdf" target="_blank">Certificate</a>, <a href="/files/awards/high school/Valedictorian Metal.pdf" target="_blank">Metal</a>)
+* **Valedictorian / Highest GPA** (<a href="https://www.fosters.com/story/news/education/2017/05/17/st-thomas-aquinas-announces-top-10/20900104007/" target="_blank">News article</a>, <a href="/files/awards/high school/Valedictorian Senate Letter.pdf" target="_blank">Certificate</a>, <a href="/files/awards/high school/Valedictorian Medal.pdf" target="_blank">Medal</a>)
 
 * **Student-Athlete of the Year** (<a href="/files/awards/sports/Student Athlete of the Year.pdf" target="_blank">Plaque</a>)
 
