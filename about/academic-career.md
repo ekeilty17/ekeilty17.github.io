@@ -56,7 +56,7 @@ My group specializes in Distributed Ledger Technology (DLT), i.e. the infrastruc
 * <a href="https://engsci.utoronto.ca/program/what-is-engsci/" target="_blank">Division of Engineering Science</a>
 * **Major**: <a href="https://engsci.utoronto.ca/program/majors/machine-intelligence/" target="_blank">Machine Intelligence</a>
 
-* <a href="/files/school/Undergraduate Deploma.pdf" target="_blank">Diploma</a>
+* <a href="/files/school/Undergraduate Diploma.pdf" target="_blank">Diploma</a>
 * <a href="/files/school/Undergraduate Academic History.pdf" target="_blank">Unofficial Transcript</a>
 * **CGPA**: 3.96
 * **Award of Excellence** (3.9 CGPA or higher in all semesters)

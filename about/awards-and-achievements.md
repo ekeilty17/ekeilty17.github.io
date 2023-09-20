@@ -14,7 +14,7 @@ During my MASc degree, I was the head TA of a number of courses, running multipl
 
 * **Best ECE Teaching Assistant Award** (Certificate Coming Soon)
 
-* **Shortlist for TATP TA Teaching Excellence Award** (<a href="https://tatp.utoronto.ca/awards/current-winners/" target="_blank">Link</a>, <a href="/files/awards/MASc/2023 TA Award - Shortlist Letter.pdf" target="_blank">Letter</a>)
+* **Shortlist for TATP TA Teaching Excellence Award** (<a href="https://tatp.utoronto.ca/awards/current-winners/" target="_blank">Link</a>, <a href="/files/awards/MASc/TATP TA Excellence Award Shortlist.pdf" target="_blank">Letter</a>)
 
 ---
 
@@ -28,9 +28,9 @@ I received a number of scholarships (all academic-based), these are listed below
 
 * **University of Toronto Scholar** (<a href="/files/awards/scholarships/Unversity of Toronto Scholar.pdf" target="_blank">e-mail</a>)
 
-* **NSERC USRA Undergraduate Research Grant** (<a href="/files/awards/scholarships/NSERC USRA.pdf" target="_blank">Letter</a>)
+* **NSERC USRA Undergraduate Research Grant** (<a href="/files/awards/scholarships/NSERC USRA Grant.pdf" target="_blank">Letter</a>)
 
-* **Fujino/Smith Emergence Scholarship** (<a href="/files/awards/scholarships/2018 - Fujino Smith Emergence Scholarship.pdf" target="_blank">Letter</a>)
+* **Fujino/Smith Emergence Scholarship** (<a href="/files/awards/scholarships/Fujino Smith Emergence Scholarship.pdf" target="_blank">Letter</a>)
 
 
 Finally, here are some miscellaneous achievements.
