@@ -6,29 +6,38 @@ permalink: /about/
 
 I imagine different people would come here for different reasons.
 
-You might want to know my [academic background](/about/academic-career).
+You might want to know my [work experience](/about/professional-career).
 
-You might want to learn about my past [work experience](/about/professional-career).
+Or learn about my [academic background](/about/academic-career).
 
-Or you might just want to get to [know me](/about/personal-interests) as a person.
+Or see some of my past [awards and achievements](/about/awards-and-achievements).
+
+Or you might just want to just get to [know me](/about/personal-interests) as a person.
 
 <br>
 
-## Too Long; Didn't Read
+## Executive Summary
 
 **TODO**
+
+I've always had a love for learning, an addictive personality, and a deeply competitive nature. This combination is what I believe is the reason for the success I've found in my life. 
+
+I have completed an undergraduate Bachelor of Applied Science degree at the University of Toronto in Engineering Science specializing in Machine Intelligence (AI/ML). My undergraduate thesis focused on Natural Language Processing, studying how best to preprompt GPT2 to maximize its performance. I have also completed a Master of Applied Science degree also at the University of Toronto in Electrical and Computer Engineering specializing in formal verification of smart contract languages on blockchains. My thesis focused on the Move language, developing formal verification and vulnerability detection tools.
+
+My job experience
+
 
 <br>
 
 ## How to Pronounce My Name
 
-Almost everyone mispronounces my last name. It seems to be that pesky "i" that messes everyone up. Below I've given the phonetic pronunciation and the IPA representation of my name, which you could copy-paste into an <a href="http://ipa-reader.xyz/" target="_blank">IPA reader</a>.
+Most people mispronounce my last name. It seems to be that pesky "i" that messes everyone up. Below I've given the phonetic pronunciation and the IPA representation of my name, which you could copy-paste into an <a href="http://ipa-reader.xyz/" target="_blank">IPA reader</a>.
 
 <center>
     Eric Keilty &ensp;&ensp;&ensp;&ensp; (air-ik kel-tee) &ensp;&ensp;&ensp;&ensp; /&epsilon;rIk k&epsilon;lti/
 </center>
 <br>
-To remember the correct pronunciation, recall that &nbsp; _i_ &nbsp; in math is imaginary. It is also imaginary in my last name. So we can pretend my name is "Eric Kelty".
+To remember the correct pronunciation, recall that &nbsp; _i_ &nbsp; in math is imaginary. It is also imaginary in my last name. So we can pretend my name is "Eric Kelty", and your natural pronunciation is  probably correct.
 
 <!--
 ## Too Long; Didn't Read

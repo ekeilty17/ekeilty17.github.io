@@ -34,6 +34,8 @@ module Jekyll
         \usepackage{amsmath}
         \usepackage{amsfonts}
         \usepackage{tikz}
+        \usepackage{pgfplots}
+        \usepackage{pst-plot}
         \begin{document}
         \begin{tikzpicture}
         END

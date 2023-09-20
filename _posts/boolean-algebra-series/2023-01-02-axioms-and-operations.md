@@ -45,7 +45,7 @@ Below are the axioms, and I claim this is a minimal set. Removing any would mean
   * $a \vee (b \wedge c) = (a \vee b) \wedge (a \vee c)$
 
 
-For those well-versed in abstract algebra, these axioms may look awfully similar to those of a [field](http://people.reed.edu/~mayer/math112.html/html1/node16.html)...hmm suspicious.
+For those well-versed in abstract algebra, these axioms may look awfully similar to those of a <a href="http://people.reed.edu/~mayer/math112.html/html1/node16.html" target="_blank">field</a>
 
 <br>
 
@@ -116,7 +116,7 @@ There are $4$ different possible unary operations and $16$ different possible bi
 | Equality            | $=$                     | $\color{green}T$ | $\color{red}F$   | $\color{red}F$   | $\color{green}T$ | 
 | AND                 | $\wedge$                | $\color{green}T$ | $\color{red}F$   | $\color{red}F$   | $\color{red}F$   |
 | NAND                | $\cancel{\wedge}$       | $\color{red}F$   | $\color{green}T$ | $\color{green}T$ | $\color{green}T$ |
-| Unequlaity (XOR)    | $\neq$                  | $\color{red}F$   | $\color{green}T$ | $\color{green}T$ | $\color{red}F$   |
+| Unequality (XOR)    | $\neq$                  | $\color{red}F$   | $\color{green}T$ | $\color{green}T$ | $\color{red}F$   |
 | Negated Right       | $\cancel{\rightarrow}$  | $\color{red}F$   | $\color{green}T$ | $\color{red}F$   | $\color{green}T$ | 
 | Negated Implication | $\cancel{\Rightarrow}$  | $\color{red}F$   | $\color{green}T$ | $\color{red}F$   | $\color{red}F$   |
 | Negated Left        | $\cancel{\leftarrow}$   | $\color{red}F$   | $\color{red}F$   | $\color{green}T$ | $\color{green}T$ |

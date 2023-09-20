@@ -1,7 +1,7 @@
 Website Improvements
     - Write my about page
     - need to upload my resume, although again that's a bit tricky because I've done a bunch of random things.
-    - reformat the blog archive page and make it look nicer
+    - reformat the blog archive page and make it look nicer, also probably should be sorted by date? Or give the option for sorting by date/topic
 
 Blog Ideas
     Series
@@ -13,8 +13,13 @@ Blog Ideas
         - arc lengths, could throw in the calculus of variations
         - optimization? Linear/convex/nonconvex? Not sure what I'd include
         - probability theory? again, not sure what I'd include
-        - center of mass / rotational inertia intergals. These really fun
-
+        - center of mass / rotational inertia integrals. These are really fun, but will require lots of tikz
+        - Sudoku solving techniques (both classic and variants)
+        - Sums and Series, convergence, reimann zeta function, etc
+        - Construction of the reals starting from the natural numbers. Do both dedekind cuts and Cauchy sequences. Defining exponentiation is rigorously to use in other posts is really my ultimate goal. Maybe add construction of the natural numbers from the Peano axioms, and then the set version is one model.
+        - Nonstandard anlaysis: construction of hyperreals; infinitesmals, infintes, and appreciables; halos and galaxies; limits = st(f(halo(x))); continuity; derivatives
+        - Set theory, talk about axiom of choice...although this topic has been done by everyone, so I would need some reason why I need to talk about it again. You know what's weird about this formalism is that the number, say, 1 in the natural numbers is techincally not the same as in the integers, as in the rationals, as in the reals. In the rationals it'd be an equivalence class and in the reals it'd be a sequence. But mathematicans just pretend they are the same. I guess you can just define a bijection between elements and therefore call them all the same.
+9
     Stand-Alone
         - Tau vs Pi, compare formulas and see if there's actually a difference
         - Rubik's cube commutators and creating your own algorithms (although that will require a lot of animation)
@@ -25,8 +30,26 @@ Blog Ideas
         - GOAT/BOAT debate in hockey 
         - Polynomials, if the discriminant is negative, then it has no real solutions. When does it have only imaginary solutions? What does that look like graphically?
         - Explaining the BlackJack basic strategy table, the actual math and maybe some rules of thumb
+        - talk about shuffles (overhand, perfect, clumpy bridge) and how many times you have to do it to be statistically random. Write some code to simulate it. For the clumpy bridge shuffle, model different amounts of clumpiness and how that affects how many times you have to shuffle.
+        - How do computers automatically prove stuff? Talk about PK and LK proofs in FoL. The decision comes from weakening and variable selection. AI can be used to intelligently pick which branch to go down?
+        - Talk about how even though SAT and SMT is NPC, in practice it seems to not be. The solution space tends to be large. Approximation algorithms are actually pretty good.
+    
+    Non-math
+        - The importance of being self-aware and having an accurate view of yourself
+        - grading on a curve vs not. You can make arguments for both. Grading on a curve you are causing people to compete with their classmates. However, I prefer to have hard exams get a 60 average and then curve it up
+        - Maybe just in general my philosophy on grades in universities
+        - thoughts on marriage, what is the point of it. Look at it from a religious POV (why do all cultures seem to get married, is this a coincidence or due to UK colonization). Look at it from a tax POV (other countries from the US)
+        - How to turn research papers into a thesis
+        - why do glasses work both ways? You'd think if the lense is bending in one direction, that it would only work in that direction
+        - Time zones, have one that the whole world uses, and all that's different is the arbitrary number on the clock
+        - US laws seem to be "we only enforce the law sometimes, but if you get caught then it's massive consequences". Whereas in Northern Europe it's more "We always enforce the laws, and if you get caught it's no big deal". Like how Sweden or whatever country has only 20 years for murder. Drugs and Speeding in America are basically never enforced unless they decide to...leads to racial profiling, etc.
+    
+    Language Series
+        - Get some type of similarity measure between languages, then do K-means clustering and take the one closest to the mean. This will give the optimal set of languages to learn if you want to know every language
+        - Get the data on the percentages of people who speak each language in each country. Then we want to find the minimum set of languages that covers the globe, such that you can travel anywhere and be able to speak to people
 
-
-Other
-    - I need to change all of the dates in the Boolean algebra series to Jan 2023
-    - This website contains all the NHL stats: https://gitlab.com/dword4/nhlapi
+    Long-Term Projects
+        - This website contains all the NHL stats: https://gitlab.com/dword4/nhlapi
+        - Create a generative AI that can take a picture/diagram/graph as input and create it in Tikz and other drawing tools.
+        - Formally specify the American constitution
+        - Make a fully chatbot twitch personality

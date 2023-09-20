@@ -65,7 +65,7 @@ being true. However, when you try to prove it using our rigorous proof style, yo
 
 ## My Proof
 
-As far as I can tell, this is a novel proof. I have never seen this anywhere else. It is pretty complicated and contrived, so if you can find a shorter proof, then please let me know.
+As far as I can tell, this is a novel proof. I have never seen this anywhere else. It is pretty complicated and contrived, so if you can find a shorter proof, then please <a href="mailto:epkeilty@gmail.com">let me know</a>.
 
 The proof method is the following.
 1. Show that $(\overline{a \vee b}) \Rightarrow (\overline{a} \wedge \overline{b})$

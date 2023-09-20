@@ -16,6 +16,8 @@ permalink:  /blog/
     {% endif %}
 {% endfor %}
 
+---
+
 ## Stand Alone
 
 {% assign sorted_posts = site.posts | where: 'standalone', 'true' | sort: 'date' %}
