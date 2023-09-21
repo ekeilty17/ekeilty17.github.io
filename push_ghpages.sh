@@ -6,10 +6,12 @@
 # This script dependents from a branch previously created "gh-pages" on github and the folder "_site" were the build content must be.
 # 
 # Description:
-# First it creates a folder called "PUSH_FOLDER", 
-# then it's cloned only the branch "gh-pages" from github.
-# The directory is temporaly changed to "PUSH_FOLDER". 
-# In the directory it 
+#    First it creates a folder called "PUSH_FOLDER", 
+#   then it's cloned only the branch "gh-pages" from github.
+#   The directory is temporaly changed to "PUSH_FOLDER". 
+#   In the directory it 
+
+# If the push hangs, then try `git gc`
 
 # I (Eric Keilty) did not originally make this, but I have edited it
 
