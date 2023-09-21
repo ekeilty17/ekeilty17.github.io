@@ -29,7 +29,9 @@ permalink: pretty
 pages_list:
   About: '/about'
   Blog: '/blog'
-  R&eacute;sum&eacute;: '/resume'
+  #R&eacute;sum&eacute;: '/files/Eric Keilty - Resume.pdf'
+
+resume: '/files/Eric Keilty - Resume.pdf'
 
 version: 1.0.0
 
