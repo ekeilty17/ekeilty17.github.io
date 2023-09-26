@@ -13,13 +13,13 @@ background-color: #202020; /* black */
 }
 
 a {
-  color: #f9ae39;
+  color: #e0992b;
   background-color: transparent;
   text-decoration: none;
 }
 
 a:hover {
-  color: #e0992b;
+  color: #c78826;
   background-color: transparent;
   text-decoration: none;
 }
