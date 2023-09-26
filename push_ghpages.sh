@@ -6,7 +6,7 @@
 # This script dependents from a branch previously created "gh-pages" on github and the folder "_site" were the build content must be.
 # 
 # Description:
-#    First it creates a folder called "PUSH_FOLDER", 
+#   First it creates a folder called "PUSH_FOLDER", 
 #   then it's cloned only the branch "gh-pages" from github.
 #   The directory is temporaly changed to "PUSH_FOLDER". 
 #   In the directory it 
