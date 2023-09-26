@@ -11,3 +11,21 @@ background-color: #202020; /* black */
   font-size: 16px;
   margin-bottom:25px;
 }
+
+a {
+  color: #f9ae39;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #e0992b;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:focus {
+  outline: thin dotted;
+  background-color: transparent;
+  text-decoration: none;
+}
