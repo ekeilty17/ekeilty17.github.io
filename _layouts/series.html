@@ -35,10 +35,15 @@
         {% endfor %}
 
         <!-- Getting capitalized title for series -->
-        {% assign words = page.series | split: '-' %}
+        {% assign words = page.series | downcase | split: '-' %}
+        {% assign exceptions = "the, and, of" | split: ", " %}
         {% capture series_title %}
             {% for word in words %}
-                {{ word | capitalize }}
+                {% if exceptions contains word %}
+                    {{ word }}
+                {% else %}
+                    {{ word | capitalize }}
+                {% endif %}
             {% endfor %}
         {% endcapture %}
         
