@@ -41,6 +41,13 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
+.post-date {
+  text-align: center;
+}
+.work-experience-date {
+  text-align: left;
+}
+
 .post-link-container {
   overflow: hidden; /* clearfix */
   margin-left: -1rem;
