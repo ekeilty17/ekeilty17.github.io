@@ -10,7 +10,7 @@
 
   <title>
     
-      Power Rule &middot; Eric Keilty
+      Introduction &middot; Eric Keilty
     
   </title>
 
@@ -124,101 +124,49 @@
     <div class="content container">
 
         <div class="post">
-            <h1 class="post-title">Power Rule</h1>
-            <!-- <span class="series-date">03 Jan 2022</span> -->
-            <time datetime="2022-01-03T00:00:00-05:00" class="post-date">03 Jan 2022</time>
+            <h1 class="post-title">Introduction</h1>
+            <!-- <span class="series-date">01 Oct 2022</span> -->
+            <time datetime="2022-10-01T00:00:00-04:00" class="post-date">01 Oct 2022</time>
             <!-- maybe I'll add tagging later
-            <span class="post-date" style="margin-top:-1em;"> ["derivatives, ",  "power-rule, ",  "polynomials"] </span>
+            <span class="post-date" style="margin-top:-1em;"> ["introduction"] </span>
             -->
-            <h2 id="zero">Zero</h2>
+            <h2 id="motivation">Motivation</h2>
 
-\[\begin{align}
-    \frac{d}{dx} x^0 
-    &amp;= \lim_{h \rightarrow 0} \ \frac{(x-h)^0 - x^0}{h} \\[10pt]
-    &amp;= \lim_{h \rightarrow 0} \ \frac{1 - 1}{h} \\[10pt]
-    &amp;= \lim_{h \rightarrow 0} \ 0 \\[10pt]
-    &amp;= 0 \\[10pt]
-\end{align}\]
+<p>Really, this is all just an excuse to do integrals.</p>
 
-<p>Therefore, $\frac{d}{dx} x^0 = \frac{d}{dx} 1 = 0$</p>
+<!-- view/h=-70,hide axis,colormap/blackwhite,domain=-5:5,domain y=-5:5,mark size=1pt,clip mode=individual,mark layer=like plot -->
+<!-- Absolutely beautiful Tikz drawings for moments of inertia
+https://tikz.net/dynamics_moment_of_inertia/ -->
 
 <p><br /></p>
 
-<h2 id="positive-integers">Positive Integers</h2>
+<h2 id="what-is-a-moment">What is a Moment?</h2>
 
-<p>Suppose $n \in \mathbb{N}$ and $n &gt; 0$</p>
+<p>It’s a bit of a meme in physics that everything thinks they understand moments until they are asked to explain them.</p>
 
-\[\begin{align}
-    \frac{d}{dx} x^n 
-    &amp;= \lim_{h \rightarrow 0} \ \frac{(x-h)^n - x^n}{h} \\[10pt]
-    &amp;= \lim_{h \rightarrow 0} \ \frac{1}{h}\left ( \sum_{k=0}^n \binom{n}{k} x^k h^{n-k} - x^n \right ) \\[10pt]
-    &amp;= \lim_{h \rightarrow 0} \ \frac{1}{h}\left ( \sum_{k=0}^{n-1} \binom{n}{k} x^k h^{n-k} \right ) \\[10pt]
-    &amp;= \lim_{h \rightarrow 0} \ \frac{1}{h}\left ( h \sum_{k=0}^{n-1} \binom{n}{k} x^k h^{n-(k-1)} \right ) \\[10pt]
-    &amp;= \lim_{h \rightarrow 0} \ \sum_{k=0}^{n-1} \binom{n}{k} x^k h^{n-(k-1)}\\[10pt]
-    &amp;= n x^{n-1} \\[10pt]
-\end{align}\]
+<p>At the most basic level, we know that (for some reason) objects with mass have an intrinsic resistance to change. Elegantly summarized as <strong>Newton’s First Law of Motion</strong>: “An object at rest remains at rest, and an object in motion remains in motion”. This is true for translation and it is also true for rotation. The <strong>moment of inertia</strong> is the mathematical object that tells us how exactly a particular object resists change in its motion.</p>
+
+<p>This explanation tells us how to use a moment, but it does not tell us <em>what a moment is</em>. Many resources say “a moment is a mathematical expression involving the product of a distance and physical quantity”, which at first is laughably vague, but then once you study moments you realize it’s actually not that bad of a description. A more enlightening description is that a moment is “a measure of an object’s tendency to rotate about a specific axis”.</p>
+
+<p>The physics YouTuber Andrew Dotson has good videos if you have to really understand where the concept of a “moment” comes from and what exactly they are in more detail (<a href="https://www.youtube.com/watch?v=0flh8ovhZ9k">part 1</a> and <a href="https://www.youtube.com/watch?v=k24FnV3myO4">part 2</a>).</p>
 
 <p><br /></p>
 
-<h2 id="negative-integers">Negative Integers</h2>
+<h2 id="definition-of-a-moment">Definition of a Moment</h2>
 
-<p>Suppose $n \in \mathbb{N}$ and $n &gt; 0$. Let $f(x) = 1/x$ and $g(x) = x^n$. Using the reciprocal rule we get.</p>
+<p>For an arbitrary geometry, its mass can be calculated by the following integral.</p>
 
-\[\begin{align}
-    \frac{d}{dx} x^{-n}
-    &amp;= \frac{d}{dx} \frac{1}{x^n} \\[10pt]
-    &amp;= - \frac{\frac{d}{dx} x^n}{(x^n)^2} \\[10pt]
-    &amp;= - \frac{nx^{n-1}}{(x^n)^2} \\[10pt]
-    &amp;= - n x^{n-1 - 2n} \\[10pt]
-    &amp;= - n x^{-n-1} \\[10pt]
-\end{align}\]
+\[M = \int dm\]
 
-<p>Thus, this fits the pattern from the positive integers. For any integer $k \in \mathbb{Z}$ where $k \neq 0$, we have $\frac{d}{dx} x^k = k x^{k-1}$</p>
+<p>You have to be careful because depending on if it’s a 2D surface or a 3D object, this integral is more complicated than it looks.</p>
 
-<p><br /></p>
+<p>The moment of inertia is defined as the following. In this integral, $r$ is the distance of each point in the object from the axis of rotation.</p>
 
-<h2 id="rational-numbers">Rational Numbers</h2>
+\[I = \int r^2 \; dm\]
 
-<p>Suppose $p, q \in \mathbb{Z}$ such that $p, q \neq 0 \quad \forall x$.</p>
+<p>Another important property is the linearity of moments of inertia. If we can decompose an object into $n$ simpler geometries, then</p>
 
-<p>First, we need to find the derivative of $x^{1/q}$. We do this using the fact that this is the inverse function of $f(x) = x^q$. Therefore,</p>
-
-\[\begin{align}
-    \frac{d}{dx} x^{1/q}
-    &amp;= \frac{1}{f'(x^{1/q})} \\[10pt]
-    &amp;= \frac{1}{q (x^{1/q})^{q-1}} \\[10pt]
-    &amp;= \frac{1}{q x^{(q-1)/q}} \\[10pt]
-    &amp;= \frac{1}{q x^{1-1/q}} \\[10pt]
-    &amp;= \frac{1}{q}x^{(1/q)-1} \\[10pt]
-\end{align}\]
-
-<p>Thus, the power rule works for the reciprocals of integers. Now, we combine this result with the chain rule to prove the result for all rationals.</p>
-
-\[\begin{align}
-    \frac{d}{dx} x^{p/q}
-    &amp;= \frac{d}{dx} (x^{1/q})^p \\[10pt]
-    &amp;= p(x^{1/q})^{p-1} \cdot \frac{d}{dx} x^{1/q} \\[10pt]
-    &amp;= px^{(p-1)/q} \cdot \frac{1}{q}x^{(1/q)-1} \\[10pt]
-    &amp;= px^{(p-1)/q} \cdot \frac{1}{q}x^{(1-q)/q} \\[10pt]
-    &amp;= \frac{p}{q} x^{(p-1)/q + (1-q)/q} \\[10pt]
-    &amp;= \frac{p}{q} x^{(p-1 + 1-q)/q} \\[10pt]
-    &amp;= \frac{p}{q} x^{(p-q)/q} \\[10pt]
-    &amp;= \frac{p}{q} x^{(p/q)-1} \\[10pt]
-\end{align}\]
-
-<p><br /></p>
-
-<h2 id="real-numbers">Real Numbers</h2>
-
-<p>The proof for this is very technical and involves the fact that any real number can be expressed as the limit of a Cauchy series of rational numbers. Then, the result follows by the definition of exponentiation of a real number. I will possibly save this for a different post. However, it is true that the power rule holds for real numbers.</p>
-
-<p>Thus, let $r \in \mathbb{R}$</p>
-
-\[\frac{d}{dx} x^r = r x^{r-1}\]
-
-<p><br /></p>
-
-<p>Note, that if $r=0$, then the above also holds since $\frac{d}{dx} x^0 = \frac{d}{dx} 1 = 0 = 0 \cdot x^{0-1}$</p>
+\[I = \sum_{i = 1}^n I_i\]
 
         </div>
 
@@ -241,21 +189,25 @@
 
         <div class="pagination" style="margin-top:1em;">
             
-                <a class="pagination-item older" href="/blog/derivative-proofs/properties/">Previous</a>
+                <span class="pagination-item older">Previous</span>
             
             
-                <a class="pagination-item newer" href="/blog/derivative-proofs/absolute-value/">Next</a>
+                <span class="pagination-item newer">Next</span>
             
         </div>
         <h3 style="text-align:center; margin-bottom:1em;">
-            <a href="/blog/derivative-proofs">
+            <a href="/blog/moments-of-inertia">
             
                 
-                    Derivative
+                    Moments
                 
             
                 
-                    Proofs
+                    of
+                
+            
+                
+                    Inertia
                 
             
          Series</a>

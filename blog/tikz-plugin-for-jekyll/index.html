@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Tikz Plugin for Jekyll Websites Hosted on GitHub &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded Latex support -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX","input/MathML","output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js", "cancel.js"]
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!-- Enable Tikz support -->
+<link rel="stylesheet" type="text/css" href="http://tikzjax.com/v1/fonts.css">
+<script src="http://tikzjax.com/v1/tikzjax.js"></script>
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">Software Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+        <li>
+          <a href="/files/Eric Keilty - Resume.pdf" target="_blank">R&eacute;sum&eacute;</a>
+        </li>
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2023 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">Tikz Plugin for Jekyll Websites Hosted on GitHub</h1>
+            <!-- <span class="post-date">01 Aug 2022</span> -->
+            <time datetime="2022-08-01T00:00:00-04:00" class="post-date">01 Aug 2022</time>
+            <p>Occasionally, I write <a href="/blog/" target="_blank">blog posts</a> about math-related concepts. For me, <a href="https://www.overleaf.com/learn/latex/TikZ_package">Tikz</a> is an indispensable tool for these posts. If Tikz could not be integrated into my Jekyll website, then I would have had to switch to a different website framework. Luckily for me, I figured out a way to include Tikz (you can see examples in some of my blog posts, such as <a href="/blog/trigonometry/intuition-of-trig-functions/" target="_blank">here</a>).</p>
+
+<p>In this post, I will explain how to integrate Tikz into a Jekyll website. It’s a bit of a hacky solution and it’s actually quite involved due to some annoyances with GitHub hosting.</p>
+
+<p><br /></p>
+
+<h2 id="setup">Setup</h2>
+
+<p>We are creating a custom Jekyll plugin. The setup requires the following steps.</p>
+
+<ol>
+  <li>Create a plugins folder <code class="language-plaintext highlighter-rouge">/_plugins/</code> in your project’s root direction.</li>
+  <li>Install <code class="language-plaintext highlighter-rouge">texlive</code> and <code class="language-plaintext highlighter-rouge">pdf2svg</code> on your local machine.</li>
+  <li>In <code class="language-plaintext highlighter-rouge">_config.yml</code>, add the path to the <code class="language-plaintext highlighter-rouge">pdf2svg</code> binary as a variable called <code class="language-plaintext highlighter-rouge">pdf2svg</code>. Ultimately, this is going to be used to execute <code class="language-plaintext highlighter-rouge">pdf2svg file.pdf file.svg</code> on your local machine. In my case, this line is given below.</li>
+</ol>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">pdf2svg</span><span class="pi">:</span> <span class="s1">'</span><span class="s">pdf2svg'</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="jekyll-tikz-custom-plugin">Jekyll-Tikz Custom Plugin</h2>
+
+<p>Create the file <code class="language-plaintext highlighter-rouge">/_plugins/jekyll-tikz.rb</code> with the following contents.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">Jekyll</span>
+  <span class="k">module</span> <span class="nn">Tags</span>
+    <span class="k">class</span> <span class="nc">Tikz</span> <span class="o">&lt;</span> <span class="no">Liquid</span><span class="o">::</span><span class="no">Block</span>
+      <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">tag_name</span><span class="p">,</span> <span class="n">markup</span><span class="p">,</span> <span class="n">tokens</span><span class="p">)</span>
+        <span class="k">super</span>
+        <span class="vi">@file_name</span> <span class="o">=</span> <span class="n">markup</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/\s+/</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
+
+        <span class="vi">@header</span> <span class="o">=</span> <span class="o">&lt;&lt;-</span><span class="no">'END'</span><span class="sh">
+        </span><span class="se">\d</span><span class="sh">ocumentclass{standalone}
+        </span><span class="se">\u</span><span class="sh">sepackage{tikz}
+        % Add any other packages you want to include
+        </span><span class="se">\b</span><span class="sh">egin{document}
+        </span><span class="se">\b</span><span class="sh">egin{tikzpicture}
+</span><span class="no">        END</span>
+
+        <span class="vi">@footer</span> <span class="o">=</span> <span class="o">&lt;&lt;-</span><span class="no">'END'</span><span class="sh">
+        </span><span class="se">\e</span><span class="sh">nd{tikzpicture}
+        </span><span class="se">\e</span><span class="sh">nd{document}
+</span><span class="no">        END</span>
+      <span class="k">end</span>
+
+      <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+        <span class="n">tikz_code</span> <span class="o">=</span> <span class="vi">@header</span> <span class="o">+</span> <span class="k">super</span> <span class="o">+</span> <span class="vi">@footer</span>
+
+        <span class="n">tmp_directory</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="no">Dir</span><span class="p">.</span><span class="nf">pwd</span><span class="p">,</span> <span class="s2">"_tikz_tmp"</span><span class="p">,</span> <span class="no">File</span><span class="p">.</span><span class="nf">basename</span><span class="p">(</span><span class="n">context</span><span class="p">[</span><span class="s2">"page"</span><span class="p">][</span><span class="s2">"url"</span><span class="p">],</span> <span class="s2">".*"</span><span class="p">))</span>
+        <span class="n">tex_path</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">tmp_directory</span><span class="p">,</span> <span class="s2">"</span><span class="si">#{</span><span class="vi">@file_name</span><span class="si">}</span><span class="s2">.tex"</span><span class="p">)</span>
+        <span class="n">pdf_path</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">tmp_directory</span><span class="p">,</span> <span class="s2">"</span><span class="si">#{</span><span class="vi">@file_name</span><span class="si">}</span><span class="s2">.pdf"</span><span class="p">)</span>
+        <span class="no">FileUtils</span><span class="p">.</span><span class="nf">mkdir_p</span> <span class="n">tmp_directory</span>
+
+        <span class="n">dest_directory</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="no">Dir</span><span class="p">.</span><span class="nf">pwd</span><span class="p">,</span> <span class="s2">"svg"</span><span class="p">,</span> <span class="no">File</span><span class="p">.</span><span class="nf">basename</span><span class="p">(</span><span class="n">context</span><span class="p">[</span><span class="s2">"page"</span><span class="p">][</span><span class="s2">"url"</span><span class="p">],</span> <span class="s2">".*"</span><span class="p">))</span>
+        <span class="n">dest_path</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">dest_directory</span><span class="p">,</span> <span class="s2">"</span><span class="si">#{</span><span class="vi">@file_name</span><span class="si">}</span><span class="s2">.svg"</span><span class="p">)</span>
+        <span class="no">FileUtils</span><span class="p">.</span><span class="nf">mkdir_p</span> <span class="n">dest_directory</span>
+
+        <span class="n">pdf2svg_path</span> <span class="o">=</span> <span class="n">context</span><span class="p">[</span><span class="s2">"site"</span><span class="p">][</span><span class="s2">"pdf2svg"</span><span class="p">]</span>
+
+        <span class="c1"># if the file doesn't exist or the tikz code is not the same with the file, then compile the file</span>
+        <span class="k">if</span> <span class="o">!</span><span class="no">File</span><span class="p">.</span><span class="nf">exist?</span><span class="p">(</span><span class="n">tex_path</span><span class="p">)</span> <span class="n">or</span> <span class="o">!</span><span class="n">tikz_same?</span><span class="p">(</span><span class="n">tex_path</span><span class="p">,</span> <span class="n">tikz_code</span><span class="p">)</span> <span class="n">or</span> <span class="o">!</span><span class="no">File</span><span class="p">.</span><span class="nf">exist?</span><span class="p">(</span><span class="n">dest_path</span><span class="p">)</span>
+          <span class="no">File</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="n">tex_path</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">file</span><span class="o">|</span> <span class="n">file</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="s2">"</span><span class="si">#{</span><span class="n">tikz_code</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span> <span class="p">}</span>
+          <span class="nb">system</span><span class="p">(</span><span class="s2">"pdflatex -output-directory </span><span class="si">#{</span><span class="n">tmp_directory</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">tex_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+          <span class="nb">system</span><span class="p">(</span><span class="s2">"</span><span class="si">#{</span><span class="n">pdf2svg_path</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">pdf_path</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">dest_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="k">end</span>
+
+        <span class="n">web_dest_path</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s2">"/svg"</span><span class="p">,</span> <span class="no">File</span><span class="p">.</span><span class="nf">basename</span><span class="p">(</span><span class="n">context</span><span class="p">[</span><span class="s2">"page"</span><span class="p">][</span><span class="s2">"url"</span><span class="p">],</span> <span class="s2">".*"</span><span class="p">),</span> <span class="s2">"</span><span class="si">#{</span><span class="vi">@file_name</span><span class="si">}</span><span class="s2">.svg"</span><span class="p">)</span>
+        <span class="s2">"&lt;embed src=</span><span class="se">\"</span><span class="si">#{</span><span class="n">web_dest_path</span><span class="si">}</span><span class="se">\"</span><span class="s2"> type=</span><span class="se">\"</span><span class="s2">image/svg+xml</span><span class="se">\"</span><span class="s2"> /&gt;"</span>
+      <span class="k">end</span>
+
+      <span class="kp">private</span>
+
+      <span class="k">def</span> <span class="nf">tikz_same?</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">code</span><span class="p">)</span>
+        <span class="no">File</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">file</span><span class="o">|</span>
+          <span class="n">file</span><span class="p">.</span><span class="nf">read</span> <span class="o">==</span> <span class="n">code</span>
+        <span class="k">end</span>
+      <span class="k">end</span>
+
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">Liquid</span><span class="o">::</span><span class="no">Template</span><span class="p">.</span><span class="nf">register_tag</span><span class="p">(</span><span class="s1">'tikz'</span><span class="p">,</span> <span class="no">Jekyll</span><span class="o">::</span><span class="no">Tags</span><span class="o">::</span><span class="no">Tikz</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>I did not create this myself (although I have modified it). The original file says it was created by <a href="http://github.com/Maxfan-zone http://maxfan.org">MaxFan</a> (but this link doesn’t work anymore). You’ll also find it on various GitHubs (<a href="https://gist.github.com/i2000s/d81aaa89101555b1965eeb514ed6bca5">here</a> and <a href="https://gist.github.com/AlexBobkov/d419863e610fce7c8db5714b665b009e">here</a>).</p>
+
+<p><br /></p>
+
+<h3 id="how-to-use-the-plugin">How To Use the Plugin</h3>
+
+<p>Within your markdown file, you use the following syntax, where <code class="language-plaintext highlighter-rouge">image-name</code> is the name of the corresponding Tikz files.</p>
+
+<pre><code class="language-HTML">&lt;center&gt;
+{% tikz image-name %}
+    % Tikz code
+{% endtikz %}
+&lt;/center&gt;
+</code></pre>
+
+<p>You don’t have to include <code class="language-plaintext highlighter-rouge">center</code>, but I think it looks nicer. Also, you can put multiple images next to each other with the following syntax (so long as they can fit on one line).</p>
+
+<pre><code class="language-HTML">&lt;center&gt;
+{% tikz image-name-1 %}
+    % Tikz code
+{% endtikz %}
+{% tikz image-name-2 %}
+    % Tikz code
+{% endtikz %}
+&lt;/center&gt;
+</code></pre>
+
+<p>If you want them on different lines, add <code class="language-plaintext highlighter-rouge">&lt;br&gt;</code> between them.</p>
+
+<p><br /></p>
+
+<h3 id="how-does-it-work">How Does it Work?</h3>
+
+<p>What is this plugin doing at a high level?</p>
+<ol>
+  <li>Tikz code is given as input (provided by the above syntax).</li>
+  <li>Creates a standalone LaTeX document in order to render the Tikz code.</li>
+  <li>The standalone LaTeX document is rendered using <code class="language-plaintext highlighter-rouge">texlive</code> and the results are saved in <code class="language-plaintext highlighter-rouge">/_tikz_tmp/</code>. This contains the LaTeX code and the resulting PDF.</li>
+  <li>Then, the PDF is converted into an SVG file using <code class="language-plaintext highlighter-rouge">pdf2svg</code> and the results are saved in <code class="language-plaintext highlighter-rouge">/svg/</code>.</li>
+  <li>When the Jekyll website is compiled (results in <code class="language-plaintext highlighter-rouge">/_site/</code>), the Tikz input syntax (above) is replaced by a reference to the SVG file. Thus, the Tikz image will appear in the rendered HTML.</li>
+</ol>
+
+<p>Apart from this workflow, there is some extra logic to increase efficiency. For example, it checks whether the Tikz image file exists or if the Tikz code has changed, and only then will it compile or re-compile the code. Otherwise, we would have to re-compile all Tikz images every time we update the website.</p>
+
+<p>Test this code out locally to make sure it works before moving on to the next step (deploying on the website).</p>
+
+<p><br /></p>
+
+<h2 id="deploying-to-a-github-hosted-website">Deploying to a GitHub-Hosted Website</h2>
+
+<p>If (like me) you host your Jekyll website on GitHub, then the above will not work on the deployed website. GitHub operates in <strong>safe-mode</strong> and only allows approved Jekyll plugins. Thus, our custom plugin will work locally, but will not work on the actual website. Urgh!</p>
+
+<p>Luckily, I figured out a workaround. First, let’s refresh ourselves on how exactly Jekyll works. The framework reads our project and compiles it into a <em>static</em> website in the <code class="language-plaintext highlighter-rouge">/_site/</code> folder. There, all of the Liquid syntax has been replaced with the long-form HTML, including our Tikz drawings. The issue we are facing is that GitHub is refusing to compile the <code class="language-plaintext highlighter-rouge">{% tikz image-name %} {% endtikz %}</code> Liquid syntax since it requires a custom plugin.</p>
+
+<p>The workaround is that we are going to compile it locally, and then simply push the website files in <code class="language-plaintext highlighter-rouge">/_site/</code> to the repository. Thus, GitHub is only reading a static HTML website and our custom plugin is not required at deployment. However, we want to do this while maintaining the benefits of using Liquid and Jekyll.</p>
+
+<p><br /></p>
+
+<h3 id="reconfiguring-github">Reconfiguring GitHub</h3>
+
+<p>There may be other ways of accomplishing the same thing, but this is what works best for me. In my repository, I have two branches: <code class="language-plaintext highlighter-rouge">main</code> and <code class="language-plaintext highlighter-rouge">gh-pages</code>. The <code class="language-plaintext highlighter-rouge">main</code> branch contains the Jekyll project and all of the main code files. However, <code class="language-plaintext highlighter-rouge">main</code> is not the deployment branch. Instead, the <code class="language-plaintext highlighter-rouge">/_site/</code> files from <code class="language-plaintext highlighter-rouge">main</code> are copied into the <code class="language-plaintext highlighter-rouge">gh-pages</code> branch. This branch just contains the raw HTML files to render the website. This is the repository read by the deployed website.</p>
+
+<p>Here are the steps to configuring GitHub in this way.</p>
+<ol>
+  <li>Create a new branch <code class="language-plaintext highlighter-rouge">gh-pages</code>.</li>
+  <li>In the repository settings, go to Pages » Build and deployment » Branch, and set <code class="language-plaintext highlighter-rouge">gh-pages</code> as the build branch.</li>
+  <li>Push the contents of the <code class="language-plaintext highlighter-rouge">/_site/</code> folder in the <code class="language-plaintext highlighter-rouge">main</code> branch to the <code class="language-plaintext highlighter-rouge">gh-pages</code> branch.</li>
+</ol>
+
+<p>Even though this seems convoluted, I actually like it. It means I can make commits to <code class="language-plaintext highlighter-rouge">main</code> without updating the website. Pushing to <code class="language-plaintext highlighter-rouge">gh-pages</code> acts as the final deployment step.</p>
+
+<p><br /></p>
+
+<h3 id="bash-script">Bash Script</h3>
+
+<p>In this workflow, every time you want to update the website, you have to redo step 3 from above. This can be tedious. To avoid error, I have a bash script with does this for me. The code is found below.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">BUILD_FOLDER</span><span class="o">=</span><span class="s2">"_site"</span><span class="p">;</span>
+<span class="nv">PUSH_FOLDER</span><span class="o">=</span><span class="s2">"_site_ghpages"</span><span class="p">;</span> 
+<span class="nv">COMMIT_MESSAGE</span><span class="o">=</span><span class="nv">$1</span>
+
+<span class="c">#Remove all the content from the "PUSH_FOLDER".</span>
+<span class="k">function </span>removeAllContentFromPushFolder<span class="o">(){</span>
+        <span class="nb">echo</span> <span class="si">$(</span><span class="nb">rm</span> <span class="nt">-r</span> <span class="nv">$PUSH_FOLDER</span>/<span class="k">*</span><span class="si">)</span><span class="p">;</span>
+<span class="o">}</span>
+
+<span class="c"># Delete the "PUSH_FOLDER"</span>
+<span class="k">function </span>deletePushFolder<span class="o">(){</span>
+        <span class="nb">echo</span> <span class="si">$(</span><span class="nb">rm</span> <span class="nt">-rf</span> <span class="nv">$PUSH_FOLDER</span><span class="si">)</span><span class="p">;</span>
+<span class="o">}</span>
+
+<span class="c">#Create the folder "PUSH_FOLDER".</span>
+<span class="k">function </span>createFolderToPush<span class="o">(){</span>
+        <span class="nb">echo</span> <span class="s2">"</span><span class="si">$(</span><span class="nb">mkdir</span> <span class="nv">$PUSH_FOLDER</span><span class="si">)</span><span class="s2">"</span>
+<span class="o">}</span>
+
+<span class="c">#Copy all the content from the folder _site to PUSH_FOLDER.</span>
+<span class="k">function </span>copySiteToFolder<span class="o">(){</span>
+    <span class="nb">echo</span> <span class="s2">"</span><span class="si">$(</span><span class="nb">cp</span> <span class="nt">-r</span> <span class="nv">$BUILD_FOLDER</span>/. <span class="nv">$PUSH_FOLDER</span><span class="si">)</span><span class="s2">"</span>
+<span class="o">}</span>
+
+<span class="c">#Clone only the branch "gh-pages" to the folder "PUSH_FOLDER". </span>
+<span class="k">function </span>cloneGhpages<span class="o">(){</span>
+    <span class="nb">echo</span> <span class="s2">"</span><span class="si">$(</span>git clone <span class="nt">--branch</span> gh-pages <span class="sb">`</span>git config remote.origin.url<span class="sb">`</span> <span class="nv">$PUSH_FOLDER</span><span class="si">)</span><span class="s2">"</span>
+<span class="o">}</span>
+
+<span class="k">function </span>prepareThePushFolder<span class="o">(){</span>
+    <span class="k">if</span> <span class="o">[[</span> <span class="nt">-d</span> ./<span class="nv">$PUSH_FOLDER</span> <span class="o">]]</span>
+    <span class="k">then</span>
+        <span class="c">#Delete "PUSH_FOLDER".</span>
+        deletePushFolder
+    <span class="k">else</span>
+        <span class="c">#Create the folder "PUSH_FOLDER" if it doesn't exist.</span>
+        createFolderToPush
+    <span class="k">fi</span>
+    <span class="c">#Call the function that clone the branch "gh-pages" to the folder "PUSH_FOLDER". </span>
+    cloneGhpages
+    <span class="c">#Call the function that copy all the content from the folder _site to "PUSH_FOLDER".</span>
+    copySiteToFolder
+<span class="o">}</span>
+
+<span class="k">function </span>changeDirectoryToGhpages<span class="o">(){</span>
+    <span class="nv">CHANGE_TO_SITE</span><span class="o">=</span> <span class="nb">cd</span> <span class="nv">$PUSH_FOLDER</span>
+    <span class="nb">echo</span> <span class="nv">$CHANGE_TO_SITE</span><span class="p">;</span>
+<span class="o">}</span>
+
+<span class="k">function </span>setMessageCommit<span class="o">(){</span>
+    <span class="k">if</span> <span class="o">!</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$COMMIT_MESSAGE</span><span class="s2">"</span> <span class="o">]</span>
+    <span class="k">then
+      </span><span class="nv">COMMIT_MESSAGE</span><span class="o">=</span><span class="s1">'automatic commit'</span>
+    <span class="k">else
+      </span><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$COMMIT_MESSAGE</span><span class="s2">"</span>
+    <span class="k">fi</span>
+<span class="o">}</span>
+
+<span class="k">function </span>pushBranchGhpages<span class="o">(){</span>
+    git add <span class="nb">.</span>
+    git commit <span class="nt">-m</span> <span class="s2">"</span><span class="nv">$COMMIT_MESSAGE</span><span class="s2">"</span>
+    git push
+<span class="o">}</span>
+
+<span class="k">function </span>changeDirectoryBack<span class="o">(){</span>
+    <span class="nv">BACKFOLDER</span><span class="o">=</span> <span class="nb">cd</span> ..
+    <span class="nb">echo</span> <span class="nv">$BACKFOLDER</span>
+<span class="o">}</span>
+
+prepareThePushFolder
+changeDirectoryToGhpages
+setMessageCommit
+pushBranchGhpages
+changeDirectoryBack
+</code></pre></div></div>
+
+<p>I think the bash file is self-explanatory, so I won’t bother dissecting it.</p>
+
+        </div>
+    </div>
+
+    <!--
+    <h3 style="text-align:center; margin-bottom:1em;">
+      <a href="/blog/">Blog Archive</a>
+    </h3>
+    -->
+    
+  </body>
+</html>
