@@ -6,7 +6,7 @@ categories: blog boolean-algebra
 permalink:  ":categories/:title/"
 part:       0
 series:     boolean-algebra
-tags:       boolean algebra, introduction
+tags:       boolean-algebra, introduction
 ---
 
 ## Purpose of this Series

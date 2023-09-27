@@ -19,7 +19,7 @@ First, we note two key facts:
 * $\mathbb{Z}[\sqrt{D}] =$ { $x + \sqrt{D} y \ \ \vert \ \ x, y \in \mathbb{Z}$ } forms a **ring** on operations addition and multiplication
 * $\vert x + \sqrt{D} y \vert = x^2 - D y^2$ is a **norm** of this ring
 
-Both of these claims will be proved in an appendix at the end of the post for completeness sake, but these details are not focus. What is important is that we notice the Pell Equation can be factored as the following.
+Both of these claims will be proved in an appendix at the end of the post for completeness' sake, but these details are not the focus. What is important is that we notice the Pell Equation can be factored as the following.
 
 $$ (x + \sqrt{D} y) (x - \sqrt{D} y) = 1 $$
 
@@ -89,7 +89,7 @@ It turns out, the fundamental solution can be calculated by the following proced
 
 3. $$(x, y)$$ is the fundamental solution, i.e. $$x^2 - D y^2 = 1$$.
 
-A different but equivalent approach (more practical for code) is following:
+A different but equivalent approach (more practical for code) is the following:
 
 1. Compute the continued fraction of $$\sqrt{D}$$, suppose it has the form $$ [a_0; \overline{a_1, \ldots, a_k}] $$
 2. Compute the following truncated continued fraction $$\frac{x}{y} = [a_0; a_1, \ldots, a_k]$$
@@ -97,7 +97,7 @@ A different but equivalent approach (more practical for code) is following:
 
 <br>
 
-Let's do an example using $$\sqrt{3}$$. The truncated continued fraction and it's reduced fraction form is the following
+Let's do an example using $$\sqrt{3}$$. The truncated continued fraction and its reduced fraction form is the following
 
 $$ \sqrt{3} = 3 + \frac{1}{1 + \frac{1}{2 + (\sqrt{3} - 1)}} \quad\rightarrow\quad 1 + \frac{1}{1 + 0} = \frac{2}{1} $$
 
@@ -170,7 +170,7 @@ def generate_kth_solution(D, x0, y0, k):
     return x, y
 ```
 
-There are faster algorithms than this, but the theory behind them are much beyond me.
+There are faster algorithms than this, but the theory behind them is much beyond me.
 
 <br>
 
@@ -252,7 +252,7 @@ $$
 \end{align}
 $$
 
-We can see that in this case multiplication is actually also commutative
+We can see that in this case, multiplication is actually also commutative
 
 $$ (a, b) \cdot (c, d) = (ac + Dbd, \ ad + bc) = (ca + Ddb, \ cb + da) = (c, d) \cdot (a, b)$$
 

@@ -1,15 +1,14 @@
 ---
-layout:     post
-title:      Limits and Continuity
+layout:     page
+title:      Moments of Inertia
 categories: blog
-permalink:  /blog/limits-and-continuity/
+permalink:  /blog/moments-of-inertia/
 ---
 
+<!-- [Summary of Moments of Inertia](/blog/moments-of-inertia/summary-of-moments-of-inertia) -->
 This series is still being developed
 
-<!-- [Summary of Limits](/blog/limits-and-continuity/summary-of-limits) -->
-
-{% assign sorted_posts = site.posts | where: 'series', 'limits-and-continuity' | sort: 'part' %}
+{% assign sorted_posts = site.posts | where: 'series', 'moments-of-inertia' | sort: 'part' %}
 {% for post in sorted_posts %}
   <div class="post-link-container">
     <a href="{{ post.url }}" class="post-link-item"> 
