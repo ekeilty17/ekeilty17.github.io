@@ -69,7 +69,7 @@
       
       <div class="sidebar-about">
         <h1>Eric Keilty</h1>
-        <p class="lead">Software Engineer</p>
+        <p class="lead">AI/ML Engineer</p>
       </div>
     </div>
     
@@ -138,7 +138,7 @@
 
 <h2 id="some-lemmas">Some Lemmas</h2>
 
-<p>In order to prove this result, we need to lemmas. The first is $e^{x + y} = e^{x} \cdot e^{y}$. This is a fundamental property of exponentials, so I leave this to real analysis textbooks for its proof. The second lemma is $e^{x} \leq 1 + x$. I prove this below.</p>
+<p>In order to prove this result, we need two lemmas. The first is $e^{x + y} = e^{x} \cdot e^{y}$. This is a fundamental property of exponentials, so I leave this to real analysis textbooks for its proof. The second lemma is $e^{x} \leq 1 + x$, which I prove below.</p>
 
 <p>For this series, I will use the following definition for $e^x$.</p>
 
@@ -201,7 +201,7 @@
 
 <p>We have to be careful here that we don’t get an indeterminant form. For example,</p>
 
-\[\lim_{n \rightarrow \infty} \left ( 1 + \frac{x}{n} \right )^n \leq \left ( \lim_{n \rightarrow \infty} \left ( 1 + \frac{x}{n} \right ) \right )^{ \lim_{n \rightarrow \infty} n} = 1^{\infty}\]
+\[\lim_{n \rightarrow \infty} \left ( 1 + \frac{x}{n} \right )^n = \left ( \lim_{n \rightarrow \infty} \left ( 1 + \frac{x}{n} \right ) \right )^{ \lim_{n \rightarrow \infty} n} = 1^{\infty}\]
 
 <p>Many naively would think that the solution is $1^{\infty} = 1$, but when dealing with limits it does not. As we know, this limit actually equals $e^x$.</p>
 
