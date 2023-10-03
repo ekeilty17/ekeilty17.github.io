@@ -4,7 +4,7 @@
 */
 
 .homepage-button {
-  background-color: #202020; /* black */
+  background-color: #2d2d2d; /* black */
   border: none;
   color: white;
   padding: 15px 16px;
@@ -13,6 +13,11 @@
   display: inline-block;
   font-size: 16px;
   margin-bottom:25px;
+}
+.homepage-button:hover {
+  cursor:grab;
+  color: #c78826;
+  background-color: #000000; /* black */
 }
 
 a {

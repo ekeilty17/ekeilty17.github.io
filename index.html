@@ -55,15 +55,34 @@ title: Home
     var numDogImgs = 12;
     var numCatImgs = 7;
 
+    var dogPicIndices = generateRandomIndexArray(numDogImgs);
+    var catPicIndices = generateRandomIndexArray(numCatImgs);
+    var dogIndex = 0;
+    var catIndex = 0;
+
+    // I don't know why this isn't a native function in JavaScript
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+
+    function generateRandomIndexArray(num) {
+      const randomArray = Array.from({ length: num }, (_, index) => index + 1);
+      shuffleArray(randomArray);
+      return randomArray;
+    }
+
     function randomDogImage() {
-      var pic = document.getElementById("dog-image")
-      var randomNum = Math.floor(Math.random()*numDogImgs)
-      pic.src = "/img/dogs/" + (randomNum + 1).toString() + ".jpg"
+      var pic = document.getElementById("dog-image");
+      pic.src = "/img/dogs/" + (dogPicIndices[dogIndex] + 1).toString() + ".jpg";
+      dogIndex = (dogIndex + 1) % numDogImgs;
     }
     function randomCatImage() {
       var pic = document.getElementById("cat-image")
-      var randomNum = Math.floor(Math.random()*numCatImgs)
-      pic.src = "/img/cats/" + (randomNum + 1).toString() + ".jpg"
+      pic.src = "/img/cats/" + (catPicIndices[catIndex] + 1).toString() + ".jpg";
+      catIndex = (catIndex + 1) % numCatImgs;
     }
   </script>
 
