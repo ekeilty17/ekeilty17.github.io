@@ -8,6 +8,12 @@ permalink: /about/academic-career
 
 ## Publications 
 
+* **Natural Language-Based Model-Checking Framework for Move Smart Contracts**
+    * 10th Swiss Conference on Data Science (<a href="https://sds2023.ch/" target="_blank">IEEE SDS2023</a>)
+    * June 22-23, 2023 - Zurich, Switzerland
+    * <a href="" target="_blank">IEEE Explore</a> (Coming Soon)
+    * <a href="" target="_blank">PDF</a> (Coming Soon)
+
 * **Gas Optimization in Move Smart Contracts on the Aptos Blockchain**
     * 5th Conference on Blockchain Research & Applications for Innovative Networks and Services (<a href="https://brains.dnac.org/" target="_blank">IEEE BRAINS 2023</a>)
     * October 11-13, 2023 - Paris, France
@@ -78,6 +84,22 @@ Second, what does **Machine Intelligence** mean? Since EngSci is the honors engi
 * <a href="/files/school/High School Transcript.pdf" target="_blank">Transcript</a>
 * **GPA**: 4.46
 * **Valedictorian** (highest GPA in my graduating class)
+
+
+<details>
+<summary>AP Scores</summary>
+<ul>
+    <li>Biology - 4</li>
+    <li>Calculus AB - 5</li>
+    <li>Calculus BC - 5</li>
+    <li>Chemistry - 4</li>
+    <li>Physics C: Electricity and Magnetism - 5</li>
+    <li>Physics C: Mechanics - 5</li>
+    <li>Statistics - 4</li>
+    <li>United States Government and Politics - 5</li>
+    <li>United States History - 5</li>
+</ul>
+</details>
 
 ---
 

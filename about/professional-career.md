@@ -13,7 +13,7 @@ My current r&eacute;sum&eacute; and LinkedIn can be found in the sidebar. Below,
 <summary></summary>
 
 <h3>Teaching Assistant - <a href="https://www.utoronto.ca/" target="_blank">University of Toronto</a></h3>
-<span class="post-date work-experience-date">2021-2023</span>
+<span class="post-date work-experience-date">2021 - 2023</span>
 
 During my Master's degree, I was the head TA of the courses <a href="https://engineering.calendar.utoronto.ca/course/ece345h1" target="_blank">ECE345</a>, <a href="https://engineering.calendar.utoronto.ca/course/ece358h1" target="_blank">ECE358</a>, and ECE1762 at the University of Toronto. Below are the exact dates.
 <ul>
