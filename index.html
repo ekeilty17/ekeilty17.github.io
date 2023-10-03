@@ -52,8 +52,8 @@ title: Home
 
   <script type="text/javascript">
     // TODO: add more images, maybe get to like 30 each
-    var numDogImgs = 12;
-    var numCatImgs = 7;
+    var numDogImgs = 13;
+    var numCatImgs = 8;
 
     var dogPicIndices = generateRandomIndexArray(numDogImgs);
     var catPicIndices = generateRandomIndexArray(numCatImgs);
@@ -71,17 +71,18 @@ title: Home
     function generateRandomIndexArray(num) {
       const randomArray = Array.from({ length: num }, (_, index) => index + 1);
       shuffleArray(randomArray);
-      return randomArray;
+      return randomArray; //[1, 2, 3, ..., num]
     }
 
     function randomDogImage() {
       var pic = document.getElementById("dog-image");
-      pic.src = "/img/dogs/" + (dogPicIndices[dogIndex] + 1).toString() + ".jpg";
+      pic.src = "/img/dogs/" + dogPicIndices[dogIndex].toString() + ".jpg";
+      console.log(dogPicIndices[dogIndex])
       dogIndex = (dogIndex + 1) % numDogImgs;
     }
     function randomCatImage() {
       var pic = document.getElementById("cat-image")
-      pic.src = "/img/cats/" + (catPicIndices[catIndex] + 1).toString() + ".jpg";
+      pic.src = "/img/cats/" + catPicIndices[catIndex].toString() + ".jpg";
       catIndex = (catIndex + 1) % numCatImgs;
     }
   </script>
