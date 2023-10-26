@@ -36,13 +36,24 @@
   <!-- RSS 
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
 </head>
-  <!-- Enable embedded Latex support -->
+  <!-- Enable embedded MathJax (effectively LaTeX) support 
+    https://docs.mathjax.org/en/v2.7-latest/tex.html -->
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
-        jax: ["input/TeX","input/MathML","output/SVG", "output/CommonHTML"],
-        extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
+        jax: ["input/TeX", "input/MathML", "output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js", "mml2jax.js", "MathMenu.js", "MathZoom.js", "CHTML-preview.js"],
         TeX: {
-            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js", "cancel.js"]
+            extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
+            Macros: {
+                b: ["{\\boldsymbol #1}",1],
+                seq: ["{\\left \\langle #1 \\right \\rangle}",1],
+                iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
+                abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
+                hal: ["\\texttt{hal}"],
+                gal: ["\\texttt{gal}"],
+                sh: ["sh"],
+                st: ["st"]
+            },
         },
         tex2jax: {
             inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -53,11 +64,14 @@
         "HTML-CSS": { availableFonts: ["TeX"] }
     });
 </script>
+
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
 
-<!-- Enable Tikz support -->
-<link rel="stylesheet" type="text/css" href="http://tikzjax.com/v1/fonts.css">
-<script src="http://tikzjax.com/v1/tikzjax.js"></script>
+<!--
+    TeX-AMS_HTML
+    TeX-AMS-MML_HTMLorMML
+    TeX-MML-AM_HTMLorMML
+-->
 
   <body>
     
@@ -135,272 +149,192 @@
 
 <p><br /></p>
 
+<div class="custom-table-container">
 <table>
-  <thead>
-    <tr>
-      <th style="text-align: center"><strong>Degrees</strong></th>
-      <th style="text-align: center"><strong>Radians</strong></th>
-      <th style="text-align: center"> </th>
-      <th style="text-align: center"><strong>cos</strong></th>
-      <th style="text-align: center"><strong>sin</strong></th>
-      <th style="text-align: center"><strong>tan</strong></th>
-      <th style="text-align: center"> </th>
-      <th style="text-align: center"><strong>sec</strong></th>
-      <th style="text-align: center"><strong>csc</strong></th>
-      <th style="text-align: center"><strong>cot</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"> </td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$0^{\circ}$</td>
-      <td style="text-align: center">$0$</td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center">$1$</td>
-      <td style="text-align: center">$0$</td>
-      <td style="text-align: center">$0$</td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center">$1$</td>
-      <td style="text-align: center"><em>undefined</em></td>
-      <td style="text-align: center"><em>undefined</em></td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$30^{\circ}$</td>
-      <td style="text-align: center">$\pi/6$</td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center">$\frac{\sqrt{3}}{2}$</td>
-      <td style="text-align: center">$\frac{1}{2}$</td>
-      <td style="text-align: center">$\frac{1}{\sqrt{3}}$</td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center">$\frac{2}{\sqrt{3}}$</td>
-      <td style="text-align: center">$2$</td>
-      <td style="text-align: center">$\sqrt{3}$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$45^{\circ}$</td>
-      <td style="text-align: center">$\pi/4$</td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center">$\frac{\sqrt{2}}{2}$</td>
-      <td style="text-align: center">$\frac{\sqrt{2}}{2}$</td>
-      <td style="text-align: center">$1$</td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center">$\sqrt{2}$</td>
-      <td style="text-align: center">$\sqrt{2}$</td>
-      <td style="text-align: center">$1$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$30^{\circ}$</td>
-      <td style="text-align: center">$\pi/3$</td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center">$\frac{1}{2}$</td>
-      <td style="text-align: center">$\frac{\sqrt{3}}{2}$</td>
-      <td style="text-align: center">$\sqrt{3}$</td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center">$2$</td>
-      <td style="text-align: center">$\frac{2}{\sqrt{3}}$</td>
-      <td style="text-align: center">$\frac{1}{\sqrt{3}}$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"> </td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$90^{\circ}$</td>
-      <td style="text-align: center">$\pi/2$</td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center">$0$</td>
-      <td style="text-align: center">$1$</td>
-      <td style="text-align: center"><em>undefined</em></td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"><em>undefined</em></td>
-      <td style="text-align: center">$1$</td>
-      <td style="text-align: center">$0$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$120^{\circ}$</td>
-      <td style="text-align: center">$2\pi/3$</td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center">$-\frac{1}{2}$</td>
-      <td style="text-align: center">$\frac{\sqrt{3}}{2}$</td>
-      <td style="text-align: center">$-\sqrt{3}$</td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center">$-2$</td>
-      <td style="text-align: center">$\frac{2}{\sqrt{3}}$</td>
-      <td style="text-align: center">$-\frac{1}{\sqrt{3}}$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$135^{\circ}$</td>
-      <td style="text-align: center">$3\pi/4$</td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center">$-\frac{\sqrt{2}}{2}$</td>
-      <td style="text-align: center">$\frac{\sqrt{2}}{2}$</td>
-      <td style="text-align: center">$-1$</td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center">$-\sqrt{2}$</td>
-      <td style="text-align: center">$\sqrt{2}$</td>
-      <td style="text-align: center">$-1$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$150^{\circ}$</td>
-      <td style="text-align: center">$5\pi/6$</td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center">$-\frac{\sqrt{3}}{2}$</td>
-      <td style="text-align: center">$\frac{1}{2}$</td>
-      <td style="text-align: center">$-\frac{1}{\sqrt{3}}$</td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center">$-\frac{2}{\sqrt{3}}$</td>
-      <td style="text-align: center">$2$</td>
-      <td style="text-align: center">$-\sqrt{3}$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"> </td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$180^{\circ}$</td>
-      <td style="text-align: center">$\pi$</td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center">$-1$</td>
-      <td style="text-align: center">$0$</td>
-      <td style="text-align: center">$0$</td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center">$-1$</td>
-      <td style="text-align: center"><em>undefined</em></td>
-      <td style="text-align: center"><em>undefined</em></td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$210^{\circ}$</td>
-      <td style="text-align: center">$7\pi/6$</td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center">$-\frac{\sqrt{3}}{2}$</td>
-      <td style="text-align: center">$-\frac{1}{2}$</td>
-      <td style="text-align: center">$\frac{1}{\sqrt{3}}$</td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center">$-\frac{2}{\sqrt{3}}$</td>
-      <td style="text-align: center">$-2$</td>
-      <td style="text-align: center">$\sqrt{3}$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$225^{\circ}$</td>
-      <td style="text-align: center">$5\pi/4$</td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center">$-\frac{\sqrt{2}}{2}$</td>
-      <td style="text-align: center">$-\frac{\sqrt{2}}{2}$</td>
-      <td style="text-align: center">$1$</td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center">$-\sqrt{2}$</td>
-      <td style="text-align: center">$-\sqrt{2}$</td>
-      <td style="text-align: center">$1$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$240^{\circ}$</td>
-      <td style="text-align: center">$4\pi/3$</td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center">$-\frac{1}{2}$</td>
-      <td style="text-align: center">$-\frac{\sqrt{3}}{2}$</td>
-      <td style="text-align: center">$\sqrt{3}$</td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center">$-2$</td>
-      <td style="text-align: center">$-\frac{2}{\sqrt{3}}$</td>
-      <td style="text-align: center">$\frac{1}{\sqrt{3}}$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"> </td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$270^{\circ}$</td>
-      <td style="text-align: center">$3\pi/2$</td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center">$0$</td>
-      <td style="text-align: center">$-1$</td>
-      <td style="text-align: center"><em>undefined</em></td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"><em>undefined</em></td>
-      <td style="text-align: center">$-1$</td>
-      <td style="text-align: center">$0$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$120^{\circ}$</td>
-      <td style="text-align: center">$2\pi/3$</td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center">$\frac{1}{2}$</td>
-      <td style="text-align: center">$-\frac{\sqrt{3}}{2}$</td>
-      <td style="text-align: center">$-\sqrt{3}$</td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center">$-2$</td>
-      <td style="text-align: center">$\frac{2}{\sqrt{3}}$</td>
-      <td style="text-align: center">$-\frac{1}{\sqrt{3}}$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$135^{\circ}$</td>
-      <td style="text-align: center">$3\pi/4$</td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center">$\frac{\sqrt{2}}{2}$</td>
-      <td style="text-align: center">$-\frac{\sqrt{2}}{2}$</td>
-      <td style="text-align: center">$-1$</td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center">$-\sqrt{2}$</td>
-      <td style="text-align: center">$\sqrt{2}$</td>
-      <td style="text-align: center">$-1$</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">$150^{\circ}$</td>
-      <td style="text-align: center">$5\pi/6$</td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center">$\frac{\sqrt{3}}{2}$</td>
-      <td style="text-align: center">$-\frac{1}{2}$</td>
-      <td style="text-align: center">$-\frac{1}{\sqrt{3}}$</td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center">$-\frac{2}{\sqrt{3}}$</td>
-      <td style="text-align: center">$2$</td>
-      <td style="text-align: center">$-\sqrt{3}$</td>
-    </tr>
-  </tbody>
+<thead>
+<tr style="border-bottom: 2px solid black;">
+    <th style="text-align:center"><strong>Degrees</strong></th>
+    <th style="text-align:center; border-right: 1.5px solid black;"><strong>Radians</strong></th>
+    <th style="text-align:center"><strong>cos</strong></th>
+    <th style="text-align:center"><strong>sin</strong></th>
+    <th style="text-align:center; border-right: 1.5px solid black;"><strong>tan</strong></th>
+    <th style="text-align:center"><strong>sec</strong></th>
+    <th style="text-align:center"><strong>csc</strong></th>
+    <th style="text-align:center"><strong>cot</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td style="text-align:center">$0^{\circ}$</td>
+    <td style="text-align:center; border-right: 1.5px solid black;">$0$</td>
+    <td style="text-align:center">$1$</td>
+    <td style="text-align:center">$0$</td>
+    <td style="text-align:center; border-right: 1.5px solid black;">$0$</td>
+    <td style="text-align:center">$1$</td>
+    <td style="text-align:center"><em>undefined</em></td>
+    <td style="text-align:center"><em>undefined</em></td>
+</tr>
+<tr>
+    <td style="text-align:center">$30^{\circ}$</td>
+    <td style="text-align:center; border-right: 1.5px solid black;">$\pi/6$</td>
+    <td style="text-align:center">$\frac{\sqrt{3}}{2}$</td>
+    <td style="text-align:center">$\frac{1}{2}$</td>
+    <td style="text-align:center; border-right: 1.5px solid black;">$\frac{1}{\sqrt{3}}$</td>
+    <td style="text-align:center">$\frac{2}{\sqrt{3}}$</td>
+    <td style="text-align:center">$2$</td>
+    <td style="text-align:center">$\sqrt{3}$</td>
+</tr>
+<tr>
+    <td style="text-align:center">$45^{\circ}$</td>
+    <td style="text-align:center; border-right: 1.5px solid black;">$\pi/4$</td>
+    <td style="text-align:center">$\frac{1}{\sqrt{2}}$</td>
+    <td style="text-align:center">$\frac{1}{\sqrt{2}}$</td>
+    <td style="text-align:center; border-right: 1.5px solid black;">$1$</td>
+    <td style="text-align:center">$\sqrt{2}$</td>
+    <td style="text-align:center">$\sqrt{2}$</td>
+    <td style="text-align:center">$1$</td>
+</tr>
+<tr style="border-bottom: 1.5px solid black;">
+    <td style="text-align:center">$60^{\circ}$</td>
+    <td style="text-align:center; border-right: 1.5px solid black;">$\pi/3$</td>
+    <td style="text-align:center">$\frac{1}{2}$</td>
+    <td style="text-align:center">$\frac{\sqrt{3}}{2}$</td>
+    <td style="text-align:center; border-right: 1.5px solid black;">$\sqrt{3}$</td>
+    <td style="text-align:center">$2$</td>
+    <td style="text-align:center">$\frac{2}{\sqrt{3}}$</td>
+    <td style="text-align:center">$\frac{1}{\sqrt{3}}$</td>
+</tr>
+<tr>
+    <td style="text-align:center">$90^{\circ}$</td>
+    <td style="text-align:center; border-right: 1.5px solid black;">$\pi/2$</td>
+    <td style="text-align:center">$0$</td>
+    <td style="text-align:center">$1$</td>
+    <td style="text-align:center; border-right: 1.5px solid black;"><em>undefined</em></td>
+    <td style="text-align:center"><em>undefined</em></td>
+    <td style="text-align:center">$1$</td>
+    <td style="text-align:center">$0$</td>
+</tr>
+<tr>
+    <td style="text-align:center">$120^{\circ}$</td>
+    <td style="text-align:center; border-right: 1.5px solid black;">$2\pi/3$</td>
+    <td style="text-align:center">$-\frac{1}{2}$</td>
+    <td style="text-align:center">$\frac{\sqrt{3}}{2}$</td>
+    <td style="text-align:center; border-right: 1.5px solid black;">$-\sqrt{3}$</td>
+    <td style="text-align:center">$-2$</td>
+    <td style="text-align:center">$\frac{2}{\sqrt{3}}$</td>
+    <td style="text-align:center">$-\frac{1}{\sqrt{3}}$</td>
+</tr>
+<tr>
+    <td style="text-align:center">$135^{\circ}$</td>
+    <td style="text-align:center; border-right: 1.5px solid black;">$3\pi/4$</td>
+    <td style="text-align:center">$-\frac{1}{\sqrt{2}}$</td>
+    <td style="text-align:center">$\frac{1}{\sqrt{2}}$</td>
+    <td style="text-align:center; border-right: 1.5px solid black;">$-1$</td>
+    <td style="text-align:center">$-\sqrt{2}$</td>
+    <td style="text-align:center">$\sqrt{2}$</td>
+    <td style="text-align:center">$-1$</td>
+</tr>
+<tr style="border-bottom: 1.5px solid black;">
+    <td style="text-align:center">$150^{\circ}$</td>
+    <td style="text-align:center; border-right: 1.5px solid black;">$5\pi/6$</td>
+    <td style="text-align:center">$-\frac{\sqrt{3}}{2}$</td>
+    <td style="text-align:center">$\frac{1}{2}$</td>
+    <td style="text-align:center; border-right: 1.5px solid black;">$-\frac{1}{\sqrt{3}}$</td>
+    <td style="text-align:center">$-\frac{2}{\sqrt{3}}$</td>
+    <td style="text-align:center">$2$</td>
+    <td style="text-align:center">$-\sqrt{3}$</td>
+</tr>
+<tr>
+    <td style="text-align:center">$180^{\circ}$</td>
+    <td style="text-align:center; border-right: 1.5px solid black;">$\pi$</td>
+    <td style="text-align:center">$-1$</td>
+    <td style="text-align:center">$0$</td>
+    <td style="text-align:center; border-right: 1.5px solid black;">$0$</td>
+    <td style="text-align:center">$-1$</td>
+    <td style="text-align:center"><em>undefined</em></td>
+    <td style="text-align:center"><em>undefined</em></td>
+</tr>
+<tr>
+    <td style="text-align:center">$210^{\circ}$</td>
+    <td style="text-align:center; border-right: 1.5px solid black;">$7\pi/6$</td>
+    <td style="text-align:center">$-\frac{\sqrt{3}}{2}$</td>
+    <td style="text-align:center">$-\frac{1}{2}$</td>
+    <td style="text-align:center; border-right: 1.5px solid black;">$\frac{1}{\sqrt{3}}$</td>
+    <td style="text-align:center">$-\frac{2}{\sqrt{3}}$</td>
+    <td style="text-align:center">$-2$</td>
+    <td style="text-align:center">$\sqrt{3}$</td>
+</tr>
+<tr>
+    <td style="text-align:center">$225^{\circ}$</td>
+    <td style="text-align:center; border-right: 1.5px solid black;">$5\pi/4$</td>
+    <td style="text-align:center">$-\frac{1}{\sqrt{2}}$</td>
+    <td style="text-align:center">$-\frac{1}{\sqrt{2}}$</td>
+    <td style="text-align:center; border-right: 1.5px solid black;">$1$</td>
+    <td style="text-align:center">$-\sqrt{2}$</td>
+    <td style="text-align:center">$-\sqrt{2}$</td>
+    <td style="text-align:center">$1$</td>
+</tr>
+<tr style="border-bottom: 1.5px solid black;">
+    <td style="text-align:center">$240^{\circ}$</td>
+    <td style="text-align:center; border-right: 1.5px solid black;">$4\pi/3$</td>
+    <td style="text-align:center">$-\frac{1}{2}$</td>
+    <td style="text-align:center">$-\frac{\sqrt{3}}{2}$</td>
+    <td style="text-align:center; border-right: 1.5px solid black;">$\sqrt{3}$</td>
+    <td style="text-align:center">$-2$</td>
+    <td style="text-align:center">$-\frac{2}{\sqrt{3}}$</td>
+    <td style="text-align:center">$\frac{1}{\sqrt{3}}$</td>
+</tr>
+<tr>
+    <td style="text-align:center">$270^{\circ}$</td>
+    <td style="text-align:center; border-right: 1.5px solid black;">$3\pi/2$</td>
+    <td style="text-align:center">$0$</td>
+    <td style="text-align:center">$-1$</td>
+    <td style="text-align:center; border-right: 1.5px solid black;"><em>undefined</em></td>
+    <td style="text-align:center"><em>undefined</em></td>
+    <td style="text-align:center">$-1$</td>
+    <td style="text-align:center">$0$</td>
+</tr>
+<tr>
+    <td style="text-align:center">$300^{\circ}$</td>
+    <td style="text-align:center; border-right: 1.5px solid black;">$5\pi/3$</td>
+    <td style="text-align:center">$\frac{1}{2}$</td>
+    <td style="text-align:center">$-\frac{\sqrt{3}}{2}$</td>
+    <td style="text-align:center; border-right: 1.5px solid black;">$-\sqrt{3}$</td>
+    <td style="text-align:center">$2$</td>
+    <td style="text-align:center">$-\frac{2}{\sqrt{3}}$</td>
+    <td style="text-align:center">$-\frac{1}{\sqrt{3}}$</td>
+</tr>
+<tr>
+    <td style="text-align:center">$315^{\circ}$</td>
+    <td style="text-align:center; border-right: 1.5px solid black;">$7\pi/4$</td>
+    <td style="text-align:center">$\frac{1}{\sqrt{2}}$</td>
+    <td style="text-align:center">$-\frac{1}{\sqrt{2}}$</td>
+    <td style="text-align:center; border-right: 1.5px solid black;">$-1$</td>
+    <td style="text-align:center">$\sqrt{2}$</td>
+    <td style="text-align:center">$-\sqrt{2}$</td>
+    <td style="text-align:center">$-1$</td>
+</tr>
+<tr>
+    <td style="text-align:center">$330^{\circ}$</td>
+    <td style="text-align:center; border-right: 1.5px solid black;">$11\pi/6$</td>
+    <td style="text-align:center">$\frac{\sqrt{3}}{2}$</td>
+    <td style="text-align:center">$-\frac{1}{2}$</td>
+    <td style="text-align:center; border-right: 1.5px solid black;">$-\frac{1}{\sqrt{3}}$</td>
+    <td style="text-align:center">$\frac{2}{\sqrt{3}}$</td>
+    <td style="text-align:center">$-2$</td>
+    <td style="text-align:center">$-\sqrt{3}$</td>
+</tr>
+</tbody>
 </table>
+</div>
 
 <p><br /></p>
 
 <h2 id="complementary-supplementary-and-opposite-angles">Complementary, Supplementary, and Opposite Angles</h2>
 
 \[\begin{align}
-    &amp;\cos(\pi/2 - \theta) = -\cos(\theta)    &amp;\qquad&amp;   \sin(\pi/2 - \theta) = \sin(\theta)  &amp;\qquad&amp;    \tan(\pi/2 - \theta) = \cot(\theta) \\[10pt]
-    &amp;\cos(\pi - \theta) = \sin(\theta)    &amp;\qquad&amp;   \sin(\pi - \theta) = \cos(\theta)  &amp;\qquad&amp;    \tan(\pi - \theta) = -\tan(\theta) \\[10pt]
+    &amp;\cos(\pi/2 - \theta) = \sin(\theta)    &amp;\qquad&amp;   \sin(\pi/2 - \theta) = \cos(\theta)  &amp;\qquad&amp;    \tan(\pi/2 - \theta) = \cot(\theta) \\[10pt]
+    &amp;\cos(\pi - \theta) = -\cos(\theta)    &amp;\qquad&amp;   \sin(\pi - \theta) = \sin(\theta)  &amp;\qquad&amp;    \tan(\pi - \theta) = -\tan(\theta) \\[10pt]
     &amp;\cos(- \theta) = \cos(\theta)    &amp;\qquad&amp;   \sin(- \theta) = -\sin(\theta)  &amp;\qquad&amp;    \tan(- \theta) = -\tan(\theta)
 \end{align}\]
 

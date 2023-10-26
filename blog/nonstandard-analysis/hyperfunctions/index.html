@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Hyperfunctions &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded MathJax (effectively LaTeX) support 
+    https://docs.mathjax.org/en/v2.7-latest/tex.html -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX", "input/MathML", "output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js", "mml2jax.js", "MathMenu.js", "MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
+            Macros: {
+                b: ["{\\boldsymbol #1}",1],
+                seq: ["{\\left \\langle #1 \\right \\rangle}",1],
+                iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
+                abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
+                hal: ["\\texttt{hal}"],
+                gal: ["\\texttt{gal}"],
+                sh: ["sh"],
+                st: ["st"]
+            },
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!--
+    TeX-AMS_HTML
+    TeX-AMS-MML_HTMLorMML
+    TeX-MML-AM_HTMLorMML
+-->
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">AI/ML Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+        <li>
+          <a href="/files/Eric Keilty - Resume.pdf" target="_blank">R&eacute;sum&eacute;</a>
+        </li>
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2023 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">Hyperfunctions</h1>
+            <!-- <span class="series-date">04 Jul 2023</span> -->
+            <time datetime="2023-07-04T00:00:00-04:00" class="post-date">04 Jul 2023</time>
+            <!-- maybe I'll add tagging later
+            <span class="post-date" style="margin-top:-1em;"> ["nonstandard-analysis, ",  "hyperreal-numbers"] </span>
+            -->
+            <h2 id="the-space-of-functions">The Space of Functions</h2>
+
+<p>As a bit of background, let’s first understand how we model standard real-valued functions. Suppose $\mathbb{X}, \mathbb{Y} \subseteq \mathbb{R}$ and let $f : \mathbb{X} \rightarrow \mathbb{Y}$ be a function.</p>
+
+<p>Consider the <strong>space of functions</strong>. The standard notation is to denote this set $\mathbb{Y}^{\mathbb{X}}$. Why? A function is a map from the set $\mathbb{X}$ to the set $\mathbb{Y}$. Ultimately, for each element in the set $\mathbb{X}$, the function $f$ needs to choose one of the elements in the set $\mathbb{Y}$. How many ways are there to do this? Each choice has $\abs{\mathbb{Y}}$ options and we need to make $\abs{\mathbb{X}}$ choices. Therefore, there are $\abs{\mathbb{Y}}^{\abs{\mathbb{X}}}$ possible functions $f$. Thus, to denote the enumeration of this set of functions rather than just its magnutitude, we use the notation $\mathbb{Y}^{\mathbb{X}}$.</p>
+
+<p>To take a concrete example, suppose \(\mathbb{X} = \{ 1, 2 \}\) and \(\mathbb{Y} = \{ 1, 2, 3 \}\). Then $\abs{\mathbb{Y}}^{\abs{\mathbb{X}}} = 3^2 = 6$ and</p>
+
+\[\mathbb{Y}^{\mathbb{X}} = \{ 
+    (1 \mapsto 1, 2 \mapsto 2), (1 \mapsto 2, 2 \mapsto 3), (1 \mapsto 1, 2 \mapsto 3),
+    (1 \mapsto 2, 2 \mapsto 1), (1 \mapsto 2, 2 \mapsto 3), (1 \mapsto 3, 2 \mapsto 2),
+\}\]
+
+<p><br /></p>
+
+<p>This is where the notation $\mathbb{R}^{\mathbb{N}}$ came from in the previous post on <a href="/blog/nonstandard-analysis/constructing-the-hyperreal-numbers" target="_blank">constructing the hyperreal numbers</a>. An infinite sequence is a countably infinte list of numbers. In particular, we assign a real number in $\mathbb{R}$ to each element in $\mathbb{N}$. This is precisely the same as a map $f : \mathbb{N} \rightarrow \mathbb{R}$.</p>
+
+<p><br /></p>
+
+<!--
+## Operations on Functions
+
+Let $\circ$ be our operation of interest. **Note** that usually $\circ$ will denote function composition in this context. However, this is **not** how I'm using it.
+
+If we assume that $\mathbb{Y}$ is closed under the $\circ$ operation, then this induces a well-defined $\circ$ operation on the space of functions. Let $f, g : \mathbb{X} \rightarrow \mathbb{Y}$.
+
+$$
+(f \circ g)(x) := f(x) \circ g(x)
+$$
+
+Since $\mathbb{Y}$ is closed under $\circ$, $f(x) \circ g(x) \in \mathbb{Y}$ for all $x \in \mathbb{X}$. Therefore, $f \circ g : \mathbb{X} \rightarrow \mathbb{Y}$.
+
+<br>
+-->
+
+<h2 id="enlargement-of-the-space-of-functions">Enlargement of the Space of Functions</h2>
+
+<p>To recap, we have the set $\mathbb{Y}^{\mathbb{X}}$ which has a well-defined operation $\circ$. This sounds familiar. We can run exactly the same enlargement procedure on this.</p>
+
+<p>Consider an infinite sequence of elements from the set $\mathbb{Y}^{\mathbb{X}}$.</p>
+
+\[\seq{f_0, f_1, \ldots, f_n, \ldots} = \iseq{f_n}{n}\]
+
+<p>As done before, equality is evaluated element-wise.</p>
+
+\[\iseq{f_n}{n} = \iseq{g_n}{n} \quad \text{if and only if} \quad f_n = g_n \quad \forall n\]
+
+<p>Now we consider the concept of <strong>equivalent</strong> functions where $\iseq{f_n}{n} \simeq \iseq{g_n}{n}$ if $\iseq{f_n}{n}$ differs from $\iseq{g_n}{n}$ in only finitely many places. Of course, this relation can be shown to be an equivalence relation. Now, we consider the equivalence class of $\simeq$.</p>
+
+\[[\iseq{f_n}{n}] = \{ \iseq{g_n}{n} \ : \ \iseq{f_n}{n} \simeq \iseq{g_n}{n} \}\]
+
+<p>Since the equivalence classes partition the original space, we can define the enlargement of $\mathbb{Y}^{\mathbb{X}}$ as</p>
+
+\[{^* (\mathbb{Y}^{\mathbb{X}})} := (\mathbb{Y}^{\mathbb{X}} / \simeq)\]
+
+<p>This is the set of hyperfunctions with domain $\mathbb{X}$ and range $\mathbb{Y}$, i.e. $\b{f} = [\iseq{f_n}{n}] \in {^* (\mathbb{Y}^{\mathbb{X}})}$</p>
+
+<p><br /></p>
+
+<h2 id="hyperfunction-application">Hyperfunction Application</h2>
+
+<p>Let’s backtrack for a second. Consider an infinte sequence of functions $\iseq{f_n}{n}$. Now, suppose we have to define hyperfunction application.</p>
+
+\[\iseq{f_n}{n}(\iseq{x_n}{n}) := \iseq{f_n(x_n)}{n} \in \mathbb{Y}^{\mathbb{N}}\]
+
+<p>Just as before, we are defining this operation element-wise. Now, we have to define hyperfunction application on equivalence classes. In other sources, functions defined this way are sometimes called <strong>internal</strong>.</p>
+
+\[\b{f}(\iseq{x_n}{n}) = [\iseq{f_n}{n}](\iseq{x_n}{n}) = \ldots \text{hand-waving} \ldots = [\iseq{f_n(x_n)}{n}]\]
+
+<p>Again, we are skipping the formalism provided by the filter and ultrafilter (actually a lot of formalism). While the notation seems to suggest this equlationship is straight forward it is actually very complicated. $[\iseq{f_n}{n}] \in {^* (\mathbb{Y}^{\mathbb{X}})}$ while $[\iseq{f_n(x_n)}{n}] \in {^* \mathbb{Y}}$. To prove this formally, we need to show a relationship between these two very different hypersets.</p>
+
+<p>For our purposes, we give the intuition. Picking each memeber of the equivalence class $[\iseq{f_n}{n}]$ can only differs in finitely many places. Then we distribute each $\iseq{x_n}{n}$ element-wise. <strong>This process can only decrease the number of differences between members of the equivalence class</strong>. Therefore, any function in the previous equivalence class will remain in the equivalence class.</p>
+
+<p>Finally, consider hyperfunction application on hyperreal numbers</p>
+
+\[\b{f}(\b{x}) = [\iseq{f_n}{n}]([\iseq{x_n}{n}]) = \ldots \text{hand-waving} \ldots = [\iseq{f_n(x_n)}{n}]\]
+
+<p>Again, giving the intuitive justification rather than the formal proof. If we consider $[\iseq{f_n(x_n)}{n}]$ and consider other elements in the equivalence class $[\iseq{x_n}{n}]$. Since the elements in $[\iseq{x_n}{n}]$ only differ in finitely many places, it will only cause each $\iseq{f_n(x_n)}{n}$ to differ in finitely many places.</p>
+
+<p><br /></p>
+
+<p>There is an interesting corrolary to the above. By construction, $\b{f} \in {^* (\mathbb{Y}^{\mathbb{X}})}$. By definition, $\b{x} \in {^* \mathbb{X}}$ and $\b{f}(\b{x}) \in {^* \mathbb{Y}}$. Therefore, $\b{f} : {^* \mathbb{X}} \rightarrow {^* \mathbb{Y}}$. By the above logic, the space of possible hyperfunctions of this kind is ${^* \mathbb{Y}}^{^* \mathbb{X}}$. Thus, we have just shown that</p>
+
+\[{^* (\mathbb{Y}^{\mathbb{X}})} = {^* \mathbb{Y}}^{^* \mathbb{X}}\]
+
+<p>Not sure if that’s useful in any way.</p>
+
+<p><br /></p>
+
+<h2 id="hyperfunctions-as-operations">Hyperfunctions as Operations</h2>
+
+<p>We have now defined abstract hyperfunctions $\b{f} : {^* \mathbb{X}} \rightarrow {^* \mathbb{Y}}$. We can now take a special-case of real-valued hyperfunctions $\b{f} : {^* \mathbb{R}} \rightarrow {^* \mathbb{R}}$ and extend the common operations on real numbers.</p>
+
+<p>Suppose the binary operation $\circ$ is well-defined and closed on $\mathbb{R}$. Examples include $+, -, \times, /$</p>
+
+\[\b{r} \circ \b{s} := \circ(\b{r}, \b{s}) = [\iseq{r_n \circ s_n}{n}]\]
+
+<p>We also get exponentiation and logarithms for free. Suppose $b_n &gt; 1$</p>
+
+\[\b{r}^{\b{s}} = [\iseq{r_n^{s_n}}{n}] \\[10pt]
+\b{\log}_{\b{b}} {\b{r}} = \left [ \iseq{\log_{b_n} r_n}{n} \right ]\]
+
+<p><br /></p>
+
+<h2 id="summary">Summary</h2>
+
+<p>The upside of all of this is that every operation on real numbers has a natural extension to the hyperreals (preform operations element-wise).</p>
+
+        </div>
+
+        <!-- Adding the ability to move between parts of the series -->
+        
+        
+        
+
+        
+        
+        
+
+        <!-- Getting capitalized title for series -->
+        
+        
+        
+        
+        <!-- Getting url for series, which is just the page url with the last /... removed -->
+        
+
+        <div class="pagination" style="margin-top:1em;">
+            
+                <a class="pagination-item older" href="/blog/nonstandard-analysis/constructing-the-hyperreal-numbers/">Previous</a>
+            
+            
+                <a class="pagination-item newer" href="/blog/nonstandard-analysis/relations/">Next</a>
+            
+        </div>
+        <h3 style="text-align:center; margin-bottom:1em;">
+            <a href="/blog/nonstandard-analysis">
+            
+                
+                    Nonstandard
+                
+            
+                
+                    Analysis
+                
+            
+         Series</a>
+        </h3>
+    </div>
+    
+  </body>
+</html>

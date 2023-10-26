@@ -36,13 +36,24 @@
   <!-- RSS 
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
 </head>
-  <!-- Enable embedded Latex support -->
+  <!-- Enable embedded MathJax (effectively LaTeX) support 
+    https://docs.mathjax.org/en/v2.7-latest/tex.html -->
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
-        jax: ["input/TeX","input/MathML","output/SVG", "output/CommonHTML"],
-        extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
+        jax: ["input/TeX", "input/MathML", "output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js", "mml2jax.js", "MathMenu.js", "MathZoom.js", "CHTML-preview.js"],
         TeX: {
-            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js", "cancel.js"]
+            extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
+            Macros: {
+                b: ["{\\boldsymbol #1}",1],
+                seq: ["{\\left \\langle #1 \\right \\rangle}",1],
+                iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
+                abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
+                hal: ["\\texttt{hal}"],
+                gal: ["\\texttt{gal}"],
+                sh: ["sh"],
+                st: ["st"]
+            },
         },
         tex2jax: {
             inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -53,11 +64,14 @@
         "HTML-CSS": { availableFonts: ["TeX"] }
     });
 </script>
+
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
 
-<!-- Enable Tikz support -->
-<link rel="stylesheet" type="text/css" href="http://tikzjax.com/v1/fonts.css">
-<script src="http://tikzjax.com/v1/tikzjax.js"></script>
+<!--
+    TeX-AMS_HTML
+    TeX-AMS-MML_HTMLorMML
+    TeX-MML-AM_HTMLorMML
+-->
 
   <body>
     
@@ -125,8 +139,8 @@
 
         <div class="post">
             <h1 class="post-title">The Shadow Map</h1>
-            <!-- <span class="series-date">06 Jul 2023</span> -->
-            <time datetime="2023-07-06T00:00:00-04:00" class="post-date">06 Jul 2023</time>
+            <!-- <span class="series-date">11 Jul 2023</span> -->
+            <time datetime="2023-07-11T00:00:00-04:00" class="post-date">11 Jul 2023</time>
             <!-- maybe I'll add tagging later
             <span class="post-date" style="margin-top:-1em;"> ["nonstandard-analysis"] </span>
             -->
@@ -134,11 +148,18 @@
 
 <h2 id="the-shadow-map-theorem">The Shadow Map Theorem</h2>
 
-<p><strong>Theorem</strong>: Every limited hyperreal number $a \in {^* \mathbb{R}}$ is infinitely close to a unique real number. This is called the <em>shadow</em> of $a$, or the <em>standard part</em> of $a$, typically denoted as follows</p>
+<!-- Let ${^* \mathbb{X}}$ be any hyperset. Every limied number in this hyperset $\b{\mu} \in \mathbb{L}$ is infintely close to a unique number in  -->
 
-\[sh(a) = st(a) = {^{\circ} a}\]
+<p><strong>Theorem</strong>: 
+Every limited hyperreal number $\b{x} \in {^* \mathbb{R}}$ is infinitely close to a unique real number. This is called the <em>shadow</em> of $\b{x}$, or the <em>standard part</em> of $\b{x}$, typically denoted as follows</p>
 
-<p><strong>Corollary</strong>: Every limited hyperreal number $a \in {^* \mathbb{R}}$ can be expressed as $a = r + \epsilon$ where $r$ is a real number (namely $sh(a)$) and $\epsilon$ is an infinitesimal.</p>
+\[sh(\b{x}) = st(\b{x}) = {^{\circ} \b{x}} \in \mathbb{R}\]
+
+<p>We can see this as the opposite of the star notation. For example</p>
+
+\[sh({^* x}) = x\]
+
+<p><strong>Corollary</strong>: Every limited hyperreal number $\b{\mu} \in \mathbb{L}$ can be expressed as $\b{\mu} = {^* r} + \b{\epsilon}$ where $r \in \mathbb{R}$ and $\b{\epsilon}$ is an infinitesimal hyperreal number.</p>
 
 <p><strong>Proof</strong>: <strong>TODO</strong></p>
 
@@ -148,68 +169,73 @@
 
 \[\lim_{x \rightarrow a} f(x) \equiv sh( f(halo(a)) )\]
 
+\[\lim_{n \rightarrow \infty} f(n) \equiv sh( f(gal(n)) ) = sh( f(\mathcal{N}) )\]
+
 <p><br /></p>
 
 <h2 id="properties">Properties</h2>
 
-<p>For these proofs, let $x = r_1 + \epsilon_1$ and $y = r_2 + \epsilon_2$ where $r_1 = sh(x)$ and $r_2 = sh(y)$.</p>
+<p>For these proofs, let $\b{x} = {^* r_1} + \b{\epsilon}_1$ and $\b{y} = {^* r_2} + \b{\epsilon}_2$ where ${^* r_1} = sh(\b{x})$ and ${^* r_2} = sh(\b{y})$.</p>
 
 <h3 id="addition">Addition</h3>
 
 \[\begin{align}
-    sh(x + y) 
-    &amp;= sh( (r_1 + \epsilon_1) + (r_2 + \epsilon_2) ) \\[10pt] 
-    &amp;= sh( (r_1 + r_2) + (\epsilon_1 + \epsilon_2) ) \\[10pt] 
+    sh(\b{x} + \b{y}) 
+    &amp;= sh( ({^* r_1} + \b{\epsilon}_1) + ({^* r_2} + \b{\epsilon}_2) ) \\[10pt] 
+    &amp;= sh( ({^* r_1} + {^* r_2}) + (\b{\epsilon}_1 + \b{\epsilon}_2) ) \\[10pt] 
+    &amp;= sh( \ {^* (r_1 + r_2)} + (\b{\epsilon}_1 + \b{\epsilon}_2) \ ) \\[10pt] 
     &amp;= r_1 + r_2 \\[10pt] 
-    &amp;= sh(x) + sh(y)
+    &amp;= sh(\b{x}) + sh(\b{y})
 \end{align}\]
 
 <h3 id="multiplication">Multiplication</h3>
 
 \[\begin{align}
-    sh(x \cdot y) 
-    &amp;= sh( (r_1 + \epsilon_1) \cdot (r_2 + \epsilon_2) ) \\[10pt] 
-    &amp;= sh( (r_1 \cdot r_2) + (r_1 \cdot \epsilon_2 + r_2 \cdot \epsilon_1 + \epsilon_1 \cdot \epsilon_2) ) \\[10pt] 
-    &amp;= sh( (r_1 \cdot r_2) + \epsilon_3 ) \\[10pt] 
-    &amp;= r_1 \cdot r_2 \\[10pt] 
-    &amp;= sh(x) \cdot sh(y)
+    sh(\b{x} \times \b{y}) 
+    &amp;= sh( ({^* r_1} + \b{\epsilon}_1) \times ({^* r_2} + \b{\epsilon}_2) ) \\[10pt] 
+    &amp;= sh( ({^* r_1} \times {^* r_2}) + ({^* r_1} \times \b{\epsilon}_2 + {^* r_2} \times \b{\epsilon}_1 + \b{\epsilon}_1 \times \b{\epsilon}_2) ) \\[10pt] 
+    &amp;= sh( ({^* r_1} \times {^* r_2}) + \b{\epsilon}_3 ) \\[10pt] 
+    &amp;= sh( \ {^* (r_1 \times r_2)} + \b{\epsilon}_3 \ ) \\[10pt] 
+    &amp;= r_1 \times r_2 \\[10pt] 
+    &amp;= sh(\b{x}) \times sh(\b{y})
 \end{align}\]
 
 <p>As a corollary, if $x = r$ where $r \in \mathbb{R}$ is a pure real number, then</p>
 
-\[sh(r \cdot y) = sh(r) \cdot sh(y) = r \cdot sh(y)\]
+\[sh(r \cdot y) = sh(r) \cdot sh(\b{y}) = r \cdot sh(\b{y})\]
 
 <p>Thus, as an additional corollary, we’ve shown the linearity of the shadow map.</p>
 
-\[sh(\alpha x + \beta y) = \alpha sh(x) + \beta sh(y)\]
+\[sh(\alpha x + \beta y) = \alpha sh(\b{x}) + \beta sh(\b{y})\]
 
 <p>As a final corollary, taking $\alpha = 1$ and $\beta = -1$, we get the subtraction law</p>
 
-\[sh(x - y) = sh(x) - sh(y)\]
+\[sh(x - y) = sh(\b{x}) - sh(\b{y})\]
 
 <h3 id="reciprocation">Reciprocation</h3>
 
-<p>Assume that $sh(x) \neq 0$.</p>
+<p>Assume that $sh(\b{x}) \neq 0$.</p>
 
 \[\begin{align}
-    sh \left (\frac{1}{x} \right ) 
-    &amp;= sh \left ( \frac{1}{r_1 + \epsilon_1} \right ) \\[10pt] 
-    &amp;= sh \left ( \frac{1}{r_1} + \frac{\epsilon_1}{r_1 (r_1 + \epsilon_1)} \right ) \\[10pt] 
-    &amp;= sh \left ( \frac{1}{r_1} + \epsilon_3 \right ) \\[10pt] 
+    sh \left (\frac{1}{\b{x}} \right ) 
+    &amp;= sh \left ( \frac{1}{ {^* r_1} + \b{\epsilon}_1} \right ) \\[10pt] 
+    &amp;= sh \left ( \frac{1}{^* r_1} + \frac{\b{\epsilon}_1}{ {^* r_1} ({^* r_1} + \b{\epsilon}_1)} \right ) \\[10pt] 
+    &amp;= sh \left ( \frac{1}{^* r_1} + \epsilon_3 \right ) \\[10pt] 
+    &amp;= sh \left ( {^* \left ( \frac{1}{r_1} \right )} + \epsilon_3 \right ) \\[10pt] 
     &amp;= \frac{1}{r_1} \\[10pt] 
-    &amp;= \frac{1}{sh(x)}
+    &amp;= \frac{1}{sh(\b{x})}
 \end{align}\]
 
 <h3 id="division">Division</h3>
 
-<p>Assume that $sh(y) \neq 0$. We just combine the multiplication and reciprocation properties.</p>
+<p>Assume that $sh(\b{y}) \neq 0$. We just combine the multiplication and reciprocation properties.</p>
 
 \[\begin{align}
-    sh \left (\frac{x}{y} \right ) 
-    &amp;= sh \left (x \cdot \frac{1}{y} \right ) \\[10pt] 
-    &amp;= sh(x) \cdot sh \left (\frac{1}{y} \right ) \\[10pt] 
-    &amp;= sh(x) \cdot \frac{1}{sh(y)} \\[10pt] 
-    &amp;= \frac{sh(x)}{sh(y)}
+    sh \left (\frac{\b{x}}{\b{y}} \right ) 
+    &amp;= sh \left (\b{x} \times \frac{1}{\b{y}} \right ) \\[10pt] 
+    &amp;= sh(\b{x}) \times sh \left (\frac{1}{\b{y}} \right ) \\[10pt] 
+    &amp;= sh(\b{x}) \times \frac{1}{sh(\b{y})} \\[10pt] 
+    &amp;= \frac{sh(\b{x})}{sh(\b{y})}
 \end{align}\]
 
         </div>
@@ -233,10 +259,10 @@
 
         <div class="pagination" style="margin-top:1em;">
             
-                <a class="pagination-item older" href="/blog/nonstandard-analysis/constructing-the-hyperreal-numbers/">Previous</a>
+                <a class="pagination-item older" href="/blog/nonstandard-analysis/constructing-the-real-numbers/">Previous</a>
             
             
-                <a class="pagination-item newer" href="/blog/nonstandard-analysis/exponentiation/">Next</a>
+                <span class="pagination-item newer">Next</span>
             
         </div>
         <h3 style="text-align:center; margin-bottom:1em;">

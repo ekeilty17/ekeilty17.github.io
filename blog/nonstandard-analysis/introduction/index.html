@@ -36,13 +36,24 @@
   <!-- RSS 
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
 </head>
-  <!-- Enable embedded Latex support -->
+  <!-- Enable embedded MathJax (effectively LaTeX) support 
+    https://docs.mathjax.org/en/v2.7-latest/tex.html -->
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
-        jax: ["input/TeX","input/MathML","output/SVG", "output/CommonHTML"],
-        extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
+        jax: ["input/TeX", "input/MathML", "output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js", "mml2jax.js", "MathMenu.js", "MathZoom.js", "CHTML-preview.js"],
         TeX: {
-            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js", "cancel.js"]
+            extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
+            Macros: {
+                b: ["{\\boldsymbol #1}",1],
+                seq: ["{\\left \\langle #1 \\right \\rangle}",1],
+                iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
+                abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
+                hal: ["\\texttt{hal}"],
+                gal: ["\\texttt{gal}"],
+                sh: ["sh"],
+                st: ["st"]
+            },
         },
         tex2jax: {
             inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -53,11 +64,14 @@
         "HTML-CSS": { availableFonts: ["TeX"] }
     });
 </script>
+
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
 
-<!-- Enable Tikz support -->
-<link rel="stylesheet" type="text/css" href="http://tikzjax.com/v1/fonts.css">
-<script src="http://tikzjax.com/v1/tikzjax.js"></script>
+<!--
+    TeX-AMS_HTML
+    TeX-AMS-MML_HTMLorMML
+    TeX-MML-AM_HTMLorMML
+-->
 
   <body>
     
@@ -132,9 +146,19 @@
             -->
             <p><strong>TODO</strong></p>
 
+<!-- 
+https://arxiv.org/pdf/math/0407178.pdf
+-->
+
+<p>What I may decide to do is to go back and just assume we have the real numbers. Then explore all the interesting properties of hyperreal numbers. Then go back and talk about <strong>set enlargment</strong> in general. Apply that to $\mathbb{Q}$ to get ${^* \mathbb{Q}}$. And from there show how to get the hyperreals.</p>
+
 <h2 id="motivation">Motivation</h2>
 
 <p>Nonstandard analysis is just really cool, and I want to spread it.</p>
+
+<p>Explain why we need it. Tends to shortest proofs and also tends to align more with our intuition thus making proofs more simple as well</p>
+
+<p>Other sources go much deeper into the rigour, which is great, but I want to talk about hyperreal numbers one level higher to make then accessible to a broader mathematical audience.</p>
 
 <h2 id="what-i-will-cover">What I Will Cover</h2>
 
@@ -182,7 +206,7 @@
                 <span class="pagination-item older">Previous</span>
             
             
-                <a class="pagination-item newer" href="/blog/nonstandard-analysis/constructing-the-hyperrational-numbers/">Next</a>
+                <a class="pagination-item newer" href="/blog/nonstandard-analysis/variable-conventions/">Next</a>
             
         </div>
         <h3 style="text-align:center; margin-bottom:1em;">

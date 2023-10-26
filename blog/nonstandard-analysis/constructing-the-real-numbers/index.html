@@ -36,13 +36,24 @@
   <!-- RSS 
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
 </head>
-  <!-- Enable embedded Latex support -->
+  <!-- Enable embedded MathJax (effectively LaTeX) support 
+    https://docs.mathjax.org/en/v2.7-latest/tex.html -->
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
-        jax: ["input/TeX","input/MathML","output/SVG", "output/CommonHTML"],
-        extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
+        jax: ["input/TeX", "input/MathML", "output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js", "mml2jax.js", "MathMenu.js", "MathZoom.js", "CHTML-preview.js"],
         TeX: {
-            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js", "cancel.js"]
+            extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
+            Macros: {
+                b: ["{\\boldsymbol #1}",1],
+                seq: ["{\\left \\langle #1 \\right \\rangle}",1],
+                iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
+                abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
+                hal: ["\\texttt{hal}"],
+                gal: ["\\texttt{gal}"],
+                sh: ["sh"],
+                st: ["st"]
+            },
         },
         tex2jax: {
             inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -53,11 +64,14 @@
         "HTML-CSS": { availableFonts: ["TeX"] }
     });
 </script>
+
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
 
-<!-- Enable Tikz support -->
-<link rel="stylesheet" type="text/css" href="http://tikzjax.com/v1/fonts.css">
-<script src="http://tikzjax.com/v1/tikzjax.js"></script>
+<!--
+    TeX-AMS_HTML
+    TeX-AMS-MML_HTMLorMML
+    TeX-MML-AM_HTMLorMML
+-->
 
   <body>
     
@@ -125,8 +139,8 @@
 
         <div class="post">
             <h1 class="post-title">Constructing the Real Numbers</h1>
-            <!-- <span class="series-date">04 Jul 2023</span> -->
-            <time datetime="2023-07-04T00:00:00-04:00" class="post-date">04 Jul 2023</time>
+            <!-- <span class="series-date">10 Jul 2023</span> -->
+            <time datetime="2023-07-10T00:00:00-04:00" class="post-date">10 Jul 2023</time>
             <!-- maybe I'll add tagging later
             <span class="post-date" style="margin-top:-1em;"> ["nonstandard-analysis, ",  "real-numbers"] </span>
             -->
@@ -139,6 +153,18 @@
 \[\mathbb{R} = ({^*\mathbb{Q}} \cap {^*\mathbb{L}}) \ / \ ({^*\mathbb{Q}} \cap {^*\mathbb{I}}) = \{ [u] \ \Big\vert \ u \in {^*\mathbb{Q}} \cap {^*\mathbb{L}} \}\]
 
 <h2 id="equivalence-to-cauchy-definition">Equivalence to Cauchy Definition</h2>
+
+<h2 id="constructing-the-hyperreal-numbers">Constructing the Hyperreal Numbers</h2>
+
+<p>Now that we have real numbers, we can construct the hyperreals in the same way we did the hyperrationals.</p>
+
+\[^* \mathbb{R} = (\mathbb{R}^{\mathbb{N}} / \equiv)\]
+
+<h2 id="completeness-of-the-real">Completeness of the Real</h2>
+
+\[({^*\mathbb{R}} \cap {^*\mathbb{L}}) \backslash ({^*\mathbb{R}} \cap {^*\mathbb{I}}) = \mathbb{R}\]
+
+<p>This is equivalent to the statement of the completion of the real numbers.</p>
 
         </div>
 
@@ -161,10 +187,10 @@
 
         <div class="pagination" style="margin-top:1em;">
             
-                <a class="pagination-item older" href="/blog/nonstandard-analysis/limited-appreciable-infinitesimal-and-unlimited-numbers/">Previous</a>
+                <a class="pagination-item older" href="/blog/nonstandard-analysis/halos-and-galaxies/">Previous</a>
             
             
-                <a class="pagination-item newer" href="/blog/nonstandard-analysis/constructing-the-hyperreal-numbers/">Next</a>
+                <a class="pagination-item newer" href="/blog/nonstandard-analysis/the-shadow-map/">Next</a>
             
         </div>
         <h3 style="text-align:center; margin-bottom:1em;">

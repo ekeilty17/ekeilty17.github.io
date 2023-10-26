@@ -4,7 +4,7 @@
 */
 
 .homepage-button {
-  background-color: #202020; /* black */
+  background-color: #2d2d2d; /* black */
   border: none;
   color: white;
   padding: 15px 16px;
@@ -13,6 +13,11 @@
   display: inline-block;
   font-size: 16px;
   margin-bottom:25px;
+}
+.homepage-button:hover {
+  cursor:grab;
+  color: #c78826;
+  background-color: #000000; /* black */
 }
 
 a {
@@ -76,8 +81,26 @@ a.post-link-item:focus {
 }
 
 .post-link-date {
-    display: block;
-    margin-top: -.5rem;
-    margin-bottom: 1rem;
-    color: #000000;
-  }
+  display: block;
+  margin-top: -.5rem;
+  margin-bottom: 1rem;
+  color: #000000;
+}
+
+.custom-table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.table-top-row-thick-line tr:first-child th {
+  border-bottom: 2px solid black; /* Add a thicker line under the top row */
+}
+
+.table-left-col-thick-line tr th:first-child {
+  border-right: 2px solid black; /* Add a thicker line to the right of the left-most column */
+}
+
+.table-left-col-thick-line tr td:first-child {
+  border-right: 2px solid black; /* Add a thicker line to the right of the left-most column */
+}

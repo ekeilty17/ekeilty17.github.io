@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Variable Conventions &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded MathJax (effectively LaTeX) support 
+    https://docs.mathjax.org/en/v2.7-latest/tex.html -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX", "input/MathML", "output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js", "mml2jax.js", "MathMenu.js", "MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
+            Macros: {
+                b: ["{\\boldsymbol #1}",1],
+                seq: ["{\\left \\langle #1 \\right \\rangle}",1],
+                iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
+                abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
+                hal: ["\\texttt{hal}"],
+                gal: ["\\texttt{gal}"],
+                sh: ["sh"],
+                st: ["st"]
+            },
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!--
+    TeX-AMS_HTML
+    TeX-AMS-MML_HTMLorMML
+    TeX-MML-AM_HTMLorMML
+-->
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">AI/ML Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+        <li>
+          <a href="/files/Eric Keilty - Resume.pdf" target="_blank">R&eacute;sum&eacute;</a>
+        </li>
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2023 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">Variable Conventions</h1>
+            <!-- <span class="series-date">02 Jul 2023</span> -->
+            <time datetime="2023-07-02T00:00:00-04:00" class="post-date">02 Jul 2023</time>
+            <!-- maybe I'll add tagging later
+            <span class="post-date" style="margin-top:-1em;"> ["nonstandard-analysis, ",  "variable-convention"] </span>
+            -->
+            <p>In this series, we are going to be dealing with a lot of different types of numbers, and these different numbers interacting with each other. During my drafting, I realized it’s very easy to get lost in these variable types. Thus, in order to avoid confusion, I am going to stick to some strict convensions in my variable naming. I hope this page can be a useful reference for the reader.</p>
+
+<p><br /></p>
+
+<h2 id="the-usual-sets-of-numbers">The Usual Sets of Numbers</h2>
+
+<p>In mathematics, there are four standard sets of numbers: the natural numbers ($\mathbb{N}$), the integers ($\mathbb{Z}$), the rational numbers ($\mathbb{Q}$), the real numbers ($\mathbb{R}$). In the next post of this series I give the standard definition of these sets.</p>
+
+<p>When a number is an instance of each of these sets, I will use the following naming convention for the variables.</p>
+
+\[m, n \in \mathbb{N} \qquad\qquad a, b \in \mathbb{Z} \qquad\qquad p, q \in \mathbb{Q} \qquad\qquad r, s \in \mathbb{R}\]
+
+<p>Furthermore, I will use these other standard convensions.</p>
+<ul>
+  <li>$c$ denotes an arbitrary constant</li>
+  <li>$d$ is used for derivative notation: $\frac{d}{dx}$</li>
+  <li>$e$ is euler’s constant</li>
+  <li>$f, g, h$ denote functions</li>
+  <li>$i, j, k, \ell \in \mathbb{N}$ are used for indexing (lists, sets, arguments, summations, etc)</li>
+  <li>$o$ is never used (looks like $0$)</li>
+  <li>$t$ always denotes time</li>
+  <li>$u, v, w$ denote a family of general variables which may be related in some way</li>
+  <li>$x, y, z$ denote a family of general variables which may be related in some way</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="hypernumbers">Hypernumbers</h2>
+
+<p>In the next post, I will explain how any set can be <strong>enlarged</strong> into a <strong>hyperset</strong>. I see many sources give no distinction between variables of hypersets and the original set. I think this can lead to some confusion, which I would like to avoid.</p>
+
+<p>Suppose we have set $\mathbb{X}$. The standard notation is for ${^* \mathbb{X}}$ to denote the corresponding hyperset. We write $x \in \mathbb{X}$ to denote an arbitary element of the original set. Similarly, my convension will be to write $\b{x} \in {^* \mathbb{X}}$ for an arbitary element of the hyperset. That is, I will use bold-font for hypervariables.</p>
+
+<p>In particular for the usual sets of numbers.</p>
+
+\[\b{m}, \b{n} \in {^* \mathbb{N}} \qquad\qquad \b{a}, \b{b} \in {^* \mathbb{Z}} \qquad\qquad \b{p}, \b{q} \in {^* \mathbb{Q}} \qquad\qquad \b{r}, \b{s} \in {^* \mathbb{R}}\]
+
+<p><br /></p>
+
+<h2 id="types-of-hypernumbers">Types of Hypernumbers</h2>
+
+<p>In a <a href="/blog/nonstandard-analysis/types-of-hyperrational-numbers/" target="_blank">later post</a>, we will show that for any hyperset there are following types of hypernumbers: infinitesimals ($\mathbb{I}$), appreciables ($\mathbb{A}$), limiteds ($\mathbb{L}$), and unlimiteds ($\mathbb{U}$).</p>
+
+<p>My convention will be to use greek symbols when we need to write hypernumbers with this level of specificity. I will use the following greek symbols (note they are bold because they are hypernumbers).</p>
+
+\[\b{\epsilon}, \b{\delta} \in \mathbb{I} \qquad\qquad \b{\alpha}, \b{\beta} \in \mathbb{A} \qquad\qquad \b{\lambda}, \b{\mu} \in \mathbb{L} \qquad\qquad \b{\omega}, \b{\Omega} \in \mathbb{U}\]
+
+<p>Note, the reason we do not use the star notation, e.g. ${^* \mathbb{I}}$, is because that would imply that there exists a set $\mathbb{I}$ such that we can attain ${^* \mathbb{I}}$ through the process of enlargement. This is not the case.</p>
+
+        </div>
+
+        <!-- Adding the ability to move between parts of the series -->
+        
+        
+        
+
+        
+        
+        
+
+        <!-- Getting capitalized title for series -->
+        
+        
+        
+        
+        <!-- Getting url for series, which is just the page url with the last /... removed -->
+        
+
+        <div class="pagination" style="margin-top:1em;">
+            
+                <a class="pagination-item older" href="/blog/nonstandard-analysis/introduction/">Previous</a>
+            
+            
+                <a class="pagination-item newer" href="/blog/nonstandard-analysis/constructing-the-hyperreal-numbers/">Next</a>
+            
+        </div>
+        <h3 style="text-align:center; margin-bottom:1em;">
+            <a href="/blog/nonstandard-analysis">
+            
+                
+                    Nonstandard
+                
+            
+                
+                    Analysis
+                
+            
+         Series</a>
+        </h3>
+    </div>
+    
+  </body>
+</html>

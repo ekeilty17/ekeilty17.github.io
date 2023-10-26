@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Binary Operations on Subset of Hyperreal Numbers &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded MathJax (effectively LaTeX) support 
+    https://docs.mathjax.org/en/v2.7-latest/tex.html -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX", "input/MathML", "output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js", "mml2jax.js", "MathMenu.js", "MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
+            Macros: {
+                b: ["{\\boldsymbol #1}",1],
+                seq: ["{\\left \\langle #1 \\right \\rangle}",1],
+                iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
+                abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
+                hal: ["\\texttt{hal}"],
+                gal: ["\\texttt{gal}"],
+                sh: ["sh"],
+                st: ["st"]
+            },
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!--
+    TeX-AMS_HTML
+    TeX-AMS-MML_HTMLorMML
+    TeX-MML-AM_HTMLorMML
+-->
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">AI/ML Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+        <li>
+          <a href="/files/Eric Keilty - Resume.pdf" target="_blank">R&eacute;sum&eacute;</a>
+        </li>
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2023 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">Binary Operations on Subset of Hyperreal Numbers</h1>
+            <!-- <span class="series-date">08 Jul 2023</span> -->
+            <time datetime="2023-07-08T00:00:00-04:00" class="post-date">08 Jul 2023</time>
+            <!-- maybe I'll add tagging later
+            <span class="post-date" style="margin-top:-1em;"> ["nonstandard-analysis, ",  "hyperreal-numbers, ",  "binary-operations"] </span>
+            -->
+            <p>In the previous post, we showed that any hyperset can be partitioned into infinitesimal ($\mathbb{I}$), appreciable ($\mathbb{A}$), and unlimited numbers ($\mathbb{U}$). Now, we would like to know what happens when these numbers interact with each other. In this post, we will analyze the usual binary operations: \(\{ +, -, \times, /\}\). This means, for each operation we have $9$ cases.</p>
+
+<p>As much as possible, I want to keep these proofs general so that they can apply to each of the hypersets ${^* \mathbb{N}}$, ${^* \mathbb{Z}}$, ${^* \mathbb{Q}}$, and ${^* \mathbb{R}}$. In fact, I believe these arguments should work for hypercomplex numbers as well (${^* \mathbb{C}}$). The set ${^* \mathbb{X}}$ will be used to denote any of the aforementioned hypersets.</p>
+
+<p>Finally, I will be using the following notation.</p>
+
+\[\mathbb{Y}^+ = \{ y \in \mathbb{Y} \ \Big\vert \ y &gt; 0 \} \qquad\qquad \mathbb{Y}^- = \{ y \in \mathbb{Y} \ \Big\vert \ y &lt; 0 \}\]
+
+<p><br /></p>
+
+<h2 id="summarized-results">Summarized Results</h2>
+
+<p>In each binary operation, the left operand is the leftmost column and right operand is the top row.</p>
+
+<div class="custom-table-container">
+
+<table class="table-top-row-thick-line table-left-col-thick-line">
+<thead>
+<tr>
+    <th style="text-align:center">$\times$</th>
+    <th style="text-align:center">$\mathbb{I}$</th>
+    <th style="text-align:center">$\mathbb{A}$</th>
+    <th style="text-align:center">$\mathbb{U}$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td style="text-align:center">$\mathbb{I}$</td>
+    <td style="text-align:center">$\mathbb{I}$</td>
+    <td style="text-align:center">$\mathbb{I}$</td>
+    <td style="text-align:center">$^* \mathbb{X}$</td>
+</tr>
+<tr>
+    <td style="text-align:center">$\mathbb{A}$</td>
+    <td style="text-align:center">$\mathbb{I}$</td>
+    <td style="text-align:center">$\mathbb{A}$</td>
+    <td style="text-align:center">$\mathbb{U}$</td>
+</tr>
+<tr>
+    <td style="text-align:center">$\mathbb{U}$</td>
+    <td style="text-align:center">$^* \mathbb{X}$</td>
+    <td style="text-align:center">$\mathbb{U}$</td>
+    <td style="text-align:center">$\mathbb{U}$</td>
+</tr>
+</tbody>
+</table>
+
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+
+<table class="table-top-row-thick-line table-left-col-thick-line">
+<thead>
+<tr>
+    <th style="text-align:center">$/$</th>
+    <th style="text-align:center">$\mathbb{I}$</th>
+    <th style="text-align:center">$\mathbb{A}$</th>
+    <th style="text-align:center">$\mathbb{U}$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td style="text-align:center">$\mathbb{I}$</td>
+    <td style="text-align:center">$^* \mathbb{X}$</td>
+    <td style="text-align:center">$\mathbb{I}$</td>
+    <td style="text-align:center">$\mathbb{I}$</td>
+</tr>
+<tr>
+    <td style="text-align:center">$\mathbb{A}$</td>
+    <td style="text-align:center">$\mathbb{U}$</td>
+    <td style="text-align:center">$\mathbb{A}$</td>
+    <td style="text-align:center">$\mathbb{I}$</td>
+</tr>
+<tr>
+    <td style="text-align:center">$\mathbb{U}$</td>
+    <td style="text-align:center">$\mathbb{U}$</td>
+    <td style="text-align:center">$\mathbb{U}$</td>
+    <td style="text-align:center">$^* \mathbb{X}$</td>
+</tr>
+</tbody>
+</table>
+
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+
+<table class="table-top-row-thick-line table-left-col-thick-line">
+<thead>
+<tr>
+    <th style="text-align:center">$\pm$</th>
+    <th style="text-align:center">$\mathbb{I}$</th>
+    <th style="text-align:center">$\mathbb{A}$</th>
+    <th style="text-align:center">$\mathbb{U}$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td style="text-align:center">$\mathbb{I}$</td>
+    <td style="text-align:center">$\mathbb{I}$</td>
+    <td style="text-align:center">$\mathbb{A}$</td>
+    <td style="text-align:center">$\mathbb{U}$</td>
+</tr>
+<tr>
+    <td style="text-align:center">$\mathbb{A}$</td>
+    <td style="text-align:center">$\mathbb{A}$</td>
+    <td style="text-align:center">$\mathbb{L}$</td>
+    <td style="text-align:center">$\mathbb{U}$</td>
+</tr>
+<tr>
+    <td style="text-align:center">$\mathbb{U}$</td>
+    <td style="text-align:center">$\mathbb{U}$</td>
+    <td style="text-align:center">$\mathbb{U}$</td>
+    <td style="text-align:center">$^* \mathbb{X}$</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<p>The last table is not really useful practically. In proofs it is often good practice to assume variables are always positive in value and to explicitly write negative signs when necessary. Thus, we can arrive at more practical results by only considering positive hypernumbers.</p>
+
+<div class="custom-table-container">
+
+<table class="table-top-row-thick-line table-left-col-thick-line">
+<thead>
+<tr>
+    <th style="text-align:center">$+$</th>
+    <th style="text-align:center">$\mathbb{I}^+$</th>
+    <th style="text-align:center">$\mathbb{A}^+$</th>
+    <th style="text-align:center">$\mathbb{U}^+$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td style="text-align:center">$\mathbb{I}^+$</td>
+    <td style="text-align:center">$\mathbb{I}^+$</td>
+    <td style="text-align:center">$\mathbb{A}^+$</td>
+    <td style="text-align:center">$\mathbb{U}^+$</td>
+</tr>
+<tr>
+    <td style="text-align:center">$\mathbb{A}^+$</td>
+    <td style="text-align:center">$\mathbb{A}^+$</td>
+    <td style="text-align:center">$\mathbb{A}^+$</td>
+    <td style="text-align:center">$\mathbb{U}^+$</td>
+</tr>
+<tr>
+    <td style="text-align:center">$\mathbb{U}^+$</td>
+    <td style="text-align:center">$\mathbb{U}^+$</td>
+    <td style="text-align:center">$\mathbb{U}^+$</td>
+    <td style="text-align:center">$\mathbb{U}^+$</td>
+</tr>
+</tbody>
+</table>
+
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+
+<table class="table-top-row-thick-line table-left-col-thick-line">
+<thead>
+<tr>
+    <th style="text-align:center">$-$</th>
+    <th style="text-align:center">$\mathbb{I}^+$</th>
+    <th style="text-align:center">$\mathbb{A}^+$</th>
+    <th style="text-align:center">$\mathbb{U}^+$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td style="text-align:center">$\mathbb{I}^+$</td>
+    <td style="text-align:center">$\mathbb{I}$</td>
+    <td style="text-align:center">$\mathbb{A}^-$</td>
+    <td style="text-align:center">$\mathbb{U}^-$</td>
+</tr>
+<tr>
+    <td style="text-align:center">$\mathbb{A}^+$</td>
+    <td style="text-align:center">$\mathbb{A}^+$</td>
+    <td style="text-align:center">$\mathbb{L}$</td>
+    <td style="text-align:center">$\mathbb{U}^-$</td>
+</tr>
+<tr>
+    <td style="text-align:center">$\mathbb{U}^+$</td>
+    <td style="text-align:center">$\mathbb{U}^+$</td>
+    <td style="text-align:center">$\mathbb{U}^+$</td>
+    <td style="text-align:center">$^* \mathbb{X}$</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<p><br /></p>
+
+<h2 id="setup">Setup</h2>
+
+<p>Recall from the previous post that hypersets can be partitioned into the following.</p>
+
+<ul>
+  <li><strong>Infinitesimals</strong>: \(\ \, \mathbb{I} = \{ \b{\epsilon} \in {^* \mathbb{X}} \ \ \Big\vert \ \abs{\b{\epsilon}} &lt; \abs{^* x} \ \ \forall x \in \mathbb{X} \backslash \{ 0 \}  \}\)</li>
+  <li><strong>Appreciables</strong>: \(\ \mathbb{A} = \{ \b{\alpha} \in {^* \mathbb{X}} \ \Big\vert \ {^* 0} &lt; \abs{^* x} \leq \abs{\b{\alpha}} \leq \abs{^* y} \ \ \exists x, y \in \mathbb{X}  \}\)</li>
+  <li><strong>Unlimiteds</strong>: \(\quad \mathbb{U} = \{ \b{\omega} \in {^* \mathbb{X}} \ \Big\vert \ \abs{^* x} &lt; \abs{\b{\omega}} \ \ \forall x \in \mathbb{X} \}\)</li>
+</ul>
+
+<p>And also</p>
+<ul>
+  <li><strong>Limiteds</strong>: \(\qquad \mathbb{L} = \{ \b{\mu} \in {^* \mathbb{X}} \ \Big\vert \ {^* 0} \leq \abs{\b{\mu}} \leq \abs{^* x} \ \ \exists x \in \mathbb{X}  \}\)</li>
+</ul>
+
+<p><br /></p>
+
+<p>In each of these proofs, we are going to assume the following (to shorten the proofs since there are so many).</p>
+<ul>
+  <li>$\b{\epsilon}, \b{\delta} \in \mathbb{I}$ are any two infinitesimal hyperrational numbers
+    <ul>
+      <li>Thus, $\abs{\b{\epsilon}} &lt; \abs{^* x’}$ where $x’ \in \mathbb{X} \backslash { 0 }$. I may choose any particular value for $x’$.</li>
+      <li>and $\abs{\b{\delta}} &lt; \abs{^* x’’}$ where $x’’ \in \mathbb{X} \backslash { 0 }$. I may choose any particular value for $x’’$.</li>
+    </ul>
+  </li>
+  <li>$\b{\alpha}, \b{\beta} \in \mathbb{A}$ are any two appreciable hyperrational numbers
+    <ul>
+      <li>${^* 0} &lt; \abs{^* x_{\b{\alpha}}} \leq \abs{\b{\alpha}} \leq \abs{^* y_{\b{\alpha}}}$ for fixed ration numbers $x_{\b{\alpha}},  y_{\b{\alpha}} \in \mathbb{X}$. I do not get to choose these values.</li>
+      <li>${^* 0} &lt; \abs{^* x_{\b{\beta}}} \leq \abs{\b{\beta}} \leq \abs{^* y_{\b{\beta}}}$ for fixed ration numbers $x_{\b{\beta}},  y_{\b{\beta}} \in \mathbb{X}$. I do not get to choose these values.</li>
+    </ul>
+  </li>
+  <li>$\b{\omega}, \b{\Omega} \in \mathbb{U}$ are any two unlimited hyperrational numbers
+    <ul>
+      <li>Thus, $\abs{^* x’} &lt; \abs{\b{\omega}}$ where $x’ \in \mathbb{X}$. I may choose any particular value for $x’  \in \mathbb{X}$.</li>
+      <li>and $\abs{^* x’’} &lt; \abs{\b{\Omega}}$ where $x’’ \in \mathbb{X}$. I may choose any particular value for $x’’ \in \mathbb{X}$.</li>
+    </ul>
+  </li>
+  <li>$x \in \mathbb{X}$ is a fixed number</li>
+</ul>
+
+<p><br /></p>
+
+<p>Since our hyperset of interest ${^* \mathbb{X}}$ is some subset of the real numbers, we will utilize some basic algebraic identities. I will not prove them since there are numerous proofs for the real number statements online, and the extension to hyperreal statements are very straight forward.</p>
+
+<p>the following standard facts from algebra are stated without proofs.</p>
+
+<ul>
+  <li>$\abs{\b{a}} \times \abs{\b{b}} = \abs{\b{a} \times \b{b}}$</li>
+  <li>$\abs{ \abs{\b{a}} - \abs{\b{b}} } \leq \abs{ \b{a} \pm \b{b} } \leq \abs{\b{a}} + \abs{\b{b}} \qquad$ (<strong>triangle inequality</strong>)</li>
+  <li>if $\b{a} &lt; \b{b}$ and $\b{a}, \b{b} \neq 0$, then ${^* 1} \ / \ \b{a} &gt; {^* 1} \ / \ \b{b}$</li>
+  <li>Addition is monotonically increasing, i.e. if $\b{a} &lt; \b{b}$ and $\b{c} &lt; \b{d}$, then $0 &lt; (\b{a} \times \b{c}) &lt; (\b{b} \times \b{d})$</li>
+  <li>Multiplication is monotonically increasing for positive numbers, i.e. if ${^* 0} &lt; \b{a} &lt; \b{b}$ and ${^* 0} &lt; \b{c} &lt; \b{d}$, then ${^* 0} &lt; (\b{a} \times \b{c}) &lt; (\b{b} \times \b{d})$</li>
+  <li>$\mathbb{X}$ is closed under addition and multiplication, i.e if $x, y \in \mathbb{X}$ then $x + y, \ x \times y \in \mathbb{X}$</li>
+  <li>$\mathbb{X}$ is closed under absolute value, i.e. if $x \in \mathbb{X}$, then $\abs{x} \in \mathbb{X}$</li>
+</ul>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="multiplication">Multiplication</h2>
+
+<h3 id="bepsilon-times-bdelta-in-mathbbi">$\b{\epsilon} \times \b{\delta} \in \mathbb{I}$</h3>
+
+\[\abs{\b{\epsilon}} &lt; \abs{^* 1}
+\ \text{ and } \
+\abs{\b{\delta}} &lt; \abs{^* x}
+\quad \implies \quad 
+\abs{\b{\epsilon}} \times \abs{\b{\delta}} &lt; \abs{^* 1} \times \abs{^* x} 
+\quad \implies \quad 
+\abs{ \b{\epsilon} \times \b{\delta } } &lt; \abs{^* x}
+\\[10pt]\]
+
+<h3 id="balpha-times-bepsilon-in-mathbbi">$\b{\alpha} \times \b{\epsilon} \in \mathbb{I}$</h3>
+
+<p>If $\mathbb{X}$ is a subset of $\mathbb{N}$ or $\mathbb{Z}$, then ${^* 0}$ is the only infinitesimal and the claim is trivial. In supersets of the rationals division is well-defined. Also recall that $x_{\b{\alpha}} \neq 0$.</p>
+
+\[0 &lt; \abs{\b{\alpha}} \leq \abs{^* x_{\b{\alpha}}} 
+\ \text{ and } \
+\abs{\b{\epsilon}} &lt; \abs{^* (x / x_{\b{\alpha}}) } = \abs{ {^* x} \ / \ {^* x_{\b{\alpha}}} }
+\quad \implies \quad 
+\abs{\b{\alpha}} \times \abs{\b{\epsilon}} &lt; \abs{^* x_{\b{\alpha}}} \times \abs{ {^* x} \ / \ {^* x_{\b{\alpha}}} }
+\quad \implies \quad 
+\abs{ \b{\alpha} \times \b{\epsilon} } &lt; \abs{^* x}
+\\[15pt]\]
+
+<h3 id="bomega-times-bepsilon-is-indeterminant">$\b{\omega} \times \b{\epsilon}$ is Indeterminant</h3>
+
+<p>Consider the following examples</p>
+
+\[\begin{align}
+    &amp;\left \langle n \right \rangle_{n=0}^{\infty} \times \left \langle \frac{1}{n^2} \right \rangle_{n=0}^{\infty} &amp;=&amp; \left \langle n \times \frac{1}{n^2} \right \rangle_{n=0}^{\infty} &amp;=&amp; \left \langle \frac{1}{n} \right \rangle_{n=0}^{\infty} \in \mathbb{I} \\[10pt]
+    &amp;\left \langle n \right \rangle_{n=0}^{\infty} \times \left \langle \frac{1}{n} \right \rangle_{n=0}^{\infty} &amp;=&amp; \left \langle n \times \frac{1}{n} \right \rangle_{n=0}^{\infty} &amp;=&amp; \left \langle 1 \right \rangle_{n=0}^{\infty} \in \mathbb{A} \\[10pt]
+    &amp;\left \langle n^2 \right \rangle_{n=0}^{\infty} \times \left \langle \frac{1}{n} \right \rangle_{n=0}^{\infty} &amp;=&amp; \left \langle n^2 \times \frac{1}{n} \right \rangle_{n=0}^{\infty} &amp;=&amp; \left \langle n \right \rangle_{n=0}^{\infty} \in \mathbb{U}
+\end{align}
+\\[10pt]\]
+
+<h3 id="balpha-times-bbeta-in-mathbba">$\b{\alpha} \times \b{\beta} \in \mathbb{A}$</h3>
+
+\[{^* 0} &lt; \abs{^* x_{\b{\alpha}}} \leq \abs{\b{\alpha}} \leq \abs{^* y_{\b{\alpha}}}
+\ \text{ and } \ 
+{^* 0} &lt; \abs{^* x_{\b{\beta}}} \leq \abs{\b{\beta}} \leq \abs{^* y_{\b{\beta}}}
+\quad \implies \quad
+{^* 0} \times {^* 0} &lt; \abs{^* x_{\b{\alpha}}} \times \abs{^* x_{\b{\beta}}} \leq \abs{\b{\alpha}} \times \lvert \b{\beta} \rvert \leq \abs{^* y_{\b{\alpha}}} \times \abs{^* y_{\b{\beta}}} \\[10pt]
+\quad \implies \quad
+{^* 0} &lt; \abs{^* (x_{\b{\alpha}} \times x_{\b{\beta}}) } \leq \abs{ \b{\alpha} \times \b{\beta} } \leq \abs{^* (y_{\b{\alpha}} \times y_{\b{\beta}}) }
+\\[10pt]\]
+
+<h3 id="balpha-times-bomega-in-mathbbu">$\b{\alpha} \times \b{\omega} \in \mathbb{U}$</h3>
+
+\[{^* 0} &lt; \abs{^* x_{\b{\alpha}}} \leq \abs{\b{\alpha}}
+\ \text{ and } \
+\abs{ {^* x} \ / \ {^* x_{\b{\alpha}}} } = \abs{^* (x / x_{\b{\alpha}}) } &lt; \abs{\b{\omega}}
+\quad \implies \quad 
+\abs{^* x_{\b{\alpha}}} \times \abs{ {^* x} \ / \ {^* x_{\b{\alpha}}} } &lt; \abs{\b{\alpha}} \times \abs{\b{\omega}}
+\quad \implies \quad 
+\abs{^* x} &lt; \abs{ \b{\alpha} \times \b{\omega} }
+\\[20pt]\]
+
+<p>If $\mathbb{X}$ is the integers or natural numbers, then $x / x_{\b{\alpha}}$ may not be defined. However, it is easy to show the following for these sets.</p>
+
+\[{^* 1} \leq \abs{\b{\alpha}} \qquad \forall \b{\alpha} \in \mathbb{A}\]
+
+<p>Thus, we can let $x_{\b{\alpha}}$ and $x / x_{\b{\alpha}} = x$.</p>
+
+<p><br /></p>
+
+<h3 id="bomega-times-bomega-in-mathbbu">$\b{\omega} \times \b{\Omega} \in \mathbb{U}$</h3>
+
+\[\abs{^* 1} &lt; \abs{\b{\omega}}
+\text{ and } 
+\abs{^* x} &lt; \abs{\b{\Omega}}
+\quad \implies \quad 
+\abs{^* 1} \times \abs{^* x} &lt; \abs{\b{\omega}} \times \abs{\b{\Omega}}
+\quad \implies \quad 
+\abs{^* x} &lt; \abs{\b{\omega} \times \b{\Omega}}\]
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="reciprocation">Reciprocation</h2>
+
+<p>These proofs requires reciprocation to be well-defined. Thus, these arguments do not apply to ${^* \mathbb{N}}$ and ${^* \mathbb{Z}}$.</p>
+
+<h3 id="-1--bepsilon-in-mathbbu">${^* 1} / \b{\epsilon} \in \mathbb{U}$</h3>
+
+<p>Note, we have to assume $\b{\epsilon} \neq {^* 0}$. Even in the hyperreals, the expression $1/0$ is left undefined.</p>
+
+<p>If $x = 0$, then clearly $\abs{^* x} &lt; \abs{ {^* 1} / \b{\epsilon} }$ is true by definition. Thus, suppose $x \neq 0$</p>
+
+\[\abs{\b{\epsilon}} &lt; \abs{^* (1/x)} = \abs{ {^* 1} \ / \ {^* x}}
+\quad \implies \quad 
+\abs{ {^* 1} / \b{\epsilon} } &gt; \abs{ {^* 1} \ / \ ({^* 1} \ / \ {^* x}) }
+\quad \implies \quad 
+\abs{^* x} &lt; \abs{ {^* 1} / \b{\epsilon} }
+\\[10pt]\]
+
+<h3 id="-1--balpha-in-mathbba">${^* 1} / \b{\alpha} \in \mathbb{A}$</h3>
+
+\[0 &lt; \abs{^* x_{\b{\alpha}} } \leq \abs{\b{\alpha}} \leq \abs{^* y_{\b{\alpha}} }
+\quad \implies \quad 
+\abs{ {^* 1} \ / \ ^* x_{\b{\alpha}} } \geq \abs{ {^* 1} / \b{\alpha}} \geq \abs{ {^* 1} \ / \ ^* y_{\b{\alpha}} }
+\quad \implies \quad 
+0 &lt; \abs{^* (1 / y_{\b{\alpha}}) } \leq \abs{ {^* 1} / \b{\alpha}} \leq \abs{^* (1 / x_{\b{\alpha}}) }
+\\[20pt]\]
+
+<h3 id="-1--bomega-in-mathbbi">${^* 1} / \b{\omega} \in \mathbb{I}$</h3>
+
+<p>Note that by the definition of infinitesimals, $x \neq 0$</p>
+
+\[\abs{ {^* 1} \ / \ {^* x}} = \abs{^* (1/x)} &lt; \abs{\b{\omega}}
+\quad \implies \quad 
+\abs{ {^* 1} \ / \ ({^* 1} \ / \ {^* x}) } &gt; \abs{ {^* 1} / \b{\omega} }
+\quad \implies \quad 
+\abs{ {^* 1} / \b{\omega} } &lt; \abs{^* x}\]
+
+<p><br /></p>
+
+<h2 id="division">Division</h2>
+
+<p>Division can be decomposed into multiplication and reciprocation</p>
+
+\[\frac{\b{x}}{\b{y}} = \b{x} \times \frac{^* 1}{\b{y}}\]
+
+<p>Thus, each division case does not require a proof.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="addition">Addition</h2>
+
+<p>One thing we need to be cogniscent of is that we cannot assume a variable is positive in value. For example, intuitively, we want to say that $\b{\alpha} + \b{\beta}$ must be appreciable. However, it could be the case that $\b{\alpha} = -\b{\beta}$ in which case their sum is $0$ which is an infinitesimal number.</p>
+
+<p>For many of these proofs I will be using a similar style of argument. To save lines, I will assert the following <strong>lemma</strong>. It’s a pretty intuitive result, so I will leave the proof to the reader (hint: use the triangle inequality).</p>
+
+\[\abs{\b{x}} \leq \abs{\b{a}} \leq \abs{\b{b}} \leq \abs{\b{y}}
+\quad \implies \quad
+\abs{\b{b}} - \abs{\b{a}} \leq \abs{\b{y} + \b{x}}\]
+
+<p>I’ll note when the lemma is used.</p>
+
+<p><br /></p>
+
+<h3 id="bepsilon--bdelta-in-mathbbi">$\b{\epsilon} + \b{\delta} \in \mathbb{I}$</h3>
+
+\[\abs{\b{\epsilon}} &lt; \abs{^* (x/2)}
+\ \text{ and } \
+\abs{\b{\delta}} &lt; \abs{^* (x/2)}
+\quad \implies \quad 
+\abs{ \epsilon + \delta } \leq \abs{\b{\epsilon}} + \abs{\b{\delta}} &lt; \abs{^* (x/2)} + \abs{^* (x/2)} = \abs{^* x}
+\\[10pt]\]
+
+<h3 id="balpha--bepsilon-in-mathbba">$\b{\alpha} + \b{\epsilon} \in \mathbb{A}$</h3>
+
+<p>In the natural numbers and integers, ${^* 0}$ is the only infinitesimal and thus this result is trivial: $\b{\alpha} + \b{\epsilon} = \b{\alpha}$. Therefore, the proof below applies to supersets of the rational numbers and therefore division is well-defined. Also recall that $x_{\b{\alpha}} \neq 0$.</p>
+
+\[\abs{\b{\epsilon}} &lt; \abs{^* (x_{\b{\alpha}} / 2)} \leq \abs{^* x_{\b{\alpha}}} \leq \abs{\b{\alpha}}
+\quad \implies \quad \text{using lemma} \quad \implies \quad
+\abs{^* (x_{\b{\alpha}} / 2)} = \abs{^* x_{\b{\alpha}}} - \abs{^* (x_{\b{\alpha}} / 2)} &lt; \abs{ \b{\alpha} + \b{\epsilon} }
+\\[10pt]\]
+
+\[\abs{\b{\alpha}} \leq \abs{^* y_{\b{\alpha}}}
+\ \text{ and } \
+\abs{\b{\epsilon}} &lt; \abs{^* y_{\b{\alpha}}}
+\quad \implies \quad
+\abs{ \b{\alpha} + \b{\epsilon} } \leq \abs{\b{\alpha}} + \abs{\b{\epsilon}} &lt; \abs{^* y_{\b{\alpha}}} + \abs{^* y_{\b{\alpha}}} = \abs{^* (2 y_{\b{\alpha}})}\]
+
+<p><br /></p>
+
+<h3 id="bomega--bepsilon-in-mathbbu">$\b{\omega} + \b{\epsilon} \in \mathbb{U}$</h3>
+
+\[\abs{\b{\epsilon}} &lt; \abs{^* x} \leq \abs{^* (2x)} &lt; \abs{\b{\omega}}
+\quad \implies \quad \text{using lemma} \quad \implies \quad
+\abs{^* x} = \abs{^* (2x)} - \abs{^* x} &lt; \abs{ \b{\omega} + \b{\epsilon} }\]
+
+<p><br /></p>
+
+<h3 id="balpha--bbeta-in-mathbbl">$\b{\alpha} + \b{\beta} \in \mathbb{L}$</h3>
+
+\[\abs{\b{\alpha}} \leq \abs{^* y_{\b{\alpha}} }
+\ \text{ and } \
+\abs{\b{\beta}} \leq \abs{^* y_{\b{\beta}} }
+\quad \implies \quad 
+\abs{\b{\alpha} + \b{\beta}} \leq \abs{\b{\alpha}} + \abs{\b{\beta}} \leq \abs{^* y_{\b{\alpha}} } + \abs{^* y_{\b{\beta}} }
+\quad \implies \quad 
+{^* 0} \leq \abs{\b{\alpha} + \b{\beta}} \leq {^* (\abs{y_{\b{\alpha}}} + \abs{y_{\b{\beta}}})}
+\\[10pt]\]
+
+<p>Consider the following examples</p>
+
+\[\begin{align}
+    &amp;\left \langle 1 \right \rangle_{n=0}^{\infty} + \langle -1 \rangle_{n=0}^{\infty} &amp;=&amp; \left \langle 1 - 1 \right \rangle_{n=0}^{\infty} &amp;=&amp; \left \langle 0 \right \rangle_{n=0}^{\infty} \in \mathbb{I} \\[10pt]
+    &amp;\left \langle 1 \right \rangle_{n=0}^{\infty} + \langle 1 \rangle_{n=0}^{\infty} &amp;=&amp; \left \langle 1 + 1 \right \rangle_{n=0}^{\infty} &amp;=&amp; \left \langle 2 \right \rangle_{n=0}^{\infty} \in \mathbb{A}
+\end{align}\]
+
+<p>We can be a bit more nuanced. The indeterminancy arises when the appreciable numbers are different in sign and only differ by an infinitesimal amount. However, if either of those conditions are not true, then $\b{\alpha} + \b{\beta} \in \mathbb{A}$.</p>
+
+\[\]
+
+<h3 id="balpha--bomega-in-mathbbu">$\b{\alpha} + \b{\omega} \in \mathbb{U}$</h3>
+
+\[\abs{\b{\alpha}} \leq \abs{^* y_{\b{\alpha}}} \leq \abs{^* (2y_{\b{\alpha}})} &lt; \abs{\b{\omega}}
+\quad \implies \quad \text{using lemma} \quad \implies \quad
+\abs{^* y_{\b{\alpha}}} = \abs{^* (2 y_{\b{\alpha}})} - \abs{^* y_{\b{\alpha}}} &lt; \abs{ \b{\omega} + \b{\alpha} }
+\\[10pt]\]
+
+<h3 id="omega--omega-is-indeterminant">$\omega + \Omega$ is Indeterminant</h3>
+
+<p>Consider the following examples</p>
+
+\[\begin{align}
+    &amp;\left \langle n \right \rangle_{n=0}^{\infty} + \langle - n \rangle_{n=0}^{\infty} &amp;=&amp; \left \langle n - n \right \rangle_{n=0}^{\infty} &amp;=&amp; \left \langle 0 \right \rangle_{n=0}^{\infty} \in \mathbb{I} \\[10pt]
+    &amp;\left \langle n+1 \right \rangle_{n=0}^{\infty} + \langle - n \rangle_{n=0}^{\infty} &amp;=&amp; \left \langle (n+1) - n \right \rangle_{n=0}^{\infty} &amp;=&amp; \left \langle 1 \right \rangle_{n=0}^{\infty} \in \mathbb{A} \\[10pt]
+    &amp;\left \langle 2n \right \rangle_{n=0}^{\infty} + \langle - n \rangle_{n=0}^{\infty} &amp;=&amp; \left \langle 2n - n \right \rangle_{n=0}^{\infty} &amp;=&amp; \left \langle n \right \rangle_{n=0}^{\infty} \in \mathbb{U}
+\end{align}\]
+
+<p><br /></p>
+
+<p>We can be a bit more nuanced here. The indeterminancy arises when the unlimited numbers are different signs. This equates to $\infty - \infty$. However, suppose that either both $\omega, \Omega &gt; 0$ or both $\omega, \Omega &lt; 0$, then $\omega + \Omega \in \mathbb{U}$.</p>
+
+<p><br /></p>
+
+<h2 id="subtraction">Subtraction</h2>
+
+<p>Consider the following.</p>
+
+\[\b{x} - \b{y} = \b{x} + (-\b{y}) := x + \b{z}\]
+
+<p>Thus, addition and subtraction are exactly the same.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="addition-and-subtract-of-positive-hyperreal-numbers">Addition and Subtract of Positive Hyperreal Numbers</h2>
+
+<p>In the last summary table, we assume that hyper-variables are positive in value. This does not affect multiplication, reciprocation, and division. However, it allows us to be much more specific in addition and subtraction.</p>
+
+<p>These proofs are much more simple since we get to do away with the absolute values. And this post is already extremely long and tedious. So I will leave these proofs as an exercise.</p>
+
+        </div>
+
+        <!-- Adding the ability to move between parts of the series -->
+        
+        
+        
+
+        
+        
+        
+
+        <!-- Getting capitalized title for series -->
+        
+        
+        
+        
+        <!-- Getting url for series, which is just the page url with the last /... removed -->
+        
+
+        <div class="pagination" style="margin-top:1em;">
+            
+                <a class="pagination-item older" href="/blog/nonstandard-analysis/types-of-hyperrational-numbers/">Previous</a>
+            
+            
+                <a class="pagination-item newer" href="/blog/nonstandard-analysis/halos-and-galaxies/">Next</a>
+            
+        </div>
+        <h3 style="text-align:center; margin-bottom:1em;">
+            <a href="/blog/nonstandard-analysis">
+            
+                
+                    Nonstandard
+                
+            
+                
+                    Analysis
+                
+            
+         Series</a>
+        </h3>
+    </div>
+    
+  </body>
+</html>
