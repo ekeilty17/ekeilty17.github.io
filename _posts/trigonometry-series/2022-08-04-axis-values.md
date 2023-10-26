@@ -41,12 +41,64 @@ Recall that given an $(x, y)$ coordinate on the circumference of the unit circle
 
 From the above circle, we can obtain the values for $\sin$ and $\cos$. Then we can use the reciprocal and ratio identities, we can derive the rest. I won't bother doing all the tedious proofs since they are very easy. The results are summarized below.
 
-| **Degrees**   | **Radians**   |   | **cos**   | **sin**   | **tan**       | **sec**       | **csc**       | **cot**       |
-|:-------------:|:-------------:|:-:|:---------:|:---------:|:-------------:|:-------------:|:-------------:|:-------------:|
-| $0^{\circ}$   | $0$           |   | $1$       | $0$       | $0$           | $1$           | _undefined_   | _undefined_   |
-| $90^{\circ}$  | $\pi/2$       |   | $0$       | $1$       | _undefined_   | _undefined_   | $1$           | $0$           |
-| $180^{\circ}$ | $\pi$         |   | $-1$      | $0$       | $0$           | $1$           | _undefined_   | _undefined_   |
-| $270^{\circ}$ | $3\pi/2$      |   | $0$       | $-1$      | _undefined_   | _undefined_   | $1$           | $0$           |
+<div class="custom-table-container">
+<table>
+<thead>
+<tr style="border-bottom: 2px solid black;">
+    <th style="text-align:center"><strong>Degrees</strong></th>
+    <th style="text-align:center; border-right: 2px solid black;"><strong>Radians</strong></th>
+    <th style="text-align:center"><strong>cos</strong></th>
+    <th style="text-align:center"><strong>sin</strong></th>
+    <th style="text-align:center"><strong>tan</strong></th>
+    <th style="text-align:center"><strong>sec</strong></th>
+    <th style="text-align:center"><strong>csc</strong></th>
+    <th style="text-align:center"><strong>cot</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td style="text-align:center">$0^{\circ}$</td>
+    <td style="text-align:center; border-right: 2px solid black;">$0$</td>
+    <td style="text-align:center">$1$</td>
+    <td style="text-align:center">$0$</td>
+    <td style="text-align:center">$0$</td>
+    <td style="text-align:center">$1$</td>
+    <td style="text-align:center"><em>undefined</em></td>
+    <td style="text-align:center"><em>undefined</em></td>
+</tr>
+<tr>
+    <td style="text-align:center">$90^{\circ}$</td>
+    <td style="text-align:center; border-right: 2px solid black;">$\pi/2$</td>
+    <td style="text-align:center">$0$</td>
+    <td style="text-align:center">$1$</td>
+    <td style="text-align:center"><em>undefined</em></td>
+    <td style="text-align:center"><em>undefined</em></td>
+    <td style="text-align:center">$1$</td>
+    <td style="text-align:center">$0$</td>
+</tr>
+<tr>
+    <td style="text-align:center">$180^{\circ}$</td>
+    <td style="text-align:center; border-right: 2px solid black;">$\pi$</td>
+    <td style="text-align:center">$-1$</td>
+    <td style="text-align:center">$0$</td>
+    <td style="text-align:center">$0$</td>
+    <td style="text-align:center">$1$</td>
+    <td style="text-align:center"><em>undefined</em></td>
+    <td style="text-align:center"><em>undefined</em></td>
+</tr>
+<tr>
+    <td style="text-align:center">$270^{\circ}$</td>
+    <td style="text-align:center; border-right: 2px solid black;">$3\pi/2$</td>
+    <td style="text-align:center">$0$</td>
+    <td style="text-align:center">$-1$</td>
+    <td style="text-align:center"><em>undefined</em></td>
+    <td style="text-align:center"><em>undefined</em></td>
+    <td style="text-align:center">$1$</td>
+    <td style="text-align:center">$0$</td>
+</tr>
+</tbody>
+</table>
+</div>
 
 <br>
 

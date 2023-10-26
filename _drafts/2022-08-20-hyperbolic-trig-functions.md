@@ -9,6 +9,8 @@ series:     trigonometry
 tags:       trigonometry, hyperbolic, hyperbola
 ---
 
+<!-- Trigonometric Series -->
+
 **TODO**
 
 ## Definition of Hyperbolic Trigonometric Functions

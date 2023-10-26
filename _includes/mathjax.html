@@ -1,0 +1,36 @@
+<!-- Enable embedded MathJax (effectively LaTeX) support 
+    https://docs.mathjax.org/en/v2.7-latest/tex.html -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX", "input/MathML", "output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js", "mml2jax.js", "MathMenu.js", "MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
+            Macros: {
+                b: ["{\\boldsymbol #1}",1],
+                seq: ["{\\left \\langle #1 \\right \\rangle}",1],
+                iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
+                abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
+                hal: ["\\texttt{hal}"],
+                gal: ["\\texttt{gal}"],
+                sh: ["sh"],
+                st: ["st"]
+            },
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!--
+    TeX-AMS_HTML
+    TeX-AMS-MML_HTMLorMML
+    TeX-MML-AM_HTMLorMML
+-->

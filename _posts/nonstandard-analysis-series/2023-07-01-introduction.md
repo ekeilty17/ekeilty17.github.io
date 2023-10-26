@@ -11,9 +11,19 @@ tags:       nonstandard-analysis, hyperreal-numbers
 
 **TODO**
 
+<!-- 
+https://arxiv.org/pdf/math/0407178.pdf
+-->
+
+What I may decide to do is to go back and just assume we have the real numbers. Then explore all the interesting properties of hyperreal numbers. Then go back and talk about **set enlargment** in general. Apply that to $\mathbb{Q}$ to get ${^* \mathbb{Q}}$. And from there show how to get the hyperreals.
+
 ## Motivation
 
 Nonstandard analysis is just really cool, and I want to spread it. 
+
+Explain why we need it. Tends to shortest proofs and also tends to align more with our intuition thus making proofs more simple as well
+
+Other sources go much deeper into the rigour, which is great, but I want to talk about hyperreal numbers one level higher to make then accessible to a broader mathematical audience.
 
 ## What I Will Cover
 

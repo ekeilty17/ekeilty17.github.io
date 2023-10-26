@@ -17,7 +17,7 @@ I can't take full credit for this proof. This is heavily adapted from a communit
 
 ## Some Lemmas
 
-In order to prove this result, we need to lemmas. The first is $e^{x + y} = e^{x} \cdot e^{y}$. This is a fundamental property of exponentials, so I leave this to real analysis textbooks for its proof. The second lemma is $e^{x} \leq 1 + x$. I prove this below.
+In order to prove this result, we need two lemmas. The first is $e^{x + y} = e^{x} \cdot e^{y}$. This is a fundamental property of exponentials, so I leave this to real analysis textbooks for its proof. The second lemma is $e^{x} \leq 1 + x$, which I prove below.
 
 For this series, I will use the following definition for $e^x$.
 
@@ -96,7 +96,7 @@ $$
 We have to be careful here that we don't get an indeterminant form. For example, 
 
 $$
-\lim_{n \rightarrow \infty} \left ( 1 + \frac{x}{n} \right )^n \leq \left ( \lim_{n \rightarrow \infty} \left ( 1 + \frac{x}{n} \right ) \right )^{ \lim_{n \rightarrow \infty} n} = 1^{\infty}
+\lim_{n \rightarrow \infty} \left ( 1 + \frac{x}{n} \right )^n = \left ( \lim_{n \rightarrow \infty} \left ( 1 + \frac{x}{n} \right ) \right )^{ \lim_{n \rightarrow \infty} n} = 1^{\infty}
 $$
 
 Many naively would think that the solution is $1^{\infty} = 1$, but when dealing with limits it does not. As we know, this limit actually equals $e^x$.

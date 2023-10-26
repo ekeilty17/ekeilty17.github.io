@@ -9,10 +9,10 @@ permalink: /about/academic-career
 ## Publications 
 
 * **Natural Language-Based Model-Checking Framework for Move Smart Contracts**
-    * 10th Swiss Conference on Data Science (<a href="https://sds2023.ch/" target="_blank">IEEE SDS2023</a>)
-    * June 22-23, 2023 - Zurich, Switzerland
+    * 10th International Conference on Software Defined Systems (<a href="https://emergingtechnet.org/SDS2023/" target="_blank">IEEE SDS 2023</a>)
+    * October 23-25, 2023 - San Antonio, Texas, USA
     * <a href="" target="_blank">IEEE Explore</a> (Coming Soon)
-    * <a href="" target="_blank">PDF</a> (Coming Soon)
+    * <a href="/files/writing/Natural Language Model Checking.pdf" target="_blank">PDF</a>
 
 * **Gas Optimization in Move Smart Contracts on the Aptos Blockchain**
     * 5th Conference on Blockchain Research & Applications for Innovative Networks and Services (<a href="https://brains.dnac.org/" target="_blank">IEEE BRAINS 2023</a>)

@@ -37,4 +37,4 @@ $$
 
 ## Secant, Cosecant, and Cotangent
 
-There are no half angle formulas for these functions other than just taking the reciprocal of the above identities.
+There are no power reduction formulas for these functions other than just taking the reciprocal of the above identities.

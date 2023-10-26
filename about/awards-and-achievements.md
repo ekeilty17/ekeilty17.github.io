@@ -75,4 +75,4 @@ Finally, here are a couple of miscellaneous awards.
 
 * **Various Hockey Awards** (<a href="/files/awards/sports/Hockey Awards.pdf" target="_blank">Plaques and Certificate</a>)
 
-* **Designed and Constructed a Working Tesla Coin** (Pictures Coming Soon)
+* **Designed and Constructed a Working Tesla Coil** (Pictures Coming Soon)

@@ -9,7 +9,7 @@ series:     trigonometry
 tags:       trigonometry, imaginary-numbers, complex-numbers
 ---
 
-I originally wasn't going to make a post about this topic, but I realized that trigonometry is so connected to complex numbers, that it is an extremely natural follow-up.
+I originally wasn't going to make a post about this topic, but I realized that trigonometry is so connected to complex numbers, that it is a natural follow-up.
 
 <br>
 

@@ -9,6 +9,8 @@ series:     limits-and-continuity
 tags:       limits, continuity, delta-epsilon, inverse, inverse-functions
 ---
 
+**TODO**
+
 Suppose that limit of $f$ exists at $a \in \mathbb{R}$. Let $L \in \mathbb{R}$ such that $\displaystyle \lim_{x \rightarrow a} f(x) = L$. Therefore, by the definition of limits, we have
 
 $$

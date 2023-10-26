@@ -26,4 +26,4 @@ In particular, since $f(x) = x$ is continuous, this means that all polynomials a
 
 <br>
 
-This provides insight as to why continuity is so important. Continuous functions behave in an intuitive way. A _well-behaved_ typically refers to a smooth, continuous function. 
+This provides insight as to why continuity is so important. Continuous functions behave in an intuitive way. A _well-behaved_ function typically refers to a smooth, continuous function. 
