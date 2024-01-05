@@ -11,11 +11,10 @@ tags:       limits, continuity, delta-epsilon, intuition, discontinuity
 
 ## Discontinuity
 
-The easiest way to understand **continuity** is to understand **discontinuity**. There are four types of discontinuities - removeable, jump, infinite, and oscillating - which we will showcase here.
+The easiest way to understand **continuity** is to understand **discontinuity**. There are four types of discontinuities - removable, jump, infinite, and oscillating - which we will showcase here.
 
 <br>
-
-The funciton below shows a **removeable discontinuity** at $x = 3$.
+The function below shows a **removeable discontinuity** at $x = 3$.
 
 <center>
 {% tikz removeable-discontinuity %}
@@ -41,7 +40,7 @@ The funciton below shows a **removeable discontinuity** at $x = 3$.
 
 <br>
 
-The function is equal to the blue curve, except at $x = 3$. Instead of equation equal to $2$ as the blue curve would suggest, it instead is equal to $2$. The function is also sometimes said to contain a **hole** at $x = 3$.
+The function is equal to the blue curve, except at $x = 3$. Instead of an equation equal to $2$ as the blue curve would suggest, it instead is equal to $2$. The function is also sometimes said to contain a **hole** at $x = 3$.
 
 <br>
 
@@ -125,7 +124,7 @@ The function below is said to contain an **oscillating discontinuity** at $x = 3
 {% endtikz %}
 </center>
 
-In this example, the value of $f(x)$ is undefined at $x = 3$ because the function oscillates between the $y$-values $0$ and $4$. As the function gets closer to the point $x = 3$, it oscillates more and more, tending towards infinity. Thus, there is no defineable value for the function to take at $x = 3$.
+In this example, the value of $f(x)$ is undefined at $x = 3$ because the function oscillates between the $y$-values $0$ and $4$. As the function gets closer to the point $x = 3$, it oscillates more and more, tending towards infinity. Thus, there is no definable value for the function to take at $x = 3$.
 
 <br>
 
@@ -194,7 +193,7 @@ Consider the removeable discontinuity example, denote the function $f(x)$. Even 
 
 <br>
 
-Consider the jump discontinuity example. There is actually no definable limit in this situation. From the perspective of the left curve, the limit seems to tend towards $1$ as $x$ approaches $3$. However, from the perspective of the right curve, the limit seems to tend towards $3$ as $x$ approaches $3$. Thus, the total limit does not exist. However, this should give an intuition for the concept of a _left-handed_ and _righ-handed_ limit.
+Consider the jump discontinuity example. There is actually no definable limit in this situation. From the perspective of the left curve, the limit seems to tend towards $1$ as $x$ approaches $3$. However, from the perspective of the right curve, the limit seems to tend towards $3$ as $x$ approaches $3$. Thus, the total limit does not exist. However, this should give an intuition for the concept of a _left-handed_ and _right-handed_ limit.
 
 <center>
 {% tikz limit-intuition-3 %}

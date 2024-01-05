@@ -9,7 +9,7 @@ series:     limits-and-continuity
 tags:       limits, continuity, delta-epsilon, continuity, addition, subtraction, multiplication, division, reciprocal
 ---
 
-Using the all of the previous limit laws that we have proved, we can show that continuity is preserved by the standard arithmetic operations. Let $c, r, a, b \in \mathbb{R}$ be any constants with $b > 1$. If $f(x)$ and $g(x)$ are continuous, then the following are also continuous.
+Using all of the previous limit laws that we have proved, we can show that continuity is preserved by the standard arithmetic operations. Let $c, r, a, b \in \mathbb{R}$ be any constants with $b > 1$. If $f(x)$ and $g(x)$ are continuous, then the following are also continuous.
 * $(f + g)(x)$
 * $(f - g)(x)$
 * $(c \cdot f)(x)$

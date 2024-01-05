@@ -118,7 +118,7 @@ Thus, we need to do some normalization to have a consistent measure. First, rota
 
     % draw lines
     \draw[very thick, ->] (O) -- (\linelength, 0);
-    \draw[very thick, ->] (O) -- ({\linelength * cos(\angle)}, {\linelength * sin(\angle});
+    \draw[very thick, ->] (O) -- ({\linelength * cos(\angle)}, {\linelength * sin(\angle)});
 
     % labeling radius
     \def\eps{1mm}
@@ -158,7 +158,7 @@ Thus, we need to do some normalization to have a consistent measure. First, rota
 
     % draw lines
     \draw[very thick, ->] (O) -- (\linelength, 0);
-    \draw[very thick, ->] (O) -- ({\linelength * cos(\angle)}, {\linelength * sin(\angle});
+    \draw[very thick, ->] (O) -- ({\linelength * cos(\angle)}, {\linelength * sin(\angle)});
 
     % labeling radius
     \def\eps{1mm}
@@ -198,7 +198,7 @@ Thus, we need to do some normalization to have a consistent measure. First, rota
 
     % draw lines
     \draw[very thick, ->] (O) -- (\linelength, 0);
-    \draw[very thick, ->] (O) -- ({\linelength * cos(\angle)}, {\linelength * sin(\angle});
+    \draw[very thick, ->] (O) -- ({\linelength * cos(\angle)}, {\linelength * sin(\angle)});
 
     % labeling radius
     \def\eps{1mm}

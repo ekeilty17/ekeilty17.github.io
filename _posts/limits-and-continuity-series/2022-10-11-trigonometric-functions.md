@@ -87,18 +87,75 @@ $$
 
 Since all of the trigonometric functions are continuous, their corresponding inverse functions must also be continuous. 
 
-<!-- <br>
+<br>
 
-## Bound on Cosine
-
-**TODO**
+---
 
 <br>
 
-## Bound on Sine
+## Bounds on Sine and Cosine
 
-If you look up a proof for this online, you will see an argument based on the derivative of $\sin(x)$. However, I want to avoid circularity. It's actually very subtle. If you look at my proof [here](/blog/derivative-proofs/trigonometric-functions/), I use the fact that $\displaystyle \lim_{h \rightarrow 0} \frac{1 - \cos(h)}{h} = 0$. To prove this (given [here](/blog/derivative-proofs/squeeze-theorem/)), I use the fact that $\displaystyle \lim_{x \rightarrow 0} \sin (x) = \sin(0) = 0$. Therefore, I cannot use the derivative of $\sin(x)$ to prove this bound.
+If you look up these proofs online, you will see an argument based on the derivative of $\sin(x)$. However, I want to avoid circularity. It's actually very subtle. If you look at my proof [here](/blog/derivative-proofs/trigonometric-functions/), I use the fact that $\displaystyle \lim_{h \rightarrow 0} \frac{1 - \cos(h)}{h} = 0$. To prove this (given [here](/blog/derivative-proofs/squeeze-theorem/)), I use the fact that $\sin$ is continuous ($\displaystyle \lim_{x \rightarrow 0} \sin (x) = \sin(0) = 0$). Therefore, I cannot use the derivative of $\sin(x)$ to prove this bound.
 
-**TODO**
+### Sine
 
-I would just use geometric arguments. The definition of an angle is the arc of a unit circle, and $\sin$ is the height, so obviously it's less. This argument works for $x < \pi/2$. For $x > 1$ we can just use the fact that $\lvert \sin(x) \rvert \leq 1 \leq x$ -->
+I will resort to first principles and use the geometric definition of $\sin$: the height of the right triangle formed by points on the unit circle.
+
+<center>
+{% tikz unit-circle-sine %}
+  \usetikzlibrary{angles,patterns,calc}
+
+  \tikzset{
+    font={\fontsize{12pt}{12}\selectfont}
+  }
+
+  \def\r{3.5cm}
+  \def\angle{55}
+  \def\x{ {\r * cos(\angle)} }
+  \def\y{ {\r * sin(\angle)} }
+  \def\pointradius{0.02*\r}
+
+  \coordinate (O) at (0,0);
+  \coordinate (x) at (\x, 0);
+  \coordinate (y) at (0, \y);
+  \coordinate (xy) at (\x, \y);
+  \coordinate (X) at (\r, 0);
+  \coordinate (Y) at (0, \r);
+
+  % draw the unit circle
+  \draw[very thick] (O) circle (\r);
+
+  % draw incident angle of triangle
+  \draw pic[draw, red, ->, pic text=$x$, very thick, angle radius={0.2*\r}, angle eccentricity=1.4] {angle = X--O--xy};
+
+  % drawing lines
+  \draw[very thick] (O) -- (xy);
+  \draw[thick, thick] (O) -- (x);
+  \draw[thick, thick] (xy) -- (x) node[midway, right] {$\sin x$};
+
+  % draw right angle indicator of triangle
+  % I wanted to automate this so that I can vary \x and \y and this will be the right way around
+  % but LaTeX isn't a programming language, so using \x and \y as variables is hard... will need to manually change this for each different quadrant
+  \draw ($(x) - (0.1*\r,0)$) -- ++(0,0.1*\r) -- ++(0.1*\r,0);     % Q1
+
+  % highlight the arc of the triangle
+  \draw pic [draw, red, -, pic text=$x$, very thick, angle radius={\r}, angle eccentricity=1.1] {angle = X--O--xy};
+
+  % circle intersection point
+  \draw[very thick, fill=black] (xy) circle (\pointradius) node[above right=0.1] at (xy) {$$};
+
+  % draw the axes
+  \draw[->] ($ (-\r,0) - (0.5cm, 0) $) -- ($ (\r, 0cm) + (0.5cm, 0) $) node[right] {$$};
+  \draw[->] ($ (0,-\r) - (0, 0.5cm) $) -- ($ (0,\r) + (0, 0.5cm) $) node[above] {$$};
+{% endtikz %}
+</center>
+
+We will assume that the angle $x$ is in the first quadrant, i.e. that $x \in [0, \pi/2]$. The diagram shows that by definition $\sin(x)$ is the height of the right triangle. Furthermore, by definition, the length of the arc of the circle highlighted in red is equal to the angle $x$ measured in radians. 
+
+Now, we can almost assert the bound without proof. Both the line and the arc travel from the point on the unit circle to the x-axis. The line $\sin(x)$ is the shortest distance from this point to the x-axis, and therefore it must be the case that $\sin(x) \leq x$ for all $x \in [0, \pi/2]$. 
+
+Now, to get the rest of the values of $x$. By definition, we know that $\abs{\sin(x)} \leq 1$. Thus, if $\abs{x} \geq \pi/2$ it must be the case that $\abs{\sin(x)} \leq 1 < \pi/2 \leq \abs{x}$. Therefore, we have proven the result for all values of $x$. 
+
+### Cosine
+
+The bound for $\cos(x)$ comes from the definition of $\cos(x)$. It is obvious that the image of cosine cannot exceed the value of $1$.
