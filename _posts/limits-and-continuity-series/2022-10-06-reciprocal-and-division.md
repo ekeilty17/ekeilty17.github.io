@@ -38,7 +38,7 @@ $$
 
 <br>
 
-From the second formula, we can use the bounding inequality from the introductory post.
+From the second formula, we can use the bounding inequality from the [introductory post](/blog/limits-and-continuity/introduction).
 
 $$
 \begin{align}

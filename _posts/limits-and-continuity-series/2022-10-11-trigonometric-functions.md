@@ -87,7 +87,7 @@ $$
 
 Since all of the trigonometric functions are continuous, their corresponding inverse functions must also be continuous. 
 
-<br>
+<!-- <br>
 
 ## Bound on Cosine
 
@@ -101,4 +101,4 @@ If you look up a proof for this online, you will see an argument based on the de
 
 **TODO**
 
-I would just use geometric arguments. The definition of an angle is the arc of a unit circle, and $\sin$ is the height, so obviously it's less. This argument works for $x < \pi/2$. For $x > 1$ we can just use the fact that $\lvert \sin(x) \rvert \leq 1 \leq x$
+I would just use geometric arguments. The definition of an angle is the arc of a unit circle, and $\sin$ is the height, so obviously it's less. This argument works for $x < \pi/2$. For $x > 1$ we can just use the fact that $\lvert \sin(x) \rvert \leq 1 \leq x$ -->

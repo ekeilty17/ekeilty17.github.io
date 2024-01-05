@@ -15,7 +15,7 @@ tags:       limits, continuity, delta-epsilon, introduction
 
 When writing my [derivative proofs series](/blog/derivative-proofs/), in the [introduction](blog/derivative-proofs/introduction/) I assert without proof the limit laws that we would need. Here, I would like to take the time to rigorously prove these limit laws using the epsilon-delta definition, in order to provide the proper foundation for my derivative proofs series.
 
-I remember when taking first-year calculus in university that $\epsilon - \delta$ proofs were one of the most dreaded topics. However, when reading Terence Tao's  <a href="https://link.springer.com/content/pdf/10.1007/978-981-10-1789-6.pdf" target="_blank">real analysis textbook, I began to appreciate their elegance. This series gives me an excuse to revisit $\epsilon - \delta$ proofs, and helped me gain a better understanding of the foundation of modern calculus.
+I remember when taking first-year calculus in university that $\epsilon - \delta$ proofs were one of the most dreaded topics. However, when reading Terence Tao's <a href="https://link.springer.com/content/pdf/10.1007/978-981-10-1789-6.pdf" target="_blank">real analysis textbook</a>, I began to appreciate their elegance. This series gives me an excuse to revisit $\epsilon - \delta$ proofs, and helped me gain a better understanding of the foundation of modern calculus.
 
 <br>
 
@@ -29,53 +29,23 @@ For further reading, I recommend <a href="http://users.uoa.gr/~spapast/TomeasDid
 
 <br>
 
-## A Short Reflection
+## Fixing Circularity
 
-A theme with all of my series has been that often I find places where the typical proofs found in courses or textbooks are unrigorous or circular. This series is no exception. The proofs for the continuity of $e^x$ and $\sin(x)$ often implicitly assume their continuity within them. In the case of $e^x$, proofs typically require the continuity of $\ln(x)$, which derives its continuity from $e^x$. In the case of $\sin(x)$, arguments typically require the fact that $\lvert \sin(x) \rvert \leq \lvert x \rvert$, which is often proved using the derivative of $\sin(x)$, whose proof requires the continuity of $\sin(x)$ at $x = 0$. In this series, fix these circularities and provide a completely rigorous formulation. 
+A theme with many of my series has been that I often find the typical proofs given in courses or textbooks are unrigorous or circular. This series is no exception. 
 
-<!-- Using the power series definitions fixes all of these problems, but that's not as fun. -->
+The proofs for the continuity of $e^x$ and $\sin(x)$ often implicitly assume their continuity within them. In the case of $e^x$, proofs typically require the continuity of $\ln(x)$, which derives its continuity from $e^x$. In the case of $\sin(x)$, arguments typically require the fact that $\lvert \sin(x) \rvert \leq \lvert x \rvert$, which is often proved using the derivative of $\sin(x)$, whose proof requires the continuity of $\sin(x)$ at $x = 0$. In this series, fix these circularities and provide a completely rigorous formulation. 
 
-<br>
-
-## Definition of Limits
-
-Let $f$ be any function, $a \in \mathbb{R}$ not necessarily in the domain of $f$, and $L \in \mathbb{R}$ not necessarily in the range of $f$.
-
-The notation $\displaystyle \lim_{x \rightarrow a} f(x) = L$ is read as "the limit of $f$ as $x$ approaches $a$ is $L$" is syntactic sugar that actually means
-
-$$
-\forall \epsilon > 0 \quad \exists \delta > 0 \quad \text{s.t.} \quad 0 < \lvert x - a \rvert < \delta \implies \lvert f(x) - L \rvert < \epsilon
-$$
+Note, using the power series definition for $e^x$ and $\sin(x)$ removes all circularity, but I want to avoid this machinery. 
 
 <br>
 
-We have to be extremely careful with what we mean by equality here. **If** such an $L$ satisfies the above, then the limit **exists** and is equal to $L$, otherwise, the limit does not exist and equality is left undefined. 
+## Miscellaneous Facts
 
-For example, $\displaystyle \lim_{x \rightarrow 0} \frac{1}{x}$ does not exist. Thus, there is no such $L \in \mathbb{R}$ such that $\displaystyle \lim_{x \rightarrow 0} \frac{1}{x} = L$. Therefore, $\displaystyle \lim_{x \rightarrow 0} \frac{1}{x}$ is left undefined
+These facts will be used throughout the series.
 
-<br>
+### The Triangle Inequality
 
-## Definition of Continuity
-
-We say that $f$ is **continuous** at $a$ if $\displaystyle \lim_{x \rightarrow a} f(x) = f(a)$. Written using the limit definition, 
-
-$$
-\forall \epsilon > 0 \quad \exists \delta > 0 \quad \text{s.t.} \quad 0 < \lvert x - a \rvert < \delta \implies \lvert f(x) - f(a) \rvert < \epsilon
-$$
-
-<br>
-
-We say that $f$ is **continuous** if it is continuous for all $a$ in the domain of $f$.
-
-<br>
-
-Intuitively, a function is continuous if you can draw it without picking up your pencil. This is what the definition is essentially saying. If the limit is always equal to the value of the function, then locally the function always equals what it is approaching. 
-
-<br>
-
-## The Triangle Inequality
-
-In proofs, we will often use the **triangle inequality**
+The **triangle inequality**
 
 $$
 \lvert a + b \rvert \leq \lvert a \rvert + \lvert b \rvert
@@ -87,11 +57,11 @@ $$
 \Big \lvert \lvert a \rvert - \lvert b \rvert \Big \rvert \leq \lvert a - b \rvert
 $$
 
-**TODO** Find a source which proves this.
+There are numerous proofs of these facts online.
 
 <br>
 
-## Bounding Convergent Functions
+### Bounding Convergent Functions
 
 If $\displaystyle \lim_{x \rightarrow a} f(x)$ exists, then $f(x)$ is bounded in a small neighborhood around $a$. Very often we will fix a particular $\epsilon > 0$ and say
 
@@ -104,4 +74,4 @@ $$
 \end{align}
 $$
 
-Now, we can set $\epsilon$ can be anything we want, for example $\epsilon = \frac{\lvert L \rvert}{2}$.
+Now, we can set $\epsilon$ can be anything we want, for example $\epsilon = \frac{\lvert L \rvert}{2}$. Preprocessing this logic will save some lines in future proofs.

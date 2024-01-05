@@ -68,10 +68,12 @@ The composition law of limits does not hold if $f$ is not continuous. To show th
 <br>
 
 Suppose
+&nbsp;
 $$f(x) = \begin{cases} 
     0       &\quad\text{if } x \leq 0 \\
-    1       &\quad\text{if } x < 0
+    1       &\quad\text{if } x > 0
 \end{cases}$$ 
+&nbsp;&nbsp;
 is the unit step function, and $g(x) = x$. Then, $f(g(x)) = f(x)$
 
 <br>

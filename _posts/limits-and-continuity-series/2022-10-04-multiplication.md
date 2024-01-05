@@ -9,7 +9,7 @@ series:     limits-and-continuity
 tags:       limits, continuity, delta-epsilon, scalar-multiplication, function multiplication
 ---
 
-For this post, assume that $f$ and $g$ are functions whose limits exist at $a \in \mathbb{R}$. Let $L, M \in \mathbb{R}$ such that $\displaystyle \lim_{x \rightarrow a} f(x) = L$ and $\displaystyle \lim_{x \rightarrow a} g(x) = M$. Therefore, by the definition of limits, we have
+Now things get more complicated. For this post, assume that $f$ and $g$ are functions whose limits exist at $a \in \mathbb{R}$. Let $L, M \in \mathbb{R}$ such that $\displaystyle \lim_{x \rightarrow a} f(x) = L$ and $\displaystyle \lim_{x \rightarrow a} g(x) = M$. Therefore, by the definition of limits, we have
 
 $$
 \forall \epsilon_f > 0 \quad \exists \delta_f > 0 \quad \text{s.t.} \quad 0 < \lvert x - a \rvert < \delta_f \implies \lvert f(x) - L \rvert < \epsilon_f
@@ -74,7 +74,7 @@ $$
 $$
 
 
-Fix any $\epsilon > 0$. In the limit definitions of $f(x)$ and $g(x)$ we fix a particular $\epsilon_{f_1} = \epsilon_{g_1} = \sqrt{\frac{\epsilon}{3}}$. Also, fix particular $\epsilon_{f_2} = \frac{\epsilon}{3 \lvert L \rvert}$ and $\epsilon_{g_2} = \frac{\epsilon}{3 \lvert M \rvert}$. Therefore, we have
+Fix any $\epsilon > 0$. In the limit definitions of $f(x)$ and $g(x)$ we fix a particular $\epsilon_{f_1} = \epsilon_{g_1} = \sqrt{\frac{\epsilon}{3}}$. Also, fix particular $\epsilon_{f_2} = \frac{\epsilon}{3 \lvert L \rvert}$ and $\epsilon_{g_2} = \frac{\epsilon}{3 \lvert M \rvert}$. Therefore, we have these four independent statements.
 
 $$
 \exists \delta_{f_1} > 0 \quad \text{s.t.} \quad 0 < \lvert x - a \rvert < \delta_{f_1} \implies \lvert f(x) - L \rvert < \sqrt{\frac{\epsilon}{3}}

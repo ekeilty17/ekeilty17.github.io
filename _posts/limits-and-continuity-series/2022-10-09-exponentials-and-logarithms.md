@@ -9,15 +9,15 @@ series:     limits-and-continuity
 tags:       limits, continuity, delta-epsilon, logarithms, exponentials
 ---
 
-**TODO**
-
-The tricky part of proving $\displaystyle \lim_{x \rightarrow a} e^x = e^a$ is to void circularity. Maybe people try to use the natural log in the proof, but often implicitly assume the continuity of $\ln$, which is what we are trying to prove in the first place.
+The tricky part of proving $\displaystyle \lim_{x \rightarrow a} e^x = e^a$ is to avoid circularity. Many people try to use the natural log in the proof, but often implicitly assume it is continuous, which is what we are trying to prove in the first place.
 
 I can't take full credit for this proof. This is heavily adapted from a community effort in this <a href="https://math.stackexchange.com/questions/4211777/choice-of-delta-for-brute-force-proof-of-continuity-of-exponential-function" target="_blank">StackExchange post</a>. 
 
+<br>
+
 ## Some Lemmas
 
-In order to prove this result, we need two lemmas. The first is $e^{x + y} = e^{x} \cdot e^{y}$. This is a fundamental property of exponentials, so I leave this to real analysis textbooks for its proof. The second lemma is $e^{x} \leq 1 + x$, which I prove below.
+In order to prove this result, we need two lemmas. **Lemma 1** is $e^{x + y} = e^{x} \cdot e^{y}$. This is a fundamental property of exponentials, so I leave this to real analysis textbooks for its proof. **Lemma 2** is $e^{x} \leq 1 + x$, which I prove below.
 
 For this series, I will use the following definition for $e^x$.
 
@@ -25,9 +25,7 @@ $$
 e^x = \lim_{n \rightarrow \infty} \left ( 1 + \frac{x}{n} \right )^n
 $$
 
-The only reason I need to specify the definition is to prove the second lemma. Afterward, the definition is never used. Using the power series definition of $e^x$ makes the proof trivial, so I chose this definition.
-
-**TODO** Might be an easier proof
+I chose this definition since the proof is trivial using the power series definition, and I didn't want to invoke all of that machinery.
 
 $$
 \begin{align}
@@ -41,6 +39,20 @@ $$
 \end{align}
 $$
 
+A corollary to this (which will be used in the proof) is the following
+
+$$
+e^x \leq 1 + x
+\quad\implies\quad 
+e^{-x} \leq 1 - x
+\quad\implies\quad 
+e^{x} \leq \frac{1}{1 - x}
+\quad\implies\quad 
+e^{x} - 1 \leq \frac{x}{1 - x}
+$$
+
+Finally, **Lemma 3** is that if $\abs{h} < \frac{1}{2}$, then $\abs{\frac{h}{1-h}} < 2 \abs{h}$, which I leave as an exercise to the reader.
+
 <br>
 
 ## Exponentials
@@ -52,11 +64,11 @@ $$
     &\exists \delta > 0 \quad\text{s.t.}\quad \lvert x - a \rvert < \delta \quad \implies \quad \lvert x - a \rvert < \delta \\[10pt]
     &\exists \delta > 0 \quad\text{s.t.}\quad \lvert x - a \rvert < \delta \quad \implies \quad \lvert x - a \rvert < \frac{1}{2} \cdot \min \left ( 1, \frac{\epsilon}{e^a} \right ) \\[10pt]
     &\exists \delta > 0 \quad\text{s.t.}\quad \lvert x - a \rvert < \delta \quad \implies \quad 2 \lvert x - a \rvert < \min \left ( 1, \frac{\epsilon}{e^a} \right ) \\[10pt]
-    &\exists \delta > 0 \quad\text{s.t.}\quad \lvert x - a \rvert < \delta \quad \implies \quad \left \lvert \frac{(x-a)}{1 - (x-a)} \right \rvert < \min \left ( 1, \frac{\epsilon}{e^a} \right ) \\[10pt]
+    &\exists \delta > 0 \quad\text{s.t.}\quad \lvert x - a \rvert < \delta \quad \implies \quad \left \lvert \frac{(x-a)}{1 - (x-a)} \right \rvert < \min \left ( 1, \frac{\epsilon}{e^a} \right ) \qquad \text{(Lemma 3)} \\[10pt]
     &\exists \delta > 0 \quad\text{s.t.}\quad \lvert x - a \rvert < \delta \quad \implies \quad \left \lvert \frac{(x-a)}{1 - (x-a)} \right \rvert < \frac{\epsilon}{e^a} \\[10pt]
-    &\exists \delta > 0 \quad\text{s.t.}\quad \lvert x - a \rvert < \delta \quad \implies \quad \lvert e^{x-a} - 1 \rvert < \frac{\epsilon}{e^a} \\[10pt]
+    &\exists \delta > 0 \quad\text{s.t.}\quad \lvert x - a \rvert < \delta \quad \implies \quad \lvert e^{x-a} - 1 \rvert < \frac{\epsilon}{e^a} \qquad \text{(Lemma 2)} \\[10pt]
     &\exists \delta > 0 \quad\text{s.t.}\quad \lvert x - a \rvert < \delta \quad \implies \quad e^a \cdot \lvert e^{x-a} - 1 \rvert < \epsilon \\[10pt]
-    &\exists \delta > 0 \quad\text{s.t.}\quad \lvert x - a \rvert < \delta \quad \implies \quad \lvert e^x - e^a \rvert < \epsilon
+    &\exists \delta > 0 \quad\text{s.t.}\quad \lvert x - a \rvert < \delta \quad \implies \quad \lvert e^x - e^a \rvert < \epsilon \qquad \text{(Lemma 1)}
 \end{align}
 $$
 
@@ -78,6 +90,7 @@ $$
 \lim_{x \rightarrow a} \ln f(x) = \ln \left ( \lim_{x \rightarrow a} f(x) \right )
 $$
 
+<br>
 
 ## General Exponentiation Law
 
@@ -100,5 +113,3 @@ $$
 $$
 
 Many naively would think that the solution is $1^{\infty} = 1$, but when dealing with limits it does not. As we know, this limit actually equals $e^x$.
-
-## Corollaries

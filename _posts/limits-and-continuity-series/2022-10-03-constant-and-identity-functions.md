@@ -9,6 +9,10 @@ series:     limits-and-continuity
 tags:       limits, continuity, delta-epsilon, constants, identity
 ---
 
+Finally! Let's evaluate some limits.
+
+<br>
+
 ## Constant Functions
 
 Starting off with an easy one, we want to prove that for any constants $c \in \mathbb{R}$, we have
@@ -29,7 +33,13 @@ $$
 \forall \epsilon > 0 \quad \exists \delta > 0 \quad \text{s.t.} \quad 0 < \lvert x - a \rvert < \delta \implies \lvert c - c \rvert < \epsilon
 $$
 
-is trivially true. Therefore, constant functions are continuous.
+is trivially true. Since 
+
+$$
+(\text{anything}) \implies (\texttt{true})
+$$ 
+
+is a tautology. Therefore, constant functions are continuous.
 
 
 <br>

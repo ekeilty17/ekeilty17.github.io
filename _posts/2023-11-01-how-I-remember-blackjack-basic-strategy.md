@@ -76,7 +76,7 @@ The only casino games that I am willing to play are Poker and BlackJack. Recentl
 
 ## Prerequisites
 
-I will assume the reader understands the rules of BlackJack and the various action (Stand, Hit, Double, Split, and Surrender) and the various terms associated with BlackJack (hard hands, soft hands, busting, the shoe, a blackjack, etc). If you do not, there are plenty of resources online. 
+I will assume the reader understands the rules of BlackJack, the various actions (Stand, Hit, Double, Split, and Surrender), and the various terms associated with BlackJack (hard hands, soft hands, busting, the shoe, a blackjack, etc). If you do not, there are plenty of resources online. 
 
 It should be noted that there are a lot of variations to the rules of BlackJack. 
 * Whether the dealer hits on soft $17$
@@ -85,7 +85,7 @@ It should be noted that there are a lot of variations to the rules of BlackJack.
 * The number of decks used in the shoe
 * How much a blackjack pays out. Typically you see (3 to 2) or (6 to 5)
 
-In this post, I will assume that blackjack pays (3 to 2) since otherwise the game is unbeatable. And I will assume that if surrending is allowed that it is a late surrender. Early surrenders are not very common.
+In this post, I will assume that blackjack pays (3 to 2) since otherwise the game is unbeatable. I will assume that if surrending is allowed then it is a late surrender. Early surrenders are not very common. Finally, assume the number of shoes is 4 or more.
 
 <br>
 
@@ -1086,7 +1086,7 @@ Maybe some people can just look at these tables and memorize them. Unfortunately
 
 ## The Most Likely Unknown Card Principle
 
-For the absolute beginner, the following general principle is enough to help them arive at the correct action in a plurality of cases.
+For the absolute beginner, the following general principle is enough to help them arrive at the correct action in a plurality of cases.
 
 <center>
 <strong><em>Assume all unknown cards are value 10</em></strong>
@@ -1094,17 +1094,17 @@ For the absolute beginner, the following general principle is enough to help the
 
 <br>
 
-Since $10$, $J$, $Q$, $K$ are worth 10, any unknown card is most likely to be worth 10. Thus, this principle essentially says to assume the most likely senario in all situations. I will use $T$ to denote either $10$, $J$, $Q$, or $K$.
+Since $10$, $J$, $Q$, $K$ are worth 10, any unknown card is more likely to be worth 10 compared to any other value. I will use $T$ to denote any of $10$, $J$, $Q$, or $K$.
 
 For example, if you have a $14$ against a dealer $6$, we assume that the dealer's unknown card is a $T$. Thus, on the dealer's turn, they have to hit their $16$. Then if we assume that hit card is also a $T$, then the dealer will bust and we will win. Furthermore, if we HIT, the hit card is likely to be a $T$ and we would bust. Therefore, we should STAND.
 
-Alternatively, suppose we have a $14$ against a dealer $7$. If we assume the dealer's unknown card is a $T$, then we will lose because the dealer stands on a hard $17$. Thus, we should HIT. Even though the most likely scenario is that we bust, it's more likely that we will just lose immediately. So we might-as-well try to get lucky and hit a low card.
+Alternatively, suppose we have a $14$ against a dealer $7$. If we assume the dealer's unknown card is a $T$, then we will lose because the dealer stands on a hard $17$. Thus, we should HIT. Even though the most likely scenario is that we bust, this is the lesser of two evils. We are very likely to lose if we STAND. So we might-as-well try to get lucky and hit a low card.
 
 Finally, suppose we have $11$. Assuming all unknown cards are $T$, we should obviously DOUBLE on $11$ because we are very likely to get to $21$. The only exception being when the dealer is showing an $A$ since likely we are going to push with the dealer. Similar logic can be applied to know when to DOUBLE on $10$.
 
 <br>
 
-Using this principle alone and ignoring doubling and surrendering, we almost arrive at the Hard Hand table. The two exceptions are exception of $9$ and $12$. You can somewhat rationalize these exceptions, but ultimately I think these are the few that you have to memorize. For $9$, I remember that you double $3$ through $6$ because those are all multiples of 3.
+Using this principle alone and ignoring doubling and surrendering, we almost arrive at the Hard Hand table. The two exceptions are $9$ and $12$. You can somewhat rationalize these exceptions, but ultimately I think these are the few that you have to memorize. For $9$, I remember that you double $3$ through $6$ because those are all multiples of 3.
 
 Finally, you simply have to memorize the surrender situations. However, they are somewhat intutitive. $15$ and $16$ are your the worst possible hands and $9$, $T$, $A$ are the dealer's best possible hands.
 
@@ -1116,14 +1116,14 @@ Finally, you simply have to memorize the surrender situations. However, they are
 
 ## My Memorization Method
 
-I find it easier to remember _maxums_ or little phrases about each situation. These are what I have listed below
+I find it easier to remember _maxims_ or little phrases about each situation. These are listed below
 
 ### Hard Hands 
 
 * Use the _most likely unknown card principle_ as your baseline
     * Always STAND on $\geq 17$
     * Always HIT on $\leq 11$ (but we might need to double)
-    * Between $12$ and $16$ we STAND on dealer $\leq 6$ and HIT on dealer $\geq 7$ (we are likely to lose, but we are minimizing our loses)
+    * Between $12$ and $16$ we STAND on dealer $\leq 6$ and HIT on dealer $\geq 7$ (we are likely to lose, but we are minimizing our losses)
 * **Exception**: $9$ DOUBLES on $3$ through $6$ (I remember it because they are all factors of $3$)
 * **Exception**: $10$ DOUBLES until dealer $T$ (most likely unknown card principle)
 * **Exception**: $11$ DOUBLES until dealer $A$ (most likely unknown card principle)
@@ -1132,7 +1132,7 @@ I find it easier to remember _maxums_ or little phrases about each situation. Th
 
 ### Soft Hands
 
-I find these much less intuitive. But these is the best I've been able to simplify it.
+I find these much less intuitive. But these are the best I've been able to simplify it.
 
 * Use the following as your baseline
     * Always STAND on $\geq 19$
@@ -1149,16 +1149,16 @@ You can rationalize this however you want. I use a variation of the _most likely
 
 ### Pairs
 
-Thankfully, these are somewhat intutive. These assume "DOUBLE after SPLIT" is allowed (which is typical)
+Thankfully, these are somewhat intuitive. These assume "DOUBLE after SPLIT" is allowed (which is typical)
 
 * The always and nevers
     * Always SPLIT on and $8$ and $A$ (because $16$ and $12$ are terrible hands, so we want to split)
     * DONT SPLIT $5$ and $T$ (because $10$ and $20$ are very good hands)
 * The ranges
-    * $2$, $3$, $7$ SPLITS on dealer $2$ through $7$
-    * $6$ SPLITS on dealer $2$ through $6$
-    * $9$ SPLITS on dealer $2$ through $9$ exception on dealer $7$ (that's because $18$ beats $17$)
-    * $4$ SPLITS on deaer $5$ and $6$ (I remember this because $4$, $5$, $6$)
+    * $2$, $3$, $7$ SPLIT on dealer $2$ through $7$
+    * $6$ SPLIT on dealer $2$ through $6$
+    * $9$ SPLIT on dealer $2$ through $9$ exception on dealer $7$ (that's because $18$ beats $17$)
+    * $4$ SPLIT on dealer $5$ and $6$ (I remember this because $4$, $5$, $6$)
 
 If "DOUBLE after SPLIT" is not allowed (these you just have to memorize, I don't know the intuition)
 * $2$ and $3$ DONT SPLIT on dealer $2$ and $3$
@@ -1178,8 +1178,8 @@ I don't have any good way to memorize this. Luckily there are only 5 cells that 
 
 ## Concluding Thoughts
 
-Now, you just have to practice. There are a couple of basic strategy training apps, I'm sure they are all good. I'll do it sporatically throughout the day. You'd be surprised how quickly you will memorize 95% of the cases.
+Now, you just have to practice. There are a couple of basic strategy training apps, I'm sure they are all good. I'll do it sporadically throughout the day. You'd be surprised how quickly you will memorize 95% of the cases.
 
-The next time you play BlackJack hopefully you will be able to last a long time at the table. Even though statistically you are stil likely to lose, BlackJack has huge variations, so you may win big every once in a while.
+The next time you play BlackJack hopefully you will be able to last a long time at the table. Even though statistically you are still likely to lose, BlackJack has huge variations, so you may win big every once in a while.
 
 The next step is to learn how to count!
