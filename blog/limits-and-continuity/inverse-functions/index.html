@@ -188,14 +188,25 @@
 
 <h2 id="counter-example">Counter-Example</h2>
 
-<p>The above does not hold in general. The counter-example is a very strange function. Consider the constant function $f(x) = x$. Now, on the interval $(0, 1)$ we are going to separate the line in an interesting way. For any value $x$, consider the interval $(\frac{1}{2^{n+1}}, \frac{1}{2^{n}})$ such that $x$ is contained within that interval. Now consider the following function definition and graph.</p>
+<p>The above does not hold in general. The counter-example is a very strange function. Consider the constant function $f(x) = x$. Now, on the interval $(0, 1)$ we are going to separate the line in an interesting way. Consider the following function definition and graph.</p>
 
-\[f(x) = \begin{cases} 
-    x                          &amp;\quad\text{if } x \leq 0 \\
-    x - \frac{1}{2^{n+1}}      &amp;\quad\text{if } 0 &lt; x \leq \frac{1}{2} \\
-    x + \frac{1}{2^{n}}        &amp;\quad\text{if } \frac{1}{2} &lt; x \leq 1 \\
-    x                          &amp;\quad\text{if } x &gt; 1 \\
+\[f(x) =
+\begin{cases} 
+    x                                   &amp;\quad\text{if } x \leq 0 \\
+    x - 2^{\lfloor \log_2 x \rfloor}    &amp;\quad\text{if } 0 &lt; x \leq \frac{1}{2} \\
+    (x - \frac{1}{2}) + 2^{\lceil \log_2 (x - \frac{1}{2}) \rceil}      &amp;\quad\text{if } \frac{1}{2} &lt; x \leq 1 \\
+    x                                   &amp;\quad\text{if } x &gt; 1 \\
 \end{cases}\]
+
+<!-- = \begin{cases} 
+    x                          &\quad\text{if } x \leq 0 \\
+    x - \frac{1}{2^{n+1}}      &\quad\text{if } 0 < x \leq \frac{1}{2} \\
+    x + \frac{1}{2^{n}}        &\quad\text{if } \frac{1}{2} < x \leq 1 \\
+    x                          &\quad\text{if } x > 1 \\
+\end{cases}
+\qquad = \qquad -->
+
+<p><br /></p>
 
 <center>
 <embed src="/svg/inverse-functions/inverse-limit-counter-example.svg" type="image/svg+xml" />
@@ -203,19 +214,21 @@
 
 <p><br /></p>
 
-<p>Essentially, what we’ve done is separated the line segment in the interval $(0, 1)$ into two parts. Each part contains a countably infinite number of line segments.</p>
+<p>The equation of $f(x)$ is much more confusing than it is conceptually. We have the line segment $f(x) = x$ on the interval $(0, 1)$. We chop the line up into an <strong>infinite sequence of segments</strong>, whose proportion is successively getting smaller as we go from the top right to the bottom left. The first two segments are $1/4^{\text{th}}$ the length, the second two segments are $1/8^{\text{th}}$ the length, and so on. Now, take these pairs which are equal in length and separate them. The first of the pairs goes to the right and the second of the pairs goes to the left. Now, we have two <strong>infinite subsequences of segments</strong>.</p>
 
-<p>Notice that $f(x)$ is bijective and thus has a well-defined inverse function $f^{-1}(x)$. From the graph, it is clear that $\displaystyle \lim_{x \rightarrow 0} f(x) = 0$. Now, let’s consider $\displaystyle \lim_{y \rightarrow 0} f^{-1}(y)$. I claim that this limit does not exist. Why? As $y$ approaches $0$, the graph $f^{-1}(y)$ is going to oscillate infintely between the value $0$ and $1/2$. Thus, no value can be given to this limit.</p>
+<p>I only gave the analytical equation so that you are convinced this graph does exist. However, the graph should provide all of the intuition we need for the proof.</p>
 
-<!-- ## Strictly Monotonic Functions
+<p><br /></p>
 
-Suppose $f$ is strictly monotonically increasing. This means that the following property holds
+<p>Notice that $f(x)$ is bijective and thus has a well-defined inverse function $f^{-1}(x)$. From the graph, it is clear that $\displaystyle \lim_{x \rightarrow 0} f(x) = 0$. We can also prove this from the analytical equations. Now, let’s consider $\displaystyle \lim_{y \rightarrow 0} f^{-1}(y)$. As $y$ approaches $0$, the graph $f^{-1}(y)$ is going to oscillate infintely between the value $0$ and $1/2$. Thus, no value can be given to this limit, and therefore it does not exist!</p>
 
-$$
-x_1 < x_2 \implies f(x_1) < f(x_2)
-$$
+<p><br /></p>
 
-You can think of it as the function preserves strict inequalities. -->
+<h2 id="other-discontinuities">Other Discontinuities</h2>
+
+<p>In the above counter-example, we saw that the inverse limit did not exist due to an oscillating discontinuity. This is the nastiest type of discontinuity and does not occur in “normal” functions you’d see in most applications (evident by the complexity of the analytical equation in the counter-example). This begs the question, do other discontinuities cause us problems? The answer is no! I will leave it up to the reader to investigate why.</p>
+
+<p>Practically speaking, if a function has an inverse and that function’s limit exists, then the limit of the inverse also likely exists.</p>
 
         </div>
 
