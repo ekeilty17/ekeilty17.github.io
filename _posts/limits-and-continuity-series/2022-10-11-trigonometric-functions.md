@@ -11,7 +11,7 @@ tags:       limits, continuity, delta-epsilon, trigonometry
 
 ## Sine
 
-The continuity of all other tigonometric functions can be derived as a result of the continuity of $\sin(x)$. We need two facts for this proof, which I will prove at the end of the post.
+The continuity of all other trigonometric functions can be derived as a result of the continuity of $\sin(x)$. We need two facts for this proof, which I will prove at the end of the post.
 
 $$
 \lvert \cos(x) \rvert \leq 1 \qquad \forall x \in \mathbb{R}
