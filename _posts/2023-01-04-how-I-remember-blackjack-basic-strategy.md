@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "How I Remember BlackhJack Basic Strategy"
-date:       2023-11-01
+title:      "How I Remember BlackJack Basic Strategy"
+date:       2023-01-04
 categories: blog
 permalink:  ":categories/:title/"
 standalone: true
@@ -91,7 +91,7 @@ In this post, I will assume that blackjack pays (3 to 2) since otherwise the gam
 
 ## Basic Strategy Table
 
-Our task is to remember the following tables. Whether or not the dealer hits on a soft 17 is the only variation associated with the action of the dealer rather than the action of the player. Thus, the best way to show this difference is with a separate table. The left tables give the correct actions for each situation if the dealer does not hit on a soft 17. The right tables gives the same when the dealer does hit on a soft 17. In order to reduce information overload, I have only given the cells that are different.
+Our task is to remember the following tables. The **columns** are the sum of your hand and the **rows** is the card the dealer is showing. Whether or not the dealer hits on a soft 17 is the only variation associated with the action of the dealer rather than the action of the player. Thus, the best way to show this difference is with a separate table. The left tables give the correct actions for each situation if the dealer does not hit on a soft 17. The right tables gives the same when the dealer does hit on a soft 17. In order to reduce information overload, I have only given the cells that are different.
 
 <div class="custom-table-container">
 

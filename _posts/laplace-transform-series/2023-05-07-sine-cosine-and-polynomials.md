@@ -9,11 +9,11 @@ series:     laplace-transforms
 tags:       laplace-transform, trig, trigonometry, sine, cosine, monomials, polynomials, summations
 ---
 
-There is another way to solve this Laplace transform involving derivatives (which we will do in a future post). I am also aware that we can decompose $\sin$ and $\cos$ into exponents using Eulier's identity. I do this in the next [post](http://127.0.0.1:4000/blog/laplace-transforms/sine-cosine-and-any-function/). However, I came up with this proof when I was 14 and before I had a good understanding of complex numbers. So, I wanted to showcase it.
+There is another way to solve this Laplace transform involving derivatives (which we will do in [this post](/blog/laplace-transforms/derivatives/)). I am also aware that we can decompose $\sin$ and $\cos$ into exponents using Eulier's identity. I do this in the [next post](/blog/laplace-transforms/sine-cosine-and-any-function/). However, I came up with this proof when I was 14 and before I had a good understanding of complex numbers. So, I wanted to showcase it.
 
 One benefit of this proof is that I give a closed-form polynomial rather than an addition/subtraction of two polynomials. This form may be easier to use in certain applications.
 
-<br?>
+<br>
 
 ## Deriving a Recurrence
 
