@@ -130,7 +130,7 @@
   
 </div>
       </div>
-      <p>&copy; 2023 Eric Keilty </p>
+      <p>&copy; 2024 Eric Keilty </p>
 
     </div>
   </div>
@@ -152,7 +152,7 @@
 
 <p><br /></p>
 
-<p>Suppose $f$ has a well-defined inverse function $f^{-1}$ such that $f^{-1}(f(x)) = x$ and $f(f^{-1}(y)) = y$. We want to determine when</p>
+<p>Suppose $f$ has a well-defined inverse function $f^{-1}$ such that $f^{-1}(f(x)) = x$ and $f(f^{-1}(y)) = y$. Note, this inverse function is often going to be defined on some subdomain of $f$, but this should not affect the limit within a small neighborhood of $a$. We want to determine when</p>
 
 \[\lim_{y \rightarrow L} f^{-1}(y) = a\]
 
@@ -186,32 +186,36 @@
 
 <p><br /></p>
 
-<h2 id="general-counter-example">General Counter-Example</h2>
+<h2 id="counter-example">Counter-Example</h2>
 
-<p>Assume that $f$ is a function whose limits exist at $a \in \mathbb{R}$. Let $L \in \mathbb{R}$ such that $\displaystyle \lim_{x \rightarrow a} f(x) = L$. Therefore, by the definition of limits, we have</p>
+<p>The above does not hold in general. The counter-example is a very strange function. Consider the constant function $f(x) = x$. Now, on the interval $(0, 1)$ we are going to separate the line in an interesting way. For any value $x$, consider the interval $(\frac{1}{2^{n+1}}, \frac{1}{2^{n}})$ such that $x$ is contained within that interval. Now consider the following function definition and graph.</p>
 
-\[\forall \epsilon_f &gt; 0 \quad \exists \delta_f &gt; 0 \quad \text{s.t.} \quad \lvert x - a \rvert &lt; \delta_f \implies \lvert f(x) - L \rvert &lt; \epsilon_f\]
+\[f(x) = \begin{cases} 
+    x                          &amp;\quad\text{if } x \leq 0 \\
+    x - \frac{1}{2^{n+1}}      &amp;\quad\text{if } 0 &lt; x \leq \frac{1}{2} \\
+    x + \frac{1}{2^{n}}        &amp;\quad\text{if } \frac{1}{2} &lt; x \leq 1 \\
+    x                          &amp;\quad\text{if } x &gt; 1 \\
+\end{cases}\]
 
-<p>Suppose $f(x)$ has an inverse function $f^{-1}(x)$, i.e. $f(f^{-1}(x)) = f^{-1}(f(x)) = x$. We wish to show that</p>
-
-\[\lim_{y \rightarrow L} f^{-1}(y) = a\]
-
-<p>Fix any $\epsilon &gt; 0$. In the limit definitions of $f(x)$ we fix particular $\epsilon_f = \epsilon$. Therefore, we have</p>
-
-\[\begin{align}
-    &amp;\exists \delta &gt; 0 \quad\text{s.t.}\quad \lvert x - a \rvert &lt; \delta \quad \implies \quad \lvert f(x) - L \rvert &lt; \epsilon \\[10pt]
-    &amp;\exists \delta &gt; 0 \quad\text{s.t.}\quad \lvert y - L \rvert &lt; \delta \quad \implies \quad \lvert f^{-1}(y) - a \rvert &lt; \epsilon \\[10pt]
-\end{align}\]
+<center>
+<embed src="/svg/inverse-functions/inverse-limit-counter-example.svg" type="image/svg+xml" />
+</center>
 
 <p><br /></p>
 
-<h2 id="strictly-monotonic-functions">Strictly Monotonic Functions</h2>
+<p>Essentially, what we’ve done is separated the line segment in the interval $(0, 1)$ into two parts. Each part contains a countably infinite number of line segments.</p>
 
-<p>Suppose $f$ is strictly monotonically increasing. This means that the following property holds</p>
+<p>Notice that $f(x)$ is bijective and thus has a well-defined inverse function $f^{-1}(x)$. From the graph, it is clear that $\displaystyle \lim_{x \rightarrow 0} f(x) = 0$. Now, let’s consider $\displaystyle \lim_{y \rightarrow 0} f^{-1}(y)$. I claim that this limit does not exist. Why? As $y$ approaches $0$, the graph $f^{-1}(y)$ is going to oscillate infintely between the value $0$ and $1/2$. Thus, no value can be given to this limit.</p>
 
-\[x_1 &lt; x_2 \implies f(x_1) &lt; f(x_2)\]
+<!-- ## Strictly Monotonic Functions
 
-<p>You can think of it as the function preserves strict inequalities.</p>
+Suppose $f$ is strictly monotonically increasing. This means that the following property holds
+
+$$
+x_1 < x_2 \implies f(x_1) < f(x_2)
+$$
+
+You can think of it as the function preserves strict inequalities. -->
 
         </div>
 

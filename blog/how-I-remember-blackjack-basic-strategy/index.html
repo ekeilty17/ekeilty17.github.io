@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      How I Remember BlackhJack Basic Strategy &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded MathJax (effectively LaTeX) support 
+    https://docs.mathjax.org/en/v2.7-latest/tex.html -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX", "input/MathML", "output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js", "mml2jax.js", "MathMenu.js", "MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
+            Macros: {
+                b: ["{\\boldsymbol #1}",1],
+                seq: ["{\\left \\langle #1 \\right \\rangle}",1],
+                iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
+                abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
+                hal: ["\\texttt{hal}"],
+                gal: ["\\texttt{gal}"],
+                sh: ["sh"],
+                st: ["st"]
+            },
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!--
+    TeX-AMS_HTML
+    TeX-AMS-MML_HTMLorMML
+    TeX-MML-AM_HTMLorMML
+-->
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">AI/ML Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+        <li>
+          <a href="/files/Eric Keilty - Resume.pdf" target="_blank">R&eacute;sum&eacute;</a>
+        </li>
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2024 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">How I Remember BlackhJack Basic Strategy</h1>
+            <!-- <span class="post-date">01 Nov 2023</span> -->
+            <time datetime="2023-11-01T00:00:00-04:00" class="post-date">01 Nov 2023</time>
+            <style>
+    table td#STAND {
+    background-color: red;
+    color: white;
+    text-align:center;
+    }
+
+    table td#HIT {
+    background-color: green;
+    color: white;
+    text-align:center;
+    }
+
+    table td#DOUBLE {
+    background-color: yellow;
+    color: black;
+    text-align:center;
+    }
+
+    table td#DOUBLE-STAND {
+    background-color: orange;
+    color: black;
+    text-align:center;
+    }
+
+    table td#SURRENDER {
+    background-color: RebeccaPurple;
+    color: white;
+    text-align:center;
+    }
+
+    table td#SURRENDER-STAND {
+    background-color: pink;
+    color: black;
+    text-align:center;
+    }
+
+    table td#SPLIT {
+    background-color: cyan;
+    color: black;
+    text-align:center;
+    }
+
+    table td#SPLIT-IF-DAS {
+    background-color: blue;
+    color: white;
+    text-align:center;
+    }
+
+    table td#DONT-SPLIT {
+    background-color: lightgrey;
+    color: black;
+    text-align:center;
+    }
+
+    table td#EMPTY {
+    background-color: white;
+    color: black;
+    text-align:center;
+    }
+</style>
+
+<p>The only casino games that I am willing to play are Poker and BlackJack. Recently, I have properly memorized BlackJack basic strategy. I don’t have the best memory, so I would like to share my method.</p>
+
+<p><br /></p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>I will assume the reader understands the rules of BlackJack, the various actions (Stand, Hit, Double, Split, and Surrender), and the various terms associated with BlackJack (hard hands, soft hands, busting, the shoe, a blackjack, etc). If you do not, there are plenty of resources online.</p>
+
+<p>It should be noted that there are a lot of variations to the rules of BlackJack.</p>
+<ul>
+  <li>Whether the dealer hits on soft $17$</li>
+  <li>Whether doubling after a split is allowed</li>
+  <li>Whether surrendering is allowed, and if so can you surrender early or late</li>
+  <li>The number of decks used in the shoe</li>
+  <li>How much a blackjack pays out. Typically you see (3 to 2) or (6 to 5)</li>
+</ul>
+
+<p>In this post, I will assume that blackjack pays (3 to 2) since otherwise the game is unbeatable. I will assume that if surrending is allowed then it is a late surrender. Early surrenders are not very common. Finally, assume the number of shoes is 4 or more.</p>
+
+<p><br /></p>
+
+<h2 id="basic-strategy-table">Basic Strategy Table</h2>
+
+<p>Our task is to remember the following tables. Whether or not the dealer hits on a soft 17 is the only variation associated with the action of the dealer rather than the action of the player. Thus, the best way to show this difference is with a separate table. The left tables give the correct actions for each situation if the dealer does not hit on a soft 17. The right tables gives the same when the dealer does hit on a soft 17. In order to reduce information overload, I have only given the cells that are different.</p>
+
+<div class="custom-table-container">
+
+<table>
+<caption>Legend</caption>
+<tbody>
+<tr>
+    <td id="STAND">S</td>
+    <td style="text-align:left">STAND</td>
+</tr>
+<tr>
+    <td id="HIT">H</td>
+    <td style="text-align:left">HIT</td>
+</tr>
+<tr>
+    <td id="DOUBLE">D</td>
+    <td style="text-align:left">DOUBLE</td>
+</tr>
+<tr>
+    <td id="DOUBLE-STAND">D</td>
+    <td style="text-align:left">DOUBLE if allowed, otherwise STAND</td>
+</tr>
+<tr>
+    <td id="SURRENDER">R</td>
+    <td style="text-align:left">SURRENDER if allowed, otherwise HIT</td>
+</tr>
+<tr>
+    <td id="SURRENDER-STAND">S</td>
+    <td style="text-align:left">SURRENDER if allowed, otherwise STAND</td>
+</tr>
+<tr>
+    <td id="SPLIT">/</td>
+    <td style="text-align:left">SPLIT</td>
+</tr>
+<tr>
+    <td id="SPLIT-IF-DAS">/</td>
+    <td style="text-align:left">SPLIT if DOUBLE afterwards is allowed</td>
+</tr>
+<tr>
+    <td id="DONT-SPLIT"></td>
+    <td style="text-align:left">Don't SPLIT (use other tables for action)</td>
+</tr>
+<tr>
+    <td id="EMPTY"></td>
+    <td style="text-align:left">Same action as other table</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p><br /></p>
+
+<div class="custom-table-container">
+
+<table>
+<caption>Hard Hands</caption>
+<thead>
+<tr style="border-bottom: 2px solid black;">
+    <th style="text-align:center"></th>
+    <th style="text-align:center">2</th>
+    <th style="text-align:center">3</th>
+    <th style="text-align:center">4</th>
+    <th style="text-align:center">5</th>
+    <th style="text-align:center">6</th>
+    <th style="text-align:center">7</th>
+    <th style="text-align:center">8</th>
+    <th style="text-align:center">9</th>
+    <th style="text-align:center">T</th>
+    <th style="text-align:center">A</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td style="text-align:right"><strong>$\leq$ 8</strong></td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>9</strong></td>
+    <td id="HIT">H</td>
+    <td id="DOUBLE">D</td>
+    <td id="DOUBLE">D</td>
+    <td id="DOUBLE">D</td>
+    <td id="DOUBLE">D</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>10</strong></td>
+    <td id="DOUBLE">D</td>
+    <td id="DOUBLE">D</td>
+    <td id="DOUBLE">D</td>
+    <td id="DOUBLE">D</td>
+    <td id="DOUBLE">D</td>
+    <td id="DOUBLE">D</td>
+    <td id="DOUBLE">D</td>
+    <td id="DOUBLE">D</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>11</strong></td>
+    <td id="DOUBLE">D</td>
+    <td id="DOUBLE">D</td>
+    <td id="DOUBLE">D</td>
+    <td id="DOUBLE">D</td>
+    <td id="DOUBLE">D</td>
+    <td id="DOUBLE">D</td>
+    <td id="DOUBLE">D</td>
+    <td id="DOUBLE">D</td>
+    <td id="DOUBLE">D</td>
+    <td id="HIT" style="border: 2px solid black;">H</td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>12</strong></td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>13</strong></td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>14</strong></td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>15</strong></td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="SURRENDER">R</td>
+    <td id="HIT" style="border: 2px solid black;">H</td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>16</strong></td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="SURRENDER">R</td>
+    <td id="SURRENDER">R</td>
+    <td id="SURRENDER">R</td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>17</strong></td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND" style="border: 2px solid black;">S</td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>$\geq$ 18</strong></td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+</tr>
+</tbody>
+</table>
+
+&emsp;&emsp;&emsp;&emsp;
+
+<table>
+<caption>Hard Hands (Hit on Soft 17)</caption>
+<thead>
+<tr style="border-bottom: 2px solid black;">
+    <th style="text-align:center"></th>
+    <th style="text-align:center">2</th>
+    <th style="text-align:center">3</th>
+    <th style="text-align:center">4</th>
+    <th style="text-align:center">5</th>
+    <th style="text-align:center">6</th>
+    <th style="text-align:center">7</th>
+    <th style="text-align:center">8</th>
+    <th style="text-align:center">9</th>
+    <th style="text-align:center">T</th>
+    <th style="text-align:center">A</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td style="text-align:right"><strong>$\leq$ 8</strong></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>9</strong></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>10</strong></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>11</strong></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="DOUBLE">D</td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>12</strong></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>13</strong></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>14</strong></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>15</strong></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="SURRENDER">R</td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>16</strong></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>17</strong></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="SURRENDER-STAND">S</td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>$\geq$ 18</strong></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<p><br /></p>
+
+<div class="custom-table-container">
+
+<table>
+<caption>Soft Hands</caption>
+<thead>
+<tr style="border-bottom: 2px solid black;">
+    <th style="text-align:center"></th>
+    <th style="text-align:center">2</th>
+    <th style="text-align:center">3</th>
+    <th style="text-align:center">4</th>
+    <th style="text-align:center">5</th>
+    <th style="text-align:center">6</th>
+    <th style="text-align:center">7</th>
+    <th style="text-align:center">8</th>
+    <th style="text-align:center">9</th>
+    <th style="text-align:center">T</th>
+    <th style="text-align:center">A</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td style="text-align:right"><strong>A2 (13)</strong></td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="DOUBLE">D</td>
+    <td id="DOUBLE">D</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>A3 (14)</strong></td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="DOUBLE">D</td>
+    <td id="DOUBLE">D</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>A4 (15)</strong></td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="DOUBLE">D</td>
+    <td id="DOUBLE">D</td>
+    <td id="DOUBLE">D</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>A5 (16)</strong></td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="DOUBLE">D</td>
+    <td id="DOUBLE">D</td>
+    <td id="DOUBLE">D</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>A6 (17)</strong></td>
+    <td id="HIT">H</td>
+    <td id="DOUBLE">D</td>
+    <td id="DOUBLE">D</td>
+    <td id="DOUBLE">D</td>
+    <td id="DOUBLE">D</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>A7 (18)</strong></td>
+    <td id="STAND">S</td>
+    <td id="DOUBLE-STAND">D</td>
+    <td id="DOUBLE-STAND">D</td>
+    <td id="DOUBLE-STAND">D</td>
+    <td id="DOUBLE-STAND">D</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+    <td id="HIT">H</td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>A8 (19)</strong></td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND" style="border: 2px solid black;">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>A9 (20)</strong></td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>AT (21)</strong></td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+    <td id="STAND">S</td>
+</tr>
+</tbody>
+</table>
+
+&emsp;&emsp;&emsp;&emsp;
+
+<table>
+<caption>Soft Hands (Hit on Soft 17)</caption>
+<thead>
+<tr style="border-bottom: 2px solid black;">
+    <th style="text-align:center"></th>
+    <th style="text-align:center">2</th>
+    <th style="text-align:center">3</th>
+    <th style="text-align:center">4</th>
+    <th style="text-align:center">5</th>
+    <th style="text-align:center">6</th>
+    <th style="text-align:center">7</th>
+    <th style="text-align:center">8</th>
+    <th style="text-align:center">9</th>
+    <th style="text-align:center">T</th>
+    <th style="text-align:center">A</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td style="text-align:right"><strong>A2 (13)</strong></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>A3 (14)</strong></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>A4 (15)</strong></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>A5 (16)</strong></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>A6 (17)</strong></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>A7 (18)</strong></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>A8 (19)</strong></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="DOUBLE-STAND">D</td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>A9 (20)</strong></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>AT (21)</strong></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<p><br /></p>
+
+<div class="custom-table-container">
+
+<table>
+<caption>Pairs</caption>
+<thead>
+<tr style="border-bottom: 2px solid black;">
+    <th style="text-align:center"></th>
+    <th style="text-align:center">2</th>
+    <th style="text-align:center">3</th>
+    <th style="text-align:center">4</th>
+    <th style="text-align:center">5</th>
+    <th style="text-align:center">6</th>
+    <th style="text-align:center">7</th>
+    <th style="text-align:center">8</th>
+    <th style="text-align:center">9</th>
+    <th style="text-align:center">T</th>
+    <th style="text-align:center">A</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td style="text-align:right"><strong>2,2</strong></td>
+    <td id="SPLIT-IF-DAS">/</td>
+    <td id="SPLIT-IF-DAS">/</td>
+    <td id="SPLIT">/</td>
+    <td id="SPLIT">/</td>
+    <td id="SPLIT">/</td>
+    <td id="SPLIT">/</td>
+    <td id="DONT-SPLIT"></td>
+    <td id="DONT-SPLIT"></td>
+    <td id="DONT-SPLIT"></td>
+    <td id="DONT-SPLIT"></td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>3,3</strong></td>
+    <td id="SPLIT-IF-DAS">/</td>
+    <td id="SPLIT-IF-DAS">/</td>
+    <td id="SPLIT">/</td>
+    <td id="SPLIT">/</td>
+    <td id="SPLIT">/</td>
+    <td id="SPLIT">/</td>
+    <td id="DONT-SPLIT"></td>
+    <td id="DONT-SPLIT"></td>
+    <td id="DONT-SPLIT"></td>
+    <td id="DONT-SPLIT"></td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>4,4</strong></td>
+    <td id="DONT-SPLIT"></td>
+    <td id="DONT-SPLIT"></td>
+    <td id="DONT-SPLIT"></td>
+    <td id="SPLIT-IF-DAS">/</td>
+    <td id="SPLIT-IF-DAS">/</td>
+    <td id="DONT-SPLIT"></td>
+    <td id="DONT-SPLIT"></td>
+    <td id="DONT-SPLIT"></td>
+    <td id="DONT-SPLIT"></td>
+    <td id="DONT-SPLIT"></td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>5,5</strong></td>
+    <td id="DONT-SPLIT"></td>
+    <td id="DONT-SPLIT"></td>
+    <td id="DONT-SPLIT"></td>
+    <td id="DONT-SPLIT"></td>
+    <td id="DONT-SPLIT"></td>
+    <td id="DONT-SPLIT"></td>
+    <td id="DONT-SPLIT"></td>
+    <td id="DONT-SPLIT"></td>
+    <td id="DONT-SPLIT"></td>
+    <td id="DONT-SPLIT"></td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>6,6</strong></td>
+    <td id="SPLIT-IF-DAS">/</td>
+    <td id="SPLIT">/</td>
+    <td id="SPLIT">/</td>
+    <td id="SPLIT">/</td>
+    <td id="SPLIT">/</td>
+    <td id="DONT-SPLIT"></td>
+    <td id="DONT-SPLIT"></td>
+    <td id="DONT-SPLIT"></td>
+    <td id="DONT-SPLIT"></td>
+    <td id="DONT-SPLIT"></td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>7,7</strong></td>
+    <td id="SPLIT">/</td>
+    <td id="SPLIT">/</td>
+    <td id="SPLIT">/</td>
+    <td id="SPLIT">/</td>
+    <td id="SPLIT">/</td>
+    <td id="SPLIT">/</td>
+    <td id="DONT-SPLIT"></td>
+    <td id="DONT-SPLIT"></td>
+    <td id="DONT-SPLIT"></td>
+    <td id="DONT-SPLIT"></td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>8,8</strong></td>
+    <td id="SPLIT">/</td>
+    <td id="SPLIT">/</td>
+    <td id="SPLIT">/</td>
+    <td id="SPLIT">/</td>
+    <td id="SPLIT">/</td>
+    <td id="SPLIT">/</td>
+    <td id="SPLIT">/</td>
+    <td id="SPLIT">/</td>
+    <td id="SPLIT">/</td>
+    <td id="SPLIT" style="border: 2px solid black;">/</td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>9,9</strong></td>
+    <td id="SPLIT">/</td>
+    <td id="SPLIT">/</td>
+    <td id="SPLIT">/</td>
+    <td id="SPLIT">/</td>
+    <td id="SPLIT">/</td>
+    <td id="DONT-SPLIT"></td>
+    <td id="SPLIT">/</td>
+    <td id="SPLIT">/</td>
+    <td id="DONT-SPLIT"></td>
+    <td id="DONT-SPLIT"></td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>T,T</strong></td>
+    <td id="DONT-SPLIT"></td>
+    <td id="DONT-SPLIT"></td>
+    <td id="DONT-SPLIT"></td>
+    <td id="DONT-SPLIT"></td>
+    <td id="DONT-SPLIT"></td>
+    <td id="DONT-SPLIT"></td>
+    <td id="DONT-SPLIT"></td>
+    <td id="DONT-SPLIT"></td>
+    <td id="DONT-SPLIT"></td>
+    <td id="DONT-SPLIT"></td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>A,A</strong></td>
+    <td id="SPLIT">/</td>
+    <td id="SPLIT">/</td>
+    <td id="SPLIT">/</td>
+    <td id="SPLIT">/</td>
+    <td id="SPLIT">/</td>
+    <td id="SPLIT">/</td>
+    <td id="SPLIT">/</td>
+    <td id="SPLIT">/</td>
+    <td id="SPLIT">/</td>
+    <td id="SPLIT">/</td>
+</tr>
+
+</tbody>
+</table>
+
+&emsp;&emsp;&emsp;&emsp;
+
+<table>
+<caption>Pairs (Hit on Soft 17)</caption>
+<thead>
+<tr style="border-bottom: 2px solid black;">
+    <th style="text-align:center"></th>
+    <th style="text-align:center">2</th>
+    <th style="text-align:center">3</th>
+    <th style="text-align:center">4</th>
+    <th style="text-align:center">5</th>
+    <th style="text-align:center">6</th>
+    <th style="text-align:center">7</th>
+    <th style="text-align:center">8</th>
+    <th style="text-align:center">9</th>
+    <th style="text-align:center">T</th>
+    <th style="text-align:center">A</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td style="text-align:right"><strong>2,2</strong></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>3,3</strong></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>4,4</strong></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>5,5</strong></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>6,6</strong></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>7,7</strong></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>8,8</strong></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="DONT-SPLIT"></td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>9,9</strong></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>T,T</strong></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+</tr>
+<tr>
+    <td style="text-align:right"><strong>A,A</strong></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+    <td id="EMPTY"></td>
+</tr>
+
+</tbody>
+</table>
+
+</div>
+
+<p><br /></p>
+
+<p>Maybe some people can just look at these tables and memorize them. Unfortunately, I’m not one of these people. What I need to do is to compress this information as much as possible and have some sort of understanding as to the logic of it. In this post, I will share my method.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="the-most-likely-unknown-card-principle">The Most Likely Unknown Card Principle</h2>
+
+<p>For the absolute beginner, the following general principle is enough to help them arrive at the correct action in a plurality of cases.</p>
+
+<center>
+<strong><em>Assume all unknown cards are value 10</em></strong>
+</center>
+
+<p><br /></p>
+
+<p>Since $10$, $J$, $Q$, $K$ are worth 10, any unknown card is more likely to be worth 10 compared to any other value. I will use $T$ to denote any of $10$, $J$, $Q$, or $K$.</p>
+
+<p>For example, if you have a $14$ against a dealer $6$, we assume that the dealer’s unknown card is a $T$. Thus, on the dealer’s turn, they have to hit their $16$. Then if we assume that hit card is also a $T$, then the dealer will bust and we will win. Furthermore, if we HIT, the hit card is likely to be a $T$ and we would bust. Therefore, we should STAND.</p>
+
+<p>Alternatively, suppose we have a $14$ against a dealer $7$. If we assume the dealer’s unknown card is a $T$, then we will lose because the dealer stands on a hard $17$. Thus, we should HIT. Even though the most likely scenario is that we bust, this is the lesser of two evils. We are very likely to lose if we STAND. So we might-as-well try to get lucky and hit a low card.</p>
+
+<p>Finally, suppose we have $11$. Assuming all unknown cards are $T$, we should obviously DOUBLE on $11$ because we are very likely to get to $21$. The only exception being when the dealer is showing an $A$ since likely we are going to push with the dealer. Similar logic can be applied to know when to DOUBLE on $10$.</p>
+
+<p><br /></p>
+
+<p>Using this principle alone and ignoring doubling and surrendering, we almost arrive at the Hard Hand table. The two exceptions are $9$ and $12$. You can somewhat rationalize these exceptions, but ultimately I think these are the few that you have to memorize. For $9$, I remember that you double $3$ through $6$ because those are all multiples of 3.</p>
+
+<p>Finally, you simply have to memorize the surrender situations. However, they are somewhat intutitive. $15$ and $16$ are your the worst possible hands and $9$, $T$, $A$ are the dealer’s best possible hands.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="my-memorization-method">My Memorization Method</h2>
+
+<p>I find it easier to remember <em>maxims</em> or little phrases about each situation. These are listed below</p>
+
+<h3 id="hard-hands">Hard Hands</h3>
+
+<ul>
+  <li>Use the <em>most likely unknown card principle</em> as your baseline
+    <ul>
+      <li>Always STAND on $\geq 17$</li>
+      <li>Always HIT on $\leq 11$ (but we might need to double)</li>
+      <li>Between $12$ and $16$ we STAND on dealer $\leq 6$ and HIT on dealer $\geq 7$ (we are likely to lose, but we are minimizing our losses)</li>
+    </ul>
+  </li>
+  <li><strong>Exception</strong>: $9$ DOUBLES on $3$ through $6$ (I remember it because they are all factors of $3$)</li>
+  <li><strong>Exception</strong>: $10$ DOUBLES until dealer $T$ (most likely unknown card principle)</li>
+  <li><strong>Exception</strong>: $11$ DOUBLES until dealer $A$ (most likely unknown card principle)</li>
+  <li><strong>Exception</strong>: $12$ HITS on dealer $2$ and $3$ (this is because the dealer is less likely to bust here)</li>
+</ul>
+
+<h3 id="soft-hands">Soft Hands</h3>
+
+<p>I find these much less intuitive. But these are the best I’ve been able to simplify it.</p>
+
+<ul>
+  <li>Use the following as your baseline
+    <ul>
+      <li>Always STAND on $\geq 19$</li>
+      <li>$18$ is a weird case: dealer $\leq 8$ STANDS and $\geq 9$ HITS</li>
+      <li>Always HIT on $\leq 17$ (but we might need to double)</li>
+    </ul>
+  </li>
+</ul>
+
+<p>You can rationalize this however you want. I use a variation of the <em>most likely unknown card principle</em>. Now, the only question is when do we double. For this, I find it easiest to do the cases by what the dealer has.</p>
+
+<ul>
+  <li>If we have $\leq 18$, then
+    <ul>
+      <li>Always DOUBLE on Dealer $5$ and $6$</li>
+      <li>On Dealer $4$ you DOUBLE on $\geq A4 (15)$ (I remember this because the $4$s match)</li>
+      <li>On Dealer $3$ you DOUBLE on $\geq A6 (17)$ (I remember this because double $3$ is $6$)</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="pairs">Pairs</h3>
+
+<p>Thankfully, these are somewhat intuitive. These assume “DOUBLE after SPLIT” is allowed (which is typical)</p>
+
+<ul>
+  <li>The always and nevers
+    <ul>
+      <li>Always SPLIT on and $8$ and $A$ (because $16$ and $12$ are terrible hands, so we want to split)</li>
+      <li>DONT SPLIT $5$ and $T$ (because $10$ and $20$ are very good hands)</li>
+    </ul>
+  </li>
+  <li>The ranges
+    <ul>
+      <li>$2$, $3$, $7$ SPLIT on dealer $2$ through $7$</li>
+      <li>$6$ SPLIT on dealer $2$ through $6$</li>
+      <li>$9$ SPLIT on dealer $2$ through $9$ exception on dealer $7$ (that’s because $18$ beats $17$)</li>
+      <li>$4$ SPLIT on dealer $5$ and $6$ (I remember this because $4$, $5$, $6$)</li>
+    </ul>
+  </li>
+</ul>
+
+<p>If “DOUBLE after SPLIT” is not allowed (these you just have to memorize, I don’t know the intuition)</p>
+<ul>
+  <li>$2$ and $3$ DONT SPLIT on dealer $2$ and $3$</li>
+  <li>DONT SPLIT on $4$</li>
+  <li>$6$ DONT SPLIT on dealer $2$</li>
+</ul>
+
+<h3 id="hitting-on-soft-17-variation">Hitting on Soft 17 Variation</h3>
+
+<p>I don’t have any good way to memorize this. Luckily there are only 5 cells that are different across all tables. So this is just something we need to memorize.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="concluding-thoughts">Concluding Thoughts</h2>
+
+<p>Now, you just have to practice. There are a couple of basic strategy training apps, I’m sure they are all good. I’ll do it sporadically throughout the day. You’d be surprised how quickly you will memorize 95% of the cases.</p>
+
+<p>The next time you play BlackJack hopefully you will be able to last a long time at the table. Even though statistically you are still likely to lose, BlackJack has huge variations, so you may win big every once in a while.</p>
+
+<p>The next step is to learn how to count!</p>
+
+        </div>
+    </div>
+
+    <!--
+    <h3 style="text-align:center; margin-bottom:1em;">
+      <a href="/blog/">Blog Archive</a>
+    </h3>
+    -->
+    
+  </body>
+</html>

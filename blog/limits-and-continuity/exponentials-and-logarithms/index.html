@@ -130,7 +130,7 @@
   
 </div>
       </div>
-      <p>&copy; 2023 Eric Keilty </p>
+      <p>&copy; 2024 Eric Keilty </p>
 
     </div>
   </div>
@@ -144,23 +144,21 @@
             <!-- maybe I'll add tagging later
             <span class="post-date" style="margin-top:-1em;"> ["limits, ",  "continuity, ",  "delta-epsilon, ",  "logarithms, ",  "exponentials"] </span>
             -->
-            <p><strong>TODO</strong></p>
-
-<p>The tricky part of proving $\displaystyle \lim_{x \rightarrow a} e^x = e^a$ is to void circularity. Maybe people try to use the natural log in the proof, but often implicitly assume the continuity of $\ln$, which is what we are trying to prove in the first place.</p>
+            <p>The tricky part of proving $\displaystyle \lim_{x \rightarrow a} e^x = e^a$ is to avoid circularity. Many people try to use the natural log in the proof, but often implicitly assume it is continuous, which is what we are trying to prove in the first place.</p>
 
 <p>I can’t take full credit for this proof. This is heavily adapted from a community effort in this <a href="https://math.stackexchange.com/questions/4211777/choice-of-delta-for-brute-force-proof-of-continuity-of-exponential-function" target="_blank">StackExchange post</a>.</p>
 
+<p><br /></p>
+
 <h2 id="some-lemmas">Some Lemmas</h2>
 
-<p>In order to prove this result, we need two lemmas. The first is $e^{x + y} = e^{x} \cdot e^{y}$. This is a fundamental property of exponentials, so I leave this to real analysis textbooks for its proof. The second lemma is $e^{x} \leq 1 + x$, which I prove below.</p>
+<p>In order to prove this result, we need two lemmas. <strong>Lemma 1</strong> is $e^{x + y} = e^{x} \cdot e^{y}$. This is a fundamental property of exponentials, so I leave this to real analysis textbooks for its proof. <strong>Lemma 2</strong> is $e^{x} \leq 1 + x$, which I prove below.</p>
 
 <p>For this series, I will use the following definition for $e^x$.</p>
 
 \[e^x = \lim_{n \rightarrow \infty} \left ( 1 + \frac{x}{n} \right )^n\]
 
-<p>The only reason I need to specify the definition is to prove the second lemma. Afterward, the definition is never used. Using the power series definition of $e^x$ makes the proof trivial, so I chose this definition.</p>
-
-<p><strong>TODO</strong> Might be an easier proof</p>
+<p>I chose this definition since the proof is trivial using the power series definition, and I didn’t want to invoke all of that machinery.</p>
 
 \[\begin{align}
     e^x &amp;= \lim_{n \rightarrow \infty} \left ( 1 + \frac{x}{n} \right )^n \\[10pt]
@@ -172,6 +170,18 @@
     &amp;= 1 + x
 \end{align}\]
 
+<p>A corollary to this (which will be used in the proof) is the following</p>
+
+\[e^x \leq 1 + x
+\quad\implies\quad 
+e^{-x} \leq 1 - x
+\quad\implies\quad 
+e^{x} \leq \frac{1}{1 - x}
+\quad\implies\quad 
+e^{x} - 1 \leq \frac{x}{1 - x}\]
+
+<p>Finally, <strong>Lemma 3</strong> is that if $\abs{h} &lt; \frac{1}{2}$, then $\abs{\frac{h}{1-h}} &lt; 2 \abs{h}$, which I leave as an exercise to the reader.</p>
+
 <p><br /></p>
 
 <h2 id="exponentials">Exponentials</h2>
@@ -182,11 +192,11 @@
     &amp;\exists \delta &gt; 0 \quad\text{s.t.}\quad \lvert x - a \rvert &lt; \delta \quad \implies \quad \lvert x - a \rvert &lt; \delta \\[10pt]
     &amp;\exists \delta &gt; 0 \quad\text{s.t.}\quad \lvert x - a \rvert &lt; \delta \quad \implies \quad \lvert x - a \rvert &lt; \frac{1}{2} \cdot \min \left ( 1, \frac{\epsilon}{e^a} \right ) \\[10pt]
     &amp;\exists \delta &gt; 0 \quad\text{s.t.}\quad \lvert x - a \rvert &lt; \delta \quad \implies \quad 2 \lvert x - a \rvert &lt; \min \left ( 1, \frac{\epsilon}{e^a} \right ) \\[10pt]
-    &amp;\exists \delta &gt; 0 \quad\text{s.t.}\quad \lvert x - a \rvert &lt; \delta \quad \implies \quad \left \lvert \frac{(x-a)}{1 - (x-a)} \right \rvert &lt; \min \left ( 1, \frac{\epsilon}{e^a} \right ) \\[10pt]
+    &amp;\exists \delta &gt; 0 \quad\text{s.t.}\quad \lvert x - a \rvert &lt; \delta \quad \implies \quad \left \lvert \frac{(x-a)}{1 - (x-a)} \right \rvert &lt; \min \left ( 1, \frac{\epsilon}{e^a} \right ) \qquad \text{(Lemma 3)} \\[10pt]
     &amp;\exists \delta &gt; 0 \quad\text{s.t.}\quad \lvert x - a \rvert &lt; \delta \quad \implies \quad \left \lvert \frac{(x-a)}{1 - (x-a)} \right \rvert &lt; \frac{\epsilon}{e^a} \\[10pt]
-    &amp;\exists \delta &gt; 0 \quad\text{s.t.}\quad \lvert x - a \rvert &lt; \delta \quad \implies \quad \lvert e^{x-a} - 1 \rvert &lt; \frac{\epsilon}{e^a} \\[10pt]
+    &amp;\exists \delta &gt; 0 \quad\text{s.t.}\quad \lvert x - a \rvert &lt; \delta \quad \implies \quad \lvert e^{x-a} - 1 \rvert &lt; \frac{\epsilon}{e^a} \qquad \text{(Lemma 2)} \\[10pt]
     &amp;\exists \delta &gt; 0 \quad\text{s.t.}\quad \lvert x - a \rvert &lt; \delta \quad \implies \quad e^a \cdot \lvert e^{x-a} - 1 \rvert &lt; \epsilon \\[10pt]
-    &amp;\exists \delta &gt; 0 \quad\text{s.t.}\quad \lvert x - a \rvert &lt; \delta \quad \implies \quad \lvert e^x - e^a \rvert &lt; \epsilon
+    &amp;\exists \delta &gt; 0 \quad\text{s.t.}\quad \lvert x - a \rvert &lt; \delta \quad \implies \quad \lvert e^x - e^a \rvert &lt; \epsilon \qquad \text{(Lemma 1)}
 \end{align}\]
 
 <p>which completes the proof. Therefore, $e^x$ is a continuous function.</p>
@@ -203,6 +213,8 @@
 
 \[\lim_{x \rightarrow a} \ln f(x) = \ln \left ( \lim_{x \rightarrow a} f(x) \right )\]
 
+<p><br /></p>
+
 <h2 id="general-exponentiation-law">General Exponentiation Law</h2>
 
 <p>The previous statement combined with the logarithm identity</p>
@@ -218,8 +230,6 @@
 \[\lim_{n \rightarrow \infty} \left ( 1 + \frac{x}{n} \right )^n = \left ( \lim_{n \rightarrow \infty} \left ( 1 + \frac{x}{n} \right ) \right )^{ \lim_{n \rightarrow \infty} n} = 1^{\infty}\]
 
 <p>Many naively would think that the solution is $1^{\infty} = 1$, but when dealing with limits it does not. As we know, this limit actually equals $e^x$.</p>
-
-<h2 id="corollaries">Corollaries</h2>
 
         </div>
 
