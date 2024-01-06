@@ -53,7 +53,7 @@ $$
 
 <br>
 
-**TODO** The above proof is messy because I need the assume the RHS is not an indeterminate form. Ideally, all I need to assume is that the limit exists. 
+<!-- **TODO** The above proof is messy because I need the assume the RHS is not an indeterminate form. Ideally, all I need to assume is that the limit exists.  -->
 
 <br>
 

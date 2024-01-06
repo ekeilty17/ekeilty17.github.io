@@ -21,11 +21,11 @@ https://tikz.net/dynamics_moment_of_inertia/ -->
 
 ## What is a Moment?
 
-It's a bit of a meme in physics that everything thinks they understand moments until they are asked to explain them. 
+It's a bit of a meme in physics that everyone thinks they understand moments until they are asked to explain them. 
 
-At the most basic level, we know that (for some reason) objects with mass have an intrinsic resistance to change. Elegantly summarized as **Newton's First Law of Motion**: "An object at rest remains at rest, and an object in motion remains in motion". This is true for translation and it is also true for rotation. The **moment of inertia** is the mathematical object that tells us how exactly a particular object resists change in its motion. 
+At the most basic level, we know that (for some reason) objects with mass have an intrinsic resistance to change. Elegantly summarized as **Newton's First Law of Motion**: "An object at rest remains at rest, and an object in motion remains in motion". This is true for both translation and rotation. The **moment of inertia** is the mathematical object that tells us how exactly a particular object resists change in its motion. 
 
-This explanation tells us how to use a moment, but it does not tell us _what a moment is_. Many resources say "a moment is a mathematical expression involving the product of a distance and physical quantity", which at first is laughably vague, but then once you study moments you realize it's actually not that bad of a description. A more enlightening description is that a moment is "a measure of an object's tendency to rotate about a specific axis".
+This explanation tells us how to use a moment in physics calculations, but it does not tell us _what a moment is_. Many resources say "a moment is a mathematical expression involving the product of a distance and physical quantity", which at first is laughably vague, but then once you study moments you realize it's actually not that bad of a description. A more enlightening description is that a moment is "a measure of an object's tendency to rotate about a specific axis".
 
 The physics YouTuber Andrew Dotson has good videos if you have to really understand where the concept of a "moment" comes from and what exactly they are in more detail ([part 1](https://www.youtube.com/watch?v=0flh8ovhZ9k) and [part 2](https://www.youtube.com/watch?v=k24FnV3myO4)).
 

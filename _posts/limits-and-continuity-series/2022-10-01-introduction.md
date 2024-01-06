@@ -9,8 +9,6 @@ series:     limits-and-continuity
 tags:       limits, continuity, delta-epsilon, introduction
 ---
 
-**TODO** This entire series probably needs to be polished, but the content is mostly already here.
-
 ## Motivation
 
 When writing my [derivative proofs series](/blog/derivative-proofs/), in the [introduction](blog/derivative-proofs/introduction/) I assert without proof the limit laws that we would need. Here, I would like to take the time to rigorously prove these limit laws using the epsilon-delta definition, in order to provide the proper foundation for my derivative proofs series.

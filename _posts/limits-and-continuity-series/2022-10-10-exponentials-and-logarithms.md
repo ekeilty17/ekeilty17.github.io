@@ -1,10 +1,10 @@
 ---
 layout:     series
 title:      "Exponentials and Logarithms"
-date:       2022-10-09
+date:       2022-10-10
 categories: blog limits-and-continuity
 permalink:  ":categories/:title/"
-part:       8
+part:       9
 series:     limits-and-continuity
 tags:       limits, continuity, delta-epsilon, logarithms, exponentials
 ---

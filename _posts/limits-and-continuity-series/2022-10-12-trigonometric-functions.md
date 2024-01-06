@@ -1,10 +1,10 @@
 ---
 layout:     series
 title:      "Trigonometric Functions"
-date:       2022-10-11
+date:       2022-10-12
 categories: blog limits-and-continuity
 permalink:  ":categories/:title/"
-part:       10
+part:       11
 series:     limits-and-continuity
 tags:       limits, continuity, delta-epsilon, trigonometry
 ---

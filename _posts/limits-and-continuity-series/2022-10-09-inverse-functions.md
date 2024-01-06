@@ -1,17 +1,15 @@
 ---
 layout:     series
 title:      "Inverse Functions"
-date:       2022-10-08
+date:       2022-10-09
 categories: blog limits-and-continuity
 permalink:  ":categories/:title/"
-part:       7
+part:       8
 series:     limits-and-continuity
 tags:       limits, continuity, delta-epsilon, inverse, inverse-functions
 ---
 
-**TODO**
-
-Suppose that limit of $f$ exists at $a \in \mathbb{R}$. Let $L \in \mathbb{R}$ such that $\displaystyle \lim_{x \rightarrow a} f(x) = L$. Therefore, by the definition of limits, we have
+Suppose that the limit of $f$ exists at $a \in \mathbb{R}$. Let $L \in \mathbb{R}$ such that $\displaystyle \lim_{x \rightarrow a} f(x) = L$. Therefore, by the definition of limits, we have
 
 $$
 \forall \epsilon_f > 0 \quad \exists \delta_f > 0 \quad \text{s.t.} \quad 0 < \lvert x - a \rvert < \delta_f \implies \lvert f(x) - L \rvert < \epsilon_f
@@ -74,8 +72,8 @@ $$
 f(x) =
 \begin{cases} 
     x                                   &\quad\text{if } x \leq 0 \\
-    x - 2^{\lfloor \log_2 x \rfloor}    &\quad\text{if } 0 < x \leq \frac{1}{2} \\
-    (x - \frac{1}{2}) + 2^{\lceil \log_2 (x - \frac{1}{2}) \rceil}      &\quad\text{if } \frac{1}{2} < x \leq 1 \\
+    x + 2^{\lceil \log_2 x \rceil}    &\quad\text{if } 0 < x \leq \frac{1}{2} \\
+    (x - \frac{1}{2}) + 2^{\lceil \log_2 (x - \frac{1}{2}) \rceil - 1}      &\quad\text{if } \frac{1}{2} < x \leq 1 \\
     x                                   &\quad\text{if } x > 1 \\
 \end{cases}
 $$ 
@@ -92,8 +90,8 @@ $$
 
 <center>
 {% tikz inverse-limit-counter-example %}
-    \pgfplotsset{soldot/.style={color=blue,only marks,mark=*},
-             holdot/.style={color=black,fill=white,only marks,mark=*},
+    \pgfplotsset{soldot/.style={color=red,only marks,mark=*},
+             holdot/.style={color=red,fill=white,only marks,mark=*},
              compat=1.12}
     \begin{axis}[   grid=both,
                     axis lines=middle,
@@ -110,23 +108,36 @@ $$
         \foreach \n in {1, 2, 3, 4, ..., 10} {
             \edef\a{1/(2^(\n))}
             \edef\b{1/(2^(\n+1))}
-            \addplot[red, domain=\a:\b, line width=1.15pt] {x + \b};
-            \addplot[red, domain=(1/2 + \a):(1/2 + \b), line width=1.15pt] {x - 1/2 + \a};
+            \addplot[red, domain=(\a):(\b), line width=1.15pt] {x + \a};
+            \addplot[red, domain=(\a + 1/2):(\b + 1/2), line width=1.15pt] {x - 1/2 + \b};
+        }
+        \foreach \n in {1, 2, 3} {
+            \edef\a{1/(2^(\n))}
+            \edef\b{1/(2^(\n+1))}
+            \addplot[soldot] coordinates{(\a, \a + \a)};
+            \addplot[holdot] coordinates{(\b, \b + \a)};
+            \addplot[soldot] coordinates{(\a + 1/2, \a + \b)};
+            \addplot[holdot] coordinates{(\b + 1/2, \b + \b)};
         }
         \addplot[blue, domain=1:2, line width=1.15pt] {x};
+        \addplot[color=blue,only marks,mark=*] coordinates{(0, 0)};
+        \addplot[color=blue,fill=white,only marks,mark=*] coordinates{(1, 1)};
+
     \end{axis}
 {% endtikz %}
 </center>
 
 <br>
 
-The equation of $f(x)$ is much more confusing than it is conceptually. We have the line segment $f(x) = x$ on the interval $(0, 1)$. We chop the line up into an **infinite sequence of segments**, whose proportion is successively getting smaller as we go from the top right to the bottom left. The first two segments are $1/4^{\text{th}}$ the length, the second two segments are $1/8^{\text{th}}$ the length, and so on. Now, take these pairs which are equal in length and separate them. The first of the pairs goes to the right and the second of the pairs goes to the left. Now, we have two **infinite subsequences of segments**. 
+The equation of $f(x)$ is much more confusing than it is conceptually. We have the line segment $f(x) = x$ on the interval $(0, 1]$. We chop the line up into an **infinite sequence of segments**, whose proportion is successively getting smaller as we go from the top right to the bottom left. The first two segments are $1/4^{\text{th}}$ the length, the second two segments are $1/8^{\text{th}}$ the length, and so on. Now, take these pairs which are equal in length and separate them. The first in the pair goes to the right and the second in the pair goes to the left. Do likewise for all pais. Now, we have two **infinite subsequences of segments**. The left subsequence is approaching the point $(0, 0)$ and the second subsequence is approaching the point $(\frac{1}{2}, 0)$.
 
-I only gave the analytical equation so that you are convinced this graph does exist. However, the graph should provide all of the intuition we need for the proof.
+An important detail is how the endpoints of each line segment are defined. They have to be constructed in such a way that allows $f$ to be bijective. Each line segment is open at the bottom left and closed at the top right. This is true for all segments (I only show this for the first few as the segments get too small). Additionally, it is important that $f(\frac{1}{2}) = \frac{3}{4}$ and does not equal $0$. Using a similar construction, but using floor instead of ceiling would result in $f$ not being injective.
+
+I only gave the analytical equation so that you are convinced this function does exist. However, the graph should provide all of the intuition we need for the proof. 
 
 <br>
 
-Notice that $f(x)$ is bijective and thus has a well-defined inverse function $f^{-1}(x)$. From the graph, it is clear that $\displaystyle \lim_{x \rightarrow 0} f(x) = 0$. We can also prove this from the analytical equations. Now, let's consider $\displaystyle \lim_{y \rightarrow 0} f^{-1}(y)$. As $y$ approaches $0$, the graph $f^{-1}(y)$ is going to oscillate infintely between the value $0$ and $1/2$. Thus, no value can be given to this limit, and therefore it does not exist!
+Notice that through careful construction $f(x)$ is bijective and thus has a well-defined inverse function $f^{-1}(x)$. From the graph, it is clear that $\displaystyle \lim_{x \rightarrow 0} f(x) = 0$. We can also prove this from the analytical equations. Now, let's consider $\displaystyle \lim_{y \rightarrow 0} f^{-1}(y)$. As $y$ approaches $0$, the graph $f^{-1}(y)$ is going to oscillate infintely between the value $0$ and $\frac{1}{2}$. Thus, no value can be given to this limit, and therefore it does not exist!
 
 <br>
 

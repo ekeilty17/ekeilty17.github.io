@@ -34,7 +34,7 @@ $$
 Note that the derivative at $x=0$ does not exist, since the left-hand limit would give a value of ${-}1$ and the right-hand limit would give a value of ${+}1$.
 
 
-## Something Silly
+<!-- ## Something Silly
 
-Just for fun, lets take the second derivative of $\lvert x \rvert$. We know that this should be $0$, but let's see if the math works out.
+Just for fun, lets take the second derivative of $\lvert x \rvert$. We know that this should be $0$, but let's see if the math works out. -->
 

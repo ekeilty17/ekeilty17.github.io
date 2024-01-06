@@ -262,7 +262,7 @@ Consider the jump discontinuity example. There is actually no definable limit in
 
 <br>
 
-The infinite discontinuity occurs due to limits that tend towards infinity, which I am not going to cover in this series. The oscillating discontinuity is actually pretty complex. There is a really good video analyzing this function <a href="https://www.youtube.com/watch?v=1QAqxiO8VHM" target="_blank">here</a>.
+The infinite discontinuity occurs due to limits that tend towards infinity, which I am going to cover at the [end of the series](/blog/limits-and-continuity/infinite-limits/). The oscillating discontinuity is actually pretty complex. There is a really good video analyzing this function <a href="https://www.youtube.com/watch?v=1QAqxiO8VHM" target="_blank">here</a>.
 
 <br>
 

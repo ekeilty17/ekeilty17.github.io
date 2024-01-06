@@ -23,20 +23,20 @@ A **language**/**vocabulary** in logic, denoted by $\mathcal{L}$, consists of th
 * A set of **functions**/**operations** of various <a href="https://en.wikipedia.org/wiki/Arity" target="_blank">arity</a>. Note that a function with an arity of $0$ is called a **constant**.
 * A set of **predicates** of various <a href="https://en.wikipedia.org/wiki/Arity" target="_blank">arity</a>. Note that a predicate with an arity of $0$ is called a **propositional atom**.
 
-Essentially, a language is specifying the **syntax** of the logic. It tells what symbols are allowed to be combined with others. We will see an example when I describe the language of arithmetic.
+Essentially, a language specifies the **syntax**** of the logic. It describes what symbols are allowed to be combined with others. We will see an example when I describe the language of arithmetic.
 
 A **structure**/**model** in logic, denoted by $\mathcal{M}$, consists of the following
 * A nonempty set $M$ called the **universe of discourse** (or just the universe)
 * For each function symbol $f$ in $\mathcal{L}$, an associated function $f^{\mathcal{M}}$
 * For each predicate symbol $P$ in $\mathcal{L}$, an associated function $P^{\mathcal{M}}$
 
-Essentially, a structure is specifying the **semantics** of the logic. It tells you how symbols are to be interpreted. An analogy with programming is that the language is like an interface or an abstract class, and the structure is like the implementation. Again, we will see an example when I describe the standard model of arithmetic.
+Essentially, a structure specifies the **semantics**** of the logic. It tells you how symbols are to be interpreted. An analogy with programming is that the language is like an interface or an abstract class, and the structure is like the implementation. Again, we will see an example when I describe the standard model of arithmetic.
 
 <br>
 
 ### Theories
 
-Using a given language $\mathcal{L}$, we can write logical statements. We can bundle together a set of $\mathcal{L}$-statements into a set, $\Phi$. We can ask the question, what are all of the $\mathcal{L}$-statements that are a **logical consequence**, denoted by $\models$, of a set $\Phi$? This set is called the **theory** of $\Phi$.
+Using a given language $\mathcal{L}$, we can write logical statements. We can bundle together a set of $\mathcal{L}$-statements into a set, $\Phi$. Now we ask the question, what are all of the $\mathcal{L}$-statements that are a **logical consequence**, denoted by $\models$, of a set $\Phi$? This set is called the **theory** of $\Phi$.
 
 $$
 Th(\Phi) = \{ A: \Phi \models A \}
@@ -52,7 +52,7 @@ $$
 Th(\mathcal{M}) = \{ A: \mathcal{M} \models A \}
 $$
 
-Again, the meaning of $\mathcal{M} \models A$ requires too much explanation to provide here. Intuitively, it means all statements $A$, which evaluate to _true_ under the interpretation provided by the model $\mathcal{M}$.
+Again, the meaning of $\mathcal{M} \models A$ requires too much explanation to provide here. Intuitively, it means all statements $A$, which are evaluated to _true_ under the interpretation provided by the model $\mathcal{M}$. Notice that this symbol is being overloaded to mean two very different things. Classic mathematicians.
 
 <br>
 
@@ -88,13 +88,14 @@ $$
 \mathbb{N} = \{ 0, 1, 2, 3, \ldots \}
 $$
 
-Recall that $0$ is a constant given by the language. $1$ is just a short-hand to mean $s(0)$. $2$ is just a short-hand to mean $s(s(0))$. and in general, the number $n$ is short-hand to mean apply the successor function $n$ times to $0$. The operators/predicates $$\{ +, *; =, < \}$$ are all the standard definitions we learned in school.
+Recall that $0$ is a constant given by the language. The element $1$ is just a short-hand to mean $s(0)$, the element $2$ is just a short-hand to mean $s(s(0))$, and in general the element $n$ is short-hand to mean apply the successor function $n$ times to $0$. The operators/predicates $$\{ +, *; =, < \}$$ are all the standard definitions we learned in school.
 
 The theory induced by this model is called **True Arithmetic** is the set of all true statements that can be made about the natural numbers. 
 
 $$
 TA = Th(\mathbb{N}) = \{ A : \mathbb{N} \models A \}
 $$
+
 What 20th-century mathematicians wanted was to create a set of axioms from which all true statements about $\mathbb{N}$ could be derived. If they could succeed in doing so, then all of mathematics could be rigorously grounded in logic.
 
 <br>
@@ -120,7 +121,7 @@ $$
 7_A) \qquad \Big ( \ A(0) \wedge \big ( \forall n \quad A(n) \implies A(s(n)) \big ) \ \Big ) \implies \Big ( \forall m \quad A(m) \Big )
 $$
 
-Also, we have the standard axioms of equality. Let $f(\cdot)$ denote any function in the language. In the above case, $s$, $+$, and $\cdot$. Let $P(\cdot)$ denote any predicate other than equality in the language. In the above case, we have $<$. Let $\vec{x} = (x_1, x_2, \ldots, x_n)$ and $\vec{y} = (y_1, y_2, \ldots, y_n)$ denote sets of variables. I am using letters $x, y, z$ to indicate that these are standard and not specific to the Peano Axioms.
+Also, we have the standard axioms of equality. Let $f(\cdot)$ denote any function in the language (in the above case $$\{s, +, \cdot\}$$). Let $P(\cdot)$ denote any predicate other than equality in the language (in the above case, $$\{ < \}$$). Let $\vec{x} = (x_1, x_2, \ldots, x_n)$ and $\vec{y} = (y_1, y_2, \ldots, y_n)$ denote sets of variables. I am using letters $x, y, z$ to indicate that these are not specific to the Peano Axioms.
 
 $$
 \begin{align}
@@ -132,7 +133,7 @@ $$
 \end{align}
 $$
 
-Finally, we have the standard axioms of a _strict total ordering_. I am using letters $x, y, z$ to indicate that these are standard and not specific to the Peano Axioms.
+Finally, we have the standard axioms of a _strict total ordering_. I am using letters $x, y, z$ to indicate that these are not specific to the Peano Axioms.
 
 
 $$
@@ -204,13 +205,13 @@ So far, things are looking good.
 
 ### G&ouml;del's Incompleteness Theorem
 
-Is it true that $\Phi_{PA}$ is an axiomatization of $\mathbb{N}$? i.e. does $Th(\mathbb{N}) = Th(\Phi_{PA})$? Unfortunately, the answer is no. This was famously shown by Kurt G&ouml;del's incompleteness theorems. The actual statements of his theorems are quite technical, but the upshot is that $Th(\Phi_{PA}) \subset Th(\mathbb{N})$ (proper subset), and in fact there does not exist any axiomatization of $\mathbb{N}$. 
+Is it true that $\Phi_{PA}$ is an axiomatization of $\mathbb{N}$? i.e. does $Th(\mathbb{N}) = Th(\Phi_{PA})$? Unfortunately, the answer is no. This was famously shown by Kurt G&ouml;del's incompleteness theorems. The actual statements of his theorems are quite technical, but the upshot is that $Th(\Phi_{PA}) \subset Th(\mathbb{N})$ (proper subset). In fact, he shows that there does not exist any axiomatization of $\mathbb{N}$. In one fell swoop he killed the dreams of every 20th century mathematician. You can read all about it in the book <a href="https://en.wikipedia.org/wiki/Logicomix" target="_blank">Logicomix</a> (I highly recommend it).
 
 This has some profound philosophical ramifications. For all intents and purposes, the Peano axioms are the foundation of modern number theory. This means that there exist some true statements about the natural numbers which cannot be proved. For example, it could be the case that the Riemann hypothesis is true and that there does not exist a proof for it. 
 
 <br>
 
-To give my perspective on this. Typically these "true statement which has no proof" require heavy self-reference, which ultimately results in self-contradiction; similar to the statement "this statement is false". I have never seen an instance of a "true statement which has no proof" that is not utterly contrived and frankly a statement no one cares about. I conjecture that any "well-behaved" true statement which does not contain self-reference will contain a proof. And I believe this is the standard consensus among mathematicians.
+To give my perspective on this. Typically these "true statements which have no proof" require heavy self-reference, which ultimately results in self-contradiction; similar to the statement "this statement is false". I have never seen an instance of a "true statement which has no proof" that is not utterly contrived and frankly a statement no one cares about. I conjecture that any "well-behaved" true statement which does not contain self-reference will contain a proof. And I believe this is the standard consensus among mathematicians.
 
 <br>
 

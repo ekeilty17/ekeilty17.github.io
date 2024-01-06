@@ -1,10 +1,10 @@
 ---
 layout:     series
 title:      "Continuity Invariants"
-date:       2022-10-10
+date:       2022-10-11
 categories: blog limits-and-continuity
 permalink:  ":categories/:title/"
-part:       9
+part:       10
 series:     limits-and-continuity
 tags:       limits, continuity, delta-epsilon, continuity, addition, subtraction, multiplication, division, reciprocal
 ---

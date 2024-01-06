@@ -114,31 +114,39 @@ Now all that is left is to prove the original inequality. Consider the following
   \coordinate (xy) at (\x, \y);
   \coordinate (X) at (\r, 0);
   \coordinate (Y) at (0, \r);
+  \coordinate (T) at (\r, {\r * tan(\angle)});
 
   %% AREA 1
+  \def\shift1{6cm}
+  \coordinate (O1) at (0, \shift1);
+  \coordinate (x1) at (\x, \shift1);
+  \coordinate (y1) at (0, {\y+\shift1});
+  \coordinate (xy1) at (\x, {\y+\shift1});
+  \coordinate (X1) at (\r, \shift1);
+  \coordinate (Y1) at (0, {\r+\shift1});
+
   % draw incident angle of triangle
-  \draw pic[draw, red, ->, pic text=$x$, very thick, angle radius={0.3*\r}, angle eccentricity=1.3] {angle = X--O--xy};
+  \draw pic[draw, red, ->, pic text=$x$, very thick, angle radius={0.3*\r}, angle eccentricity=1.3] {angle = X1--O1--xy1};
 
   % drawing lines
-  \coordinate (T) at (\r, {\r * tan(\angle)});
-  \draw[very thick] (O) -- (xy);
-  \draw[very thick] (xy) -- (X);
-  \draw[thick, dashed] (xy) -- (x) node[below] {$$};
-  \draw[very thick] (O) -- (X);
+  \draw[very thick] (O1) -- (xy1);
+  \draw[very thick] (xy1) -- (X1);
+  \draw[thick, dashed] (xy1) -- (x1) node[below] {$$};
+  \draw[very thick] (O1) -- (X1);
 
   % draw right angle indicator of triangle
   % I wanted to automate this so that I can vary \x and \y and this will be the right way around
   % but LaTeX isn't a programming language, so using \x and \y as variables is hard... will need to manually change this for each different quadrant
-  \draw ($(x) - (0.1*\r,0)$) -- ++(0,0.1*\r) -- ++(0.1*\r,0);     % Q1
+  \draw ($(x1) - (0.1*\r,0)$) -- ++(0,0.1*\r) -- ++(0.1*\r,0);     % Q1
 
   \def\eps{1mm}
-  \draw[decorate,decoration={brace,amplitude=7pt,raise=3pt, mirror},yshift=0pt] (\eps, 0) -- ({\r-\eps}, 0) node [midway, xshift=0pt, yshift=-20pt]{$1$};
-  \draw[decorate,decoration={brace,amplitude=7pt,raise=3pt, mirror},yshift=0pt] (\r, \eps) -- (\r, {\y-\eps}) node [midway, xshift=30pt, yshift=0pt]{$\sin x$};
+  \draw[decorate,decoration={brace,amplitude=7pt,raise=3pt, mirror},yshift=0pt] (\eps, \shift1) -- ({\r-\eps}, \shift1) node [midway, xshift=0pt, yshift=-20pt]{$1$};
+  \draw[decorate,decoration={brace,amplitude=7pt,raise=3pt, mirror},yshift=0pt] (\r, {\eps+\shift1}) -- (\r, {\y-\eps+\shift1}) node [midway, xshift=30pt, yshift=0pt]{$\sin x$};
 
 
   %% AREA 2
-  \def\shift2{2.5cm}
-  \coordinate (O2) at (0,\shift2);
+  \def\shift2{3cm}
+  \coordinate (O2) at (0, \shift2);
   \coordinate (x2) at (\x, \shift2);
   \coordinate (y2) at (0, {\y+\shift2});
   \coordinate (xy2) at (\x, {\y+\shift2});
@@ -152,7 +160,7 @@ Now all that is left is to prove the original inequality. Consider the following
 
 
   %% AREA 3
-  \def\shift3{5cm}
+  \def\shift3{0cm}
   \coordinate (O3) at (0,\shift3);
   \coordinate (x3) at (\x, \shift3);
   \coordinate (y3) at (0, {\y+\shift3});

@@ -15,7 +15,7 @@ $$
 \forall \epsilon_f > 0 \quad \exists \delta_f > 0 \quad \text{s.t.} \quad 0 < \lvert z - b \rvert < \delta_f \implies \lvert f(z) - f(b) \rvert < \epsilon_f
 $$
 
-Let $g: A \rightarrow B$ be any function whose limit exists at $a \in A$. Let $M \in B$ such that $\lim_{x \rightarrow a} g(x) = M$. Therefore
+Let $g: A \rightarrow B$ be any function (not necessarily continuous) whose limit exists at $a \in A$. Let $M \in B$ such that $\lim_{x \rightarrow a} g(x) = M$. Therefore
 
 $$
 \forall \epsilon_g > 0 \quad \exists \delta_g > 0 \quad \text{s.t.} \quad 0 < \lvert x - a \rvert < \delta_g \implies \lvert g(x) - M \rvert < \epsilon_g
@@ -31,7 +31,7 @@ $$
 
 <br>
 
-Fix and $\epsilon > 0$. In the limit definition of $f(z)$ we fix a particular $\epsilon_f = \epsilon$. Also, choose the particular $b = M$. Therefore, we have
+Fix any $\epsilon > 0$. In the limit definition of $f(z)$ we fix a particular $\epsilon_f = \epsilon$. Also, choose the particular $b = M$. Therefore, we have
 
 $$
 \exists \delta_f > 0 \quad \text{s.t.} \quad 0 < \lvert z - M \rvert < \delta_f \implies \lvert f(z) - f(M) \rvert < \epsilon
@@ -61,9 +61,9 @@ $$
 
 <br>
 
-## General Counter-Example
+## Counter-Example
 
-The composition law of limits does not hold if $f$ is not continuous. To show this, we provide a simple counter-example.
+The composition law of limits does not hold if $f$ is not continuous. To show this, we provide a counter-example.
 
 <br>
 
