@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "How Gauss Constructed the 17-Gon"
+title:      "Gauss's Proof of the Constructibility of the Heptadecagon"
 date:       2024-01-05
 categories: blog
 permalink:  ":categories/:title/"
