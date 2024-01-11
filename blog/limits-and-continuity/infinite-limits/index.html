@@ -10,7 +10,7 @@
 
   <title>
     
-      Introduction &middot; Eric Keilty
+      Infinite Limits &middot; Eric Keilty
     
   </title>
 
@@ -138,49 +138,77 @@
     <div class="content container">
 
         <div class="post">
-            <h1 class="post-title">Introduction</h1>
-            <!-- <span class="series-date">01 Oct 2022</span> -->
-            <time datetime="2022-10-01T00:00:00-04:00" class="post-date">01 Oct 2022</time>
+            <h1 class="post-title">Infinite Limits</h1>
+            <!-- <span class="series-date">13 Oct 2022</span> -->
+            <time datetime="2022-10-13T00:00:00-04:00" class="post-date">13 Oct 2022</time>
             <!-- maybe I'll add tagging later
-            <span class="post-date" style="margin-top:-1em;"> ["introduction"] </span>
+            <span class="post-date" style="margin-top:-1em;"> ["limits, ",  "continuity, ",  "delta-epsilon"] </span>
             -->
-            <h2 id="motivation">Motivation</h2>
+            <h2 id="limits-that-equal-infinity">Limits that Equal Infinity</h2>
 
-<p>Really, this is all just an excuse to do integrals.</p>
+<p>Consider the function $f(x) = \frac{1}{(x-3)^2}$.</p>
 
-<!-- view/h=-70,hide axis,colormap/blackwhite,domain=-5:5,domain y=-5:5,mark size=1pt,clip mode=individual,mark layer=like plot -->
-<!-- Absolutely beautiful Tikz drawings for moments of inertia
-https://tikz.net/dynamics_moment_of_inertia/ -->
+<center>
+<embed src="/svg/infinite-limits/infinite-discontinuity-2.svg" type="image/svg+xml" />
+</center>
+
+<p>We currently cannot describe what happens at $x = 3$. This limit does not approach a finite value. Thus, we have to extend the allowable values of $L$ to the extended real numbers \(\{ - \infty \} \cup \mathbb{R} \cup \{ \infty \}\). Now, we have to define what it means for a limit to equal positive or negative infinity. Suppose $a \in \mathbb{R}$.</p>
+
+\[\lim_{x \rightarrow a} f(x) = \infty 
+\qquad \iff \qquad \forall M &gt; 0 \quad \exists \delta &gt; 0 \quad \text{s.t.} \quad 0 &lt; \lvert x - a \rvert &lt; \delta \implies f(x) &gt; M\]
+
+\[\lim_{x \rightarrow a} f(x) = -\infty 
+\qquad \iff \qquad \forall M &gt; 0 \quad \exists \delta &gt; 0 \quad \text{s.t.} \quad 0 &lt; \lvert x - a \rvert &lt; \delta \implies f(x) &lt; -M\]
+
+<p>Intuitively, this is saying no matter what upperbound I give you, given a point sufficiently close to $a$, the function will surpass this threshold.</p>
+
+<center>
+<embed src="/svg/infinite-limits/infinite-discontinuity-3.svg" type="image/svg+xml" />
+</center>
+
+<p>Of course, you can break this up into its left- and right-handed limits just as we did before. Often you have to in order to properly analyze functions. For example, $f(x) = \frac{1}{x-3}$.</p>
+
+\[\lim_{x \rightarrow 3^-} \frac{1}{x-3} = -\infty \qquad\qquad \lim_{x \rightarrow 3^+} \frac{1}{x-3} = \infty\]
+
+<p>Therefore, $\lim_{x \rightarrow 3} \frac{1}{x-3}$ is undefined (just as before).</p>
 
 <p><br /></p>
 
-<h2 id="what-is-a-moment">What is a Moment?</h2>
+<h2 id="limits-that-approach-infinity">Limits that Approach Infinity</h2>
 
-<p>It’s a bit of a meme in physics that everyone thinks they understand moments until they are asked to explain them.</p>
+<p>In the above, we assumed that \(L \in \{ -\infty, \infty \}\) and $a \in \mathbb{R}$. If the limit exists under these conditions it is called an infinite discontinuity or a vertical asymptote. Here, we are going to assume the opposite, i.e. \(a \in \{ -\infty, \infty \}\) and $L \in \mathbb{R}$. This will create a horizontal asymptote.</p>
 
-<p>At the most basic level, we know that (for some reason) objects with mass have an intrinsic resistance to change. Elegantly summarized as <strong>Newton’s First Law of Motion</strong>: “An object at rest remains at rest, and an object in motion remains in motion”. This is true for both translation and rotation. The <strong>moment of inertia</strong> is the mathematical object that tells us how exactly a particular object resists change in its motion.</p>
+\[\lim_{x \rightarrow \infty} f(x) = L
+\qquad \iff \qquad \forall \epsilon &gt; 0 \quad \exists N &gt; 0 \quad \text{s.t.} \quad x &gt; N \implies 0 &lt; \lvert f(x) - L \rvert &lt; \epsilon\]
 
-<p>This explanation tells us how to use a moment in physics calculations, but it does not tell us <em>what a moment is</em>. Many resources say “a moment is a mathematical expression involving the product of a distance and physical quantity”, which at first is laughably vague, but then once you study moments you realize it’s actually not that bad of a description. A more enlightening description is that a moment is “a measure of an object’s tendency to rotate about a specific axis”.</p>
+\[\lim_{x \rightarrow -\infty} f(x) = L
+\qquad \iff \qquad \forall \epsilon &gt; 0 \quad \exists N &gt; 0 \quad \text{s.t.} \quad x &lt; -N \implies 0 &lt; \lvert f(x) - L \rvert &lt; \epsilon\]
 
-<p>The physics YouTuber Andrew Dotson has good videos if you have to really understand where the concept of a “moment” comes from and what exactly they are in more detail (<a href="https://www.youtube.com/watch?v=0flh8ovhZ9k">part 1</a> and <a href="https://www.youtube.com/watch?v=k24FnV3myO4">part 2</a>).</p>
+<p>This is the same as before but flipped 90 degrees. No matter how close to $L$ we get, I can always find a large enough value of $x$ such that $f(x)$ falls within that range.</p>
 
 <p><br /></p>
 
-<h2 id="definition-of-a-moment">Definition of a Moment</h2>
+<h2 id="all-the-infinities">All the Infinities</h2>
 
-<p>For an arbitrary geometry, its mass can be calculated by the following integral.</p>
+<p>Finally, we can assume that both \(a, L \in \{ -\infty, \infty \}\). There are four combinations.</p>
 
-\[M = \int dm\]
+\[\lim_{x \rightarrow \infty} f(x) = \infty
+\qquad \iff \qquad \forall M &gt; 0 \quad \exists N &gt; 0 \quad \text{s.t.} \quad x &gt; N \implies f(x) &gt; M\]
 
-<p>You have to be careful because depending on if it’s a 2D surface or a 3D object, this integral is more complicated than it looks.</p>
+\[\lim_{x \rightarrow -\infty} f(x) = \infty
+\qquad \iff \qquad \forall M &gt; 0 \quad \exists N &gt; 0 \quad \text{s.t.} \quad x &lt; -N \implies f(x) &gt; M\]
 
-<p>The moment of inertia is defined as the following. In this integral, $r$ is the distance of each point in the object from the axis of rotation.</p>
+\[\lim_{x \rightarrow \infty} f(x) = -\infty
+\qquad \iff \qquad \forall M &gt; 0 \quad \exists N &gt; 0 \quad \text{s.t.} \quad x &gt; N \implies f(x) &lt; -M\]
 
-\[I = \int r^2 \; dm\]
+\[\lim_{x \rightarrow -\infty} f(x) = -\infty
+\qquad \iff \qquad \forall M &gt; 0 \quad \exists N &gt; 0 \quad \text{s.t.} \quad x &lt; -N \implies f(x) &lt; -M\]
 
-<p>Another important property is the linearity of moments of inertia. If we can decompose an object into $n$ simpler geometries, then</p>
+<p><br /></p>
 
-\[I = \sum_{i = 1}^n I_i\]
+<h2 id="limit-laws">Limit Laws</h2>
+
+<p>I am not going to prove it here (because it would take an entire new series), but all of the previous limit laws also hold for these limit definitions.</p>
 
         </div>
 
@@ -203,25 +231,25 @@ https://tikz.net/dynamics_moment_of_inertia/ -->
 
         <div class="pagination" style="margin-top:1em;">
             
-                <span class="pagination-item older">Previous</span>
+                <a class="pagination-item older" href="/blog/limits-and-continuity/trigonometric-functions/">Previous</a>
             
             
                 <span class="pagination-item newer">Next</span>
             
         </div>
         <h3 style="text-align:center; margin-bottom:1em;">
-            <a href="/blog/moments-of-inertia">
+            <a href="/blog/limits-and-continuity">
             
                 
-                    Moments
-                
-            
-                
-                    of
+                    Limits
                 
             
                 
-                    Inertia
+                    and
+                
+            
+                
+                    Continuity
                 
             
          Series</a>

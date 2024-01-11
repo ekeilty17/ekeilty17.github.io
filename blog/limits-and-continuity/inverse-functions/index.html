@@ -139,14 +139,12 @@
 
         <div class="post">
             <h1 class="post-title">Inverse Functions</h1>
-            <!-- <span class="series-date">08 Oct 2022</span> -->
-            <time datetime="2022-10-08T00:00:00-04:00" class="post-date">08 Oct 2022</time>
+            <!-- <span class="series-date">09 Oct 2022</span> -->
+            <time datetime="2022-10-09T00:00:00-04:00" class="post-date">09 Oct 2022</time>
             <!-- maybe I'll add tagging later
             <span class="post-date" style="margin-top:-1em;"> ["limits, ",  "continuity, ",  "delta-epsilon, ",  "inverse, ",  "inverse-functions"] </span>
             -->
-            <p><strong>TODO</strong></p>
-
-<p>Suppose that limit of $f$ exists at $a \in \mathbb{R}$. Let $L \in \mathbb{R}$ such that $\displaystyle \lim_{x \rightarrow a} f(x) = L$. Therefore, by the definition of limits, we have</p>
+            <p>Suppose that the limit of $f$ exists at $a \in \mathbb{R}$. Let $L \in \mathbb{R}$ such that $\displaystyle \lim_{x \rightarrow a} f(x) = L$. Therefore, by the definition of limits, we have</p>
 
 \[\forall \epsilon_f &gt; 0 \quad \exists \delta_f &gt; 0 \quad \text{s.t.} \quad 0 &lt; \lvert x - a \rvert &lt; \delta_f \implies \lvert f(x) - L \rvert &lt; \epsilon_f\]
 
@@ -193,8 +191,8 @@
 \[f(x) =
 \begin{cases} 
     x                                   &amp;\quad\text{if } x \leq 0 \\
-    x - 2^{\lfloor \log_2 x \rfloor}    &amp;\quad\text{if } 0 &lt; x \leq \frac{1}{2} \\
-    (x - \frac{1}{2}) + 2^{\lceil \log_2 (x - \frac{1}{2}) \rceil}      &amp;\quad\text{if } \frac{1}{2} &lt; x \leq 1 \\
+    x + 2^{\lceil \log_2 x \rceil}    &amp;\quad\text{if } 0 &lt; x \leq \frac{1}{2} \\
+    (x - \frac{1}{2}) + 2^{\lceil \log_2 (x - \frac{1}{2}) \rceil - 1}      &amp;\quad\text{if } \frac{1}{2} &lt; x \leq 1 \\
     x                                   &amp;\quad\text{if } x &gt; 1 \\
 \end{cases}\]
 
@@ -214,13 +212,15 @@
 
 <p><br /></p>
 
-<p>The equation of $f(x)$ is much more confusing than it is conceptually. We have the line segment $f(x) = x$ on the interval $(0, 1)$. We chop the line up into an <strong>infinite sequence of segments</strong>, whose proportion is successively getting smaller as we go from the top right to the bottom left. The first two segments are $1/4^{\text{th}}$ the length, the second two segments are $1/8^{\text{th}}$ the length, and so on. Now, take these pairs which are equal in length and separate them. The first of the pairs goes to the right and the second of the pairs goes to the left. Now, we have two <strong>infinite subsequences of segments</strong>.</p>
+<p>The equation of $f(x)$ is much more confusing than it is conceptually. We have the line segment $f(x) = x$ on the interval $(0, 1]$. We chop the line up into an <strong>infinite sequence of segments</strong>, whose proportion is successively getting smaller as we go from the top right to the bottom left. The first two segments are $1/4^{\text{th}}$ the length, the second two segments are $1/8^{\text{th}}$ the length, and so on. Now, take these pairs which are equal in length and separate them. The first in the pair goes to the right and the second in the pair goes to the left. Do likewise for all pais. Now, we have two <strong>infinite subsequences of segments</strong>. The left subsequence is approaching the point $(0, 0)$ and the second subsequence is approaching the point $(\frac{1}{2}, 0)$.</p>
 
-<p>I only gave the analytical equation so that you are convinced this graph does exist. However, the graph should provide all of the intuition we need for the proof.</p>
+<p>An important detail is how the endpoints of each line segment are defined. They have to be constructed in such a way that allows $f$ to be bijective. Each line segment is open at the bottom left and closed at the top right. This is true for all segments (I only show this for the first few as the segments get too small). Additionally, it is important that $f(\frac{1}{2}) = \frac{3}{4}$ and does not equal $0$. Using a similar construction, but using floor instead of ceiling would result in $f$ not being injective.</p>
+
+<p>I only gave the analytical equation so that you are convinced this function does exist. However, the graph should provide all of the intuition we need for the proof.</p>
 
 <p><br /></p>
 
-<p>Notice that $f(x)$ is bijective and thus has a well-defined inverse function $f^{-1}(x)$. From the graph, it is clear that $\displaystyle \lim_{x \rightarrow 0} f(x) = 0$. We can also prove this from the analytical equations. Now, let’s consider $\displaystyle \lim_{y \rightarrow 0} f^{-1}(y)$. As $y$ approaches $0$, the graph $f^{-1}(y)$ is going to oscillate infintely between the value $0$ and $1/2$. Thus, no value can be given to this limit, and therefore it does not exist!</p>
+<p>Notice that through careful construction $f(x)$ is bijective and thus has a well-defined inverse function $f^{-1}(x)$. From the graph, it is clear that $\displaystyle \lim_{x \rightarrow 0} f(x) = 0$. We can also prove this from the analytical equations. Now, let’s consider $\displaystyle \lim_{y \rightarrow 0} f^{-1}(y)$. As $y$ approaches $0$, the graph $f^{-1}(y)$ is going to oscillate infintely between the value $0$ and $\frac{1}{2}$. Thus, no value can be given to this limit, and therefore it does not exist!</p>
 
 <p><br /></p>
 
@@ -251,7 +251,7 @@
 
         <div class="pagination" style="margin-top:1em;">
             
-                <a class="pagination-item older" href="/blog/limits-and-continuity/composition/">Previous</a>
+                <a class="pagination-item older" href="/blog/limits-and-continuity/change-of-variables/">Previous</a>
             
             
                 <a class="pagination-item newer" href="/blog/limits-and-continuity/exponentials-and-logarithms/">Next</a>

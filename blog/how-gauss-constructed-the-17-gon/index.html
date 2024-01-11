@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      How Gauss Constructed the 17-Gon &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded MathJax (effectively LaTeX) support 
+    https://docs.mathjax.org/en/v2.7-latest/tex.html -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX", "input/MathML", "output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js", "mml2jax.js", "MathMenu.js", "MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
+            Macros: {
+                b: ["{\\boldsymbol #1}",1],
+                seq: ["{\\left \\langle #1 \\right \\rangle}",1],
+                iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
+                abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
+                hal: ["\\texttt{hal}"],
+                gal: ["\\texttt{gal}"],
+                sh: ["sh"],
+                st: ["st"]
+            },
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!--
+    TeX-AMS_HTML
+    TeX-AMS-MML_HTMLorMML
+    TeX-MML-AM_HTMLorMML
+-->
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">AI/ML Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+        <li>
+          <a href="/files/Eric Keilty - Resume.pdf" target="_blank">R&eacute;sum&eacute;</a>
+        </li>
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2024 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">How Gauss Constructed the 17-Gon</h1>
+            <!-- <span class="post-date">05 Jan 2024</span> -->
+            <time datetime="2024-01-05T00:00:00-05:00" class="post-date">05 Jan 2024</time>
+            <h2 id="table-of-contents">Table of Contents</h2>
+
+<ul>
+  <li><a href="#motivation">Motivation</a></li>
+  <li><a href="#background-and-theory">Background and Theory</a>
+    <ul>
+      <li><a href="#main-result">Main Result</a></li>
+      <li><a href="#what-the-greeks-knew">What the Greeks Knew</a></li>
+      <li><a href="#a-connection-to-algebra">A Connection to Algebra</a></li>
+    </ul>
+  </li>
+  <li><a href="#converting-the-problem-to-number-theory">Converting the Problem to Number Theory</a>
+    <ul>
+      <li><a href="#the-complex-plane">The Complex Plane</a></li>
+      <li><a href="#the-cyclotomic-equation">The Cyclotomic Equation</a></li>
+    </ul>
+  </li>
+  <li><a href="#constructibility-proof">Constructibility Proofs</a>
+    <ul>
+      <li><a href="#helpful-properties">Helpful Properties</a></li>
+      <li><a href="#constructibility-proof-for-a-regular-pentagon">Constructibility Proof for a Regular Pentagon</a></li>
+      <li><a href="#constructibility-proof-for-a-regular-heptadecagon">Constructibility Proof for a Regular Heptadecagon</a></li>
+      <li><a href="#why-is-a-heptagon-not-constructible">Why Is A Heptagon Not Constructible?</a></li>
+    </ul>
+  </li>
+  <li><a href="#conclusion">Conclusion</a></li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="motivation">Motivation</h2>
+
+<p>Using a ruler and compass, we <strong>can</strong> construct a regular heptadecagon ($17$-gon), but we <strong>cannot</strong> construct a regular heptagon ($7$-gon). Why? This fact is counter-intuitive as a $17$-gon seems much more complicated than a $7$-gon. How would one even prove such a claim?</p>
+
+<center>
+<embed src="/svg/how-gauss-constructed-the-17-gon/17-gon-motivation.svg" type="image/svg+xml" />
+&emsp;&emsp;&emsp;&emsp;
+<embed src="/svg/how-gauss-constructed-the-17-gon/7-gon-motivation.svg" type="image/svg+xml" />
+</center>
+
+<p><br /></p>
+
+<p>All of this began with the ancient Greeks around 300 BC. They loved their ruler-and-compass constructions and were interested in regular polygons. The question became, which polygons are possible to construct and which are not? This problem remained unsolved until 1796 when 19-year-old <a href="https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss" target="_blank">Carl Friedrich Gauss</a> came along to crack the problem wide open.</p>
+
+<p>In this post, I want to showcase Gauss’s beautiful solution to this problem. The rigorous proof requires deep results from <a href="https://nrich.maths.org/1422" target="_blank">Galois theory</a>. My goal in this post is to give a high-level explanation of the result and give the reader a general intuition as to why it should be true.</p>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="background-and-theory">Background and Theory</h2>
+
+<h3 id="main-result">Main Result</h3>
+
+<p>Gauss proved the following. A regular $n$-gon is constructible <em>if and only if</em></p>
+
+\[n = 2^{k} p_1 p_2 \ldots p_m\]
+
+<p>where $k$ is any nonnegative integer and each $p_{\ell}$ are <strong>distinct Fermat primes</strong>, which is a prime of the form $p = 2^{2^i} + 1$ for some integer $i$.</p>
+
+<p>The only current known Fermat primes are $3$, $5$, $17$, $257$, and $65537$. Thus, a $17$-gon can be constructed, but a $7$-gon cannot. Here is a list of all of the constructible regular $n$-gons under $300$.</p>
+
+\[2, 3, 4, 5, 6, 8, 10, 12, 15, 16, 17, 20, 24, 30, 32, 34, 40, 48, 51, 60, 64, 68, \\ 
+80, 85, 96, 102, 120, 128, 136, 160, 170, 192, 204, 240, 255, 256, 257, 272\]
+
+<p><br /></p>
+
+<p>In this post, I am going to give a proof sketch of this result. It will not be 100% rigorous, but I hope it will be enough to convince you of why this is true. For a complete proof, I recommend reading Gauss’s most famous book <a href="https://link.springer.com/book/10.1007/978-1-4939-7560-0" target="_blank">Disquisitiones Arithmeticae</a>.</p>
+
+<p><br /></p>
+
+<h3 id="what-the-greeks-knew">What the Greeks Knew</h3>
+
+<p>In Euclid’s infamous textbook <a href="https://en.wikipedia.org/wiki/Euclid%27s_Elements" target="_blank">The Elements</a>, he provided a few regular polygon constructions. First, he could construct an equilateral triangle, square, and regular pentagon. The equilateral triangle and square are quite simple. The regular pentagon is more complicated, but not too bad.</p>
+
+<center>
+<embed src="/svg/how-gauss-constructed-the-17-gon/equilateral-triangle.svg" type="image/svg+xml" />
+&emsp;&emsp;&emsp;&emsp;
+<embed src="/svg/how-gauss-constructed-the-17-gon/square.svg" type="image/svg+xml" />
+&emsp;&emsp;&emsp;&emsp;
+<embed src="/svg/how-gauss-constructed-the-17-gon/regular-pentagon.svg" type="image/svg+xml" />
+</center>
+
+<p><br /></p>
+
+<p>Unfortunately, the resources I have found online for these are severely lacking. Maybe that means I have to do a series on this. If you know of a comprehensive resource on Greek ruler-and-compass constructions please <a href="mailto:epkeilty@gmail.com">let me know</a>. The best I could find are the following: <a href="https://mathbitsnotebook.com/Geometry/Constructions/CCconstructionEqui.html" target="_blank">equilateral triangle</a>, <a href="https://www.youtube.com/watch?v=8QaS6qNv1KM" target="_blank">square</a>, and <a href="https://www.wikihow.com/Construct-a-Regular-Pentagon" target="_blank">regular pentagon</a>.</p>
+
+<p><br /></p>
+
+<p>Once you’re able to construct these, there are regular polygons you can construct for free using two methods. In the first method, inscribe a regular $n$-gon into a circle and draw the <a href="https://www.youtube.com/watch?v=T0NCVVyu80c" target="_blank">perpendicular bisector</a>. Then, we can construct a regular $2n$-gon by extending the perpendicular bisector to the circle. Below is an example which constructs a regular hexagon using an equilateral triangle.</p>
+
+<center>
+<embed src="/svg/how-gauss-constructed-the-17-gon/equilateral-triangle-bisected.svg" type="image/svg+xml" />
+&emsp;&emsp;&emsp;&emsp;
+<embed src="/svg/how-gauss-constructed-the-17-gon/regular-hexagon.svg" type="image/svg+xml" />
+</center>
+
+<p><br /></p>
+
+<p>In the second method, given a regular $p$-gon and $q$-gon which are <a href="https://en.wikipedia.org/wiki/Coprime_integers" target="_blank">coprime</a>, we can construct a regular $pq$-gon. Below is an example of constructing a regular $15$-gon from an equilateral triangle and a regular pentagon.</p>
+
+<center>
+<embed src="/svg/how-gauss-constructed-the-17-gon/equilateral-triangle-and-pentagon.svg" type="image/svg+xml" />
+&emsp;&emsp;&emsp;&emsp;
+<embed src="/svg/how-gauss-constructed-the-17-gon/regular-15-gon.svg" type="image/svg+xml" />
+</center>
+
+<p><br /></p>
+
+<p>Place the equilateral triangle and regular pentagon at a common vertex (top of the circle). We make two observations. First, every point made by both the equilateral triangle and regular pentagon must lie on the regular $15$-gon. Second, since $3$ and $5$ are coprime, there must be some vertex in the triangle and some vertex in the pentagon which are adjacent (an exercise to the reader to prove why). These are circled in red. Thus, this will give us the length of one side of the regular $15$-gon, which allows us to generate the rest of it.</p>
+
+<p>Euclid knew all of the above. Thus, the Greeks could theoretically construct regular $n$-gons of the form</p>
+
+\[n = 2^{k} \cdot 3^{b_1} \cdot 5^{b_2}\]
+
+<p>where $k$ is any nonnegative integer and \(b_1, b_2 \in \{0, 1\}\) are binary values. However, this is where their knowledge stopped. No one could find a construction for any other regular $n$-gon that did not fall into the above pattern, nor knew whether it was even possible.</p>
+
+<p><br /></p>
+
+<h3 id="a-connection-to-algebra">A Connection to Algebra</h3>
+
+<p>Everything the Greeks did used strict Euclidean geometry. However, in order to thoroughly solve this problem, we need algebra. A major breakthrough came from René Descartes who formed a bridge between Greek constructions and algebra. In his book <a href="https://en.wikipedia.org/wiki/La_G%C3%A9om%C3%A9tries" target="_blank">La Géométrie</a>, he showed the following.</p>
+
+\[\boxed{
+    \text{a line segment of length } x \text{ is constructible with a ruler and compass} \qquad\\[15pt]
+    \textit{if and only if} \\[15pt]
+    \text{the number } x \text{ can be written as an algebraic expression} \\ 
+    \text{involving only the operations } \ +, \ -, \ \times, \ \div, \text{ and } \sqrt{\ }
+}\]
+
+<p>Such numbers are called <strong>constructible numbers</strong>. I will not give a proof of this. However, the intuition is that rulers can draw lines and compasses can draw circles. A ruler and compass construction plays with the intersections of lines and circles.</p>
+
+<center>
+<embed src="/svg/how-gauss-constructed-the-17-gon/line-line-intersection.svg" type="image/svg+xml" />
+&emsp;&emsp;&emsp;&emsp;
+<embed src="/svg/how-gauss-constructed-the-17-gon/line-circle-intersection.svg" type="image/svg+xml" />
+&emsp;&emsp;&emsp;&emsp;
+<embed src="/svg/how-gauss-constructed-the-17-gon/circle-circle-intersection.svg" type="image/svg+xml" />
+&emsp;&emsp;&emsp;&emsp;
+</center>
+
+<p>Recall the general formulas for lines and circles.</p>
+
+\[y = mx + b \qquad\qquad (x - x_0)^2 + (y - y_0)^2 = r^2\]
+
+<p>Since any length is constructed via a sequence of circle/line intersections, they are the result of equations involving only the operations $\ +, \ -, \ \times, \ \div, \text{ and } \sqrt{\ }$. Refer <a href="https://www.math.utah.edu/~bertram/courses/4030/Constructible.pdf" target="_blank">here</a> for a more detailed proof or study Galois theory.</p>
+
+<p>An important corollary is the following.</p>
+
+\[\boxed{
+    \text{an angle } \alpha \text{ is constructible with a ruler and compass} \\[15pt]
+    \textit{if and only if} \\[15pt]
+    \text{the number } \cos \alpha \text{ or } \sin \alpha \text{ can be written as an algebraic expression} \qquad \\ 
+    \text{involving only the operations } \ +, \ -, \ \times, \ \div, \text{ and } \sqrt{\ }
+}\]
+
+<p>This is pretty intuitive. If we can construct the length $\cos \alpha$ or $\sin \alpha$, then transport that length to a unit circle, raise the perpendicular line, and draw the corresponding triangle with angle $\alpha$. More detail is given <a href="https://math.stackexchange.com/questions/1355379/constructible-real-numbers" target="_blank">here</a>.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="converting-the-problem-to-number-theory">Converting the Problem to Number Theory</h2>
+
+<h3 id="the-complex-plane">The Complex Plane</h3>
+
+<p>Using Descartes’ theorem, we will now convert the geometric problem into algebraic number theory. To do this, we imagine a regular $n$-gon inscribed inside the unit circle. Below are examples using a regular pentagon and a regular heptadecagon ($17$-gon).</p>
+
+<center>
+<embed src="/svg/how-gauss-constructed-the-17-gon/pentagon-in-unit-circle.svg" type="image/svg+xml" />
+&emsp;&emsp;&emsp;&emsp;
+<embed src="/svg/how-gauss-constructed-the-17-gon/17-gon-in-unit-circle.svg" type="image/svg+xml" />
+</center>
+
+<p>Now, consider this regular $n$-gon in the <a href="https://en.wikipedia.org/wiki/Complex_plane" target="_blank">complex plane</a>. Recall that any complex number can be written in <a href="https://en.wikipedia.org/wiki/Cartesian_coordinate_system" target="_blank">Cartesian coordinates</a> and <a href="https://en.wikipedia.org/wiki/Polar_coordinate_system" target="_blank">Polar coordinates</a>.</p>
+
+\[x + i y = r e^{i \theta}\]
+
+<p>where $(x, y)$ gives the horizontal and vertical displacement of the complex number relative to the origin and $(r, \theta)$ gives the magnitude and angle of the complex number relative to the origin. Using polar notation, we see that the multiplication of two complex numbers is elegantly expressed as multiplying the magnitudes and adding the angles.</p>
+
+\[(r_1 e^{i \theta_1}) \cdot (r_2 e^{i \theta_2}) = (r_1 \cdot r_2) e^{i (\theta_1 + \theta_2)}\]
+
+<p>Now consider the angle $\zeta$ (labeled in red).</p>
+
+\[\zeta = \cos(2 \pi/n) + i \sin(2 \pi/n) = e^{i \frac{2 \pi}{n}}\]
+
+<p>Since the magnitude is $1$, multiplying $\zeta$ by itself results in rotation around the unit circle in increments of $2 \pi/n$. Therefore, each of the vertices of our regular $n$-gon can be represented by</p>
+
+\[\zeta^k = \cos(2 \pi k/n) + i \sin(2 \pi k/n) = e^{i \frac{2 \pi k}{n}} \qquad \text{for all } k \in \mathbb{Z}\]
+
+<p><br /></p>
+
+<p>Therefore, we have successfully converted the geometric polynomial into a set of algebraic variables. Now our goal is to find an exact formula for the values of the $\zeta$’s (in particular an expression for the quantity $\cos (\frac{2 \pi}{n})$). If we find that this expression only the operations $\ +, \ -, \ \times, \ \div, \text{ and } \sqrt{\ }$, then the associated regular $n$-gon must be constructible.</p>
+
+<p><br /></p>
+
+<h3 id="the-cyclotomic-equation">The Cyclotomic Equation and Its Roots</h3>
+
+<p>Consider the polynomial</p>
+
+\[z^n - 1 = 0\]
+
+<p>The <a href="https://www.youtube.com/watch?v=shEk8sz1oOw" target="_blank">fundamental theorem of algebra</a> tells us that this polynomial must have exactly $n$ complex roots. In fact, $\zeta^1, \zeta^2, \ldots, \zeta^{n-1}, \zeta^n$ are exactly these roots!</p>
+
+\[(\zeta^k)^n = (\zeta^n)^k = 1^k = 1 \qquad \text{for all } k \in \mathbb{Z}\]
+
+<p>Satisfying the above property means $\zeta^1, \zeta^2, \ldots, \zeta^{n-1}, \zeta^n$ are by definition the <strong>nth roots of unity</strong>.</p>
+
+<p><br /></p>
+
+<p>The root $\zeta^0 = \zeta^n = 1$ is called the <strong>trivial root</strong> and is not really of interest to us. Using high school algebra, we can factor out this root to get the polynomial.</p>
+
+\[1 + z + z^2 + \ldots + z^{n-1} = 0\]
+
+<p>This is called the <strong>cyclotomic equation</strong>, which is the polynomial whose roots are $\zeta^1, \zeta^2, \ldots, \zeta^{n-1}$.</p>
+
+<p><br /></p>
+
+<p>What makes the cyclotomic equation special is that its roots are deeply connected. To see why, define the following notation.</p>
+
+\[\langle a \rangle \equiv \{ a^i \ \mid \ i = 1, 2, \ldots, n \}\]
+
+<p>In simple terms, this notation says to multiply $a$ by itself a bunch of times and see what you get. In technical terms, this is the cyclic subgroup generated by $a$. If $n$ is prime, then $\zeta^1, \zeta^2, \ldots, \zeta^{n-1}$ each satisfy the following property.</p>
+
+\[\langle \zeta^k \rangle = \langle \zeta^1 \rangle \simeq \mathbb{Z} / n \mathbb{Z} \qquad \text{for all } k \in \mathbb{Z}\]
+
+<p>In simple terms, successive multiplication of any root will cycle around the unit circle and hit every vertex exactly once. In technical terms, $\zeta^k$ is a generator of the group $\mathbb{Z} / n \mathbb{Z}$. Below shows an example for $\zeta^3$ in the regular $7$-gon.</p>
+
+<center>
+<embed src="/svg/how-gauss-constructed-the-17-gon/7-gon-cycle.svg" type="image/svg+xml" />
+</center>
+
+\[\langle \zeta^3 \rangle = \{ \zeta^{3}, \zeta^{6}, \zeta^{9}, \zeta^{12}, \zeta^{15}, \zeta^{18}, \zeta^{21} \} = \{ \zeta^{3}, \zeta^{6}, \zeta^{2}, \zeta^{5}, \zeta^{1}, \zeta^{4}, \zeta^{0} \} = \langle \zeta^1 \rangle\]
+
+<p><br /></p>
+
+<p>A root which satisfies this property is called a <strong>primitive root</strong>. If $n$ is prime, then all roots of the cyclotomic equation are primitive roots. The intuition is that since we assumed $n$ is prime, no integer can evenly divide it, and therefore you could never get a subcycle. For more details, I recommend studying <a href="https://brilliant.org/wiki/group-theory-introduction/" target="_blank">group theory</a>, in particular cyclic groups and cyclic subgroups.</p>
+
+<p><br /></p>
+
+<p>Side note, if $n$ is not prime, then we can decompose it into its primes, solve for the cyclotomic equation for each of these primes, and reconstruct the roots of $n$. Therefore, we only consider the case where $n$ is prime.</p>
+
+<p><br /></p>
+
+<h2 id="constructibility-proofs">Constructibility Proofs</h2>
+
+<h3 id="helpful-properties">Helpful Properties</h3>
+
+<p>Before we can move on to constructibility proofs, there are two properties of interest. The first is the following.</p>
+
+\[\zeta + \zeta^2 + \ldots + \zeta^{n-1} = -1\]
+
+<p>There are a few ways to derive this. The easiest is to use symmetry. From the graph, we can see that the center of mass of the points must be at the origin, Therefore, $\zeta + \zeta^2 + \ldots + \zeta^{n-1} + \zeta^n = 0$ and $\zeta^n = 1$.</p>
+
+<p><br /></p>
+
+<p>The second property involves the complex conjugate of: $(\zeta^k)^* = \zeta^{n-k} = \zeta^{-k}$. Graphically, these correspond to the points of the polynomial on the mirrored side of the $x$-axis. Now, consider the following</p>
+
+\[\zeta^1 + \zeta^{-1} = [\cos(2 \pi/n) + i \sin(2 \pi/n)] + [\cos(2 \pi/n) - i \sin(2 \pi/n)] = 2 \cos(2 \pi/n)\]
+
+<p>And in general</p>
+
+\[\zeta^k + \zeta^{-k} = 2 \cos(2 \pi k/n) \qquad\text{for each } k \in \mathbb{Z}\]
+
+<p>Therefore, we have now isolated the quantity $\cos (\frac{2 \pi}{n})$, which is ultimately what we need to find an expression for.</p>
+
+<p><br /></p>
+
+<h3 id="constructibility-proof-for-a-regular-pentagon">Constructibility Proof for a Regular Pentagon</h3>
+
+<p>Ultimately, we want to prove that a regular $17$-gon is constructible. As a warm-up, we are going to first prove this result for a regular pentagon. This will help show the main idea of these types of proofs, and make the proof of the regular $17$-gon less daunting.</p>
+
+<p>Recall that our goal is to derive the analytical expression for the angle of a regular pentagon (in particular the formula for $\cos(2 \pi / 5)$). If we can show that $\cos(2 \pi / 5)$ can be expressed only using the operations $\ +, \ -, \ \times, \ \div, \text{ and } \sqrt{\ }$, then we have proven that a regular pentagon is constructible.</p>
+
+<center>
+<embed src="/svg/how-gauss-constructed-the-17-gon/pentagon-in-unit-circle-2.svg" type="image/svg+xml" />
+</center>
+
+<p>We consider the two pairs of conjugates and define the following</p>
+
+\[\gamma_1 = \zeta^1 + \zeta^{-1} \qquad\qquad \gamma_2 = \zeta^2 + \zeta^{-2}\]
+
+<p>Now, from the helpful properties above, we derive the following. Recall that $\zeta^{-k} = \zeta^{5-k}$ for the roots of a regular pentagon.</p>
+
+\[\gamma_1 + \gamma_2 = \zeta^1 + \zeta^{-1} + \zeta^2 + \zeta^{-2} = \zeta^1 + \zeta^2 + \zeta^3 + \zeta^4 = -1\]
+
+<p>Also</p>
+
+\[\gamma_1 \cdot \gamma_2 = (\zeta^1 + \zeta^{-1}) \cdot (\zeta^2 + \zeta^{-2}) = \zeta^3 + \zeta^{-1} + \zeta^1 + \zeta^{-3} = \zeta^1 + \zeta^2 + \zeta^3 + \zeta^4 = -1\]
+
+<p><br /></p>
+
+<p>Now comes the brilliant trick. Consider the following polynomial.</p>
+
+\[(z - \gamma_1)(z - \gamma_2) = 0\]
+
+<p>We know the roots must be $\gamma_1$ and $\gamma_2$. However, we can find the roots in a second way</p>
+
+\[\begin{align}
+  0 &amp;= (z - \gamma_1)(z - \gamma_2) \\[10pt]
+  &amp;= z^2 - (\gamma_1 + \gamma_2)z + \gamma_1 \cdot \gamma_2 \\[10pt]
+  &amp;= z^2 + z - 1
+\end{align}\]
+
+<p>Therefore, using high school algebra, we know that the roots must be $\displaystyle \frac{-1 \pm \sqrt{5}}{2}$. You can convince yourself that that $\displaystyle \gamma_1 = \frac{-1 + \sqrt{5}}{2}$ and $\displaystyle \gamma_2 = \frac{- 1 - \sqrt{5}}{2}$. Therefore</p>
+
+\[2 \cos(2 \pi / 5) = \gamma_1 = \frac{-1 + \sqrt{5}}{2} \qquad\implies\qquad \boxed{ \cos(2 \pi / 5) = \frac{-1 + \sqrt{5}}{4} }\]
+
+<p>Therefore, since $\cos(2 \pi / 5)$ can be written as an algebraic expression involving only the operations $\ +, \ -, \ \times, \ \div, \text{ and } \sqrt{\ }$, a regular pentagon must be constructible (which we already knew).</p>
+
+<p><br /></p>
+
+<h3 id="constructibility-proof-for-a-regular-heptadecagon">Constructibilty Proof for a Regular Heptadecagon</h3>
+
+<p>Now, let’s do the same for a regular $17$-gon. It’s going to be the same general idea as a regular pentagon but with a few more complications.</p>
+
+<center>
+<embed src="/svg/how-gauss-constructed-the-17-gon/17-gon-in-unit-circle-2.svg" type="image/svg+xml" />
+</center>
+
+<p>Consider the following variable definitions.</p>
+
+<center>
+<embed src="/svg/how-gauss-constructed-the-17-gon/17-gon-derivation-tree.svg" type="image/svg+xml" />
+</center>
+
+<p>These may seem like they came out of nowhere, but I assure you there are deep, deep mathematics behind them. Unfortunately, too much for me to cover in this already long post. I am planning on making a follow-up post. For further reading, I recommend studying <a href="https://nrich.maths.org/1422" target="_blank">Galois theory</a> and then reading <a href="https://people.reed.edu/~jerry/332/30kummer.pdf" target="_blank">this</a>.</p>
+
+<p><br /></p>
+
+<p>Now, we are going to do a similar procedure to what we did for the regular pentagon in order to solve for $\alpha_1 = 2 \cos(2 \pi / 17)$. I will assert the following and leave it as an exercise for the reader to verify. Proving $\gamma_1 \cdot \gamma_2$ without using brute force is quite tricky. There is a good article <a href="https://crypto.stanford.edu/pbc/notes/numbertheory/gaussperiod.html" target="_blank">here</a>.</p>
+
+\[\gamma_1 + \gamma_2 = \zeta^1 + \zeta^2 + \ldots + \zeta^{16} = -1 \qquad\qquad \gamma_1 \cdot \gamma_2 = 4 (\zeta^1 + \zeta^2 + \ldots + \zeta^{16}) = -4\]
+
+<p>As before, we can consider the polynomial</p>
+
+\[\begin{align}
+    0 &amp;= (z - \gamma_1)(z - \gamma_2) \\
+    &amp;= z^2 - (\gamma_1 + \gamma_2)z + \gamma_1 \cdot \gamma_2 \\
+    &amp;= z^2 + z - 4
+\end{align}\]
+
+<p>and solve for it’s roots</p>
+
+\[\gamma_1 = \frac{-1 + \sqrt{17}}{2} \qquad\qquad \gamma_2 = \frac{-1 - \sqrt{17}}{2}\]
+
+<p>Continuing, we do the same thing with $\beta_1$ and $\beta_2$. To save space, I am going to assert the necessary steps and the reader can fill in the gaps if they are inclined.</p>
+
+\[\beta_1 + \beta_2 = \gamma_1 \qquad\qquad \beta_1 \cdot \beta_2 = \zeta^1 + \zeta^2 + \ldots + \zeta^{16} = -1
+\\[10pt]
+0 = (z - \beta_1)(z - \beta_2) = z^2 - \gamma_1 z - 1
+\quad\implies\quad
+\beta_1 = \frac{\gamma_1 + \sqrt{\gamma_1^2 + 4}}{2} = \frac{-1 + \sqrt{17} + \sqrt{34 - 2\sqrt{17}}}{4}\]
+
+<p>We actually need the value of $\beta_3$, so we do the same procedure.</p>
+
+\[\beta_3 + \beta_4 = \gamma_2 \qquad\qquad \beta_3 \cdot \beta_4 = \zeta^1 + \zeta^2 + \ldots + \zeta^{16} = -1
+\\[10pt]
+0 = (z - \beta_3)(z - \beta_4) = z^2 - \gamma_2 z - 1
+\quad\implies\quad
+\beta_3 = \frac{\gamma_2 + \sqrt{\gamma_2^2 + 4}}{2} = \frac{-1 - \sqrt{17} + \sqrt{34 + 2\sqrt{17}}}{4}\]
+
+<p>Finally, we do this procedure one last time with $\alpha_1$ and $\alpha_4$. The reader can verify that</p>
+
+\[\alpha_1 + \alpha_2 = \beta_1 \qquad\qquad \alpha_1 \cdot \alpha_4 = \zeta^5 + \zeta^{-3} + \zeta^3 + \zeta^{-5} = \beta_3
+\\[10pt]
+0 = (z - \alpha_1)(z - \alpha_4) = z^2 - \beta_1 z - \beta_3
+\quad\implies\quad
+\alpha_1 = \frac{\beta_1 + \sqrt{\beta_1^2 + 4\beta_3}}{2}\]
+
+<p>Again, to save space I will leave it to the reader to simplify the final result. We know that $\alpha_1 = 2 \cos(2 \pi / 17)$. Therefore, we get</p>
+
+\[\cos \frac{2\pi}{17} = \frac{1}{16} \left [-1 + \sqrt{17} + \sqrt{34 - 2\sqrt{17}} + 2\sqrt{17 + 3\sqrt{17} - \sqrt{34 - 2\sqrt{17}} - 2\sqrt{34 + 2\sqrt{17}}} \right ]\]
+
+<p><br /></p>
+
+<p>Thus, since $\cos(2 \pi / 17)$ can be written as an expression involving only $\ +, \ -, \ \times, \ \div, \text{ and } \sqrt{\ }$, a regular heptadecagon must be constructible. This is what Gauss proved at 19 years old. For the actual construction of the regular heptadecagon, Numberphile has a great <a href="https://www.youtube.com/watch?v=87uo2TPrsl8" target="_blank">video</a>.</p>
+
+<p><br /></p>
+
+<!-- ### Why Does the Heptadecagon Constructibility Proof Work? {#why-does-the-heptadecagon-constructibility-proof-work}
+
+It seems a bit magical how everything just magically reduces into something we calculated before. The trick is how we chose to partition the $\zeta$'s in the $\alpha$'s, $\beta$'s, and $\gamma$'s.
+
+These are called **Gaussian Periods** and **Gaussian Sums**
+
+$$
+\gamma_{i+1} = \sum_{k = 0}^{7} \zeta^{3^{2k + i}} \qquad\text{for } i = 1, 2
+$$
+
+$$
+\beta_{i+1} = \sum_{k = 0}^{3} \zeta^{3^{4k + i}} \qquad\text{for } i = 1, 2, 3, 4
+$$
+
+$$
+\alpha_{i+1} = \sum_{k = 0}^{1} \zeta^{3^{8k + i}} \qquad\text{for } i = 1, 2, 3, 4, 5, 6, 7, 8
+$$ -->
+
+<!-- We need $n$ to be prime. If it is not, then the roots of unity (i.e. the vertices of the polygon) cannot be expressed in terms of the primitive root $\zeta$. Therefore, we don't get the property that $\zeta^i$ is located at the $i$th vertex of the regular $n$-gon. Thus, the proof will fail.
+
+Furthermore, we need the prime to be of the form $2^{2^m} + 1$ (i.e. a Fermat prime) because we remove the root $\zeta^0$, then then we do the bracket thing where we consistently halve the summations until we can derive a formula for $\zeta^1 + \zeta^{-1}$. For example, let's see why a regular heptagon ($7$-gon) is not constructible. -->
+
+<h3 id="why-is-a-heptagon-not-constructible">Why Is A Heptagon Not Constructible?</h3>
+
+<p>Some may be wondering why this same procedure can’t be used on a regular heptagon. Well it can, but the proof is going to fail. Let’s see why.</p>
+
+<center>
+<embed src="/svg/how-gauss-constructed-the-17-gon/7-gon-in-unit-circle.svg" type="image/svg+xml" />
+</center>
+
+<p>As before, we are going to get</p>
+
+\[\gamma_1 = \zeta^{1} + \zeta^{-1} 
+\qquad 
+\gamma_2 = \zeta^{2} + \zeta^{-2}
+\qquad
+\gamma_3 = \zeta^{3} + \zeta^{-3}\]
+
+<p>But now we have a problem. There is no way we can further combine these equations. The best we can do is the following</p>
+
+\[0 = (z - \gamma_1)(z - \gamma_2)(z - \gamma_3) = z^3 - (\gamma_1 + \gamma_2 + \gamma_3)z^2 + (\gamma_1 \gamma_2 + \gamma_2 \gamma_3 + \gamma_3 \gamma_1)z - \gamma_1 \gamma_2 \gamma_3\]
+
+<p>I will let the reader verify the following</p>
+
+\[\gamma_1 + \gamma_2 + \gamma_3 = -1
+\qquad
+\gamma_1 \cdot \gamma_2 \cdot \gamma_3 = -1
+\\[10pt]
+\gamma_1 \cdot \gamma_2 = \zeta^1 + \zeta^3 + \zeta^4 + \zeta^6
+\qquad
+\gamma_2 \cdot \gamma_3 = \zeta^1 + \zeta^2 + \zeta^5 + \zeta^6
+\qquad
+\gamma_3 \cdot \gamma_1 = \zeta^2 + \zeta^3 + \zeta^4 + \zeta^5\]
+
+<p>Therefore, we have the polynomial</p>
+
+\[z^3 - z^2 - 2z + 1 = 0\]
+
+<p>The factors of this are really gross, but the key point is that since it’s a trinomial the solution will involve cube roots. A value involving a cube root cannot be constructed using a ruler and compass. Therefore, $\cos(2 \pi / 7)$ is not constructible.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>At the beginning of this post, I asserted that a regular $n$-gon is constructible if and only if</p>
+
+\[n = 2^{k} p_1 p_2 \ldots p_m\]
+
+<p>where $k$ is any nonnegative integer and each $p_{\ell}$ are <strong>distinct Fermat primes</strong>, which is a prime of the form $p = 2^{2^i} + 1$ for some nonnegative integer $i$.</p>
+
+<p>With all of our new knowledge and understanding of this problem, let’s explain why this is true.</p>
+
+<p><br /></p>
+
+<p>First, the $2^k$ part comes from starting with a regular polygon and bisecting each edge as many times as you like. We showed an example this by converting an equilateral triangle into a regular hexagon.</p>
+
+<p>Second, the $p_1 p_2 \ldots p_m$ part comes from the fact that primes are obviously coprime with eachother. Therefore, given a regular $p$-gon and regular $q$-gon, we can construct a regulat $pq$-gon. We showed an example of this method by constructing a regular $15$-gon using an equilateral triangle and a regular pentagon. Therefore, all that remains to be explained is why the primes need to be Fermat primes.</p>
+
+<p>Descartes provided a prided a bridge between ruler-and-compass constructions and algebra. He says that if a length can be expressed as a formula involving only $\ +, \ -, \ \times, \ \div, \text{ and } \sqrt{\ }$, then it is constructible (and vice versa). Thus, if we can construct $\cos(2 \pi / n)$, then we can construct the corresponding regular $n$-gon.</p>
+
+<p>Then, using number theory, we came up with a procedure for finding the exact formula of  $\cos(2 \pi / n)$ (assuming that $n$ is prime). In order to ensure that the solution involved only the operations $\ +, \ -, \ \times, \ \div, \text{ and } \sqrt{\ }$, we needed each step to involve finding the roots of a binomial. The only way to ensure that is for $n$ to be a Fermat prime. If it was not a Fermat prime, then eventually the procedure would produce a trinomial or larger, which would result in the solution involving cube root, or fifth root, etc. Therefore, it would not be constructible.</p>
+
+        </div>
+    </div>
+
+    <!--
+    <h3 style="text-align:center; margin-bottom:1em;">
+      <a href="/blog/">Blog Archive</a>
+    </h3>
+    -->
+    
+  </body>
+</html>

@@ -148,7 +148,7 @@
 
 <p>In this series, I want to prove all of the main single-variable derivative relations from calculus. This has been done a thousand times in a thousand different ways, so I don’t think I’m adding anything to the space. I guess this is mainly just for my own enjoyment.</p>
 
-<p>I am going to keep the proofs at the level of first or second-year calculus. I don’t want to get into Cauchy series, continuity, and delta-epsilon definitions. I think I will save those for a different series.</p>
+<p>I am going to keep the proofs at the level of first or second-year calculus. I don’t want to get into Cauchy series, continuity, and delta-epsilon definitions. I have other series that dive into these topics [<a href="/blog/limits-and-continuity/">1</a>, <a href="/blog/constructing-the-real-numbers/">2</a>].</p>
 
 <p><br /></p>
 
@@ -186,13 +186,13 @@
 
 <p>In the left definition, we fix coordinate $(a, f(a))$ and we consider the secant line from that point to the point $(x, f(x))$. Then, we take the limit as $(x, f(x))$ comes closer and closer to $(a, f(a))$. In the right definition, we fix coordinate $(x, f(x))$. Then, we consider another coordinate a small distance away $(x+h, f(x+h))$ and the corresponding secant line. We see what happens as $h$ approaches $0$, and thus the secant line becomes a tangent line.</p>
 
-<p>In practice, it turns out the right definition is easier to compute since we’ve decoupled the limit from the particular coordinate. Also, the limit of things approaching $0$ is simplier than approaching some arbitrary number $a$.</p>
+<p>In practice, it turns out the right definition is easier to compute since we’ve decoupled the limit from the particular coordinate. Also, the limit of things approaching $0$ is simpler than approaching some arbitrary number $a$.</p>
 
 <p><br /></p>
 
 <h2 id="limit-laws">Limit Laws</h2>
 
-<p>Limits have a precise and technical definition. However, I do not want to explain/prove this in the series. Thus, I will just assert these properties of limits, which we will use. Maybe I will prove them in another series.</p>
+<p>Limits have a precise and technical definition. However, I do not want to explain/prove this in the series. Thus, I will just assert these properties of limits, which we will use. I prove these rigorously in my series on <a href="/blog/limits-and-continuity/">limits and continuity</a>. I will list the relevant laws here.</p>
 
 <p>Let $f$ and $g$ be functions. Let $c \in \mathbb{R}$ be any constant.</p>
 
@@ -217,6 +217,8 @@
 <p>If both $f$ and $g$ are continuous, then</p>
 
 \[\lim_{x \rightarrow a} f(g(x)) = \lim_{g(x) \rightarrow g(a)} f(g(x))\]
+
+<p>The above is a bit of an abuse of notation, see the limits and continuity series for the rigorous version.</p>
 
 <p>Suppose $f$ is a continuous two-variable function, then</p>
 

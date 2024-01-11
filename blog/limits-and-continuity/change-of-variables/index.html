@@ -10,7 +10,7 @@
 
   <title>
     
-      Introduction &middot; Eric Keilty
+      Change of Variables &middot; Eric Keilty
     
   </title>
 
@@ -138,49 +138,70 @@
     <div class="content container">
 
         <div class="post">
-            <h1 class="post-title">Introduction</h1>
-            <!-- <span class="series-date">01 Oct 2022</span> -->
-            <time datetime="2022-10-01T00:00:00-04:00" class="post-date">01 Oct 2022</time>
+            <h1 class="post-title">Change of Variables</h1>
+            <!-- <span class="series-date">08 Oct 2022</span> -->
+            <time datetime="2022-10-08T00:00:00-04:00" class="post-date">08 Oct 2022</time>
             <!-- maybe I'll add tagging later
-            <span class="post-date" style="margin-top:-1em;"> ["introduction"] </span>
+            <span class="post-date" style="margin-top:-1em;"> ["limits, ",  "continuity, ",  "delta-epsilon, ",  "change-of-variables"] </span>
             -->
             <h2 id="motivation">Motivation</h2>
 
-<p>Really, this is all just an excuse to do integrals.</p>
+<p>Recall that $\displaystyle \lim_{x \rightarrow 0} \frac{\sin(x)}{x} = 1$. Now, suppose we want to evaluate $\displaystyle \lim_{x \rightarrow 0} \frac{\sin(kx)}{x}$ for some constant $k \neq 0$. How can we do this?</p>
 
-<!-- view/h=-70,hide axis,colormap/blackwhite,domain=-5:5,domain y=-5:5,mark size=1pt,clip mode=individual,mark layer=like plot -->
-<!-- Absolutely beautiful Tikz drawings for moments of inertia
-https://tikz.net/dynamics_moment_of_inertia/ -->
+<p>Notice, we can rewrite the limit as follows $\displaystyle \lim_{x \rightarrow 0} k \cdot \frac{\sin(kx)}{kx}$. Now, it seems obvious that we can define $z = kx$ and rewrite the limit as $\displaystyle k \cdot \lim_{z \rightarrow 0} \frac{\sin(z)}{z}$ and conclude the limit is equal to $k$. This is a common technique called a <strong>change of variables</strong>. In this post, we will show when we are allowed to do this.</p>
 
 <p><br /></p>
 
-<h2 id="what-is-a-moment">What is a Moment?</h2>
+<h2 id="limit-law-proof">Limit Law Proof</h2>
 
-<p>It’s a bit of a meme in physics that everyone thinks they understand moments until they are asked to explain them.</p>
+<p>Let $f: B \rightarrow C$ be a continuous function. This means that $\lim_{z \rightarrow b} f(z) = f(b)$ for all $b \in B$.</p>
 
-<p>At the most basic level, we know that (for some reason) objects with mass have an intrinsic resistance to change. Elegantly summarized as <strong>Newton’s First Law of Motion</strong>: “An object at rest remains at rest, and an object in motion remains in motion”. This is true for both translation and rotation. The <strong>moment of inertia</strong> is the mathematical object that tells us how exactly a particular object resists change in its motion.</p>
+<p>Let $g: A \rightarrow B$ be a function (not necessarily continuous).</p>
 
-<p>This explanation tells us how to use a moment in physics calculations, but it does not tell us <em>what a moment is</em>. Many resources say “a moment is a mathematical expression involving the product of a distance and physical quantity”, which at first is laughably vague, but then once you study moments you realize it’s actually not that bad of a description. A more enlightening description is that a moment is “a measure of an object’s tendency to rotate about a specific axis”.</p>
-
-<p>The physics YouTuber Andrew Dotson has good videos if you have to really understand where the concept of a “moment” comes from and what exactly they are in more detail (<a href="https://www.youtube.com/watch?v=0flh8ovhZ9k">part 1</a> and <a href="https://www.youtube.com/watch?v=k24FnV3myO4">part 2</a>).</p>
+<p>Let $b = \lim_{x \rightarrow a} g(x)$.</p>
 
 <p><br /></p>
 
-<h2 id="definition-of-a-moment">Definition of a Moment</h2>
+<p>Therefore,</p>
 
-<p>For an arbitrary geometry, its mass can be calculated by the following integral.</p>
+\[\lim_{x \rightarrow a} f(g(x)) = f \left ( \lim_{x \rightarrow a} g(x) \right ) = f(b) = \lim_{z \rightarrow b} f(z)\]
 
-\[M = \int dm\]
+<p><br /></p>
 
-<p>You have to be careful because depending on if it’s a 2D surface or a 3D object, this integral is more complicated than it looks.</p>
+<h2 id="counter-example">Counter-Example</h2>
 
-<p>The moment of inertia is defined as the following. In this integral, $r$ is the distance of each point in the object from the axis of rotation.</p>
+<p>Some sources will say that you can use change of variables as long as $\displaystyle \lim_{z \rightarrow b} f(z)$ exists. However, this is not true. I show a counter-example below.</p>
 
-\[I = \int r^2 \; dm\]
+<p>Suppose
+ 
+\(f(z) = \begin{cases} 
+    1       &amp;\quad\text{if } z = 0 \\
+    0       &amp;\quad\text{otherwise}
+\end{cases}\) 
+  
+and
+ 
+ 
+\(g(x) = x \sin(1/x)\)</p>
 
-<p>Another important property is the linearity of moments of inertia. If we can decompose an object into $n$ simpler geometries, then</p>
+<p>Clearly, \(\displaystyle \lim_{z \rightarrow 0} f(z) = 0\). I will leave it as an exercise to the reader to show that \(\displaystyle \lim_{x \rightarrow 0} g(x) = 0\).</p>
 
-\[I = \sum_{i = 1}^n I_i\]
+<p><br /></p>
+
+<p>Now, consider 
+ 
+\(f(g(x)) = \begin{cases} 
+    1       &amp;\quad\text{if } x = \frac{1}{n\pi} \text{ for some } n \in \mathbb{Z} \\
+    0       &amp;\quad\text{otherwise}
+\end{cases}\).</p>
+
+<p>Therefore, \(\displaystyle \lim_{x \rightarrow 0} f(g(x))\) does not exist, because the function oscillates infinitely between $0$ and $1$ at $x = 0$.</p>
+
+<p><br /></p>
+
+<h2 id="comment-on-the-motivating-example">Comment on the Motivating Example</h2>
+
+<p>You may be wondering, how could we know that $\displaystyle \lim_{x \rightarrow 0} \frac{\sin(kx)}{x}$ was continuous before applying this change of variable law? Doesn’t this just move the problem back one step? Actually, we can know that it’s continuous. In a future <a href="/blog/limits-and-continuity/trigonometric-functions/">post</a>, we show that $\sin$ is continuous. We know that the identity function is continuous. Finally, in another future <a href="/blog/limits-and-continuity/continuity-invariants/">post</a> we show that division preserves continuity. Thus, we do know that this function is continuous and can apply change of variables without circularity.</p>
 
         </div>
 
@@ -203,25 +224,25 @@ https://tikz.net/dynamics_moment_of_inertia/ -->
 
         <div class="pagination" style="margin-top:1em;">
             
-                <span class="pagination-item older">Previous</span>
+                <a class="pagination-item older" href="/blog/limits-and-continuity/composition/">Previous</a>
             
             
-                <span class="pagination-item newer">Next</span>
+                <a class="pagination-item newer" href="/blog/limits-and-continuity/inverse-functions/">Next</a>
             
         </div>
         <h3 style="text-align:center; margin-bottom:1em;">
-            <a href="/blog/moments-of-inertia">
+            <a href="/blog/limits-and-continuity">
             
                 
-                    Moments
-                
-            
-                
-                    of
+                    Limits
                 
             
                 
-                    Inertia
+                    and
+                
+            
+                
+                    Continuity
                 
             
          Series</a>
