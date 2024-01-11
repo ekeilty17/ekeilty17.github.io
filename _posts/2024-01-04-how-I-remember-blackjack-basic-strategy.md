@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "How I Remember BlackJack Basic Strategy"
-date:       2023-01-04
+date:       2024-01-04
 categories: blog
 permalink:  ":categories/:title/"
 standalone: true
