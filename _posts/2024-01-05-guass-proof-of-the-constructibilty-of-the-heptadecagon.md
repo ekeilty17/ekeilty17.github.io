@@ -928,6 +928,9 @@ Side note, if $n$ is not prime, then we can decompose it into its primes, solve 
 
 <br>
 
+---
+
+<br>
 
 ## Constructibility Proofs {#constructibility-proofs}
 
@@ -943,7 +946,13 @@ There are a few ways to derive this. The easiest is to use symmetry. From the gr
 
 <br>
 
-The second property involves the complex conjugate of: $(\zeta^k)^* = \zeta^{n-k} = \zeta^{-k}$. Graphically, these correspond to the points of the polynomial on the mirrored side of the $x$-axis. Now, consider the following
+The second property involves the complex conjugate of $\zeta^k$. Graphically, these correspond to the points of the polynomial on the mirrored side of the $x$-axis. 
+
+$$
+(\zeta^k)^* = \left ( e^{i \frac{2 \pi k}{n}} \right )^* = e^{- i \frac{2 \pi k}{n}} = e^{i \frac{2 \pi (-k)}{n}} = \zeta^{-k}
+$$
+
+Now, consider the following
 
 $$
 \zeta^1 + \zeta^{-1} = [\cos(2 \pi/n) + i \sin(2 \pi/n)] + [\cos(2 \pi/n) - i \sin(2 \pi/n)] = 2 \cos(2 \pi/n)
@@ -1203,7 +1212,7 @@ Consider the following variable definitions.
 {% endtikz %}
 </center>
 
-These may seem like they came out of nowhere, but I assure you there are deep, deep mathematics behind them. Unfortunately, too much for me to cover in this already long post. I am planning on making a follow-up post. For further reading, I recommend studying <a href="https://nrich.maths.org/1422" target="_blank">Galois theory</a> and then reading <a href="https://people.reed.edu/~jerry/332/30kummer.pdf" target="_blank">this</a>.
+These may seem like they came out of nowhere, but I assure you there are deep, deep mathematics behind them. Unfortunately, it's too much for me to cover in this already long post. I am planning on making a follow-up post. For further reading, I recommend studying <a href="https://nrich.maths.org/1422" target="_blank">Galois theory</a> and then reading <a href="https://people.reed.edu/~jerry/332/30kummer.pdf" target="_blank">this</a>.
 
 <br>
 
@@ -1423,7 +1432,10 @@ With all of our new knowledge and understanding of this problem, let's explain w
 
 First, the $2^k$ part comes from starting with a regular polygon and bisecting each edge as many times as you like. We showed an example this by converting an equilateral triangle into a regular hexagon.
 
-Second, the $p_1 p_2 \ldots p_m$ part comes from the fact that primes are obviously coprime with eachother. Therefore, given a regular $p$-gon and regular $q$-gon, we can construct a regulat $pq$-gon. We showed an example of this method by constructing a regular $15$-gon using an equilateral triangle and a regular pentagon. Therefore, all that remains to be explained is why the primes need to be Fermat primes.
+Second, the $p_1 p_2 \ldots p_m$ part is explained by the trick which lets us combine any two coprime regular polygon. In particular, given a regular $p$-gon and regular $q$-gon (where $p$ and $q$ are coprime), we can construct a regular $pq$-gon. We showed an example of this method to construct a regular $15$-gon using an equilateral triangle and a regular pentagon. 
+
+
+Therefore, all that remains to be explained is why the primes need to be Fermat primes.
 
 Descartes provided a prided a bridge between ruler-and-compass constructions and algebra. He says that if a length can be expressed as a formula involving only $\ +, \ -, \ \times, \ \div, \text{ and } \sqrt{\ }$, then it is constructible (and vice versa). Thus, if we can construct $\cos(2 \pi / n)$, then we can construct the corresponding regular $n$-gon. 
 
