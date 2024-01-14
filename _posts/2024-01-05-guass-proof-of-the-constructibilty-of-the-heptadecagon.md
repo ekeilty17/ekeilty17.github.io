@@ -852,6 +852,74 @@ $$
 
 <br>
 
+Here is an anti-example of $\zeta^2$ in a regular hexagon which does not satsify the above property (since $2$ and $6$ share a common factor, thus we get stuck in a subcycle).
+
+<center>
+{% tikz hexagon-cycle %}
+  \usetikzlibrary{angles,patterns,calc}
+
+  \tikzset{
+    font={\fontsize{12pt}{12}\selectfont}
+  }
+
+  % INPUTS
+  \def\n{6}                     % just have to change this and everything else works
+  \def\m{5}                     % this is \n-1, it's annoying to have to write this, but it makes the forloops work
+                                % for some reason, calculating {\n-1} doesn't work
+  \def\eccentricity{1.8}        % You may also need to adjust this based on the size of the angle (for the label of the angle)
+
+  \def\angle{360/\n}
+  \def\r{3.5cm}
+  \def\pointradius{0.02*\r}
+
+  \def\x1{ {\r * cos(\angle)} }
+  \def\y1{ {\r * sin(\angle)} }
+
+  \coordinate (O) at (0,0);
+  \coordinate (X) at (\r,0);
+  \coordinate (Y) at (0, \r);
+  \coordinate (XY) at (\x1, \y1);
+
+  % draw the unit circle
+  \draw[very thick] (O) circle (\r);
+
+  % Drawing lines
+  \foreach \i in {1, 2, ..., \n} {
+    \edef\xprev{ {\r * cos((\i-1) * \angle)} }
+    \edef\yprev{ {\r * sin((\i-1) * \angle)} }
+    \edef\x{ {\r * cos((\i) * \angle)} }
+    \edef\y{ {\r * sin((\i) * \angle)} }
+    \draw[color=blue, very thick] (\xprev, \yprev) -- (\x, \y);
+  }
+
+  % Draw cycle
+  \foreach \i in {1, 2, 3} {
+    \edef\xprev{ {\r * cos(2*(\i-1) * \angle)} }
+    \edef\yprev{ {\r * sin(2*(\i-1) * \angle)} }
+    \edef\x{ {\r * cos(2*(\i) * \angle)} }
+    \edef\y{ {\r * sin(2*(\i) * \angle)} }
+    \draw[color=orange, very thick] (\xprev, \yprev) -- (\x, \y);
+  }
+
+  % Drawing points
+  \draw[color=blue, very thick, fill=blue] (\r, 0) circle (\pointradius) node[xshift=30, yshift=0] at (\r, 0) {$\zeta^{0} = \zeta^{n}$};
+  \foreach \i in {1, 2, ..., \m} {
+    \edef\x{ {\r * cos(\i * \angle)} }
+    \edef\y{ {\r * sin(\i * \angle)} }
+    \edef\xshift{ {15 * cos(\i * \angle)} }
+    \edef\yshift{ {15 * sin(\i * \angle)} }
+    \draw[color=blue, very thick, fill=blue] (\x, \y) circle (\pointradius) node[xshift=\xshift, yshift=\yshift] at (\x, \y) {$\zeta^{\i}$};
+  }
+
+{% endtikz %}
+</center>
+
+$$
+\langle \zeta^2 \rangle = \{ \zeta^{2}, \zeta^{4}, \zeta^{6} \} \neq \langle \zeta^1 \rangle
+$$
+
+<br>
+
 A root which satisfies this property is called a **primitive root**. If $n$ is prime, then all roots of the cyclotomic equation are primitive roots. The intuition is that since we assumed $n$ is prime, no integer can evenly divide it, and therefore you could never get a subcycle. For more details, I recommend studying <a href="https://brilliant.org/wiki/group-theory-introduction/" target="_blank">group theory</a>, in particular cyclic groups and cyclic subgroups.
 
 <br>
