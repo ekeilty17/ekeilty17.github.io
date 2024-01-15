@@ -119,8 +119,8 @@ $$
 \begin{align}
     &y = \coth(x) = \frac{e^x + e^{-x}}{e^x - e^{-x}} \\[10pt]
     &x = \frac{e^y + e^{-y}}{e^y - e^{-y}} = \frac{e^{2y} + 1}{e^{2y} - 1} \\[10pt]
-    &e^{2y} = \frac{1-x}{1+x} \\[10pt]
-    &y = \arccoth(x) = \frac{1}{2} \ln \left ( \frac{1-x}{1+x} \right )
+    &e^{2y} = \frac{x+1}{x-1} \\[10pt]
+    &y = \arccoth(x) = \frac{1}{2} \ln \left ( \frac{x+1}{x-1} \right )
 \end{align}
 $$
 

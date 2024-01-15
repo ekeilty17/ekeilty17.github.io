@@ -37,6 +37,8 @@ module Jekyll
 \usepackage{pgfplots}
 \usepackage{pst-plot}
 \pgfplotsset{compat=1.18} % version number
+\usepackage{physics}
+\usepackage[outline]{contour} % glow around text
 \begin{document}
 \begin{tikzpicture}
         END

@@ -8,6 +8,8 @@ permalink:  /blog/moments-of-inertia/
 <!-- [Summary of Moments of Inertia](/blog/moments-of-inertia/summary-of-moments-of-inertia) -->
 This series is still being developed
 
+Eventually, I am going to draw really nice diagrams for each object. Unfortunately, I haven't the time at the moment.
+
 {% assign sorted_posts = site.posts | where: 'series', 'moments-of-inertia' | sort: 'part' %}
 {% for post in sorted_posts %}
   <div class="post-link-container">

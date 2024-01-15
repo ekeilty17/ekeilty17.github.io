@@ -430,12 +430,18 @@ $$
 
 $$
 \begin{align}
-    &\arcsinh(x) = \ln \left ( x + \sqrt{x^2 + 1} \right ) \\[10pt]
-    &\arccosh(x) = \ln \left ( x + \sqrt{x^2 - 1} \right ) \\[10pt]
-    &\arctanh(x) = \frac{1}{2} \ln \left ( \frac{1+x}{1-x} \right ) \\[10pt]
-    &\arcsech(x) = \ln \left ( \frac{1}{x} + \sqrt{\frac{1}{x^2} - 1} \right ) \\[10pt]
-    &\arccsch(x) = \ln \left ( \frac{1}{x} + \sqrt{\frac{1}{x^2} + 1} \right ) \\[10pt]
-    &\arccoth(x) = \frac{1}{2} \ln \left ( \frac{1-x}{1+x} \right )
+    &\arcsinh(x) = \ln \left ( x + \sqrt{x^2 + 1} \right ) 
+    && \text{for all } x \\[10pt]
+    &\arccosh(x) = \ln \left ( x + \sqrt{x^2 - 1} \right ) 
+    && x \geq 1 \\[10pt]
+    &\arctanh(x) = \frac{1}{2} \ln \left ( \frac{1+x}{1-x} \right ) 
+    && \abs{x} < 1 \\[10pt]
+    &\arcsech(x) = \ln \left ( \frac{1}{x} + \sqrt{\frac{1}{x^2} - 1} \right ) 
+    && x \neq 0 \\[10pt]
+    &\arccsch(x) = \ln \left ( \frac{1}{x} + \sqrt{\frac{1}{x^2} + 1} \right ) 
+    && 0 < x \leq 1 \\[10pt]
+    &\arccoth(x) = \frac{1}{2} \ln \left ( \frac{x+1}{x-1} \right )
+    && \abs{x} > 1 
 \end{align}
 $$
 
