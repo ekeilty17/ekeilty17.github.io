@@ -17,7 +17,7 @@ $$
 
 ## Logarithms
 
-I will assume the reader is comfortable with the properties if logarithms. Let $b \in \mathbb{R}$ and $b > 1$.
+I will assume the reader is comfortable with the properties of logarithms. Let $b \in \mathbb{R}$ and $b > 1$.
 
 $$
 \begin{align}

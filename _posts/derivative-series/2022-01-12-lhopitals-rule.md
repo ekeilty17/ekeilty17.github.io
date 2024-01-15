@@ -1,10 +1,10 @@
 ---
 layout:     series
 title:      "L'H&ocirc;pital's Rule"
-date:       2022-01-11
+date:       2022-01-12
 categories: blog derivative-proofs
 permalink:  ":categories/:title/"
-part:       10
+part:       11
 series:     derivative-proofs
 tags:       derivatives, lhopitals-rule
 ---

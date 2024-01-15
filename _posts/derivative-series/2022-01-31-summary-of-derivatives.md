@@ -48,40 +48,40 @@ Let $c$ and $r$ be any constant. Let $b > 1$ be any constant. Let $e$ be Euler's
 
 We have derivatives of the trigonometric and inverse trigonometric functions.
 
-| **Function**          | **Derivative**                                |
-|:---------------------:|:---------------------------------------------:|
-| $\sin x$              | $\cos x$                                      |
-| $\cos x$              | $- \sin x$                                    |
-| $\tan x$              | $\sec^2 x$                                    |
-| $\sec x$              | $\tan x \sec x$                               |
-| $\csc x$              | $- \cot x \csc x$                             |
-| $\cot x$              | $-\csc^2 x$                                   |
-| $\sin^{-1} x$         | $\frac{1}{\sqrt{1 - x^2}}$                    |
-| $\cos^{-1} x$         | $- \frac{1}{\sqrt{1 - x^2}}$                  |
-| $\tan^{-1} x$         | $\frac{1}{1 + x^2}$                           |
-| $\sec^{-1} x$         | $\frac{1}{\lvert x \rvert \sqrt{x^2 - 1} }$   |
-| $\csc^{-1} x$         | $- \frac{1}{\lvert x \rvert \sqrt{x^2 - 1} }$ |
-| $\cot^{-1} x$         | $- \frac{1}{1 + x^2}$                         |
+| **Function**          | **Derivative**                                | **Condition**         |
+|:---------------------:|:---------------------------------------------:|:---------------------:|
+| $\sin x$              | $\cos x$                                      ||
+| $\cos x$              | $- \sin x$                                    ||
+| $\tan x$              | $\sec^2 x$                                    ||
+| $\sec x$              | $\tan x \sec x$                               ||
+| $\csc x$              | $- \cot x \csc x$                             ||
+| $\cot x$              | $-\csc^2 x$                                   ||
+| $\arcsin x$           | $\frac{1}{\sqrt{1 - x^2}}$                    | $\abs{x} \leq 1 $     |
+| $\arccos x$           | $\frac{- 1}{\sqrt{1 - x^2}}$                  | $\abs{x} \leq 1 $     |
+| $\arctan x$           | $\frac{1}{1 + x^2}$                           ||
+| $\arcsec x$           | $\frac{1}{\lvert x \rvert \sqrt{x^2 - 1} }$   | $x \geq 1 $           |
+| $\arccsc x$           | $\frac{- 1}{\lvert x \rvert \sqrt{x^2 - 1} }$ | $x \geq 1 $           |
+| $\arccot x$           | $\frac{- 1}{1 + x^2}$                         ||
 
 
 <br>
 
 We have derivatives of the hyperbolic trigonometric and inverse hyperbolic trigonometric functions.
 
-| **Function**          | **Derivative**            | **Condition**     |
-|:---------------------:|:-------------------------:|:-----------------:|
-| $\sinh x$             | $\cosh x$ |
-| $\cosh x$             | $\sinh x$ |
-| $\tanh x$             | $\color{black}{\text{sech}}^2 \, x$ |
-| $\color{black}{\text{sech}} \ x$     | $-\tanh x \ \color{black}{\text{sech}} \ x$ |
-| $\color{black}{\text{csch}} \ x$     | $- \color{black}{\text{csch}}^2 \, x$ |
-| $\coth x$             | $- \coth x \ \color{black}{\text{csch}} \ x$ |
-| $\sinh^{-1} x$        | $\frac{1}{\sqrt{1 + x^2}}$ |
-| $\cosh^{-1} x$        | $\frac{1}{\sqrt{x^2 - 1}}$ | $x > 1$ | 
-| $\tanh^{-1} x$        | $\frac{1}{1-x^2}$ | $\lvert x \rvert < 1$ |
-| $\color{black}{\text{sech}}^{-1} \ x$  | $- \frac{1}{\lvert x \rvert \sqrt{1 + x^2} }$ |
-| $\color{black}{\text{csch}}^{-1} \ x$  | $- \frac{1}{\lvert x \rvert \sqrt{1 - x^2} }$ |
-| $\coth^{-1} x$        | $\frac{1}{1-x^2}$ | $\lvert x \rvert > 1$ |
+| **Function**  | **Derivative**                                | **Condition**         |
+|:-------------:|:---------------------------------------------:|:---------------------:|
+| $\sinh x$     | $\cosh x$                                     ||
+| $\cosh x$     | $\sinh x$                                     ||
+| $\tanh x$     | $\sech^2 x$                                   ||
+| $\sech x$     | $-\tanh x \sech x$                            ||
+| $\csch x$     | $- \coth x \csch x$                           | $x \neq 0$            |
+| $\coth x$     | $- \csch^2 x$                                 | $x \neq 0$            |
+| $\arcsinh x$  | $\frac{1}{\sqrt{1 + x^2}}$                    ||
+| $\arccosh x$  | $\frac{1}{\sqrt{x^2 - 1}}$                    | $x > 1$               | 
+| $\arctanh x$  | $\frac{1}{1-x^2}$                             | $\lvert x \rvert < 1$ |
+| $\arcsech x$  | $\frac{- 1}{\lvert x \rvert \sqrt{1 + x^2} }$ | $0 < x < 1$           |
+| $\arccsch x$  | $\frac{- 1}{\lvert x \rvert \sqrt{1 - x^2} }$ | $x \neq 0$            |
+| $\arccoth x$  | $\frac{1}{1-x^2}$                             | $\lvert x \rvert > 1$ |
 
 <br>
 

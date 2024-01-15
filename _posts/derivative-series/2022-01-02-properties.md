@@ -9,7 +9,7 @@ series:     derivative-proofs
 tags:       derivatives, linearity, chain-rule, product-rule, quotient-rule, inverse-functions
 ---
 
-Let $f$ and $g$ be differntiable functions and $c$ a constant.
+Let $f$ and $g$ be differentiable functions and $c$ a constant.
 
 ## Scalar Multiplication
 

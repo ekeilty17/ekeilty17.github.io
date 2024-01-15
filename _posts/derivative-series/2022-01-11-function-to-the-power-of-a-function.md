@@ -1,10 +1,10 @@
 ---
 layout:     series
 title:      "Function to the Power of a Function"
-date:       2022-01-10
+date:       2022-01-11
 categories: blog derivative-proofs
 permalink:  ":categories/:title/"
-part:       9
+part:       10
 series:     derivative-proofs
 tags:       derivatives, exponentials, implicit-differentiation
 ---
