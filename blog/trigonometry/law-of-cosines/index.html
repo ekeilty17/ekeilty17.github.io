@@ -46,6 +46,18 @@
             extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
             Macros: {
                 b: ["{\\boldsymbol #1}",1],
+                u: ["{\\hat{\\boldsymbol #1}}",1],
+                arccsc: ["\\operatorname\{arccsc\}"],
+                arcsec: ["\\operatorname\{arcsec\}"],
+                arccot: ["\\operatorname\{arccot\}"],
+                csch: ["\\operatorname\{csch\}"],
+                sech: ["\\operatorname\{sech\}"],
+                arcsinh: ["\\operatorname\{arcsinh\}"],
+                arccosh: ["\\operatorname\{arccosh\}"],
+                arctanh: ["\\operatorname\{arctanh\}"],
+                arccsch: ["\\operatorname\{arccsch\}"],
+                arcsech: ["\\operatorname\{arcsech\}"],
+                arccoth: ["\\operatorname\{arccoth\}"],
                 seq: ["{\\left \\langle #1 \\right \\rangle}",1],
                 iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
                 abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
@@ -216,7 +228,7 @@ c^2 = a^2 + b^2 - 2ab \cos(C)\]
 <p>Using the definition of $\sin$, the definition of $\cos$, the Pythagorean Theorem, and the supplementary angle identity for $\cos$, we have the following observations.</p>
 
 <ol>
-  <li>$x = c \cos (180 - B) = - c \cos B$</li>
+  <li>$x = c \cos (180^{\circ} - B) = - c \cos B$</li>
   <li>$h = c \sin B$</li>
   <li>$(a + x)^2 + h^2 = b^2$</li>
 </ol>

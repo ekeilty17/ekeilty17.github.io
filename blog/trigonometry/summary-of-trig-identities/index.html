@@ -46,6 +46,18 @@
             extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
             Macros: {
                 b: ["{\\boldsymbol #1}",1],
+                u: ["{\\hat{\\boldsymbol #1}}",1],
+                arccsc: ["\\operatorname\{arccsc\}"],
+                arcsec: ["\\operatorname\{arcsec\}"],
+                arccot: ["\\operatorname\{arccot\}"],
+                csch: ["\\operatorname\{csch\}"],
+                sech: ["\\operatorname\{sech\}"],
+                arcsinh: ["\\operatorname\{arcsinh\}"],
+                arccosh: ["\\operatorname\{arccosh\}"],
+                arctanh: ["\\operatorname\{arctanh\}"],
+                arccsch: ["\\operatorname\{arccsch\}"],
+                arcsech: ["\\operatorname\{arcsech\}"],
+                arccoth: ["\\operatorname\{arccoth\}"],
                 seq: ["{\\left \\langle #1 \\right \\rangle}",1],
                 iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
                 abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
@@ -434,12 +446,43 @@
 
 <h2 id="hyperbolic-trigonometric-functions">Hyperbolic Trigonometric Functions</h2>
 
+<h2 id="exponential-definitions">Exponential Definitions</h2>
+
 \[\begin{align}
-    &amp;\cosh(x) = \cos(ix) 
-    &amp;\qquad
-    &amp;\sinh(x) = -i\sin(ix) 
-    &amp;\qquad
-    &amp;\tanh(x) = -i\tan(ix)
+    \sinh x &amp;= \frac{e^{x} - e^{-x}}{2} = \frac{e^{2x} - 1}{2e^{x}} = \frac{1 - e^{-2x}}{2e^{-x}} \\[15pt]
+    \cosh x &amp;= \frac{e^{x} + e^{-x}}{2} = \frac{e^{2x} + 1}{2e^{x}} = \frac{1 + e^{-2x}}{2e^{-x}} \\[15pt]
+    \tanh x &amp;= \frac{e^{x} - e^{-x}}{e^{x} + e^{-x}} = \frac{e^{2x} - 1}{e^{2x} + 1} \\[15pt]
+    \csch x &amp;= \frac{1}{\sinh x} \\[10pt]
+    \sech x &amp;= \frac{1}{\cosh x} \\[10pt]
+    \coth x &amp;= \frac{1}{\tanh x} = \frac{\cosh x}{\sinh x}
+\end{align}\]
+
+<h2 id="relationship-to-standard-trigonometric-functions">Relationship to Standard Trigonometric Functions</h2>
+
+\[\begin{align}
+    &amp;\sinh x = -i \sin (i x) &amp;\qquad\qquad&amp; \sin x = -i \sinh(ix) \\[10pt]
+    &amp;\cosh x = \cos (i x) &amp;\qquad\qquad&amp; \cos x = \cosh(ix) \\[10pt]
+    &amp;\tanh x = -i \tan (i x) &amp;\qquad\qquad&amp; \tan x = -i \tanh(ix) \\[10pt]
+    &amp;\sech x = \sec (i x) &amp;\qquad\qquad&amp; \sec x = \sech(ix) \\[10pt]
+    &amp;\csch x = i \csc (i x) &amp;\qquad\qquad&amp; \csc x = i \csch(ix) \\[10pt]
+    &amp;\coth x = i \cot (i x) &amp;\qquad\qquad&amp; \cot x = i \coth(ix)
+\end{align}\]
+
+<h2 id="inverse-functions">Inverse Functions</h2>
+
+\[\begin{align}
+    &amp;\arcsinh(x) = \ln \left ( x + \sqrt{x^2 + 1} \right ) 
+    &amp;&amp; \text{for all } x \\[10pt]
+    &amp;\arccosh(x) = \ln \left ( x + \sqrt{x^2 - 1} \right ) 
+    &amp;&amp; x \geq 1 \\[10pt]
+    &amp;\arctanh(x) = \frac{1}{2} \ln \left ( \frac{1+x}{1-x} \right ) 
+    &amp;&amp; \abs{x} &lt; 1 \\[10pt]
+    &amp;\arcsech(x) = \ln \left ( \frac{1}{x} + \sqrt{\frac{1}{x^2} - 1} \right ) 
+    &amp;&amp; x \neq 0 \\[10pt]
+    &amp;\arccsch(x) = \ln \left ( \frac{1}{x} + \sqrt{\frac{1}{x^2} + 1} \right ) 
+    &amp;&amp; 0 &lt; x \leq 1 \\[10pt]
+    &amp;\arccoth(x) = \frac{1}{2} \ln \left ( \frac{x+1}{x-1} \right )
+    &amp;&amp; \abs{x} &gt; 1 
 \end{align}\]
 
 <p><br /></p>

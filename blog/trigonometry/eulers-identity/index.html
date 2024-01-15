@@ -46,6 +46,18 @@
             extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
             Macros: {
                 b: ["{\\boldsymbol #1}",1],
+                u: ["{\\hat{\\boldsymbol #1}}",1],
+                arccsc: ["\\operatorname\{arccsc\}"],
+                arcsec: ["\\operatorname\{arcsec\}"],
+                arccot: ["\\operatorname\{arccot\}"],
+                csch: ["\\operatorname\{csch\}"],
+                sech: ["\\operatorname\{sech\}"],
+                arcsinh: ["\\operatorname\{arcsinh\}"],
+                arccosh: ["\\operatorname\{arccosh\}"],
+                arctanh: ["\\operatorname\{arctanh\}"],
+                arccsch: ["\\operatorname\{arccsch\}"],
+                arcsech: ["\\operatorname\{arcsech\}"],
+                arccoth: ["\\operatorname\{arccoth\}"],
                 seq: ["{\\left \\langle #1 \\right \\rangle}",1],
                 iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
                 abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
@@ -158,7 +170,7 @@
 
 <h2 id="proof-of-eulers-identity">Proof of Euler’s Identity</h2>
 
-<p>Let $z = cis \ \theta$ be any complex number. Define $\displaystyle z_n = \left (1 + \frac{i \theta}{n} \right )^n = r_n \ cis \ \theta_n$. We are going to prove that $\displaystyle \lim_{n \rightarrow \infty} z_n = z$. To do this, we will prove that $\displaystyle \lim_{n \rightarrow \infty} r_n = 1$ and $\displaystyle \lim_{n \rightarrow \infty} \theta_n = \theta$.</p>
+<p>Let $z = cis \ \theta$ be any complex number with a magnutide of $1$. Define $\displaystyle z_n = \left (1 + \frac{i \theta}{n} \right )^n = r_n \ cis \ \theta_n$. We are going to prove that $\displaystyle \lim_{n \rightarrow \infty} z_n = z$. To do this, we will prove that $\displaystyle \lim_{n \rightarrow \infty} r_n = 1$ and $\displaystyle \lim_{n \rightarrow \infty} \theta_n = \theta$.</p>
 
 <p>First, we need to evaluate $\displaystyle w = \left ( 1 + \frac{i \theta}{n} \right ) = s \ cis \ \phi$</p>
 
@@ -181,7 +193,7 @@
     &amp;= 1
 \end{align}\]
 
-<p>Now we do $\theta_n$. I’m going to be a bit unrigorous so as to not go into derivatives. First, we utilize something called the small-angle approximation.</p>
+<p>Now we do $\theta_n$. I’m going to be a bit unrigorous in order to avoid derivatives. First, we utilize something called the small-angle approximation.</p>
 
 <center>
 <embed src="/svg/eulers-identity/small-angle.svg" type="image/svg+xml" />

@@ -46,6 +46,18 @@
             extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
             Macros: {
                 b: ["{\\boldsymbol #1}",1],
+                u: ["{\\hat{\\boldsymbol #1}}",1],
+                arccsc: ["\\operatorname\{arccsc\}"],
+                arcsec: ["\\operatorname\{arcsec\}"],
+                arccot: ["\\operatorname\{arccot\}"],
+                csch: ["\\operatorname\{csch\}"],
+                sech: ["\\operatorname\{sech\}"],
+                arcsinh: ["\\operatorname\{arcsinh\}"],
+                arccosh: ["\\operatorname\{arccosh\}"],
+                arctanh: ["\\operatorname\{arctanh\}"],
+                arccsch: ["\\operatorname\{arccsch\}"],
+                arcsech: ["\\operatorname\{arcsech\}"],
+                arccoth: ["\\operatorname\{arccoth\}"],
                 seq: ["{\\left \\langle #1 \\right \\rangle}",1],
                 iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
                 abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
@@ -250,56 +262,69 @@
     <tr>
       <th style="text-align: center"><strong>Function</strong></th>
       <th style="text-align: center"><strong>Derivative</strong></th>
+      <th style="text-align: center"><strong>Condition</strong></th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td style="text-align: center">$\sin x$</td>
       <td style="text-align: center">$\cos x$</td>
+      <td style="text-align: center"> </td>
     </tr>
     <tr>
       <td style="text-align: center">$\cos x$</td>
       <td style="text-align: center">$- \sin x$</td>
+      <td style="text-align: center"> </td>
     </tr>
     <tr>
       <td style="text-align: center">$\tan x$</td>
       <td style="text-align: center">$\sec^2 x$</td>
+      <td style="text-align: center"> </td>
     </tr>
     <tr>
       <td style="text-align: center">$\sec x$</td>
       <td style="text-align: center">$\tan x \sec x$</td>
+      <td style="text-align: center"> </td>
     </tr>
     <tr>
       <td style="text-align: center">$\csc x$</td>
       <td style="text-align: center">$- \cot x \csc x$</td>
+      <td style="text-align: center"> </td>
     </tr>
     <tr>
       <td style="text-align: center">$\cot x$</td>
       <td style="text-align: center">$-\csc^2 x$</td>
+      <td style="text-align: center"> </td>
     </tr>
     <tr>
-      <td style="text-align: center">$\sin^{-1} x$</td>
+      <td style="text-align: center">$\arcsin x$</td>
       <td style="text-align: center">$\frac{1}{\sqrt{1 - x^2}}$</td>
+      <td style="text-align: center">$\abs{x} \leq 1 $</td>
     </tr>
     <tr>
-      <td style="text-align: center">$\cos^{-1} x$</td>
-      <td style="text-align: center">$- \frac{1}{\sqrt{1 - x^2}}$</td>
+      <td style="text-align: center">$\arccos x$</td>
+      <td style="text-align: center">$\frac{- 1}{\sqrt{1 - x^2}}$</td>
+      <td style="text-align: center">$\abs{x} \leq 1 $</td>
     </tr>
     <tr>
-      <td style="text-align: center">$\tan^{-1} x$</td>
+      <td style="text-align: center">$\arctan x$</td>
       <td style="text-align: center">$\frac{1}{1 + x^2}$</td>
+      <td style="text-align: center"> </td>
     </tr>
     <tr>
-      <td style="text-align: center">$\sec^{-1} x$</td>
+      <td style="text-align: center">$\arcsec x$</td>
       <td style="text-align: center">$\frac{1}{\lvert x \rvert \sqrt{x^2 - 1} }$</td>
+      <td style="text-align: center">$x \geq 1 $</td>
     </tr>
     <tr>
-      <td style="text-align: center">$\csc^{-1} x$</td>
-      <td style="text-align: center">$- \frac{1}{\lvert x \rvert \sqrt{x^2 - 1} }$</td>
+      <td style="text-align: center">$\arccsc x$</td>
+      <td style="text-align: center">$\frac{- 1}{\lvert x \rvert \sqrt{x^2 - 1} }$</td>
+      <td style="text-align: center">$x \geq 1 $</td>
     </tr>
     <tr>
-      <td style="text-align: center">$\cot^{-1} x$</td>
-      <td style="text-align: center">$- \frac{1}{1 + x^2}$</td>
+      <td style="text-align: center">$\arccot x$</td>
+      <td style="text-align: center">$\frac{- 1}{1 + x^2}$</td>
+      <td style="text-align: center"> </td>
     </tr>
   </tbody>
 </table>
@@ -329,51 +354,51 @@
     </tr>
     <tr>
       <td style="text-align: center">$\tanh x$</td>
-      <td style="text-align: center">$\color{black}{\text{sech}}^2 \, x$</td>
+      <td style="text-align: center">$\sech^2 x$</td>
       <td style="text-align: center"> </td>
     </tr>
     <tr>
-      <td style="text-align: center">$\color{black}{\text{sech}} \ x$</td>
-      <td style="text-align: center">$-\tanh x \ \color{black}{\text{sech}} \ x$</td>
+      <td style="text-align: center">$\sech x$</td>
+      <td style="text-align: center">$-\tanh x \sech x$</td>
       <td style="text-align: center"> </td>
     </tr>
     <tr>
-      <td style="text-align: center">$\color{black}{\text{csch}} \ x$</td>
-      <td style="text-align: center">$- \color{black}{\text{csch}}^2 \, x$</td>
-      <td style="text-align: center"> </td>
+      <td style="text-align: center">$\csch x$</td>
+      <td style="text-align: center">$- \coth x \csch x$</td>
+      <td style="text-align: center">$x \neq 0$</td>
     </tr>
     <tr>
       <td style="text-align: center">$\coth x$</td>
-      <td style="text-align: center">$- \coth x \ \color{black}{\text{csch}} \ x$</td>
-      <td style="text-align: center"> </td>
+      <td style="text-align: center">$- \csch^2 x$</td>
+      <td style="text-align: center">$x \neq 0$</td>
     </tr>
     <tr>
-      <td style="text-align: center">$\sinh^{-1} x$</td>
+      <td style="text-align: center">$\arcsinh x$</td>
       <td style="text-align: center">$\frac{1}{\sqrt{1 + x^2}}$</td>
       <td style="text-align: center"> </td>
     </tr>
     <tr>
-      <td style="text-align: center">$\cosh^{-1} x$</td>
+      <td style="text-align: center">$\arccosh x$</td>
       <td style="text-align: center">$\frac{1}{\sqrt{x^2 - 1}}$</td>
       <td style="text-align: center">$x &gt; 1$</td>
     </tr>
     <tr>
-      <td style="text-align: center">$\tanh^{-1} x$</td>
+      <td style="text-align: center">$\arctanh x$</td>
       <td style="text-align: center">$\frac{1}{1-x^2}$</td>
       <td style="text-align: center">$\lvert x \rvert &lt; 1$</td>
     </tr>
     <tr>
-      <td style="text-align: center">$\color{black}{\text{sech}}^{-1} \ x$</td>
-      <td style="text-align: center">$- \frac{1}{\lvert x \rvert \sqrt{1 + x^2} }$</td>
-      <td style="text-align: center"> </td>
+      <td style="text-align: center">$\arcsech x$</td>
+      <td style="text-align: center">$\frac{- 1}{\lvert x \rvert \sqrt{1 + x^2} }$</td>
+      <td style="text-align: center">$0 &lt; x &lt; 1$</td>
     </tr>
     <tr>
-      <td style="text-align: center">$\color{black}{\text{csch}}^{-1} \ x$</td>
-      <td style="text-align: center">$- \frac{1}{\lvert x \rvert \sqrt{1 - x^2} }$</td>
-      <td style="text-align: center"> </td>
+      <td style="text-align: center">$\arccsch x$</td>
+      <td style="text-align: center">$\frac{- 1}{\lvert x \rvert \sqrt{1 - x^2} }$</td>
+      <td style="text-align: center">$x \neq 0$</td>
     </tr>
     <tr>
-      <td style="text-align: center">$\coth^{-1} x$</td>
+      <td style="text-align: center">$\arccoth x$</td>
       <td style="text-align: center">$\frac{1}{1-x^2}$</td>
       <td style="text-align: center">$\lvert x \rvert &gt; 1$</td>
     </tr>

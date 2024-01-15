@@ -46,6 +46,18 @@
             extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
             Macros: {
                 b: ["{\\boldsymbol #1}",1],
+                u: ["{\\hat{\\boldsymbol #1}}",1],
+                arccsc: ["\\operatorname\{arccsc\}"],
+                arcsec: ["\\operatorname\{arcsec\}"],
+                arccot: ["\\operatorname\{arccot\}"],
+                csch: ["\\operatorname\{csch\}"],
+                sech: ["\\operatorname\{sech\}"],
+                arcsinh: ["\\operatorname\{arcsinh\}"],
+                arccosh: ["\\operatorname\{arccosh\}"],
+                arctanh: ["\\operatorname\{arctanh\}"],
+                arccsch: ["\\operatorname\{arccsch\}"],
+                arcsech: ["\\operatorname\{arcsech\}"],
+                arccoth: ["\\operatorname\{arccoth\}"],
                 seq: ["{\\left \\langle #1 \\right \\rangle}",1],
                 iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
                 abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
@@ -144,15 +156,15 @@
             <!-- maybe I'll add tagging later
             <span class="post-date" style="margin-top:-1em;"> ["trigonometry, ",  "triangles, ",  "30-60-90, ",  "45-45-90"] </span>
             -->
-            <p>These triangles are so commonly found in geometry, trigonometry, and higher mathematics, they deserve their own post. They form the building blocks of other more complicated structures.</p>
+            <p>These triangles are so commonly found in geometry, trigonometry, and higher mathematics, that they deserve their own post. They form the building blocks of other more complicated structures.</p>
 
 <p><br /></p>
 
 <h2 id="30-60-90-triangles">30-60-90 Triangles</h2>
 
-<p>Consider an <strong>equilateral triangle</strong> with all side-lengths of $s$. A result in geometry is that all the internal angles of a triangle add up to $180^{\circ} = \pi \ \text{rad}$. By symmetry, it must be the case that all the angles of an equilateral triangle are equal, and thus must be $60^{\circ} = \pi/3 \ \text{rad}$.</p>
+<p>Consider an <strong>equilateral triangle</strong> with all side lengths of $s$. A result in geometry is that all the internal angles of a triangle add up to $180^{\circ} = \pi \ \text{rad}$. By symmetry, it must be the case that all the angles of an equilateral triangle are equal, and thus must be $60^{\circ} = \pi/3 \ \text{rad}$.</p>
 
-<p>Now, draw the perpendoicular bisector of one of the angles, which will cut the triangle in half. The result is a $30{-}60{-}90$ triangle.</p>
+<p>Now, draw the perpendicular bisector of one of the angles, which will cut the triangle in half. The result is a $30{-}60{-}90$ triangle.</p>
 
 <center>
 <embed src="/svg/famous-triangles/30-60-90-triangle.svg" type="image/svg+xml" />
@@ -198,13 +210,13 @@
 
 <h2 id="45-45-90-triangles">45-45-90 Triangles</h2>
 
-<p>Consider a <strong>right, isosceles triangle</strong>. Given the length of the hypotenuse there is only one way to construct this triangle, which is given below.</p>
+<p>Consider a <strong>right, isosceles triangle</strong>. Given the length of the hypotenuse, there is only one way to construct this triangle, which is given below.</p>
 
 <center>
 <embed src="/svg/famous-triangles/45-45-90-triangle.svg" type="image/svg+xml" />
 </center>
 
-<p>Again, using the Pythagorean theorem, we can easliy compute the value of $x$.</p>
+<p>Again, using the Pythagorean theorem, we can easily compute the value of $x$.</p>
 
 \[\begin{align}
     x^2 + x^2 = s^2 \\[10pt]

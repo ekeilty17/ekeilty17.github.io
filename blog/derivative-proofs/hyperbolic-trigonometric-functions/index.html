@@ -46,6 +46,18 @@
             extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
             Macros: {
                 b: ["{\\boldsymbol #1}",1],
+                u: ["{\\hat{\\boldsymbol #1}}",1],
+                arccsc: ["\\operatorname\{arccsc\}"],
+                arcsec: ["\\operatorname\{arcsec\}"],
+                arccot: ["\\operatorname\{arccot\}"],
+                csch: ["\\operatorname\{csch\}"],
+                sech: ["\\operatorname\{sech\}"],
+                arcsinh: ["\\operatorname\{arcsinh\}"],
+                arccosh: ["\\operatorname\{arccosh\}"],
+                arctanh: ["\\operatorname\{arctanh\}"],
+                arccsch: ["\\operatorname\{arccsch\}"],
+                arcsech: ["\\operatorname\{arcsech\}"],
+                arccoth: ["\\operatorname\{arccoth\}"],
                 seq: ["{\\left \\langle #1 \\right \\rangle}",1],
                 iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
                 abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
@@ -142,88 +154,82 @@
             <!-- <span class="series-date">09 Jan 2022</span> -->
             <time datetime="2022-01-09T00:00:00-05:00" class="post-date">09 Jan 2022</time>
             <!-- maybe I'll add tagging later
-            <span class="post-date" style="margin-top:-1em;"> ["derivatives, ",  "hyperbolic-trigonometric-functions, ",  "hyperbolic-trigonometry, ",  "sine, ",  "cosine, ",  "tangent, ",  "secant, ",  "cosecant, ",  "cotangent"] </span>
+            <span class="post-date" style="margin-top:-1em;"> ["derivatives, ",  "hyperbolic-trigonometric-functions, ",  "hyperbolic-trigonometry"] </span>
             -->
-            <h2 id="sine">Sine</h2>
+            <h2 id="definitions">Definitions</h2>
+
+<p>Recall the relationship of the hyperbolic trig functions to the standard trig functions. I have a <a href="/blog/trigonometry/">series</a> on trigonometry and a <a href="/blog/trigonometry/hyperbolic-trig-functions/">post</a> which explains these definitions.</p>
 
 \[\begin{align}
-    \frac{d}{dx} \sin (x)
-    &amp;= \lim_{h \rightarrow 0} \ \frac{\sin(x+h) - \sin(x)}{h} \\[10pt]
-    &amp;= \lim_{h \rightarrow 0} \ \frac{\sin(x)\cos(h) + \sin(h)\cos(x) - \sin(x)}{h} \\[10pt]
-    &amp;= \lim_{h \rightarrow 0} \ \frac{\sin(x)(\cos(h)-1) + \sin(h)\cos(x)}{h} \\[10pt]
-    &amp;= \sin(x) \left ( \lim_{h \rightarrow 0} \ \frac{\cos(h)-1}{h} \right ) + \cos(x) \left ( \lim_{h \rightarrow 0} \ \frac{\sin(h)}{h} \right ) \\[10pt]
-    &amp;= \sin(x) \cdot 0 + \cos(x) \cdot 1 \\[10pt]
-    &amp;= \cos(x)
+    &amp;\sinh x = -i \sin (i x) &amp;\qquad\qquad&amp; \sech \ x = \sec (i x) \\[10pt]
+    &amp;\cosh x = \cos (i x) &amp;\qquad\qquad&amp; \csch \ x = i \csc (i x) \\[10pt]
+    &amp;\tanh x = -i \tan (i x) &amp;\qquad\qquad&amp; \coth x = i \cot (i x)
 \end{align}\]
 
 <p><br /></p>
 
-<h2 id="cosine">Cosine</h2>
+<h2 id="hyperbolic-sine">Hyperbolic Sine</h2>
 
 \[\begin{align}
-    \frac{d}{dx} \cos (x)
-    &amp;= \lim_{h \rightarrow 0} \ \frac{\cos(x+h) - \cos(x)}{h} \\[10pt]
-    &amp;= \lim_{h \rightarrow 0} \ \frac{\cos(x)\cos(h) - \sin(x)\sin(h) - \cos(x)}{h} \\[10pt]
-    &amp;= \lim_{h \rightarrow 0} \ \frac{\cos(x)(\cos(h)-1) - \sin(x)\sin(h)}{h} \\[10pt]
-    &amp;= \cos(x) \left ( \lim_{h \rightarrow 0} \ \frac{\cos(h)-1}{h} \right ) - \sin(x) \left ( \lim_{h \rightarrow 0} \ \frac{\sin(h)}{h} \right ) \\[10pt]
-    &amp;= \cos(x) \cdot 0 - \sin(x) \cdot 1 \\[10pt]
-    &amp;= - \sin(x)
+    \frac{d}{dx} \sinh (x)
+    &amp;= \frac{d}{dx} \left [ - i \sin (i x) \right ] \\[10pt]
+    &amp;= -i \cdot i \cos (i x) \\[10pt]
+    &amp;= \cos (i x) \\[10pt]
+    &amp;= \cosh(x)
 \end{align}\]
 
 <p><br /></p>
 
-<h2 id="tangent">Tangent</h2>
-
-<p>Using the quotient rule.</p>
+<h2 id="hyperbolic-cosine">Hyperbolic Cosine</h2>
 
 \[\begin{align}
-    \frac{d}{dx} \tan (x)
-    &amp;= \frac{d}{dx} \frac{\sin(x)}{\cos(x)} \\[10pt]
-    &amp;= \frac{\frac{d}{dx} \left [ \sin(x) \right ] \cdot \cos(x) - \sin(x) \cdot \frac{d}{dx} \left [ \cos(x) \right ]}{\left ( \cos(x) \right )^2} \\[10pt]
-    &amp;= \frac{\cos(x) \cdot \cos(x) - \sin(x) \cdot (-\sin(x))}{\cos^2(x)} \\[10pt]
-    &amp;= \frac{\cos^2(x) + \sin^2(x)}{\cos^2(x)} \\[10pt]
-    &amp;= \frac{1}{\cos^2(x)} \\[10pt]
-    &amp;= \sec^2(x) \\[10pt]
+    \frac{d}{dx} \cosh (x)
+    &amp;= \frac{d}{dx} \left [ \cos (i x) \right ] \\[10pt]
+    &amp;= - i \sin (i x) \\[10pt]
+    &amp;= \sinh(x)
 \end{align}\]
 
 <p><br /></p>
 
-<h2 id="secant">Secant</h2>
-
-<p>Using reciprocal rule</p>
+<h2 id="hyperbolic-tangent">Hyperbolic Tangent</h2>
 
 \[\begin{align}
-    \frac{d}{dx} \sec (x)
-    &amp;= \frac{d}{dx} \frac{1}{\cos(x)} \\[10pt]
-    &amp;= - \frac{\frac{d}{dx} \cos (x)}{(\cos(x))^2} \\[10pt]
-    &amp;= - \frac{- \sin (x)}{\cos^2(x)} \\[10pt]
-    &amp;= \tan(x)\sec(x)
+    \frac{d}{dx} \tanh (x)
+    &amp;= \frac{d}{dx} \left [ - i \tan (i x) \right ] \\[10pt]
+    &amp;= -i \cdot i \sec^2 (i x) \\[10pt]
+    &amp;= \sec^2 (i x) \\[10pt]
+    &amp;= \sech^2 (x)
 \end{align}\]
 
-<h2 id="cosecant">Cosecant</h2>
+<p><br /></p>
 
-<p>Using reciprocal rule</p>
+<h2 id="hyperbolic-secant">Hyperbolic Secant</h2>
 
 \[\begin{align}
-    \frac{d}{dx} \csc (x)
-    &amp;= \frac{d}{dx} \frac{1}{\sin(x)} \\[10pt]
-    &amp;= - \frac{\frac{d}{dx} \sin (x)}{(\sin(x))^2} \\[10pt]
-    &amp;= - \frac{\cos (x)}{\sin^2(x)} \\[10pt]
-    &amp;= - \cot(x)\csc(x)
+    \frac{d}{dx} \sech (x)
+    &amp;= \frac{d}{dx} \left [ \sec (i x) \right ] \\[10pt]
+    &amp;= i \tan (i x) \sec (i x) \\[10pt]
+    &amp;= - \tanh(x) \sech(x)
 \end{align}\]
 
-<h2 id="cotangent">Cotangent</h2>
-
-<p>Using the quotient rule.</p>
+<h2 id="hyperbolic-cosecant">Hyperbolic Cosecant</h2>
 
 \[\begin{align}
-    \frac{d}{dx} \cot (x)
-    &amp;= \frac{d}{dx} \frac{\cos(x)}{\sin(x)} \\[10pt]
-    &amp;= \frac{\frac{d}{dx} \left [ \cos(x) \right ] \cdot \sin(x) - \cos(x) \cdot \frac{d}{dx} \left [ \sin(x) \right ]}{\left ( \sin(x) \right )^2} \\[10pt]
-    &amp;= \frac{(- \sin(x)) \cdot \sin(x) - \cos(x) \cdot \cos(x)}{\sin^2(x)} \\[10pt]
-    &amp;= - \frac{\sin^2(x) + \cos^2(x)}{\sin^2(x)} \\[10pt]
-    &amp;= -\frac{1}{\sin^2(x)} \\[10pt]
-    &amp;= -\csc^2(x) \\[10pt]
+    \frac{d}{dx} \csch (x)
+    &amp;= \frac{d}{dx} \left [ - i \csc (i x) \right ] \\[10pt]
+    &amp;= -i \cdot i \cot (i x) \csc(i x) \\[10pt]
+    &amp;= - i \cot (i x) \cdot i \csc(i x) \\[10pt]
+    &amp;= - \coth(x) \csch(x)
+\end{align}\]
+
+<h2 id="hyperbolic-cotangent">Hyperbolic Cotangent</h2>
+
+\[\begin{align}
+    \frac{d}{dx} \coth (x)
+    &amp;= \frac{d}{dx} \left [ i \cot (i x) \right ] \\[10pt]
+    &amp;= - i \cdot i \csc^2 (i x) \\[10pt]
+    &amp;= - \csc^2 (i x) \\[10pt]
+    &amp;= - \csch^2 (x)
 \end{align}\]
 
         </div>
@@ -250,7 +256,7 @@
                 <a class="pagination-item older" href="/blog/derivative-proofs/inverse-trigonometric-functions/">Previous</a>
             
             
-                <a class="pagination-item newer" href="/blog/derivative-proofs/function-to-the-power-of-a-function/">Next</a>
+                <a class="pagination-item newer" href="/blog/derivative-proofs/inverse-hyperbolic-trigonometric-functions/">Next</a>
             
         </div>
         <h3 style="text-align:center; margin-bottom:1em;">

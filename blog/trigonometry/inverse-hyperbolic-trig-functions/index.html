@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Inverse Hyperbolic Trigonometric Functions &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded MathJax (effectively LaTeX) support 
+    https://docs.mathjax.org/en/v2.7-latest/tex.html -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX", "input/MathML", "output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js", "mml2jax.js", "MathMenu.js", "MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
+            Macros: {
+                b: ["{\\boldsymbol #1}",1],
+                u: ["{\\hat{\\boldsymbol #1}}",1],
+                arccsc: ["\\operatorname\{arccsc\}"],
+                arcsec: ["\\operatorname\{arcsec\}"],
+                arccot: ["\\operatorname\{arccot\}"],
+                csch: ["\\operatorname\{csch\}"],
+                sech: ["\\operatorname\{sech\}"],
+                arcsinh: ["\\operatorname\{arcsinh\}"],
+                arccosh: ["\\operatorname\{arccosh\}"],
+                arctanh: ["\\operatorname\{arctanh\}"],
+                arccsch: ["\\operatorname\{arccsch\}"],
+                arcsech: ["\\operatorname\{arcsech\}"],
+                arccoth: ["\\operatorname\{arccoth\}"],
+                seq: ["{\\left \\langle #1 \\right \\rangle}",1],
+                iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
+                abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
+                hal: ["\\texttt{hal}"],
+                gal: ["\\texttt{gal}"],
+                sh: ["sh"],
+                st: ["st"]
+            },
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!--
+    TeX-AMS_HTML
+    TeX-AMS-MML_HTMLorMML
+    TeX-MML-AM_HTMLorMML
+-->
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">AI/ML Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+        <li>
+          <a href="/files/Eric Keilty - Resume.pdf" target="_blank">R&eacute;sum&eacute;</a>
+        </li>
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2024 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">Inverse Hyperbolic Trigonometric Functions</h1>
+            <!-- <span class="series-date">21 Aug 2022</span> -->
+            <time datetime="2022-08-21T00:00:00-04:00" class="post-date">21 Aug 2022</time>
+            <!-- maybe I'll add tagging later
+            <span class="post-date" style="margin-top:-1em;"> ["trigonometry, ",  "hyperbolic, ",  "hyperbola"] </span>
+            -->
+            <p>For background on inverse functions, refer to the <a href="/blog/trigonometry/inverse-trig-functions/">previous post</a> on the inverse standard trig functions.
+Looking at the graphs of the hyperbolic trig functions in the previous post, we can see that $\sinh$, $\tanh$, $\csch$, and $\coth$ are one-to-one, and therefore have a well-defined inverse. By contrast, $\cosh$ and $\sech$ are not one-to-one, so we will have to restrict their domain. Since we have exact formulas for the hyperbolic trig functions in terms of $e^x$, we will also get exact formulas for their inverse functions in terms of $\ln x$.</p>
+
+<p><br /></p>
+
+<h2 id="derivations">Derivations</h2>
+
+<h3 id="hyperbolic-sine">Hyperbolic Sine</h3>
+
+<p>The standard method for solving for inverse functions is to swap $x$ and $y$ and then isolate for $y$.</p>
+
+\[y = \sinh(x) = \frac{e^x - e^{-x}}{2}
+\qquad\implies\qquad
+x = \frac{e^y - e^{-y}}{2}\]
+
+<p>Now, we are going to isolate $e^y$, which will then let us isolate for $y$. Multiply both sides by $2e^{y}$.</p>
+
+\[2x e^y = e^{2y} - 1
+\qquad\implies\qquad
+(e^y)^2 - 2x e^y - 1 = 0\]
+
+<p>Use the quadratic formula.</p>
+
+\[e^y = \frac{2x \pm \sqrt{4x^2 + 4}}{2}
+\qquad\implies\qquad
+e^y = x \pm \sqrt{x^2 + 1}\]
+
+<p>Since $x &lt; \sqrt{x^2 + 1}$, $x - \sqrt{x^2 + 1}$ this will result in a negative number and thus no solution for $y$.</p>
+
+\[e^y = x + \sqrt{x^2 + 1}
+\qquad\implies\qquad
+y = \arcsinh(x) = \ln( x + \sqrt{x^2 + 1} )\]
+
+<h3 id="hyperbolic-cosine">Hyperbolic Cosine</h3>
+
+<p>The steps are almost identical to $\arcsinh$. I will skip a few steps to save space.</p>
+
+\[\begin{align}
+    &amp;y = \cosh(x) = \frac{e^x + e^{-x}}{2} \\[10pt]
+    &amp;x = \frac{e^y + e^{-y}}{2} \\[10pt]
+    &amp;(e^y)^2 - 2x e^y + 1 = 0 \\[10pt]
+    &amp;e^y = x \pm \sqrt{x^2 - 1} \\[10pt]
+    &amp;e^y = x + \sqrt{x^2 - 1} \\[10pt]
+    &amp;y = \arccosh(x) = \ln( x + \sqrt{x^2 - 1} )
+\end{align}\]
+
+<p>One thing to note is that the reason we neglect the root $e^y = x - \sqrt{x^2 - 1}$ is different than before. $x &gt; \sqrt{x^2 - 1}$, therefore the root will be positive and produce a solution for $y$. Our choice of using the root $e^y = x - \sqrt{x^2 - 1}$ is due to our choice of domain restriction.</p>
+
+<h3 id="hyperbolic-tangent">Hyperbolic Tangent</h3>
+
+<p>The methodology is very similar to the above. Again, I will skip some steps to save space.</p>
+
+\[\begin{align}
+    &amp;y = \tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}} \\[10pt]
+    &amp;x = \frac{e^y - e^{-y}}{e^y + e^{-y}} = \frac{e^{2y} - 1}{e^{2y} + 1} \\[10pt]
+    &amp;e^{2y} = \frac{1+x}{1-x} \\[10pt]
+    &amp;y = \arctanh(x) = \frac{1}{2} \ln \left ( \frac{1+x}{1-x} \right )
+\end{align}\]
+
+<h3 id="hyperbolic-secant">Hyperbolic Secant</h3>
+
+<p>This is almost identical to the derivation of $\arccosh$.</p>
+
+\[\begin{align}
+    &amp;y = \sech(x) = \frac{2}{e^x + e^{-x}} \\[10pt]
+    &amp;x = \frac{2}{e^x + e^{-x}} \\[10pt]
+    &amp;(e^y)^2 - \frac{2}{x} \, e^y + 1 = 0 \\[10pt]
+    &amp;e^y = \frac{1}{x} \pm \sqrt{\frac{1}{x^2} - 1} \\[10pt]
+    &amp;e^y = \frac{1}{x} + \sqrt{\frac{1}{x^2} - 1} \\[10pt]
+    &amp;y = \arcsech(x) = \ln \left ( \frac{1}{x} + \sqrt{\frac{1}{x^2} - 1} \ \right )
+\end{align}\]
+
+<h3 id="hyperbolic-cosecant">Hyperbolic Cosecant</h3>
+
+<p>This is almost identical to the derivation of $\arcsinh$.</p>
+
+\[\begin{align}
+    &amp;y = \csch(x) = \frac{2}{e^x - e^{-x}} \\[10pt]
+    &amp;x = \frac{2}{e^x - e^{-x}} \\[10pt]
+    &amp;(e^y)^2 + \frac{2}{x} \, e^y + 1 = 0 \\[10pt]
+    &amp;e^y = \frac{1}{x} \pm \sqrt{\frac{1}{x^2} + 1} \\[10pt]
+    &amp;e^y = \frac{1}{x} + \sqrt{\frac{1}{x^2} + 1} \\[10pt]
+    &amp;y = \arccsch(x) = \ln \left ( \frac{1}{x} + \sqrt{\frac{1}{x^2} + 1} \ \right )
+\end{align}\]
+
+<h3 id="hyperbolic-cotangent">Hyperbolic Cotangent</h3>
+
+<p>This is almost identical to the derivation of $\arctanh$.</p>
+
+\[\begin{align}
+    &amp;y = \coth(x) = \frac{e^x + e^{-x}}{e^x - e^{-x}} \\[10pt]
+    &amp;x = \frac{e^y + e^{-y}}{e^y - e^{-y}} = \frac{e^{2y} + 1}{e^{2y} - 1} \\[10pt]
+    &amp;e^{2y} = \frac{x+1}{x-1} \\[10pt]
+    &amp;y = \arccoth(x) = \frac{1}{2} \ln \left ( \frac{x+1}{x-1} \right )
+\end{align}\]
+
+<p><br /></p>
+
+<!-- TODO: add graphs -->
+
+<h2 id="summary">Summary</h2>
+
+\[\begin{align}
+    &amp;\arcsinh(x) \equiv \sinh^{-1} (x) &amp;&amp;= \ln \left ( x + \sqrt{x^2 + 1} \right ) \\[10pt]
+    &amp;\arccosh(x) \equiv (\cosh \rvert_{[0, \infty)})^{-1} (x) &amp;&amp;= \ln \left ( x + \sqrt{x^2 - 1} \right ) \\[10pt]
+    &amp;\arctanh(x) \equiv \tanh^{-1} (x) &amp;&amp;= \frac{1}{2} \ln \left ( \frac{1+x}{1-x} \right ) \\[10pt]
+    &amp;\arcsech(x) \equiv (\sech \rvert_{[0, \infty)})^{-1} (x) &amp;&amp;= \ln \left ( \frac{1}{x} + \sqrt{\frac{1}{x^2} - 1} \right ) \\[10pt]
+    &amp;\arccsch(x) \equiv (\csch \rvert_{(-\infty, 0) \cup (0, \infty)})^{-1} (x) &amp;&amp;= \ln \left ( \frac{1}{x} + \sqrt{\frac{1}{x^2} + 1} \right ) \\[10pt]
+    &amp;\arccoth(x) \equiv (\coth \rvert_{(-\infty, 0) \cup (0, \infty)})^{-1} (x) &amp;&amp;= \frac{1}{2} \ln \left ( \frac{1-x}{1+x} \right )
+\end{align}\]
+
+        </div>
+
+        <!-- Adding the ability to move between parts of the series -->
+        
+        
+        
+
+        
+        
+        
+
+        <!-- Getting capitalized title for series -->
+        
+        
+        
+        
+        <!-- Getting url for series, which is just the page url with the last /... removed -->
+        
+
+        <div class="pagination" style="margin-top:1em;">
+            
+                <a class="pagination-item older" href="/blog/trigonometry/hyperbolic-trig-functions/">Previous</a>
+            
+            
+                <span class="pagination-item newer">Next</span>
+            
+        </div>
+        <h3 style="text-align:center; margin-bottom:1em;">
+            <a href="/blog/trigonometry">
+            
+                
+                    Trigonometry
+                
+            
+         Series</a>
+        </h3>
+    </div>
+    
+  </body>
+</html>

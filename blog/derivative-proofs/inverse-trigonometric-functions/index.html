@@ -46,6 +46,18 @@
             extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
             Macros: {
                 b: ["{\\boldsymbol #1}",1],
+                u: ["{\\hat{\\boldsymbol #1}}",1],
+                arccsc: ["\\operatorname\{arccsc\}"],
+                arcsec: ["\\operatorname\{arcsec\}"],
+                arccot: ["\\operatorname\{arccot\}"],
+                csch: ["\\operatorname\{csch\}"],
+                sech: ["\\operatorname\{sech\}"],
+                arcsinh: ["\\operatorname\{arcsinh\}"],
+                arccosh: ["\\operatorname\{arccosh\}"],
+                arctanh: ["\\operatorname\{arctanh\}"],
+                arccsch: ["\\operatorname\{arccsch\}"],
+                arcsech: ["\\operatorname\{arcsech\}"],
+                arccoth: ["\\operatorname\{arccoth\}"],
                 seq: ["{\\left \\langle #1 \\right \\rangle}",1],
                 iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
                 abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
@@ -144,90 +156,90 @@
             <!-- maybe I'll add tagging later
             <span class="post-date" style="margin-top:-1em;"> ["derivatives, ",  "inverse-trigonometric-functions, ",  "trigonometry, ",  "sine, ",  "cosine, ",  "tangent, ",  "secant, ",  "cosecant, ",  "cotangent"] </span>
             -->
-            <p>All proofs will be using the inverse derivative property</p>
+            <p>All proofs will be using the inverse derivative property. These results are very commonly used in advanced integration.</p>
 
-<h2 id="sine">Sine</h2>
+<h2 id="inverse-sine">Inverse Sine</h2>
 
 \[\begin{align}
-    \frac{d}{dx} \sin^{-1} (x)
-    &amp;= \frac{1}{\frac{d}{dz} \sin(z) \bigg\rvert_{z=\sin^{-1} (x)} } \\[10pt]
-    &amp;= \frac{1}{\cos(z) \bigg\rvert_{z=\sin^{-1} (x)} } \\[10pt]
-    &amp;= \frac{1}{\cos(\sin^{-1} (x))} \\[10pt]
-    &amp;= \frac{1}{\sqrt{\cos^2(\sin^{-1} (x))}} \\[10pt]
-    &amp;= \frac{1}{\sqrt{1 - \sin^2(\sin^{-1} (x))}} \\[10pt]
+    \frac{d}{dx} \arcsin (x)
+    &amp;= \frac{1}{\frac{d}{dz} \sin(z) \bigg\rvert_{z=\arcsin (x)} } \\[10pt]
+    &amp;= \frac{1}{\cos(z) \bigg\rvert_{z=\arcsin (x)} } \\[10pt]
+    &amp;= \frac{1}{\cos(\arcsin (x))} \\[10pt]
+    &amp;= \frac{1}{\sqrt{\cos^2(\arcsin (x))}} \\[10pt]
+    &amp;= \frac{1}{\sqrt{1 - \sin^2(\arcsin (x))}} \\[10pt]
     &amp;= \frac{1}{\sqrt{1 - x^2}}
 \end{align}\]
 
 <p><br /></p>
 
-<h2 id="cosine">Cosine</h2>
+<h2 id="inverse-cosine">Inverse Cosine</h2>
 
 \[\begin{align}
-    \frac{d}{dx} \cos^{-1} (x)
-    &amp;= \frac{1}{\frac{d}{dz} \cos(z) \bigg\rvert_{z=\cos^{-1} (x)} } \\[10pt]
-    &amp;= \frac{1}{-\sin(z) \bigg\rvert_{z=\cos^{-1} (x)} } \\[10pt]
-    &amp;= - \frac{1}{\sin(\cos^{-1} (x))} \\[10pt]
-    &amp;= - \frac{1}{\sqrt{\sin^2(\cos^{-1} (x))}} \\[10pt]
-    &amp;= - \frac{1}{\sqrt{1 - \cos^2(\cos^{-1} (x))}} \\[10pt]
-    &amp;= - \frac{1}{\sqrt{1 - x^2}}
+    \frac{d}{dx} \arccos (x)
+    &amp;= \frac{1}{\frac{d}{dz} \cos(z) \bigg\rvert_{z=\arccos (x)} } \\[10pt]
+    &amp;= \frac{1}{-\sin(z) \bigg\rvert_{z=\arccos (x)} } \\[10pt]
+    &amp;= \frac{-1}{\sin(\arccos (x))} \\[10pt]
+    &amp;= \frac{-1}{\sqrt{\sin^2(\arccos (x))}} \\[10pt]
+    &amp;= \frac{-1}{\sqrt{1 - \cos^2(\arccos (x))}} \\[10pt]
+    &amp;= \frac{-1}{\sqrt{1 - x^2}}
 \end{align}\]
 
 <p><br /></p>
 
-<h2 id="tangent">Tangent</h2>
+<h2 id="inverse-tangent">Inverse Tangent</h2>
 
 \[\begin{align}
-    \frac{d}{dx} \tan^{-1} (x)
-    &amp;= \frac{1}{\frac{d}{dz} \tan(z) \bigg\rvert_{z=\tan^{-1} (x)} } \\[10pt]
-    &amp;= \frac{1}{\sec^2(z) \bigg\rvert_{z=\tan^{-1} (x)} } \\[10pt]
-    &amp;= \frac{1}{\sec^2(\tan^{-1} (x))} \\[10pt]
-    &amp;= \frac{1}{1 + \tan^2(\tan^{-1} (x))} \\[10pt]
+    \frac{d}{dx} \arctan (x)
+    &amp;= \frac{1}{\frac{d}{dz} \tan(z) \bigg\rvert_{z=\arctan (x)} } \\[10pt]
+    &amp;= \frac{1}{\sec^2(z) \bigg\rvert_{z=\arctan (x)} } \\[10pt]
+    &amp;= \frac{1}{\sec^2(\arctan (x))} \\[10pt]
+    &amp;= \frac{1}{1 + \tan^2(\arctan (x))} \\[10pt]
     &amp;= \frac{1}{1 + x^2}
 \end{align}\]
 
 <p><br /></p>
 
-<h2 id="secant">Secant</h2>
+<h2 id="inverse-secant">Inverse Secant</h2>
 
 \[\begin{align}
-    \frac{d}{dx} \sec^{-1} (x)
-    &amp;= \frac{1}{\frac{d}{dz} \sec(z) \bigg\rvert_{z=\sec^{-1} (x)} } \\[10pt]
-    &amp;= \frac{1}{\sec(z) \tan(z) \bigg\rvert_{z=\sec^{-1} (x)} } \\[10pt]
-    &amp;= \frac{1}{\sec(\sec^{-1} (x)) \tan(\sec^{-1} (x)) } \\[10pt]
-    &amp;= \frac{1}{x \sqrt{\tan^2(\sec^{-1} (x))} } \\[10pt]
-    &amp;= \frac{1}{x \sqrt{1 + \sec^2(\sec^{-1} (x))} } \\[10pt]
+    \frac{d}{dx} \arcsec (x)
+    &amp;= \frac{1}{\frac{d}{dz} \sec(z) \bigg\rvert_{z=\arcsec (x)} } \\[10pt]
+    &amp;= \frac{1}{\sec(z) \tan(z) \bigg\rvert_{z=\arcsec (x)} } \\[10pt]
+    &amp;= \frac{1}{\sec(\arcsec (x)) \tan(\arcsec (x)) } \\[10pt]
+    &amp;= \frac{1}{x \sqrt{\tan^2(\arcsec (x))} } \\[10pt]
+    &amp;= \frac{1}{x \sqrt{1 + \sec^2(\arcsec (x))} } \\[10pt]
     &amp;= \frac{1}{x \sqrt{1 + x^2} } \\[10pt]
 \end{align}\]
 
-<p><strong>TODO</strong> need to explain why we get an absolute value sign</p>
+<!-- **TODO** need to explain why we get an absolute value sign -->
 
 <p><br /></p>
 
-<h2 id="cosecant">Cosecant</h2>
+<h2 id="inverse-cosecant">Inverse Cosecant</h2>
 
 \[\begin{align}
-    \frac{d}{dx} \csc^{-1} (x)
-    &amp;= \frac{1}{\frac{d}{dz} \csc(z) \bigg\rvert_{z=\csc^{-1} (x)} } \\[10pt]
-    &amp;= \frac{1}{- \csc(z) \cot(z) \bigg\rvert_{z=\csc^{-1} (x)} } \\[10pt]
-    &amp;= - \frac{1}{\csc(\csc^{-1} (x)) \cot(\csc^{-1} (x)) } \\[10pt]
-    &amp;= - \frac{1}{x \sqrt{\cot^2(\csc^{-1} (x))} } \\[10pt]
-    &amp;= - \frac{1}{x \sqrt{1 + \csc^2(\csc^{-1} (x))} } \\[10pt]
-    &amp;= - \frac{1}{x \sqrt{1 + x^2} } \\[10pt]
+    \frac{d}{dx} \arccsc (x)
+    &amp;= \frac{1}{\frac{d}{dz} \csc(z) \bigg\rvert_{z=\arccsc (x)} } \\[10pt]
+    &amp;= \frac{1}{- \csc(z) \cot(z) \bigg\rvert_{z=\arccsc (x)} } \\[10pt]
+    &amp;= \frac{-1}{\csc(\arccsc (x)) \cot(\arccsc (x)) } \\[10pt]
+    &amp;= \frac{-1}{x \sqrt{\cot^2(\arccsc (x))} } \\[10pt]
+    &amp;= \frac{-1}{x \sqrt{1 + \csc^2(\arccsc (x))} } \\[10pt]
+    &amp;= \frac{- 1}{x \sqrt{1 + x^2} } \\[10pt]
 \end{align}\]
 
-<p><strong>TODO</strong> need to explain why we get an absolute value sign</p>
+<!-- **TODO** need to explain why we get an absolute value sign -->
 
 <p><br /></p>
 
-<h2 id="cotangent">Cotangent</h2>
+<h2 id="inverse-cotangent">Inverse Cotangent</h2>
 
 \[\begin{align}
-    \frac{d}{dx} \cot^{-1} (x)
-    &amp;= \frac{1}{\frac{d}{dz} \cot(z) \bigg\rvert_{z=\cot^{-1} (x)} } \\[10pt]
+    \frac{d}{dx} \arccot (x)
+    &amp;= \frac{1}{\frac{d}{dz} \cot(z) \bigg\rvert_{z=\arccot (x)} } \\[10pt]
     &amp;= \frac{1}{- \csc^2(z) \bigg\rvert_{z=\cot^{-1} (x)} } \\[10pt]
-    &amp;= - \frac{1}{\csc^2(\cot^{-1} (x))} \\[10pt]
-    &amp;= - \frac{1}{1 + \cot^2(\cot^{-1} (x))} \\[10pt]
-    &amp;= - \frac{1}{1 + x^2}
+    &amp;= \frac{-1}{\csc^2(\cot^{-1} (x))} \\[10pt]
+    &amp;= \frac{-1}{1 + \cot^2(\cot^{-1} (x))} \\[10pt]
+    &amp;= \frac{-1}{1 + x^2}
 \end{align}\]
 
         </div>

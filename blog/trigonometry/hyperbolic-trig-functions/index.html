@@ -46,6 +46,18 @@
             extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
             Macros: {
                 b: ["{\\boldsymbol #1}",1],
+                u: ["{\\hat{\\boldsymbol #1}}",1],
+                arccsc: ["\\operatorname\{arccsc\}"],
+                arcsec: ["\\operatorname\{arcsec\}"],
+                arccot: ["\\operatorname\{arccot\}"],
+                csch: ["\\operatorname\{csch\}"],
+                sech: ["\\operatorname\{sech\}"],
+                arcsinh: ["\\operatorname\{arcsinh\}"],
+                arccosh: ["\\operatorname\{arccosh\}"],
+                arctanh: ["\\operatorname\{arctanh\}"],
+                arccsch: ["\\operatorname\{arccsch\}"],
+                arcsech: ["\\operatorname\{arcsech\}"],
+                arccoth: ["\\operatorname\{arccoth\}"],
                 seq: ["{\\left \\langle #1 \\right \\rangle}",1],
                 iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
                 abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
@@ -144,34 +156,190 @@
             <!-- maybe I'll add tagging later
             <span class="post-date" style="margin-top:-1em;"> ["trigonometry, ",  "hyperbolic, ",  "hyperbola"] </span>
             -->
-            <p><strong>TODO</strong></p>
+            <!-- https://betterexplained.com/articles/hyperbolic-functions/ -->
 
-<h2 id="definition-of-hyperbolic-trigonometric-functions">Definition of Hyperbolic Trigonometric Functions</h2>
+<p>The hyperbolic trigonometric functions are kind of weird. I think the confusion lies in the fact that the notation begs you to interpret them geometrically, but most of their applications stem from the exponential definitions. Attempting to explain their geometric meaning is convoluted and does not lead to any deeper mathematical insight (unlike the standard trig functions). By contrast, their exponential definitions (which are very simple) provide their fundamental meaning, so there is no deeper truth to discover. For me, this leads to an unsatisfying feeling.</p>
 
-<center>
-<embed src="/svg/hyperbolic-trig-functions/regular-unit-circle.svg" type="image/svg+xml" />
-&emsp;&emsp;&emsp;
-<embed src="/svg/hyperbolic-trig-functions/hyperbolic-unit-circle.svg" type="image/svg+xml" />
-</center>
+<p>I am going to attempt to present hyperbolic trig functions in the most engaging way possible (no promises).</p>
 
-<p>Similar to how the trigonometric functions parameterize the coordinates on a circle, the hyperbolic trigonometric functions parameterize the coordinates on a hyperbola.</p>
+<p><br /></p>
+
+<h2 id="the-exponential-interpretation">The Exponential Interpretation</h2>
+
+<h3 id="odd-and-even-functions">Odd and Even Functions</h3>
+
+<p>A function $f$ is called <strong>even</strong> if $f(-x) = f(x) \ \forall x$. Alternatively, a function $f$ is called <strong>odd</strong> if $f(-x) = -f(x) \ \forall x$. Don’t dwell too much on the names <em>even</em>/<em>odd</em>. Ultimately the terms come from the fact that $f_n(x) = x^n$ is even if $n$ is even and odd if $n$ is odd. There are some properties that coincide with the term and others that don’t.</p>
+
+<p>Note that a function need not be even or odd. For example, $e^x$ is neither. However, given an arbitrary function $f$, we can separate it into its even and odd parts</p>
+
+\[f_{\text{even}}(x) = \frac{f(x) + f(-x)}{2}
+\qquad\qquad
+f_{\text{odd}}(x) = \frac{f(x) - f(-x)}{2}\]
+
+<p>I leave it as an exercise to the reader to verify that $f_{\text{even}}$ is even, $f_{\text{odd}}$ is odd, and $f = f_{\text{even}} + f_{\text{odd}}$.</p>
+
+<p><br /></p>
+
+<h3 id="exponential-definition-of-hyperbolic-trigonometric-functions">Exponential Definition of Hyperbolic Trigonometric Functions</h3>
+
+<p>Let $f(x) = e^x$ and consider its odd and even parts.</p>
+
+\[\cosh(x) \equiv \mathcal{Even}\{ e^{x} \}
+\qquad\qquad
+\sinh(x) \equiv \mathcal{Odd}\{ e^{x} \}\]
+
+<p>Using the formulas above, we can get exact formulas.</p>
+
+\[\cosh x = \frac{e^{x} + e^{-x}}{2} = \frac{e^{2x} + 1}{2e^{x}} = \frac{1 + e^{-2x}}{2e^{-x}} \\[10pt]
+\sinh x = \frac{e^{x} - e^{-x}}{2} = \frac{e^{2x} - 1}{2e^{x}} = \frac{1 - e^{-2x}}{2e^{-x}}\]
+
+<p>Therefore</p>
+
+\[e^x = \cosh(x) + \sinh(x)\]
+
+<p><br /></p>
+
+<p>The remaining hyperbolic trig functions are defined exactly the same as the standard trig functions.</p>
+
+\[\tanh x = \frac{\sinh x}{\cosh x} = \frac{e^{x} - e^{-x}}{e^{x} + e^{-x}} = \frac{e^{2x} - 1}{e^{2x} + 1} \\[15pt]
+\csch x = \frac{1}{\sinh x}
+\qquad\qquad
+\sech x = \frac{1}{\cosh x}
+\qquad\qquad
+\coth x = \frac{1}{\tanh x} = \frac{\cosh x}{\sinh x}\]
+
+<p><br /></p>
+
+<p>Recall the famous Euler identity from the previous post: \(e^{ix} = \cos(x) + i \sin(x)\). Using this, we have a similar interpretation of the standard trig functions.</p>
+
+\[\cos(x) = \mathcal{Re}\{ e^{-ix} \}
+\qquad\qquad
+\sin(x) = \mathcal{Im}\{ e^{-ix} \}\]
+
+<p>This even lets us write an expression for a general complex exponential</p>
+
+\[e^{x + iy} = (\cosh x + \sinh x) (\cos y + i \sin y)\]
+
+<p><br /></p>
+
+<h3 id="relationship-to-standard-trigonometric-functions">Relationship to Standard Trigonometric Functions</h3>
+
+<p>By combining imaginary numbers and the exponential functions, we can relate the standard and hyperbolic trig functions.</p>
+
+\[\sinh (i x) = \frac{e^{ix} - e^{-ix}}{2} = \frac{(\cos(x) + i \sin(x)) - (\cos(x) - i \sin(x))}{2} = i \sin(x)\]
+
+\[\cosh (i x) = \frac{e^{ix} + e^{-ix}}{2} = \frac{(\cos(x) + i \sin(x)) + (\cos(x) - i \sin(x))}{2} = \cos (x)\]
+
+<p>The rest of the hyperbolic trig functions can be derived by combining $\sinh$ and $\cosh$. We can summarize the relationships below.</p>
 
 \[\begin{align}
-    &amp;x^2 + y^2 = r^2  &amp;\qquad\qquad&amp;  (r \cos \theta, \ r \sin \theta) \qquad \theta \in [0, 2\pi) \\[15pt]
-    &amp;x^2 - y^2 = r^2  &amp;\qquad\qquad&amp;  (r \cosh \alpha, \ r \sinh \alpha) \qquad \alpha \in (\infty, \infty)
+    &amp;\sinh x = -i \sin (i x) &amp;\qquad\qquad&amp; \sin x = -i \sinh(ix) \\[10pt]
+    &amp;\cosh x = \cos (i x) &amp;\qquad\qquad&amp; \cos x = \cosh(ix) \\[10pt]
+    &amp;\tanh x = -i \tan (i x) &amp;\qquad\qquad&amp; \tan x = -i \tanh(ix) \\[10pt]
+    &amp;\sech x = \sec (i x) &amp;\qquad\qquad&amp; \sec x = \sech(ix) \\[10pt]
+    &amp;\csch x = i \csc (i x) &amp;\qquad\qquad&amp; \csc x = i \csch(ix) \\[10pt]
+    &amp;\coth x = i \cot (i x) &amp;\qquad\qquad&amp; \cot x = i \coth(ix)
+\end{align}\]
+
+<p>I find it very interesting that their relationship is symmetrical. If anyone has deeper insight on this, please <a href="mailto:epkeilty@gmail.com">let me know</a>.</p>
+
+<p><br /></p>
+
+<h2 id="the-geometric-interpretation">The Geometric Interpretation</h2>
+
+<h3 id="the-unit-hyperbola">The Unit Hyperbola</h3>
+
+<p>Similar to the unit circle for standard trig functions, there is a unit hyperbola for hyperbolic trig functions</p>
+
+<center>
+<embed src="/svg/hyperbolic-trig-functions/unit-circle.svg" type="image/svg+xml" />
+&emsp;&emsp;&emsp;
+<embed src="/svg/hyperbolic-trig-functions/unit-hyperbola.svg" type="image/svg+xml" />
+</center>
+
+<p>In the unit circle, the argument $\theta$ corresponds to the angle formed by the circular wedge. Unfortunately, the argument of the unit hyperbola $\alpha$ does not have such an elegant interpretation. The best you can say is that the area of the shaded region is $\alpha/2$. However, this is not unique to the unit hyperbola. This fact is also true for the unit circle (recall that the area of a wedge is $\frac{1}{2} \theta r^2$).</p>
+
+<p>The proof of this for the unit hyperbola requires calculus (which I want to avoid in this series). For those interested, this <a href="https://www.youtube.com/watch?v=h-gKfQkHQSA" target="_blank">video</a> derives this fact. If you know of a non-calculus proof, then please <a href="mailto:epkeilty@gmail.com">let me know</a>.</p>
+
+<p><br /></p>
+
+<p>Analogous to the $\cos$ and $\sin$ for the unit circle, the hyperbolic trig functions $\cosh$ and $\sinh$ parameterize the unit hyperbola.</p>
+
+\[\begin{align}
+    &amp;x^2 + y^2 = r^2  &amp;\qquad\qquad&amp;  (r \cos \theta, \ r \sin \theta) &amp;&amp; \theta \in [0, 2\pi) \\[15pt]
+    &amp;x^2 - y^2 = r^2  &amp;\qquad\qquad&amp;  (r \cosh \alpha, \ r \sinh \alpha) &amp;&amp; \alpha \in (-\infty, \infty)
+\end{align}\]
+
+<p>We can verify this using the exponential definitions</p>
+
+\[\begin{align}
+    (r \cosh \alpha)^2 - (r \sinh \alpha)^2
+    &amp;= r^2 \left [ \cosh^2 \alpha - \sinh^2 \alpha \right ] \\[10pt]
+    &amp;= r^2 \left [ \left ( \frac{e^{\alpha} + e^{-\alpha}}{2} \right )^2 - \left ( \frac{e^{\alpha} - e^{-\alpha}}{2} \right )^2 \right ] \\[10pt]
+    &amp;= \frac{r^2}{4} \left [ (e^{2\alpha} + 2 + e^{-2\alpha}) - (e^{2\alpha} - 2 + e^{-2\alpha}) \right ] \\[10pt]
+    &amp;= \frac{r^2}{4} \left [ 4 \right ] \\[10pt]
+    &amp;= r^2
 \end{align}\]
 
 <p><br /></p>
 
-<h2 id="relation-to-the-regular-trigonometric-functions">Relation to the Regular Trigonometric Functions</h2>
+<h3 id="relationship-of-the-rest-to-the-unit-hyperbola">Relationship of the Rest to the Unit Hyperbola</h3>
 
-\[\begin{align}
-    &amp;\sinh x = -i \sin (i x) &amp;\qquad\qquad&amp; \color{black}{\text{sech}} \ x = \sec (i x) \\[10pt]
-    &amp;\cosh x = \cos (i x) &amp;\qquad\qquad&amp; \color{black}{\text{csch}} \ x = i \csc (i x) \\[10pt]
-    &amp;\tanh x = -i \tan (i x) &amp;\qquad\qquad&amp; \coth x = i \cot (i x)
-\end{align}\]
+<p>Every standard trig function on the unit circle has a geometric interpretation which aligns extremely well with their notation and name. The hyperbolic trig functions, on the other hand, do not. As I stated in the preamble, their true meaning comes from the exponential definitions. While their notation and names only exist to mimic the standard trig functions. There are geometric interpretations, but they are not as elegant.</p>
 
-<p>Now, all properties and identities of the hyperbolic trigonometric functions can be easily derived from the regular trigonometric functions.</p>
+<center>
+<embed src="/svg/hyperbolic-trig-functions/hyperbolic-trig-geometric-interpretation.svg" type="image/svg+xml" />
+&emsp;&emsp;&emsp;
+<embed src="/svg/hyperbolic-trig-functions/hyperbolic-trig-geometric-interpretation-2.svg" type="image/svg+xml" />
+</center>
+
+<p>I will leave it as an exercise to the reader to prove these diagrams are correct (it’s not too hard using similar triangles). As you can see, the $\sech$ and $\csch$ do not correspond to secants of the hyperbola as the names would suggest (unlike the standard trig functions). There are ways you can force the issue, but the constructions are convoluted. You can see a diagram <a href="https://math.stackexchange.com/questions/451034/geometric-construction-of-hyperbolic-trigonometric-functions" target="_blank">here</a>.</p>
+
+<p><br /></p>
+
+<h3 id="connection-to-the-reciprocal-function">Connection to the Reciprocal Function</h3>
+
+<p>Consider the function $2 x y = r^2$. It turns out, this is equivalent to a hyperbola but rotated $45^{\circ}$.</p>
+
+<center>
+<embed src="/svg/hyperbolic-trig-functions/reciprocal-function.svg" type="image/svg+xml" />
+</center>
+
+<p>The easiest way to prove this is to use complex numbers. Recall that multiplication of complex numbers results in the magnitudes multiplying and the angles adding. Therefore, to rotate $45^{\circ}$, we want to multiply by a complex number with a magnitude of $1$ and an angle of $\pi/4$. After some thought, you can convince yourself that $e^{i \frac{\pi}{4}} = \frac{1+i}{\sqrt{2}}$ is that number.</p>
+
+\[\frac{1+i}{\sqrt{2}} \cdot (x + i y) = \frac{x - y}{\sqrt{2}} + i \frac{x + y}{\sqrt{2}}\]
+
+<p>Therefore, given any aribtrary coordinate $(x, y)$, its transformed coordinate $(x’, y’)$ is</p>
+
+\[(x', y') = \left ( \frac{x - y}{\sqrt{2}}, \frac{x + y}{\sqrt{2}}\right )\]
+
+<p>Therefore, the equation $2 x y = r^2$ becomes</p>
+
+\[r^2 = 2 x' y' = 2 \left ( \frac{x - y}{\sqrt{2}} \right ) \cdot \left ( \frac{x + y}{\sqrt{2}} \right ) = x^2 - y^2\]
+
+<p><br /></p>
+
+<h2 id="graphs">Graphs</h2>
+
+<p>Notice that these graphs do not oscillate like the standard trig functions. Instead, $\sinh$ and $\cosh$ grow exponentially, and the rest decay exponentially to a horizontal asymptote.</p>
+
+<center>
+<embed src="/svg/hyperbolic-trig-functions/sinh-graph.svg" type="image/svg+xml" />
+&emsp;&emsp;&emsp;&emsp;
+<embed src="/svg/hyperbolic-trig-functions/cosh-graph.svg" type="image/svg+xml" />
+&emsp;&emsp;&emsp;&emsp;
+<embed src="/svg/hyperbolic-trig-functions/tanh-graph.svg" type="image/svg+xml" />
+</center>
+
+<p><br /></p>
+
+<center>
+<embed src="/svg/hyperbolic-trig-functions/sech-graph.svg" type="image/svg+xml" />
+&emsp;&emsp;&emsp;&emsp;
+<embed src="/svg/hyperbolic-trig-functions/csch-graph.svg" type="image/svg+xml" />
+&emsp;&emsp;&emsp;&emsp;
+<embed src="/svg/hyperbolic-trig-functions/coth-graph.svg" type="image/svg+xml" />
+</center>
 
         </div>
 
@@ -197,7 +365,7 @@
                 <a class="pagination-item older" href="/blog/trigonometry/eulers-identity/">Previous</a>
             
             
-                <span class="pagination-item newer">Next</span>
+                <a class="pagination-item newer" href="/blog/trigonometry/inverse-hyperbolic-trig-functions/">Next</a>
             
         </div>
         <h3 style="text-align:center; margin-bottom:1em;">

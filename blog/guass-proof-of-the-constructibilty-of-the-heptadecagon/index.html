@@ -46,6 +46,18 @@
             extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
             Macros: {
                 b: ["{\\boldsymbol #1}",1],
+                u: ["{\\hat{\\boldsymbol #1}}",1],
+                arccsc: ["\\operatorname\{arccsc\}"],
+                arcsec: ["\\operatorname\{arcsec\}"],
+                arccot: ["\\operatorname\{arccot\}"],
+                csch: ["\\operatorname\{csch\}"],
+                sech: ["\\operatorname\{sech\}"],
+                arcsinh: ["\\operatorname\{arcsinh\}"],
+                arccosh: ["\\operatorname\{arccosh\}"],
+                arctanh: ["\\operatorname\{arctanh\}"],
+                arccsch: ["\\operatorname\{arccsch\}"],
+                arcsech: ["\\operatorname\{arcsech\}"],
+                arccoth: ["\\operatorname\{arccoth\}"],
                 seq: ["{\\left \\langle #1 \\right \\rangle}",1],
                 iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
                 abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
@@ -379,11 +391,25 @@
 
 <p><br /></p>
 
+<p>Here is an anti-example of $\zeta^2$ in a regular hexagon which does not satsify the above property (since $2$ and $6$ share a common factor, thus we get stuck in a subcycle).</p>
+
+<center>
+<embed src="/svg/guass-proof-of-the-constructibilty-of-the-heptadecagon/hexagon-cycle.svg" type="image/svg+xml" />
+</center>
+
+\[\langle \zeta^2 \rangle = \{ \zeta^{2}, \zeta^{4}, \zeta^{6} \} \neq \langle \zeta^1 \rangle\]
+
+<p><br /></p>
+
 <p>A root which satisfies this property is called a <strong>primitive root</strong>. If $n$ is prime, then all roots of the cyclotomic equation are primitive roots. The intuition is that since we assumed $n$ is prime, no integer can evenly divide it, and therefore you could never get a subcycle. For more details, I recommend studying <a href="https://brilliant.org/wiki/group-theory-introduction/" target="_blank">group theory</a>, in particular cyclic groups and cyclic subgroups.</p>
 
 <p><br /></p>
 
 <p>Side note, if $n$ is not prime, then we can decompose it into its primes, solve for the cyclotomic equation for each of these primes, and reconstruct the roots of $n$. Therefore, we only consider the case where $n$ is prime.</p>
+
+<p><br /></p>
+
+<hr />
 
 <p><br /></p>
 
@@ -399,7 +425,11 @@
 
 <p><br /></p>
 
-<p>The second property involves the complex conjugate of: $(\zeta^k)^* = \zeta^{n-k} = \zeta^{-k}$. Graphically, these correspond to the points of the polynomial on the mirrored side of the $x$-axis. Now, consider the following</p>
+<p>The second property involves the complex conjugate of $\zeta^k$. Graphically, these correspond to the points of the polynomial on the mirrored side of the $x$-axis.</p>
+
+\[(\zeta^k)^* = \left ( e^{i \frac{2 \pi k}{n}} \right )^* = e^{- i \frac{2 \pi k}{n}} = e^{i \frac{2 \pi (-k)}{n}} = \zeta^{-k}\]
+
+<p>Now, consider the following</p>
 
 \[\zeta^1 + \zeta^{-1} = [\cos(2 \pi/n) + i \sin(2 \pi/n)] + [\cos(2 \pi/n) - i \sin(2 \pi/n)] = 2 \cos(2 \pi/n)\]
 
@@ -469,7 +499,7 @@
 <embed src="/svg/guass-proof-of-the-constructibilty-of-the-heptadecagon/17-gon-derivation-tree.svg" type="image/svg+xml" />
 </center>
 
-<p>These may seem like they came out of nowhere, but I assure you there are deep, deep mathematics behind them. Unfortunately, too much for me to cover in this already long post. I am planning on making a follow-up post. For further reading, I recommend studying <a href="https://nrich.maths.org/1422" target="_blank">Galois theory</a> and then reading <a href="https://people.reed.edu/~jerry/332/30kummer.pdf" target="_blank">this</a>.</p>
+<p>These may seem like they came out of nowhere, but I assure you there are deep, deep mathematics behind them. Unfortunately, it’s too much for me to cover in this already long post. I am planning on making a follow-up post. For further reading, I recommend studying <a href="https://nrich.maths.org/1422" target="_blank">Galois theory</a> and then reading <a href="https://people.reed.edu/~jerry/332/30kummer.pdf" target="_blank">this</a>.</p>
 
 <p><br /></p>
 
@@ -603,7 +633,9 @@ Furthermore, we need the prime to be of the form $2^{2^m} + 1$ (i.e. a Fermat pr
 
 <p>First, the $2^k$ part comes from starting with a regular polygon and bisecting each edge as many times as you like. We showed an example this by converting an equilateral triangle into a regular hexagon.</p>
 
-<p>Second, the $p_1 p_2 \ldots p_m$ part comes from the fact that primes are obviously coprime with eachother. Therefore, given a regular $p$-gon and regular $q$-gon, we can construct a regulat $pq$-gon. We showed an example of this method by constructing a regular $15$-gon using an equilateral triangle and a regular pentagon. Therefore, all that remains to be explained is why the primes need to be Fermat primes.</p>
+<p>Second, the $p_1 p_2 \ldots p_m$ part is explained by the trick which lets us combine any two coprime regular polygon. In particular, given a regular $p$-gon and regular $q$-gon (where $p$ and $q$ are coprime), we can construct a regular $pq$-gon. We showed an example of this method to construct a regular $15$-gon using an equilateral triangle and a regular pentagon.</p>
+
+<p>Therefore, all that remains to be explained is why the primes need to be Fermat primes.</p>
 
 <p>Descartes provided a prided a bridge between ruler-and-compass constructions and algebra. He says that if a length can be expressed as a formula involving only $\ +, \ -, \ \times, \ \div, \text{ and } \sqrt{\ }$, then it is constructible (and vice versa). Thus, if we can construct $\cos(2 \pi / n)$, then we can construct the corresponding regular $n$-gon.</p>
 
