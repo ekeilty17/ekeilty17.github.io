@@ -400,13 +400,42 @@ $$
 
 ## Hyperbolic Trigonometric Functions
 
+## Exponential Definitions
+
 $$
 \begin{align}
-    &\cosh(x) = \cos(ix) 
-    &\qquad
-    &\sinh(x) = -i\sin(ix) 
-    &\qquad
-    &\tanh(x) = -i\tan(ix)
+    \sinh x &= \frac{e^{x} - e^{-x}}{2} = \frac{e^{2x} - 1}{2e^{x}} = \frac{1 - e^{-2x}}{2e^{-x}} \\[15pt]
+    \cosh x &= \frac{e^{x} + e^{-x}}{2} = \frac{e^{2x} + 1}{2e^{x}} = \frac{1 + e^{-2x}}{2e^{-x}} \\[15pt]
+    \tanh x &= \frac{e^{x} - e^{-x}}{e^{x} + e^{-x}} = \frac{e^{2x} - 1}{e^{2x} + 1} \\[15pt]
+    \csch x &= \frac{1}{\sinh x} \\[10pt]
+    \sech x &= \frac{1}{\cosh x} \\[10pt]
+    \coth x &= \frac{1}{\tanh x} = \frac{\cosh x}{\sinh x}
+\end{align}
+$$
+
+## Relationship to Standard Trigonometric Functions
+
+$$
+\begin{align}
+    &\sinh x = -i \sin (i x) &\qquad\qquad& \sin x = -i \sinh(ix) \\[10pt]
+    &\cosh x = \cos (i x) &\qquad\qquad& \cos x = \cosh(ix) \\[10pt]
+    &\tanh x = -i \tan (i x) &\qquad\qquad& \tan x = -i \tanh(ix) \\[10pt]
+    &\sech x = \sec (i x) &\qquad\qquad& \sec x = \sech(ix) \\[10pt]
+    &\csch x = i \csc (i x) &\qquad\qquad& \csc x = i \csch(ix) \\[10pt]
+    &\coth x = i \cot (i x) &\qquad\qquad& \cot x = i \coth(ix)
+\end{align}
+$$
+
+## Inverse Functions
+
+$$
+\begin{align}
+    &\arcsinh(x) = \ln \left ( x + \sqrt{x^2 + 1} \right ) \\[10pt]
+    &\arccosh(x) = \ln \left ( x + \sqrt{x^2 - 1} \right ) \\[10pt]
+    &\arctanh(x) = \frac{1}{2} \ln \left ( \frac{1+x}{1-x} \right ) \\[10pt]
+    &\arcsech(x) = \ln \left ( \frac{1}{x} + \sqrt{\frac{1}{x^2} - 1} \right ) \\[10pt]
+    &\arccsch(x) = \ln \left ( \frac{1}{x} + \sqrt{\frac{1}{x^2} + 1} \right ) \\[10pt]
+    &\arccoth(x) = \frac{1}{2} \ln \left ( \frac{1-x}{1+x} \right )
 \end{align}
 $$
 

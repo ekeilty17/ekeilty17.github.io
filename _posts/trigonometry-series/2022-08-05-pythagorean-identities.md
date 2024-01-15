@@ -11,7 +11,7 @@ tags:       trigonometry, pythagoras
 
 ## The Pythagorean Theorem
 
-This is one of the oldest and more famous theorems in mathematics. It states that given a right triangle, the sum of the square of the legs equals the square of the hypotenuse. When I say "square" I both mean _squared_ in the algebra sense, and a _square_ in the geometric sense. 
+This is one of the older and more famous theorems in mathematics. It states that given a right triangle, the sum of the square of the legs equals the square of the hypotenuse. When I say "square" I mean _squared__ in the algebra sense, and a _square_ in the geometric sense. 
 
 <center>
 {% tikz pythagoraean-theorem %}
@@ -249,7 +249,7 @@ $$
 \sin^2 \theta + \cos^2 \theta = 1
 $$
 
-While simple, this is probably the most commonly use identity in trigonometry and higher mathematics. From this identity, we can derive a few others
+While simple, this is probably the most commonly used identity in trigonometry and higher mathematics. From this identity, we can derive a few others
 
 $$
 \begin{align}

@@ -9,15 +9,15 @@ series:     trigonometry
 tags:       trigonometry, triangles, 30-60-90, 45-45-90
 ---
 
-These triangles are so commonly found in geometry, trigonometry, and higher mathematics, they deserve their own post. They form the building blocks of other more complicated structures.
+These triangles are so commonly found in geometry, trigonometry, and higher mathematics, that they deserve their own post. They form the building blocks of other more complicated structures.
 
 <br>
 
 ## 30-60-90 Triangles
 
-Consider an **equilateral triangle** with all side-lengths of $s$. A result in geometry is that all the internal angles of a triangle add up to $180^{\circ} = \pi \ \text{rad}$. By symmetry, it must be the case that all the angles of an equilateral triangle are equal, and thus must be $60^{\circ} = \pi/3 \ \text{rad}$.
+Consider an **equilateral triangle** with all side lengths of $s$. A result in geometry is that all the internal angles of a triangle add up to $180^{\circ} = \pi \ \text{rad}$. By symmetry, it must be the case that all the angles of an equilateral triangle are equal, and thus must be $60^{\circ} = \pi/3 \ \text{rad}$.
 
-Now, draw the perpendoicular bisector of one of the angles, which will cut the triangle in half. The result is a $30{-}60{-}90$ triangle.
+Now, draw the perpendicular bisector of one of the angles, which will cut the triangle in half. The result is a $30{-}60{-}90$ triangle.
 
 <center>
 {% tikz 30-60-90-triangle %}
@@ -200,7 +200,7 @@ $$
 
 ## 45-45-90 Triangles
 
-Consider a **right, isosceles triangle**. Given the length of the hypotenuse there is only one way to construct this triangle, which is given below.
+Consider a **right, isosceles triangle**. Given the length of the hypotenuse, there is only one way to construct this triangle, which is given below.
 
  <center>
 {% tikz 45-45-90-triangle %}
@@ -241,7 +241,7 @@ Consider a **right, isosceles triangle**. Given the length of the hypotenuse the
 {% endtikz %}
 </center>
 
-Again, using the Pythagorean theorem, we can easliy compute the value of $x$.
+Again, using the Pythagorean theorem, we can easily compute the value of $x$.
 
 $$
 \begin{align}

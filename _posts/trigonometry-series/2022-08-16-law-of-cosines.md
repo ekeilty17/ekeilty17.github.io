@@ -161,7 +161,7 @@ The proof for the other two angles is exactly the same as the acute triangle cas
 
 Using the definition of $\sin$, the definition of $\cos$, the Pythagorean Theorem, and the supplementary angle identity for $\cos$, we have the following observations.
 
-1. $x = c \cos (180 - B) = - c \cos B$
+1. $x = c \cos (180^{\circ} - B) = - c \cos B$
 2. $h = c \sin B$
 3. $(a + x)^2 + h^2 = b^2$
 

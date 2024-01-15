@@ -39,4 +39,4 @@ $$
 
 <br>
 
-Now, once the value of $\sin(\theta)$ and $\cos(\theta)$ are defined, the values of the rest of the functions are forced. In fact, eventually, we'll see how the value of $\cos (\theta)$ can be derived from $\sin (\theta)$. Thus, in a way, all of these functions are really just syntactic sugar for a singular deeper truth, which is the geometry of the unit circle.
+Now, once the values of $\sin(\theta)$ and $\cos(\theta)$ are defined, the values of the rest of the functions are forced. In fact, eventually, we'll see how the value of $\cos (\theta)$ can be derived from $\sin (\theta)$. Thus, in a way, all of these functions are really just syntactic sugar for a singular deeper truth, which is the geometry of the unit circle.

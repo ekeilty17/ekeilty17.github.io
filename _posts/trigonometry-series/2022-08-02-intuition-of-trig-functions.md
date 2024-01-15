@@ -11,7 +11,7 @@ tags:       trigonometry, etymology, unit-circle, chord, secant, tangent
 
 ## The Etymology of Sine
 
-The English word "sine" originates from Hindu works which used the Sanskrit word _jya-ardha_ meaning "half chord". This was often shortened to _jya_ or _jiva_. Later, the Arabs translated the word phonetically as _jiba_, which is meaningless in Arabic. Since, the Arabic language use accents instead of characters to represent vowels, over time the consonants _jb_ were mistakened for the word _jaib_, meaning bosom or breast. When Arabic works were eventaully translated into Latin, _jaib_ was translated into the equivalent Latin word _sinus_. Finally, this Latin word was anglicized into the word _sine_, which we now use in English.
+The English word "sine" originates from Hindu works which used the Sanskrit word _jya-ardha_ meaning "half chord". This was often shortened to _jya_ or _jiva_. Later, the Arabs translated the word phonetically as _jiba_, which is meaningless in Arabic. Since, the Arabic language uses accents instead of characters to represent vowels, over time the consonants _jb_ were mistaken for the word _jaib_, meaning bosom or breast. When Arabic works were eventually translated into Latin, _jaib_ was translated into the equivalent Latin word _sinus_. Finally, this Latin word was anglicized into the word _sine_, which we now use in English.
 
 <br>
 
@@ -167,19 +167,19 @@ First, I need to give some definitions.
   \def\angle1{340}
   \def\x1{ {\r * cos(\angle1)} }
   \def\y1{ {\r * sin(\angle1)} }
-  \draw[very thick, ->, red] (\x1, \y1) --  ( $({1.5 * cos(\angle1 - 90)}, {1.5 * sin(\angle1 - 90)}) + (\x1, \y1)$ );
-  \draw[very thick, ->, red] (\x1, \y1) --  ( $({1.5 * cos(\angle1 + 90)}, {1.5 * sin(\angle1 + 90)}) + (\x1, \y1)$ );
-  \draw[very thick, fill=black] (\x1, \y1) circle (\pointradius) node[below right, red] {Tangent};
+  \draw[very thick, ->, teal] (\x1, \y1) --  ( $({1.5 * cos(\angle1 - 90)}, {1.5 * sin(\angle1 - 90)}) + (\x1, \y1)$ );
+  \draw[very thick, ->, teal] (\x1, \y1) --  ( $({1.5 * cos(\angle1 + 90)}, {1.5 * sin(\angle1 + 90)}) + (\x1, \y1)$ );
+  \draw[very thick, fill=black] (\x1, \y1) circle (\pointradius) node[below right, teal] {Tangent};
 
   % secant
   \def\angle2{110}
   \def\x2{ {0.9 * \r * cos(\angle2)} }
   \def\y2{ {0.9 * \r * sin(\angle2)} }
-  \draw[very thick, ->, cyan] (\x2, \y2) --  ( $({1.7 * cos(\angle2 - 90)}, {1.5 * sin(\angle2 - 90)}) + (\x2, \y2)$ );
-  \draw[very thick, ->, cyan] (\x2, \y2) --  ( $({1.7 * cos(\angle2 + 90)}, {1.5 * sin(\angle2 + 90)}) + (\x2, \y2)$ );
+  \draw[very thick, ->, red] (\x2, \y2) --  ( $({1.7 * cos(\angle2 - 90)}, {1.5 * sin(\angle2 - 90)}) + (\x2, \y2)$ );
+  \draw[very thick, ->, red] (\x2, \y2) --  ( $({1.7 * cos(\angle2 + 90)}, {1.5 * sin(\angle2 + 90)}) + (\x2, \y2)$ );
   \draw[very thick, fill=black] ( $({0.97 * cos(\angle2 - 90)}, {0.97 * sin(\angle2 - 90)}) + (\x2, \y2) - (0, 0.05)$ ) circle (\pointradius);
   \draw[very thick, fill=black] ( $({0.8 * cos(\angle2 + 90)}, {0.8 * sin(\angle2 + 90)}) + (\x2, \y2) + (-0.05, 0.01)$ ) circle (\pointradius);
-  \node[above=10, cyan] at (\x2, \y2) {Secant};
+  \node[above=10, red] at (\x2, \y2) {Secant};
 
   % chord
   \def\angle3{170}
@@ -189,7 +189,7 @@ First, I need to give some definitions.
   \def\x4{ {\r * cos(\angle4)} }
   \def\y4{ {\r * sin(\angle4)} }
   % Idk why \x3 and \y3 doesn't work, so I just calculated it manually
-  \draw[very thick, teal] (-1.969615506cm, 0.347296355cm) -- (\x4, \y4) node[midway, xshift=-30, yshift=-10] {Chord};
+  \draw[very thick, cyan] (-1.969615506cm, 0.347296355cm) -- (\x4, \y4) node[midway, xshift=-30, yshift=-10] {Chord};
   \draw[very thick, fill=black] (-1.969615506cm, 0.347296355cm) circle (\pointradius);
   \draw[very thick, fill=black] (\x4, \y4) circle (\pointradius);
 
@@ -218,7 +218,7 @@ Finally, I provide the graphs of the trigonometric functions. It's nice to keep 
   % axes
   \draw[->, thick] (-4, 0) -- (4, 0) node[right] {$\theta$};
   \draw[->, thick] (0, -2) -- (0, 2) node[above] {$\sin \theta$};
-  \draw[scale=1, domain=-4:4, smooth, variable=\x, red, thick] plot ({\x}, {sin(180 * 0.318309887 * \x)});
+  \draw[scale=1, domain=-4:4, smooth, variable=\x, orange, thick] plot ({\x}, {sin(180 * 0.318309887 * \x)});
 {% endtikz %}
 &emsp;&emsp;&emsp;&emsp;
 {% tikz cos-graph%}
@@ -247,9 +247,9 @@ Finally, I provide the graphs of the trigonometric functions. It's nice to keep 
   % axes
   \draw[->, thick] (-4, 0) -- (4, 0) node[right] {$\theta$};
   \draw[->, thick] (0, -2.5) -- (0, 2.5) node[above] {$\sec \theta$};
-  \draw[scale=1, domain=-4:-2, smooth, variable=\x, orange, thick] plot ({\x}, {sec(180 * 0.318309887 * \x)});
-  \draw[scale=1, domain=-1.1:1.1, smooth, variable=\x, orange, thick] plot ({\x}, {sec(180 * 0.318309887 * \x)});
-  \draw[scale=1, domain=2:4, smooth, variable=\x, orange, thick] plot ({\x}, {sec(180 * 0.318309887 * \x)});
+  \draw[scale=1, domain=-4:-2, smooth, variable=\x, red, thick] plot ({\x}, {sec(180 * 0.318309887 * \x)});
+  \draw[scale=1, domain=-1.1:1.1, smooth, variable=\x, red, thick] plot ({\x}, {sec(180 * 0.318309887 * \x)});
+  \draw[scale=1, domain=2:4, smooth, variable=\x, red, thick] plot ({\x}, {sec(180 * 0.318309887 * \x)});
 {% endtikz %}
 &emsp;&emsp;&emsp;&emsp;
 {% tikz csc-graph%}
@@ -259,7 +259,6 @@ Finally, I provide the graphs of the trigonometric functions. It's nice to keep 
   }
 
   % axes
-  \definecolor{darkblue}{rgb}{0.0, 0.0, 0.55}
   \draw[->, thick] (-4, 0) -- (4, 0) node[right] {$\theta$};
   \draw[->, thick] (0, -2.5) -- (0, 2.5) node[above] {$\csc \theta$};
   \draw[scale=1, domain=-4:-3.58, smooth, variable=\x, cyan, thick] plot ({\x}, {sec(180 * 0.318309887 * \x - 90)});
@@ -294,7 +293,6 @@ Finally, I provide the graphs of the trigonometric functions. It's nice to keep 
   }
 
   % axes
-  \definecolor{darkblue}{rgb}{0.0, 0.0, 0.55}
   \draw[->, thick] (-4, 0) -- (4, 0) node[right] {$\theta$};
   \draw[->, thick] (0, -2.5) -- (0, 2.5) node[above] {$\cot \theta$};
   \draw[scale=1, domain=-4:-3.58, smooth, variable=\x, teal, thick] plot ({\x}, {-tan(180 * 0.318309887 * \x - 90)});

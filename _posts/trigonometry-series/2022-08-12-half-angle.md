@@ -9,7 +9,7 @@ series:     trigonometry
 tags:       trigonometry, half-angle
 ---
 
-These are just rearrangements of the power reduction identities. I rarely have seem much use for them.
+These are just rearrangements of the power reduction identities. I rarely have seen much use for them.
 
 ## Cosine
 

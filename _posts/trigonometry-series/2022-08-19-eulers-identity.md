@@ -25,7 +25,7 @@ $$
 
 ## Proof of Euler's Identity
 
-Let $z = cis \ \theta$ be any complex number. Define $\displaystyle z_n = \left (1 + \frac{i \theta}{n} \right )^n = r_n \ cis \ \theta_n$. We are going to prove that $\displaystyle \lim_{n \rightarrow \infty} z_n = z$. To do this, we will prove that $\displaystyle \lim_{n \rightarrow \infty} r_n = 1$ and $\displaystyle \lim_{n \rightarrow \infty} \theta_n = \theta$.
+Let $z = cis \ \theta$ be any complex number with a magnutide of $1$. Define $\displaystyle z_n = \left (1 + \frac{i \theta}{n} \right )^n = r_n \ cis \ \theta_n$. We are going to prove that $\displaystyle \lim_{n \rightarrow \infty} z_n = z$. To do this, we will prove that $\displaystyle \lim_{n \rightarrow \infty} r_n = 1$ and $\displaystyle \lim_{n \rightarrow \infty} \theta_n = \theta$.
 
 First, we need to evaluate $\displaystyle w = \left ( 1 + \frac{i \theta}{n} \right ) = s \ cis \ \phi$
 
@@ -54,7 +54,7 @@ $$
 \end{align}
 $$
 
-Now we do $\theta_n$. I'm going to be a bit unrigorous so as to not go into derivatives. First, we utilize something called the small-angle approximation.
+Now we do $\theta_n$. I'm going to be a bit unrigorous in order to avoid derivatives. First, we utilize something called the small-angle approximation.
 
 <center>
 {% tikz small-angle %}

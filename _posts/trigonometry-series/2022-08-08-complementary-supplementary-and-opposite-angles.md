@@ -224,7 +224,7 @@ Recall that $\theta \equiv \theta + 2 \pi k$ for any integer $k$, and in particu
 {% endtikz %}
 </center>
 
-Using geometry and the symmetry from the figure about, the result is obvious, but lets prove it rigorously.
+Using geometry and the symmetry from the figure above, the result is obvious, but let's prove it rigorously.
 
 $$
 \begin{align}

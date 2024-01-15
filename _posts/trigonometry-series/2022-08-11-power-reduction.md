@@ -9,7 +9,7 @@ series:     trigonometry
 tags:       trigonometry, power-rediuction
 ---
 
-These are extremely useful in calculus. More of them are just rearrangements of the double angle identities.
+These are extremely useful in calculus. They are just rearrangements of the double angle identities.
 
 ## Cosine
 

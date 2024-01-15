@@ -11,9 +11,9 @@ tags:       trigonometry, inverse
 
 ## What is an Inverse Function
 
-Given a function $f : A \rightarrow B$, with image $D \subseteq B$, the inverse function is $f^{-1} : D \rightarrow A$ such that $f(f^{-1}(x)) = f^{-1}(f(x)) = x$. In plain English, it "undoes" the given function. Note that in this context, $f^{-1} (x) \neq \frac{1}{f(x)}$. It's a bit of an abuse of notation, but usually it's easy to determine the intended meaning through context.
+Given a function $f : A \rightarrow B$, with image $D \subseteq B$, the inverse function is $f^{-1} : D \rightarrow A$ such that $f(f^{-1}(x)) = f^{-1}(f(x)) = x$. In plain English, it "undoes" the given function. Note that in this context, $f^{-1} (x) \neq (f(x))^{-1} = \frac{1}{f(x)}$. It's a bit of an abuse of notation, but usually it's easy to determine the intended meaning through context.
 
-An inverse function only exists if $f$ is _injective_ or _one-to-one_. This is a fancy word that means the function maps every input to a unique output. Writtem mathematically, we have.
+An inverse function only exists if $f$ is _injective_/_one-to-one_. This is a fancy word that means the function maps every input to a unique output. Written mathematically, we have.
 
 $$f(x) = f(y) \quad\implies\quad x = y$$
 
@@ -23,9 +23,9 @@ Let's take the function $f(x) = x^2$ as an example. This function is **not** inj
 
 ## Domain Restriction of a Function
 
-Notice that all of the trigonometric functions are not injective, since they are all periodic. Then, how do we define an inverse function? There's a trick. If a function is not injective, then we can just take the part of it that is. To take $f(x) = x^2$ as an example again. This function is injective on the interval $[0, \infty)$.
+Notice that all of the trigonometric functions are **not** injective, since they are all periodic. Then, how do we define an inverse function? There's a trick. If a function is not injective, then we can just take the part of it that is. To take $f(x) = x^2$ as an example again. This function is injective on the interval $[0, \infty)$.
 
-To define this in rigorous mathematic notation, let $f : A \rightarrow B$ and $C \subseteq A$. Then the function $f$ **restricted** to $C$ is denoted $f \rvert_C : C \rightarrow B$ is the function $f$ restricted to $C$. In particular, $f \rvert_C (x) = f(x) \quad \forall x \in C$ and $f \rvert_C (x)$ is left undefined for $x \in A \backslash C$.
+To define this in rigorous mathematic notation, let $f : A \rightarrow B$ and $C \subseteq A$. Then the function $f$ **restricted** to $C$ is denoted $f \rvert_C : C \rightarrow B$. In particular, $f \rvert_C (x) = f(x) \quad \forall x \in C$ and $f \rvert_C (x)$ is left undefined for $x \in A \backslash C$.
 
 Therefore, for $f(x) = x^2$, $f \rvert_{[0, \infty)} (x)$ is injective, so its inverse function $f^{-1} \rvert_{[0, \infty)} (x)$ exists. This inverse function is precisely $\sqrt{x}$. Notice that $\sqrt{(x^2)} = (\sqrt{x})^2 = x$ for all $x \in [0, \infty)$.
 
@@ -36,12 +36,12 @@ Therefore, for $f(x) = x^2$, $f \rvert_{[0, \infty)} (x)$ is injective, so its i
 
 Using domain restriction on the trigonometric functions, we can make them injective and define the inverse functions as follows.
 
-It's a bit of an abuse of notation to write $\sin^{-1} (x)$ since there is actually no inveres function for $\sin (x)$. Thus, many sources opt to write $\arcsin (x)$ instead. You will see both.
+It's a bit of an abuse of notation to write $\sin^{-1} (x)$ since there is actually no inverse function for $\sin (x)$. Thus, many sources opt to write $\arcsin (x)$ instead. You will see both.
 
 
 ## Inverse Sine
 
-$$\sin^{-1} (x) = (\sin \rvert_{[-\pi/2, \pi/2]})^{-1} (x)$$
+$$\arcsin (x) \equiv (\sin \rvert_{[-\pi/2, \pi/2]})^{-1} (x)$$
 
 <center>
 {% tikz sin-graph%}
@@ -76,7 +76,7 @@ $$\sin^{-1} (x) = (\sin \rvert_{[-\pi/2, \pi/2]})^{-1} (x)$$
 
 ## Cosine
 
-$$\cos^{-1} (x) = (\cos \rvert_{[0, \pi]})^{-1} (x)$$
+$$ \arccos (x) \equiv (\cos \rvert_{[0, \pi]})^{-1} (x)$$
 
 <center>
 {% tikz cos-graph%}
@@ -113,7 +113,7 @@ $$\cos^{-1} (x) = (\cos \rvert_{[0, \pi]})^{-1} (x)$$
 
 ## Tangent
 
-$$\tan^{-1} (x) = (\tan \rvert_{[-\pi/2, \pi/2]})^{-1} (x)$$
+$$ \arctan (x) \equiv (\tan \rvert_{[-\pi/2, \pi/2]})^{-1} (x)$$
 
 <center>
 {% tikz tan-graph%}
@@ -154,7 +154,7 @@ $$\tan^{-1} (x) = (\tan \rvert_{[-\pi/2, \pi/2]})^{-1} (x)$$
 
 ## Cosecant
 
-$$\csc^{-1} (x) = (\csc \rvert_{[-\pi/2, \pi/2]})^{-1} (x)$$
+$$ \arccsc (x) \equiv (\csc \rvert_{[-\pi/2, \pi/2]})^{-1} (x)$$
 
 <center>
 {% tikz csc-graph%}
@@ -195,7 +195,7 @@ $$\csc^{-1} (x) = (\csc \rvert_{[-\pi/2, \pi/2]})^{-1} (x)$$
 
 ## Secant
 
-$$\sec^{-1} (x) = (\sec \rvert_{[0, \pi]})^{-1} (x)$$
+$$ \arcsec (x) \equiv (\sec \rvert_{[0, \pi]})^{-1} (x)$$
 
 <center>
 {% tikz sec-graph%}
@@ -233,7 +233,7 @@ $$\sec^{-1} (x) = (\sec \rvert_{[0, \pi]})^{-1} (x)$$
 
 ## Cotangent
 
-$$\cot^{-1} (x) = (\cot \rvert_{[-\pi/2, \pi/2]})^{-1} (x)$$
+$$\arccot (x) = (\cot \rvert_{[-\pi/2, \pi/2]})^{-1} (x)$$
 
 <center>
 {% tikz cot-graph%}

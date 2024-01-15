@@ -9,7 +9,7 @@ series:     trigonometry
 tags:       trigonometry, product-to-sum
 ---
 
-These identities are rarely used, but can be life-savers when they are applicable. There are four identities.
+These identities are rarely used but can be life-savers when they are applicable. There are four identities.
 
 Here is the first identity.
 
