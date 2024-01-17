@@ -15,7 +15,7 @@ We can't do a series on trigonometric identities without proving the infamous Eu
 
 ## Definition of Euler's Constant
 
-There is a canonical backstory with Euler's constant involving compounding interest. For our purposes, I am just going to give the definition.
+There is a canonical backstory with Euler's constant involving compounding interest. For our purposes, I am just going to give this definition.
 
 $$
 e^x = \lim_{n \rightarrow \infty} \left ( 1 + \frac{x}{n}\right )^n
@@ -39,7 +39,7 @@ $$
 r_n = s^n = \left ( \sqrt{1 + \frac{\theta^2}{n^2}} \right )^n \qquad\qquad \tan \theta_n = \tan (n \phi)
 $$
 
-Now, we sew what happens when we let $n$ approach infinity.
+Now, we see what happens when we let $n$ approach infinity.
 
 $$
 \begin{align}

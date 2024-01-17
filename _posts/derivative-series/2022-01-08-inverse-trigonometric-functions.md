@@ -9,6 +9,8 @@ series:     derivative-proofs
 tags:       derivatives, inverse-trigonometric-functions, trigonometry, sine, cosine, tangent, secant, cosecant, cotangent
 ---
 
+For background on the inverse functions and how the inverse trig functions are defined, you can refer to my [series](/blog/trigonometry/) on trigonometry and this [post](/blog/trigonometry/inverse-trig-functions/).
+
 All proofs will be using the inverse derivative property. These results are very commonly used in advanced integration.
 
 ## Inverse Sine

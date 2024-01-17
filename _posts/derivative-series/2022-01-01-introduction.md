@@ -119,7 +119,7 @@ In practice, it turns out the right definition is easier to compute since we've 
 
 ## Limit Laws
 
-Limits have a precise and technical definition. However, I do not want to explain/prove this in the series. Thus, I will just assert these properties of limits, which we will use. I prove these rigorously in my series on [limits and continuity](/blog/limits-and-continuity/). I will list the relevant laws here.
+Limits have a precise and technical definition. For this series, I will just assert these properties of limits that we will use. I prove these rigorously in my series on [limits and continuity](/blog/limits-and-continuity/). I list the relevant laws here.
 
 Let $f$ and $g$ be functions. Let $c \in \mathbb{R}$ be any constant.
 

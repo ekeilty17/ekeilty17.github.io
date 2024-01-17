@@ -10,7 +10,7 @@ tags:       trigonometry, hyperbolic, hyperbola
 ---
 
 
-For background on inverse functions, refer to the [previous post](/blog/trigonometry/inverse-trig-functions/) on the inverse standard trig functions.
+For background on inverse functions, refer to a [previous post](/blog/trigonometry/inverse-trig-functions/) on the inverse standard trig functions.
 Looking at the graphs of the hyperbolic trig functions in the previous post, we can see that $\sinh$, $\tanh$, $\csch$, and $\coth$ are one-to-one, and therefore have a well-defined inverse. By contrast, $\cosh$ and $\sech$ are not one-to-one, so we will have to restrict their domain. Since we have exact formulas for the hyperbolic trig functions in terms of $e^x$, we will also get exact formulas for their inverse functions in terms of $\ln x$.
 
 <br>
@@ -43,7 +43,7 @@ e^y = \frac{2x \pm \sqrt{4x^2 + 4}}{2}
 e^y = x \pm \sqrt{x^2 + 1}
 $$
 
-Since $x < \sqrt{x^2 + 1}$, $x - \sqrt{x^2 + 1}$ this will result in a negative number and thus no solution for $y$.
+Since $x < \sqrt{x^2 + 1}$, the root $x - \sqrt{x^2 + 1}$ will result in a negative number and thus no solution for $y$.
 
 $$
 e^y = x + \sqrt{x^2 + 1}
@@ -66,7 +66,7 @@ $$
 \end{align}
 $$
 
-One thing to note is that the reason we neglect the root $e^y = x - \sqrt{x^2 - 1}$ is different than before. $x > \sqrt{x^2 - 1}$, therefore the root will be positive and produce a solution for $y$. Our choice of using the root $e^y = x - \sqrt{x^2 - 1}$ is due to our choice of domain restriction.
+One thing to note is that the reason we neglect the root $e^y = x - \sqrt{x^2 - 1}$ is different than before. $x > \sqrt{x^2 - 1}$, therefore the root will be positive and produce a solution for $y$. Our choice of using the root $e^y = x + \sqrt{x^2 - 1}$ is due to our choice of domain restriction.
 
 ### Hyperbolic Tangent
 

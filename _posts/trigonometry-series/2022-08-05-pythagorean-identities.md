@@ -11,7 +11,7 @@ tags:       trigonometry, pythagoras
 
 ## The Pythagorean Theorem
 
-This is one of the older and more famous theorems in mathematics. It states that given a right triangle, the sum of the square of the legs equals the square of the hypotenuse. When I say "square" I mean _squared__ in the algebra sense, and a _square_ in the geometric sense. 
+This is one of the older and more famous theorems in mathematics. It states that given a right triangle, the sum of the square of the legs equals the square of the hypotenuse. When I say "square" I mean _squared_ in the algebra sense, and a _square_ in the geometric sense. 
 
 <center>
 {% tikz pythagoraean-theorem %}

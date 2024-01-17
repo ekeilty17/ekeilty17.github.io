@@ -9,6 +9,14 @@ series:     derivative-proofs
 tags:       derivatives, trigonometric-functions, trigonometry, sine, cosine, tangent, secant, cosecant, cotangent
 ---
 
+Recall the results of the previous post.
+
+$$
+\lim_{x \rightarrow 0} \ \frac{\sin(x)}{x} = 1
+\qquad\qquad
+\lim_{x \rightarrow 0} \ \frac{\cos(x)-1}{x} = 0
+$$
+
 ## Sine
 
 $$
@@ -61,7 +69,7 @@ $$
 
 ## Secant
 
-Using reciprocal rule
+Using reciprocal rule.
 
 $$
 \begin{align}
@@ -75,7 +83,7 @@ $$
 
 ## Cosecant
 
-Using reciprocal rule
+Using reciprocal rule.
 
 $$
 \begin{align}

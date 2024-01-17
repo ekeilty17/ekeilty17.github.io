@@ -385,7 +385,9 @@ Every standard trig function on the unit circle has a geometric interpretation w
 {% endtikz %}
 </center>
 
-I will leave it as an exercise to the reader to prove these diagrams are correct (it's not too hard using similar triangles). As you can see, the $\sech$ and $\csch$ do not correspond to secants of the hyperbola as the names would suggest (unlike the standard trig functions). There are ways you can force the issue, but the constructions are convoluted. You can see a diagram <a href="https://math.stackexchange.com/questions/451034/geometric-construction-of-hyperbolic-trigonometric-functions" target="_blank">here</a>.
+I will leave it as an exercise to the reader to prove these diagrams are correct (it's not too hard using similar triangles). As you can see, the $\sech$ and $\csch$ do not correspond to secants of the hyperbola as the names would suggest (unlike the standard trig functions). 
+
+<!-- There are ways you can force the issue, but the constructions are convoluted. You can see a diagram <a href="https://math.stackexchange.com/questions/451034/geometric-construction-of-hyperbolic-trigonometric-functions" target="_blank">here</a>. -->
 
 <br>
 

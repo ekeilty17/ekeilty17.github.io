@@ -9,7 +9,9 @@ series:     trigonometry
 tags:       trigonometry, opposite, complementary, supplementary
 ---
 
-For all of these formulas, we will use the difference identity for cosine to prove them rigorously. However, their truth is easily seen via an appropriate diagram.
+For all of these formulas, we will use the difference identity for cosine to prove them (and avoid circularity). However, their truth is easily seen via an appropriate diagram.
+
+<br>
 
 ## Complementary Angles
 

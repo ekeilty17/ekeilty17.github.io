@@ -62,7 +62,7 @@ $$
 Suppose $\displaystyle \lim_{x \rightarrow a} \frac{f(x)}{g(x)}, \ \lim_{x \rightarrow a} \frac{f'(x)}{g'(x)}, \ \lim_{x \rightarrow a} \frac{f''(x)}{g''(x)}, \ \ldots, \ \lim_{x \rightarrow a} \frac{f^{(n-1)}(x)}{g^{(n-1)}(x)}$ are indeterminant, and $\displaystyle \lim_{x \rightarrow a} \frac{f^{(n)}(x)}{g^{(n)}(x)} = \frac{f^{(n)}(a)}{g^{(n)}(a)}$ exists and is not indeterminant. Then
 
 $$
-\lim_{x \rightarrow a} \frac{f(x)}{g(x)} = \lim_{x \rightarrow a} \frac{f'(x)}{g'(x)} = \lim_{x \rightarrow a} \frac{f''(x)}{g''(x)} = \ldots = \lim_{x \rightarrow a} \frac{f^{(n-1)}(x)}{g^{(n-1)}(x)} = \lim_{x \rightarrow a} \frac{f^{(n)}(x)}{g^{(n)}(x)}
+\lim_{x \rightarrow a} \frac{f(x)}{g(x)} = \lim_{x \rightarrow a} \frac{f'(x)}{g'(x)} = \lim_{x \rightarrow a} \frac{f{'}{'}(x)}{g{'}{'}(x)} = \ldots = \lim_{x \rightarrow a} \frac{f^{(n-1)}(x)}{g^{(n-1)}(x)} = \lim_{x \rightarrow a} \frac{f^{(n)}(x)}{g^{(n)}(x)}
 $$
 
 i.e. we can successively take derivatives until we arrive at a non-indeterminant form. Note that here equality is well-defined because all limits exist.

@@ -198,7 +198,7 @@ First, I need to give some definitions.
 
 A **tangent** intersects the circumference of a circle at one point. A **chord** is a line segment whose endpoints both lie on the circumference of the circle. A **secant** is the extension of a chord.
 
-Now, hopefully, the names of the rest of the trigonometric functions are clear. "Sine" and "cosine" are both half-chords of the circle (which is ultimately the origin of their confused etymology). "Secant" and "Cosecant" are both half-secants of the circle. Finally, "Tangent" and "cotangent" are both half-tangents of the circle. 
+Now, hopefully, the names of the rest of the trigonometric functions are clear. "Sine" and "Cosine" are both half-chords of the circle (which is ultimately the origin of their confused etymology). "Secant" and "Cosecant" are both half-secants of the circle. Finally, "Tangent" and "Cotangent" are both half-tangents of the circle. 
 
 Also notice that $$\{ \sin \theta, \sec \theta, \tan \theta \}$$ and $$\{\cos \theta, \csc \theta, \cot \theta \}$$ are duals of each other. You will see in the identities of later posts, there is always a symmetry between these functions, which is a direct result of the symmetry of their geometry.
 
@@ -206,7 +206,7 @@ Also notice that $$\{ \sin \theta, \sec \theta, \tan \theta \}$$ and $$\{\cos \t
 
 ## Graphs
 
-Finally, I provide the graphs of the trigonometric functions. It's nice to keep these in mind when interpreting the consequences of trig identities.
+I provide the graphs of the trigonometric functions. It's nice to keep these in mind when interpreting the consequences of trig identities.
 
 <center>
 {% tikz sin-graph%}
@@ -305,3 +305,41 @@ Finally, I provide the graphs of the trigonometric functions. It's nice to keep 
 <br>
 
 Notice the asymptotes in $\sec$, $\csc$, $\tan$, and $\cot$. See if you can determine which values of $\theta$ cause these asymptotes.
+
+<br>
+
+## What are Trigonometric Functions Fundamentally?
+
+Eventually, we are going to see that all trigonometric functions can be expressed solely in terms of $\sin$. Each of the six functions are just syntactic sugar for a singular deeper truth, which is the relationship of a circle's radius, arc length, and corresponding chord length.
+
+<center>
+{% tikz arc-to-chord%}
+  \usetikzlibrary{angles,patterns,calc}
+  \tikzset{
+    font={\fontsize{12pt}{12}\selectfont}
+  }
+
+  \def\r{4cm}
+  \def\angle{40}
+  \def\x{ {\r * cos(\angle)} }
+  \def\y{ {\r * sin(\angle)} }
+  \def\pointradius{0.02*\r}
+
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (\x, \y);
+  \coordinate (B) at (\x, -\y);
+  
+  \draw[thick] (O) circle (\r);
+
+  \draw[] (O) -- (A) node[midway, above left] {$r$};
+  \draw[] (O) -- (B) node[midway, below left] {$r$};
+  
+  \draw[very thick, blue] (A) -- (B) node[midway, left] {$2 \sin(\theta)$};
+  \draw pic [draw, red, ->, pic text=$\theta r$, very thick, angle radius={\r}, angle eccentricity=1.1] {angle = B--O--A};
+
+  \draw[very thick, fill=black] (O) circle (\pointradius) node[above right=0.1] at (O) {$$};
+  \draw[very thick, fill=black] (A) circle (\pointradius) node[above right=0.1] at (A) {$$};
+  \draw[very thick, fill=black] (B) circle (\pointradius) node[above right=0.1] at (B) {$$};
+
+{% endtikz %}
+</center>

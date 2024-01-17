@@ -17,7 +17,7 @@ An inverse function only exists if $f$ is _injective_/_one-to-one_. This is a fa
 
 $$f(x) = f(y) \quad\implies\quad x = y$$
 
-Let's take the function $f(x) = x^2$ as an example. This function is **not** injective, since $f(1) = 1 = f(-1)$, but $1 \neq -1$. Thus, an inverse function does not exist. Why? What should be the value of $f^{-1}(1)$? It needs to be both $1$ and $-1$, which means it is not a function. In complex analysis, we call this a **multi-function**.
+Let's take the function $f(x) = x^2$ as an example. This function is **not** injective, since $f(1) = 1 = f(-1)$, but $1 \neq -1$. Thus, an inverse function does not exist. Why? What should be the value of $f^{-1}(1)$? It needs to be both $1$ and $-1$, which means it is not a function. In complex analysis, we call this a **multi-function**, but these are not allowed in real analysis.
 
 <br>
 

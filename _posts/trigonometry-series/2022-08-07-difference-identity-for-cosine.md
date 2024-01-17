@@ -62,7 +62,7 @@ Thus, $d^2 = (y_2 - y_1)^2 + (x_2 - x_1)^2$ or $d = \sqrt{ (y_2 - y_1)^2 + (x_2 
 
 ## Derivation
 
-Consider any isosceles triangle centered on the unit circle (left figure). Rotate this triangle so that one edge lies on the x-axis (right figure).
+Consider an isosceles triangle centered on the unit circle (left figure). Rotate this triangle so that one edge lies on the x-axis (right figure).
 
 <center>
 {% tikz triangle1 %}
@@ -161,17 +161,19 @@ Consider any isosceles triangle centered on the unit circle (left figure). Rotat
 
 Since the triangles are congruent, the side length $d$ must be the same between the two. Thus, we will calculate $d$ in two different ways using the Euclidean distance formula.
 
-Per the left figure, 
+Per the left figure,.
 
 $$
 d_{\text{left}} = \sqrt{(\cos \alpha - \cos \beta)^2 + (\sin \alpha - \sin \beta)^2}
 $$
 
-Per the right figure,
+Per the right figure.
 
 $$
 d_{\text{right}} = \sqrt{(\cos (\alpha -\beta) - 0)^2 + (\sin (\alpha - \beta) - 1)^2}
 $$
+
+Equate the left and right figure.
 
 $$
 \begin{align}

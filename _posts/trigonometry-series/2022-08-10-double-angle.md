@@ -22,7 +22,7 @@ $$
 \end{align}
 $$
 
-There are a few other forms of this identity using the Pythagorean identity
+There are a few other forms of this identity using the Pythagorean identity.
 
 $$
 \begin{align}
@@ -85,7 +85,7 @@ $$
 \end{align}
 $$
 
-Although, this is quite messy. So more often you will see this form.
+This is quite messy, so more often you will see this form.
 
 $$
 \begin{align}
@@ -131,7 +131,7 @@ $$
 \end{align}
 $$
 
-And we could also take this one more step to get 
+And we could also take this one more step to get.
 
 $$
 \cot(2 \theta) = \frac{1}{2} (\cot \theta - \tan \theta)

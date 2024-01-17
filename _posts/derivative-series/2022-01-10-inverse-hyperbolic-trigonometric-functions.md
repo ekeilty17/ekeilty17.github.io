@@ -13,6 +13,8 @@ tags:       derivatives, inverse-hyperbolic-trigonometric-functions, hyperbolic-
 
 For background on the inverse hyperbolic trig functions, you can refer to my [series](/blog/trigonometry/) on trigonometry and this [post](/blog/trigonometry/inverse-hyperbolic-trig-functions/). These results are very commonly used in advanced integration.
 
+All proofs will directly evaluate the formula of the inverse functions. However, the same results could also be derived using the inverse derivative property (as we did for the [standard inverse trig functions](/blog/derivative-proofs/inverse-trigonometric-functions/)).
+
 <br>
 
 ## Inverse Hyperbolic Sine

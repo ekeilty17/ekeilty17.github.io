@@ -35,9 +35,10 @@ $$
     &= \lim_{h \rightarrow 0} \ \frac{(x-h)^n - x^n}{h} \\[10pt]
     &= \lim_{h \rightarrow 0} \ \frac{1}{h}\left ( \sum_{k=0}^n \binom{n}{k} x^k h^{n-k} - x^n \right ) \\[10pt]
     &= \lim_{h \rightarrow 0} \ \frac{1}{h}\left ( \sum_{k=0}^{n-1} \binom{n}{k} x^k h^{n-k} \right ) \\[10pt]
-    &= \lim_{h \rightarrow 0} \ \frac{1}{h}\left ( h \sum_{k=0}^{n-1} \binom{n}{k} x^k h^{n-(k-1)} \right ) \\[10pt]
-    &= \lim_{h \rightarrow 0} \ \sum_{k=0}^{n-1} \binom{n}{k} x^k h^{n-(k-1)}\\[10pt]
-    &= n x^{n-1} \\[10pt]
+    &= \lim_{h \rightarrow 0} \ \frac{1}{h}\left ( h \sum_{k=0}^{n-1} \binom{n}{k} x^k h^{(n-1)-k} \right ) \\[10pt]
+    &= \lim_{h \rightarrow 0} \ \sum_{k=0}^{n-1} \binom{n}{k} x^k h^{(n-1)-k}\\[10pt]
+    &= \binom{n}{n-1} x^{n-1} \\[10pt]
+    &= n x^{n-1}
 \end{align}
 $$
 
@@ -66,7 +67,7 @@ Thus, this fits the pattern from the positive integers. For any integer $k \in \
 
 Suppose $p, q \in \mathbb{Z}$ such that $p, q \neq 0 \quad \forall x$.
 
-First, we need to find the derivative of $x^{1/q}$. We do this using the fact that this is the inverse function of $f(x) = x^q$. Therefore,
+First, we need to find the derivative of $x^{1/q}$. We do this using the fact that it is the inverse function of $f(x) = x^q$. Therefore,
 
 $$
 \begin{align}

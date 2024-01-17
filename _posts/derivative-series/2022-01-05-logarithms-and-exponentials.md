@@ -9,7 +9,7 @@ series:     derivative-proofs
 tags:       derivatives, logarithms, exponents
 ---
 
-Some textbooks will define $e$ by its derivative, others define it by its Taylor expansion. For this series, I am going to use the limit definition
+Some textbooks will define $e$ by its derivative, others define it by its Taylor expansion. For this series, I am going to use the limit definition.
 
 $$
 e^x = \lim_{n \rightarrow \infty} \left ( 1 + \frac{x}{n} \right )^n
@@ -17,7 +17,9 @@ $$
 
 ## Logarithms
 
-I will assume the reader is comfortable with the properties of logarithms. Let $b \in \mathbb{R}$ and $b > 1$.
+I will assume the reader is comfortable with the properties of logarithms. Also, this proof uses the fact that logarithms are continuous. I prove this in this [post](/blog/limits-and-continuity/exponentials-and-logarithms//) of my [limits and continuity](/blog/limits-and-continuity/) series. 
+
+Let $b \in \mathbb{R}$ and $b > 1$.
 
 $$
 \begin{align}
@@ -60,4 +62,4 @@ $$
 \frac{d}{dx} e^x = e^x
 $$
 
-This is what makes $e$ such a special constant. It represents the fixed-point of the derivative operation. In fact, it is the unique fixed point. Thus, if another function is found to also be a fixed-point, then it must be equal to $e^x$.
+This is what makes $e$ such a special constant. It represents the fixed-point of the derivative operation. In fact, it is the unique fixed point. Thus, if another function is found to also be a fixed-point, then it must be equal to $e^x$. Maybe you should compute the derivative of $f(x) = \cos (x/i) + i \sin (x/i)$ where $i$ is an imaginary number with the property that $i^2 = -1$.
