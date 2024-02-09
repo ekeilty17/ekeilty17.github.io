@@ -331,11 +331,11 @@ Eventually, we are going to see that all trigonometric functions can be expresse
   
   \draw[thick] (O) circle (\r);
 
-  \draw[] (O) -- (A) node[midway, above left] {$r$};
-  \draw[] (O) -- (B) node[midway, below left] {$r$};
+  \draw[] (O) -- (A) node[midway, above left] {$1$};
+  \draw[] (O) -- (B) node[midway, below left] {$1$};
   
   \draw[very thick, blue] (A) -- (B) node[midway, left] {$2 \sin(\theta)$};
-  \draw pic [draw, red, ->, pic text=$\theta r$, very thick, angle radius={\r}, angle eccentricity=1.1] {angle = B--O--A};
+  \draw pic [draw, red, ->, pic text=$\theta$, very thick, angle radius={\r}, angle eccentricity=1.1] {angle = B--O--A};
 
   \draw[very thick, fill=black] (O) circle (\pointradius) node[above right=0.1] at (O) {$$};
   \draw[very thick, fill=black] (A) circle (\pointradius) node[above right=0.1] at (A) {$$};

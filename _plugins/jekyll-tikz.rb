@@ -34,6 +34,7 @@ module Jekyll
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{tikz}
+\usepackage{tikz-3dplot}
 \usepackage{pgfplots}
 \usepackage{pst-plot}
 \pgfplotsset{compat=1.18} % version number

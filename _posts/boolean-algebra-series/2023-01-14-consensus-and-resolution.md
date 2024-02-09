@@ -110,7 +110,7 @@ $(a \vee b) \wedge (\overline{b} \vee c) \quad = \quad (a \wedge \overline{b}) \
 
 $$
 \begin{align}
-    &= (a \vee b) \wedge (\overline{b} \vee c)
+    &(a \vee b) \wedge (\overline{b} \vee c)
     && \\
 
     &= (a \wedge c) \vee (a \wedge \overline{b}) \vee (b \wedge c)
@@ -130,7 +130,7 @@ $(a \wedge \overline{b}) \vee (b \wedge c) \quad \Rightarrow \quad a \vee c$
 
 $$
 \begin{align}
-    &= (a \wedge \overline{b}) \vee (b \wedge c)
+    &(a \wedge \overline{b}) \vee (b \wedge c)
     && \\
 
     &= (a \vee b) \wedge (a \vee c) \wedge (\overline{b} \vee b) \wedge (\overline{b} \vee c)

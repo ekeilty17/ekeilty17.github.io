@@ -24,7 +24,7 @@ The purpose of Boolean algebra is to define the rules for manipulating Boolean e
 
 ## The Minimal Set of Axioms
 
-Now, there are a couple of ways you can define the axioms of Boolean algebra. One way is to define the behavior of $\color{green}T$ and $\color{red}F$ via truth tables. Then, using a completion argument with truth tables you can start creating laws. I, instead, want to start with some axioms and obtain the definitions of the Boolean operators and their truth tables as a consequence. 
+Now, there are a couple of ways you can define the axioms of Boolean algebra. One way is to define the behavior of $\color{green}T$ and $\color{red}F$ via <a href="https://en.wikipedia.org/wiki/Truth_table" target="_blank">truth tables</a>. Then, using a completion argument with truth tables you can start creating laws. I, instead, want to start with some axioms and obtain the definitions of the Boolean operators and their truth tables as a consequence. 
 
 Below are the axioms, and I claim this is a minimal set. Removing any would mean some laws could not be proved. Another way to look at it, removing any would result in gaps in the truth tables.
 
@@ -45,13 +45,13 @@ Below are the axioms, and I claim this is a minimal set. Removing any would mean
   * $a \vee (b \wedge c) = (a \vee b) \wedge (a \vee c)$
 
 
-For those well-versed in abstract algebra, these axioms may look awfully similar to those of a <a href="http://people.reed.edu/~mayer/math112.html/html1/node16.html" target="_blank">field</a>
+For those well-versed in abstract algebra, these axioms may look awfully similar to those of a <a href="http://people.reed.edu/~mayer/math112.html/html1/node16.html" target="_blank">field</a>.
 
 <br>
 
 ## Fundamental Operations
 
-The above axioms define the behavior of the operations $\neg$, $\wedge$, and $\vee$. Given these axioms, these operations are forced. We can show this via a **truth table**, which shows all possible combinations of inputs to the operations.
+The above axioms define the behavior of the operations $\neg$, $\wedge$, and $\vee$. Given these axioms, the result of all possible combinations of inputs to these operations are fixed. We show their truth tables below.
 
 |                |        | $\color{green}T$ | $\color{red}F$   |
 |----------------|:------:|:----------------:|:----------------:|
@@ -62,7 +62,7 @@ The above axioms define the behavior of the operations $\neg$, $\wedge$, and $\v
 | Conjunction (AND) | $\wedge$ | $\color{green}T$               | $\color{red}F$               | $\color{red}F$               | $\color{red}F$             |
 | Disjunction (OR)  | $\vee$   | $\color{green}T$               | $\color{green}T$             | $\color{green}T$             | $\color{red}F$             |
 
-These truth tables can be derived from the axioms and some laws we prove in the next post. The negation truth table is a consequence of identity and annihilation laws. Commutativity and distributivity are required to fully define the conjunction and disjunction truth tables.
+These truth tables can be derived from the axioms and some laws we prove in the [next post](/blog/boolean-algebra/miscellaneous-simple-relations). The negation truth table is a consequence of identity and annihilation laws. Commutativity and distributivity are required to fully define the conjunction and disjunction truth tables.
 
 Note, going forward, instead of writing $\neg a$ I will write $\overline{a}$ to condense expressions.
 
