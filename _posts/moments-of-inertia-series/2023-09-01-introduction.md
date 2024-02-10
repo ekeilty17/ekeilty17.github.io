@@ -7,7 +7,6 @@ permalink:  ":categories/:title/"
 part:       0
 series:     moments-of-inertia
 tags:       moments-of-inertial, introduction
-excerpt_separator: <!--more-->
 ---
 
 ## Motivation

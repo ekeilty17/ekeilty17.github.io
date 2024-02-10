@@ -7,7 +7,6 @@ permalink:  ":categories/:title/"
 part:       2
 series:     moments-of-inertia
 tags:       moments-of-inertia
-excerpt_separator: <!--more-->
 ---
 
 <!-- Insane coordinate drawings -->
