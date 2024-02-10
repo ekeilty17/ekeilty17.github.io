@@ -1,13 +1,12 @@
 ---
 layout:     series
-title:      "The Real Numbers"
-date:       2023-07-06
+title:      "Completeness of the Real Numbers"
+date:       2025-07-07
 categories: blog constructing-the-real-numbers
 permalink:  ":categories/:title/"
-part:       5
+part:       6
 series:     constructing-the-real-numbers
-tags:       real-numbers, dedekind-cuts, cauchy-sequences
+tags:       compelteness
 ---
 
 **TODO**
-

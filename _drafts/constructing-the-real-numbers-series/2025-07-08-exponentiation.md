@@ -1,7 +1,7 @@
 ---
 layout:     series
 title:      "Exponentiation"
-date:       2023-07-08
+date:       2025-07-08
 categories: blog constructing-the-real-numbers
 permalink:  ":categories/:title/"
 part:       7

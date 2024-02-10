@@ -1,7 +1,7 @@
 ---
 layout:     series
 title:      "The Integers"
-date:       2023-07-04
+date:       2025-07-04
 categories: blog constructing-the-real-numbers
 permalink:  ":categories/:title/"
 part:       3
