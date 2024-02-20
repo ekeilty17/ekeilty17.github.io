@@ -55,11 +55,14 @@ module Jekyll
 
         # compute the path we are going to save our svg image in
         post_url = context["page"]["url"]
+        post_name = File.basename(post_url, ".*")
         post_series = context["page"]["series"]
+        post_series_part = context["page"]["part"]
         if post_series
-          file_save_path = File.join(post_series, File.basename(post_url, ".*"))
+          # If the post is part of a series, I want to name the file in a particular way so the posts are easier to find
+          file_save_path = File.join(post_series, "#{post_series_part}:#{post_name}")
         else
-          file_save_path = File.basename(post_url, ".*")
+          file_save_path = post_name
         end
 
         # I think this is just for debugging, I'm not sure why it's necessary

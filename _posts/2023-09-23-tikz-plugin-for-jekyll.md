@@ -96,6 +96,8 @@ Liquid::Template.register_tag('tikz', Jekyll::Tags::Tikz)
 
 I did not create this myself (although I have modified it). The original file says it was created by [MaxFan](http://github.com/Maxfan-zone http://maxfan.org) (but this link doesn't work anymore). You'll also find it on various GitHubs ([here](https://gist.github.com/i2000s/d81aaa89101555b1965eeb514ed6bca5) and [here](https://gist.github.com/AlexBobkov/d419863e610fce7c8db5714b665b009e)).
 
+Also, the above is exactly the code that I use. I have modified the code to suit the specific structure of my blog. You can see it [here](https://github.com/ekeilty17/ekeilty17.github.io/blob/main/_plugins/jekyll-tikz.rb).
+
 <br>
 
 ### How To Use the Plugin
