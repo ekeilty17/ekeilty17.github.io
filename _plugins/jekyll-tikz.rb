@@ -53,12 +53,23 @@ module Jekyll
       def render(context)
         tikz_code = @header + super + @footer
 
-        tmp_directory = File.join(Dir.pwd, "_tikz_tmp", File.basename(context["page"]["url"], ".*"))
+        # compute the path we are going to save our svg image in
+        post_url = context["page"]["url"]
+        post_series = context["page"]["series"]
+        if post_series
+          file_save_path = File.join(post_series, File.basename(post_url, ".*"))
+        else
+          file_save_path = File.basename(post_url, ".*")
+        end
+
+        # I think this is just for debugging, I'm not sure why it's necessary
+        tmp_directory = File.join(Dir.pwd, "_tikz_tmp", file_save_path)
         tex_path = File.join(tmp_directory, "#{@file_name}.tex")
         pdf_path = File.join(tmp_directory, "#{@file_name}.pdf")
         FileUtils.mkdir_p tmp_directory
 
-        dest_directory = File.join(Dir.pwd, "svg", File.basename(context["page"]["url"], ".*"))
+        # This is where we save the svg file, which is loaded by the website
+        dest_directory = File.join(Dir.pwd, "svg", file_save_path)
         dest_path = File.join(dest_directory, "#{@file_name}.svg")
         FileUtils.mkdir_p dest_directory
 
@@ -71,7 +82,8 @@ module Jekyll
           system("#{pdf2svg_path} #{pdf_path} #{dest_path}")
         end
 
-        web_dest_path = File.join("/svg", File.basename(context["page"]["url"], ".*"), "#{@file_name}.svg")
+        # embedding the link to the svg file
+        web_dest_path = File.join("/svg", file_save_path, "#{@file_name}.svg")
         "<embed src=\"#{web_dest_path}\" type=\"image/svg+xml\" />"
       end
 
