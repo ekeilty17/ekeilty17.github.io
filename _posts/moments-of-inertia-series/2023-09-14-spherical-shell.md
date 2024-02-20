@@ -7,23 +7,33 @@ permalink:  ":categories/:title/"
 part:       13
 series:     moments-of-inertia
 tags:       moments-of-inertia, shell
-excerpt_separator: <!--more-->
 ---
 
 Sometimes called a hollow sphere.
 
-## Parametarizing the Surface
+## Parameterizing the Surface
 
-We can do this with just standard spherical coordinates
+We can do this with just standard spherical coordinates.
 
 $$
-\b{r}(\theta, \phi) = R \; \u{r}
+\b{r}(\theta, \phi) = R \sin \theta \cos \phi \; \u{x} + R \sin \theta \sin \phi \; \u{y} + R \cos \theta \u{z} = R \; \u{r} \\[10pt]
+A = \{ \b{r}(\theta, \phi) \ : \ 0 \leq \theta < \pi \quad 0 \leq \phi < 2\pi \}
 $$
 
 Therefore
 
 $$
-dA = R^2 \sin \theta \; d\theta \; d\phi
+\frac{\partial \b{r}}{\partial \theta} = R \cos \theta \cos \phi \; \u{x} + R \sin \cos \sin \phi \; \u{y} - R \sin \theta \u{z} = R \; \u{\theta}
+\\[10pt]
+\frac{\partial \b{r}}{\partial \phi} = - R \sin \theta \sin \phi \; \u{x} + R \sin \theta \cos \phi \; \u{y} = R \sin \theta \; \u{\phi}
+$$
+
+$$
+d \b{A} = \left ( \frac{\partial \b{r}}{\partial \theta} d\theta \right ) \times \left ( \frac{\partial \b{r}}{\partial \phi} d\phi \right ) = R^2 \sin \theta \; d\theta \; d\phi \; \u{r}
+$$
+
+$$
+dA = \abs{ d \b{A} } = R^2 \sin \theta \; d\theta \; d\phi
 $$
 
 ## Mass
@@ -168,8 +178,8 @@ $$
     &= \sigma \int_{0}^{\pi} \int_{0}^{2 \pi} (R \sin \theta)^2 R^2 \sin \theta \; d\theta \; d\phi \\[10pt]
     &= \sigma R^4 \left ( \int_{0}^{\pi} \sin^3 \theta \; d\theta \right ) \left ( \int_{0}^{2\pi} d \phi \right ) \\[10pt]
     &= \sigma R^4 \left ( \frac{4}{3} \right ) \left ( 2 \pi \right ) \\[10pt]
-    &= \sigma \cdot \frac{8}{3} \pi R^4 \\[10pt]
-    &= \frac{2}{3} M R^2
+    &= \sigma \cdot \tfrac{8}{3} \pi R^4 \\[10pt]
+    &= \tfrac{2}{3} M R^2
 \end{align}
 $$
 
@@ -187,5 +197,10 @@ I = \begin{bmatrix}
     \frac{2}{3} M R^2 & 0 & 0 \\
     0  & \frac{2}{3} M R^2 & 0 \\
     0  & 0 & \frac{2}{3} M R^2
+\end{bmatrix}
+= \tfrac{2}{3} M R^2 \begin{bmatrix}
+    1 & 0 & 0 \\
+    0  & 1 & 0 \\
+    0  & 0 & 1
 \end{bmatrix}
 $$

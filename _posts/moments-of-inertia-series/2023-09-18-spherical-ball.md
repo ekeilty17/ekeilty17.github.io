@@ -7,21 +7,36 @@ permalink:  ":categories/:title/"
 part:       17
 series:     moments-of-inertia
 tags:       moments-of-inertia, ball
-excerpt_separator: <!--more-->
 ---
 
-## Parametarizing the Volume
+**TODO** I think the axis is supposed to go through the base not the tip...which makes sense
+
+## Parameterizing the Volume
 
 We can do this with just standard spherical coordinates
 
 $$
-\b{r}(r, \theta, \phi) = r \; \u{r}
+\b{r}(r, \theta, \phi) =  r \sin \theta \cos \phi \; \u{x} + r \sin \theta \sin \phi \; \u{y} + r \cos \theta \u{z} = r \; \u{r} \\[10pt]
+V = \{ \b{r}(r, \theta, \phi) \ : \ 0 \leq r \leq R \quad 0 \leq \theta \leq \pi \quad 0 \leq \phi < 2\pi \}
 $$
 
 Therefore
 
 $$
-dV = r^2 \sin \theta \; dr \; d\theta \; d\phi
+\frac{\partial \b{r}}{\partial r} dr = (\sin \theta \cos \phi \; \u{x} + \sin \theta \sin \phi \; \u{y} + \cos \theta \; \u{z}) dr = dr \; \u{r}
+\\[10pt]
+\frac{\partial \b{r}}{\partial \theta} d\theta = (r \cos \theta \cos \phi \; \u{x} + r \cos \theta \sin \phi \; \u{y} - r \sin \theta \; \u{z}) d\theta = r \; d\theta \; \u{\theta}
+\\[10pt]
+\frac{\partial \b{r}}{\partial \phi} d\phi = (- r \sin \theta \sin \phi \; \u{x} + r \sin \theta \cos \phi \; \u{y}) d\phi = r \; \sin \theta \; d\phi \; \u{\phi}
+$$
+
+$$
+dV = \left \lvert \begin{array}{ccc}
+    dr & 0  & 0 \\
+    0  & r \; d\theta & 0 \\
+    0  & 0  & r \; \sin \theta \; d\phi
+\end{array} \right \rvert
+= r^2 \sin \theta \; dr \; d\theta \; d\phi
 $$
 
 <br>
@@ -85,16 +100,14 @@ $$
 
 <br>
 
-We use spherical coordinates to evaluate this integral. Since it is a spherical ball, all parameters $r$,$\theta$, and $\phi$ vary. Therefore, $dV = r^2 \sin \theta \; d r \; d \theta \; d \phi$.
-
 $$
 \begin{align}
     M &= \int \; dm \\[10pt]
     &= \rho \int \; dV \\[10pt]
     &= \rho \int_{0}^{R} \int_{0}^{\pi} \int_{0}^{2 \pi} r^2 \sin \theta \; dr \; d\theta \; d\phi \\[10pt]
     &= \rho \left ( \int_{0}^{R} r^2 \; dr \right ) \left ( \int_{0}^{\pi} \sin \theta \; d\theta \right ) \left ( \int_{0}^{2 \pi} d\phi \right ) \\[10pt]
-    &= \rho \left ( \frac{1}{3} R^3 \right ) \left ( 2 \right ) \left ( 2 \pi \right ) \\[10pt]
-    &= \rho \cdot \frac{4}{3} \pi R^3
+    &= \rho \left ( \tfrac{1}{3} R^3 \right ) \left ( 2 \right ) \left ( 2 \pi \right ) \\[10pt]
+    &= \rho \cdot \tfrac{4}{3} \pi R^3
 \end{align}
 $$
 
@@ -176,9 +189,9 @@ $$
     &= \rho \int r_{axis}^2 \; dV \\[10pt]
     &= \rho \int_{0}^{R} \int_{0}^{\pi} \int_{0}^{2 \pi} (r \sin \theta)^2 r^2 \sin \theta \; dr \; d\theta \; d\phi \\[10pt]
     &= \rho \left ( \int_{0}^{R} r^4 \; dr \right ) \left ( \int_{0}^{\pi} \sin^3 \theta \; d\theta \right ) \left ( \int_{0}^{2\pi} d \phi \right ) \\[10pt]
-    &= \rho \left ( \frac{1}{5} R^5 \right ) \left ( \frac{4}{3} \right ) \left ( 2 \pi \right ) \\[10pt]
-    &= \rho \cdot \frac{8}{15} \pi R^5 \\[10pt]
-    &= \frac{2}{5} M R^2
+    &= \rho \left ( \tfrac{1}{5} R^5 \right ) \left ( \frac{4}{3} \right ) \left ( 2 \pi \right ) \\[10pt]
+    &= \rho \cdot \tfrac{8}{15} \pi R^5 \\[10pt]
+    &= \tfrac{2}{5} M R^2
 \end{align}
 $$
 
@@ -195,5 +208,10 @@ I = \begin{bmatrix}
     \frac{2}{5} M R^2 & 0 & 0 \\
     0  & \frac{2}{5} M R^2 & 0 \\
     0  & 0 & \frac{2}{5} M R^2
+\end{bmatrix}
+= \tfrac{2}{5} M R^2 \begin{bmatrix}
+    1 & 0 & 0 \\
+    0  & 1 & 0 \\
+    0  & 0 & 1
 \end{bmatrix}
 $$

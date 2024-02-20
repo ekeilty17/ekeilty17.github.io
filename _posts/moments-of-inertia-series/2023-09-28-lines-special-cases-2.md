@@ -1,10 +1,10 @@
 ---
 layout:     series
 title:      "Lines - Special Cases"
-date:       2023-09-07
+date:       2023-09-28
 categories: blog moments-of-inertia
 permalink:  ":categories/:title/"
-part:       6
+part:       27
 series:     moments-of-inertia
 tags:       moments-of-inertia
 ---
@@ -307,7 +307,7 @@ $$
 Without loss of generality, we can assume that the line is parallel to the $z$-axis. The $z$-coordinates actually don't matter (they don't show up in the formula), so let's say that $z_1 = -L/2$ and $z_2 = L/2$. We can also assume that the line is perpendicular to the $y$-axis. Therefore, $y_1 = y_2 = d$. Finally, $x_1 = x_2 = 0$.
 
 <center>
-{% tikz line-inertia-parallel %}[scale=1.5, line width=1.5pt, font=\LARGE]
+{% tikz line-inertia-parallel-to-axis %}[scale=1.5, line width=1.5pt, font=\LARGE]
 \usetikzlibrary{angles,arrows.meta}
 \tdplotsetmaincoords{70}{110}
 \begin{scope}[>=Stealth, tdplot_main_coords]

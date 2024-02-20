@@ -34,7 +34,7 @@ I will _briefly_ go over the standard coordinate systems - Cartesian, cylindrica
 
 ### Cartesian Coordinates
 
-Conceptually, this is the most intuitive and obvious coordinate system. Given any point in 3D space, pick any three orthogonal directions and measure the point's distance from a fixed origin in those direction. This coordinate system most naturally describes cuboid geometries and is typically used in very irregular geometries.
+Conceptually, this is the most intuitive and obvious coordinate system. Given any point in $3\text{D}$ space, pick any three orthogonal directions and measure the point's distance from a fixed origin in those direction. This coordinate system most naturally describes cuboid geometries and is typically used in very irregular geometries.
 
 <center>
 {% tikz cartesian-coordinates %}[scale=1.5, line width=1.5pt, font=\LARGE]
@@ -280,3 +280,13 @@ $$
     \u{\phi}   = - \sin \phi \ \u{x} + \cos \phi \ \u{y}
 \end{cases}
 $$
+
+<br>
+
+---
+
+<br>
+
+## Notes
+
+Something interesting I just noticed. If an object lies flat on the $xy$-plane, then $$I_{zz} = I_{xx} + I_{yy}$$. See the Triangle post for an example.

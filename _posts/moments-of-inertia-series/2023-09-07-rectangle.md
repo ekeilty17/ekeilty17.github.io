@@ -1,13 +1,12 @@
 ---
 layout:     series
 title:      "Rectangle"
-date:       2023-09-08
+date:       2023-09-07
 categories: blog moments-of-inertia
 permalink:  ":categories/:title/"
-part:       7
+part:       6
 series:     moments-of-inertia
 tags:       moments-of-inertia
-excerpt_separator: <!--more-->
 ---
 
 ## Parameterizing the Curve
@@ -52,8 +51,8 @@ The rectangle is made up of $4$ distinct lines.
     \draw [ultra thick] (-\a, -\b, 0) -- (-\a, \b, 0);
     \draw [ultra thick] (-\a, \b, 0) -- (\a, \b, 0);
 
-    \draw[semithick,decorate,decoration={brace,amplitude=5pt,raise=5pt},color=myblue] (-\a, \b, 0) -- (\a, \b, 0) node [midway, right, xshift=5, yshift=-13] {$a$};
-    \draw[semithick,decorate,decoration={brace,amplitude=5pt,raise=5pt},color=myblue] (\a, \b, 0) -- (\a, -\b, 0) node [midway, below, xshift=-3, yshift=-10] {$b$};
+    \draw[semithick,decorate,decoration={brace,amplitude=5pt,raise=5pt},color=paramColor] (-\a, \b, 0) -- (\a, \b, 0) node [midway, right, xshift=5, yshift=-13] {$a$};
+    \draw[semithick,decorate,decoration={brace,amplitude=5pt,raise=5pt},color=paramColor] (\a, \b, 0) -- (\a, -\b, 0) node [midway, below, xshift=-3, yshift=-10] {$b$};
 
 \end{scope}
 {% endtikz %}
@@ -105,7 +104,7 @@ So we actually don't have to parameterize the curve, we can derive the mass and 
 
 ## Mass
 
-The mass is obviously just the perimeter times the mass density, but let's do it rigorously. To get the total mass, we sum the mass of each line segment ($\ell_1$, $\ell_2$, $\ell_3$, and $\ell_4$).
+The mass is obviously just the perimeter times the mass density, but let's do it rigorously. To get the total mass, we sum the mass of each line segment ($\ell_1$, $\ell_2$, $\ell_3$, and $\ell_4$), which we derived in the [previous post](/blog/moments-of-inertia/lines/#mass).
 
 $$
 \begin{align}
@@ -175,12 +174,13 @@ $$
 {% endtikz %}
 </center>
 
-Just like in calculating the mass, we can calculate the total moment of inertia by summing the contribution of each line segment ($\ell_1$, $\ell_2$, $\ell_3$, and $\ell_4$). We use the formula for the moment of inertia of a [Line about a Perpendicular Axis at a Distance from its Center](/blog/moments-of-inertia/lines/#moment-of-inertia-about-perpendicular-axis-at-a-distance-from-its-center).
+Just like in calculating the mass, we can calculate the total moment of inertia by summing the contribution of each line segment ($\ell_1$, $\ell_2$, $\ell_3$, and $\ell_4$). We use the formula for the moment of inertia of a [Line Perpendicular to the Axis of Rotation](/blog/moments-of-inertia/lines/#perpendicular-to-the-axis-of-rotation).
 
 $$
 \begin{align}
     I &= I_1 + I_2 + I_3 + I_4 \\[10pt]
-    &= (\tfrac{1}{12} M_1 L_1^2 + M_1 d_1^2) + (\tfrac{1}{12} M_2 L_2^2 + M_2 d_2^2) + (\tfrac{1}{12} M_3 L_3^2 + M_3 d_3^2) + (\tfrac{1}{12} M_4 L_4^2 + M_4 d_4^2) \\[10pt]
+    &= (\tfrac{1}{12} M_1 L_1^2 + M_1 D_1^2) + (\tfrac{1}{12} M_2 L_2^2 + M_2 D_2^2) + (\tfrac{1}{12} M_3 L_3^2 + M_3 D_3^2) + (\tfrac{1}{12} M_4 L_4^2 + M_4 D_4^2) \\[10pt]
+    &= (\tfrac{1}{12} (\lambda b)(b)^2 + (\lambda b)(a/2)^2) + (\tfrac{1}{12} (\lambda a)(a)^2 + (\lambda a)(b/2)^2) + (\tfrac{1}{12} (\lambda b)(b)^2 + (\lambda b)(a/2)^2) + (\tfrac{1}{12} (\lambda a)(a)^2 + (\lambda a)(b/2)^2) \\[10pt]
     &= (\tfrac{1}{12} \lambda b^3 + \tfrac{1}{4} \lambda a^2b) + (\tfrac{1}{12} \lambda a^3 + \tfrac{1}{4} \lambda ab^2) + (\tfrac{1}{12} \lambda b^3 + \tfrac{1}{4} \lambda a^2b) + (\tfrac{1}{12} \lambda a^3 + \tfrac{1}{4} \lambda ab^2) \\[10pt]
     &= \tfrac{1}{6} \lambda (a^3 + b^3) + \tfrac{1}{2} \lambda (a^2b + ab^2) \\[10pt]
     &= \tfrac{1}{6} \lambda (a + b) (a^2 - ab + b^2) + \tfrac{1}{2} \lambda (a + b)ab \\[10pt]
@@ -247,12 +247,13 @@ $$
 {% endtikz %}
 </center>
 
-We do likewise here. We use the formula for the moment of inertia of a [Line about a Perpendicular Axis at a Distance from its Center](/blog/moments-of-inertia/lines/#moment-of-inertia-about-perpendicular-axis-at-a-distance-from-its-center) and a [Line about a Parallel Axis at a Distance](/blog/moments-of-inertia/lines/#moment-of-inertia-about-a-parallel-axis-at-a-distance).
+We do likewise here. We use the formula for the moment of inertia of a [Line Perpendicular to the Axis of Rotation](/blog/moments-of-inertia/lines/#perpendicular-to-the-axis-of-rotation) and a [Line about a Parallel Axis of Rotation](/blog/moments-of-inertia/lines/#parallel-to-the-axis-of-rotation).
 
 $$
 \begin{align}
     I &= I_1 + I_2 + I_3 + I_4 \\[10pt]
-    &= (\tfrac{1}{12} M_1 L_1^2) + (M_2 d_2^2) + (\tfrac{1}{12} M_3 L_3^2) + (M_4 d_4^2) \\[10pt]
+    &= (\tfrac{1}{12} M_1 L_1^2 + M_1 D_1^2) + (M_2 D_2^2) + (\tfrac{1}{12} M_3 L_3^2 + M_3 D_1^3) + (M_4 D_4^2) \\[10pt]
+    &= (\tfrac{1}{12} (\lambda b)(b)^2 + (\lambda b)(0)^2) + ((\lambda a)(b/2)^2) + (\tfrac{1}{12} (\lambda b)(b)^2 + (\lambda b)(0)^2) + ((\lambda a)(b/2)^2) \\[10pt]
     &= (\tfrac{1}{12} \lambda b^3) + (\tfrac{1}{4} \lambda ab^2) + (\tfrac{1}{12} \lambda b^3) + (\tfrac{1}{4} \lambda ab^2) \\[10pt]
     &= \tfrac{1}{6} \lambda b^3 + \tfrac{1}{2} \lambda ab^2 \\[10pt]
     &= \tfrac{1}{6} \lambda b^2 (b + 3a) \\[10pt]
@@ -269,11 +270,15 @@ Unfortunately, I have not found a way to simplify this any further. If you have 
 
 $$
 I = \frac{1}{12} M \begin{bmatrix}
-    \frac{3a+b}{a+b} & 0 & 0 \\
-    0  & \frac{a+3b}{a+b} & 0 \\
+    b^2 \frac{3a+b}{a+b} & 0 & 0 \\
+    0  & a^2 \frac{a+3b}{a+b} & 0 \\
     0  & 0 & (a+b)^2
 \end{bmatrix}
 $$
+
+<br>
+
+--- 
 
 <br>
 
@@ -289,18 +294,16 @@ $$
 ### Moment of Inertia About Central Diameter
 
 $$
-I = \tfrac{1}{12} M S^2 \; \frac{3S + S}{S + S} = \tfrac{1}{3} M S^2
+I = \tfrac{1}{12} M S^2 \; \frac{3S + S}{S + S} = \tfrac{1}{6} M S^2
 $$
-
-I find it very strange that this matches the formula above. I feel there must be more to the story here, but I'm not sure what it is. If you have any answers, please <a href="mailto:epkeilty@gmail.com">let me know</a>.
 
 ### Inertia Tensor
 
 $$
-I = \frac{1}{12} M S^2 \begin{bmatrix}
+I = \tfrac{1}{6} M S^2 \begin{bmatrix}
     1 & 0 & 0 \\
     0  & 1 & 0 \\
-    0  & 0 & 1
+    0  & 0 & 2
 \end{bmatrix}
 $$
 

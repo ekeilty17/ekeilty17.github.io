@@ -9,6 +9,8 @@ series:     moments-of-inertia
 tags:       moments-of-inertia
 ---
 
+
+
 **TODO** Move to extras
 
 It takes some geometry, but you can show that
@@ -52,7 +54,7 @@ $$
 I = \tfrac{1}{12} \lambda \left ( 9s^3 + 6\sqrt{3} s^3 \ \right ) = \lambda \tfrac{3 + 2\sqrt{3}}{4} s^3
 $$
 
-<!-- Triangles are way more complicated than they should be. I'm also not helping myself because I'm going to try go do this as generally as possible.
+Triangles are way more complicated than they should be. I'm also not helping myself because I'm going to try go do this as generally as possible.
 
 ## Parameterizing the Curve
 
@@ -133,4 +135,4 @@ $$
     I &= \int r_{axis}^2 dm \\[10pt]
     &= \lambda \int r_{axis}^2 d\ell \\[10pt]
 \end{align}
-$$ -->
+$$

@@ -16,42 +16,58 @@ Suppose we have a point mass $m$ which is rotating a distance $R$ away from a fi
 
 <center>
 {% tikz point-mass %}[scale=1.5, line width=1.5pt, font=\LARGE]
-    \usetikzlibrary{angles,patterns,calc,bending,decorations.pathreplacing}
-    \tikzset{
-        pics/rotarr/.style={
-            code={
-            \draw[white,line width=0.8] ({#1*cos(210)},0) arc(-210:35:{#1} and {0.35*#1});
-            \draw[-{>[flex'=1]}] ({#1*cos(210)},0) coordinate (W1) arc(-210:35:{#1} and {0.35*#1})
-                node[midway] (W2) {} --++ (150:0.1) coordinate (W3);
-        }},
-        pics/rotarr/.default=0.3,
-    }
+\usetikzlibrary{angles,arrows.meta}
+\tdplotsetmaincoords{70}{110}
+\begin{scope}[>=Stealth, tdplot_main_coords]
     
-    %                  (y, z, x)
-    \coordinate (O) at (0, 0, 0);
-    \def\R{2.5}       % radius of hoop
-    \def\L{0.5}     % thickness of the hoop
-
+    % Colors
     \colorlet{myred}{red!65!black}
-    \colorlet{myblue}{blue!70!black}
+    \colorlet{myblue}{blue!65!black}
+    \definecolor{brightblue}{HTML}{0096FF}
+    \colorlet{paramColor}{myblue!25!brightblue}
     \colorlet{mygray}{gray!40}
 
-    % radius of the path of point mass
-    \draw[thick, color=myblue] (O) -- (\R,0,0) node[midway, below] {$R$};
+    % Axes
+    \coordinate (O) at (0, 0, 0);
 
-    % point mass
-    \draw[very thick, color=black, fill=black] (\R, 0, 0) circle (0.05) node[right, xshift=5] {$m$};
+    % Axis of rotation
+    \coordinate (AORend) at (0, 0, -2);
+    \coordinate (AORstart) at (0, 0, 2.5);
+    \def\rotarrowradius{0.25}
+    \def\rotarrowoffset{0.25}
+    \tikzset{rotarrow/.style={-{Classical TikZ Rightarrow}, very thick, color=myred, decoration={amplitude=1mm, segment length=5mm, post length=1mm}, decorate}}
 
-    % path of point mass (part 2)
-    \draw[thick, densely dashed, rotate around x=90] (-\R,0,0) arc (180:360:{\R});
+    % Points
+    \tdplotsetrotatedcoords{30}{80}{0}
+    \def\pointradius{0.1}
 
-    % axis of rotation
-    \draw [color=myred] (0, -1.5, 0) -- (0, 1.5, 0) node[xshift=17, yshift=-7] {$\omega$};
-    \pic[color=myred] at (0, 1.25, 0) {rotarr};
+    % Curve Parameters
+    \def\R{2.5}         % radius of circle
+
+    % Particular definitions
+    \def\myphi{40}
+    \coordinate (xy) at ({\R*cos(\myphi)},{\R*sin(\myphi)},0);
+
+    %=============================================================
+
+    % radius of the path of the point mass
+    \draw[thick, color=paramColor] (O) -- (0, \R,0) node[midway, below] {$R$};
 
     % path of point mass (part 1)
-    \draw[thick, densely dashed, rotate around x=90] (\R,0,0) arc (0:180:{\R});
+    \draw[thick, dashed] (90:\R) arc (90:270:{\R});
 
+    % point mass
+    \coordinate (M) at (0, \R, 0);
+    \draw [color=black, fill=black, tdplot_rotated_coords] (M) circle (\pointradius) node[right, xshift=8, yshift=-3] {$m$};
+
+    % axis of rotation
+    \draw [color=myred] (AORstart) -- (AORend);
+    \draw[rotarrow, rotate around z=-30] ($(AORstart) - (0, \rotarrowradius, \rotarrowoffset)$) arc (-90:210:\rotarrowradius) node[xshift=17, yshift=-3] {$\omega$};
+
+    % path of point mass (part 2)
+    \draw[thick, dashed] (90:\R) arc (90:-90:{\R});
+
+\end{scope}
 {% endtikz %}
 </center>
 
@@ -161,7 +177,7 @@ $$
 
 For all of them. $I_{ij}$ means we are measuring the moment of inertia around the $i$-axis when the objects are rotated around the $j$-axis.
 
-The **principal axis theorem** says it's always possible to find 3 mutually orthogonal axes such that the products of inertia are 0. In this series, I will always solve using the principle axes. Then you can use the 3D rotation matrices in order to get any other orientation
+The **principal axis theorem** says it's always possible to find 3 mutually orthogonal axes such that the products of inertia are 0. In this series, I will always solve using the principle axes. Then you can use the $3\text{D}$ rotation matrices in order to get any other orientation
 
 $$
 \begin{align}
@@ -227,3 +243,34 @@ In a later post, we will prove the **parallel axis theorem** which allows you to
 Therefore, the strategy of this series is to find the moment of inertia values for very simple objects. Then using linearity and the parallel axis theorem, you can find the moments of inertia of more complicated systems without needing to calculate integrals.
 
 <br>
+
+If you let a rigid body roll down an incline, the one with the larger moment of inertia will roll slower.
+
+The moment of inertia is **not** coordinate-dependent. In other words, it's translation invariant.
+
+If the transformation matrix is $T$, then 
+
+$$
+I_{x', y', z'} = [T] [I_{x,y,z}] [T]^{T}
+$$
+
+where
+
+$$
+\b{r}' = [T] \b{r}
+\qquad\text{and}\qquad
+\b{r} = [T]^{-1} \b{r}'
+$$
+
+However, note that $[T]^{-1} = [T]^{T}$
+
+### Generalized Parallel Axis Theorem
+
+$$
+I_{x', y', z'} = I_{x,y,z} + 
+M \left [ \begin{array}{ccc}
+    (y')^2 + (z')^2 & -(x')(y')  & -(x')(z') \\
+    -(y')(x')  & (z')^2 + (x')^2 & -(y')(z') \\
+    -(z')(x')  & -(z')(y')  & (x')^2 + (y')^2
+\end{array} \right ]
+$$

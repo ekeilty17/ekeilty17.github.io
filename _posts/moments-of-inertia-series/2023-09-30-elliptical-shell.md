@@ -1,13 +1,12 @@
 ---
 layout:     series
 title:      "Elliptical Shell"
-date:       2023-09-15
+date:       2023-09-30
 categories: blog moments-of-inertia
 permalink:  ":categories/:title/"
-part:       14
+part:       29
 series:     moments-of-inertia
 tags:       moments-of-inertia, shell
-excerpt_separator: <!--more-->
 ---
 
 This is actually impossible to evaluate
