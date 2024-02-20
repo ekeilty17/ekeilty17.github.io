@@ -1,4 +1,5 @@
-# Authored my Maxfan http://github.com/Maxfan-zone http://maxfan.org
+# Originally authored my Maxfan http://github.com/Maxfan-zone http://maxfan.org (I think anyways)
+# Modified by Eric Keilty
 # This is used to convert tikz code into svg file and load in you jekyll site
 #
 # Install:
@@ -65,7 +66,7 @@ module Jekyll
           file_save_path = post_name
         end
 
-        # I think this is just for debugging, I'm not sure why it's necessary
+        # This is just for output files. We don't actually need them for the website
         tmp_directory = File.join(Dir.pwd, "_tikz_tmp", file_save_path)
         tex_path = File.join(tmp_directory, "#{@file_name}.tex")
         pdf_path = File.join(tmp_directory, "#{@file_name}.pdf")
