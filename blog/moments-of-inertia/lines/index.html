@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Lines &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded MathJax (effectively LaTeX) support 
+    https://docs.mathjax.org/en/v2.7-latest/tex.html -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX", "input/MathML", "output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js", "mml2jax.js", "MathMenu.js", "MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
+            Macros: {
+                b: ["{\\boldsymbol #1}",1],
+                u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
+                arccsc: ["\\operatorname\{arccsc\}"],
+                arcsec: ["\\operatorname\{arcsec\}"],
+                arccot: ["\\operatorname\{arccot\}"],
+                csch: ["\\operatorname\{csch\}"],
+                sech: ["\\operatorname\{sech\}"],
+                arcsinh: ["\\operatorname\{arcsinh\}"],
+                arccosh: ["\\operatorname\{arccosh\}"],
+                arctanh: ["\\operatorname\{arctanh\}"],
+                arccsch: ["\\operatorname\{arccsch\}"],
+                arcsech: ["\\operatorname\{arcsech\}"],
+                arccoth: ["\\operatorname\{arccoth\}"],
+                seq: ["{\\left \\langle #1 \\right \\rangle}",1],
+                iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
+                abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
+                hal: ["\\texttt{hal}"],
+                gal: ["\\texttt{gal}"],
+                sh: ["sh"],
+                st: ["st"]
+            },
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!--
+    TeX-AMS_HTML
+    TeX-AMS-MML_HTMLorMML
+    TeX-MML-AM_HTMLorMML
+-->
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">AI/ML Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+        <li>
+          <a href="/files/Eric Keilty - Resume.pdf" target="_blank">R&eacute;sum&eacute;</a>
+        </li>
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2024 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">Lines</h1>
+            <!-- <span class="series-date">09 Sep 2023</span> -->
+            <time datetime="2023-09-09T00:00:00-04:00" class="post-date">09 Sep 2023</time>
+            <!-- maybe I'll add tagging later
+            <span class="post-date" style="margin-top:-1em;"> ["moments-of-inertia"] </span>
+            -->
+            <p>This post solves for the general inertia tensor of any line in $\text{3D}$ space. After a point mass, a line is the next simplest object (or so you thought). This post is long because everything is so general. However, all this hard work will be rewarded in the next few posts.</p>
+
+<p><br /></p>
+
+<h2 id="parameterizing-the-curve">Parameterizing the Curve</h2>
+
+<p>Consider any line in $3\text{D}$ space. Suppose its endpoints are positioned at $(x_1, y_1, z_1)$ and $(x_2, y_2, z_2)$. Let $L$ denote its length (which is fixed given the value of the two endpoints).</p>
+
+<!-- $$
+L = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2}
+$$ -->
+
+<center>
+<embed src="/svg/moments-of-inertia/8:lines/line-curve.svg" type="image/svg+xml" />
+&emsp;&emsp;&emsp;
+<embed src="/svg/moments-of-inertia/8:lines/line-curve-2.svg" type="image/svg+xml" />
+</center>
+
+<p><br /></p>
+
+<p>We can parameterize the line as follows.</p>
+
+\[\b{r}(t) = ((x_2 - x_1) t + \tfrac{1}{2}(x_2 + x_1)) \; \u{x} + ((y_2 - y_1) t + \tfrac{1}{2}(y_2 + y_1)) \; \u{y} + ((z_2 - z_1) t + \tfrac{1}{2}(z_2 + z_1)) \; \u{z} \\[10pt]
+\ell = \{ \b{r}(t) \ : \ -\tfrac{1}{2} \leq t \leq \tfrac{1}{2} \}\]
+
+<p>This may seem like an over-complicated way of parameterizing a line. However, at the end we will see why I’ve written it this way. Now, find the differential element just as before.</p>
+
+\[d \b{\ell} = \frac{\partial \b{r}}{\partial t} dt = \left ( (x_2 - x_1) \; \u{x} + (y_2 - y_1) \; \u{y} + (z_2 - z_1) \; \u{z} \right ) \; dt\]
+
+\[d\ell = \abs{d \b{\ell} } = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2} \; dt = L \; dt\]
+
+<h2 id="mass">Mass</h2>
+
+\[\begin{align}
+    M &amp;= \int dm \\[10pt]
+    &amp;= \lambda \int d\ell \\[10pt]
+    &amp;= \lambda \int_{-1/2}^{1/2} L \; dt \\[10pt]
+    &amp;= \lambda L
+\end{align}\]
+
+<p><br /></p>
+
+<h2 id="moment-of-inertia">Moment of Inertia</h2>
+
+<p>Without loss of generality, we can assume the axis of rotation is the $z$-axis. The other axes can be computed symmetrically.</p>
+
+<center>
+<embed src="/svg/moments-of-inertia/8:lines/line-inertia.svg" type="image/svg+xml" />
+</center>
+
+\[\begin{align}
+    I_{zz} &amp;= \int r_{axis}^2 dm \\[10pt]
+    &amp;= \lambda \int r_{axis}^2 d\ell \\[10pt]
+    &amp;= \lambda \int_{-1/2}^{1/2} \left [ (x(t))^2 + (y(t))^2 \right ] \; L \; dt \\[10pt]
+    &amp;= \lambda \int_{-1/2}^{1/2} \left [ ((x_2 - x_1) t + \tfrac{1}{2}(x_2 + x_1))^2 + ((y_2 - y_1) t + \tfrac{1}{2}(y_2 + y_1))^2 \right ] \; L \; dt \\[10pt]
+    &amp;= \lambda \cdot \left . \left [ \frac{((x_2 - x_1) t + \tfrac{1}{2}(x_2 + x_1))^3}{3(x_2 - x_1)} + \frac{((y_2 - y_1) t + \tfrac{1}{2}(y_2 + y_1))^3}{3(y_2 - y_1)} \right ] \right \vert_{-1/2}^{1/2} \; L \; dt \\[10pt]
+    &amp;= \lambda \cdot \left [ \frac{x_2^3 - x_1^2}{3(x_2 - x_1)} + \frac{y_2^3 - y_1^2}{3(y_2 - y_1)} \right ] \; L \\[10pt]
+    &amp;= \tfrac{1}{3} M \left [ \frac{x_2^3 - x_1^2}{x_2 - x_1} + \frac{y_2^3 - y_1^2}{y_2 - y_1} \right ] \\[10pt]
+    &amp;= \tfrac{1}{3} M \left [ (x_1^2 + x_1x_2 + x_2^2) + (y_1^2 + y_1y_2 + y_2^2) \right ] \\[10pt]
+    &amp;= \tfrac{1}{3} M \left [ (x_1 + x_2)^2 + (y_1 + y_2)^2 - x_1x_2 - y_1y_2 \right ] \\[10pt]
+    &amp;= \tfrac{1}{3} M \left [ (x_2 - x_1)^2 + (y_2 - y_1)^2 + 3x_1x_2 + 3y_1y_2 \right ] \\[10pt]
+\end{align}\]
+
+<p>At the end, I put a few different forms. One may be more useful than the others in different applications.</p>
+
+<p><br /></p>
+
+<h2 id="product-of-inertia">Product of Inertia</h2>
+
+<p>Let’s compute $I_{xy}$. The other product of inertia values $I_{yz}$ and $I_{zx}$ can be computed symmetrically.</p>
+
+\[\begin{align}
+    I_{xy} &amp;= \int xy \; dm \\[10pt]
+    &amp;= \lambda \int xy \; d\ell \\[10pt]
+    &amp;= \lambda \int_{-1/2}^{1/2} \left [ ((x_2 - x_1) t + \tfrac{1}{2}(x_2 + x_1)) \cdot ((y_2 - y_1) t + \tfrac{1}{2}(y_2 + y_1)) \right ] \; L \; dt \\[10pt]
+    &amp;= \lambda \int_{-1/2}^{1/2} \left [ (x_2 - x_1)(y_2 - y_1) t^2 + \tfrac{1}{2}(x_2 + x_1) (y_2 - y_1) t + \tfrac{1}{2}(x_2 - x_1)(y_2 + y_1) t +  \tfrac{1}{4} (x_2 + x_1) (y_2 + y_1) \right ] \; L \; dt \\[10pt]
+    &amp;= \lambda \cdot \left [ \tfrac{1}{3}(x_2 - x_1)(y_2 - y_1) t^3 + \tfrac{1}{4}(x_2 + x_1) (y_2 - y_1) t^2 + \tfrac{1}{4}(x_2 - x_1)(y_2 + y_1) t^2 +  \tfrac{1}{4} (x_2 + x_1) (y_2 + y_1)t \right ] \Big \vert_{-1/2}^{1/2} \; L \\[10pt]
+    &amp;= \lambda \cdot \left [ \tfrac{1}{12}(x_2 - x_1)(y_2 - y_1) + \tfrac{1}{4} (x_2 + x_1) (y_2 + y_1) \right ] \; L \\[10pt]
+    &amp;= M \left [ \tfrac{1}{12}(x_2 - x_1)(y_2 - y_1) + \tfrac{1}{4} (x_2 + x_1) (y_2 + y_1) \right ] \\[10pt]
+    &amp;= \tfrac{1}{6} M \left [ (x_2 + x_1) (y_2 + y_1) + x_1y_1 + x_2y_2 \right ] \\[10pt]
+\end{align}\]
+
+<p>Now, we could technically write the inertia tensor, but it would be long, gross, and not really helpful. Luckily, there is more we can do to simplify these expressions.</p>
+
+<p><br /></p>
+
+<h2 id="reformulating-the-moment-of-inertia-equation">Reformulating the Moment of Inertia Equation</h2>
+
+<p>The above formulas are general, but they are not super helpful as they depend on the coordinate system rather than the geometry of the line and axis of rotation. The only reason we did it this way was because it made the integration very easy. However, now we can reformulate the general formula into something more useful.</p>
+
+\[\begin{align}
+    I_{zz} &amp;= \tfrac{1}{3} M \left [ (x_2 - x_1)^2 + (y_2 - y_1)^2 + 3x_1x_2 + 3y_1y_2 \right ] \\[10pt]
+    &amp;= \tfrac{1}{12} M \left [ 4(x_2 - x_1)^2 + 4(y_2 - y_1)^2 + 12x_1x_2 + 12y_1y_2 \right ] \\[10pt]
+    &amp;= \tfrac{1}{12} M \left [ (x_2 - x_1)^2 + (y_2 - y_1)^2 + 3(x_2^2 - 2x_1x_2 + x_1^2) + 3(y_2^2 - 2y_1y_2 + y_1^2) + 3(4x_1x_2 + 4y_1y_2) \right ] \\[10pt]
+    &amp;= \tfrac{1}{12} M \left [ (x_2 - x_1)^2 + (y_2 - y_1)^2 + 3(x_2^2 + 2x_1x_2 + x_1^2) + 3(y_2^2 + 2y_1y_2 + y_1^2) \right ] \\[10pt]
+    &amp;= \tfrac{1}{12} M \left [ (x_2 - x_1)^2 + (y_2 - y_1)^2 + 3(x_2 + x_1)^2 + 3(y_2 + y_1)^2 \right ] \\[10pt]
+    &amp;= \tfrac{1}{12} M \left [ (x_2 - x_1)^2 + (y_2 - y_1)^2 \right ] + \tfrac{1}{4} M \left [ \left ( x_2 + x_1 \right )^2 + \left ( y_2 + y_1 \right )^2 \right ] \\[10pt]
+    &amp;= \tfrac{1}{12} M \left [ (x_2 - x_1)^2 + (y_2 - y_1)^2 \right ] + M \left [ \left ( \frac{x_2 + x_1}{2} \right )^2 + \left ( \frac{y_2 + y_1}{2} \right )^2 \right ]
+\end{align}\]
+
+<p>Likewise, we can do something similar to the product of inertia equation.</p>
+
+\[\begin{align}
+I_{xy} &amp;= M \left [ \tfrac{1}{12}(x_2 - x_1)(y_2 - y_1) + \tfrac{1}{4} (x_2 + x_1) (y_2 + y_1) \right ] \\[10pt]
+    &amp;= \tfrac{1}{12} M (x_2 - x_1) (y_2 - y_1) + M \left ( \frac{x_2 + x_1}{2} \right ) \left ( \frac{y_2 + y_1}{2} \right )
+\end{align}\]
+
+<p><br /></p>
+
+<p>Between these equations, there are obvious common elements. In fact, these elements have very nice geometric interpretations.</p>
+
+<center>
+<embed src="/svg/moments-of-inertia/8:lines/line-reformulation-CM.svg" type="image/svg+xml" />
+&emsp;&emsp;&emsp;&emsp;
+<embed src="/svg/moments-of-inertia/8:lines/line-reformulation-delta.svg" type="image/svg+xml" />
+</center>
+
+<p>Consider the following definitions.</p>
+
+\[\b{L} \equiv \b{r}_2 - \b{r}_1 = (x_2 - x_1) \; \u{x} + (y_2 - y_1) \; \u{y} + (z_2 - z_1) \; \u{z} \\[10pt]
+\b{r}_{\text{cm}} \equiv \tfrac{1}{2} (\b{r}_2 + \b{r}_1) = \tfrac{1}{2} (x_2 + x_1) \; \u{x} + \tfrac{1}{2} (y_2 + y_1) \; \u{y} + \tfrac{1}{2} (z_2 + z_1) \; \u{z}\]
+
+<p>The first definition lets us write the line as a vector in terms of its endpoints. The second definition gives us the center of mass of the line. Now we have a much more elegant way to parameterize the curve.</p>
+
+\[\b{r}(t) = \b{L}t + \b{r}_{\text{cm}} = (L_x t + x_{\text{cm}}) \; \u{x} + (L_y t + y_{\text{cm}}) \; \u{y} + (L_z t + z_{\text{cm}}) \; \u{z}\]
+
+<p>where we define</p>
+
+\[L_x = (x_2 - x_1)
+\qquad\qquad
+L_y = (y_2 - y_1)
+\qquad\qquad
+L_z = (z_2 - z_1)
+\\[15pt]
+x_{\text{cm}} = \frac{x_2 + x_1}{2}
+\qquad\qquad
+y_{\text{cm}} = \frac{y_2 + y_1}{2}
+\qquad\qquad
+z_{\text{cm}} = \frac{z_2 + z_1}{2}\]
+
+<p>Finally, we can write our moment of inertia equations as the following</p>
+
+\[I_{zz} = \tfrac{1}{12}M(L_x^2 + L_y^2) + M(x_{\text{cm}}^2 + y_{\text{cm}}^2) \\[10pt]
+I_{xy} = \tfrac{1}{12}M L_x L_y + M x_{\text{cm}} y_{\text{cm}}\]
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="inertia-tensor">Inertia Tensor</h2>
+
+<p>Finally, we can write the general inertia tensor of any line in $\text{3D}$ space.</p>
+
+\[I = 
+\tfrac{1}{12} M
+\begin{bmatrix}
+    L_y^2 + L_z^2 &amp; - L_x L_y &amp; - L_x L_z \\
+    - L_y L_x &amp; L_z^2 + L_x^2 &amp; - L_y L_z \\
+    - L_z L_x &amp; - L_z L_y &amp; L_x^2 + L_y^2
+\end{bmatrix}
++
+M 
+\begin{bmatrix}
+    y_{\text{cm}}^2 + z_{\text{cm}}^2 &amp; - x_{\text{cm}} y_{\text{cm}} &amp; - x_{\text{cm}} z_{\text{cm}} \\
+    - y_{\text{cm}} x_{\text{cm}} &amp; z_{\text{cm}}^2 + x_{\text{cm}}^2 &amp; - y_{\text{cm}} z_{\text{cm}} \\
+    - z_{\text{cm}} x_{\text{cm}} &amp; - z_{\text{cm}} y_{\text{cm}} &amp; x_{\text{cm}}^2 + y_{\text{cm}}^2
+\end{bmatrix}\]
+
+<p><br /></p>
+
+<p>This should look familiar to the general inertia tensor for a point mass. We can do a similar reformulation to a <a href="/blog/moments-of-inertia/point-mass">previous post</a>.</p>
+
+\[I = 
+\tfrac{1}{12} M L^2
+\begin{bmatrix}
+    \sin^2 \alpha_x &amp; - \cos \alpha_x \cos \alpha_y &amp; - \cos \alpha_x \cos \alpha_z \\
+    - \cos \alpha_y \cos \alpha_x &amp; \sin^2 \alpha_y &amp; - \cos \alpha_y \cos \alpha_z \\
+    - \cos \alpha_z \cos \alpha_x &amp; - \cos \alpha_z \cos \alpha_y &amp; \sin^2 \alpha_z
+\end{bmatrix}
++
+M D^2
+\begin{bmatrix}
+    \sin^2 \beta_x &amp; - \cos \beta_x \cos \beta_y &amp; - \cos \beta_x \cos \beta_z \\
+    - \cos \beta_y \cos \beta_x &amp; \sin^2 \beta_y &amp; - \cos \beta_y \cos \beta_z \\
+    - \cos \beta_z \cos \beta_x &amp; - \cos \beta_z \cos \beta_y &amp; \sin^2 \beta_z
+\end{bmatrix}\]
+
+<p>$\alpha_x$, $\alpha_y$, and $\alpha_z$ are the angles of the line with respect to the $x$, $y$, and $z$-axes respectively. $\beta_x$, $\beta_y$, and $\beta_z$ are the angles of the vector to the center of mass of the line with respect to the $x$, $y$, and $z$-axes respectively.</p>
+
+        </div>
+
+        <!-- Adding the ability to move between parts of the series -->
+        
+        
+        
+
+        
+        
+        
+
+        <!-- Getting capitalized title for series -->
+        
+        
+        
+        
+        <!-- Getting url for series, which is just the page url with the last /... removed -->
+        
+
+        <div class="pagination" style="margin-top:1em;">
+            
+                <a class="pagination-item older" href="/blog/moments-of-inertia/point-mass/">Previous</a>
+            
+            
+                <a class="pagination-item newer" href="/blog/moments-of-inertia/lines-special-cases/">Next</a>
+            
+        </div>
+        <h3 style="text-align:center; margin-bottom:1em;">
+            <a href="/blog/moments-of-inertia">
+            
+                
+                    Moments
+                
+            
+                
+                    of
+                
+            
+                
+                    Inertia
+                
+            
+         Series</a>
+        </h3>
+    </div>
+    
+  </body>
+</html>

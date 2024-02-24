@@ -47,6 +47,7 @@
             Macros: {
                 b: ["{\\boldsymbol #1}",1],
                 u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
                 arccsc: ["\\operatorname\{arccsc\}"],
                 arcsec: ["\\operatorname\{arcsec\}"],
                 arccot: ["\\operatorname\{arccot\}"],
@@ -165,15 +166,15 @@
 <p>Convolution is a bit of a funny operation, but it has a lot of great applications in signal processing (which is also a main aplication of Laplace Transforms). To understand what this operation is going, fix two functions $f(\tau)$ and $g(\tau)$. Horizontally flip $f$, i.e. $f(-\tau)$. Then put $f$ all the way on the left and $g$ all the way on the right. Now, move $f$ and $g$ towards and through each other. This “movement” is parameterized by the variables $t$.</p>
 
 <center>
-<embed src="/svg/convolution/convolution1.svg" type="image/svg+xml" />
+<embed src="/svg/laplace-transforms/14:convolution/convolution1.svg" type="image/svg+xml" />
 &emsp;&emsp;&emsp;
-<embed src="/svg/convolution/convolution2.svg" type="image/svg+xml" />
+<embed src="/svg/laplace-transforms/14:convolution/convolution2.svg" type="image/svg+xml" />
 </center>
 
 <center>
-<embed src="/svg/convolution/convolution3.svg" type="image/svg+xml" />
+<embed src="/svg/laplace-transforms/14:convolution/convolution3.svg" type="image/svg+xml" />
 &emsp;&emsp;&emsp;
-<embed src="/svg/convolution/convolution4.svg" type="image/svg+xml" />
+<embed src="/svg/laplace-transforms/14:convolution/convolution4.svg" type="image/svg+xml" />
 </center>
 
 <p>The yellow region in the figure above is the convolution of $f$ and $g$ at $t$, i.e. the intersecting area between $f(t - \tau)$ and $g(\tau)$</p>
@@ -208,7 +209,7 @@
 <p>We have to pause here because what we want to do is exchange the order of integration. To do this, lets consider the region that we are integrating over.</p>
 
 <center>
-<embed src="/svg/convolution/integration-region.svg" type="image/svg+xml" />
+<embed src="/svg/laplace-transforms/14:convolution/integration-region.svg" type="image/svg+xml" />
 </center>
 
 <p>Thus, we can construct the region by integrating $\tau$ from $0$ to $\infty$. Then $t$ will range from $\tau$ to $\infty$.</p>

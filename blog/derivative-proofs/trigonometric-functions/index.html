@@ -47,6 +47,7 @@
             Macros: {
                 b: ["{\\boldsymbol #1}",1],
                 u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
                 arccsc: ["\\operatorname\{arccsc\}"],
                 arcsec: ["\\operatorname\{arcsec\}"],
                 arccot: ["\\operatorname\{arccot\}"],
@@ -156,7 +157,13 @@
             <!-- maybe I'll add tagging later
             <span class="post-date" style="margin-top:-1em;"> ["derivatives, ",  "trigonometric-functions, ",  "trigonometry, ",  "sine, ",  "cosine, ",  "tangent, ",  "secant, ",  "cosecant, ",  "cotangent"] </span>
             -->
-            <h2 id="sine">Sine</h2>
+            <p>Recall the results of the previous post.</p>
+
+\[\lim_{x \rightarrow 0} \ \frac{\sin(x)}{x} = 1
+\qquad\qquad
+\lim_{x \rightarrow 0} \ \frac{\cos(x)-1}{x} = 0\]
+
+<h2 id="sine">Sine</h2>
 
 \[\begin{align}
     \frac{d}{dx} \sin (x)
@@ -202,7 +209,7 @@
 
 <h2 id="secant">Secant</h2>
 
-<p>Using reciprocal rule</p>
+<p>Using reciprocal rule.</p>
 
 \[\begin{align}
     \frac{d}{dx} \sec (x)
@@ -214,7 +221,7 @@
 
 <h2 id="cosecant">Cosecant</h2>
 
-<p>Using reciprocal rule</p>
+<p>Using reciprocal rule.</p>
 
 \[\begin{align}
     \frac{d}{dx} \csc (x)

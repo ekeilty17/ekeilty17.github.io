@@ -47,6 +47,7 @@
             Macros: {
                 b: ["{\\boldsymbol #1}",1],
                 u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
                 arccsc: ["\\operatorname\{arccsc\}"],
                 arcsec: ["\\operatorname\{arcsec\}"],
                 arccot: ["\\operatorname\{arccot\}"],
@@ -162,7 +163,7 @@
 
 <h2 id="definition-of-eulers-constant">Definition of Euler’s Constant</h2>
 
-<p>There is a canonical backstory with Euler’s constant involving compounding interest. For our purposes, I am just going to give the definition.</p>
+<p>There is a canonical backstory with Euler’s constant involving compounding interest. For our purposes, I am just going to give this definition.</p>
 
 \[e^x = \lim_{n \rightarrow \infty} \left ( 1 + \frac{x}{n}\right )^n\]
 
@@ -180,7 +181,7 @@
 
 \[r_n = s^n = \left ( \sqrt{1 + \frac{\theta^2}{n^2}} \right )^n \qquad\qquad \tan \theta_n = \tan (n \phi)\]
 
-<p>Now, we sew what happens when we let $n$ approach infinity.</p>
+<p>Now, we see what happens when we let $n$ approach infinity.</p>
 
 \[\begin{align}
     \lim_{n \rightarrow \infty} r_n 
@@ -196,7 +197,7 @@
 <p>Now we do $\theta_n$. I’m going to be a bit unrigorous in order to avoid derivatives. First, we utilize something called the small-angle approximation.</p>
 
 <center>
-<embed src="/svg/eulers-identity/small-angle.svg" type="image/svg+xml" />
+<embed src="/svg/trigonometry/18:eulers-identity/small-angle.svg" type="image/svg+xml" />
 </center>
 
 <p>As the angle $\theta$ approaches $0$, $\tan \theta$ approaches $\frac{\theta}{1} = \theta$. Thus, in the following proof, since as $n$ approaches $\infty$, $\theta$ approaches $0$, I will use this approximation to exchange $\tan \theta$ and $\theta$.</p>

@@ -47,6 +47,7 @@
             Macros: {
                 b: ["{\\boldsymbol #1}",1],
                 u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
                 arccsc: ["\\operatorname\{arccsc\}"],
                 arcsec: ["\\operatorname\{arcsec\}"],
                 arccot: ["\\operatorname\{arccot\}"],
@@ -151,12 +152,42 @@
 
         <div class="post">
             <h1 class="post-title">Rectangular Slab</h1>
-            <!-- <span class="series-date">07 Sep 2023</span> -->
-            <time datetime="2023-09-07T00:00:00-04:00" class="post-date">07 Sep 2023</time>
+            <!-- <span class="series-date">25 Sep 2023</span> -->
+            <time datetime="2023-09-25T00:00:00-04:00" class="post-date">25 Sep 2023</time>
             <!-- maybe I'll add tagging later
             <span class="post-date" style="margin-top:-1em;"> ["moments-of-inertia, ",  "slab"] </span>
             -->
-            <h2 id="mass">Mass</h2>
+            <h2 id="parameterizing-the-volume">Parameterizing the Volume</h2>
+
+<p>We can do this with just standard Cartesian coordinates</p>
+
+\[\b{r}(x, y, z) = x \; \u{x} + y \; \u{y} + z \; \u{z} \\[10pt]
+V = \{ \b{r}(x, y, z) \ : \ -a/2 \leq x \leq a/2 \quad -b/2 \leq y \leq b/2 \quad -c/2 \leq z \leq c/2 \}\]
+
+\[\frac{\partial \b{r}}{\partial x} dx  = dx \; \u{x}
+\qquad
+\frac{\partial \b{r}}{\partial y} dy = dy \; \u{y}
+\qquad
+\frac{\partial \b{r}}{\partial z} dz = dz \; \u{z}\]
+
+<p>Therefore</p>
+
+\[dV = \left \lvert \begin{array}{ccc}
+    dx &amp; 0  &amp; 0 \\
+    0  &amp; dy &amp; 0 \\
+    0  &amp; 0  &amp; dz
+\end{array} \right \rvert
+= dx \; dy \; dz\]
+
+<h2 id="mass">Mass</h2>
+
+<center>
+<embed src="/svg/moments-of-inertia/24:slab/slab-mass-integral.svg" type="image/svg+xml" />
+</center>
+
+<p><br /></p>
+
+<p>We use Cartesian coordinates to evaluate this integral. Since it is a solid rectangular slab, all parameters $a$, $b$, and $c$ vary. Therefore, $dV = d x \; dy \; d z$.</p>
 
 \[\begin{align}
     M &amp;= \int \; dm \\[10pt]
@@ -169,18 +200,63 @@
 
 <p><br /></p>
 
-<h2 id="moment-inertia-about-perpendicular-axis">Moment Inertia About Perpendicular Axis</h2>
+<h2 id="moment-of-inertia-about-perpendicular-axis">Moment of Inertia About Perpendicular Axis</h2>
+
+<center>
+<embed src="/svg/moments-of-inertia/24:slab/slab-moment-integral.svg" type="image/svg+xml" />
+</center>
+
+<p><br /></p>
 
 \[\begin{align}
     I &amp;= \int r_{axis}^2 \; dm \\[10pt]
     &amp;= \rho \int r_{axis}^2 \; dV \\[10pt]
     &amp;= \rho \int_{-a/2}^{a/2} \int_{-b/2}^{b/2} \int_{-c/2}^{c/2} (x^2 + y^2) \; dx \; dy \; dz \\[10pt]
     &amp;= \rho \int_{-a/2}^{a/2} \int_{-b/2}^{b/2} (x^2 + y^2)c \; dx \; dy \\[10pt]
-    &amp;= \rho \int_{-a/2}^{a/} (b x^2 + \frac{1}{12} b^3)c \; dx \\[10pt]
-    &amp;= \rho \left ( \frac{1}{12}a^3 b + \frac{1}{12} a b^3 \right ) c \\[10pt]
-    &amp;= \rho \cdot \frac{1}{12} abc (a^2 + b^2) \\[10pt]
-    &amp;= \frac{1}{12} M (a^2 + b^2)
+    &amp;= \rho \int_{-a/2}^{a/2} (b x^2 + \tfrac{1}{12} b^3)c \; dx \\[10pt]
+    &amp;= \rho \left ( \tfrac{1}{12}a^3 b + \tfrac{1}{12} a b^3 \right ) c \\[10pt]
+    &amp;= \rho \cdot \tfrac{1}{12} abc (a^2 + b^2) \\[10pt]
+    &amp;= \tfrac{1}{12} M (a^2 + b^2)
 \end{align}\]
+
+<p><br /></p>
+
+<!-- ## A Thin Sheet
+
+### Moment of Inertia About Perpendicular Axis
+
+Notice that the above result did not depend on the thickness of the slab. Thus, the result would be the same if $c = 0$. 
+
+$$
+I = \frac{1}{12} M (a^2 + b^2)
+$$
+
+### Moment of Inertia About Parallel Axis
+
+Now this is the case where $b = 0$. Thus, we will simply get.
+
+$$
+\frac{1}{12} M a^2
+$$
+
+<br> -->
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="inertia-tensor">Inertia Tensor</h2>
+
+\[I = \begin{bmatrix}
+    \tfrac{1}{12} M(b^2 + c^2) &amp; 0 &amp; 0 \\
+    0  &amp; \tfrac{1}{12} M(c^2 + a^2) &amp; 0 \\
+    0  &amp; 0 &amp; \tfrac{1}{12} M(a^2 + b^2)
+\end{bmatrix}
+= \tfrac{1}{12} M \begin{bmatrix}
+    b^2 + c^2 &amp; 0 &amp; 0 \\
+    0  &amp; c^2 + a^2 &amp; 0 \\
+    0  &amp; 0 &amp; a^2 + b^2
+\end{bmatrix}\]
 
         </div>
 
@@ -203,10 +279,10 @@
 
         <div class="pagination" style="margin-top:1em;">
             
-                <a class="pagination-item older" href="/blog/moments-of-inertia/ball/">Previous</a>
+                <a class="pagination-item older" href="/blog/moments-of-inertia/rod/">Previous</a>
             
             
-                <a class="pagination-item newer" href="/blog/moments-of-inertia/parallel-axis-theorem/">Next</a>
+                <a class="pagination-item newer" href="/blog/moments-of-inertia/spherical-ball/">Next</a>
             
         </div>
         <h3 style="text-align:center; margin-bottom:1em;">

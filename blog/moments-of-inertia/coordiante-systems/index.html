@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Coordiante Systems &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded MathJax (effectively LaTeX) support 
+    https://docs.mathjax.org/en/v2.7-latest/tex.html -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX", "input/MathML", "output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js", "mml2jax.js", "MathMenu.js", "MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
+            Macros: {
+                b: ["{\\boldsymbol #1}",1],
+                u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
+                arccsc: ["\\operatorname\{arccsc\}"],
+                arcsec: ["\\operatorname\{arcsec\}"],
+                arccot: ["\\operatorname\{arccot\}"],
+                csch: ["\\operatorname\{csch\}"],
+                sech: ["\\operatorname\{sech\}"],
+                arcsinh: ["\\operatorname\{arcsinh\}"],
+                arccosh: ["\\operatorname\{arccosh\}"],
+                arctanh: ["\\operatorname\{arctanh\}"],
+                arccsch: ["\\operatorname\{arccsch\}"],
+                arcsech: ["\\operatorname\{arcsech\}"],
+                arccoth: ["\\operatorname\{arccoth\}"],
+                seq: ["{\\left \\langle #1 \\right \\rangle}",1],
+                iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
+                abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
+                hal: ["\\texttt{hal}"],
+                gal: ["\\texttt{gal}"],
+                sh: ["sh"],
+                st: ["st"]
+            },
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!--
+    TeX-AMS_HTML
+    TeX-AMS-MML_HTMLorMML
+    TeX-MML-AM_HTMLorMML
+-->
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">AI/ML Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+        <li>
+          <a href="/files/Eric Keilty - Resume.pdf" target="_blank">R&eacute;sum&eacute;</a>
+        </li>
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2024 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">Coordiante Systems</h1>
+            <!-- <span class="series-date">04 Sep 2023</span> -->
+            <time datetime="2023-09-04T00:00:00-04:00" class="post-date">04 Sep 2023</time>
+            <!-- maybe I'll add tagging later
+            <span class="post-date" style="margin-top:-1em;"> ["moments-of-inertia"] </span>
+            -->
+            <!-- Insane coordinate drawings -->
+<!-- https://tikz.net/tag/coordinates/ -->
+
+<p>We need to take a quite detour. In order to calculate the moment of inertia of an object, we need to be able to algebraically describe its geometry. Choosing the right coordiante system can vastly simplify the analysis. In this post, I will <em>briefly</em> go over the standard coordinate systems used in physics - Cartesian, cylindrical, and spherical.</p>
+
+<p><br /></p>
+
+<h2 id="cartesian-coordinates">Cartesian Coordinates</h2>
+
+<p>Conceptually, this is the most intuitive and obvious coordinate system. Given any point in $3\text{D}$ space, pick any three orthogonal directions and measure the point’s distance from a fixed origin in those direction. This coordinate system most naturally describes cuboid geometries and is typically used in very irregular geometries.</p>
+
+<center>
+<embed src="/svg/moments-of-inertia/3:coordiante-systems/cartesian-coordinates.svg" type="image/svg+xml" />
+</center>
+
+\[\b{r} = x \; \u{x} + y \; \u{y} + z \; \u{z}\]
+
+<p>The benefit of this coordiante system is that each unit vector is constant. No matter what is going on inside the coordiante system, the $\u{x}$ unit vector always points along the $x$-axis (a property novice calculus students take for granted). Therefore, doing calculus with vectors in this coordinate system is very easy. The cost of this is that for complicate geometries the parameterizations become unwieldy. This is why mathematicians created alternative coordinate systems.</p>
+
+<!-- Since each [basis vector](https://en.wikipedia.org/wiki/Basis_(linear_algebra)) is constant with respect to the coordinate of interest, this coordinate system is extremely easy to do calculus with. When evaluating line, surface, and volume integrals, we have the following infinitesimals. 
+
+$$
+d \b{\ell} = d x \; \u{x} + d y \; \u{y} + d z \; \u{z}
+$$
+
+$$
+d\b{A}_{xy} = dx \; dy \; \u{z}
+\qquad
+d\b{A}_{yz} = dy \; dz \; \u{x}
+\qquad
+d\b{A}_{zx} = dz \; dx \; \u{y}
+$$
+
+$$
+dV = dx \; dy \; dz
+$$ -->
+
+<p><br /></p>
+
+<h2 id="cylindrical-coordinates">Cylindrical Coordinates</h2>
+
+<p>Now we get a little more complicated (but not too much). We are using the <a href="https://www.khanacademy.org/computing/computer-programming/programming-natural-simulations/programming-angular-movement/a/polar-coordinates">polar coordiantes</a> $(s, \phi)$ to describe the point’s projection onto the $xy$-plane, then we simply go straight in the $z$ direction. As the name suggests, this coordinate system is best suited for cylindrically-shaped objects.</p>
+
+<center>
+<embed src="/svg/moments-of-inertia/3:coordiante-systems/cylindrical-coordinates.svg" type="image/svg+xml" />
+</center>
+
+\[\b{r} = s \; \u{s} + z \; \u{z}\]
+
+<p>We have to be careful with the $\u{s}$ as it is not constant. Its direction changes depending on the coordiante we are describing. Therefore, we have to be careful when doing calculus. For example, $\frac{\partial}{\partial \phi} \u{s} = \u{\phi}$ (we prove this fact when finding the moment of inertia of a <a href="/blog/moments-of-inertia/circle">circle</a>). The benefit of this small annoyance is (usually) a reduction in complexity in parameterization.</p>
+
+<!-- Doing calculus with this coordinate system is a bit tricker than with Cartesian coordinates because the unit vector $\u{s}$ changes depending on the coordinate (i.e. it's not constant). Therefore, we have to do some correcting using [Jacobeans](https://rohankulkarni.me/files/extra_exams/jacobians_rohan.pdf). The infinitesimals for this coordiante system are listed below.
+
+$$
+d \b{\ell} = ds \; \u{s} + s \; d \phi \; \u{\phi} + z \; \u{z}
+$$
+
+$$
+d\b{A}_{s \phi} = s \; ds \; d\phi \; \u{z}
+\qquad
+d\b{A}_{\phi z} = s \; d\phi \; dz \; \u{s}
+\qquad
+d\b{A}_{z s} = dz \; ds \; \u{\phi}
+$$
+
+$$
+dV = s \; ds \; d\phi \; dz
+$$ -->
+
+<p>Below is the conversion between Cartesian and cylindrical coordinates. We will particularly use the conversion between the unit vectors. Deriving these formulas is a good exercise to make sure you understand the coordiante system.</p>
+
+\[\begin{align}
+
+&amp;\begin{cases}
+    x = s \ \cos \phi \\
+    y = s \ \sin \phi \\
+    z = z
+\end{cases}
+\qquad&amp;&amp;
+\begin{cases}
+    \u{x} = \cos \phi \ \u{s} - \sin \phi \ \u{\phi} \\
+    \u{y} = \sin \phi \ \u{s} + \cos \phi \ \u{\phi} \\
+    \u{z} = \u{z}
+\end{cases}
+\\[15pt]
+&amp;\begin{cases}
+    s    = \sqrt{x^2 + y^2} \\
+    \phi = \arctan(y / x) \\
+    z    = z
+\end{cases}
+\qquad&amp;&amp;
+\begin{cases}
+    \u{s}    = \cos \phi \ \u{x} + \sin \phi \ \u{y} \\
+    \u{\phi} = - \sin \phi \ \u{x} + \cos \phi \ \u{y} \\
+    \u{z}    = \u{z}
+\end{cases}
+\end{align}\]
+
+<p><br /></p>
+
+<h2 id="spherical-coordinates">Spherical Coordinates</h2>
+
+<p>Finally, we have the coordinate system which is conceptually the most difficult since none of the unit vectors are constant. Notice the direction we measure $\theta$ (it’s probably the opposite of what you would expect). Also notice that even though the unit vectors change depending on the point of interest, they always remain perpendicular to each other.</p>
+
+<center>
+<embed src="/svg/moments-of-inertia/3:coordiante-systems/spherical-coordinates.svg" type="image/svg+xml" />
+</center>
+
+\[\b{r} = r \; \u{r}\]
+
+<p>This coordinate system finishes what cylindrical coordinates started. In this coordinate system, none of the unit vectors are constant. However, due to the nature $\u{\theta}$ and $\u{\phi}$ there is usually a symmetry argument to simplify them. Again, it is trading one type of complexity for another. In certain geometries, it greatly simplifies the analysis.</p>
+
+<!-- As before, we have some Jacobean terms to account for the dependencies in the unit vectors. These are listed below. 
+
+$$
+d \b{\ell} = dr \; \u{r} + r \; d \theta \; \u{\theta} + r \; \sin \theta \; d \phi \; \u{\phi}
+$$
+
+$$
+d\b{A}_{r \theta} = r \; dr \; d\theta \; \u{\phi}
+\qquad
+d\b{A}_{\theta \phi} = r^2 \sin \theta \; d\theta \; d\phi \; \u{r}
+\qquad
+d\b{A}_{\phi r} = r \sin \theta \; d\phi \; dr \; \u{\theta}
+$$
+
+$$
+dV = r^2 \sin \theta \; dr \; d\theta \; d\phi
+$$ -->
+
+<p>Again, we give the conversion between spherical coordiantes and the two previous coordiante systems. If you’ve never worked with spherical coordiantes, I recommend you try to derive these formulas. It’s much more simple than it looks.</p>
+
+\[\begin{align}
+
+&amp;\begin{cases}
+    x = r \ \sin \theta \ \cos \phi \\
+    y = r \ \sin \theta \ \sin \phi \\
+    z = r \cos \theta
+\end{cases}
+\qquad&amp;&amp;
+\begin{cases}
+    \u{x} = \sin \theta \ \cos \phi \ \u{r} + \cos \theta \cos \phi \ \u{\theta} - \sin \phi \ \u{\phi} \\
+    \u{y} = \sin \theta \ \sin \phi \ \u{r} + \cos \theta \sin \phi \ \u{\theta} + \cos \phi \ \u{\phi} \\
+    \u{z} = \cos \theta \ \u{r} - \sin \theta \ \u{\theta}
+\end{cases}
+\\[15pt]
+&amp;\begin{cases}
+    r      = \sqrt{x^2 + y^2 + z^2} \\
+    \theta = \arctan(\sqrt{x^2 + y^2} / z) \\
+    \phi   = \arctan(y / x)
+\end{cases}
+\qquad&amp;&amp;
+\begin{cases}
+    \u{r}      = \sin \theta \ \cos \phi \ \u{x} + \sin \theta \sin \phi \ \u{y} + \cos \theta \ \u{z} \\
+    \u{\theta} = \cos \theta \ \cos \phi \ \u{x} + \cos \theta \sin \phi \ \u{y} - \sin \theta \ \u{z} \\
+    \u{\phi}   = - \sin \phi \ \u{x} + \cos \phi \ \u{y}
+\end{cases}
+\end{align}\]
+
+        </div>
+
+        <!-- Adding the ability to move between parts of the series -->
+        
+        
+        
+
+        
+        
+        
+
+        <!-- Getting capitalized title for series -->
+        
+        
+        
+        
+        <!-- Getting url for series, which is just the page url with the last /... removed -->
+        
+
+        <div class="pagination" style="margin-top:1em;">
+            
+                <a class="pagination-item older" href="/blog/moments-of-inertia/inertia-tensor-derivation/">Previous</a>
+            
+            
+                <a class="pagination-item newer" href="/blog/moments-of-inertia/vector-integration/">Next</a>
+            
+        </div>
+        <h3 style="text-align:center; margin-bottom:1em;">
+            <a href="/blog/moments-of-inertia">
+            
+                
+                    Moments
+                
+            
+                
+                    of
+                
+            
+                
+                    Inertia
+                
+            
+         Series</a>
+        </h3>
+    </div>
+    
+  </body>
+</html>

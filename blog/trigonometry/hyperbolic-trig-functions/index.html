@@ -47,6 +47,7 @@
             Macros: {
                 b: ["{\\boldsymbol #1}",1],
                 u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
                 arccsc: ["\\operatorname\{arccsc\}"],
                 arcsec: ["\\operatorname\{arcsec\}"],
                 arccot: ["\\operatorname\{arccot\}"],
@@ -252,9 +253,9 @@ f_{\text{odd}}(x) = \frac{f(x) - f(-x)}{2}\]
 <p>Similar to the unit circle for standard trig functions, there is a unit hyperbola for hyperbolic trig functions</p>
 
 <center>
-<embed src="/svg/hyperbolic-trig-functions/unit-circle.svg" type="image/svg+xml" />
+<embed src="/svg/trigonometry/19:hyperbolic-trig-functions/unit-circle.svg" type="image/svg+xml" />
 &emsp;&emsp;&emsp;
-<embed src="/svg/hyperbolic-trig-functions/unit-hyperbola.svg" type="image/svg+xml" />
+<embed src="/svg/trigonometry/19:hyperbolic-trig-functions/unit-hyperbola.svg" type="image/svg+xml" />
 </center>
 
 <p>In the unit circle, the argument $\theta$ corresponds to the angle formed by the circular wedge. Unfortunately, the argument of the unit hyperbola $\alpha$ does not have such an elegant interpretation. The best you can say is that the area of the shaded region is $\alpha/2$. However, this is not unique to the unit hyperbola. This fact is also true for the unit circle (recall that the area of a wedge is $\frac{1}{2} \theta r^2$).</p>
@@ -288,12 +289,14 @@ f_{\text{odd}}(x) = \frac{f(x) - f(-x)}{2}\]
 <p>Every standard trig function on the unit circle has a geometric interpretation which aligns extremely well with their notation and name. The hyperbolic trig functions, on the other hand, do not. As I stated in the preamble, their true meaning comes from the exponential definitions. While their notation and names only exist to mimic the standard trig functions. There are geometric interpretations, but they are not as elegant.</p>
 
 <center>
-<embed src="/svg/hyperbolic-trig-functions/hyperbolic-trig-geometric-interpretation.svg" type="image/svg+xml" />
+<embed src="/svg/trigonometry/19:hyperbolic-trig-functions/hyperbolic-trig-geometric-interpretation.svg" type="image/svg+xml" />
 &emsp;&emsp;&emsp;
-<embed src="/svg/hyperbolic-trig-functions/hyperbolic-trig-geometric-interpretation-2.svg" type="image/svg+xml" />
+<embed src="/svg/trigonometry/19:hyperbolic-trig-functions/hyperbolic-trig-geometric-interpretation-2.svg" type="image/svg+xml" />
 </center>
 
-<p>I will leave it as an exercise to the reader to prove these diagrams are correct (it’s not too hard using similar triangles). As you can see, the $\sech$ and $\csch$ do not correspond to secants of the hyperbola as the names would suggest (unlike the standard trig functions). There are ways you can force the issue, but the constructions are convoluted. You can see a diagram <a href="https://math.stackexchange.com/questions/451034/geometric-construction-of-hyperbolic-trigonometric-functions" target="_blank">here</a>.</p>
+<p>I will leave it as an exercise to the reader to prove these diagrams are correct (it’s not too hard using similar triangles). As you can see, the $\sech$ and $\csch$ do not correspond to secants of the hyperbola as the names would suggest (unlike the standard trig functions).</p>
+
+<!-- There are ways you can force the issue, but the constructions are convoluted. You can see a diagram <a href="https://math.stackexchange.com/questions/451034/geometric-construction-of-hyperbolic-trigonometric-functions" target="_blank">here</a>. -->
 
 <p><br /></p>
 
@@ -302,7 +305,7 @@ f_{\text{odd}}(x) = \frac{f(x) - f(-x)}{2}\]
 <p>Consider the function $2 x y = r^2$. It turns out, this is equivalent to a hyperbola but rotated $45^{\circ}$.</p>
 
 <center>
-<embed src="/svg/hyperbolic-trig-functions/reciprocal-function.svg" type="image/svg+xml" />
+<embed src="/svg/trigonometry/19:hyperbolic-trig-functions/reciprocal-function.svg" type="image/svg+xml" />
 </center>
 
 <p>The easiest way to prove this is to use complex numbers. Recall that multiplication of complex numbers results in the magnitudes multiplying and the angles adding. Therefore, to rotate $45^{\circ}$, we want to multiply by a complex number with a magnitude of $1$ and an angle of $\pi/4$. After some thought, you can convince yourself that $e^{i \frac{\pi}{4}} = \frac{1+i}{\sqrt{2}}$ is that number.</p>
@@ -324,21 +327,21 @@ f_{\text{odd}}(x) = \frac{f(x) - f(-x)}{2}\]
 <p>Notice that these graphs do not oscillate like the standard trig functions. Instead, $\sinh$ and $\cosh$ grow exponentially, and the rest decay exponentially to a horizontal asymptote.</p>
 
 <center>
-<embed src="/svg/hyperbolic-trig-functions/sinh-graph.svg" type="image/svg+xml" />
+<embed src="/svg/trigonometry/19:hyperbolic-trig-functions/sinh-graph.svg" type="image/svg+xml" />
 &emsp;&emsp;&emsp;&emsp;
-<embed src="/svg/hyperbolic-trig-functions/cosh-graph.svg" type="image/svg+xml" />
+<embed src="/svg/trigonometry/19:hyperbolic-trig-functions/cosh-graph.svg" type="image/svg+xml" />
 &emsp;&emsp;&emsp;&emsp;
-<embed src="/svg/hyperbolic-trig-functions/tanh-graph.svg" type="image/svg+xml" />
+<embed src="/svg/trigonometry/19:hyperbolic-trig-functions/tanh-graph.svg" type="image/svg+xml" />
 </center>
 
 <p><br /></p>
 
 <center>
-<embed src="/svg/hyperbolic-trig-functions/sech-graph.svg" type="image/svg+xml" />
+<embed src="/svg/trigonometry/19:hyperbolic-trig-functions/sech-graph.svg" type="image/svg+xml" />
 &emsp;&emsp;&emsp;&emsp;
-<embed src="/svg/hyperbolic-trig-functions/csch-graph.svg" type="image/svg+xml" />
+<embed src="/svg/trigonometry/19:hyperbolic-trig-functions/csch-graph.svg" type="image/svg+xml" />
 &emsp;&emsp;&emsp;&emsp;
-<embed src="/svg/hyperbolic-trig-functions/coth-graph.svg" type="image/svg+xml" />
+<embed src="/svg/trigonometry/19:hyperbolic-trig-functions/coth-graph.svg" type="image/svg+xml" />
 </center>
 
         </div>

@@ -47,6 +47,7 @@
             Macros: {
                 b: ["{\\boldsymbol #1}",1],
                 u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
                 arccsc: ["\\operatorname\{arccsc\}"],
                 arcsec: ["\\operatorname\{arcsec\}"],
                 arccot: ["\\operatorname\{arccot\}"],
@@ -151,24 +152,62 @@
 
         <div class="post">
             <h1 class="post-title">Parallel Axis Theorem</h1>
-            <!-- <span class="series-date">08 Sep 2023</span> -->
-            <time datetime="2023-09-08T00:00:00-04:00" class="post-date">08 Sep 2023</time>
+            <!-- <span class="series-date">07 Sep 2023</span> -->
+            <time datetime="2023-09-07T00:00:00-04:00" class="post-date">07 Sep 2023</time>
             <!-- maybe I'll add tagging later
             <span class="post-date" style="margin-top:-1em;"> ["moments-of-inertia, ",  "parallel-axis"] </span>
             -->
-            <p>Thus far, each of the axes of rotation have been intentially chosen to pass through the object’s center of mass. However, what if this is not the case. Then we can use the <strong>parallel axis theorem</strong>.</p>
+            <p><strong>TODO</strong> This post is not finished</p>
 
-\[I_{\text{parallel axis}} = I_{\text{center of mass}} + Md^2\]
+<p>Thus far, each of the axes of rotation have been intentionally chosen to pass through the object’s center of mass. What if this is not the case? What if we want to rotate the object about another axis? For this, we use the <strong>parallel axis theorem</strong>.</p>
 
-<p>where $d$ is the shortest distance from the object’s center of mass to the new axis</p>
+\[I_{\text{parallel axis}} = I_{\text{central axis}} + MD^2\]
+
+<p>where $D$ is the shortest distance from the object’s center of mass to the new axis of rotation.</p>
 
 <p><br /></p>
 
-<h2 id="example-thin-rod-about-exterior-diameter">Example: Thin Rod About Exterior Diameter</h2>
+<h2 id="proof">Proof</h2>
 
-<p>We know that a thin rod about its central diameter is $I = \frac{1}{12}ML^2$. Now, if the axis is on its exterior diameter, we can calculate the moment of inertia without using any more integrals</p>
+<p>Given an arbitrary point, let $r_{\text{central axis}}$ be the distance of that point to the central axis of rotation. Similarly, let $r_{\text{parallel axis}}$ be the distance of that point to the parallel axis of rotation. Let $d$ be the distance between the central axis to the parallel axis. Thus, $D = \abs{r_{\text{central axis}} - r_{\text{parallel axis}}}$. Note that $d$ is constant with respect to the object (and therefore is a constant during integration).</p>
 
-\[I = I_{\text{center of mass}} + Md^2 = \frac{1}{12}ML^2 + M(L/2)^2 = \frac{1}{3}ML^2\]
+<p>I apologize for using $d$ as a variable in an integral, but it’s the standard variable used in the parallel axis theorem.</p>
+
+\[\begin{align}
+    I_{\text{parallel axis}} 
+    &amp;= \int r_{\text{parallel axis}}^2 \;dm \\[10pt]
+    &amp;= \int (r_{\text{central axis}} - D)^2 \;dm \\[10pt]
+    &amp;= \int (r_{\text{central axis}}^2 + D^2 - 2 D r_{\text{central axis}}) \;dm \\[10pt]
+    &amp;= \left ( \int r_{\text{central axis}}^2 \;dm \right ) + \left ( \int d^2 \;dm \right ) + \left ( \int 2 D r_{\text{central axis}} \;dm \right ) \\[10pt]
+    &amp;= \left ( \int r_{\text{central axis}}^2 \;dm \right ) + \left ( d^2 \int \;dm \right ) + \left (  2 D \int r_{\text{central axis}} \;dm \right ) \\[10pt]
+    &amp;= \left ( I_{\text{central axis}} \right ) + \left ( M D^2 \right ) + \left ( 0 \right ) \\[10pt]
+    &amp;= I_{\text{central axis}} +  M D^2
+\end{align}\]
+
+<p><br /></p>
+
+<p>Now, we have to argue why 
+\(\displaystyle
+\int r_{\text{central axis}} \;dm = 0\).
+Essentially this is due to symmetry, since a central axis of rotation (by definition) passes through the center of mass of the object.</p>
+
+<!-- <br>
+
+## Example: Thin Rod About Exterior Diameter
+
+<center>
+<embed src="/svg/moments-of-inertia/6:parallel-axis-theorem/thin-rod.svg" type="image/svg+xml" />
+&emsp;&emsp;&emsp;&emsp;
+<embed src="/svg/moments-of-inertia/6:parallel-axis-theorem/thin-rod-parallel-axis.svg" type="image/svg+xml" />
+</center>
+
+<br>
+
+We know that a thin rod about its central diameter is $I = \frac{1}{12}ML^2$. Now, if the axis is on its exterior diameter, we can calculate the moment of inertia without using any more integrals. The distance from the center of mass to the new axis of rotation is $d = L/2$.
+
+$$
+I = I_{\text{center of mass}} + Md^2 = \frac{1}{12}ML^2 + M(L/2)^2 = \frac{1}{3}ML^2
+$$ -->
 
         </div>
 
@@ -191,10 +230,10 @@
 
         <div class="pagination" style="margin-top:1em;">
             
-                <a class="pagination-item older" href="/blog/moments-of-inertia/slab/">Previous</a>
+                <a class="pagination-item older" href="/blog/moments-of-inertia/principal-axes/">Previous</a>
             
             
-                <span class="pagination-item newer">Next</span>
+                <a class="pagination-item newer" href="/blog/moments-of-inertia/point-mass/">Next</a>
             
         </div>
         <h3 style="text-align:center; margin-bottom:1em;">

@@ -47,6 +47,7 @@
             Macros: {
                 b: ["{\\boldsymbol #1}",1],
                 u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
                 arccsc: ["\\operatorname\{arccsc\}"],
                 arcsec: ["\\operatorname\{arcsec\}"],
                 arccot: ["\\operatorname\{arccot\}"],
@@ -250,7 +251,7 @@
 <p>$(a \vee b) \wedge (\overline{b} \vee c) \quad = \quad (a \wedge \overline{b}) \vee (b \wedge c)$</p>
 
 \[\begin{align}
-    &amp;= (a \vee b) \wedge (\overline{b} \vee c)
+    &amp;(a \vee b) \wedge (\overline{b} \vee c)
     &amp;&amp; \\
 
     &amp;= (a \wedge c) \vee (a \wedge \overline{b}) \vee (b \wedge c)
@@ -268,7 +269,7 @@
 <p>$(a \wedge \overline{b}) \vee (b \wedge c) \quad \Rightarrow \quad a \vee c$</p>
 
 \[\begin{align}
-    &amp;= (a \wedge \overline{b}) \vee (b \wedge c)
+    &amp;(a \wedge \overline{b}) \vee (b \wedge c)
     &amp;&amp; \\
 
     &amp;= (a \vee b) \wedge (a \vee c) \wedge (\overline{b} \vee b) \wedge (\overline{b} \vee c)

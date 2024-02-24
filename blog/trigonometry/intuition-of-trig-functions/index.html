@@ -47,6 +47,7 @@
             Macros: {
                 b: ["{\\boldsymbol #1}",1],
                 u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
                 arccsc: ["\\operatorname\{arccsc\}"],
                 arcsec: ["\\operatorname\{arcsec\}"],
                 arccot: ["\\operatorname\{arccot\}"],
@@ -167,9 +168,9 @@
 <p>I’m not sure how helpful these diagrams are in terms of a greater understanding of trigonometry, but they at least help explain where the rest of the trigonometric functions get their names.</p>
 
 <center>
-<embed src="/svg/intuition-of-trig-functions/interpretation1.svg" type="image/svg+xml" />
+<embed src="/svg/trigonometry/1:intuition-of-trig-functions/interpretation1.svg" type="image/svg+xml" />
 &emsp;&emsp;&emsp;
-<embed src="/svg/intuition-of-trig-functions/interpretation2.svg" type="image/svg+xml" />
+<embed src="/svg/trigonometry/1:intuition-of-trig-functions/interpretation2.svg" type="image/svg+xml" />
 </center>
 
 <p>These relationships can be easily proved using similar triangles and the definitions of the functions. I will leave that for the reader to work out.</p>
@@ -181,12 +182,12 @@
 <p>First, I need to give some definitions.</p>
 
 <center>
-<embed src="/svg/intuition-of-trig-functions/terms.svg" type="image/svg+xml" />
+<embed src="/svg/trigonometry/1:intuition-of-trig-functions/terms.svg" type="image/svg+xml" />
 </center>
 
 <p>A <strong>tangent</strong> intersects the circumference of a circle at one point. A <strong>chord</strong> is a line segment whose endpoints both lie on the circumference of the circle. A <strong>secant</strong> is the extension of a chord.</p>
 
-<p>Now, hopefully, the names of the rest of the trigonometric functions are clear. “Sine” and “cosine” are both half-chords of the circle (which is ultimately the origin of their confused etymology). “Secant” and “Cosecant” are both half-secants of the circle. Finally, “Tangent” and “cotangent” are both half-tangents of the circle.</p>
+<p>Now, hopefully, the names of the rest of the trigonometric functions are clear. “Sine” and “Cosine” are both half-chords of the circle (which is ultimately the origin of their confused etymology). “Secant” and “Cosecant” are both half-secants of the circle. Finally, “Tangent” and “Cotangent” are both half-tangents of the circle.</p>
 
 <p>Also notice that \(\{ \sin \theta, \sec \theta, \tan \theta \}\) and \(\{\cos \theta, \csc \theta, \cot \theta \}\) are duals of each other. You will see in the identities of later posts, there is always a symmetry between these functions, which is a direct result of the symmetry of their geometry.</p>
 
@@ -194,33 +195,43 @@
 
 <h2 id="graphs">Graphs</h2>
 
-<p>Finally, I provide the graphs of the trigonometric functions. It’s nice to keep these in mind when interpreting the consequences of trig identities.</p>
+<p>I provide the graphs of the trigonometric functions. It’s nice to keep these in mind when interpreting the consequences of trig identities.</p>
 
 <center>
-<embed src="/svg/intuition-of-trig-functions/sin-graph.svg" type="image/svg+xml" />
+<embed src="/svg/trigonometry/1:intuition-of-trig-functions/sin-graph.svg" type="image/svg+xml" />
 &emsp;&emsp;&emsp;&emsp;
-<embed src="/svg/intuition-of-trig-functions/cos-graph.svg" type="image/svg+xml" />
+<embed src="/svg/trigonometry/1:intuition-of-trig-functions/cos-graph.svg" type="image/svg+xml" />
 </center>
 
 <p><br /></p>
 
 <center>
-<embed src="/svg/intuition-of-trig-functions/sec-graph.svg" type="image/svg+xml" />
+<embed src="/svg/trigonometry/1:intuition-of-trig-functions/sec-graph.svg" type="image/svg+xml" />
 &emsp;&emsp;&emsp;&emsp;
-<embed src="/svg/intuition-of-trig-functions/csc-graph.svg" type="image/svg+xml" />
+<embed src="/svg/trigonometry/1:intuition-of-trig-functions/csc-graph.svg" type="image/svg+xml" />
 </center>
 
 <p><br /></p>
 
 <center>
-<embed src="/svg/intuition-of-trig-functions/tan-graph.svg" type="image/svg+xml" />
+<embed src="/svg/trigonometry/1:intuition-of-trig-functions/tan-graph.svg" type="image/svg+xml" />
 &emsp;&emsp;&emsp;&emsp;
-<embed src="/svg/intuition-of-trig-functions/cot-graph.svg" type="image/svg+xml" />
+<embed src="/svg/trigonometry/1:intuition-of-trig-functions/cot-graph.svg" type="image/svg+xml" />
 </center>
 
 <p><br /></p>
 
 <p>Notice the asymptotes in $\sec$, $\csc$, $\tan$, and $\cot$. See if you can determine which values of $\theta$ cause these asymptotes.</p>
+
+<p><br /></p>
+
+<h2 id="what-are-trigonometric-functions-fundamentally">What are Trigonometric Functions Fundamentally?</h2>
+
+<p>Eventually, we are going to see that all trigonometric functions can be expressed solely in terms of $\sin$. Each of the six functions are just syntactic sugar for a singular deeper truth, which is the relationship of a circle’s radius, arc length, and corresponding chord length.</p>
+
+<center>
+<embed src="/svg/trigonometry/1:intuition-of-trig-functions/arc-to-chord.svg" type="image/svg+xml" />
+</center>
 
         </div>
 

@@ -47,6 +47,7 @@
             Macros: {
                 b: ["{\\boldsymbol #1}",1],
                 u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
                 arccsc: ["\\operatorname\{arccsc\}"],
                 arcsec: ["\\operatorname\{arcsec\}"],
                 arccot: ["\\operatorname\{arccot\}"],
@@ -165,7 +166,7 @@
 <p>For this proof, we need to be able to find the straight-line distance between two points on the 2D plane. Doing this is just a simple application of the Pythagorean Theorem.</p>
 
 <center>
-<embed src="/svg/difference-identity-for-cosine/distance-formula.svg" type="image/svg+xml" />
+<embed src="/svg/trigonometry/6:difference-identity-for-cosine/distance-formula.svg" type="image/svg+xml" />
 </center>
 
 <p><br /></p>
@@ -176,23 +177,25 @@
 
 <h2 id="derivation">Derivation</h2>
 
-<p>Consider any isosceles triangle centered on the unit circle (left figure). Rotate this triangle so that one edge lies on the x-axis (right figure).</p>
+<p>Consider an isosceles triangle centered on the unit circle (left figure). Rotate this triangle so that one edge lies on the x-axis (right figure).</p>
 
 <center>
-<embed src="/svg/difference-identity-for-cosine/triangle1.svg" type="image/svg+xml" />
+<embed src="/svg/trigonometry/6:difference-identity-for-cosine/triangle1.svg" type="image/svg+xml" />
 &emsp;&emsp;&emsp;&emsp;
-<embed src="/svg/difference-identity-for-cosine/triangle2.svg" type="image/svg+xml" />
+<embed src="/svg/trigonometry/6:difference-identity-for-cosine/triangle2.svg" type="image/svg+xml" />
 </center>
 
 <p>Since the triangles are congruent, the side length $d$ must be the same between the two. Thus, we will calculate $d$ in two different ways using the Euclidean distance formula.</p>
 
-<p>Per the left figure,</p>
+<p>Per the left figure,.</p>
 
 \[d_{\text{left}} = \sqrt{(\cos \alpha - \cos \beta)^2 + (\sin \alpha - \sin \beta)^2}\]
 
-<p>Per the right figure,</p>
+<p>Per the right figure.</p>
 
 \[d_{\text{right}} = \sqrt{(\cos (\alpha -\beta) - 0)^2 + (\sin (\alpha - \beta) - 1)^2}\]
+
+<p>Equate the left and right figure.</p>
 
 \[\begin{align}
     d_{\text{left}} &amp;= d_{\text{right}} \\[10pt]

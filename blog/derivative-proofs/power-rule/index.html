@@ -47,6 +47,7 @@
             Macros: {
                 b: ["{\\boldsymbol #1}",1],
                 u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
                 arccsc: ["\\operatorname\{arccsc\}"],
                 arcsec: ["\\operatorname\{arcsec\}"],
                 arccot: ["\\operatorname\{arccot\}"],
@@ -179,9 +180,10 @@
     &amp;= \lim_{h \rightarrow 0} \ \frac{(x-h)^n - x^n}{h} \\[10pt]
     &amp;= \lim_{h \rightarrow 0} \ \frac{1}{h}\left ( \sum_{k=0}^n \binom{n}{k} x^k h^{n-k} - x^n \right ) \\[10pt]
     &amp;= \lim_{h \rightarrow 0} \ \frac{1}{h}\left ( \sum_{k=0}^{n-1} \binom{n}{k} x^k h^{n-k} \right ) \\[10pt]
-    &amp;= \lim_{h \rightarrow 0} \ \frac{1}{h}\left ( h \sum_{k=0}^{n-1} \binom{n}{k} x^k h^{n-(k-1)} \right ) \\[10pt]
-    &amp;= \lim_{h \rightarrow 0} \ \sum_{k=0}^{n-1} \binom{n}{k} x^k h^{n-(k-1)}\\[10pt]
-    &amp;= n x^{n-1} \\[10pt]
+    &amp;= \lim_{h \rightarrow 0} \ \frac{1}{h}\left ( h \sum_{k=0}^{n-1} \binom{n}{k} x^k h^{(n-1)-k} \right ) \\[10pt]
+    &amp;= \lim_{h \rightarrow 0} \ \sum_{k=0}^{n-1} \binom{n}{k} x^k h^{(n-1)-k}\\[10pt]
+    &amp;= \binom{n}{n-1} x^{n-1} \\[10pt]
+    &amp;= n x^{n-1}
 \end{align}\]
 
 <p><br /></p>
@@ -207,7 +209,7 @@
 
 <p>Suppose $p, q \in \mathbb{Z}$ such that $p, q \neq 0 \quad \forall x$.</p>
 
-<p>First, we need to find the derivative of $x^{1/q}$. We do this using the fact that this is the inverse function of $f(x) = x^q$. Therefore,</p>
+<p>First, we need to find the derivative of $x^{1/q}$. We do this using the fact that it is the inverse function of $f(x) = x^q$. Therefore,</p>
 
 \[\begin{align}
     \frac{d}{dx} x^{1/q}

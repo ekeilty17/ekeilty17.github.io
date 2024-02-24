@@ -47,6 +47,7 @@
             Macros: {
                 b: ["{\\boldsymbol #1}",1],
                 u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
                 arccsc: ["\\operatorname\{arccsc\}"],
                 arcsec: ["\\operatorname\{arcsec\}"],
                 arccot: ["\\operatorname\{arccot\}"],
@@ -151,51 +152,115 @@
 
         <div class="post">
             <h1 class="post-title">Ring (Annular Cylinder)</h1>
-            <!-- <span class="series-date">03 Sep 2023</span> -->
-            <time datetime="2023-09-03T00:00:00-04:00" class="post-date">03 Sep 2023</time>
+            <!-- <span class="series-date">30 Sep 2023</span> -->
+            <time datetime="2023-09-30T00:00:00-04:00" class="post-date">30 Sep 2023</time>
             <!-- maybe I'll add tagging later
             <span class="post-date" style="margin-top:-1em;"> ["moments-of-inertia, ",  "ring, ",  "annular-cylinder"] </span>
             -->
             <h2 id="mass">Mass</h2>
 
+<center>
+<embed src="/svg/moments-of-inertia/29:ring/ring-mass.svg" type="image/svg+xml" />
+&emsp;
+<embed src="/svg/moments-of-inertia/29:ring/outer-disc-mass.svg" type="image/svg+xml" />
+&emsp;
+<embed src="/svg/moments-of-inertia/29:ring/inner-disc-mass.svg" type="image/svg+xml" />
+</center>
+
+<p><br /></p>
+
+<p>We can build the ring using values of mass that we calculated in the previous post. Recall that $M_{\text{disc}}(R, L) = \rho \cdot \pi R^2 L$.</p>
+
 \[\begin{align}
-    M &amp;= \int dm \\[10pt]
-    &amp;= \rho \int dV \\[10pt]
-    &amp;= \rho \int_{R_1}^{R_2} \int_{0}^{2 \pi} \int_{-L/2}^{L/2} s \; ds \; d\phi \; dz \\[10pt]
-    &amp;= \rho \left ( \int_{R_1}^{R_2} s \; ds \right ) \left ( \int_{0}^{2 \pi} d\phi \right ) \left ( \int_{-L/2}^{L/2} dz \right ) \\[10pt]
-    &amp;= \rho \left ( \frac{1}{2}(R_2^2 - R_1^2) \right ) \left ( 2\pi \right ) \left ( L \right ) \\[10pt]
+    M_{\text{ring}} &amp;= M_{\text{disc}}(R_2, L) - M_{\text{disc}}(R_1, L) \\[10pt]
+    &amp;= \rho \cdot \pi R_2^2 L - \rho \cdot \pi R_1^2 L \\[10pt]
     &amp;= \rho \cdot \pi (R_2^2 - R_1^2) L
 \end{align}\]
 
+<!-- $$
+\begin{align}
+    M &= \int dm \\[10pt]
+    &= \rho \int dV \\[10pt]
+    &= \rho \int_{R_1}^{R_2} \int_{0}^{2 \pi} \int_{-L/2}^{L/2} s \; ds \; d\phi \; dz \\[10pt]
+    &= \rho \left ( \int_{R_1}^{R_2} s \; ds \right ) \left ( \int_{0}^{2 \pi} d\phi \right ) \left ( \int_{-L/2}^{L/2} dz \right ) \\[10pt]
+    &= \rho \left ( \frac{1}{2}(R_2^2 - R_1^2) \right ) \left ( 2\pi \right ) \left ( L \right ) \\[10pt]
+    &= \rho \cdot \pi (R_2^2 - R_1^2) L
+\end{align}
+$$ -->
+
+<p>As an exercise, evaluate the mass of the ring using an integral and see if you get the same result.</p>
+
 <p><br /></p>
 
-<h2 id="moment-inertia-about-central-axis">Moment Inertia About Central Axis</h2>
+<h2 id="moment-of-inertia-about-central-axis">Moment of Inertia About Central Axis</h2>
+
+<p>Now, it turns out we can do exactly the same thing as the moment of inertia. We have to be careful though. We cannot conflate the masses. Thus, instead of using $I_{\text{disc}}(R, L) = \frac{1}{2} M_{\text{disc}} R^2$ we have to use $I_{\text{disc}}(R, L) = \rho \cdot \frac{1}{2} \pi R^4 L$, since we are assuming both have a uniform mass density.</p>
 
 \[\begin{align}
-    I &amp;= \int r_{axis}^2 \;dm \\[10pt]
-    &amp;= \rho \int r_{axis}^2 \; dV \\[10pt]
-    &amp;= \rho \int_{R_1}^{R_2} \int_{0}^{2\pi} \int_{-L/2}^{L/2} r_{axis}^2 \; s ds d\phi dz \\[10pt]
-    &amp;= \rho \int_{R_1}^{R_2} \int_{0}^{2\pi} \int_{-L/2}^{L/2} s^2 \; s ds d\phi dz \\[10pt]
-    &amp;= \rho \left ( \int_{R_1}^{R_2} s^3 \; ds \right ) \left ( \int_{0}^{2\pi} d\phi \right ) \left ( \int_{-L/2}^{L/2} dz \right ) \\[10pt]
-    &amp;= \rho \left ( \frac{1}{4}(R_2^4 - R_1^4) \right ) \left ( 2\pi \right ) \left ( L \right ) \\[10pt]
+    I_{\text{ring}} &amp;= I_{\text{disc}}(R_2, L) - I_{\text{disc}}(R_1, L) \\[10pt]
+    &amp;= \rho \cdot \frac{1}{2} \pi R_2^4 L - \rho \cdot \frac{1}{2} \pi R_1^4 L\\[10pt]
     &amp;= \rho \cdot \frac{1}{2} \pi (R_2^4 - R_1^4) L \\[10pt]
-    &amp;= \rho \cdot \frac{1}{2} M (R_2^2 + R_1^2) \\[10pt]
+    &amp;= \frac{1}{2} M (R_2^2 + R_1^2) \\[10pt]
 \end{align}\]
+
+<p>Again, as an exercise you can evaluate this from scratch using an integral and see if you can get the same result.</p>
+
+<!-- $$
+\begin{align}
+    I &= \int r_{axis}^2 \;dm \\[10pt]
+    &= \rho \int r_{axis}^2 \; dV \\[10pt]
+    &= \rho \int_{R_1}^{R_2} \int_{0}^{2\pi} \int_{-L/2}^{L/2} r_{axis}^2 \; s ds d\phi dz \\[10pt]
+    &= \rho \int_{R_1}^{R_2} \int_{0}^{2\pi} \int_{-L/2}^{L/2} s^2 \; s ds d\phi dz \\[10pt]
+    &= \rho \left ( \int_{R_1}^{R_2} s^3 \; ds \right ) \left ( \int_{0}^{2\pi} d\phi \right ) \left ( \int_{-L/2}^{L/2} dz \right ) \\[10pt]
+    &= \rho \left ( \frac{1}{4}(R_2^4 - R_1^4) \right ) \left ( 2\pi \right ) \left ( L \right ) \\[10pt]
+    &= \rho \cdot \frac{1}{2} \pi (R_2^4 - R_1^4) L \\[10pt]
+    &= \frac{1}{2} M (R_2^2 + R_1^2) \\[10pt]
+\end{align}
+$$ -->
 
 <p><br /></p>
 
-<h2 id="moment-inertia-about-central-diameter">Moment Inertia About Central Diameter</h2>
+<h2 id="moment-of-inertia-about-central-diameter">Moment of Inertia About Central Diameter</h2>
+
+<p>We do likewise here, using $I_{\text{disc}}(R, L) = \frac{1}{4} M_{\text{disc}} R^2 + \frac{1}{12} M_{\text{disc}} L^2 = \rho \cdot \left ( \frac{1}{4} \pi R^4 L + \frac{1}{12} \pi R^2 L^3  \right )$.</p>
 
 \[\begin{align}
-    I &amp;= \int r_{axis}^2 \;dm \\[10pt]
-    &amp;= \rho \int r_{axis}^2 \; dV \\[10pt]
-    &amp;= \rho \int_{R_1}^{R_2} \int_{0}^{2\pi} \int_{-L/2}^{L/2} r_{axis}^2 \; s ds d\phi dz \\[10pt]
-    &amp;= \rho \int_{R_1}^{R_2} \int_{0}^{2\pi} \int_{-L/2}^{L/2} (s \ \cos \phi)^2 \; s ds d\phi dz \\[10pt]
-    &amp;= \rho \left ( \int_{R_1}^{R_2} s^3 \; ds \right ) \left ( \int_{0}^{2\pi} \cos^2 \phi \; d\phi \right ) \left ( \int_{-L/2}^{L/2} dz \right ) \\[10pt]
-    &amp;= \rho \left ( \frac{1}{4}(R_2^4 - R_1^4) \right ) \left ( \pi \right ) \left ( L \right ) \\[10pt]
-    &amp;= \rho \cdot \frac{1}{4} \pi (R_2^4 - R_1^4) L \\[10pt]
-    &amp;= \rho \cdot \frac{1}{4} M (R_2^2 + R_1^2) \\[10pt]
+    I_{\text{ring}} &amp;= I_{\text{disc}}(R_2, L) - I_{\text{disc}}(R_1, L) \\[10pt]
+    &amp;= \rho \cdot \left ( \frac{1}{4} \pi R_2^4 L + \frac{1}{12} \pi R_2^2 L^3 \right ) - \rho \cdot \left ( \frac{1}{4} \pi R_1^4 L + \frac{1}{12} \pi R_1^2 L^3 \right )\\[10pt]
+    &amp;= \rho \cdot \left ( \frac{1}{4} \pi (R_2^4 - R_1^4) L + \frac{1}{12} \pi (R_2^2 - R_1^2) L^3 \right )\\[10pt]
+    &amp;= \rho \cdot \pi (R_2^2 - R_1^2) L \left ( \frac{1}{4} (R_2^2 + R_1^2) + \frac{1}{12} L^2 \right )\\[10pt]
+    &amp;= \frac{1}{4} M (R_2^2 + R_1^2) + \frac{1}{12} M L^2
 \end{align}\]
+
+<p>Evaluating this integral from scratch becomes very tedious. However, using the linearity method it’s not too bad.</p>
+
+<!-- I think this integral is wrong -->
+<!-- $$
+\begin{align}
+    I &= \int r_{axis}^2 \;dm \\[10pt]
+    &= \rho \int r_{axis}^2 \; dV \\[10pt]
+    &= \rho \int_{R_1}^{R_2} \int_{0}^{2\pi} \int_{-L/2}^{L/2} r_{axis}^2 \; s ds d\phi dz \\[10pt]
+    &= \rho \int_{R_1}^{R_2} \int_{0}^{2\pi} \int_{-L/2}^{L/2} (s \ \cos \phi)^2 \; s ds d\phi dz \\[10pt]
+    &= \rho \left ( \int_{R_1}^{R_2} s^3 \; ds \right ) \left ( \int_{0}^{2\pi} \cos^2 \phi \; d\phi \right ) \left ( \int_{-L/2}^{L/2} dz \right ) \\[10pt]
+    &= \rho \left ( \frac{1}{4}(R_2^4 - R_1^4) \right ) \left ( \pi \right ) \left ( L \right ) \\[10pt]
+    &= \rho \cdot \frac{1}{4} \pi (R_2^4 - R_1^4) L \\[10pt]
+    &= \frac{1}{4} M (R_2^2 + R_1^2) \\[10pt]
+\end{align}
+$$ -->
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="inertia-tensor-of-a-slab">Inertia Tensor of a Slab</h2>
+
+\[I = \begin{bmatrix}
+    \frac{1}{4} M (R_2^2 + R_1^2) + \frac{1}{12} M L^2 &amp; 0 &amp; 0 \\
+    0  &amp; \frac{1}{4} M (R_2^2 + R_1^2) + \frac{1}{12} M L^2 &amp; 0 \\
+    0  &amp; 0 &amp; \frac{1}{2} M (R_2^2 + R_1^2)
+\end{bmatrix}\]
 
         </div>
 
@@ -218,10 +283,10 @@
 
         <div class="pagination" style="margin-top:1em;">
             
-                <a class="pagination-item older" href="/blog/moments-of-inertia/hoop/">Previous</a>
+                <a class="pagination-item older" href="/blog/moments-of-inertia/torus/">Previous</a>
             
             
-                <a class="pagination-item newer" href="/blog/moments-of-inertia/rod-disc/">Next</a>
+                <span class="pagination-item newer">Next</span>
             
         </div>
         <h3 style="text-align:center; margin-bottom:1em;">

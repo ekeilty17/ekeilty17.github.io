@@ -47,6 +47,7 @@
             Macros: {
                 b: ["{\\boldsymbol #1}",1],
                 u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
                 arccsc: ["\\operatorname\{arccsc\}"],
                 arcsec: ["\\operatorname\{arcsec\}"],
                 arccot: ["\\operatorname\{arccot\}"],
@@ -156,7 +157,7 @@
             <!-- maybe I'll add tagging later
             <span class="post-date" style="margin-top:-1em;"> ["trigonometry, ",  "hyperbolic, ",  "hyperbola"] </span>
             -->
-            <p>For background on inverse functions, refer to the <a href="/blog/trigonometry/inverse-trig-functions/">previous post</a> on the inverse standard trig functions.
+            <p>For background on inverse functions, refer to a <a href="/blog/trigonometry/inverse-trig-functions/">previous post</a> on the inverse standard trig functions.
 Looking at the graphs of the hyperbolic trig functions in the previous post, we can see that $\sinh$, $\tanh$, $\csch$, and $\coth$ are one-to-one, and therefore have a well-defined inverse. By contrast, $\cosh$ and $\sech$ are not one-to-one, so we will have to restrict their domain. Since we have exact formulas for the hyperbolic trig functions in terms of $e^x$, we will also get exact formulas for their inverse functions in terms of $\ln x$.</p>
 
 <p><br /></p>
@@ -183,7 +184,7 @@ x = \frac{e^y - e^{-y}}{2}\]
 \qquad\implies\qquad
 e^y = x \pm \sqrt{x^2 + 1}\]
 
-<p>Since $x &lt; \sqrt{x^2 + 1}$, $x - \sqrt{x^2 + 1}$ this will result in a negative number and thus no solution for $y$.</p>
+<p>Since $x &lt; \sqrt{x^2 + 1}$, the root $x - \sqrt{x^2 + 1}$ will result in a negative number and thus no solution for $y$.</p>
 
 \[e^y = x + \sqrt{x^2 + 1}
 \qquad\implies\qquad
@@ -202,7 +203,7 @@ y = \arcsinh(x) = \ln( x + \sqrt{x^2 + 1} )\]
     &amp;y = \arccosh(x) = \ln( x + \sqrt{x^2 - 1} )
 \end{align}\]
 
-<p>One thing to note is that the reason we neglect the root $e^y = x - \sqrt{x^2 - 1}$ is different than before. $x &gt; \sqrt{x^2 - 1}$, therefore the root will be positive and produce a solution for $y$. Our choice of using the root $e^y = x - \sqrt{x^2 - 1}$ is due to our choice of domain restriction.</p>
+<p>One thing to note is that the reason we neglect the root $e^y = x - \sqrt{x^2 - 1}$ is different than before. $x &gt; \sqrt{x^2 - 1}$, therefore the root will be positive and produce a solution for $y$. Our choice of using the root $e^y = x + \sqrt{x^2 - 1}$ is due to our choice of domain restriction.</p>
 
 <h3 id="hyperbolic-tangent">Hyperbolic Tangent</h3>
 

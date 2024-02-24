@@ -47,6 +47,7 @@
             Macros: {
                 b: ["{\\boldsymbol #1}",1],
                 u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
                 arccsc: ["\\operatorname\{arccsc\}"],
                 arcsec: ["\\operatorname\{arcsec\}"],
                 arccot: ["\\operatorname\{arccot\}"],
@@ -173,7 +174,7 @@
 
 <h2 id="the-minimal-set-of-axioms">The Minimal Set of Axioms</h2>
 
-<p>Now, there are a couple of ways you can define the axioms of Boolean algebra. One way is to define the behavior of $\color{green}T$ and $\color{red}F$ via truth tables. Then, using a completion argument with truth tables you can start creating laws. I, instead, want to start with some axioms and obtain the definitions of the Boolean operators and their truth tables as a consequence.</p>
+<p>Now, there are a couple of ways you can define the axioms of Boolean algebra. One way is to define the behavior of $\color{green}T$ and $\color{red}F$ via <a href="https://en.wikipedia.org/wiki/Truth_table" target="_blank">truth tables</a>. Then, using a completion argument with truth tables you can start creating laws. I, instead, want to start with some axioms and obtain the definitions of the Boolean operators and their truth tables as a consequence.</p>
 
 <p>Below are the axioms, and I claim this is a minimal set. Removing any would mean some laws could not be proved. Another way to look at it, removing any would result in gaps in the truth tables.</p>
 
@@ -201,13 +202,13 @@
   <li>$a \vee (b \wedge c) = (a \vee b) \wedge (a \vee c)$</li>
 </ul>
 
-<p>For those well-versed in abstract algebra, these axioms may look awfully similar to those of a <a href="http://people.reed.edu/~mayer/math112.html/html1/node16.html" target="_blank">field</a></p>
+<p>For those well-versed in abstract algebra, these axioms may look awfully similar to those of a <a href="http://people.reed.edu/~mayer/math112.html/html1/node16.html" target="_blank">field</a>.</p>
 
 <p><br /></p>
 
 <h2 id="fundamental-operations">Fundamental Operations</h2>
 
-<p>The above axioms define the behavior of the operations $\neg$, $\wedge$, and $\vee$. Given these axioms, these operations are forced. We can show this via a <strong>truth table</strong>, which shows all possible combinations of inputs to the operations.</p>
+<p>The above axioms define the behavior of the operations $\neg$, $\wedge$, and $\vee$. Given these axioms, the result of all possible combinations of inputs to these operations are fixed. We show their truth tables below.</p>
 
 <table>
   <thead>
@@ -259,7 +260,7 @@
   </tbody>
 </table>
 
-<p>These truth tables can be derived from the axioms and some laws we prove in the next post. The negation truth table is a consequence of identity and annihilation laws. Commutativity and distributivity are required to fully define the conjunction and disjunction truth tables.</p>
+<p>These truth tables can be derived from the axioms and some laws we prove in the <a href="/blog/boolean-algebra/miscellaneous-simple-relations">next post</a>. The negation truth table is a consequence of identity and annihilation laws. Commutativity and distributivity are required to fully define the conjunction and disjunction truth tables.</p>
 
 <p>Note, going forward, instead of writing $\neg a$ I will write $\overline{a}$ to condense expressions.</p>
 

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Definition of the Mass Moment of Inertia &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded MathJax (effectively LaTeX) support 
+    https://docs.mathjax.org/en/v2.7-latest/tex.html -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX", "input/MathML", "output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js", "mml2jax.js", "MathMenu.js", "MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
+            Macros: {
+                b: ["{\\boldsymbol #1}",1],
+                u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
+                arccsc: ["\\operatorname\{arccsc\}"],
+                arcsec: ["\\operatorname\{arcsec\}"],
+                arccot: ["\\operatorname\{arccot\}"],
+                csch: ["\\operatorname\{csch\}"],
+                sech: ["\\operatorname\{sech\}"],
+                arcsinh: ["\\operatorname\{arcsinh\}"],
+                arccosh: ["\\operatorname\{arccosh\}"],
+                arctanh: ["\\operatorname\{arctanh\}"],
+                arccsch: ["\\operatorname\{arccsch\}"],
+                arcsech: ["\\operatorname\{arcsech\}"],
+                arccoth: ["\\operatorname\{arccoth\}"],
+                seq: ["{\\left \\langle #1 \\right \\rangle}",1],
+                iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
+                abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
+                hal: ["\\texttt{hal}"],
+                gal: ["\\texttt{gal}"],
+                sh: ["sh"],
+                st: ["st"]
+            },
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!--
+    TeX-AMS_HTML
+    TeX-AMS-MML_HTMLorMML
+    TeX-MML-AM_HTMLorMML
+-->
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">AI/ML Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+        <li>
+          <a href="/files/Eric Keilty - Resume.pdf" target="_blank">R&eacute;sum&eacute;</a>
+        </li>
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2024 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">Definition of the Mass Moment of Inertia</h1>
+            <!-- <span class="series-date">02 Sep 2023</span> -->
+            <time datetime="2023-09-02T00:00:00-04:00" class="post-date">02 Sep 2023</time>
+            <!-- maybe I'll add tagging later
+            <span class="post-date" style="margin-top:-1em;"> ["moments-of-inertia"] </span>
+            -->
+            <!-- https://ocw.mit.edu/courses/16-07-dynamics-fall-2009/dd277ec654440f4c2b5b07d6c286c3fd_MIT16_07F09_Lec26.pdf -->
+
+<h2 id="point-mass">Point Mass</h2>
+
+<p>Suppose we have a point mass $m$ which is rotating a distance $R$ away from a fixed axis of rotation with angular velocity $\omega$.</p>
+
+<center>
+<embed src="/svg/moments-of-inertia/1:definition-of-the-mass-moment-of-inertia/point-mass.svg" type="image/svg+xml" />
+</center>
+
+<p>In this simplified example, the <strong>angular momentum</strong> of this point mass is given by the following.</p>
+
+\[L = R \times p = R \times (m v) = R \times (m R \omega) = (m R^2) \omega\]
+
+<p>Notice that $m R^2$ only depends on the geometry of the mass while $\omega$ only depends on the motion of the mass. While $\omega$ may change over time, $m R^2$ is constant for each object (at least in this idealized scenario). Therefore, it is natural to separate this term out and give it a name. We call this the <strong>mass moment of inertia</strong> or <strong>rotational inertia</strong> of the point mass.</p>
+
+\[I = m R^2
+\qquad\qquad\qquad
+L = I \omega\]
+
+<p>Similar to mass in linear motion, the rotational inertia describes the objects intrinsic resistance to rotation. The larger the moment of inertia, the harder it is to get the object to rotate. Conversely, if an object with a large moment of inertia is already rotating, then it is difficult to stop. For example, a bowling ball has a larger moment of inertia than a marble (even if they had the same mass).</p>
+
+<p><br /></p>
+
+<h2 id="a-collection-of-point-masses">A Collection of Point Masses</h2>
+
+<p>Suppose a collection of $n$ point masses $m_i$ are a distance $R_i$ from a fixed axis of rotation with angular velocity $\omega$. It is well-known in physics that the total angular momentum of a system is just the sum of the angular momentum of its parts (this comes from the conservation of angular momentum). Thus,</p>
+
+\[L = \sum_{i=1}^n L_i = \sum_{i=1}^n m_i R_i^2 \omega = \left ( \sum_{i=1}^n m_i R_i^2 \right ) \omega\]
+
+<p>Therefore, the effective rotational inertia of the system is the sume of the rotational inertia of each point mass.</p>
+
+\[I_{\text{system}} = \sum_{i=1}^n m_i R_i^2 = \sum_{i=1}^n I_i\]
+
+<p>This is a very useful property for “building-up” complicated shapes from a series of smaller shapes, which we will see many times in this series.</p>
+
+<p><br /></p>
+
+<h2 id="rigid-body">Rigid Body</h2>
+
+<p>A <strong>rigid body</strong> is an object that does not deform or change shape. Mathematically you can say that the distance between any two points within the body is always constant.</p>
+
+<p>Consider a rigid body $\mathcal{G}$ rotating around a fixed axis $\omega$. We can consider any infinitesimal unit of area $dm$. Suppose its distance to the axis of rotation is $r_{axis}$. Note that this may be different than $\b{r}$, which denotes the position in space relative to a fixed origin.</p>
+
+<p>This is essentially the same as a point mass, therefore its infinitesimal moment of inertia is</p>
+
+\[dI = r_{axis}^2 dm\]
+
+<p>Since it is a <em>rigid</em> body, the total rotational inertia is the sum of all the infinitesimal rotational inertias within the object $\mathcal{G}$ (analogous to a collection of point masses). For continuous objects, we integrate over its geometry.</p>
+
+\[I_{\mathcal{G}} = \int_{\mathcal{G}} dI = \int_{\mathcal{G}} r_{axis}^2 dm\]
+
+<p>This is the expression that this series will be computing.</p>
+
+<p>While this looks simple, its complexity hides in the subscript $\mathcal{G}$. This is saying we have to integrate with respect to the object’s geometry, which can be tricky to do correctly. We will see many examples in the subsequent posts.</p>
+
+<p><br /></p>
+
+<h2 id="the-inertia-tensor">The Inertia Tensor</h2>
+
+<p>The above formula only gives the moment of inertia for a fixed axis of rotation. In some applications, we want the ability to find the moment of inertia for any axis of rotation. For this, we need the <strong>inertia tensor</strong>.</p>
+
+\[\m{I} = \left[ \begin{array}{@{}rrr@{}}
+      I_{xx} &amp; - I_{xy} &amp; - I_{xz} \\
+    - I_{yx} &amp;   I_{yy} &amp; - I_{yz} \\
+    - I_{zx} &amp; - I_{zy} &amp;   I_{zz}
+\end{array} \right ]\]
+
+<p>The diagonals are called the <strong>moments of inertia</strong> with respect to the $x$, $y$, and $z$ axis. They are a measure of the resistance to rotation in the respective axes.</p>
+
+\[I_{xx} = \int_{\mathcal{G}} (y^2 + z^2) \; dm
+\qquad
+I_{yy} = \int_{\mathcal{G}} (z^2 + x^2) \; dm
+\qquad
+I_{zz} = \int_{\mathcal{G}} (x^2 + y^2) \; dm\]
+
+<p>The other values are called the <strong>products of inertia</strong> with respect to the $xy$, $yz$, and $zx$ plane. They are a measure of the imbalance in the mass distribution in the respective planes. What this means exactly is discussed in the post on <a href="/blog/moments-of-inertia/principal-axes">principal axes</a>.</p>
+
+\[I_{xy} = I_{yx} = \int_{\mathcal{G}} xy \; dm
+\qquad
+I_{yz} = I_{zy} = \int_{\mathcal{G}} yz \; dm
+\qquad
+I_{zx} = I_{xz} = \int_{\mathcal{G}} zx \; dm\]
+
+<p>Notice that due to these definitions, the inertia tensor is always symmetric.</p>
+
+<p><br /></p>
+
+<h3 id="calculating-the-moment-of-inertia-for-an-arbitrary-axis">Calculating the Moment of Inertia for an Arbitrary Axis</h3>
+
+<p>Given the inertia tensor and any axis of rotation $\b{\omega}$, we can find the object’s inertia about this axis as follows</p>
+
+\[I_{\b{\omega}} = \u{\omega}^T \; \m{I} \; \u{\omega}\]
+
+<p>I derive the inertia tensor and discuss this more in the <a href="/blog/moments-of-inertia/inertia-tensor-derivation">next post</a>. However, if you want you can just take it as a matter of definition.</p>
+
+<!-- Let $\b{r}$ denote the position of a point on an object relative to a fixed origin. Let $\u{\omega}$ represent the direction of the fixed axis of rotation. Then, the moment of inertia is defined as the following.
+
+$$
+I = \int_{\mathcal{G}} \lvert \b{r} \times \u{\omega} \rvert^2 \; dm
+$$
+
+However, other resources typically don't express this in terms of vectors. You will instead see the following definition, where $r_{axis} = \lvert \b{r} \times \u{\omega} \rvert$ is the distance of a given point in the object from the axis of rotation.
+
+$$
+I = \int_{\mathcal{G}} r_{axis}^2 \; dm
+$$
+
+More annoyingly, resources online will neglect the subscript and simply write $I = \int r^2 \; dm$. I think this is terrible notation because it's very easy to conflate this with the position vector $\boldsymbol{r}$. Thus, I will always include a subscript.
+
+When evaluating the moment of inertia integral, we need to do the following
+
+$$
+I = \int_{\mathcal{G}} r_{axis}^2 \; (\lambda(\b{r}) \; d\ell)
+\qquad
+I = \int_{\mathcal{G}} r_{axis}^2 \; (\sigma(\b{r}) \; dA)
+\qquad
+I = \int_{\mathcal{G}} r_{axis}^2 \; (\rho(\b{r}) \; dV)
+$$
+
+And we will always assume a uniform mass density. Therefore, 
+
+$$
+I = \lambda \cdot \int_{\mathcal{G}} r_{axis}^2 \; d\ell
+\qquad
+I = \sigma \cdot \int_{\mathcal{G}} r_{axis}^2 \; dA
+\qquad
+I = \rho \cdot \int_{\mathcal{G}} r_{axis}^2 \; dV
+$$
+
+In the above, we have assumed a fixed axis of rotation $\omega$. However, to fully describe an object's moment of inertia, we define the following a **inertia tensor**, which can be used to find the moment of inertia about any axis of rotation.
+
+$$
+I = \left[ \begin{array}{@{}rrr@{}}
+     I_{xx}  & -I_{xy}  & -I_{xz} \\
+    -I_{yx}  &  I_{yy}  & -I_{yz} \\
+    -I_{zx}  & -I_{zy}  & I_{zz}
+\end{array} \right ]
+$$
+
+The diagonals are the **moments of inertia with respect to the x, y and z axis**. You can see that it is precisely the square distance to each respective axis.
+
+$$
+I_{xx} = \int_{\mathcal{G}} (y^2 + z^2) \; dm
+\qquad
+I_{yy} = \int_{\mathcal{G}} (z^2 + x^2) \; dm
+\qquad
+I_{zz} = \int_{\mathcal{G}} (x^2 + y^2) \; dm
+$$
+
+The other values are called the **products of inertia**. They are a measure of the imbalance in the mass distribution.
+
+$$
+I_{xy} = I_{yx} = \int_{\mathcal{G}} xy \; dm
+\qquad
+I_{yz} = I_{zy} = \int_{\mathcal{G}} yz \; dm
+\qquad
+I_{zx} = I_{xz} = \int_{\mathcal{G}} zx \; dm
+$$
+
+For all of them. $I_{ij}$ means we are measuring the moment of inertia around the $i$-axis when the objects are rotated around the $j$-axis.
+
+The **principal axis theorem** says it's always possible to find 3 mutually orthogonal axes such that the products of inertia are 0. In this series, I will always solve using the principle axes. Then you can use the $3\text{D}$ rotation matrices in order to get any other orientation
+
+$$
+\begin{align}
+R_z(\alpha) \; R_y(\beta) \; R_x(\gamma) 
+&= 
+\begin{bmatrix}
+    \cos \alpha & - \sin \alpha & 0 \\
+    \sin \alpha & \cos \alpha & 0 \\
+    0 & 0 & 1
+\end{bmatrix} 
+\
+\begin{bmatrix}
+    \cos \beta & 0 & \sin \beta \\
+    0 & 1 & 0 \\
+    - \sin \beta & 0 & \cos \beta
+\end{bmatrix}
+\
+\begin{bmatrix}
+    1 & 0 & 0 \\
+    0 & \cos \gamma & - \sin \gamma \\
+    0 & \sin \gamma & \cos \gamma
+\end{bmatrix}
+\\[10pt]
+&= 
+\begin{bmatrix}
+    \cos \alpha \cos \beta & \cos \alpha \sin \beta \sin \gamma - \sin \alpha \cos \gamma & \cos \alpha \sin \beta \cos \gamma + \sin \alpha \sin \gamma \\
+    \sin \alpha \cos \beta & \sin \alpha \sin \beta \sin \gamma - \cos \alpha \cos \gamma & \sin \alpha \sin \beta \cos \gamma - \cos \alpha \sin \gamma \\
+    - \sin \beta & \cos \beta \sin \gamma & \cos \beta \cos \gamma
+\end{bmatrix}
+\end{align}
+$$
+
+In order to translate the object, you can use the **parallel axis theorem**, which we will discuss in a [future post](/blog/moments-of-inertia/parallel-axis-theorem).
+
+<br>
+
+## Linearity of Moments
+
+Another important property is the linearity of moments of inertia. If we can decompose an object into $n$ simpler geometries, then
+
+$$
+I = \sum_{i = 1}^n I_i
+$$
+
+In some ways this is an empirical result and thus does not have a proof. We can see why this fact follows from the integral definition.
+
+$$
+I_{\mathcal{G} + \mathcal{H}} = \int_{\mathcal{G} + \mathcal{H}} r_{\text{axis}}^2 \; dm = \int_{\mathcal{G}} r_{\text{axis}}^2 \; dm + \int_{\mathcal{H}} r_{\text{axis}}^2 \; dm = I_{\mathcal{G}} + I_{\mathcal{H}}
+$$
+
+If we have two geometries $\mathcal{G}$ and $\mathcal{H}$. We can either evaluate the integral on their concatenation $\mathcal{G} + \mathcal{H}$ or separately as two integrals. This is similar to the trivial property
+
+$$
+\int_{a}^b f(t) \; dt = \int_{a}^c f(t) \; dt + \int_{c}^b f(t) \; dt
+$$
+
+<br>
+
+In a later post, we will prove the **parallel axis theorem** which allows you to calculate the moment of inertia after translating ...
+
+Therefore, the strategy of this series is to find the moment of inertia values for very simple objects. Then using linearity and the parallel axis theorem, you can find the moments of inertia of more complicated systems without needing to calculate integrals.
+
+<br>
+
+If you let a rigid body roll down an incline, the one with the larger moment of inertia will roll slower.
+
+The moment of inertia is **not** coordinate-dependent. In other words, it's translation invariant.
+
+If the transformation matrix is $T$, then 
+
+$$
+I_{x', y', z'} = [T] [I_{x,y,z}] [T]^{T}
+$$
+
+where
+
+$$
+\b{r}' = [T] \b{r}
+\qquad\text{and}\qquad
+\b{r} = [T]^{-1} \b{r}'
+$$
+
+However, note that $[T]^{-1} = [T]^{T}$
+
+### Generalized Parallel Axis Theorem
+
+$$
+I_{x', y', z'} = I_{x,y,z} + 
+M \left [ \begin{array}{ccc}
+    (y')^2 + (z')^2 & -(x')(y')  & -(x')(z') \\
+    -(y')(x')  & (z')^2 + (x')^2 & -(y')(z') \\
+    -(z')(x')  & -(z')(y')  & (x')^2 + (y')^2
+\end{array} \right ]
+$$ -->
+
+        </div>
+
+        <!-- Adding the ability to move between parts of the series -->
+        
+        
+        
+
+        
+        
+        
+
+        <!-- Getting capitalized title for series -->
+        
+        
+        
+        
+        <!-- Getting url for series, which is just the page url with the last /... removed -->
+        
+
+        <div class="pagination" style="margin-top:1em;">
+            
+                <a class="pagination-item older" href="/blog/moments-of-inertia/introduction/">Previous</a>
+            
+            
+                <a class="pagination-item newer" href="/blog/moments-of-inertia/inertia-tensor-derivation/">Next</a>
+            
+        </div>
+        <h3 style="text-align:center; margin-bottom:1em;">
+            <a href="/blog/moments-of-inertia">
+            
+                
+                    Moments
+                
+            
+                
+                    of
+                
+            
+                
+                    Inertia
+                
+            
+         Series</a>
+        </h3>
+    </div>
+    
+  </body>
+</html>

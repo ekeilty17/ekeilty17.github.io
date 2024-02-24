@@ -47,6 +47,7 @@
             Macros: {
                 b: ["{\\boldsymbol #1}",1],
                 u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
                 arccsc: ["\\operatorname\{arccsc\}"],
                 arcsec: ["\\operatorname\{arcsec\}"],
                 arccot: ["\\operatorname\{arccot\}"],
@@ -175,13 +176,13 @@
 <p>Geometrically, the average rate of change is the <strong>slope of the secant line</strong> through $f$ from $a$ and $b$.</p>
 
 <center>
-<embed src="/svg/introduction/rate-of-change.svg" type="image/svg+xml" />
+<embed src="/svg/derivative-proofs/0:introduction/rate-of-change.svg" type="image/svg+xml" />
 </center>
 
 <p>We want to define a notion of <strong>instantaneous rate of change</strong>, i.e. the amount a function is changing at a single point. On the surface, this doesn’t make any sense. How can we define a change in $f$ if we don’t have a change in $x$? We can imagine the coordinate $(b, f(b))$ sliding down the curve towards $(a, f(a))$. As it does so, the secant line approaches a line that just touches the function as a single point. This is called a <strong>tangent line</strong>. The <strong>slope of the tangent line</strong> is our instantaneous rate of change.</p>
 
 <center>
-<embed src="/svg/introduction/instantaneous-rate-of-change.svg" type="image/svg+xml" />
+<embed src="/svg/derivative-proofs/0:introduction/instantaneous-rate-of-change.svg" type="image/svg+xml" />
 </center>
 
 <p>Intuitively, what we are saying is that if we zoom far enough into the point $(a, f(a))$, then the function $f$ will look like a straight line, which has a constant rate of change. Thus, the instantaneous rate of change is well-defined.</p>
@@ -204,7 +205,7 @@
 
 <h2 id="limit-laws">Limit Laws</h2>
 
-<p>Limits have a precise and technical definition. However, I do not want to explain/prove this in the series. Thus, I will just assert these properties of limits, which we will use. I prove these rigorously in my series on <a href="/blog/limits-and-continuity/">limits and continuity</a>. I will list the relevant laws here.</p>
+<p>Limits have a precise and technical definition. For this series, I will just assert these properties of limits that we will use. I prove these rigorously in my series on <a href="/blog/limits-and-continuity/">limits and continuity</a>. I list the relevant laws here.</p>
 
 <p>Let $f$ and $g$ be functions. Let $c \in \mathbb{R}$ be any constant.</p>
 

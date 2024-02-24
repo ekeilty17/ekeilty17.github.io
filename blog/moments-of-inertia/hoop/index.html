@@ -47,6 +47,7 @@
             Macros: {
                 b: ["{\\boldsymbol #1}",1],
                 u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
                 arccsc: ["\\operatorname\{arccsc\}"],
                 arcsec: ["\\operatorname\{arcsec\}"],
                 arccot: ["\\operatorname\{arccot\}"],
@@ -151,18 +152,46 @@
 
         <div class="post">
             <h1 class="post-title">Hoop (Cylindrical Shell)</h1>
-            <!-- <span class="series-date">02 Sep 2023</span> -->
-            <time datetime="2023-09-02T00:00:00-04:00" class="post-date">02 Sep 2023</time>
+            <!-- <span class="series-date">21 Sep 2023</span> -->
+            <time datetime="2023-09-21T00:00:00-04:00" class="post-date">21 Sep 2023</time>
             <!-- maybe I'll add tagging later
             <span class="post-date" style="margin-top:-1em;"> ["moments-of-inertia, ",  "hoop"] </span>
             -->
-            <h2 id="mass">Mass</h2>
+            <p>Some also call this a “zero-thickness torus”.</p>
+
+<h2 id="parametarizing-the-surface">Parametarizing the Surface</h2>
+
+<center>
+<embed src="/svg/moments-of-inertia/20:hoop/hoop-surface.svg" type="image/svg+xml" />
+</center>
+
+<p>We can do this with just standard cylindrical coordinates. Recall that in the <a href="/blog/moments-of-inertia/circle">circle post</a> we showed that $\frac{\partial}{\partial \phi} \u{s} = \u{\phi}$</p>
+
+\[\b{r}(\phi, z) = R \; \u{s} + z \; \u{z} \\[10pt]
+A \{ \b{r}(\phi, z) \ : \ 0 \leq \phi &lt; 2\pi \quad -L/2 \leq z \leq L/2 \}\]
+
+<p>Therefore</p>
+
+\[\frac{\partial \b{r}}{\partial \phi} = R \; \u{\phi}
+\qquad
+\frac{\partial \b{r}}{\partial z} = \u{z}\]
+
+\[d \b{A} = \left ( \frac{\partial \b{r}}{\partial \phi} d\phi \right ) \times \left ( \frac{\partial \b{r}}{\partial z} dz \right ) = R \; d\phi \; dz \; \u{s}\]
+
+\[dA = \abs{ d \b{A} } = R \; d\phi \; dz\]
+
+<h2 id="mass">Mass</h2>
+
+<center>
+<embed src="/svg/moments-of-inertia/20:hoop/hoop-mass-integral.svg" type="image/svg+xml" />
+</center>
+
+<p><br /></p>
 
 \[\begin{align}
     M &amp;= \int dm \\[10pt]
     &amp;= \sigma \int dA \\[10pt]
-    &amp;= \sigma \int_{0}^{2 \pi} \int_{-L/2}^{L/2} \; s d\phi dz \\[10pt]
-    &amp;= \sigma \int_{0}^{2 \pi} \int_{-L/2}^{L/2} \; R d\phi dz \\[10pt]
+    &amp;= \sigma \int_{0}^{2 \pi} \int_{-L/2}^{L/2} \; R \; d\phi \; dz \\[10pt]
     &amp;= \sigma R \left ( \int_{0}^{2 \pi} d \phi \right ) \left ( \int_{-L/2}^{L/2} dz \right ) \\[10pt]
     &amp;= \sigma R \left ( 2 \pi \right ) \left ( L \right ) \\[10pt]
     &amp;= \sigma \cdot 2 \pi R L
@@ -170,7 +199,13 @@
 
 <p><br /></p>
 
-<h2 id="moment-inertia-about-central-axis">Moment Inertia About Central Axis</h2>
+<h2 id="moment-of-inertia-about-central-axis">Moment of Inertia About Central Axis</h2>
+
+<center>
+<embed src="/svg/moments-of-inertia/20:hoop/hoop-central-axis-integral.svg" type="image/svg+xml" />
+</center>
+
+<p><br /></p>
 
 \[\begin{align}
     I &amp;= \int r_{axis}^2 \;dm \\[10pt]
@@ -182,18 +217,36 @@
 
 <p><br /></p>
 
-<h2 id="moment-inertia-about-central-diameter">Moment Inertia About Central Diameter</h2>
+<h2 id="moment-of-inertia-about-central-diameter">Moment of Inertia About Central Diameter</h2>
+
+<center>
+<embed src="/svg/moments-of-inertia/20:hoop/hoop-central-diameter-integral.svg" type="image/svg+xml" />
+</center>
+
+<p><br /></p>
 
 \[\begin{align}
     I &amp;= \int r_{axis}^2 \;dm \\[10pt]
     &amp;= \sigma \int r_{axis}^2 \;dA \\[10pt]
-    &amp;= \sigma \int_{0}^{2\pi} \int_{-L/2}^{L/2} r_{axis}^2 \;s d\phi dz \\[10pt]
-    &amp;= \sigma \int_{0}^{2\pi} \int_{-L/2}^{L/2} (R \ \cos \phi)^2 \;R d\phi dz \\[10pt]
-    &amp;= \sigma R^3 \left ( \int_{0}^{2\pi} \cos^2 \phi \; d\phi \right ) \left ( \int_{-L/2}^{L/2} dz \right ) \\[10pt]
+    &amp;= \sigma \int_{0}^{2\pi} \int_{-L/2}^{L/2} r_{axis}^2 \;s \; d\phi \; dz \\[10pt]
+    &amp;= \sigma \int_{0}^{2\pi} \int_{-L/2}^{L/2} (R \ \sin \phi)^2 \;R \; d\phi \; dz \\[10pt]
+    &amp;= \sigma R^3 \left ( \int_{0}^{2\pi} \sin^2 \phi \; d\phi \right ) \left ( \int_{-L/2}^{L/2} dz \right ) \\[10pt]
     &amp;= \sigma R^3 \left ( \pi \right ) \left ( L \right ) \\[10pt]
     &amp;= \sigma \cdot \pi R^3 L \\[10pt]
-    &amp;= \frac{1}{2} M R^2
+    &amp;= \tfrac{1}{2} M R^2
 \end{align}\]
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="inertia-tensor-of-a-hoop">Inertia Tensor of a Hoop</h2>
+
+\[I = \begin{bmatrix}
+    \frac{1}{2} M R^2 &amp; 0 &amp; 0 \\
+    0  &amp; \frac{1}{2} M R^2 &amp; 0 \\
+    0  &amp; 0 &amp; M R^2
+\end{bmatrix}\]
 
         </div>
 
@@ -216,10 +269,10 @@
 
         <div class="pagination" style="margin-top:1em;">
             
-                <a class="pagination-item older" href="/blog/moments-of-inertia/introduction/">Previous</a>
+                <a class="pagination-item older" href="/blog/moments-of-inertia/elliptical-disc/">Previous</a>
             
             
-                <a class="pagination-item newer" href="/blog/moments-of-inertia/ring/">Next</a>
+                <a class="pagination-item newer" href="/blog/moments-of-inertia/spherical-shell/">Next</a>
             
         </div>
         <h3 style="text-align:center; margin-bottom:1em;">

@@ -47,6 +47,7 @@
             Macros: {
                 b: ["{\\boldsymbol #1}",1],
                 u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
                 arccsc: ["\\operatorname\{arccsc\}"],
                 arcsec: ["\\operatorname\{arcsec\}"],
                 arccot: ["\\operatorname\{arccot\}"],
@@ -156,14 +157,16 @@
             <!-- maybe I'll add tagging later
             <span class="post-date" style="margin-top:-1em;"> ["trigonometry, ",  "opposite, ",  "complementary, ",  "supplementary"] </span>
             -->
-            <p>For all of these formulas, we will use the difference identity for cosine to prove them rigorously. However, their truth is easily seen via an appropriate diagram.</p>
+            <p>For all of these formulas, we will use the difference identity for cosine to prove them (and avoid circularity). However, their truth is easily seen via an appropriate diagram.</p>
+
+<p><br /></p>
 
 <h2 id="complementary-angles">Complementary Angles</h2>
 
 <p>The <strong>complement</strong> of an angle $\theta$ is the angle that when combined $\theta$ produces a <strong>right angle</strong> ($90$ degree angle), i.e. it is $90^{\circ} - \theta$.</p>
 
 <center>
-<embed src="/svg/complementary-supplementary-and-opposite-angles/complementary-angle.svg" type="image/svg+xml" />
+<embed src="/svg/trigonometry/7:complementary-supplementary-and-opposite-angles/complementary-angle.svg" type="image/svg+xml" />
 </center>
 
 <p>First, we prove the identity for cosine.</p>
@@ -199,7 +202,7 @@
 <p>The <strong>supplement</strong> of an angle $\theta$ is the angle that when combined $\theta$ produces a <strong>straight angle</strong> ($180$ degree angle), i.e. it is $180^{\circ} - \theta$.</p>
 
 <center>
-<embed src="/svg/complementary-supplementary-and-opposite-angles/supplementary-angle.svg" type="image/svg+xml" />
+<embed src="/svg/trigonometry/7:complementary-supplementary-and-opposite-angles/supplementary-angle.svg" type="image/svg+xml" />
 </center>
 
 <p>We prove this similarly to complementary angles.</p>
@@ -238,7 +241,7 @@
 <p>Recall that $\theta \equiv \theta + 2 \pi k$ for any integer $k$, and in particular $(2 \pi - \theta) \equiv - \theta$.</p>
 
 <center>
-<embed src="/svg/complementary-supplementary-and-opposite-angles/opposite-angle.svg" type="image/svg+xml" />
+<embed src="/svg/trigonometry/7:complementary-supplementary-and-opposite-angles/opposite-angle.svg" type="image/svg+xml" />
 </center>
 
 <p>Using geometry and the symmetry from the figure above, the result is obvious, but let’s prove it rigorously.</p>

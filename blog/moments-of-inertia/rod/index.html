@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Rod (Solid Cylinder) &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded MathJax (effectively LaTeX) support 
+    https://docs.mathjax.org/en/v2.7-latest/tex.html -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX", "input/MathML", "output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js", "mml2jax.js", "MathMenu.js", "MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
+            Macros: {
+                b: ["{\\boldsymbol #1}",1],
+                u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
+                arccsc: ["\\operatorname\{arccsc\}"],
+                arcsec: ["\\operatorname\{arcsec\}"],
+                arccot: ["\\operatorname\{arccot\}"],
+                csch: ["\\operatorname\{csch\}"],
+                sech: ["\\operatorname\{sech\}"],
+                arcsinh: ["\\operatorname\{arcsinh\}"],
+                arccosh: ["\\operatorname\{arccosh\}"],
+                arctanh: ["\\operatorname\{arctanh\}"],
+                arccsch: ["\\operatorname\{arccsch\}"],
+                arcsech: ["\\operatorname\{arcsech\}"],
+                arccoth: ["\\operatorname\{arccoth\}"],
+                seq: ["{\\left \\langle #1 \\right \\rangle}",1],
+                iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
+                abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
+                hal: ["\\texttt{hal}"],
+                gal: ["\\texttt{gal}"],
+                sh: ["sh"],
+                st: ["st"]
+            },
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!--
+    TeX-AMS_HTML
+    TeX-AMS-MML_HTMLorMML
+    TeX-MML-AM_HTMLorMML
+-->
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">AI/ML Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+        <li>
+          <a href="/files/Eric Keilty - Resume.pdf" target="_blank">R&eacute;sum&eacute;</a>
+        </li>
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2024 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">Rod (Solid Cylinder)</h1>
+            <!-- <span class="series-date">24 Sep 2023</span> -->
+            <time datetime="2023-09-24T00:00:00-04:00" class="post-date">24 Sep 2023</time>
+            <!-- maybe I'll add tagging later
+            <span class="post-date" style="margin-top:-1em;"> ["moments-of-inertia, ",  "rod"] </span>
+            -->
+            <p>If $L \gg R$ then we typically refer to it as a rod. If $L \ll R$ then we typically refer to it as a disc. If $L \sim R$ then you can decide what to call it…a log maybe? For our purposes, we will draw it proportionally like a disc because it’s easier to see the geometry.</p>
+
+<h2 id="parameterizing-the-volume">Parameterizing the Volume</h2>
+
+<p>We can do this with just standard cylindrical coordinates</p>
+
+\[\b{r}(s, \phi, z) = s \; \u{s} + z \; \u{z} \\[10pt]
+V = \{ \b{r}(s, \phi, z) \ : \ 0 \leq s \leq R \quad 0 \leq \phi &lt; 2\pi \quad -L/2 \leq z \leq L/2 \}\]
+
+\[\frac{\partial \b{r}}{\partial s} ds = ds \; \u{s}
+\qquad
+\frac{\partial \b{r}}{\partial \phi} d\phi = s \; d\phi \; \u{\phi}
+\qquad
+\frac{\partial \b{r}}{\partial z} dz = dz \; \u{z}\]
+
+<p>Therefore</p>
+
+\[dV = \left \lvert \begin{array}{ccc}
+    ds  &amp; 0  &amp; 0 \\
+    0  &amp;  s \; d\phi  &amp; 0 \\
+    0  &amp; 0  &amp; dz
+\end{array} \right \rvert
+= s \; ds \; d\phi \; dz\]
+
+<h2 id="mass">Mass</h2>
+
+<center>
+<embed src="/svg/moments-of-inertia/23:rod/rod-mass-integral.svg" type="image/svg+xml" />
+</center>
+
+<p><br /></p>
+
+\[\begin{align}
+    M &amp;= \int dm \\[10pt]
+    &amp;= \rho \int dV \\[10pt]
+    &amp;= \rho \int_{0}^{R} \int_{0}^{2 \pi} \int_{-L/2}^{L/2} s \; ds \; d\phi \; dz \\[10pt]
+    &amp;= \rho \left ( \int_{0}^{R_2} s \; ds \right ) \left ( \int_{0}^{2 \pi} d\phi \right ) \left ( \int_{-L/2}^{L/2} dz \right ) \\[10pt]
+    &amp;= \rho \left ( \tfrac{1}{2}R^2 \right ) \left ( 2\pi \right ) \left ( L \right ) \\[10pt]
+    &amp;= \rho \cdot \pi R^2 L
+\end{align}\]
+
+<p><br /></p>
+
+<h2 id="moment-of-inertia-about-central-axis">Moment of Inertia About Central Axis</h2>
+
+<center>
+<embed src="/svg/moments-of-inertia/23:rod/rod-central-axis-integral.svg" type="image/svg+xml" />
+</center>
+
+<p><br /></p>
+
+<p>From the diagram, we see that $r_{axis} = s$.</p>
+
+\[\begin{align}
+    I &amp;= \int r_{axis}^2 \;dm \\[10pt]
+    &amp;= \rho \int r_{axis}^2 \; dV \\[10pt]
+    &amp;= \rho \int_{0}^{R} \int_{0}^{2\pi} \int_{-L/2}^{L/2} r_{axis}^2 \; s \; ds \; d\phi \; dz \\[10pt]
+    &amp;= \rho \int_{0}^{R} \int_{0}^{2\pi} \int_{-L/2}^{L/2} s^2 \; s \; ds \; d\phi \; dz \\[10pt]
+    &amp;= \rho \left ( \int_{0}^{R} s^3 \; ds \right ) \left ( \int_{0}^{2\pi} d\phi \right ) \left ( \int_{-L/2}^{L/2} dz \right ) \\[10pt]
+    &amp;= \rho \left ( \tfrac{1}{4} R^4 \right ) \left ( 2\pi \right ) \left ( L \right ) \\[10pt]
+    &amp;= \rho \cdot \tfrac{1}{2} \pi R^4 L \\[10pt]
+    &amp;= \tfrac{1}{2} M R^2
+\end{align}\]
+
+<p><br /></p>
+
+<h2 id="moment-of-inertia-about-central-diameter">Moment of Inertia About Central Diameter</h2>
+
+<center>
+<embed src="/svg/moments-of-inertia/23:rod/rod-central-diameter-integral.svg" type="image/svg+xml" />
+</center>
+
+<p><br /></p>
+
+<p>Without loss of generality, we can assume the axis of rotation lies on the $x$-axis. As an exercise, evaluate the integral if the axis of rotation is on the $y$-axis.</p>
+
+<p>We use cylindrical coordinates to evaluate this integral. Since it is a solid cylindrical, all parameters $s$, $\phi$, and $z$ vary. Therefore, $dV = s \; ds \; d \phi \; d z$. Either using the Euclidean distance formula or a little bit of geometry and Pythagoras, the diagram shows that $r_{axis} = \sqrt{(s \sin \phi)^2 + z^2}$.</p>
+
+\[\begin{align}
+    I &amp;= \int r_{axis}^2 \;dm \\[10pt]
+    &amp;= \rho \int r_{axis}^2 \; dV \\[10pt]
+    &amp;= \rho \int_{0}^{R} \int_{0}^{2\pi} \int_{-L/2}^{L/2} r_{axis}^2 \; s \; ds \; d\phi \; dz \\[10pt]
+    &amp;= \rho \int_{0}^{R} \int_{0}^{2\pi} \int_{-L/2}^{L/2} ((s \sin \phi)^2 + z^2) \; s \; ds \; d\phi \; dz \\[10pt]
+    &amp;= \rho \int_{0}^{R} \int_{0}^{2\pi} \int_{-L/2}^{L/2} (s^3 \sin^2 \phi + sz^2) \; ds \; d\phi \; dz \\[10pt]
+    &amp;= \rho \int_{0}^{R} \int_{0}^{2\pi} (L s^3 \sin^2 \phi + \tfrac{1}{12} L^3 s) \; ds \; d\phi \\[10pt]
+    &amp;= \rho \int_{0}^{R} (\pi L s^3 + \tfrac{1}{6} \pi L^3 s) \; ds \\[10pt]
+    &amp;= \rho \cdot \left ( \tfrac{1}{4} \pi L R^4 + \tfrac{1}{12} \pi L^3 R^2 \right ) \\[10pt]
+    &amp;= \rho \cdot \pi R^2 L \left ( \frac{1}{4} \pi R^2 + \tfrac{1}{12} L^2 \right ) \\[10pt]
+    &amp;= \tfrac{1}{4} M R^2 + \tfrac{1}{12} M L^2
+\end{align}\]
+
+<p><br /></p>
+
+<h2 id="a-thin-rod-or-thin-disc-about-the-central-diameter">A Thin Rod or Thin Disc About the Central Diameter</h2>
+
+<p>Sometimes called a slender rod as well.</p>
+
+<center>
+<embed src="/svg/moments-of-inertia/23:rod/thin-rod.svg" type="image/svg+xml" />
+&emsp;&emsp;&emsp;&emsp;
+<embed src="/svg/moments-of-inertia/23:rod/thin-disc.svg" type="image/svg+xml" />
+</center>
+
+<p><br /></p>
+
+<p>If $L \gg R$, then sometimes we neglect the contribution due to the radius. Essentially, this reduces to a line segment. Therefore, the moment of inertia is simply</p>
+
+\[I = \frac{1}{12} M L^2\]
+
+<p>Likewise, if $L \ll R$, then sometimes we neglect the contribution due to the length. Essentially, this reduces to a flat circular disc. In topology, we would call this a 2D ball. Therefore, the moment of inertia is simply</p>
+
+\[I = \frac{1}{4} M R^2\]
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="inertia-tensor-of-a-rod">Inertia Tensor of a Rod</h2>
+
+\[I = \begin{bmatrix}
+    \frac{1}{4} M R^2 + \frac{1}{12} M L^2 &amp; 0 &amp; 0 \\
+    0  &amp; \frac{1}{4} M R^2 + \frac{1}{12} M L^2 &amp; 0 \\
+    0  &amp; 0 &amp; \frac{1}{2} M R^2
+\end{bmatrix}\]
+
+        </div>
+
+        <!-- Adding the ability to move between parts of the series -->
+        
+        
+        
+
+        
+        
+        
+
+        <!-- Getting capitalized title for series -->
+        
+        
+        
+        
+        <!-- Getting url for series, which is just the page url with the last /... removed -->
+        
+
+        <div class="pagination" style="margin-top:1em;">
+            
+                <a class="pagination-item older" href="/blog/moments-of-inertia/elliptical-shell/">Previous</a>
+            
+            
+                <a class="pagination-item newer" href="/blog/moments-of-inertia/slab/">Next</a>
+            
+        </div>
+        <h3 style="text-align:center; margin-bottom:1em;">
+            <a href="/blog/moments-of-inertia">
+            
+                
+                    Moments
+                
+            
+                
+                    of
+                
+            
+                
+                    Inertia
+                
+            
+         Series</a>
+        </h3>
+    </div>
+    
+  </body>
+</html>

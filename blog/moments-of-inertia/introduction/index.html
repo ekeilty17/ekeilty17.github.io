@@ -47,6 +47,7 @@
             Macros: {
                 b: ["{\\boldsymbol #1}",1],
                 u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
                 arccsc: ["\\operatorname\{arccsc\}"],
                 arcsec: ["\\operatorname\{arcsec\}"],
                 arccot: ["\\operatorname\{arccot\}"],
@@ -158,151 +159,108 @@
             -->
             <h2 id="motivation">Motivation</h2>
 
-<p>Calculating the moment of interia requires the computation of integrals over a 3-dimensional geometric object. They serve as a good introduction to this integration technique (which becomes second nature in advanced physics), and it’s an excuse to create pretty diagrams.</p>
+<p>Originally, I created this series as an excuse to evaluate some fun integrals and draw pretty diagrams. As I continued writing I really fell down a rabbit hole. Essentially, this series has become my collation, interpretation, and summarization of all the resources and information that I could find on moments of inertia.</p>
 
-<!-- view/h=-70,hide axis,colormap/blackwhite,domain=-5:5,domain y=-5:5,mark size=1pt,clip mode=individual,mark layer=like plot -->
-<!-- Absolutely beautiful Tikz drawings for moments of inertia
-https://tikz.net/dynamics_moment_of_inertia/ -->
+<!-- However, as I wrote and researched I feel that there is a hole in explanations on this subject. In online resources, you will either find just assertions of formulae for various geometric objects [[1](https://scienceworld.wolfram.com/physics/MomentofInertia.html)], high-level explanations that only calculate a few examples [[2](https://phys.libretexts.org/Courses/Joliet_Junior_College/Physics_201_-_Fall_2019v2/Book%3A_Custom_Physics_textbook_for_JJC/11%3A_Rotational_Kinematics_Angular_Momentum_and_Energy/11.06%3A_Calculating_Moments_of_Inertia)], or graduate-level theory [[3](https://ocw.mit.edu/courses/16-07-dynamics-fall-2009/dd277ec654440f4c2b5b07d6c286c3fd_MIT16_07F09_Lec26.pdf)].  -->
+
+<p>In this series, I first give the relevant physics and mathematical background necessary to compute moments of inertia. Then I derive the inertia tensor for various interesting shapes. I separate them into curves ($\text{1D}$ objects), surfaces ($\text{2D}$ objects), and volumes ($\text{3D}$ objects). Most posts after the background are intended to be self-contained, so you can read them in any order. However, some of the more complicated shapes (such as triangles) will require results from previous posts. I will provide links when this is the case.</p>
 
 <p><br /></p>
 
 <h2 id="what-is-a-moment">What is a Moment?</h2>
 
-<p>It’s a bit of a meme in physics that everyone thinks they understand moments until they are asked to explain them.</p>
+<p>It’s a bit of a meme in physics that everyone thinks they understand moments until they are asked to explain them. Many resources say <em>“a moment is a mathematical expression involving the product of a distance and physical quantity”</em>, which at first is laughably vague, but the more you study physics the better of a description it becomes.</p>
 
-<p>At the most basic level, we know that (for some reason) objects with mass have an intrinsic resistance to change. Elegantly summarized as <strong>Newton’s First Law of Motion</strong>: “An object at rest remains at rest, and an object in motion remains in motion”. This is true for both translation and rotation. The <strong>moment of inertia</strong> is the mathematical object that tells us how exactly a particular object resists change in its motion.</p>
+<p>At the most basic level, we observe that objects with mass have an intrinsic resistance to change. Elegantly summarized as <a href="https://www.khanacademy.org/science/physics/forces-newtons-laws/newtons-laws-of-motion/a/what-is-newtons-first-law#:~:text=Newton's%20first%20law%3A%20An%20object,the%20status%20quo%20of%20motion.">Newton’s First Law of Motion</a>: <em>An object at rest remains at rest, and an object in motion remains in motion</em>. This is true for both translation and rotation. The <strong>moment of inertia</strong> is the mathematical quantity that measures an object’s resistance to change in rotational motion. An object’s mass is to translational motion as the object’s moment of inertia is to rotational motion. We can see this symmetry in the formulas for force and linear momentum compared to torque and angular momentum.</p>
 
-<p>This explanation tells us how to use a moment in physics calculations, but it does not tell us <em>what a moment is</em>. Many resources say “a moment is a mathematical expression involving the product of a distance and physical quantity”, which at first is laughably vague, but then once you study moments you realize it’s actually not that bad of a description. A more enlightening description is that a moment is “a measure of an object’s tendency to rotate about a specific axis”.</p>
+\[\begin{align}
+    &amp;F = m a
+    &amp;\qquad\qquad&amp;
+    \tau = I \alpha \\[10pt]
+    &amp;p = m v
+    &amp;\qquad\qquad&amp;
+    L = I \omega
+\end{align}\]
 
-<p>The physics YouTuber Andrew Dotson has good videos if you have to really understand where the concept of a “moment” comes from and what exactly they are in more detail (<a href="https://www.youtube.com/watch?v=0flh8ovhZ9k">part 1</a> and <a href="https://www.youtube.com/watch?v=k24FnV3myO4">part 2</a>).</p>
+<p>For more detail, the physics YouTuber Andrew Dotson has good videos on where the concept of a “moment” comes from and its interpretation (<a href="https://www.youtube.com/watch?v=0flh8ovhZ9k">part 1</a> and <a href="https://www.youtube.com/watch?v=k24FnV3myO4">part 2</a>). I will also give my formulation of the moment of inertia in the <a href="/blog/moments-of-inertia/definition-of-a-moment">next post</a>.</p>
 
 <p><br /></p>
 
-<h2 id="definition-of-a-moment">Definition of a Moment</h2>
+<h2 id="prerequisites">Prerequisites</h2>
 
-<p>For an arbitrary geometry, its mass can be calculated by the following integral.</p>
+<h3 id="vector-calculus">Vector Calculus</h3>
 
-\[M = \int dm\]
+<p>This series is going to require the computation of integrals. However, due to the setup, these integrals will be reasonably simple to compute. I am going to assume the reader is comfortable with standard integration techniques (e.g. the power rule).</p>
 
-<p>You have to be careful because depending on if it’s a 2D surface or a 3D object, this integral is more complicated than it looks.</p>
+<p>The complexity in solving for the moment of inertia of an object will actually be parameterizing the object and setting up the corresponding integral, which requires vector calculus. Therefore, I highly recommend that the reader has studied vector calculus at one point (even if it was a while ago). The vector calculus is (usually) not difficult, so I will do my best to make the series accessible to those who have not.</p>
 
-<p>Let $\b{r}$ denote the position of a point on an object relative to a fixed origin. Let $\u{\omega}$ represent the direction of the fixed axis of rotation. Then, the moment of inertia is defined as the following.</p>
+<p>If you have never studied vector calculus, the first chapter of David Griffiths’ <a href="https://hansandcassady.org/David%20J.%20Griffiths-Introduction%20to%20Electrodynamics-Addison-Wesley%20(2012).pdf">Introduction to Electrodynamics</a> has an excellent synopsis of this subject. Otherwise, any textbook or lecture videos will probably do.</p>
 
-\[I = \int \lvert \b{r} \times \u{\omega} \rvert^2 \; dm\]
+<h3 id="trigonometry">Trigonometry</h3>
 
-<p>However, other resources typically don’t express this in terms of vectors. You will instead see the following definition, where $r_{axis} = \lvert \b{r} \times \u{\omega} \rvert$ is the distance of a given point in the object from the axis of rotation.</p>
+<p>Setting up these integrals is going to require a good understanding of geometry and trigonometry. I am going to assume the reader is very comfortable with trigonometry and its identities (as to not belabor over every minute detail). If this is not the case, I have a series on <a href="/blog/trigonometry">trigonometry</a>.</p>
 
-\[I = \int r_{axis}^2 \; dm\]
+<p>To prevent repetition in proofs, I will assert some trigonometric integrals. I leave it as an exercise to the reader to prove these results.</p>
 
-<p>More annoyingly, resources online will neglect the subscript and simply write $I = \int r^2 \; dm$. I think this is terrible notation because it because very easy to comflate this with the position vector.</p>
+\[\begin{align}
+    &amp;\int_{0}^{2\pi} \cos \theta \; d \theta \ \ = \int_{0}^{2\pi} \sin \theta \; d \theta = 0
+    &amp;\qquad\qquad&amp;
+    \int_{0}^{\pi} \cos \theta \; d \theta = 0
+    &amp;&amp;
+    \int_{0}^{\pi} \sin \theta \; d \theta = 2
+    \\[10pt]
+    &amp;\int_{0}^{2\pi} \cos^2 \theta \; d \theta = \int_{0}^{2\pi} \sin^2 \theta \; d \theta = \pi
+    &amp;\qquad\qquad&amp;
+    \int_{0}^{\pi} \cos^2 \theta \; d \theta = \frac{\pi}{2}
+    &amp;&amp;
+    \int_{0}^{\pi} \sin^2 \theta \; d \theta = \frac{\pi}{2}
+    \\[10pt]
+    &amp;\int_{0}^{2\pi} \cos^3 \theta \; d \theta = \int_{0}^{2\pi} \sin^3 \theta \; d \theta = 0
+    &amp;\qquad\qquad&amp;
+    \int_{0}^{\pi} \cos^3 \theta \; d \theta = 0
+    &amp;&amp;
+    \int_{0}^{\pi} \sin^3 \theta \; d \theta = \frac{4}{3}
+\end{align}\]
 
-<p>Another important property is the linearity of moments of inertia. If we can decompose an object into $n$ simpler geometries, then</p>
+<p><br /></p>
 
-\[I = \sum_{i = 1}^n I_i\]
+<h2 id="notation-and-conventions">Notation and Conventions</h2>
 
-<p>To fully describe the inertia of an object, we define the following is a tensor, which can be used to find the moment of inertia about any axis.</p>
+<p>I really try my best to have good notation. Especially when you have scalars, vectors, and matrices mixing it is easy to get lost. Having good notation and conventions really speeds up understanding.</p>
 
-\[I = \begin{bmatrix}
-    I_{xx} &amp; -I_{xy} &amp; -I_{xz} \\
-    -I_{yx} &amp; I_{yy} &amp; -I_{yz} \\
-    -I_{zx} &amp; -I_{zy} &amp; I_{zz}
+<h3 id="scalars">Scalars</h3>
+
+<p>Any regular-font character is a scalar, e.g. $M$, $r$, or $\phi$. Latin characters ($a$, $b$, $c$, etc) will typically refer to lengths while Greek characters ($\alpha$, $\beta$, $\gamma$, etc) will typically refer to angles.</p>
+
+<h3 id="vectors">Vectors</h3>
+
+<p>Any bold-face character is a vector, e.g. $\b{r}$ or $\b{\omega}$. Any bold-face character with a hat is a <a href="https://en.wikipedia.org/wiki/Unit_vector">unit vector</a>, e.g. $\u{x}$.</p>
+
+<p>One definition of a vector is a mathematical object with a <em>magnitude</em> and <em>direction</em>. We actually have good notation for both of these concepts. Given any vector $\b{v}$, it’s magnitude is written $\abs{\b{v}}$, but is often denoted just by $v$. Its direction is denoted by its unit vector $\u{v}$, which points in the same direction as $\b{v}$ but has magnitude $1$. We can relate all of these objects as follows.</p>
+
+\[\u{v} = \frac{\b{v}}{\abs{\b{v}}} = \frac{\b{v}}{v}
+\qquad\qquad
+\b{v} = \abs{\b{v}} \; \u{v} = v \; \u{v}\]
+
+<!-- The variable $\b{r}$ will _always_ represent a vector whose tale is at the origin and whose tip is at the point of interest. This is called the **position vector**.  -->
+
+<h3 id="matrices">Matrices</h3>
+
+<p>Any regular-font capitalized character between square brackets is a matrix, e.g. $\m{I}$.</p>
+
+<p>The variable $I$ denotes the moment of inertia (which is the quantity we are interested in). Just writing $I$ implies that it’s a scalar value. This means I must be refer to the moment of inertia with respect to a fixed axis of rotation $\b{\omega}$. On the other hand, if I write $\m{I}$, I am refering to the inertia tensor, which is a matrix quantity that describes the moment of inertia with respect to any axis. In particular,</p>
+
+\[I_{\b{\omega}} = \u{\omega}^T \; \m{I} \; \u{\omega}\]
+
+<p>We will discuss this more in the <a href="/blog/moments-of-inertia/definition-of-the-mass-moment-of-inertia">next post</a>.</p>
+
+<p>Another thing to mention. Typically in linear algebra, $\m{I}$ is used to denote the identity matrix. Obviously that variable is taken, so I will use $\m{\mathbb{I}}$. In particular,</p>
+
+\[\m{\mathbb{I}} = \begin{bmatrix}
+    1 &amp; 0 &amp; 0 \\
+    0 &amp; 1 &amp; 0 \\
+    0 &amp; 0 &amp; 1
 \end{bmatrix}\]
-
-<p>However, in this series we will always fix a defined axis, which means the moment of inertia is going to be a scalar value.</p>
-
-<p><br /></p>
-
-<h2 id="coordinate-systems">Coordinate Systems</h2>
-
-<p>The vector $\b{r}$ always represents the coordinates of a point with respect to a fixed origin. There are different ways</p>
-
-<h3 id="cartesian-coordinates">Cartesian Coordinates</h3>
-
-\[\b{r} = x \u{x} + y \u{y} + z \u{z}
-\qquad\qquad
-d \b{\ell} = d x \u{x} + d y \u{y} + d z \u{z}\]
-
-<h3 id="cylindrical-coordinates">Cylindrical Coordinates</h3>
-
-\[\b{r} = s \u{s} + z \u{z}
-\qquad\qquad
-d \b{\ell} = ds \u{s} + s d \phi \u{\phi} + z \u{z}\]
-
-\[\begin{cases}
-    x = s \ \cos \phi \\
-    y = s \ \sin \phi \\
-    z = z
-\end{cases}
-\qquad\qquad
-\begin{cases}
-    \u{x} = \cos \phi \ \u{s} - \sin \phi \ \u{\phi} \\
-    \u{y} = \sin \phi \ \u{s} + \cos \phi \ \u{\phi} \\
-    \u{z} = \u{z}
-\end{cases}\]
-
-\[\begin{cases}
-    s    = \sqrt{x^2 + y^2} \\
-    \phi = \arctan(y / x) \\
-    z    = z
-\end{cases}
-\qquad\qquad
-\begin{cases}
-    \u{s}    = \cos \ \phi \u{x} + \sin \phi \ \u{y} \\
-    \u{\phi} = - \sin \ \phi \u{x} + \cos \phi \ \u{y} \\
-    \u{z}    = \u{z}
-\end{cases}\]
-
-<h3 id="spherical-coordinates">Spherical Coordinates</h3>
-
-\[\b{r} = r \hat{\b{r}}
-\qquad\qquad
-d \b{\ell} = dr \u{r} + r d \theta \u{\theta} + r \sin \theta d \phi \u{\phi}\]
-
-\[\begin{cases}
-    x = r \ \sin \theta \ \cos \phi \\
-    y = r \ \sin \theta \ \sin \phi \\
-    z = r \cos \theta
-\end{cases}
-\qquad\qquad
-\begin{cases}
-    \u{x} = \sin \theta \ \cos \phi \ \u{r} + \cos \theta \cos \phi \ \u{\theta} - \sin \phi \ \u{\phi} \\
-    \u{y} = \sin \theta \ \sin \phi \ \u{r} + \cos \theta \sin \phi \ \u{\theta} + \cos \phi \ \u{\phi} \\
-    \u{z} = \cos \theta \ \u{r} - \sin \theta \ \u{\theta}
-\end{cases}\]
-
-\[\begin{cases}
-    r      = \sqrt{x^2 + y^2 + z^2} \\
-    \theta = \arctan(\sqrt{x^2 + y^2} / z) \\
-    \phi   = \arctan(y / x)
-\end{cases}
-\qquad\qquad
-\begin{cases}
-    \u{r}      = \sin \theta \ \cos \phi \ \u{x} + \sin \theta \sin \phi \ \u{y} + \cos \theta \ \u{z} \\
-    \u{\theta} = \cos \theta \ \cos \phi \ \u{x} + \cos \theta \sin \phi \ \u{y} - \sin \theta \ \u{z} \\
-    \u{\phi}   = - \sin \phi \ \u{x} + \cos \phi \ \u{y}
-\end{cases}\]
-
-<p><br /></p>
-
-<h2 id="trigonmetric-integrals">Trigonmetric Integrals</h2>
-
-<p>To prevent repetition, I will assert some trig integrals. I leave it as an exercise to the reader to prove these results</p>
-
-\[\int_{0}^{2\pi} \cos \theta \; d \theta = \int_{0}^{2\pi} \sin \theta \; d \theta = 0\]
-
-\[\int_{0}^{2\pi} \cos^2 \theta \; d \theta = \int_{0}^{2\pi} \sin^2 \theta \; d \theta = \pi\]
-
-\[\int_{0}^{2\pi} \cos^3 \theta \; d \theta = int_{0}^{2\pi} \sin^3 \theta \; d \theta = 0\]
-
-\[\int_{0}^{\pi} \cos \theta \; d \theta = 0
-\qquad\qquad
-\int_{0}^{\pi} \sin \theta \; d \theta = 2\]
-
-\[\int_{0}^{\pi} \cos^2 \theta \; d \theta = \int_{0}^{\pi} \sin^2 \theta \; d \theta = \frac{1}{2} \pi\]
-
-\[\int_{0}^{\pi} \cos^3 \theta \; d \theta = 0
-\qquad\qquad
-int_{0}^{\pi} \sin^3 \theta \; d \theta = \frac{4}{3}\]
 
         </div>
 
@@ -328,7 +286,7 @@ int_{0}^{\pi} \sin^3 \theta \; d \theta = \frac{4}{3}\]
                 <span class="pagination-item older">Previous</span>
             
             
-                <a class="pagination-item newer" href="/blog/moments-of-inertia/hoop/">Next</a>
+                <a class="pagination-item newer" href="/blog/moments-of-inertia/definition-of-the-mass-moment-of-inertia/">Next</a>
             
         </div>
         <h3 style="text-align:center; margin-bottom:1em;">
