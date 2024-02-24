@@ -11,9 +11,11 @@ tags:       moments-of-inertial, introduction
 
 ## Motivation
 
-Originally, I created this series as an excuse to evaluate some fun integrals and draw pretty diagrams. However, as I wrote and researched I feel that there is a hole in explanations on this subject. In online resources, you will either find just assertions of formulae for various geometric objects [[1](https://scienceworld.wolfram.com/physics/MomentofInertia.html)], high-level explanations that only calculate a few examples [[2](https://phys.libretexts.org/Courses/Joliet_Junior_College/Physics_201_-_Fall_2019v2/Book%3A_Custom_Physics_textbook_for_JJC/11%3A_Rotational_Kinematics_Angular_Momentum_and_Energy/11.06%3A_Calculating_Moments_of_Inertia)], or graduate-level theory [[3](https://ocw.mit.edu/courses/16-07-dynamics-fall-2009/dd277ec654440f4c2b5b07d6c286c3fd_MIT16_07F09_Lec26.pdf)]. 
+Originally, I created this series as an excuse to evaluate some fun integrals and draw pretty diagrams. As I continued writing I really fell down a rabbit hole. Essentially, this series has become my collation, interpretation, and summarization of all the resources and information that I could find on moments of inertia. 
 
-In this series, I want to unify all of these types of resources. I want to derive each the inertia tensor for a wide variety of interesting shapes in a way that is accessible to someone comfortable with basic vector calculus. Then I want to show how these can be manipulated and combined in order to calculate the moment of inertia for more complicated systems.
+<!-- However, as I wrote and researched I feel that there is a hole in explanations on this subject. In online resources, you will either find just assertions of formulae for various geometric objects [[1](https://scienceworld.wolfram.com/physics/MomentofInertia.html)], high-level explanations that only calculate a few examples [[2](https://phys.libretexts.org/Courses/Joliet_Junior_College/Physics_201_-_Fall_2019v2/Book%3A_Custom_Physics_textbook_for_JJC/11%3A_Rotational_Kinematics_Angular_Momentum_and_Energy/11.06%3A_Calculating_Moments_of_Inertia)], or graduate-level theory [[3](https://ocw.mit.edu/courses/16-07-dynamics-fall-2009/dd277ec654440f4c2b5b07d6c286c3fd_MIT16_07F09_Lec26.pdf)].  -->
+
+In this series, I first give the relevant physics and mathematical background necessary to compute moments of inertia. Then I derive the inertia tensor for various interesting shapes. I separate them into curves ($\text{1D}$ objects), surfaces ($\text{2D}$ objects), and volumes ($\text{3D}$ objects). Most posts after the background are intended to be self-contained, so you can read them in any order. However, some of the more complicated shapes (such as triangles) will require results from previous posts. I will provide links when this is the case.
 
 <br>
 
@@ -42,7 +44,9 @@ For more detail, the physics YouTuber Andrew Dotson has good videos on where the
 
 ### Vector Calculus
 
-This series is going to require the computation of integrals. However, due to the setup, these integrals will be essentially trivial. The complexity will actually be in setting up the correct integral. Therefore, I highly recommend the reader has studied multivariable/vector calculus at one point. I will do my best to make this accessible to those who have not. 
+This series is going to require the computation of integrals. However, due to the setup, these integrals will be reasonably simple to compute. I am going to assume the reader is comfortable with standard integration techniques (e.g. the power rule).
+
+The complexity in solving for the moment of inertia of an object will actually be parameterizing the object and setting up the corresponding integral, which requires vector calculus. Therefore, I highly recommend that the reader has studied vector calculus at one point (even if it was a while ago). The vector calculus is (usually) not difficult, so I will do my best to make the series accessible to those who have not. 
 
 If you have never studied vector calculus, the first chapter of David Griffiths' [Introduction to Electrodynamics](https://hansandcassady.org/David%20J.%20Griffiths-Introduction%20to%20Electrodynamics-Addison-Wesley%20(2012).pdf) has an excellent synopsis of this subject. Otherwise, any textbook or lecture videos will probably do.
 
@@ -50,7 +54,7 @@ If you have never studied vector calculus, the first chapter of David Griffiths'
 
 Setting up these integrals is going to require a good understanding of geometry and trigonometry. I am going to assume the reader is very comfortable with trigonometry and its identities (as to not belabor over every minute detail). If this is not the case, I have a series on [trigonometry](/blog/trigonometry).
 
-Finally, to prevent repetition in proofs, I will assert some trigonometric integrals. I leave it as an exercise to the reader to prove these results.
+To prevent repetition in proofs, I will assert some trigonometric integrals. I leave it as an exercise to the reader to prove these results.
 
 $$
 \begin{align}
@@ -72,4 +76,50 @@ $$
     &&
     \int_{0}^{\pi} \sin^3 \theta \; d \theta = \frac{4}{3}
 \end{align}
+$$
+
+<br>
+
+## Notation and Conventions
+
+I really try my best to have good notation. Especially when you have scalars, vectors, and matrices mixing it is easy to get lost. Having good notation and conventions really speeds up understanding.
+
+### Scalars
+
+Any regular-font character is a scalar, e.g. $M$, $r$, or $\phi$. Latin characters ($a$, $b$, $c$, etc) will typically refer to lengths while Greek characters ($\alpha$, $\beta$, $\gamma$, etc) will typically refer to angles.
+
+### Vectors
+
+Any bold-face character is a vector, e.g. $\b{r}$ or $\b{\omega}$. Any bold-face character with a hat is a [unit vector](https://en.wikipedia.org/wiki/Unit_vector), e.g. $\u{x}$.
+
+One definition of a vector is a mathematical object with a _magnitude_ and _direction_. We actually have good notation for both of these concepts. Given any vector $\b{v}$, it's magnitude is written $\abs{\b{v}}$, but is often denoted just by $v$. Its direction is denoted by its unit vector $\u{v}$, which points in the same direction as $\b{v}$ but has magnitude $1$. We can relate all of these objects as follows.
+
+$$
+\u{v} = \frac{\b{v}}{\abs{\b{v}}} = \frac{\b{v}}{v}
+\qquad\qquad
+\b{v} = \abs{\b{v}} \; \u{v} = v \; \u{v}
+$$
+
+<!-- The variable $\b{r}$ will _always_ represent a vector whose tale is at the origin and whose tip is at the point of interest. This is called the **position vector**.  -->
+
+### Matrices
+
+Any regular-font capitalized character between square brackets is a matrix, e.g. $\m{I}$. 
+
+The variable $I$ denotes the moment of inertia (which is the quantity we are interested in). Just writing $I$ implies that it's a scalar value. This means I must be refer to the moment of inertia with respect to a fixed axis of rotation $\b{\omega}$. On the other hand, if I write $\m{I}$, I am refering to the inertia tensor, which is a matrix quantity that describes the moment of inertia with respect to any axis. In particular,
+
+$$
+I_{\b{\omega}} = \u{\omega}^T \; \m{I} \; \u{\omega}
+$$
+
+We will discuss this more in the [next post](/blog/moments-of-inertia/definition-of-the-mass-moment-of-inertia).
+
+Another thing to mention. Typically in linear algebra, $\m{I}$ is used to denote the identity matrix. Obviously that variable is taken, so I will use $\m{\mathbb{I}}$. In particular,
+
+$$
+\m{\mathbb{I}} = \begin{bmatrix}
+    1 & 0 & 0 \\
+    0 & 1 & 0 \\
+    0 & 0 & 1
+\end{bmatrix}
 $$
