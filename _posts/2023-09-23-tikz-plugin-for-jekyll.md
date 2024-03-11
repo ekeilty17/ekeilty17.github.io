@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Tikz Plugin for Jekyll Websites Hosted on GitHub"
-date:       2022-08-01
+date:       2023-09-23
 categories: blog
 permalink:  ":categories/:title/"
 standalone: true

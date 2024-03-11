@@ -9,47 +9,55 @@ series:     moments-of-inertia
 tags:       moments-of-inertia
 ---
 
-## Notes
+Equilateral triangles and even isosceles triangles are pretty simple because there are symmetries that can be exploited. However, a general triangle can get pretty nasty due to the lack of symmetry. I have broken this post up by the position of the triangle relative to the axis. This is because analyzing a general triangle at its centroid is terrible.
 
-Base on $x$-axis with top vertex above origin
+There are a lot of cases, so I've provided a table of contents
+
+<!-- https://brilliant.org/wiki/apollonius-theorem/ -->
+
+## Base on $x$-Axis
+
+Base on $x$-axis vertically centered with top vertex.
+
+### General Triangle
 
 $$
 I = \tfrac{1}{3} M \frac{a^3 + b_1^3 + b_2^3 + c^3}{a + b_1 + b_2 + c}
 $$
 
-Base on $x$-axis with left vertex at origin
 
-
-## General
-
-### Base on $x$-Axis
+$$
+h^2 + b_1^2 = a^2 
+\qquad\qquad
+h^2 + b_2^2 = c^2 
+$$
 
 $$
 \begin{align}
     I &= I_{a} + I_{b_1} + I_{b_2} + I_{c} 
     \\[10pt]
     
-    &= \tfrac{1}{3} M \begin{bmatrix}
+    &= \tfrac{1}{3} M_{a} \begin{bmatrix}
         b_1^2 & \tfrac{1}{2} b_1h & 0 \\
         \tfrac{1}{2} b_1h & h^2 & 0 \\
         0 & 0 & b_1^2 + h^2
     \end{bmatrix}
     + 
-    \tfrac{1}{3}Mb_1^2
+    \tfrac{1}{3}M_{b_1}b_1^2
     \begin{bmatrix}
         0 & 0 & 0 \\
         0 & 1 & 0 \\
         0 & 0 & 1
     \end{bmatrix}
     +
-    \tfrac{1}{3}Mb_2^2
+    \tfrac{1}{3}M_{b_2}b_2^2
     \begin{bmatrix}
         0 & 0 & 0 \\
         0 & 1 & 0 \\
         0 & 0 & 1
     \end{bmatrix}
     +
-    \tfrac{1}{3} M \begin{bmatrix}
+    \tfrac{1}{3} M_{c} \begin{bmatrix}
         b_2^2 & -\tfrac{1}{2} b_2h & 0 \\
         -\tfrac{1}{2} b_2h & h^2 & 0 \\
         0 & 0 & b_2^2 + h^2
@@ -93,9 +101,7 @@ $$
 
 <br>
 
-## Isosceles Triangle
-
-### Base on $x$-axis
+### Isosceles Triangle
 
 $$
 \begin{align}
@@ -109,9 +115,7 @@ $$
 
 <br>
 
-## Equilateral Triangle
-
-### Base on $x$-axis
+### Equilateral Triangle
 
 $$
 \begin{align}
@@ -122,3 +126,11 @@ $$
     \end{bmatrix}
 \end{align}
 $$
+
+<br>
+
+---
+
+<br>
+
+## 

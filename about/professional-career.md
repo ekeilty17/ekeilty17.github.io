@@ -176,10 +176,11 @@ During my Master's degree, I was the head TA of the courses <a href="https://eng
 <details>
 <summary></summary>
 
-<h3><a href="https://www.tiff.net/" target="_blank">Toronto International Film Festival</a></h3>
+
+<h3><a href="https://www.tiff.net/" target="_blank">Toronto International Film Festival</a> (TIFF)</h3>
 <span class="post-date work-experience-date">Sep 2018 &nbsp; and &nbsp; Sep 2019</span>
 
-<p>The Toronto International Film Festival occurs every year, debuting a variety of films. I volunteered and just helped direct people to their theatre and being an usher to deal with any conflicts during the showings. It was extremely fun. I highly recommend it to others.</p>
+<p>The Toronto International Film Festival occurs every year, debuting a variety of films. I volunteered and just helped direct people to their theatre and deal with any conflicts during the showings. It was extremely fun. I highly recommend it to others.</p>
 
 <br>
 

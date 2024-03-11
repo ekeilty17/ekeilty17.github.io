@@ -18,7 +18,7 @@ I am still working on some of the posts in the theory section. A majority of the
 {% assign sorted_posts = site.posts | where: 'series', 'moments-of-inertia' | sort: 'part' %}
 
 {% assign headings = "none, Theory and Background, Curves, Surfaces, Volumes" | split: ", " %}   <!-- Only modify this -->
-{% assign limits = "1, 8, 8, 8, 20" | split: ", " %} <!-- and this -->
+{% assign limits = "1, 7, 8, 9, 20" | split: ", " %} <!-- and this -->
 
 <!-- Computes the offsets given the limits -->
 {% assign running_sum = 0 %}
