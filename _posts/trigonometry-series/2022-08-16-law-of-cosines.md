@@ -63,12 +63,13 @@ Using the definition of $\sin$, the definition of $\cos$, and the Pythagorean Th
 1. $x + y = a$
 2. $x = c \cos B$
 3. $h = c \sin B$ 
-4. $x^2 + h^2 = c^2$
+4. $y^2 + h^2 = b^2$
 
 There are a couple of ways to do this. One way is to first substitute (1) into (4)
 
+<!-- 
 $$
-(a - y)^2 + h ^2 = c^2
+(a - y)^2 + h^2 = c^2
 $$
 
 Then substitute (2) and (3) into to get
@@ -87,7 +88,30 @@ $$
     &= a^2 + b^2 (\cos^2 C + \sin^2 C) - 2ab\cos C  \\[10pt]
     &= a^2 + b^2 - 2ab\cos C
 \end{align}
+$$ 
+-->
+
 $$
+(a - x)^2 + h^2 = c^2
+$$
+
+Then substitute (2) and (3) into the above to get
+
+$$
+(a - c \cos B)^2 + (c \sin B)^2 = b^2
+$$
+
+Now, we do some algebra to simplify and utilize the Pythagorean identity ($\cos^2 \theta + \sin^2 \theta = 1$)
+
+$$
+\begin{align}
+    b^2 
+    &= (a - c \cos B)^2 + (c \sin B)^2 \\[10pt]
+    &= a^2 - 2ac\cos B + c^2 \cos^2 B + c^2 \sin^2 B \\[10pt]
+    &= a^2 + c^2 (\cos^2 B + \sin^2 B) - 2ac\cos B  \\[10pt]
+    &= a^2 + c^2 - 2ac\cos B
+\end{align}
+$$ 
 
 The argument works symmetrically for the other two laws.
 
@@ -184,3 +208,72 @@ $$
 $$
 
 The proof for the other two angles is exactly the same as the acute triangle case.
+
+<br>
+
+---
+
+<br>
+
+## Vector Proof
+
+If you are familiar with linear alebra and vectors, then the proof of the law of cosines becomes even easier. Let $\b{a}$, $\b{b}$, and $\b{c}$ denote the vector representation of the sides of the triangle.
+
+<center>
+{% tikz LoC-vectors %}
+    \usetikzlibrary{calc}
+    \usetikzlibrary{arrows.meta}
+
+    \tikzset{
+    font={\fontsize{14pt}{12}\selectfont}
+    }
+
+    \coordinate (A) at (2, 4);
+    \coordinate (B) at (0, 0);
+    \coordinate (C) at (8, 0);
+    \coordinate (hA) at (2, 0);
+
+    \node[above] at (A) {$A$};
+    \node[below left] at (B) {$B$};
+    \node[below right] at (C) {$C$};
+    
+    \draw[thick, -{Stealth}] (B) -- (C) node[midway, below] {$\boldsymbol{a}$};
+    \draw[thick, {Stealth}-] (C) -- (A) node[midway, above right] {$\boldsymbol{b}$};
+    \draw[thick, {Stealth}-] (A) -- (B) node[midway, above left] {$\boldsymbol{c}$};
+
+{% endtikz %}
+</center>
+
+Notice that I have carefully chosen the directions of the vectors such that $\b{b} = \b{a} - \b{c}$. Now, the proof just takes advantage of the properties of the 
+<span class="tooltip">dot product
+    <span class="tooltiptext"> 
+    $$
+    \displaystyle \boldsymbol{u} \cdot \boldsymbol{v} = \sum_{i=1}^n u_i v_i
+    $$
+    </span>
+</span>. In particular, 
+<span class="tooltip">distributivity
+    <span class="tooltiptext"> 
+    $$
+    \displaystyle \boldsymbol{u} \cdot ( \boldsymbol{v} + \boldsymbol{w} ) = \boldsymbol{u} \cdot \boldsymbol{v} + \boldsymbol{u} \cdot \boldsymbol{w}
+    $$
+    </span>
+</span> and 
+<span class="tooltip">commutativity
+    <span class="tooltiptext"> 
+    $$
+    \displaystyle \boldsymbol{u} \cdot \boldsymbol{v} = \boldsymbol{v} \cdot \boldsymbol{u}
+    $$
+    </span>
+</span>.
+
+$$
+\begin{align}
+    \abs{\b{b}}^2 
+    &= \abs{\b{a} - \b{c}}^2 \\[10pt]
+    &= (\b{a} - \b{c}) \cdot (\b{a} - \b{c}) \\[10pt]
+    &= \b{a} \cdot \b{a} - \b{a} \cdot \b{c} - \b{c} \cdot \b{a} + \b{c} \cdot \b{c} \\[10pt]
+    &= \abs{\b{a}}^2 + \abs{\b{c}}^2 - 2 (\b{a} \cdot \b{c}) \\[10pt]
+    &= \abs{\b{a}}^2 + \abs{\b{c}}^2 - 2 \abs{\b{a}} \abs{\b{c}} \cos B \\[10pt]
+\end{align}
+$$
