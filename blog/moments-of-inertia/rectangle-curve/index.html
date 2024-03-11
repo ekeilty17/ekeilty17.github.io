@@ -152,12 +152,12 @@
 
         <div class="post">
             <h1 class="post-title">Rectangle</h1>
-            <!-- <span class="series-date">11 Sep 2023</span> -->
-            <time datetime="2023-09-11T00:00:00-04:00" class="post-date">11 Sep 2023</time>
+            <!-- <span class="series-date">11 Feb 2024</span> -->
+            <time datetime="2024-02-11T00:00:00-05:00" class="post-date">11 Feb 2024</time>
             <!-- maybe I'll add tagging later
             <span class="post-date" style="margin-top:-1em;"> ["moments-of-inertia"] </span>
             -->
-            <h2 id="parameterizing-the-curve">Parameterizing the Curve</h2>
+            <h2 id="parameterization">Parameterizing the Curve</h2>
 
 <p>The rectangle is made up of $4$ distinct lines.</p>
 
@@ -173,7 +173,7 @@
 
 <h2 id="mass">Mass</h2>
 
-<p>The mass is obviously just the perimeter times the mass density, but let’s do it rigorously. To get the total mass, we sum the mass of each line segment ($\ell_1$, $\ell_2$, $\ell_3$, and $\ell_4$), which we derived in the <a href="/blog/moments-of-inertia/lines/#mass">previous post</a>.</p>
+<p>The mass is obviously just the perimeter times the mass density, but let’s do it rigorously. To get the total mass, we sum the mass of each line segment ($\ell_1$, $\ell_2$, $\ell_3$, and $\ell_4$), which we derived in the post on <a href="/blog/moments-of-inertia/lines#mass">lines</a>.</p>
 
 \[\begin{align}
     M &amp;= M_1 + M_2 + M_3 + M_4 \\[10pt]
@@ -184,13 +184,13 @@
 
 <p><br /></p>
 
-<h2 id="moment-of-inertia-about-central-axis">Moment of Inertia About Central Axis</h2>
+<h2 id="central-axis">Moment of Inertia About Central Axis</h2>
 
 <center>
 <embed src="/svg/moments-of-inertia/10:rectangle-curve/rectangle-inertia-central-axis.svg" type="image/svg+xml" />
 </center>
 
-<p>Just like in calculating the mass, we can calculate the total moment of inertia by summing the contribution of each line segment ($\ell_1$, $\ell_2$, $\ell_3$, and $\ell_4$). We use the formula for the moment of inertia of a <a href="/blog/moments-of-inertia/lines/#perpendicular-to-the-axis-of-rotation">Line Perpendicular to the Axis of Rotation</a>.</p>
+<p>Just like in calculating the mass, we can calculate the total moment of inertia by summing the contribution of each line segment ($\ell_1$, $\ell_2$, $\ell_3$, and $\ell_4$). We use the special case formula for the moment of inertia of a line derived in the <a href="/blog/moments-of-inertia/lines-special-cases#xy-plane-parallel-and-perpendicular">previous post</a>.</p>
 
 \[\begin{align}
     I &amp;= I_1 + I_2 + I_3 + I_4 \\[10pt]
@@ -206,13 +206,13 @@
 
 <p><br /></p>
 
-<h2 id="moment-of-inertia-about-central-diameter">Moment of Inertia About Central Diameter</h2>
+<h2 id="central-diameter">Moment of Inertia About Central Diameter</h2>
 
 <center>
 <embed src="/svg/moments-of-inertia/10:rectangle-curve/rectangle-inertia-central-diameter.svg" type="image/svg+xml" />
 </center>
 
-<p>We do likewise here. We use the formula for the moment of inertia of a <a href="/blog/moments-of-inertia/lines/#perpendicular-to-the-axis-of-rotation">Line Perpendicular to the Axis of Rotation</a> and a <a href="/blog/moments-of-inertia/lines/#parallel-to-the-axis-of-rotation">Line about a Parallel Axis of Rotation</a>.</p>
+<p>We do likewise here.</p>
 
 \[\begin{align}
     I &amp;= I_1 + I_2 + I_3 + I_4 \\[10pt]
@@ -231,7 +231,7 @@
 
 <h2 id="inertia-tensor">Inertia Tensor</h2>
 
-\[I = \frac{1}{12} M \begin{bmatrix}
+\[\m{I} = \tfrac{1}{12} M \begin{bmatrix}
     b^2 \frac{3a+b}{a+b} &amp; 0 &amp; 0 \\
     0  &amp; a^2 \frac{a+3b}{a+b} &amp; 0 \\
     0  &amp; 0 &amp; (a+b)^2
@@ -243,95 +243,24 @@
 
 <p><br /></p>
 
-<h2 id="special-case-square">Special Case: Square</h2>
+<h2 id="square">Special Case: Square</h2>
 <p>This is a special case where all sides are equal in length. Therefore, $a = b = S$.</p>
 
-<h3 id="moment-of-inertia-about-central-axis-1">Moment of Inertia About Central Axis</h3>
+<h3 id="moment-of-inertia-about-central-axis">Moment of Inertia About Central Axis</h3>
 
 \[I = \tfrac{1}{12} M \left ( S + S \right )^2 = \tfrac{1}{3} M S^2\]
 
-<h3 id="moment-of-inertia-about-central-diameter-1">Moment of Inertia About Central Diameter</h3>
+<h3 id="moment-of-inertia-about-central-diameter">Moment of Inertia About Central Diameter</h3>
 
 \[I = \tfrac{1}{12} M S^2 \; \frac{3S + S}{S + S} = \tfrac{1}{6} M S^2\]
 
-<h3 id="inertia-tensor-1">Inertia Tensor</h3>
+<h3 id="inertia-tensor">Inertia Tensor</h3>
 
-\[I = \tfrac{1}{6} M S^2 \begin{bmatrix}
+\[\m{I} = \tfrac{1}{6} M S^2 \begin{bmatrix}
     1 &amp; 0 &amp; 0 \\
     0  &amp; 1 &amp; 0 \\
     0  &amp; 0 &amp; 2
 \end{bmatrix}\]
-
-<!-- 
-## Parametarizing the Curve
-
-Again, we have 4 different curves we need to parameterize
-
-$$
-\b{\ell}_1(t) = \frac{a}{2} t \; \u{x} - \frac{b}{2} \; \u{y}
-\qquad\qquad
-\b{\ell}_2(t) = \frac{a}{2} \; \u{x} + \frac{b}{2} t \; \u{y}
-\qquad\qquad
-\b{\ell}_3(t) = - \frac{a}{2} t \; \u{x} + \frac{b}{2} \; \u{y}
-\qquad\qquad
-\b{\ell}_4(t) = - \frac{a}{2} \; \u{x} - \frac{b}{2} t \; \u{y}
-$$
-
-$$
-d\b{\ell}_1 = \frac{a}{2} \; dt \; \u{x}
-\qquad\qquad
-d\b{\ell}_2 = \frac{b}{2} \; dt \; \u{y}
-\qquad\qquad
-d\b{\ell}_3 = -\frac{a}{2} \; dt \; \u{x}
-\qquad\qquad
-d\b{\ell}_4 = -\frac{b}{2} \; dt \; \u{y}
-$$
-
-$$
-d\ell_1 = \abs{d \b{\ell}_1 } = \frac{a}{2} \; dt
-\qquad\qquad
-d\ell_2 = \abs{d \b{\ell}_2 } = \frac{b}{2} \; dt
-\qquad\qquad
-d\ell_3 = \abs{d \b{\ell}_3 } = \frac{a}{2} \; dt
-\qquad\qquad
-d\ell_4 = \abs{d \b{\ell}_4 } = \frac{b}{2} \; dt
-\qquad\qquad
-$$
-
-## Mass
-
-$$
-\begin{align}
-    M &= \int dm \\[10pt]
-    &= \lambda \int d\ell \\[10pt]
-    &= \lambda \left ( \int_{\ell_1} d\ell_1 + \int_{\ell_2} d\ell_2 + \int_{\ell_3} d\ell_3 + \int_{\ell_4} d\ell_4 \right ) \\[10pt]
-    &= \lambda \left ( \int_{-1}^{1} \frac{a}{2} dt + \int_{-1}^{1} \frac{b}{2} dt + \int_{-1}^{1} \frac{a}{2} dt + \int_{-1}^{1} \frac{b}{2} dt \right ) \\[10pt]
-    &= \lambda \left ( 2 \cdot \frac{a}{2} + 2 \cdot \frac{b}{2} + 2 \cdot \frac{a}{2} + 2 \cdot \frac{b}{2} \right ) \\[10pt]
-    &= \lambda \cdot 2 \left (a + b \right )
-\end{align}
-$$
-
-<br>
-
-## Moment of Inertia About Central Axis
-
-$$
-\begin{align}
-    I &= \int r_{axis}^2 dm \\[10pt]
-    &= \lambda \int r_{axis}^2 d\ell \\[10pt]
-\end{align}
-$$
-
-<br>
-
-## Moment of Inertia About Central Diameter
-
-$$
-\begin{align}
-    I &= \int r_{axis}^2 dm \\[10pt]
-    &= \lambda \int r_{axis}^2 d\ell \\[10pt]
-\end{align}
-$$ -->
 
         </div>
 

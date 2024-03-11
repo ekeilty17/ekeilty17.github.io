@@ -157,43 +157,49 @@
             <!-- maybe I'll add tagging later
             <span class="post-date" style="margin-top:-1em;"> ["moments-of-inertia"] </span>
             -->
-            <h2 id="notes">Notes</h2>
+            <p>Equilateral triangles and even isosceles triangles are pretty simple because there are symmetries that can be exploited. However, a general triangle can get pretty nasty due to the lack of symmetry. I have broken this post up by the position of the triangle relative to the axis. This is because analyzing a general triangle at its centroid is terrible.</p>
 
-<p>Base on $x$-axis with top vertex above origin</p>
+<p>There are a lot of cases, so I’ve provided a table of contents</p>
+
+<!-- https://brilliant.org/wiki/apollonius-theorem/ -->
+
+<h2 id="base-on-x-axis">Base on $x$-Axis</h2>
+
+<p>Base on $x$-axis vertically centered with top vertex.</p>
+
+<h3 id="general-triangle">General Triangle</h3>
 
 \[I = \tfrac{1}{3} M \frac{a^3 + b_1^3 + b_2^3 + c^3}{a + b_1 + b_2 + c}\]
 
-<p>Base on $x$-axis with left vertex at origin</p>
-
-<h2 id="general">General</h2>
-
-<h3 id="base-on-x-axis">Base on $x$-Axis</h3>
+\[h^2 + b_1^2 = a^2 
+\qquad\qquad
+h^2 + b_2^2 = c^2\]
 
 \[\begin{align}
     I &amp;= I_{a} + I_{b_1} + I_{b_2} + I_{c} 
     \\[10pt]
     
-    &amp;= \tfrac{1}{3} M \begin{bmatrix}
+    &amp;= \tfrac{1}{3} M_{a} \begin{bmatrix}
         b_1^2 &amp; \tfrac{1}{2} b_1h &amp; 0 \\
         \tfrac{1}{2} b_1h &amp; h^2 &amp; 0 \\
         0 &amp; 0 &amp; b_1^2 + h^2
     \end{bmatrix}
     + 
-    \tfrac{1}{3}Mb_1^2
+    \tfrac{1}{3}M_{b_1}b_1^2
     \begin{bmatrix}
         0 &amp; 0 &amp; 0 \\
         0 &amp; 1 &amp; 0 \\
         0 &amp; 0 &amp; 1
     \end{bmatrix}
     +
-    \tfrac{1}{3}Mb_2^2
+    \tfrac{1}{3}M_{b_2}b_2^2
     \begin{bmatrix}
         0 &amp; 0 &amp; 0 \\
         0 &amp; 1 &amp; 0 \\
         0 &amp; 0 &amp; 1
     \end{bmatrix}
     +
-    \tfrac{1}{3} M \begin{bmatrix}
+    \tfrac{1}{3} M_{c} \begin{bmatrix}
         b_2^2 &amp; -\tfrac{1}{2} b_2h &amp; 0 \\
         -\tfrac{1}{2} b_2h &amp; h^2 &amp; 0 \\
         0 &amp; 0 &amp; b_2^2 + h^2
@@ -236,9 +242,7 @@
 
 <p><br /></p>
 
-<h2 id="isosceles-triangle">Isosceles Triangle</h2>
-
-<h3 id="base-on-x-axis-1">Base on $x$-axis</h3>
+<h3 id="isosceles-triangle">Isosceles Triangle</h3>
 
 \[\begin{align}
     I &amp;= \tfrac{1}{3} \begin{bmatrix}
@@ -250,9 +254,7 @@
 
 <p><br /></p>
 
-<h2 id="equilateral-triangle">Equilateral Triangle</h2>
-
-<h3 id="base-on-x-axis-2">Base on $x$-axis</h3>
+<h3 id="equilateral-triangle">Equilateral Triangle</h3>
 
 \[\begin{align}
     I &amp;= \tfrac{1}{3} \begin{bmatrix}
@@ -261,6 +263,14 @@
         0 &amp; 0 &amp; \tfrac{9}{4}S^3
     \end{bmatrix}
 \end{align}\]
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<p>##</p>
 
         </div>
 

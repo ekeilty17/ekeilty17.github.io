@@ -152,8 +152,8 @@
 
         <div class="post">
             <h1 class="post-title">Tikz Plugin for Jekyll Websites Hosted on GitHub</h1>
-            <!-- <span class="post-date">01 Aug 2022</span> -->
-            <time datetime="2022-08-01T00:00:00-04:00" class="post-date">01 Aug 2022</time>
+            <!-- <span class="post-date">23 Sep 2023</span> -->
+            <time datetime="2023-09-23T00:00:00-04:00" class="post-date">23 Sep 2023</time>
             <p>Occasionally, I write <a href="/blog/" target="_blank">blog posts</a> about math-related concepts. For me, <a href="https://www.overleaf.com/learn/latex/TikZ_package">Tikz</a> is an indispensable tool for these posts. If Tikz could not be integrated into my Jekyll website, then I would have had to switch to a different website framework. Luckily for me, I figured out a way to include Tikz (you can see examples in some of my blog posts, such as <a href="/blog/trigonometry/intuition-of-trig-functions/" target="_blank">here</a>).</p>
 
 <p>In this post, I will explain how to integrate Tikz into a Jekyll website. It’s a bit of a hacky solution and it’s actually quite involved due to some annoyances with GitHub hosting.</p>
@@ -240,9 +240,7 @@
 <span class="no">Liquid</span><span class="o">::</span><span class="no">Template</span><span class="p">.</span><span class="nf">register_tag</span><span class="p">(</span><span class="s1">'tikz'</span><span class="p">,</span> <span class="no">Jekyll</span><span class="o">::</span><span class="no">Tags</span><span class="o">::</span><span class="no">Tikz</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>I did not create this myself (although I have modified it). The original file says it was created by <a href="http://github.com/Maxfan-zone http://maxfan.org">MaxFan</a> (but this link doesn’t work anymore). You’ll also find it on various GitHubs (<a href="https://gist.github.com/i2000s/d81aaa89101555b1965eeb514ed6bca5">here</a> and <a href="https://gist.github.com/AlexBobkov/d419863e610fce7c8db5714b665b009e">here</a>).</p>
-
-<p>Also, the above is exactly the code that I use. I have modified the code to suit the specific structure of my blog. You can see it <a href="https://github.com/ekeilty17/ekeilty17.github.io/blob/main/_plugins/jekyll-tikz.rb">here</a>.</p>
+<p>I did not create this myself (although I have modified it for my specific blog, you can see it <a href="https://github.com/ekeilty17/ekeilty17.github.io/blob/main/_plugins/jekyll-tikz.rb">here</a>). The original file says it was created by <a href="http://github.com/Maxfan-zone http://maxfan.org">MaxFan</a> (but this link doesn’t work anymore). You’ll also find it on various GitHubs (<a href="https://gist.github.com/i2000s/d81aaa89101555b1965eeb514ed6bca5">here</a> and <a href="https://gist.github.com/AlexBobkov/d419863e610fce7c8db5714b665b009e">here</a>).</p>
 
 <p><br /></p>
 

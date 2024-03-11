@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Principal Axis Theorem &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded MathJax (effectively LaTeX) support 
+    https://docs.mathjax.org/en/v2.7-latest/tex.html -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX", "input/MathML", "output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js", "mml2jax.js", "MathMenu.js", "MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
+            Macros: {
+                b: ["{\\boldsymbol #1}",1],
+                u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
+                arccsc: ["\\operatorname\{arccsc\}"],
+                arcsec: ["\\operatorname\{arcsec\}"],
+                arccot: ["\\operatorname\{arccot\}"],
+                csch: ["\\operatorname\{csch\}"],
+                sech: ["\\operatorname\{sech\}"],
+                arcsinh: ["\\operatorname\{arcsinh\}"],
+                arccosh: ["\\operatorname\{arccosh\}"],
+                arctanh: ["\\operatorname\{arctanh\}"],
+                arccsch: ["\\operatorname\{arccsch\}"],
+                arcsech: ["\\operatorname\{arcsech\}"],
+                arccoth: ["\\operatorname\{arccoth\}"],
+                seq: ["{\\left \\langle #1 \\right \\rangle}",1],
+                iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
+                abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
+                hal: ["\\texttt{hal}"],
+                gal: ["\\texttt{gal}"],
+                sh: ["sh"],
+                st: ["st"]
+            },
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!--
+    TeX-AMS_HTML
+    TeX-AMS-MML_HTMLorMML
+    TeX-MML-AM_HTMLorMML
+-->
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">AI/ML Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+        <li>
+          <a href="/files/Eric Keilty - Resume.pdf" target="_blank">R&eacute;sum&eacute;</a>
+        </li>
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2024 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">Principal Axis Theorem</h1>
+            <!-- <span class="series-date">07 Feb 2024</span> -->
+            <time datetime="2024-02-07T00:00:00-05:00" class="post-date">07 Feb 2024</time>
+            <!-- maybe I'll add tagging later
+            <span class="post-date" style="margin-top:-1em;"> ["moments-of-inertia, ",  "parallel-axis"] </span>
+            -->
+            <p><strong>TODO</strong></p>
+
+<p>In the <a href="/blog/moments-of-inertia/parallel-axis-theorem">previous post</a> on the parallel axis theorem, we say how the inertia tensor updated when the object $\mathcal{G}$ is <strong>translated</strong> in our fixed coordiante system. In this post, we are going to see how the inertia tensor is updated when the object $\mathcal{G}$ is <strong>rotated</strong>. Then, we are going to generalize this result for any <strong>linear transformation</strong> and <strong>affine tranformation</strong>.</p>
+
+<h2 id="principal-axes">Principal Axes</h2>
+
+<p>If we are analyzing the moment of inertia of an object about a fixed axis of rotation, then clearly rotating about this axis does not change its inertia. In the figure below, each of the point masses have the same rotational inertia.</p>
+
+<center>
+<embed src="/svg/moments-of-inertia/6:principal-axis-theorem/point-mass.svg" type="image/svg+xml" />
+</center>
+
+<p>However, if we have an inertia tensor, then it gets a bit more complicated. The inertia tensor does not remain constant when the object is rotated. For example, consider a point mass on the $xy$ plane a distance $R$ from the origin.</p>
+
+<center>
+<embed src="/svg/moments-of-inertia/6:principal-axis-theorem/point-mass-xy-plane-1.svg" type="image/svg+xml" />
+&emsp;&emsp;&emsp;&emsp;
+<embed src="/svg/moments-of-inertia/6:principal-axis-theorem/point-mass-xy-plane-2.svg" type="image/svg+xml" />
+</center>
+
+<p>The inertia tensor to describe this is the following. As an exercise, verify this using the general formula for the inertia tensor of a point pass given in a <a href="/blog/moments-of-inertia/inertia-tensor-derivation">previous post</a>.</p>
+
+\[\m{I} = mR^2 
+\begin{bmatrix}
+    \sin^2 \phi &amp; - \sin \phi \cos \phi &amp; 0 \\
+    - \sin \phi \cos \phi &amp; \cos^2 \phi &amp; 0 \\
+    0 &amp; 0 &amp; 1
+\end{bmatrix}\]
+
+<p>Notice that if $\phi = \pi/2$, then the inertia tensor becomes</p>
+
+\[\m{I} = mR^2 
+\begin{bmatrix}
+    1 &amp; 0 &amp; 0 \\
+    0 &amp; 0 &amp; 0 \\
+    0 &amp; 0 &amp; 1
+\end{bmatrix}\]
+
+<p>This is a much nicer inertia tensor to work with, and we really haven’t changed anything about the system. All we have done is moved our coordinate system.</p>
+
+<p>a <strong>principal axis</strong> is a coordiante system such that the inertia tensor is diagonal. In otherwords, all product of inertia values are $0$.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="the-principal-axis-theorem">The Principal Axis Theorem</h2>
+
+<h3 id="proof">Proof</h3>
+
+<p>Let $\m{A} \in \mathbb{R}^{n \times n}$ with eigenvectors $\b{v}_1, \b{v}_2, \ldots, \b{v}_n$ (not necessarily normalized) and cooresponding eigenvalues $\lambda_1, \lambda_2, \ldots, \lambda_n$. Let</p>
+
+\[\m{V} = 
+\begin{bmatrix}
+    \vert  &amp; &amp; \vert \\
+    \b{v}_1 &amp; \cdots &amp; \b{v}_n \\
+    \vert  &amp; &amp; \vert
+\end{bmatrix} 
+\qquad\qquad
+\m{\Lambda} = 
+\begin{bmatrix}
+    \lambda_1 &amp; \cdots &amp; 0 \\
+    \vdots &amp; \ddots &amp;  \\
+    0 &amp; &amp; \lambda_n
+\end{bmatrix}\]
+
+<p>Therefore</p>
+
+\[\m{A} = \m{V} \ \m{\Lambda} \ \m{V}^{-1}\]
+
+<p>Now, suppose $\m{A}$ is symmetric, then it can be shown that the eigenvectors $\b{v}_1, \b{v}_2, \ldots, \b{v}_n$ form an <a href="https://en.wikipedia.org/wiki/Orthonormal_basis">orthonormal basis</a>. Essentially, this means that the normalized eigenvectors can be thought of as a purely rotated coordiante system. Applied to rotational inertias, this implies that we can always find principal axes.</p>
+
+<!-- 
+https://www.math.uwaterloo.ca/~jmckinno/Math225/Week7/Lecture2m.pdf 
+https://moodle.swarthmore.edu/pluginfile.php/266483/mod_resource/content/0/Handouts/eigen/P_axis_thm2.pdf
+-->
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="transformations">Transformations</h2>
+
+<p>We are going to get a bit formal</p>
+
+<p>First, what is a transformation?</p>
+
+<h3 id="linear-transformations">Linear Transformations</h3>
+
+<p>A <strong>linear transformation</strong> is a transformation $T : X \rightarrow Y$ such that</p>
+
+\[T(\b{v} + \b{u}) = T(\b{v}) + T(\b{u})
+\qquad\qquad
+T(c \cdot \b{v}) = c \cdot T(\b{v})
+\qquad\qquad
+\forall \b{v}, \b{u} \in X
+\ , \
+c \in \mathbb{R}\]
+
+<p>An interesting fact about linear transformations is that $T(\b{0}) = \b{0}$. A good exercise is to prove this fact. More importantly, all linear transformations $T$ over finite vector spaces can be represented by a matrix. In particular, $T : X \rightarrow Y$ where $\abs{X} = n$ and $\abs{Y} = m$ is isomorphic to $\m{T} : \mathbb{R}^n \rightarrow \mathbb{R}^m$. For an explanation and proof of this result, I recommend this <a href="!-- https://mbernste.github.io/posts/matrices_linear_transformations/ --">blog post</a>.</p>
+
+<!-- https://textbooks.math.gatech.edu/ila/linear-transformations.html -->
+
+<h3 id="operators">Operators</h3>
+
+<p>An <strong>operator</strong> is a linear tranformation from a vector space to itself, in particular $T : X \rightarrow X$.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<p>Suppose we want to determine the rotational inertia of a rigid body $\mathcal{G}$. In previous posts, we saw that the inertia tensor is the object we want to calculate.</p>
+
+\[\m{I} = \left[ \begin{array}{@{}rrr@{}}
+      I_{xx} &amp; - I_{xy} &amp; - I_{xz} \\
+    - I_{yx} &amp;   I_{yy} &amp; - I_{yz} \\
+    - I_{zx} &amp; - I_{zy} &amp;   I_{zz}
+\end{array} \right ]\]
+
+<p>However, a particular inertia tensor implicitly assumes that object $\mathcal{G}$ is at a random location in a fixed coordinate system. If the object position in the coordinate system changes, then the inertia tensor will also change. To give a simple example using a point mass.</p>
+
+<p>The inertia tensor of each is given by the following. As an exercise, verify these inertia tensors using the general inertia tensor for a point pass given in a <a href="/blog/moments-of-inertia/inertia-tensor-derivation">previous post</a>.</p>
+
+\[\m{I_1} = mR^2 
+\begin{bmatrix}
+    \sin^2 \phi &amp; - \sin \phi \cos \phi &amp; 0 \\
+    - \sin \phi \cos \phi &amp; \cos^2 \phi &amp; 0 \\
+    0 &amp; 0 &amp; 1
+\end{bmatrix} 
+\qquad\qquad
+\m{I_2} = mR^2 
+\begin{bmatrix}
+    1 &amp; 0 &amp; 0 \\
+    0 &amp; 0 &amp; 0 \\
+    0 &amp; 0 &amp; 1
+\end{bmatrix}\]
+
+<p>We see that in general $\m{I_1}$ is not a principal axis. However, by rotating the point mass by the appropriate amount, we can find a principal axis, $\m{I_2}$.</p>
+
+<p>The question becomes, when are the</p>
+
+<p>$I_{xy} = 0$ if the object is symmetric about the $x$ OR $y$ axes.</p>
+
+<p><br /></p>
+
+<h2 id="a-deeper-understanding-of-the-product-of-inertia">A Deeper Understanding of the Product of Inertia</h2>
+
+<p>Given the 4 quadrants of the $xy$ plane, we know that the value of the product $xy$ is</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  y
+- | + 
+----- x
++ | -
+</code></pre></div></div>
+
+<p>So, $I_{xy} = 0$ to be true, we need the positive coordinates and negative coordinates to balance out.</p>
+
+<p><br /></p>
+
+<h2 id="the-principal-axis-theorem-1">The Principal Axis Theorem</h2>
+<p>The principal axis theorem says that we can always find a fixed perpendicular set of basis vectors such that the inertia tensor is diagonal. This proof is trivial if the object is on the $xy$ plane. Put the object anywhere in the coordinate system and compute $I_{xy}$. If it’s $0$, then we are done. if it’s not $0$, then it’s either positive or negative. Let’s assume it’s positive. Now, rotate this object $90$ degrees. By symmetry, it must be the case that it is exactly the same value, but negative. Therefore, since this rotation was smooth, by the intermediate value theorem there must be some point during that rotation at which $I_{xy}$ was $0$.
+Now this gets more tricky for an object in $3D$ space.</p>
+
+<p>The real proof essentially boils down to the following claim: every symmetric matrix is orthogonally diagonalizable. This is a bit too hard-core linear algebra for this series.</p>
+
+<p><br /></p>
+
+<h2 id="how-to-find-the-principal-axis">How to Find the Principal Axis</h2>
+
+<p>Eigenvectors! The eigenvectors of $\m{I}$ are the directions of the principal axes. Also, the eigenvalues are going to be the values on the diagonal of $\m{I’}$.</p>
+
+<p>Why does this work? We are doing a coordinate transformation on the angular momentum. Suppose $\m{T}$ is any <strong>unitary transformation</strong> (meaning the determinant is $1$). We need this property so stuff doesn’t get scaled.</p>
+
+<h3 id="tranformations">Tranformations</h3>
+
+\[\b{L}' = \m{T} \b{L} = \m{T} (\m{I} \b{\omega}) = \m{T} \m{I} \b{\omega}\]
+
+<p>But actually, $\b{\omega}$ is still being written in terms of the old coordinate system. We need $\b{\omega}$ to rotate as well. Therefore</p>
+
+\[\b{L}' = \m{T} \m{I} ( \m{T}^{-1} \b{\omega}') = (\m{T} \m{I} \m{T}^{-1}) \b{\omega}'\]
+
+<p>Therefore</p>
+
+\[\m{I'} = \m{T} \m{I} \m{T}^{-1}\]
+
+<p><strong>TODO</strong>: This is handwavy math. Fix later.</p>
+
+<h3 id="rotation-matrices">Rotation Matrices</h3>
+
+<p>Rotation matrices are a specific instance of a unitary transformation.</p>
+
+\[\begin{align}
+R_z(\alpha) \; R_y(\beta) \; R_x(\gamma) 
+&amp;= 
+\begin{bmatrix}
+    \cos \alpha &amp; - \sin \alpha &amp; 0 \\
+    \sin \alpha &amp; \cos \alpha &amp; 0 \\
+    0 &amp; 0 &amp; 1
+\end{bmatrix} 
+\
+\begin{bmatrix}
+    \cos \beta &amp; 0 &amp; \sin \beta \\
+    0 &amp; 1 &amp; 0 \\
+    - \sin \beta &amp; 0 &amp; \cos \beta
+\end{bmatrix}
+\
+\begin{bmatrix}
+    1 &amp; 0 &amp; 0 \\
+    0 &amp; \cos \gamma &amp; - \sin \gamma \\
+    0 &amp; \sin \gamma &amp; \cos \gamma
+\end{bmatrix}
+\\[10pt]
+&amp;= 
+\begin{bmatrix}
+    \cos \alpha \cos \beta &amp; \cos \alpha \sin \beta \sin \gamma - \sin \alpha \cos \gamma &amp; \cos \alpha \sin \beta \cos \gamma + \sin \alpha \sin \gamma \\
+    \sin \alpha \cos \beta &amp; \sin \alpha \sin \beta \sin \gamma - \cos \alpha \cos \gamma &amp; \sin \alpha \sin \beta \cos \gamma - \cos \alpha \sin \gamma \\
+    - \sin \beta &amp; \cos \beta \sin \gamma &amp; \cos \beta \cos \gamma
+\end{bmatrix}
+\end{align}\]
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="general-transformation">General Transformation</h2>
+
+<p>Assume object $\mathcal{G}$ is situated such that its center of mass is at the origin. Suppose its inertia tensor is $\m{I_{\text{cm}}}$.</p>
+
+\[\m{I_{\text{rotated}}} = \m{R_z(\alpha)} \; \m{R_y(\beta)} \; \m{R_x(\gamma)} \; \m{I_{\text{cm}}} \; \m{R_x(\gamma)}^{-1} \; \m{R_y(\beta)}^{-1} \; \m{R_z(\alpha)}^{-1}\]
+
+\[\m{I_{\text{translated}}} = \m{I_{\text{rotated}}} +  M (D^2 \m{\mathbb{I}} - \b{D} \otimes \b{D})\]
+
+<p>This is called an <strong>affine transformation</strong>. An affine tranformation is equivalent to a linear tranformation + translation</p>
+
+        </div>
+
+        <!-- Adding the ability to move between parts of the series -->
+        
+        
+        
+
+        
+        
+        
+
+        <!-- Getting capitalized title for series -->
+        
+        
+        
+        
+        <!-- Getting url for series, which is just the page url with the last /... removed -->
+        
+
+        <div class="pagination" style="margin-top:1em;">
+            
+                <a class="pagination-item older" href="/blog/moments-of-inertia/parallel-axis-theorem/">Previous</a>
+            
+            
+                <a class="pagination-item newer" href="/blog/moments-of-inertia/intermediate-axis-theorem/">Next</a>
+            
+        </div>
+        <h3 style="text-align:center; margin-bottom:1em;">
+            <a href="/blog/moments-of-inertia">
+            
+                
+                    Moments
+                
+            
+                
+                    of
+                
+            
+                
+                    Inertia
+                
+            
+         Series</a>
+        </h3>
+    </div>
+    
+  </body>
+</html>

@@ -10,7 +10,7 @@
 
   <title>
     
-      Lines - Special Cases &middot; Eric Keilty
+      Lines in the XY Plane &middot; Eric Keilty
     
   </title>
 
@@ -151,95 +151,68 @@
     <div class="content container">
 
         <div class="post">
-            <h1 class="post-title">Lines - Special Cases</h1>
-            <!-- <span class="series-date">10 Sep 2023</span> -->
-            <time datetime="2023-09-10T00:00:00-04:00" class="post-date">10 Sep 2023</time>
+            <h1 class="post-title">Lines in the XY Plane</h1>
+            <!-- <span class="series-date">10 Feb 2024</span> -->
+            <time datetime="2024-02-10T00:00:00-05:00" class="post-date">10 Feb 2024</time>
             <!-- maybe I'll add tagging later
             <span class="post-date" style="margin-top:-1em;"> ["moments-of-inertia"] </span>
             -->
-            <p>In the <a href="/blog/moments-of-inertia/lines">previous post</a>, we found the general expression for the moment of inertia of a line. In this post, we are going to derive this result using a different method, but our reward will be obtaining the general inertia tensor.</p>
+            <h2 id="table-of-contents">Table of Contents</h2>
 
-\[I = 
-\tfrac{1}{12} M
-\begin{bmatrix}
-    L_y^2 + L_z^2 &amp; - L_x L_y &amp; - L_x L_z \\
-    - L_y L_x &amp; L_z^2 + L_x^2 &amp; - L_y L_z \\
-    - L_z L_x &amp; - L_z L_y &amp; L_x^2 + L_y^2
-\end{bmatrix}
-+
-M 
-\begin{bmatrix}
-    D_y^2 + D_z^2 &amp; - D_x D_y &amp; - D_x D_z \\
-    - D_y D_x &amp; D_z^2 + D_x^2 &amp; - D_y D_z \\
-    - D_z D_x &amp; - D_z D_y &amp; D_x^2 + D_y^2
-\end{bmatrix}\]
-
-<p>Or we equivalently can write.</p>
-
-\[I = 
-\tfrac{1}{12} M L^2
-\begin{bmatrix}
-    \sin^2 \alpha_x &amp; - \cos \alpha_x \cos \alpha_y &amp; - \cos \alpha_x \cos \alpha_z \\
-    - \cos \alpha_y \cos \alpha_x &amp; \sin^2 \alpha_y &amp; - \cos \alpha_y \cos \alpha_z \\
-    - \cos \alpha_z \cos \alpha_x &amp; - \cos \alpha_z \cos \alpha_y &amp; \sin^2 \alpha_z
-\end{bmatrix}
-+
-M D^2
-\begin{bmatrix}
-    \sin^2 \beta_x &amp; - \cos \beta_x \cos \beta_y &amp; - \cos \beta_x \cos \beta_z \\
-    - \cos \beta_y \cos \beta_x &amp; \sin^2 \beta_y &amp; - \cos \beta_y \cos \beta_z \\
-    - \cos \beta_z \cos \beta_x &amp; - \cos \beta_z \cos \beta_y &amp; \sin^2 \beta_z
-\end{bmatrix}\]
+<ul>
+  <li><a href="#preamble">Preamble</a></li>
+  <li><a href="#general">General</a>
+    <ul>
+      <li><a href="#coordiante-formula">Coordiante Formula</a></li>
+    </ul>
+  </li>
+  <li><a href="#at-the-origin">At the Origin</a>
+    <ul>
+      <li><a href="#center-of-mass-at-the-origin">Center of Mass at the Origin</a></li>
+      <li><a href="#endpoint-at-the-origin">Endpoint at the Origin</a></li>
+    </ul>
+  </li>
+  <li><a href="#endpoints-on-the-x-axis-and-y-axis">Endpoints on the x Axis and y Axis</a></li>
+  <li><a href="#parallel-to-x-axis-and-perpendicular-to-y-axis">Parallel to x Axis and Perpendicular to y Axis</a>
+    <ul>
+      <li><a href="#parallel-perpendicular-general">General</a></li>
+      <li><a href="#centered-at-a-distance">Centered at a Distance</a></li>
+      <li><a href="#centered-on-an-axis">Centered on an Axis</a></li>
+    </ul>
+  </li>
+</ul>
 
 <p><br /></p>
 
-<h2 id="center-of-mass-at-origin">Center of Mass at Origin</h2>
-
-<p><strong>TODO</strong> Draw diagram</p>
-
-<p>Here, $D = 0$</p>
-
-\[I = 
-\tfrac{1}{12} M L^2
-\begin{bmatrix}
-    \sin^2 \alpha_x &amp; - \cos \alpha_x \cos \alpha_y &amp; - \cos \alpha_x \cos \alpha_z \\
-    - \cos \alpha_y \cos \alpha_x &amp; \sin^2 \alpha_y &amp; - \cos \alpha_y \cos \alpha_z \\
-    - \cos \alpha_z \cos \alpha_x &amp; - \cos \alpha_z \cos \alpha_y &amp; \sin^2 \alpha_z
-\end{bmatrix}\]
+<hr />
 
 <p><br /></p>
 
-<h2 id="end-at-origin">End at Origin</h2>
+<h2 id="preamble">Preamble</h2>
 
-<p><strong>TODO</strong> Draw diagram</p>
+<p>In the <a href="/blog/moments-of-inertia/lines">previous post</a>, we found the general expression for the moment of inertia of a line. In this post, we are going to take the special case where the line is restricted to the $xy$ plane and derive some simplified formulas. This will be help in the next post on <a href="/blog/moments-of-inertia/triangle-curve">triangles</a>. This is meant to be more of a reference, which is why I have provided a table of contents.</p>
 
-<p>Here, $\beta_x = \alpha_x$, $\beta_y = \alpha_y$, and $\beta_z = \alpha_z$ and $D = L/2$.</p>
-
-\[I = 
-\tfrac{1}{3} M L^2
-\begin{bmatrix}
-    \sin^2 \alpha_x &amp; - \cos \alpha_x \cos \alpha_y &amp; - \cos \alpha_x \cos \alpha_z \\
-    - \cos \alpha_y \cos \alpha_x &amp; \sin^2 \alpha_y &amp; - \cos \alpha_y \cos \alpha_z \\
-    - \cos \alpha_z \cos \alpha_x &amp; - \cos \alpha_z \cos \alpha_y &amp; \sin^2 \alpha_z
-\end{bmatrix}\]
+<p>One interesting thing to notice in the inertia tensors is that $I_{zz} = I_{xx} + I_{yy}$. This is true for any object restricted to the $xy$ plane (not just lines). You can easily prove this using the definitions of these values.</p>
 
 <p><br /></p>
 
-<h2 id="in-the-xy-plane">In the $xy$ Plane</h2>
+<hr />
 
-<p>Very often, we make a simplifying assumption that the line lies on the $xy$ plane. So it’s worth precomputing these special cases.</p>
+<p><br /></p>
 
-<p>One interesting thing to notice is that $I_{zz} = I_{xx} + I_{yy}$. You can easily show this using the definitions of these values.</p>
+<h2 id="general">General</h2>
 
-<h3 id="general">General</h3>
+<p>Recall the general <a href="/blog/moments-of-inertia/lines#inertia-tensor">inertia tensor of a line</a> from the previous post. Since we are restricted to the $xy$ plane, $\alpha_z = \pi/2$. Therefore $\sin \alpha_z = 1$ and $\cos \alpha_z = 0$. Furthermore, there is now a much more direct relationship between $\alpha_x$ and $\alpha_y$. It is a bit redundant to use both. Therefore, we use the standard convention from cylindrical and polar coordinate and denote $\phi_L = \alpha_x = \pi/2 - \alpha_y$. We do likewise with $\beta_x$ and $\beta_y$ and denote $\phi_{\text{cm}} = \beta_x = \pi/2 - \beta_y$.</p>
 
-<p><strong>TODO</strong> Draw diagram</p>
+<center>
+<embed src="/svg/moments-of-inertia/9:lines-special-cases/line-inertia-xy-plane-3D.svg" type="image/svg+xml" />
+&emsp;&emsp;&emsp;&emsp;
+<embed src="/svg/moments-of-inertia/9:lines-special-cases/line-inertia-xy-plane-2D.svg" type="image/svg+xml" />
+</center>
 
-<p>Here, $\alpha_z = \pi/2$. Therefore $\sin \alpha_z = 1$ and $\cos \alpha_z = 0$. Also, when using cylindrical or spherical coordinates we typically denote $\phi = \alpha_x$. This means $\alpha_y = \pi/2 - \phi$. Therefore, $\cos \alpha_y = \sin \phi$ and $\sin \alpha_y = \cos \phi$.</p>
+<p>Therefore, the inertia tensor is the following. Recall that $D = \abs{\b{r}_{\text{cm}}}$.</p>
 
-<p><strong>Note</strong> For the signs to work out, we need to measure $\phi_L$ and $\phi_D$ in the standard way we do trig (positive side of the $x$-axis, counterclockwise).</p>
-
-\[I = 
+\[\m{I} = 
 \tfrac{1}{12} M L^2
 \begin{bmatrix}
     \sin^2 \phi_L &amp; - \cos \phi_L \sin \phi_L &amp; 0 \\
@@ -249,21 +222,103 @@ M D^2
 +
 M D^2
 \begin{bmatrix}
-    \sin^2 \phi_D &amp; - \cos \phi_D \sin \phi_D &amp; 0 \\
-    - \sin \phi_D \cos \phi_D &amp; \cos^2 \phi_D &amp; 0 \\
+    \sin^2 \phi_{\text{cm}} &amp; - \cos \phi_{\text{cm}} \sin \phi_{\text{cm}} &amp; 0 \\
+    - \sin \phi_{\text{cm}} \cos \phi_{\text{cm}} &amp; \cos^2 \phi_{\text{cm}} &amp; 0 \\
     0 &amp; 0 &amp; 1
 \end{bmatrix}\]
 
+<p><strong>Note</strong> For the signs of the product of inertia values to be correct, we need to measure $\phi_L$ and $\phi_{\text{cm}}$ using the standard conventions (positive side of the $x$-axis, counterclockwise).</p>
+
+<p>Of course we can also write this in terms of lengths instead of angles.</p>
+
+\[\m{I} = 
+\tfrac{1}{12} M
+\begin{bmatrix}
+    L_y^2 &amp; - L_x L_y &amp; 0 \\
+    - L_y L_x &amp; L_x^2 &amp; 0 \\
+    0 &amp; 0 &amp; L^2
+\end{bmatrix}
++
+M
+\begin{bmatrix}
+    y_{\text{cm}}^2 &amp; - x_{\text{cm}} y_{\text{cm}} &amp; 0 \\
+    - y_{\text{cm}} x_{\text{cm}} &amp; x_{\text{cm}}^2 &amp; 0 \\
+    0 &amp; 0 &amp; D^2
+\end{bmatrix}\]
+
+<p><strong>Note</strong> for the product of inertia values to be correct, we need to measure pairs $(L_x, L_y)$ and $(x_{\text{cm}}, y_{\text{cm}})$ using the standard conventions (right and up are positive).</p>
+
+<h3 id="coordiante-formula">Coordinate Formula</h3>
+
+<p>Let $\b{r}_1 = (x_1, y_1, 0)$ and $\b{r}_2 = (x_2, y_2, 0)$ be the endpoints of the line.</p>
+
+<center>
+<embed src="/svg/moments-of-inertia/9:lines-special-cases/line-inertia-xy-plane-end-points.svg" type="image/svg+xml" />
+</center>
+
+<p>Recall the formula for the <a href="/blog/moments-of-inertia/lines#moment-of-inertia">moments of inertia</a> and <a href="/blog/moments-of-inertia/lines#product-of-inertia">product of inertia</a> from the previous post.</p>
+
+\[\m{I} = 
+\tfrac{1}{3} M
+\begin{bmatrix}
+    y_1^2 + y_2^2 + y_1y_2 &amp; - \tfrac{1}{2}[ (x_2 + x_1) (y_2 + y_1) + x_1y_1 + x_2y_2 ] &amp; 0 \\
+    - \tfrac{1}{2}[ (x_2 + x_1) (y_2 + y_1) + x_1y_1 + x_2y_2 ] &amp; x_1^2 + x_2^2 + x_1x_2 &amp; 0 \\
+    0 &amp; 0 &amp; x_1^2 + y_1^2 + x_2^2 + y_2^2 + x_1x_2 + y_1y_2
+\end{bmatrix}\]
+
+<p>An interesting special case is the following.</p>
+
+\[I_{zz} = \tfrac{1}{3} \abs{\b{r}_2 - \b{r}_1} \left ( \abs{\b{r}_1}^2 + \abs{\b{r}_2}^2 + \b{r}_1 \cdot \b{r}_2 \right )\]
+
+<p>This is cool because we will see a very similar looking for the moment of inertia of a <a href="/blog/moments-of-inertia/triangle-surface">triangular surface</a>. If you can find a similarly nice way to expression $I_{xx}$, $I_{yy}$, and $I_{xy}$ then please <a href="mailto:epkeilty@gmail.com">let me know</a>.</p>
+
 <p><br /></p>
 
-<h3 id="end-at-origin-1">End at Origin</h3>
+<hr />
 
-<p><strong>TOOD</strong> Draw a diagram</p>
+<p><br /></p>
 
-<p>In this case, $\phi_D = \phi_L$ and $D = L/2$. Alternatively, we can take the general case of an end at the origin and set $\alpha_z = \pi/2$.</p>
+<h2 id="at-the-origin">At the Origin</h2>
+
+<h3 id="center-of-mass-at-the-origin">Center of Mass at the Origin</h3>
+
+<p>In this case, $\phi_{\text{cm}} = \phi_L$ and $D = 0$.</p>
+
+<center>
+<embed src="/svg/moments-of-inertia/9:lines-special-cases/line-inertia-xy-plane-cm-at-origin.svg" type="image/svg+xml" />
+</center>
+
+<p>Simplifying from the general case on the $xy$ plane we just solved for in the previous section.</p>
 
 \[\begin{align}
-    I &amp;= 
+    \m{I} &amp;= 
+    \tfrac{1}{12} M L^2
+    \begin{bmatrix}
+        \sin^2 \phi_L &amp; - \cos \phi_L \sin \phi_L &amp; 0 \\
+        - \sin \phi_L \cos \phi_L &amp; \cos^2 \phi_L &amp; 0 \\
+        0 &amp; 0 &amp; 1
+    \end{bmatrix}
+    =
+    \tfrac{1}{12} M
+    \begin{bmatrix}
+        L_y^2 &amp; - L_x L_y &amp; 0 \\
+        - L_y L_x &amp; L_x^2 &amp; 0 \\
+        0 &amp; 0 &amp; L
+    \end{bmatrix}
+\end{align}\]
+
+<h3 id="endpoint-at-the-origin">Endpoint at the Origin</h3>
+
+<p>In this case, $\phi_{\text{cm}} = \phi_L$ and $D = L/2$.</p>
+
+<center>
+<embed src="/svg/moments-of-inertia/9:lines-special-cases/line-inertia-xy-plane-end-at-origin.svg" type="image/svg+xml" />
+</center>
+
+<p>Simplifying from the general case on the $xy$ plane we just solved for in the previous section.</p>
+
+\[\begin{align}
+    \m{I} &amp;= 
     \tfrac{1}{12} M L^2
     \begin{bmatrix}
         \sin^2 \phi_L &amp; - \cos \phi_L \sin \phi_L &amp; 0 \\
@@ -285,18 +340,34 @@ M D^2
         - \sin \phi_L \cos \phi_L &amp; \cos^2 \phi_L &amp; 0 \\
         0 &amp; 0 &amp; 1
     \end{bmatrix}
+    \\[10pt]
+    &amp;=
+    \tfrac{1}{3} M
+    \begin{bmatrix}
+        L_y^2 &amp; - L_x L_y &amp; 0 \\
+        - L_y L_x &amp; L_x^2 &amp; 0 \\
+        0 &amp; 0 &amp; L
+    \end{bmatrix}
 \end{align}\]
 
 <p><br /></p>
 
-<h3 id="ends-on-the-x-axis-and-y-axis">Ends on the $x$ Axis and $y$ Axis</h3>
+<hr />
 
-<p><strong>TODO</strong> Draw diagram</p>
+<p><br /></p>
 
-<p>In this case, $\phi_D = -\phi_L$ and $D = L/2$</p>
+<h2 id="endpoints-on-the-x-axis-and-y-axis">Endpoints on the $x$ Axis and $y$ Axis</h2>
+
+<p>In this case, $\phi_{\text{cm}} = \pi-\phi_L$ and $D = L/2$. To convince yourself that is true requires a bit of geometry.</p>
+
+<center>
+<embed src="/svg/moments-of-inertia/9:lines-special-cases/line-inertia-xy-plane-ends-on-axis.svg" type="image/svg+xml" />
+</center>
+
+<p>Simplifying from the general case on the $xy$ plane we just solved for in the previous section.</p>
 
 \[\begin{align}
-    I &amp;= 
+    \m{I} &amp;= 
     \tfrac{1}{12} M L^2
     \begin{bmatrix}
         \sin^2 \phi_L &amp; - \cos \phi_L \sin \phi_L &amp; 0 \\
@@ -318,17 +389,39 @@ M D^2
         \tfrac{1}{2} \sin \phi_L \cos \phi_L &amp; \cos^2 \phi_L &amp; 0 \\
         0 &amp; 0 &amp; 1
     \end{bmatrix}
+    \\[10pt]
+    &amp;=
+    \tfrac{1}{3} M
+    \begin{bmatrix}
+        L_y^2 &amp; \tfrac{1}{2} L_x L_y &amp; 0 \\
+        \tfrac{1}{2} L_y L_x &amp; L_x^2 &amp; 0 \\
+        0 &amp; 0 &amp; L
+    \end{bmatrix}
 \end{align}\]
+
+<p>Be careful with the sign of $L_x$ and $L_y$ when applying the formula. For instance, in the above diagram $L_x$ is negative while $L_y$ is positive.</p>
 
 <p><br /></p>
 
-<h3 id="parallel-and-perpendicular">Parallel and Perpendicular</h3>
+<hr />
 
-<p><strong>TOOD</strong> Draw a diagram</p>
+<p><br /></p>
 
-<p>Here $\phi_L = 0$, i.e. the line is parallel to the $x$-axis.</p>
+<h2 id="parallel-to-x-axis-and-perpendicular-to-y-axis">Parallel to $x$ Axis and Perpendicular to $y$ Axis</h2>
 
-\[I = 
+<p>In these special cases, we assume $\phi_L = 0$, i.e. the line is parallel to the $x$-axis. Of course, if we instead assume that $\phi_L = \pi/2$ (the line is parallel to the $y$-axis), then the inertia tensors can be derived symmetrically.</p>
+
+<h3 id="parallel-perpendicular-general">General</h3>
+
+<p>First, we consider the general case.</p>
+
+<center>
+<embed src="/svg/moments-of-inertia/9:lines-special-cases/line-inertia-xy-plane-parallel-and-perpendicular.svg" type="image/svg+xml" />
+</center>
+
+<p>Simplifying from the general case on the $xy$ plane we just solved for in the previous section. Recall that $D = \abs{\b{r}_{\text{cm}}}$.</p>
+
+\[\m{I} = 
 \tfrac{1}{12} M L^2
 \begin{bmatrix}
     0 &amp; 0 &amp; 0 \\
@@ -338,14 +431,39 @@ M D^2
 +
 M D^2
 \begin{bmatrix}
-    \sin^2 \phi_D &amp; - \cos \phi_D \sin \phi_D &amp; 0 \\
-    - \sin \phi_D \cos \phi_D &amp; \cos^2 \phi_D &amp; 0 \\
+    \sin^2 \phi_{\text{cm}} &amp; - \cos \phi_{\text{cm}} \sin \phi_{\text{cm}} &amp; 0 \\
+    - \sin \phi_{\text{cm}} \cos \phi_{\text{cm}} &amp; \cos^2 \phi_{\text{cm}} &amp; 0 \\
     0 &amp; 0 &amp; 1
 \end{bmatrix}\]
 
-<p>If we assume the line intersects the axis at its center of mass, we simply have</p>
+<p>Again, we can instead write this in terms of lengths.</p>
 
-\[I = 
+\[\m{I} = 
+\tfrac{1}{12} M L^2
+\begin{bmatrix}
+    0 &amp; 0 &amp; 0 \\
+    0 &amp; 1 &amp; 0 \\
+    0 &amp; 0 &amp; 1
+\end{bmatrix}
++
+M
+\begin{bmatrix}
+    y_{\text{cm}}^2 &amp; - x_{\text{cm}} y_{\text{cm}} &amp; 0 \\
+    - y_{\text{cm}} x_{\text{cm}} &amp; x_{\text{cm}}^2 &amp; 0 \\
+    0 &amp; 0 &amp; 1
+\end{bmatrix}\]
+
+<h3 id="centered-at-a-distance">Centered at a Distance</h3>
+
+<p>Now we assume the line intersects the axis at its center of mass. Therefore $\phi_{\text{cm}} = \pi/2$.</p>
+
+<center>
+<embed src="/svg/moments-of-inertia/9:lines-special-cases/line-inertia-xy-plane-parallel-and-perpendicular-2.svg" type="image/svg+xml" />
+</center>
+
+<p>Simplifying from the previous result.  Recall that $D = \abs{\b{r}_{\text{cm}}}$.</p>
+
+\[\m{I} = 
 \tfrac{1}{12} M L^2
 \begin{bmatrix}
     0 &amp; 0 &amp; 0 \\
@@ -367,9 +485,17 @@ M
     0 &amp; 0 &amp; \tfrac{1}{12} L^2 + D^2
 \end{bmatrix}\]
 
-<p>Now, if $D = 0$, we get</p>
+<h3 id="centered-on-an-axis">Center on an Axis</h3>
 
-\[I = 
+<p>Finally, we assume the center of mass is at the origin ($D = 0$).</p>
+
+<center>
+<embed src="/svg/moments-of-inertia/9:lines-special-cases/line-inertia-xy-plane-parallel-and-perpendicular-3.svg" type="image/svg+xml" />
+</center>
+
+<p>We can either simplify from the previous result, or from the <a href="#center-of-mass-at-the-origin">Center of Mass at the Origin</a> result.</p>
+
+\[\m{I} = 
 \tfrac{1}{12} M L^2
 \begin{bmatrix}
     0 &amp; 0 &amp; 0 \\
@@ -378,62 +504,6 @@ M
 \end{bmatrix}\]
 
 <p>This gives us the standard formula you will see for the moment of inertia of a line.</p>
-
-<hr />
-
-<p><br /></p>
-
-<h2 id="old">Old</h2>
-
-<h3 id="perpendicular-to-the-axis-of-rotation">Perpendicular to the Axis of Rotation</h3>
-
-<p>This is the special case where $\alpha = 90^{\circ}$.</p>
-
-<center>
-<embed src="/svg/moments-of-inertia/9:lines-special-cases/line-inertia-perpendicular.svg" type="image/svg+xml" />
-</center>
-
-<p><br /></p>
-
-<p>Substituting into the general equation, we get the following.</p>
-
-\[I = \tfrac{1}{12} ML^2 + M D_{\text{cm}}^2\]
-
-<p><br /></p>
-
-<h3 id="parallel-to-the-axis-of-rotation">Parallel to the Axis of Rotation</h3>
-
-<p>This is the special case where $\alpha = 0$. Since the line is parallel to the axis of rotation, all points on the are the same distance from the axis of rotation. Therefore, we will just call $D_{\text{cm}} = D$.</p>
-
-<center>
-<embed src="/svg/moments-of-inertia/9:lines-special-cases/line-inertia-parallel.svg" type="image/svg+xml" />
-</center>
-
-<p><br /></p>
-
-<p>Substituting into the general equation, we get the following.</p>
-
-\[I = M D^2\]
-
-<p><br /></p>
-
-<h3 id="rotating-about-a-lines-end">Rotating About a Line’s End</h3>
-
-<center>
-<embed src="/svg/moments-of-inertia/9:lines-special-cases/line-inertia-end.svg" type="image/svg+xml" />
-</center>
-
-<p>We can do some geometry and show that</p>
-
-\[D_{\text{cm}} = \tfrac{1}{2} L \sin \alpha\]
-
-<p>Therefore, we can simplify the moment of inertia equation.</p>
-
-\[I = \tfrac{1}{12} M L^2 \sin^2 \alpha + M (\tfrac{1}{2} L \sin \alpha)^2 = \tfrac{1}{3} M L^2 \sin^2 \alpha\]
-
-<p>And, of course, if the line happens to be perpendicular to the axis of rotation ($\alpha = 90$), we can further simplify.</p>
-
-\[I = \tfrac{1}{3} M L^2\]
 
         </div>
 

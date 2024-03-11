@@ -103,3 +103,49 @@ a.post-link-item:focus {
 .table-left-col-thick-line tr td:first-child {
   border-right: 2px solid black; /* Add a thicker line to the right of the left-most column */
 }
+
+/* Something to think about adding later - adding clickable anchors on headings */
+/* https://ben.balter.com/2014/03/13/pages-anchor-links */
+
+
+/* Tooltip */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted #e0992b;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: auto;
+  background-color: #fffaf3;
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px 10px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%); /* Center the tooltip horizontally */
+  opacity: 0;
+  border: 1px solid black;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}

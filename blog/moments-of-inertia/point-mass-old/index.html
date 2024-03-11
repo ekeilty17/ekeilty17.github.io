@@ -10,7 +10,7 @@
 
   <title>
     
-      Lines - Special Cases &middot; Eric Keilty
+      Point Mass (Alternative Formulation) &middot; Eric Keilty
     
   </title>
 
@@ -151,35 +151,73 @@
     <div class="content container">
 
         <div class="post">
-            <h1 class="post-title">Lines - Special Cases</h1>
-            <!-- <span class="series-date">28 Sep 2023</span> -->
-            <time datetime="2023-09-28T00:00:00-04:00" class="post-date">28 Sep 2023</time>
+            <h1 class="post-title">Point Mass (Alternative Formulation)</h1>
+            <!-- <span class="series-date">30 Oct 2023</span> -->
+            <time datetime="2023-10-30T00:00:00-04:00" class="post-date">30 Oct 2023</time>
             <!-- maybe I'll add tagging later
             <span class="post-date" style="margin-top:-1em;"> ["moments-of-inertia"] </span>
             -->
-            <p>let $\otimes$ denote the 
-<span class="tooltip">outer product 
-    <span class="tooltiptext"> 
-    \(\boldsymbol{u} \otimes \boldsymbol{v} = \begin{bmatrix}
-        u_1 v_1 &amp; u_1 v_2 &amp; \cdots &amp; u_1 v_n \\
-        u_2 v_1 &amp; u_2 v_2 &amp; \cdots &amp; u_2 v_n \\
-        \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
-        u_m v_1 &amp; u_m v_2 &amp; \cdots &amp; u_m v_n
-    \end{bmatrix}\)
-    </span>
-</span>
-and $\m{ \mathbb{I} }$ be the 
-<span class="tooltip">identity matrix
-    <span class="tooltiptext"> 
-    \(\left [ \; \mathbb{I} \; \right ] = \begin{bmatrix}
-        1 &amp; 0 &amp; \cdots &amp; 0 \\
-        0 &amp; 1 &amp; \cdots &amp; 0 \\
-        \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
-        0 &amp; 0 &amp; \cdots &amp; 1
-    \end{bmatrix}\)
-    </span>
-</span>
-.</p>
+            <p><strong>TODO</strong></p>
+
+<p>This is a bit of a weird post. It didn’t feel appropriate to put into the background, but technically a point mass isn’t a curve. The purpose of this post is to first act as an easy example of the application of the parallel axis theorem, and second show a reformulation of the parallel axis theorem that will be used</p>
+
+<p>There are two ways to analyze the moment of inertia of an object: coordinate dependent or coordinate independent. When I gave the definition of the moment of inertia of a point mass, this formula was expressed as coordinate <em>independent</em></p>
+
+\[I = mR^2\]
+
+<p>This formula only depends on the geometry of the system, i.e. the distance of the point mass relative to the axis of rotation. On the other hand, when I write down the inertia tensor, I am implicitly assuming a $\text{3D}$ Cartesian coordinate system.</p>
+
+\[\m{I} = 
+\begin{bmatrix}
+    0 &amp; 0 &amp; 0 \\
+    0 &amp; mR^2 &amp; 0 \\
+    0 &amp; 0 &amp; 0
+\end{bmatrix}\]
+
+<h2 id="another-formulations">Another formulations</h2>
+
+\[\m{I} = m
+\begin{bmatrix}
+    y^2 + z^2 &amp; - x y &amp; - x z \\
+    - y x &amp; z^2 + x^2 &amp; - y z \\
+    - z x &amp; - z y &amp; x^2 + y^2
+\end{bmatrix}\]
+
+<p>The reason this is the way people write it is because it’s easy for computers to use. However, there is another to formulate this that I think in some ways is even more elegant. Consider the following.</p>
+
+<p>In the right figure, $\alpha_x$, $\alpha_y$, and $\alpha_z$ are the angles of the vector $\b{r}$ to the $x$, $y$, and $z$ axes, respectively. Using some geometry, you can prove that.</p>
+
+\[\begin{align}
+    R \sin \alpha_x &amp;= y^2 + z^2
+    &amp;
+    R \cos \alpha_x &amp;= x
+    \\[10pt]
+    R \sin \alpha_y &amp;= z^2 + x^2
+    &amp;
+    R \cos \alpha_y &amp;= y
+    \\[10pt]
+    R \sin \alpha_z &amp;= x^2 + y^2
+    &amp;
+    R \cos \alpha_z &amp;= z
+\end{align}\]
+
+<p>Therefore, we can refactor the inertia tensor as the following.</p>
+
+\[\m{I} =
+mR^2
+\begin{bmatrix}
+    \sin^2 \alpha_x &amp; - \cos \alpha_x \cos \alpha_y &amp; - \cos \alpha_x \cos \alpha_z \\
+    - \cos \alpha_y \cos \alpha_x &amp; \sin^2 \alpha_y &amp; - \cos \alpha_y \cos \alpha_z \\
+    - \cos \alpha_z \cos \alpha_x &amp; - \cos \alpha_z \cos \alpha_y &amp; \sin^2 \alpha_z
+\end{bmatrix}\]
+
+<p>We can write this more compactly as the following</p>
+
+\[\m{I} = mR^2 (\m{\mathbb{I}} - \cos(\b{\alpha}) \otimes \cos(\b{\alpha}))\]
+
+<p>where</p>
+
+\[\b{\alpha} = [\alpha_x \ \alpha_y \ \alpha_z]^T\]
 
         </div>
 
@@ -202,10 +240,10 @@ and $\m{ \mathbb{I} }$ be the
 
         <div class="pagination" style="margin-top:1em;">
             
-                <span class="pagination-item older">Previous</span>
+                <a class="pagination-item older" href="/blog/moments-of-inertia/triangle-old/">Previous</a>
             
             
-                <a class="pagination-item newer" href="/blog/moments-of-inertia/triangle-old/">Next</a>
+                <span class="pagination-item newer">Next</span>
             
         </div>
         <h3 style="text-align:center; margin-bottom:1em;">

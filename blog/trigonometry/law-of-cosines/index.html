@@ -181,25 +181,49 @@ c^2 = a^2 + b^2 - 2ab \cos(C)\]
   <li>$x + y = a$</li>
   <li>$x = c \cos B$</li>
   <li>$h = c \sin B$</li>
-  <li>$x^2 + h^2 = c^2$</li>
+  <li>$y^2 + h^2 = b^2$</li>
 </ol>
 
 <p>There are a couple of ways to do this. One way is to first substitute (1) into (4)</p>
 
-\[(a - y)^2 + h ^2 = c^2\]
+<!-- 
+$$
+(a - y)^2 + h^2 = c^2
+$$
 
-<p>Then substitute (2) and (3) into to get</p>
+Then substitute (2) and (3) into to get
 
-\[(a - b \cos C)^2 + (b \sin C)^2 = c^2\]
+$$
+(a - b \cos C)^2 + (b \sin C)^2 = c^2
+$$
+
+Now, we do some algebra to simplify and utilize the Pythagorean identity ($\cos^2 \theta + \sin^2 \theta = 1$)
+
+$$
+\begin{align}
+    c^2 
+    &= (a - b \cos C)^2 + (b \sin C)^2 \\[10pt]
+    &= a^2 - 2ab\cos C + b^2 \cos^2 C + b^2 \sin^2 C \\[10pt]
+    &= a^2 + b^2 (\cos^2 C + \sin^2 C) - 2ab\cos C  \\[10pt]
+    &= a^2 + b^2 - 2ab\cos C
+\end{align}
+$$ 
+-->
+
+\[(a - x)^2 + h^2 = c^2\]
+
+<p>Then substitute (2) and (3) into the above to get</p>
+
+\[(a - c \cos B)^2 + (c \sin B)^2 = b^2\]
 
 <p>Now, we do some algebra to simplify and utilize the Pythagorean identity ($\cos^2 \theta + \sin^2 \theta = 1$)</p>
 
 \[\begin{align}
-    c^2 
-    &amp;= (a - b \cos C)^2 + (b \sin C)^2 \\[10pt]
-    &amp;= a^2 - 2ab\cos C + b^2 \cos^2 C + b^2 \sin^2 C \\[10pt]
-    &amp;= a^2 + b^2 (\cos^2 C + \sin^2 C) - 2ab\cos C  \\[10pt]
-    &amp;= a^2 + b^2 - 2ab\cos C
+    b^2 
+    &amp;= (a - c \cos B)^2 + (c \sin B)^2 \\[10pt]
+    &amp;= a^2 - 2ac\cos B + c^2 \cos^2 B + c^2 \sin^2 B \\[10pt]
+    &amp;= a^2 + c^2 (\cos^2 B + \sin^2 B) - 2ac\cos B  \\[10pt]
+    &amp;= a^2 + c^2 - 2ac\cos B
 \end{align}\]
 
 <p>The argument works symmetrically for the other two laws.</p>
@@ -249,6 +273,46 @@ c^2 = a^2 + b^2 - 2ab \cos(C)\]
 \end{align}\]
 
 <p>The proof for the other two angles is exactly the same as the acute triangle case.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="vector-proof">Vector Proof</h2>
+
+<p>If you are familiar with linear alebra and vectors, then the proof of the law of cosines becomes even easier. Let $\b{a}$, $\b{b}$, and $\b{c}$ denote the vector representation of the sides of the triangle.</p>
+
+<center>
+<embed src="/svg/trigonometry/15:law-of-cosines/LoC-vectors.svg" type="image/svg+xml" />
+</center>
+
+<p>Notice that I have carefully chosen the directions of the vectors such that $\b{b} = \b{a} - \b{c}$. Now, the proof just takes advantage of the properties of the 
+<span class="tooltip">dot product
+    <span class="tooltiptext"> 
+    \(\displaystyle \boldsymbol{u} \cdot \boldsymbol{v} = \sum_{i=1}^n u_i v_i\)
+    </span>
+</span>. In particular, 
+<span class="tooltip">distributivity
+    <span class="tooltiptext"> 
+    \(\displaystyle \boldsymbol{u} \cdot ( \boldsymbol{v} + \boldsymbol{w} ) = \boldsymbol{u} \cdot \boldsymbol{v} + \boldsymbol{u} \cdot \boldsymbol{w}\)
+    </span>
+</span> and 
+<span class="tooltip">commutativity
+    <span class="tooltiptext"> 
+    \(\displaystyle \boldsymbol{u} \cdot \boldsymbol{v} = \boldsymbol{v} \cdot \boldsymbol{u}\)
+    </span>
+</span>.</p>
+
+\[\begin{align}
+    \abs{\b{b}}^2 
+    &amp;= \abs{\b{a} - \b{c}}^2 \\[10pt]
+    &amp;= (\b{a} - \b{c}) \cdot (\b{a} - \b{c}) \\[10pt]
+    &amp;= \b{a} \cdot \b{a} - \b{a} \cdot \b{c} - \b{c} \cdot \b{a} + \b{c} \cdot \b{c} \\[10pt]
+    &amp;= \abs{\b{a}}^2 + \abs{\b{c}}^2 - 2 (\b{a} \cdot \b{c}) \\[10pt]
+    &amp;= \abs{\b{a}}^2 + \abs{\b{c}}^2 - 2 \abs{\b{a}} \abs{\b{c}} \cos B \\[10pt]
+\end{align}\]
 
         </div>
 

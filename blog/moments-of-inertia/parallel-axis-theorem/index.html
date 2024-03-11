@@ -152,53 +152,218 @@
 
         <div class="post">
             <h1 class="post-title">Parallel Axis Theorem</h1>
-            <!-- <span class="series-date">07 Sep 2023</span> -->
-            <time datetime="2023-09-07T00:00:00-04:00" class="post-date">07 Sep 2023</time>
+            <!-- <span class="series-date">06 Feb 2024</span> -->
+            <time datetime="2024-02-06T00:00:00-05:00" class="post-date">06 Feb 2024</time>
             <!-- maybe I'll add tagging later
             <span class="post-date" style="margin-top:-1em;"> ["moments-of-inertia, ",  "parallel-axis"] </span>
             -->
-            <p><strong>TODO</strong> This post is not finished</p>
+            <h2 id="a-fixed-axis-of-rotation">A Fixed Axis of Rotation</h2>
 
-<p>Thus far, each of the axes of rotation have been intentionally chosen to pass through the object’s center of mass. What if this is not the case? What if we want to rotate the object about another axis? For this, we use the <strong>parallel axis theorem</strong>.</p>
+<h3 id="theorem">Theorem</h3>
+
+<p>Suppose we know the moment of inertia of object $\mathcal{G}$ with respect to a fixed axis of rotation passing through its <strong>center of mass</strong>. Now consider another axis of rotation which is parallel to and a distance $D$ away from the original axis.</p>
+
+<p><strong>TODO</strong> draw diagram</p>
+
+<p>Then the <strong>parallel axis theorem</strong> says the following.</p>
 
 \[I_{\text{parallel axis}} = I_{\text{central axis}} + MD^2\]
 
-<p>where $D$ is the shortest distance from the object’s center of mass to the new axis of rotation.</p>
-
 <p><br /></p>
 
-<h2 id="proof">Proof</h2>
+<h3 id="proof">Proof</h3>
 
-<p>Given an arbitrary point, let $r_{\text{central axis}}$ be the distance of that point to the central axis of rotation. Similarly, let $r_{\text{parallel axis}}$ be the distance of that point to the parallel axis of rotation. Let $d$ be the distance between the central axis to the parallel axis. Thus, $D = \abs{r_{\text{central axis}} - r_{\text{parallel axis}}}$. Note that $d$ is constant with respect to the object (and therefore is a constant during integration).</p>
+<p>Define a Cartesian coordinate system with respect to any fixed origin. Fix some arbitrary point in object $\mathcal{G}$, and let $\b{r}$ be its position vector. Let $r_{\text{central axis}}$ and $r_{\text{parallel axis}}$ be the shortest distance from this fixed point to their respective axes.</p>
 
-<p>I apologize for using $d$ as a variable in an integral, but it’s the standard variable used in the parallel axis theorem.</p>
+<p><strong>TODO</strong> draw diagram</p>
+
+<p>Notice that</p>
+
+\[r_{\text{parallel axis}} = r_{\text{central axis}} + D\]
+
+<p>Now, let’s find the moment of inertia with respect to the parallel axis of rotation.</p>
 
 \[\begin{align}
     I_{\text{parallel axis}} 
-    &amp;= \int r_{\text{parallel axis}}^2 \;dm \\[10pt]
-    &amp;= \int (r_{\text{central axis}} - D)^2 \;dm \\[10pt]
-    &amp;= \int (r_{\text{central axis}}^2 + D^2 - 2 D r_{\text{central axis}}) \;dm \\[10pt]
-    &amp;= \left ( \int r_{\text{central axis}}^2 \;dm \right ) + \left ( \int d^2 \;dm \right ) + \left ( \int 2 D r_{\text{central axis}} \;dm \right ) \\[10pt]
-    &amp;= \left ( \int r_{\text{central axis}}^2 \;dm \right ) + \left ( d^2 \int \;dm \right ) + \left (  2 D \int r_{\text{central axis}} \;dm \right ) \\[10pt]
+    &amp;= \int_{\mathcal{G}} r_{\text{parallel axis}}^2 \;dm \\[10pt]
+    &amp;= \int_{\mathcal{G}} (r_{\text{central axis}} + D)^2 \;dm \\[10pt]
+    &amp;= \int_{\mathcal{G}} (r_{\text{central axis}}^2 + D^2 + 2 D r_{\text{central axis}}) \;dm \\[10pt]
+    &amp;= \left ( \int_{\mathcal{G}} r_{\text{central axis}}^2 \;dm \right ) + \left ( \int_{\mathcal{G}} D^2 \;dm \right ) + \left ( \int_{\mathcal{G}} 2 D r_{\text{central axis}} \;dm \right ) \\[10pt]
+    &amp;= \left ( \int_{\mathcal{G}} r_{\text{central axis}}^2 \;dm \right ) + \left ( D^2 \int_{\mathcal{G}} \;dm \right ) + \left (  2 D \int_{\mathcal{G}} r_{\text{central axis}} \;dm \right ) \\[10pt]
     &amp;= \left ( I_{\text{central axis}} \right ) + \left ( M D^2 \right ) + \left ( 0 \right ) \\[10pt]
     &amp;= I_{\text{central axis}} +  M D^2
 \end{align}\]
 
 <p><br /></p>
 
-<p>Now, we have to argue why 
+<p>Lastly, we just have to argue why 
 \(\displaystyle
-\int r_{\text{central axis}} \;dm = 0\).
-Essentially this is due to symmetry, since a central axis of rotation (by definition) passes through the center of mass of the object.</p>
+\int_{\mathcal{G}} r_{\text{central axis}} \;dm = 0\).
+Essentially this is due to symmetry, since a central axis of rotation (by definition) passes through the center of mass of the object. This completes the proof.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="generalized-parallel-axis-theorem">Generalized Parallel Axis Theorem</h2>
+
+<h3 id="theorem-1">Theorem</h3>
+
+<p>We can generalize the parallel axis theorem so that it can be applied to an inertia tensor. Fix any coordinate system. Suppose we know the inertia tensor of a object $\mathcal{G}$ with mass $M$ such that its <strong>center of mass</strong> is positioned at the origin, denoted $\m{I_{\text{cm}}}$. Now suppose that object $\mathcal{G}$ is translated anywhere in the coordinate system such that its center of mass is now at coordinate $\b{D} = D_x \; \u{x} + D_y \; \u{y} + D_z \; \u{z}$.</p>
+
+<p><strong>TODO</strong> draw diagram</p>
+
+<p>Then, the generalized parallel axis theorem tells us the following.</p>
+
+\[\m{ I_{\text{translated}} } = 
+\m{I_{\text{cm}}} + M 
+\begin{bmatrix}
+    D_y^2 + D_z^2 &amp; - D_xD_y &amp; - D_xD_z \\
+    - D_yD_x  &amp; D_z^2 + D_x^2 &amp; - D_yD_z \\
+    - D_zD_x  &amp; - D_zD_y &amp; D_x^2 + D_y^2
+\end{bmatrix}\]
+
+<p>We can also express this compactly, where $\otimes$ denote the outer product and $\m{ \mathbb{I} }$ is the identity matrix.</p>
+
+\[\m{ I_{\text{translated}} } = 
+\m{I_{\text{cm}}} + M (D^2 \m{\mathbb{I}} - \b{D} \otimes \b{D})\]
+
+<!-- Essentially, this theorem tells us how the moment of inertia of an object changes under any translation.  -->
+
+<h3 id="proof-1">Proof</h3>
+
+<p>This is a bit more technical, but it’s the same idea as the first proof. Fix some arbitrary point in object $\mathcal{G}$. Let $\b{r} = x \; \u{x} + y \; \u{y} + z \; \u{z}$ be its original position vector and let $\b{r}’ = x’ \; \u{x} + y’ \; \u{y} + z’ \; \u{z}$ denote its position vector after translated.</p>
+
+<p><strong>TODO</strong> draw diagram</p>
+
+<p>Therefore, $\b{r}’ = \b{r} + \b{D}$. Unrolling this element-wise, we have</p>
+
+\[x' = x + D_x
+\qquad
+y' = y + D_y
+\qquad
+z' = z + D_z\]
+
+<p>Now, let’s find the inertia tensor of the translated object.</p>
+
+\[\begin{align}
+    \m{ I_{\text{translated}} }
+    &amp;= \int_{\mathcal{G}} \begin{bmatrix}
+        (y')^2 + (z')^2 &amp; - x'y' &amp; - x'z' \\
+        - y'x'  &amp; (z')^2 + (x')^2 &amp; - y'z' \\
+        - z'x'  &amp; - z'y' &amp; (x')^2 + (y')^2
+    \end{bmatrix} \;dm \\[10pt]
+    &amp;= \int_{\mathcal{G}} \begin{bmatrix}
+        (y + D_y)^2 + (z + D_z)^2 &amp; - (x + D_x)(y + D_y) &amp; - (x + D_x)(z + D_z) \\
+        - (y + D_y)(x + D_x)  &amp; (z + D_z)^2 + (x + D_x)^2 &amp; - (y + D_y)(z + D_z) \\
+        - (z + D_z)(x + D_x)  &amp; - (z + D_z)(y + D_y) &amp; (x + D_x)^2 + (y + D_y)^2
+    \end{bmatrix} \;dm \\[10pt]
+    &amp;= \int_{\mathcal{G}} \begin{bmatrix}
+        (y^2 + 2yD_y + D_y^2) + (z^2 + 2zD_z + D_z^2) &amp; - xy - xD_x - yD_y - D_xD_y &amp; - xz - xD_x - zD_z - D_xD_z \\
+        - yx - yD_y - xD_x - D_yD_x &amp; (z^2 + 2zD_z + D_z^2) + (x^2 + 2xD_x + D_x^2) &amp; - yz - yD_y - zD_z - D_yD_z \\
+        - zx - zD_z - xD_x - D_zD_x &amp; - zy - zD_z - yD_y - D_zD_y &amp; (x^2 + 2xD_x + D_x^2) + (y^2 + 2yD_y + D_y^2)
+    \end{bmatrix} \;dm \\[10pt]
+    &amp;= \int_{\mathcal{G}} \begin{bmatrix}
+        y^2 + z^2 &amp; - xy &amp; - xz \\
+        - yx  &amp; z^2 + x^2 &amp; - yz \\
+        - zx  &amp; - zy &amp; x^2 + y^2
+    \end{bmatrix} \;dm 
+    +
+    D_x \begin{bmatrix}
+          0 &amp; - 1 &amp; - 1 \\
+        - 1  &amp;  2 &amp;  0 \\
+        - 1  &amp;  0 &amp;  2
+    \end{bmatrix}
+    \int_{\mathcal{G}} x \; dm
+    +
+    D_y \begin{bmatrix}
+          2 &amp; - 1 &amp;   0 \\
+        - 1 &amp;   0 &amp; - 1 \\
+          0 &amp; - 1 &amp;   2
+    \end{bmatrix}
+    \int_{\mathcal{G}} y \; dm
+    +
+    D_z \begin{bmatrix}
+          2 &amp;   0 &amp; - 1 \\
+          0 &amp;   2 &amp; - 1 \\
+        - 1 &amp; - 1 &amp;   0
+    \end{bmatrix}
+    \int_{\mathcal{G}} z \; dm
+    +
+    \begin{bmatrix}
+        D_y^2 + D_z^2 &amp; - D_xD_y &amp; - D_xD_z \\
+        - D_yD_x  &amp; D_z^2 + D_x^2 &amp; - D_yD_z \\
+        - D_zD_x  &amp; - D_zD_y &amp; D_x^2 + D_y^2
+    \end{bmatrix}
+    \int_{\mathcal{G}} \; dm
+    \\[10pt]
+    &amp;= \m{I_{\text{cm}}} + M 
+    \begin{bmatrix}
+        D_y^2 + D_z^2 &amp; - D_xD_y &amp; - D_xD_z \\
+        - D_yD_x  &amp; D_z^2 + D_x^2 &amp; - D_yD_z \\
+        - D_zD_x  &amp; - D_zD_y &amp; D_x^2 + D_y^2
+    \end{bmatrix}
+\end{align}\]
+
+<p>Just as before, we know that</p>
+
+\[\int_{\mathcal{G}} x \; dm = \int_{\mathcal{G}} y \; dm = \int_{\mathcal{G}} z \; dm = 0\]
+
+<p>since object $\mathcal{G}$ is assumed to have its center of mass at the origin.</p>
+
+<p><br /></p>
+
+<h3 id="an-alternative-formulation">An Alternative Formulation</h3>
+
+<p>This is an interesting reformation that I discovered, which I think it more elegant. Consider the translation vector $\b{D}$, and consider the angles it makes with respect to the $x$, $y$, and $z$ axes, which we label $\alpha_x$, $\alpha_y$, and $\alpha_z$, respectively.</p>
+
+<center>
+<embed src="/svg/moments-of-inertia/5:parallel-axis-theorem/center-of-mass-lengths.svg" type="image/svg+xml" />
+&emsp;&emsp;&emsp;&emsp;
+<embed src="/svg/moments-of-inertia/5:parallel-axis-theorem/center-of-mass-angles.svg" type="image/svg+xml" />
+</center>
+
+<p>Using some geometry, you can prove that.</p>
+
+\[\begin{align}
+    D_y^2 + D_z^2 &amp;= D \sin \alpha_x
+    &amp;\quad
+    D_x &amp;= D \cos \alpha_x
+    \\[10pt]
+    D_z^2 + D_x^2 &amp;= D \sin \alpha_y 
+    &amp;\quad
+    D_y &amp;= D \cos \alpha_y 
+    \\[10pt]
+    D_x^2 + D_y^2 &amp;= D \sin \alpha_z 
+    &amp;\quad
+    D_z &amp;= D \cos \alpha_z 
+\end{align}\]
+
+<p>Therefore, we can refactor the inertia tensor as the following.</p>
+
+\[\m{I_{\text{translated}}} = \m{I_{\text{cm}}} + M D^2
+    \begin{bmatrix}
+        \sin^2 \alpha_x &amp; - \cos \alpha_x \cos \alpha_y &amp; - \cos \alpha_x \cos \alpha_z \\
+        - \cos \alpha_y \cos \alpha_x &amp; \sin^2 \alpha_y &amp; - \cos \alpha_y \cos \alpha_z \\
+        - \cos \alpha_z \cos \alpha_x &amp; - \cos \alpha_z \cos \alpha_y &amp; \sin^2 \alpha_z
+    \end{bmatrix}\]
+
+<p>This can be written compactly as follows, where $\b{\alpha} = [\alpha_x \ \ \alpha_y \ \ \alpha_z]^T$ and $\cos(\b{\alpha})$ is evaluated element-wise.</p>
+
+\[\m{I_{\text{translated}}} = \m{I_{\text{cm}}} + M D^2 (\m{\mathbb{I}} - \cos(\b{\alpha}) \otimes \cos(\b{\alpha}))\]
+
+<p>There are two nice things about this. First, the matrix that is left over is unitary, which means it is a pure rotation matrix. Second, when you start taking special cases usually the angle of the object with respect to the axis of rotation is easier to work with.</p>
 
 <!-- <br>
 
 ## Example: Thin Rod About Exterior Diameter
 
 <center>
-<embed src="/svg/moments-of-inertia/6:parallel-axis-theorem/thin-rod.svg" type="image/svg+xml" />
+<embed src="/svg/moments-of-inertia/5:parallel-axis-theorem/thin-rod.svg" type="image/svg+xml" />
 &emsp;&emsp;&emsp;&emsp;
-<embed src="/svg/moments-of-inertia/6:parallel-axis-theorem/thin-rod-parallel-axis.svg" type="image/svg+xml" />
+<embed src="/svg/moments-of-inertia/5:parallel-axis-theorem/thin-rod-parallel-axis.svg" type="image/svg+xml" />
 </center>
 
 <br>
@@ -230,10 +395,10 @@ $$ -->
 
         <div class="pagination" style="margin-top:1em;">
             
-                <a class="pagination-item older" href="/blog/moments-of-inertia/principal-axes/">Previous</a>
+                <a class="pagination-item older" href="/blog/moments-of-inertia/vector-integration/">Previous</a>
             
             
-                <a class="pagination-item newer" href="/blog/moments-of-inertia/point-mass/">Next</a>
+                <a class="pagination-item newer" href="/blog/moments-of-inertia/principal-axis-theorem/">Next</a>
             
         </div>
         <h3 style="text-align:center; margin-bottom:1em;">

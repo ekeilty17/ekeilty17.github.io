@@ -152,8 +152,8 @@
 
         <div class="post">
             <h1 class="post-title">Definition of the Mass Moment of Inertia</h1>
-            <!-- <span class="series-date">02 Sep 2023</span> -->
-            <time datetime="2023-09-02T00:00:00-04:00" class="post-date">02 Sep 2023</time>
+            <!-- <span class="series-date">02 Feb 2024</span> -->
+            <time datetime="2024-02-02T00:00:00-05:00" class="post-date">02 Feb 2024</time>
             <!-- maybe I'll add tagging later
             <span class="post-date" style="margin-top:-1em;"> ["moments-of-inertia"] </span>
             -->
@@ -161,7 +161,7 @@
 
 <h2 id="point-mass">Point Mass</h2>
 
-<p>Suppose we have a point mass $m$ which is rotating a distance $R$ away from a fixed axis of rotation with angular velocity $\omega$.</p>
+<p>Suppose we have a point mass $m$ which is rotating a distance $R$ away from a fixed axis of rotation with angular velocity $\omega$. Recall that the tangential velocity is $v = R\omega$.</p>
 
 <center>
 <embed src="/svg/moments-of-inertia/1:definition-of-the-mass-moment-of-inertia/point-mass.svg" type="image/svg+xml" />
@@ -173,25 +173,29 @@
 
 <p>Notice that $m R^2$ only depends on the geometry of the mass while $\omega$ only depends on the motion of the mass. While $\omega$ may change over time, $m R^2$ is constant for each object (at least in this idealized scenario). Therefore, it is natural to separate this term out and give it a name. We call this the <strong>mass moment of inertia</strong> or <strong>rotational inertia</strong> of the point mass.</p>
 
-\[I = m R^2
+\[L = I \omega
 \qquad\qquad\qquad
-L = I \omega\]
+I = m R^2\]
 
-<p>Similar to mass in linear motion, the rotational inertia describes the objects intrinsic resistance to rotation. The larger the moment of inertia, the harder it is to get the object to rotate. Conversely, if an object with a large moment of inertia is already rotating, then it is difficult to stop. For example, a bowling ball has a larger moment of inertia than a marble (even if they had the same mass).</p>
+<p>Notice the similarity to the equation for linear momentum, $p = mv$. Analogous to mass in linear motion, the rotational inertia describes the objects intrinsic resistance to rotation. The larger the moment of inertia, the harder it is to get the object to rotate. Conversely, if an object with a large moment of inertia is already rotating, then it is difficult to stop. This <a href="https://www.youtube.com/watch?v=NsKIPa4Fnfo">video</a> is a nice, short demonstration of the effect an object’s moment of inertia on its rotational motion.</p>
 
 <p><br /></p>
 
 <h2 id="a-collection-of-point-masses">A Collection of Point Masses</h2>
 
-<p>Suppose a collection of $n$ point masses $m_i$ are a distance $R_i$ from a fixed axis of rotation with angular velocity $\omega$. It is well-known in physics that the total angular momentum of a system is just the sum of the angular momentum of its parts (this comes from the conservation of angular momentum). Thus,</p>
+<p>Suppose a collection of $n$ point masses $m_i$ are a distance $R_i$ from a fixed axis of rotation each with angular velocity $\omega$. From the above, we know that each object has angular momentum and rotational inertia.</p>
 
-\[L = \sum_{i=1}^n L_i = \sum_{i=1}^n m_i R_i^2 \omega = \left ( \sum_{i=1}^n m_i R_i^2 \right ) \omega\]
+\[L_i = (m_i R_i^2) \omega = I_i \omega\]
 
-<p>Therefore, the effective rotational inertia of the system is the sume of the rotational inertia of each point mass.</p>
+<p>Now, we define the following.</p>
 
-\[I_{\text{system}} = \sum_{i=1}^n m_i R_i^2 = \sum_{i=1}^n I_i\]
+\[L_{\text{system}} = \sum_{i=1}^n L_i = \sum_{i=1}^n I_i \omega = \left ( \sum_{i=1}^n I_i \right ) \omega\]
 
-<p>This is a very useful property for “building-up” complicated shapes from a series of smaller shapes, which we will see many times in this series.</p>
+<p>Since all point masses are moving with the same angular velocity (they are moving identically as a group), we can factor out $\omega$, which gives us the rotational inertia of the system.</p>
+
+\[I_{\text{system}} = \sum_{i=1}^n I_i\]
+
+<p>This is true for any set of objects with the same angular velocity, not just point masses. This is a very useful property for “building-up” complicated shapes from a series of smaller shapes, which we will see many times in this series.</p>
 
 <p><br /></p>
 
@@ -205,7 +209,7 @@ L = I \omega\]
 
 \[dI = r_{axis}^2 dm\]
 
-<p>Since it is a <em>rigid</em> body, the total rotational inertia is the sum of all the infinitesimal rotational inertias within the object $\mathcal{G}$ (analogous to a collection of point masses). For continuous objects, we integrate over its geometry.</p>
+<p>Since it is a <em>rigid</em> body there is no internal motion. Therefore, all parts of $\mathcal{G}$ are rotating with the same angular velocity, so the total rotational inertia is the sum of all the infinitesimal rotational inertias within the object $\mathcal{G}$ (analogous to a collection of point masses). For continuous objects, we integrate over its geometry.</p>
 
 \[I_{\mathcal{G}} = \int_{\mathcal{G}} dI = \int_{\mathcal{G}} r_{axis}^2 dm\]
 
@@ -321,36 +325,7 @@ For all of them. $I_{ij}$ means we are measuring the moment of inertia around th
 
 The **principal axis theorem** says it's always possible to find 3 mutually orthogonal axes such that the products of inertia are 0. In this series, I will always solve using the principle axes. Then you can use the $3\text{D}$ rotation matrices in order to get any other orientation
 
-$$
-\begin{align}
-R_z(\alpha) \; R_y(\beta) \; R_x(\gamma) 
-&= 
-\begin{bmatrix}
-    \cos \alpha & - \sin \alpha & 0 \\
-    \sin \alpha & \cos \alpha & 0 \\
-    0 & 0 & 1
-\end{bmatrix} 
-\
-\begin{bmatrix}
-    \cos \beta & 0 & \sin \beta \\
-    0 & 1 & 0 \\
-    - \sin \beta & 0 & \cos \beta
-\end{bmatrix}
-\
-\begin{bmatrix}
-    1 & 0 & 0 \\
-    0 & \cos \gamma & - \sin \gamma \\
-    0 & \sin \gamma & \cos \gamma
-\end{bmatrix}
-\\[10pt]
-&= 
-\begin{bmatrix}
-    \cos \alpha \cos \beta & \cos \alpha \sin \beta \sin \gamma - \sin \alpha \cos \gamma & \cos \alpha \sin \beta \cos \gamma + \sin \alpha \sin \gamma \\
-    \sin \alpha \cos \beta & \sin \alpha \sin \beta \sin \gamma - \cos \alpha \cos \gamma & \sin \alpha \sin \beta \cos \gamma - \cos \alpha \sin \gamma \\
-    - \sin \beta & \cos \beta \sin \gamma & \cos \beta \cos \gamma
-\end{bmatrix}
-\end{align}
-$$
+
 
 In order to translate the object, you can use the **parallel axis theorem**, which we will discuss in a [future post](/blog/moments-of-inertia/parallel-axis-theorem).
 

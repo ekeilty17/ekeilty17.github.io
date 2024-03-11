@@ -152,22 +152,22 @@
 
         <div class="post">
             <h1 class="post-title">Vector Integration</h1>
-            <!-- <span class="series-date">05 Sep 2023</span> -->
-            <time datetime="2023-09-05T00:00:00-04:00" class="post-date">05 Sep 2023</time>
+            <!-- <span class="series-date">05 Feb 2024</span> -->
+            <time datetime="2024-02-05T00:00:00-05:00" class="post-date">05 Feb 2024</time>
             <!-- maybe I'll add tagging later
             <span class="post-date" style="margin-top:-1em;"> ["moments-of-inertia"] </span>
             -->
-            <p><strong>TODO</strong> These are somewhat like cliffnotes. Expand on this stuff later and draw diagrams</p>
+            <p>Recall the formula for the moment of inertia with respect to a fixed axis of rotation.</p>
 
-<p>Recall the formula for the moment of inertia.</p>
+\[I_{\mathcal{G}} = \int_{\mathcal{G}} r_{axis}^2 \; dm\]
 
-\[I = \int_{\mathcal{G}} r_{axis}^2 \; dm\]
+<p>There are a few questions about this integral that one may have. What does the subscript $\mathcal{G}$ on the integral mean? And how do we integrate with respect to an object’s mass? In this post, I am going to unpack this definition and explain exactly how we will evaluate it in the upcoming posts.</p>
 
-<p>I will go over the high-level method for correctly evaluating this integral for any object $\mathcal{G}$</p>
+<p><br /></p>
 
 <h2 id="mass-density">Mass Density</h2>
 
-<p>Depending on the object, the meaning of $dm$ can change.</p>
+<p>First, how do we integrate with respect to mass? Integrals don’t know how to deal with mass; they know how to deal with lengths, areas, and volumes. Therefore, we define a <strong>mass density function</strong>, which maps each point in $\mathcal{G}$ to a mass density value. Depending on if $\mathcal{G}$ is a curve, surface, or volume I am going to use slightly different notation.</p>
 
 \[\begin{align}
     &amp;\text{Curve}:      \quad &amp;&amp;dm = \lambda(\b{r}) \; d\ell \\[10pt]
@@ -175,67 +175,228 @@
     &amp;\text{Volume}:     \quad &amp;&amp;dm = \rho(\b{r}) \; dV \\[10pt]
 \end{align}\]
 
-<p>Here, $\lambda(\b{r})$, $\sigma(\b{r})$, $\rho(\b{r})$ are functions which describe the mass distribution in an object $\mathcal{G}$. Thus, in general depending on if $\mathcal{G}$ is a curve, surface, or volume we would evaluate the moment of inertia integral as follows.</p>
+<p>Here, $\lambda(\b{r})$ gives the mass distribution in $\mathcal{G}$ per unit length. Likewise, $\sigma(\b{r})$ gives the mass distribution per unit area. Finally, $\rho(\b{r})$ gives the mass distribution per unit volume. These are essentially unnormalized <em>probability density functions</em> (PDFs).</p>
 
-\[I = \int_{\mathcal{G}} r_{axis}^2 \; (\lambda(\b{r}) \; d\ell)
+<p>To evaluate the original integral, we write the following.</p>
+
+\[I_{\mathcal{G}} = \int_{\mathcal{G}} r_{axis}^2 \; (\lambda(\b{r}) \; d\ell)
+\qquad\qquad
+I_{\mathcal{G}} = \int_{\mathcal{G}} r_{axis}^2 \; (\sigma(\b{r}) \; dA)
+\qquad\qquad
+I_{\mathcal{G}} = \int_{\mathcal{G}} r_{axis}^2 \; (\rho(\b{r}) \; dV)\]
+
+<p>Furthermore, in this series, we are always going to <strong>assume a uniform mass distribution</strong>, i.e.</p>
+
+\[\lambda(\b{r}) = \lambda
 \qquad
-I = \int_{\mathcal{G}} r_{axis}^2 \; (\sigma(\b{r}) \; dA)
+\sigma(\b{r}) = \sigma
 \qquad
-I = \int_{\mathcal{G}} r_{axis}^2 \; (\rho(\b{r}) \; dV)\]
+\rho(\b{r}) = \rho
+\qquad\qquad
+\forall \b{r} \in \mathcal{G}\]
 
-<p>However, in this series we are always going to <strong>assume a uniform mass distribution</strong>. Therefore, these integrals simplify to the following.</p>
+<p>Therefore, these integrals simplify to the following.</p>
 
-\[I = \lambda \cdot \int_{\mathcal{G}} r_{axis}^2 \; d\ell
+\[I_{\mathcal{G}} = \lambda \cdot \int_{\mathcal{G}} r_{axis}^2 \; d\ell
 \qquad
-I = \sigma \cdot \int_{\mathcal{G}} r_{axis}^2 \; dA
+I_{\mathcal{G}} = \sigma \cdot \int_{\mathcal{G}} r_{axis}^2 \; dA
 \qquad
-I = \rho \cdot \int_{\mathcal{G}} r_{axis}^2 \; dV\]
+I_{\mathcal{G}} = \rho \cdot \int_{\mathcal{G}} r_{axis}^2 \; dV\]
 
-<p>Thus, the problem has now reduced to line, surface, and volume integrals.</p>
+<p>Thus, the problem has now been reduced to line, surface, and volume integrals. If you have studied vector calculus you should, in principle, know how to evaluate these. If you don’t remember or never learned how to evaluate such integrals, I will give a brief overview.</p>
 
-<h2 id="line-integrals">Line Integrals</h2>
+<p><br /></p>
 
-<p>Suppose the curve is parameterized by $\b{r}(q)$, then</p>
+<h2 id="parameterization">Parameterization</h2>
 
-\[d\b{\ell} = \frac{\partial \b{r}}{\partial q} \; dq\]
+<p>In order to integrate over an object $\mathcal{G}$, you must first be able to precisely describe it. Thus, we always start with a <strong>parameterization</strong> of $\mathcal{G}$. This is a multivariable vector function, which maps a set of parameters over some domain to a set of position vectors such that the range of all position vectors reproduces the $\mathcal{G}$.</p>
 
-<p>therefore</p>
+<p>To give a few simple examples. The following is a parameterization for a line, rectangle, and cuboid.</p>
 
-\[d\ell = \abs{d\b{\ell}} = \abs{ \frac{\partial \b{r}}{\partial q} } \; dq\]
+\[\begin{align}
+    \b{r}(x) &amp;= x \; \u{x}
+    &amp;&amp;
+    \ell = \{ \b{r}(x) &amp;&amp;: -\tfrac{1}{2} a \leq x \leq \tfrac{1}{2} a \}
+    \\[10pt]
+    \b{r}(x, y) &amp;= x \; \u{x} + y \; \u{y}
+    &amp;&amp;
+    A = \{ \b{r}(x,y) &amp;&amp;: -\tfrac{1}{2} a \leq x \leq \tfrac{1}{2} a \ , \quad -\tfrac{1}{2} b \leq y \leq \tfrac{1}{2} b \}
+    \\[10pt]
+    \b{r}(x, y, z) &amp;= x \; \u{x} + y \; \u{y} + z \; \u{z}
+    &amp;&amp;
+    V = \{ \b{r}(x,y,z) &amp;&amp;: -\tfrac{1}{2} a \leq x \leq \tfrac{1}{2} a \ , \quad -\tfrac{1}{2} b \leq y \leq \tfrac{1}{2} b \ , \quad -\tfrac{1}{2} c \leq z \leq \tfrac{1}{2} c \}
+\end{align}\]
 
-<h2 id="surface-integrals">Surface Integrals</h2>
+<p>Note that the parameter variables and coordinate system do not have to be related. For example, we can equivalently parameterize these objects as the following. Notice how the parameters are jumbled in the definition of $\b{r}$.</p>
 
-<p>Suppose the surface is parameterized by $\b{r}(q_1, q_2)$</p>
+\[\begin{align}
+    \b{r}(q_1) &amp;= a q_1 \; \u{x}
+    &amp;&amp;
+    \ell = \{ \b{r}(q_1) &amp;&amp;: -\tfrac{1}{2} \leq q_1 \leq \tfrac{1}{2} \}
+    \\[10pt]
+    \b{r}(q_1, q_2) &amp;= a q_2\; \u{x} + b q_1 \; \u{y}
+    &amp;&amp;
+    A = \{ \b{r}(q_1,q_2) &amp;&amp;: -\tfrac{1}{2} \leq q_1, q_2, \leq \tfrac{1}{2} \}
+    \\[10pt]
+    \b{r}(q_1, q_2, q_3) &amp;= a q_2 \; \u{x} + b q_3 \; \u{y} + c q_1 \; \u{z}
+    &amp;&amp;
+    V = \{ \b{r}(q_1,q_2,q_3) &amp;&amp;: -\tfrac{1}{2} \leq q_1, q_2, q_3 \leq \tfrac{1}{2} \}
+\end{align}\]
+
+<!-- For the remaining post, we are going to assume we are given some general parameterization using coordinate system $(\u{e}_1, \u{e}_2, \u{e}_3)$ with respect to parameters $(q_1,q_2,q_3)$ over domain $(D_1, D_2, D_3)$. -->
+
+<!-- $$
+\begin{align}
+    \b{r}(q_1) &= r_1(q_1) \; \u{e}_1
+    &&
+    \ell = \{ \b{r}(q_1) &&: q_1 \in D_1 \}
+    \\[10pt]
+    \b{r}(q_1, q_2) &= r_2(q_1, q_2) \; \u{e}_1 + r_2(q_1, q_2) \; \u{e}_1
+    &&
+    A = \{ \b{r}(q_1,q_2) &&: q_1 \in D_1 \ , \ q_2 \in D_2 \}
+    \\[10pt]
+    \b{r}(q_1, q_2, q_3) &= r_1(q_1, q_2, q_3) \; \u{e}_1 + r_2(q_1, q_2, q_3) \; \u{e}_2 + r_3(q_1, q_2, q_3) \; \u{e}_3
+    &&
+    V = \{ \b{r}(q_1,q_2,q_3) &&:  q_1 \in D_1 \ , \ q_2 \in D_2 \ , \ q_3 \in D_3 \}
+\end{align}
+$$ -->
+
+<p>The final thing to note is that the domain does not have to be constant. It can depend on one or more of the parameters. For example, the following parameterizes a right triangle with its right angle at the origin.</p>
+
+\[\b{r}(x, y) = x \; \u{x} + y \; \u{y}
+\qquad
+A = \{ \b{r}(x, y) : 0 \leq x \leq b \ , \quad hx \leq y \leq h(b - x) \}\]
+
+<p>The vector function $\b{r}(x, y)$ is the same as that of a rectangle. The difference is the bounds of the domain.</p>
+
+<p><br /></p>
+
+<h2 id="integration-over-a-geometry">Integration Over a Geometry</h2>
+
+<p>In this series, I am going to use a generalized method that works for any object and any geometry. It might be a bit overkill for simpler geometries, e.g. circles, which can be done intuitively without this method. However, being rigorous on the simpler objects will help greatly with the more complex objects, e.g. ellipses.</p>
+
+<h3 id="line-integrals">Line Integrals</h3>
+
+<p>We wish to compute the following integral</p>
+
+\[I_{\mathcal{G}} = \lambda \cdot \int_{\mathcal{G}} r_{axis}^2 \; d\ell\]
+
+<p>Suppose we have the following parameterization of the curve $\mathcal{G}$.</p>
+
+\[\b{r}(q_1) = r_1(q_1) \; \u{e}_1
+\qquad
+\ell = \{ \b{r}(q_1): q_1 \in D_1 \}\]
+
+<p>Then we consider how the curve changes infinitesmally.</p>
+
+\[d\b{\ell} = \frac{\partial \b{r}}{\partial q_1} \; dq_1\]
+
+<p>Be careful when computing the partial derivative. It’s possible that $\u{e}_1$ is dependant on $q_1$. Also notice that this is a vector quantity. You can take integrals over vector differentials, but that is not what we are interested in. So we need to take the magnitude.</p>
+
+\[d\ell = \abs{d\b{\ell}} = \abs{ \frac{\partial \b{r}}{\partial q_1} } \; dq_1\]
+
+<p>Finally, we rewrite the original integral as follows.</p>
+
+\[I_{\mathcal{G}} = \lambda \cdot \int_{D_1} r_{axis}^2 \; \abs{ \frac{\partial \b{r}}{\partial q_1} } \; dq_1\]
+
+<p>This is something any first year calculus student should (in theory) be able to evaluate.</p>
+
+<h3 id="surface-integrals">Surface Integrals</h3>
+
+<p>We wish to compute the following integral</p>
+
+\[I_{\mathcal{G}} = \sigma \cdot \int_{\mathcal{G}} r_{axis}^2 \; dA\]
+
+<p>Suppose we have the following parameterization of the surface $\mathcal{G}$.</p>
+
+\[\b{r}(q_1, q_2) = r_1(q_1, q_2) \; \u{e}_1 + r_2(q_1, q_2) \; \u{e}_2
+\qquad
+A = \{ \b{r}(q_1,q_2) : q_1 \in D_1 \ , \ q_2 \in D_2 \}\]
+
+<p>From line integrals, we know that $(\partial \b{r} / \partial q_1) \; dq_1$ and $(\partial \b{r} / \partial q_2) \; dq_2$ give the infinitesmal change with respect to $q_1$ and $q_2$ respectively. Thus, if we want the infinitesmal area spanned by these vectors, we use the magnitude of the cross product. This is a simple result from vector calculus. You can see <a href="https://www.youtube.com/watch?v=YbZmAqGUkqc">this video</a> for the explanation.</p>
 
 \[d\b{A} = \left ( \frac{\partial \b{r}}{\partial q_1} \; dq_1 \right ) \times \left ( \frac{\partial \b{r}}{\partial q_2} \; dq_2 \right )\]
 
-<p>therefore</p>
+<p>Therefore,</p>
 
 \[dA = \abs{d\b{A}} = \abs{ \frac{\partial \b{r}}{\partial q_1} \times \frac{\partial \b{r}}{\partial q_2} } \; dq_1 \; dq_2\]
 
-<h2 id="volume-integrals">Volume Integrals</h2>
+<p>Finally, we rewrite the original integral as follows.</p>
 
-<p>Suppose the volume is parameterized by $\b{r}(q_1, q_2, q_3)$</p>
+\[I_{\mathcal{G}} = \sigma \cdot \int_{D_1} \int_{D_2} r_{axis}^2 \; \abs{ \frac{\partial \b{r}}{\partial q_1} \times \frac{\partial \b{r}}{\partial q_2} } \; dq_1 \; dq_2\]
 
-\[dV = \left \lvert \begin{array}{ccc}
-    dV_{11} &amp; dV_{12} &amp; dV_{13} \\
-    dV_{21} &amp; dV_{22} &amp; dV_{23} \\
-    dV_{31} &amp; dV_{32} &amp; dV_{33}
-\end{array} \right \rvert\]
+<h3 id="volume-integrals">Volume Integrals</h3>
 
-<p>where</p>
+<p>We wish to compute the following integral</p>
 
-\[dV_{ij} = \left ( \frac{\partial \b{r}}{\partial q_i} dq_i \right ) \cdot \u{e}_j\]
+\[I_{\mathcal{G}} = \rho \cdot \int_{\mathcal{G}} r_{axis}^2 \; dA\]
 
-<p>where $(\u{e}_1, \u{e}_2, \u{e}_3)$ are the basis vectors of the chosen coordiante system. It may be the case that they are related to $(q_1, q_2, q_3)$, but they need not be.</p>
+<p>Suppose we have the following parameterization of the volume $\mathcal{G}$.</p>
 
-<p>In other words, $dV_{ij}$ is the $e_j$-component of the partial with respect to $q_i$. Another way to think about it is as row vectors</p>
+\[\b{r}(q_1, q_2, q_3) = r_1(q_1, q_2, q_3) \; \u{e}_1 + r_2(q_1, q_2, q_3) \; \u{e}_2 + r_3(q_1, q_2, q_3) \; \u{e}_3 
+\\[10pt]
+V = \{ \b{r}(q_1,q_2,q_3) :  q_1 \in D_1 \ , \ q_2 \in D_2 \ , \ q_3 \in D_3 \}\]
 
-\[dV = \left \lvert \begin{array}{ccc}
-    \; \cdots &amp; (\partial \b{r} / \partial q_1) \, dq_1 &amp; \cdots \; \\
-    \; \cdots &amp; (\partial \b{r} / \partial q_2) \, dq_2 &amp; \cdots \; \\
-    \; \cdots &amp; (\partial \b{r} / \partial q_3) \, dq_3 &amp; \cdots \; \\
-\end{array} \right \rvert\]
+<p>We define the <a href="https://en.wikipedia.org/wiki/Jacobian_matrix_and_determinant">Jacobean</a> matrix as the following. It’s basically all possible combinations of $dr_i/dq_j$.</p>
+
+<!-- \left \lvert \begin{array}{ccc}
+    \vert & \vert & \vert \\
+    \frac{d\b{r}}{dq_1} & \frac{d\b{r}}{dq_2} & \frac{d\b{r}}{dq_3} \\
+    \vert & \vert & \vert
+\end{array} \right \rvert -->
+
+\[\m{J} 
+= 
+\left [ \frac{d\b{r}}{d\b{q}} \right ]
+= 
+\left [ \frac{\partial\b{r}}{\partial q_1} \quad \frac{\partial\b{r}}{\partial q_2} \quad \frac{\partial\b{r}}{\partial q_3} \right ]
+=
+\left [ \begin{array}{ccc}
+    \frac{\partial r_1}{\partial q_1} &amp; \frac{\partial r_1}{\partial q_2} &amp; \frac{\partial r_1}{\partial q_3} \; \\
+    \frac{\partial r_2}{\partial q_1} &amp; \frac{\partial r_2}{\partial q_2} &amp; \frac{\partial r_2}{\partial q_3} \\
+    \frac{\partial r_3}{\partial q_1} &amp; \frac{\partial r_3}{\partial q_2} &amp; \frac{\partial r_3}{\partial q_3} \\
+\end{array} \right ]\]
+
+<p>Now, I assert the following.</p>
+
+\[dV = \left \lvert \frac{\partial\b{r}}{\partial q_1} dq_1 \quad \frac{\partial\b{r}}{\partial q_2} dq_2 \quad \frac{\partial\b{r}}{\partial q_3} dq_3 \right \rvert
+=
+\left \lvert \ J \ \right \rvert \; dq_1 \; dq_2 \; dq_3\]
+
+<p>I am not going to explain why this result is true. I recommend <a href="https://www.youtube.com/watch?v=wCZ1VEmVjVo">this video</a>, which explains how we should really be thinking of this integral in terms of linear maps.</p>
+
+<p>Therefore, we rewrite the original integral as follows.</p>
+
+\[I_{\mathcal{G}} = \rho \cdot \int_{D_1} \int_{D_2} \int_{D_3} r_{axis}^2 \; 
+\left \lvert \begin{array}{ccc}
+    \frac{\partial r_1}{\partial q_1} &amp; \frac{\partial r_1}{\partial q_2} &amp; \frac{\partial r_1}{\partial q_3} \; \\
+    \frac{\partial r_2}{\partial q_1} &amp; \frac{\partial r_2}{\partial q_2} &amp; \frac{\partial r_2}{\partial q_3} \\
+    \frac{\partial r_3}{\partial q_1} &amp; \frac{\partial r_3}{\partial q_2} &amp; \frac{\partial r_3}{\partial q_3} \\
+\end{array} \right \rvert
+ \; dq_1 \; dq_2\; dq_3\]
+
+<!-- TODO -->
+
+<!-- <br>
+
+## Linear Transformations
+
+There is a correct way to think about what my generalized method is doing. Consider the trivial parameterization 
+
+$$
+\b{r}(x, y, z) = x \; \u{x} + y \; \u{y} + z \; \u{z}
+$$
+
+This is the easiest parameterization to integrate over. Now consider some other parameterization
+
+$$
+\b{r}(u, v, w) = x(u, v, w) \; \u{x} + y(u, v, w) \; \u{y} + z(u, v, w) \; \u{z}
+$$
+
+
+defined above. Integrating over this parameterization is very easy because it is using the standard Cartesian coordinates $(x, y, z)$. Comparing this to the parameterization $\b{r}(q_1,q_2,q_3)$.
+
+What we should do is translate the problem into the $(q_1,q_2,q_3)$ coordinate system. Then, integration becomes much simpler. -->
 
         </div>
 
@@ -258,10 +419,10 @@ I = \rho \cdot \int_{\mathcal{G}} r_{axis}^2 \; dV\]
 
         <div class="pagination" style="margin-top:1em;">
             
-                <a class="pagination-item older" href="/blog/moments-of-inertia/coordiante-systems/">Previous</a>
+                <a class="pagination-item older" href="/blog/moments-of-inertia/coordinate-systems/">Previous</a>
             
             
-                <a class="pagination-item newer" href="/blog/moments-of-inertia/principal-axes/">Next</a>
+                <a class="pagination-item newer" href="/blog/moments-of-inertia/parallel-axis-theorem/">Next</a>
             
         </div>
         <h3 style="text-align:center; margin-bottom:1em;">
