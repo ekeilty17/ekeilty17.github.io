@@ -83,15 +83,15 @@ It should be noted that there are a lot of variations to the rules of BlackJack.
 * Whether doubling after a split is allowed
 * Whether surrendering is allowed, and if so can you surrender early or late
 * The number of decks used in the shoe
-* How much a blackjack pays out. Typically you see (3 to 2) or (6 to 5)
+* How much a blackjack pays out. Typically you see ($3$ to $2$) or ($6$ to $5$)
 
-In this post, I will assume that blackjack pays (3 to 2) since otherwise the game is unbeatable. I will assume that if surrending is allowed then it is a late surrender. Early surrenders are not very common. Finally, assume the number of shoes is 4 or more.
+In this post, I will assume that blackjack pays ($3$ to $2$) since otherwise the game is unbeatable. I will assume that if surrending is allowed then it is a late surrender. Early surrenders are not very common. Finally, assume the number of shoes is $4$ or more.
 
 <br>
 
-## Basic Strategy Table
+## Basic Strategy Table {#basic-strategy-table}
 
-Our task is to remember the following tables. The **columns** are the sum of your hand and the **rows** is the card the dealer is showing. Whether or not the dealer hits on a soft 17 is the only variation associated with the action of the dealer rather than the action of the player. Thus, the best way to show this difference is with a separate table. The left tables give the correct actions for each situation if the dealer does not hit on a soft 17. The right tables gives the same when the dealer does hit on a soft 17. In order to reduce information overload, I have only given the cells that are different.
+Our task is to remember the following tables. The **columns** denote the sum of your hand and the **rows** denote the card the dealer is showing. Whether or not the dealer hits on a soft 17 is the only variation associated with the action of the dealer rather than the action of the player. Thus, the best way to show this difference is with a separate table. The left tables give the correct actions for each situation if the dealer does not hit on a soft 17. The right tables gives the same when the dealer does hit on a soft $17$. In order to reduce information overload, I have only given the cells that are different.
 
 <div class="custom-table-container">
 
@@ -1084,7 +1084,7 @@ Maybe some people can just look at these tables and memorize them. Unfortunately
 
 <br>
 
-## The Most Likely Unknown Card Principle
+## The Most Likely Unknown Card Principle {#most-likely-unknown-card-principle}
 
 For the absolute beginner, the following general principle is enough to help them arrive at the correct action in a plurality of cases.
 
@@ -1114,7 +1114,7 @@ Finally, you simply have to memorize the surrender situations. However, they are
 
 <br>
 
-## My Memorization Method
+## My Memorization Method {#memorization-method}
 
 I find it easier to remember _maxims_ or little phrases about each situation. These are listed below
 

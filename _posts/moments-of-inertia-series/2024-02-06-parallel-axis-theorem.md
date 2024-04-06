@@ -338,7 +338,9 @@ $$
 
 There are two nice things about this. First, the matrix that is left over is unitary, which means it is a pure rotation matrix. Second, when you start taking special cases usually the angle of the object with respect to the axis of rotation is easier to work with.
 
-
+$$
+\m{I_{\text{translated}}} = \m{I_{\text{cm}}} + M \m{D}
+$$
 
 <!-- <br>
 

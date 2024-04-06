@@ -3,6 +3,7 @@ layout:     page
 title:      Moments of Inertia
 categories: blog
 permalink:  /blog/moments-of-inertia/
+draft:      true
 ---
 
 <!-- I don't think there's a point in summarizing this series. Most posts are supposed to be self-contained. The series itself is the summary. -->

@@ -13,9 +13,12 @@ permalink:  /blog/
 
 ## Blog Series'
 
+<!-- We check if the field `draft` exists, and if it does then we don't include the series -->
+
 {% for page in site.pages %}
     {% assign page_directory = page.path | split: '/' | first%}
     {% if page_directory == "blog-series" %}
+        {% unless page.draft %}
 
 <div class="post-link-container">
     <a href="{{ page.url }}" class="post-link-item"> 
@@ -23,6 +26,7 @@ permalink:  /blog/
     </a>
 </div>
 
+        {% endunless %}
     {% endif %}
 {% endfor %}
 
@@ -34,8 +38,11 @@ permalink:  /blog/
 
 ## Standalone Posts
 
+<!-- We check if the field `draft` exists, and if it does then we don't include the post -->
+
 {% assign sorted_posts = site.posts | where: 'standalone', 'true' | sort: 'date' %}
 {% for post in sorted_posts %}
+    {% unless post.draft %}
 
 <div class="post-link-container">
     <a href="{{ post.url }}" class="post-link-item"> 
@@ -45,5 +52,5 @@ permalink:  /blog/
         -->
     </a>
 </div>
-
+    {% endunless %}
 {% endfor %}
