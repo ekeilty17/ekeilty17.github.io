@@ -1,7 +1,7 @@
 ---
 layout:     series
 title:      "Types of Hypernumbers"
-date:       2025-07-07
+date:       2023-07-07
 categories: blog nonstandard-analysis
 permalink:  ":categories/:title/"
 part:       6

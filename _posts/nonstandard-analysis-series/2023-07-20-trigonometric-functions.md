@@ -1,7 +1,7 @@
 ---
 layout:     series
 title:      "Trigonometric Functions"
-date:       2025-07-20
+date:       2023-07-20
 categories: blog nonstandard-analysis
 permalink:  ":categories/:title/"
 part:       19

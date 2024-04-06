@@ -3,6 +3,7 @@ layout:     post
 title:      Nonstandard Analysis
 categories: blog
 permalink:  /blog/nonstandard-analysis/
+draft:      true
 ---
 
 This series is still being developed

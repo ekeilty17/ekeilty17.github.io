@@ -1,7 +1,7 @@
 ---
 layout:     series
 title:      "Continuity"
-date:       2025-07-19
+date:       2023-07-19
 categories: blog nonstandard-analysis
 permalink:  ":categories/:title/"
 part:       18

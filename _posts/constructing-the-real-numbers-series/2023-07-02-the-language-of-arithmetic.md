@@ -1,7 +1,7 @@
 ---
 layout:     series
 title:      "The Language of Arithmetic"
-date:       2025-07-02
+date:       2023-07-02
 categories: blog constructing-the-real-numbers
 permalink:  ":categories/:title/"
 part:       1

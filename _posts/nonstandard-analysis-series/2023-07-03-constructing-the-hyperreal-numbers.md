@@ -1,7 +1,7 @@
 ---
 layout:     series
 title:      "Constructing the Hyperreal Numbers"
-date:       2025-07-03
+date:       2023-07-03
 categories: blog nonstandard-analysis
 permalink:  ":categories/:title/"
 part:       2

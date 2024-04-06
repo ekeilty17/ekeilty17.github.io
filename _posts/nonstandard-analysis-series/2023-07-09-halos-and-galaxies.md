@@ -1,7 +1,7 @@
 ---
 layout:     series
 title:      "Halos and Galaxies"
-date:       2025-07-09
+date:       2023-07-09
 categories: blog nonstandard-analysis
 permalink:  ":categories/:title/"
 part:       8

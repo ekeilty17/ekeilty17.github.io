@@ -1,11 +1,12 @@
 ---
 layout:     post
-title:      "Tikz Tips and Tricks"
+title:      "Tikz and Tricks"
 date:       2024-02-01
 categories: blog
 permalink:  ":categories/:title/"
 standalone: true
 tags:       tikz
+draft:      true
 ---
 
 For the last few years, I have been using Tikz a lot. While it's an extremely powerful tool, it is not the easiest thing to use. Often seemingly simple things are not intuitive or require very obscure syntax which is not well documented. In this post, I would like to record all of the tips, tricks, and syntax I have used.

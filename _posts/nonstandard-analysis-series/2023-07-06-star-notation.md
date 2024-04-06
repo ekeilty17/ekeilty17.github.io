@@ -1,7 +1,7 @@
 ---
 layout:     series
 title:      "Star Notation"
-date:       2025-07-06
+date:       2023-07-06
 categories: blog nonstandard-analysis
 permalink:  ":categories/:title/"
 part:       5

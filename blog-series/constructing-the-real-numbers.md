@@ -3,6 +3,7 @@ layout:     post
 title:      Constructing the Real Numbers
 categories: blog
 permalink:  /blog/constructing-the-real-numbers/
+draft:      true
 ---
 
 This series is still being developed

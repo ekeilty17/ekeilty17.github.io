@@ -1,7 +1,7 @@
 ---
 layout:     series
 title:      "Exponentiation"
-date:       2025-07-18
+date:       2023-07-18
 categories: blog nonstandard-analysis
 permalink:  ":categories/:title/"
 part:       17

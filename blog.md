@@ -18,15 +18,19 @@ permalink:  /blog/
 {% for page in site.pages %}
     {% assign page_directory = page.path | split: '/' | first%}
     {% if page_directory == "blog-series" %}
-        {% unless page.draft %}
+        {% assign draft_status = page.draft | default: false %}
+        {% if jekyll.environment == "development" or draft_status == false %}
 
 <div class="post-link-container">
     <a href="{{ page.url }}" class="post-link-item"> 
         {{ page.title }} 
+        {% if draft_status == true %}
+            <span style="float: right; color: red;">DRAFT</span>
+        {% endif %}
     </a>
 </div>
 
-        {% endunless %}
+        {% endif %}
     {% endif %}
 {% endfor %}
 
@@ -40,17 +44,25 @@ permalink:  /blog/
 
 <!-- We check if the field `draft` exists, and if it does then we don't include the post -->
 
-{% assign sorted_posts = site.posts | where: 'standalone', 'true' | sort: 'date' %}
+{% assign sorted_posts = site.posts | where: 'standalone', 'true' | sort: 'date' | reverse %}
 {% for post in sorted_posts %}
-    {% unless post.draft %}
+    {% assign draft_status = post.draft | default: false %}
+    {% if jekyll.environment == "development" or draft_status == false %}
 
 <div class="post-link-container">
     <a href="{{ post.url }}" class="post-link-item"> 
-        {{ post.title }} 
-        <!-- I'll play around with this later
-        <time datetime="{{ post.date | date_to_xmlschema }}" class="post-link-date">{{ post.date | date_to_string }}</time>
-        -->
+        <div>
+            {{ post.title }} 
+            {% if draft_status == true %}
+                <span style="float: right; color: red;">DRAFT</span>
+            {% endif %}
+        </div>
+        <div>
+            <div style="font-size: smaller; margin-top: 5px; margin-bottom: -15px; opacity: 0.4;">
+                <time datetime="{{ post.date | date_to_xmlschema }}" class="post-link-date">{{ post.date | date_to_string }}</time>
+            </div>
+        </div>
     </a>
 </div>
-    {% endunless %}
+    {% endif %}
 {% endfor %}

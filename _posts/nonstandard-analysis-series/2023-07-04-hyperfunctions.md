@@ -1,7 +1,7 @@
 ---
 layout:     series
 title:      "Hyperfunctions"
-date:       2025-07-04
+date:       2023-07-04
 categories: blog nonstandard-analysis
 permalink:  ":categories/:title/"
 part:       3

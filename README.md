@@ -16,6 +16,11 @@ Compile the website and run the local server, listening on port [4000](http://12
 bundle exec jekyll serve
 ``` 
 
+by default, `JEKYLL_ENV` is set to `development`. To test what the deployed website will look like, run
+```
+JEKYLL_ENV=production bundle exec jekyll serve
+```
+
 ## Deployment
 
 This website is hosted by GitHub Pages and built using Jekyll.

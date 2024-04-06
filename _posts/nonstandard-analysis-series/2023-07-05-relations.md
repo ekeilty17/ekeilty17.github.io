@@ -1,7 +1,7 @@
 ---
 layout:     series
 title:      "Relations"
-date:       2025-07-05
+date:       2023-07-05
 categories: blog nonstandard-analysis
 permalink:  ":categories/:title/"
 part:       4

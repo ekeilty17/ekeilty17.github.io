@@ -1,7 +1,7 @@
 ---
 layout:     series
 title:      "The Shadow Map"
-date:       2025-07-11
+date:       2023-07-11
 categories: blog nonstandard-analysis
 permalink:  ":categories/:title/"
 part:       10

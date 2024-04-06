@@ -1,7 +1,7 @@
 ---
 layout:     series
 title:      "Variable Conventions"
-date:       2025-07-02
+date:       2023-07-02
 categories: blog nonstandard-analysis
 permalink:  ":categories/:title/"
 part:       1

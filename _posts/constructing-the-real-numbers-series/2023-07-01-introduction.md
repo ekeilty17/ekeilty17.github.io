@@ -1,7 +1,7 @@
 ---
 layout:     series
 title:      "Introduction"
-date:       2025-07-01
+date:       2023-07-01
 categories: blog constructing-the-real-numbers
 permalink:  ":categories/:title/"
 part:       0

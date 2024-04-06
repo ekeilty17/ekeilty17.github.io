@@ -1,7 +1,7 @@
 ---
 layout:     series
 title:      "The Transfer Principle"
-date:       2025-07-21
+date:       2023-07-21
 categories: blog nonstandard-analysis
 permalink:  ":categories/:title/"
 part:       20

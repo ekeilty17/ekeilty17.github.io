@@ -1,7 +1,7 @@
 ---
 layout:     series
 title:      "Constructing the Real Numbers"
-date:       2025-07-10
+date:       2023-07-10
 categories: blog nonstandard-analysis
 permalink:  ":categories/:title/"
 part:       9

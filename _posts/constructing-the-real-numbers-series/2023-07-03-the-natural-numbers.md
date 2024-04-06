@@ -1,7 +1,7 @@
 ---
 layout:     series
 title:      "The Natural Numbers"
-date:       2025-07-03
+date:       2023-07-03
 categories: blog constructing-the-real-numbers
 permalink:  ":categories/:title/"
 part:       2

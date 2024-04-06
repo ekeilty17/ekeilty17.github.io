@@ -136,7 +136,7 @@ A player throws out the $\color{red}{4 \heartsuit}$, but the meld $\color{red}{A
 A rummy can also occur when playing a meld or a lay-off. Consider the same scenario above, but the order of events flipped.
 
 <center>
-<embed src="/svg/the-keilty-variation-of-rummy/rummy-3.svg" type="image/svg+xml" width="700px" height="200px" />
+<embed src="/svg/the-keilty-variation-of-rummy/rummy-3.svg" type="image/svg+xml" width="700px" height="260px" />
 </center>
 
 In this case, the opponent played the meld $\color{red}{A \heartsuit}$, $\color{red}{2 \heartsuit}$, $\color{red}{3 \heartsuit}$, but the discard pile contains the $\color{red}{4 \heartsuit}$, which can be layed-off on this run. Thus, the first player (**except the player who caused the rummy**) to say "RUMMY" gets to lay-off the $\color{red}{4 \heartsuit}$ for out of turn, for free, and does not have to throw out (same as the previous example).

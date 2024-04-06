@@ -1,7 +1,7 @@
 ---
 layout:     series
 title:      "The Rational Numbers"
-date:       2025-07-05
+date:       2023-07-05
 categories: blog constructing-the-real-numbers
 permalink:  ":categories/:title/"
 part:       4

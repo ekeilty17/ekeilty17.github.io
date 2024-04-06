@@ -1,7 +1,7 @@
 ---
 layout:     series
 title:      "Binary Operations on Subset of Hyperreal Numbers"
-date:       2025-07-08
+date:       2023-07-08
 categories: blog nonstandard-analysis
 permalink:  ":categories/:title/"
 part:       7
