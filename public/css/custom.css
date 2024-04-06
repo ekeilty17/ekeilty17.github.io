@@ -115,6 +115,7 @@ a.post-link-item:focus {
   border-bottom: 1px dotted #e0992b;
 }
 
+/* FIXME: this only kind of works on touch devices */
 .tooltip .tooltiptext {
   visibility: hidden;
   width: auto;

@@ -204,6 +204,25 @@ $$ -->
 
 <p><br /></p>
 
+<h2 id="center-of-mass">Center of Mass</h2>
+
+\[\begin{align}
+    \overline{x} &amp;= \tfrac{1}{M} \int x \; dm \\[10pt]
+    &amp;= \tfrac{\lambda}{M} \int x \; d\ell \\[10pt]
+    &amp;= \tfrac{1}{L} \int_{-1/2}^{1/2} x(t) \; L \; dt \\[10pt]
+    &amp;= \int_{-1/2}^{1/2} \left [ (x_2 - x_1) t + \tfrac{1}{2}(x_2 + x_1) \right ] \; dt \\[10pt]
+    &amp;= \left . \left [ \tfrac{1}{2}(x_2 - x_1) t^2 + \tfrac{1}{2}(x_2 + x_1)t \right ] \right \vert_{-1/2}^{1/2} \\[10pt]
+    &amp;= \frac{x_2 + x_1}{2} \\[10pt]
+\end{align}\]
+
+<p>$\overline{y}$ and $\overline{z}$ can be computed symmetrically. Therefore the total center of mass is the following.</p>
+
+\[\overline{\b{r}} = \tfrac{1}{2} (\b{r}_2 + \b{r}_1) = \tfrac{1}{2} (x_2 + x_1) \; \u{x} + \tfrac{1}{2} (y_2 + y_1) \; \u{y} + \tfrac{1}{2} (z_2 + z_1) \; \u{z}\]
+
+<p>This makes intuitive sense. The center of mass is the middle of the line, which is the average of the endpoints.</p>
+
+<p><br /></p>
+
 <h2 id="moment-of-inertia">Moment of Inertia</h2>
 
 <p>Without loss of generality, we can assume the axis of rotation is the $z$-axis. The other axes can be computed symmetrically.</p>
@@ -217,15 +236,16 @@ $$ -->
     &amp;= \lambda \int r_{axis}^2 d\ell \\[10pt]
     &amp;= \lambda \int_{-1/2}^{1/2} \left [ (x(t))^2 + (y(t))^2 \right ] \; L \; dt \\[10pt]
     &amp;= \lambda \int_{-1/2}^{1/2} \left [ ((x_2 - x_1) t + \tfrac{1}{2}(x_2 + x_1))^2 + ((y_2 - y_1) t + \tfrac{1}{2}(y_2 + y_1))^2 \right ] \; L \; dt \\[10pt]
-    &amp;= \lambda \cdot \left . \left [ \frac{((x_2 - x_1) t + \tfrac{1}{2}(x_2 + x_1))^3}{3(x_2 - x_1)} + \frac{((y_2 - y_1) t + \tfrac{1}{2}(y_2 + y_1))^3}{3(y_2 - y_1)} \right ] \right \vert_{-1/2}^{1/2} \; L \; dt \\[10pt]
+    &amp;= \lambda \cdot \left . \left [ \frac{((x_2 - x_1) t + \tfrac{1}{2}(x_2 + x_1))^3}{3(x_2 - x_1)} + \frac{((y_2 - y_1) t + \tfrac{1}{2}(y_2 + y_1))^3}{3(y_2 - y_1)} \right ] \right \vert_{-1/2}^{1/2} \; L \\[10pt]
     &amp;= \lambda \cdot \left [ \frac{x_2^3 - x_1^2}{3(x_2 - x_1)} + \frac{y_2^3 - y_1^2}{3(y_2 - y_1)} \right ] \; L \\[10pt]
     &amp;= \tfrac{1}{3} M \left [ \frac{x_2^3 - x_1^2}{x_2 - x_1} + \frac{y_2^3 - y_1^2}{y_2 - y_1} \right ] \\[10pt]
     &amp;= \tfrac{1}{3} M \left [ (x_1^2 + x_1x_2 + x_2^2) + (y_1^2 + y_1y_2 + y_2^2) \right ] \\[10pt]
     &amp;= \tfrac{1}{3} M \left [ (x_1 + x_2)^2 + (y_1 + y_2)^2 - x_1x_2 - y_1y_2 \right ] \\[10pt]
     &amp;= \tfrac{1}{3} M \left [ (x_2 - x_1)^2 + (y_2 - y_1)^2 + 3x_1x_2 + 3y_1y_2 \right ] \\[10pt]
+    &amp;= \tfrac{1}{6} M \left [ 3x_1^2 + 3x_2^3 + 3y_1^2 + 3y_2^2 - (x_2 - x_1)^2 - (y_2 - y_1)^2 \right ] \\[10pt]
 \end{align}\]
 
-<p>At the end, I put a few different forms. One may be more useful than the others in different applications.</p>
+<p>At the end, I put a number different forms. One may be more useful than the others in different applications.</p>
 
 <p><br /></p>
 
@@ -241,7 +261,8 @@ $$ -->
     &amp;= \lambda \cdot \left [ \tfrac{1}{3}(x_2 - x_1)(y_2 - y_1) t^3 + \tfrac{1}{4}(x_2 + x_1) (y_2 - y_1) t^2 + \tfrac{1}{4}(x_2 - x_1)(y_2 + y_1) t^2 +  \tfrac{1}{4} (x_2 + x_1) (y_2 + y_1)t \right ] \Big \vert_{-1/2}^{1/2} \; L \\[10pt]
     &amp;= \lambda \cdot \left [ \tfrac{1}{12}(x_2 - x_1)(y_2 - y_1) + \tfrac{1}{4} (x_2 + x_1) (y_2 + y_1) \right ] \; L \\[10pt]
     &amp;= M \left [ \tfrac{1}{12}(x_2 - x_1)(y_2 - y_1) + \tfrac{1}{4} (x_2 + x_1) (y_2 + y_1) \right ] \\[10pt]
-    &amp;= \tfrac{1}{6} M \left [ (x_2 + x_1) (y_2 + y_1) + x_1y_1 + x_2y_2 \right ] \\[10pt]
+    &amp;= \tfrac{1}{6} M \left [ 2(x_2 - x_1) (y_2 - y_1) + 3x_1y_1 + 3x_2y_2 \right ] \\[10pt]
+    &amp;= \tfrac{1}{6} M \left [ (x_2 + x_1) (y_2 + y_1) + x_1y_1 + x_2y_2 \right ]
 \end{align}\]
 
 <p>Now, we could technically write the inertia tensor, but it would be long, gross, and not really helpful. Luckily, there is more we can do to simplify these expressions.</p>
@@ -282,11 +303,11 @@ I_{xy} &amp;= M \left [ \tfrac{1}{12}(x_2 - x_1)(y_2 - y_1) + \tfrac{1}{4} (x_2 
 <p>Consider the following definitions.</p>
 
 \[\b{L} \equiv \b{r}_2 - \b{r}_1 = (x_2 - x_1) \; \u{x} + (y_2 - y_1) \; \u{y} + (z_2 - z_1) \; \u{z} \\[10pt]
-\b{r}_{\text{cm}} \equiv \tfrac{1}{2} (\b{r}_2 + \b{r}_1) = \tfrac{1}{2} (x_2 + x_1) \; \u{x} + \tfrac{1}{2} (y_2 + y_1) \; \u{y} + \tfrac{1}{2} (z_2 + z_1) \; \u{z}\]
+\overline{\b{r}} \equiv \tfrac{1}{2} (\b{r}_2 + \b{r}_1) = \tfrac{1}{2} (x_2 + x_1) \; \u{x} + \tfrac{1}{2} (y_2 + y_1) \; \u{y} + \tfrac{1}{2} (z_2 + z_1) \; \u{z}\]
 
 <p>The first definition lets us write the line as a vector in terms of its endpoints, which gives us the direction of the line. The second definition gives us the center of mass of the line, which gives us the position of the line. Now we have a much more elegant way to parameterize the curve.</p>
 
-\[\b{r}(t) = \b{L}t + \b{r}_{\text{cm}} = (L_x t + x_{\text{cm}}) \; \u{x} + (L_y t + y_{\text{cm}}) \; \u{y} + (L_z t + z_{\text{cm}}) \; \u{z}\]
+\[\b{r}(t) = \b{L}t + \overline{\b{r}} = (L_x t + \overline{x}) \; \u{x} + (L_y t + \overline{y}) \; \u{y} + (L_z t + \overline{z}) \; \u{z}\]
 
 <p>where we define</p>
 
@@ -296,16 +317,16 @@ L_y = (y_2 - y_1)
 \qquad\qquad
 L_z = (z_2 - z_1)
 \\[15pt]
-x_{\text{cm}} = \frac{x_2 + x_1}{2}
+\overline{x} = \frac{x_2 + x_1}{2}
 \qquad\qquad
-y_{\text{cm}} = \frac{y_2 + y_1}{2}
+\overline{y} = \frac{y_2 + y_1}{2}
 \qquad\qquad
-z_{\text{cm}} = \frac{z_2 + z_1}{2}\]
+\overline{z} = \frac{z_2 + z_1}{2}\]
 
 <p>Finally, we can write our moment of inertia equations as the following</p>
 
-\[I_{zz} = \tfrac{1}{12}M(L_x^2 + L_y^2) + M(x_{\text{cm}}^2 + y_{\text{cm}}^2) \\[10pt]
-I_{xy} = \tfrac{1}{12}M L_x L_y + M x_{\text{cm}} y_{\text{cm}}\]
+\[I_{zz} = \tfrac{1}{12}M(L_x^2 + L_y^2) + M((\overline{x})^2 + (\overline{y})^2) \\[10pt]
+I_{xy} = \tfrac{1}{12}M L_x L_y + M (\overline{x}) (\overline{y})\]
 
 <p><br /></p>
 
@@ -327,9 +348,9 @@ I_{xy} = \tfrac{1}{12}M L_x L_y + M x_{\text{cm}} y_{\text{cm}}\]
 +
 M 
 \begin{bmatrix}
-    y_{\text{cm}}^2 + z_{\text{cm}}^2 &amp; - x_{\text{cm}} y_{\text{cm}} &amp; - x_{\text{cm}} z_{\text{cm}} \\
-    - y_{\text{cm}} x_{\text{cm}} &amp; z_{\text{cm}}^2 + x_{\text{cm}}^2 &amp; - y_{\text{cm}} z_{\text{cm}} \\
-    - z_{\text{cm}} x_{\text{cm}} &amp; - z_{\text{cm}} y_{\text{cm}} &amp; x_{\text{cm}}^2 + y_{\text{cm}}^2
+    (\overline{y})^2 + (\overline{z})^2 &amp; - (\overline{x}) (\overline{y}) &amp; - (\overline{x}) (\overline{z}) \\
+    - (\overline{y}) (\overline{x}) &amp; (\overline{z})^2 + (\overline{x})^2 &amp; - (\overline{y}) (\overline{z}) \\
+    - (\overline{z}) (\overline{x}) &amp; - (\overline{z}) (\overline{y}) &amp; (\overline{x})^2 + (\overline{y})^2
 \end{bmatrix}\]
 
 <p>let $\otimes$ denote the 
@@ -355,7 +376,7 @@ and $\m{ \mathbb{I} }$ be the
     </span>
 </span>.</p>
 
-\[I = \tfrac{1}{12} M (L^2\m{\mathbb{I}} - \b{L} \otimes \b{L}) + M (D^2 \m{\mathbb{I}} - \b{r}_{\text{cm}} \otimes \b{r}_{\text{cm}})\]
+\[I = \tfrac{1}{12} M (L^2\m{\mathbb{I}} - \b{L} \otimes \b{L}) + M (D^2 \m{\mathbb{I}} - \overline{\b{r}} \otimes \overline{\b{r}})\]
 
 <p><br /></p>
 

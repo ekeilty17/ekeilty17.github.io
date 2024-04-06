@@ -241,7 +241,7 @@ V = \{ \b{r}(s, \phi, z) \ : \ 0 \leq s \leq R \quad 0 \leq \phi &lt; 2\pi \quad
 <h2 id="inertia-tensor">Inertia Tensor</h2>
 
 \[\begin{align}
-    I &amp;= \begin{bmatrix}
+    \m{I} &amp;= \begin{bmatrix}
         \tfrac{3}{20} M R^2 + \tfrac{1}{10} M H^2 &amp; 0 &amp; 0 \\
         0  &amp; \tfrac{3}{20} M R^2 + \tfrac{1}{10} M H^2 &amp; 0 \\
         0  &amp; 0 &amp; \tfrac{3}{10} M R^2
@@ -253,6 +253,45 @@ V = \{ \b{r}(s, \phi, z) \ : \ 0 \leq s \leq R \quad 0 \leq \phi &lt; 2\pi \quad
         0  &amp; 0 &amp; 6 R^2
     \end{bmatrix}
 \end{align}\]
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="inertia-tensor-at-center-of-mass">Inertia Tensor at Center of Mass</h2>
+
+<p>Now, using the parallel axis theorem, we can shift the cone to its center of mass. We are shifting the cone straight down by $\tfrac{3}{4}H$. Therefore, $\b{D} = - \tfrac{3}{4}H \; \u{z}$.</p>
+
+\[\begin{align}
+    \m{I_{\text{cm}}} 
+    &amp;= \tfrac{1}{20} M \begin{bmatrix}
+        3 R^2 + 2 H^2 &amp; 0 &amp; 0 \\
+        0  &amp; 3 R^2 + 2 H^2 &amp; 0 \\
+        0  &amp; 0 &amp; 6 R^2
+    \end{bmatrix}
+    - 
+    M \begin{bmatrix}
+        \tfrac{9}{16} H^2 &amp; 0 &amp; 0 \\
+        0  &amp; \tfrac{9}{16} H^2 &amp; 0 \\
+        0  &amp; 0 &amp; 0
+    \end{bmatrix}
+    \\[10pt]
+    &amp;= \begin{bmatrix}
+        \tfrac{3}{20} M R^2 - \tfrac{37}{80} M H^2 &amp; 0 &amp; 0 \\
+        0  &amp; \tfrac{3}{20} M R^2 - \tfrac{37}{80} M H^2 &amp; 0 \\
+        0  &amp; 0 &amp; \tfrac{3}{10} M R^2
+    \end{bmatrix}
+    \\[10pt]
+    &amp;= \tfrac{1}{80} M \begin{bmatrix}
+        12 R^2 - 37 H^2 &amp; 0 &amp; 0 \\
+        0  &amp; 12 R^2 - 37 H^2 &amp; 0 \\
+        0  &amp; 0 &amp; 24 R^2
+    \end{bmatrix}
+\end{align}\]
+
+<p>The center of mass is not necessarily the most elegant want to express the moment of inertia.</p>
 
         </div>
 

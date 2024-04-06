@@ -256,19 +256,34 @@ M
 <embed src="/svg/moments-of-inertia/9:lines-special-cases/line-inertia-xy-plane-end-points.svg" type="image/svg+xml" />
 </center>
 
-<p>Recall the formula for the <a href="/blog/moments-of-inertia/lines#moment-of-inertia">moments of inertia</a> and <a href="/blog/moments-of-inertia/lines#product-of-inertia">product of inertia</a> from the previous post.</p>
+<p>Recall the formula for the <a href="/blog/moments-of-inertia/lines#moment-of-inertia">moments of inertia</a> and <a href="/blog/moments-of-inertia/lines#product-of-inertia">product of inertia</a> from the previous post. Applying these to the special case of a triangle on the $xy$ plane gives the following.</p>
 
 \[\m{I} = 
 \tfrac{1}{3} M
 \begin{bmatrix}
     y_1^2 + y_2^2 + y_1y_2 &amp; - \tfrac{1}{2}[ (x_2 + x_1) (y_2 + y_1) + x_1y_1 + x_2y_2 ] &amp; 0 \\
     - \tfrac{1}{2}[ (x_2 + x_1) (y_2 + y_1) + x_1y_1 + x_2y_2 ] &amp; x_1^2 + x_2^2 + x_1x_2 &amp; 0 \\
-    0 &amp; 0 &amp; x_1^2 + y_1^2 + x_2^2 + y_2^2 + x_1x_2 + y_1y_2
+    0 &amp; 0 &amp; \abs{\b{r}_1}^2 + \abs{\b{r}_2}^2 + \b{r}_1 \cdot \b{r}_2
 \end{bmatrix}\]
 
-<p>An interesting special case is the following.</p>
+<p>This is nice because it’s a pure coordiante definition of a line (which will come in handy when we analyze general triangles in the <a href="/blog/moments-of-inertia/triangle-curve/">next post</a>). Using the <span class="tooltip">law of cosines
+    <span class="tooltiptext"> 
+        \(\abs{\b{r}_2 - \b{r}_1}^2 = \abs{\b{r}_1}^2 + \abs{\b{r}_2}^2 - 2(\b{r}_1 \cdot \b{r}_2) \\[10pt]
+        \b{r}_1 \cdot \b{r}_2 = \tfrac{1}{2} \left ( \abs{\b{r}_1}^2 + \abs{\b{r}_2}^2 - \abs{\b{r}_2 - \b{r}_1}^2 \right )\)
+    </span>
+</span>, then we can get rid of that dot product.</p>
 
-\[I_{zz} = \tfrac{1}{3} \abs{\b{r}_2 - \b{r}_1} \left ( \abs{\b{r}_1}^2 + \abs{\b{r}_2}^2 + \b{r}_1 \cdot \b{r}_2 \right )\]
+\[\m{I} = 
+\tfrac{1}{3} M
+\begin{bmatrix}
+    3y_1^2 + 3y_2^2 - (y_2 - y_1)^2 &amp; - \tfrac{1}{2}[ (x_2 + x_1) (y_2 + y_1) + x_1y_1 + x_2y_2 ] &amp; 0 \\
+    - \tfrac{1}{2}[ (x_2 + x_1) (y_2 + y_1) + x_1y_1 + x_2y_2 ] &amp; 3x_1^2 + 3x_2^2 - (x_2 - x_2)^2 &amp; 0 \\
+    0 &amp; 0 &amp; 3\abs{\b{r}_1}^2 + 3\abs{\b{r}_2}^2 - \abs{\b{r}_2 - \b{r}_1}^2
+\end{bmatrix}\]
+
+\[I_{zz} 
+= \tfrac{1}{6} M \left ( 3\abs{\b{r}_1}^2 + 3\abs{\b{r}_2}^2 - L^2 \right ) 
+= \lambda \cdot \tfrac{1}{6} \abs{\b{r}_2 - \b{r}_1} \left ( 3\abs{\b{r}_1}^2 + 3\abs{\b{r}_2}^2 - \abs{\b{r}_2 - \b{r}_1}^2 \right )\]
 
 <p>This is cool because we will see a very similar looking for the moment of inertia of a <a href="/blog/moments-of-inertia/triangle-surface">triangular surface</a>. If you can find a similarly nice way to expression $I_{xx}$, $I_{yy}$, and $I_{xy}$ then please <a href="mailto:epkeilty@gmail.com">let me know</a>.</p>
 
@@ -303,7 +318,7 @@ M
     \begin{bmatrix}
         L_y^2 &amp; - L_x L_y &amp; 0 \\
         - L_y L_x &amp; L_x^2 &amp; 0 \\
-        0 &amp; 0 &amp; L
+        0 &amp; 0 &amp; L^2
     \end{bmatrix}
 \end{align}\]
 
@@ -346,7 +361,7 @@ M
     \begin{bmatrix}
         L_y^2 &amp; - L_x L_y &amp; 0 \\
         - L_y L_x &amp; L_x^2 &amp; 0 \\
-        0 &amp; 0 &amp; L
+        0 &amp; 0 &amp; L^2
     \end{bmatrix}
 \end{align}\]
 
@@ -395,7 +410,7 @@ M
     \begin{bmatrix}
         L_y^2 &amp; \tfrac{1}{2} L_x L_y &amp; 0 \\
         \tfrac{1}{2} L_y L_x &amp; L_x^2 &amp; 0 \\
-        0 &amp; 0 &amp; L
+        0 &amp; 0 &amp; L^2
     \end{bmatrix}
 \end{align}\]
 

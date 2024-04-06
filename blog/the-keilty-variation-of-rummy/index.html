@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      The Keilty Variation of Rummy &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded MathJax (effectively LaTeX) support 
+    https://docs.mathjax.org/en/v2.7-latest/tex.html -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX", "input/MathML", "output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js", "mml2jax.js", "MathMenu.js", "MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
+            Macros: {
+                b: ["{\\boldsymbol #1}",1],
+                u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
+                arccsc: ["\\operatorname\{arccsc\}"],
+                arcsec: ["\\operatorname\{arcsec\}"],
+                arccot: ["\\operatorname\{arccot\}"],
+                csch: ["\\operatorname\{csch\}"],
+                sech: ["\\operatorname\{sech\}"],
+                arcsinh: ["\\operatorname\{arcsinh\}"],
+                arccosh: ["\\operatorname\{arccosh\}"],
+                arctanh: ["\\operatorname\{arctanh\}"],
+                arccsch: ["\\operatorname\{arccsch\}"],
+                arcsech: ["\\operatorname\{arcsech\}"],
+                arccoth: ["\\operatorname\{arccoth\}"],
+                seq: ["{\\left \\langle #1 \\right \\rangle}",1],
+                iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
+                abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
+                hal: ["\\texttt{hal}"],
+                gal: ["\\texttt{gal}"],
+                sh: ["sh"],
+                st: ["st"]
+            },
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!--
+    TeX-AMS_HTML
+    TeX-AMS-MML_HTMLorMML
+    TeX-MML-AM_HTMLorMML
+-->
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">AI/ML Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+        <li>
+          <a href="/files/Eric Keilty - Resume.pdf" target="_blank">R&eacute;sum&eacute;</a>
+        </li>
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2024 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">The Keilty Variation of Rummy</h1>
+            <!-- <span class="post-date">04 Apr 2024</span> -->
+            <time datetime="2024-04-04T00:00:00-04:00" class="post-date">04 Apr 2024</time>
+            <p>Rummy is a very old game with many different variations, including one that has been passed down to me by my family (the Keilty’s). I honestly believe that <strong>the Keilty variation</strong> is the best two-person card game that exists (you can also play it with more than two players and it’s still fun). In this post, I will explain the rules so you can try it for yourself.</p>
+
+<p><br /></p>
+
+<h2 id="the-standard-rules-of-rummy">The Standard Rules of Rummy</h2>
+
+<p>Any game that is called <em>Rummy</em> should have the following rules.</p>
+
+<h3 id="the-deal">The Deal</h3>
+
+<p>A single, standard deck of $52$ cards is shuffled and dealt face-down to each player. The number of cards depends on the number of players. I recommend this breakdown.</p>
+
+<ul>
+  <li>$2$ players = $10$ cards</li>
+  <li>$3{-}4$ players = $7$ cards</li>
+  <li>$5{-}6$ players = $6$ cards</li>
+</ul>
+
+<p>The rest of the un-dealt cards are placed in the middle. This will be referred to as <strong>the stock</strong>. The top card from the stock is flipped face-up and placed next to the stock. This will be called the <strong>discard pile</strong>.</p>
+
+<center>
+<embed src="/svg/the-keilty-variation-of-rummy/the-deal.svg" type="image/svg+xml" width="800px" height="500px" />
+</center>
+
+<h3 id="melds">Melds</h3>
+
+<p>A <strong>meld</strong> is either a set or a run. A <strong>set</strong> consists of three or more cards of the same rank. For example, $\color{red}{10 \heartsuit}, \, 10 \clubsuit, \, \color{red}{10 \diamondsuit}$. Another example, $\color{red}{5 \heartsuit}, \, 5 \clubsuit, \, \color{red}{5 \diamondsuit}, \, 5 \spadesuit$. A <strong>run</strong> consists of three or more consecutive cards of the same suit. For example, $J \spadesuit, \, Q \spadesuit, \, K \spadesuit$. Another example, $\color{red}{3 \heartsuit}, \, \color{red}{4 \heartsuit}, \, \color{red}{5 \heartsuit}, \, \color{red}{6 \heartsuit}, \, \color{red}{7 \heartsuit}$. The run may be as long as you want.</p>
+
+<center>
+<embed src="/svg/the-keilty-variation-of-rummy/melds.svg" type="image/svg+xml" width="700px" height="200px" />
+</center>
+
+<p>Some variations require different minimum lengths for sets and/or runs, but the Keilty variation sticks to the usual definition.</p>
+
+<h3 id="taking-a-turn">Taking a Turn</h3>
+
+<p>You may decide who goes first however way you want. Typically this is done by drawing cards. If I am playing with family, we usually let the youngest go first in the first round. Then in each round afterwards we rotate counter-clockwise who goes first.</p>
+
+<p>Your turn begins by <strong>picking up</strong>. This can be done either by picking up one card from the top of the stock or by picking up from the discard pile (exactly how depends on the variation). What you can do next depends on the variation. In general, if you have a meld in your hand, you may <strong>play the meld</strong> by laying it face up on the table for points. You may also choose to not play the meld this turn and wait to play it in a future turn for strategic reasons. In most variations, you may also <strong>lay-off</strong> which means adding to an existing meld on the table. For example, suppose Alice has played the meld $\color{red}{6 \diamondsuit}, \, \color{red}{7 \diamondsuit}, \, \color{red}{8 \diamondsuit}$. If Bob has the $\color{red}{9 \diamondsuit}$, then on his turn he may play this card by laying it face up on the table for points. Just because you can lay-off doesn’t mean you have to.</p>
+
+<p>Note that how many melds and lay-offs you can play per turn depends on the variation. Also, in some variations (e.g. Gin Rummy) all cards are kept in your hand until the end of the round. Therefore, laying-off is not possible.</p>
+
+<p>Once you are finished playing melds or laying-off, your turn ends by <strong>throwing out</strong> by placing a card from your hand face up at the top of the discard pile. If you picked up from the discard pile, you must discard a different card. However, you may discard it next turn.</p>
+
+<p>The following is an example of a turn.</p>
+
+<center>
+<embed src="/svg/the-keilty-variation-of-rummy/turn.svg" type="image/svg+xml" width="700px" height="500px" />
+</center>
+
+<h3 id="ending-the-round">Ending the Round</h3>
+
+<p>The round ends once a player runs out of cards, this is called <strong>going out</strong>. How this occurs heavily depends on the variation.</p>
+
+<h3 id="counting-points">Counting Points</h3>
+
+<p>At the end of a round, one player will have run out of all cards, but all the other players will still have cards in their hands. Scoring often involves each player adding up points in their melded cards and deducting points from cards that have not been melded (still in their hand).</p>
+
+\[\text{Round Score} = \left ( \sum \text{Played Cards} \right ) - \left ( \sum \text{Cards in Hand} \right )\]
+
+<p>Some variations also give bonus points to the player who <em>went out</em>.</p>
+
+<h3 id="the-stock-runs-out">The Stock Runs Out</h3>
+
+<p>If the stock runs out of cards before any player <em>goes out</em>, then remove the top card from the discard pile and shuffle the rest. The shuffled cards are the new stock and the leftover card is the discard pile. The round continues.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="the-keilty-variation">The Keilty Variation</h2>
+
+<p>These rules are specific to the Keilty variation of Rummy.</p>
+
+<h3 id="card-values">Card Values</h3>
+
+<p>The cards are valued in the following way.</p>
+
+<ul>
+  <li>$2, 3, 4, 5, 6, 7, 8, 9$ = $5$ points</li>
+  <li>$10, J, Q, K$ = $10$ points</li>
+  <li>$A$ = $15$ points</li>
+</ul>
+
+<p>This point system makes it very quick to add up points after each round. I also like its strategic implications.</p>
+
+<h3 id="aces">Aces</h3>
+
+<p>Whether an Ace is high or low depends on the variant. Typically, it is low. However, in the Keilty variation, it can be either, but not at the same time. For example, playing the runs $Q \clubsuit, \, K \clubsuit, \, A \clubsuit$ and $A \clubsuit, \, 2 \clubsuit, \, 3 \clubsuit$ are allowed. However, $K \clubsuit, \, A \clubsuit, \, 2 \clubsuit$ is not allowed.</p>
+
+<h3 id="the-discard-pile">The Discard Pile</h3>
+
+<p>In some variations, the discard pile only shows the top card. However, in the Keilty variation, the discard pile is spread so all cards can be seen. On your turn, you can pick up any card from the discard pile; however, this comes with two stipulations.</p>
+
+<ol>
+  <li>You <strong>must</strong> use the card you pick up in a meld or a lay-off and play it on that turn</li>
+  <li>You <strong>must</strong> also pick up all cards above/right of the selected card (but you do not need to play them on the same turn)</li>
+</ol>
+
+<p>You may also play any other melds or lay-offs that you already have or that incidentally result from picking up from the discard pile. At the end of your turn, you may throw out any card, including a card you picked up.</p>
+
+<p>The following is an example of picking up from the discard pile in the Keilty variation.</p>
+
+<center>
+<embed src="/svg/the-keilty-variation-of-rummy/pick-up-from-discard-pile.svg" type="image/svg+xml" width="700px" height="500px" />
+</center>
+
+<h3 id="a-rummy">A Rummy</h3>
+
+<p>The best way to explain this concept is with examples. Consider the following scenario.</p>
+
+<center>
+<embed src="/svg/the-keilty-variation-of-rummy/rummy-1.svg" type="image/svg+xml" width="400px" height="200px" />
+</center>
+
+<p>A player throws out the $6 \spadesuit$, but the $5 \spadesuit$ and $7 \spadesuit$ were already in the discard pile, which forms a run. In the Keilty variation, this is called a <strong>rummy</strong>.</p>
+
+<p>The first player (<strong>except the player who caused the rummy</strong>) who says “RUMMY” gets to pick up (out of turn) from the discard pile and play the meld. The player picks up from the discard pile in the usual way. In this example, the player would pick up all cards since $5 \spadesuit$ is the first card in the discard pile. This player <strong>does not throw-out afterward</strong>, as this was not a turn.</p>
+
+<p>A rummy can also occur with lay-offs. Consider the following scenario.</p>
+
+<center>
+<embed src="/svg/the-keilty-variation-of-rummy/rummy-2.svg" type="image/svg+xml" width="700px" height="200px" />
+</center>
+
+<p>A player throws out the $\color{red}{4 \heartsuit}$, but the meld $\color{red}{A \heartsuit}$, $\color{red}{2 \heartsuit}$, $\color{red}{3 \heartsuit}$ has been played. This player missed that they could have layed-off the $\color{red}{4 \heartsuit}$. Thus, the first player (<strong>except the player who caused the rummy</strong>) to say “RUMMY” gets to lay-off the $\color{red}{4 \heartsuit}$ for out of turn, for free, and does not have to throw out. In this case, since the $\color{red}{4 \heartsuit}$ is the top card of the discard pile, this player doesn’t have to take any other cards.</p>
+
+<p>A rummy can also occur when playing a meld or a lay-off. Consider the same scenario above, but the order of events flipped.</p>
+
+<center>
+<embed src="/svg/the-keilty-variation-of-rummy/rummy-3.svg" type="image/svg+xml" width="700px" height="200px" />
+</center>
+
+<p>In this case, the opponent played the meld $\color{red}{A \heartsuit}$, $\color{red}{2 \heartsuit}$, $\color{red}{3 \heartsuit}$, but the discard pile contains the $\color{red}{4 \heartsuit}$, which can be layed-off on this run. Thus, the first player (<strong>except the player who caused the rummy</strong>) to say “RUMMY” gets to lay-off the $\color{red}{4 \heartsuit}$ for out of turn, for free, and does not have to throw out (same as the previous example).</p>
+
+<h3 id="going-out">Going Out</h3>
+
+<p>A very important aspect of the game is that completing your turn <em>includes throwing out a card</em> into the discard pile. This becomes relevant at the end of the game. Consider the following example.</p>
+
+<center>
+<embed src="/svg/the-keilty-variation-of-rummy/end-game-1.svg" type="image/svg+xml" width="670px" height="200px" />
+</center>
+
+<p>You may think you can play the run $\color{red}{J \heartsuit}$, $\color{red}{Q \heartsuit}$, $\color{red}{K \heartsuit}$ to go out and end the round. However, if you do this then you have not completed your turn as you did not throw out a card. Therefore, this is not allowed.</p>
+
+<p>What you have to do in this situation is throw out one of the cards in your hand, hope your opponents can’t use it, and then pick it back up on your next turn. Since your opponents will have likely added to the discard pile, you will now be able to pick it back up, play the meld, and throw out a card.</p>
+
+<p>This same scenario can occur with a card in the discard pile. For example,</p>
+
+<center>
+<embed src="/svg/the-keilty-variation-of-rummy/end-game-2.svg" type="image/svg+xml" width="520px" height="200px" />
+</center>
+
+<p>In this situation, you cannot pick up the $\color{red}{K \heartsuit}$ from the discard pile because you would not be able to play a meld and complete your turn. Instead, you must wait until your next turn when your opponents have added to the discard pile. Then you may pick-up the king.</p>
+
+<p>This rule can be frustrating at first but creates a lot of strategic opportunities, especially in the end game.</p>
+
+<h3 id="winning-the-game">Winning the Game</h3>
+
+<p>Typically, we play many rounds keeping the cumulative point totals until someone reaches $500$ points. However, you may play to however many points you would like.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="strategy">Strategy</h2>
+
+<p>Whenever I introduce new players to the Keilty variation of Rummy, they often think that I am winning because I am getting lucky. While there is an element of luck to this game, much of it is strategy. I am not going to give away all of my tricks, but I want to at least provide some good principles.</p>
+
+<h3 id="card-diversity">Card Diversity</h3>
+
+<p>From my experience playing this game, a common pitfall for new players is getting stuck waiting for a card. For example, a player might have the $\color{red}{A \heartsuit}$ and the $A \clubsuit$, and be waiting for a third ace since it is worth so many points. This is not a good strategy. The chances you draw one of the other two aces are very low. Moreover, if someone else draws those aces they are not likely to discard them.</p>
+
+<p>Instead, you should be trying to maximize your card diversity. You want a fair number of cards. Between $10$ and $15$ in the early game and between $5$ and $10$ in the late game. You also want each card to be able to meld with multiple other cards in your hand. This makes it more likely that you can use any random card you pick-up or your opponents discard.</p>
+
+<h3 id="dont-be-afraid-to-pick-up-cards">Don’t be Afraid to Pick Up Cards</h3>
+
+<p>Another common pitfall for new players is being scared to pick up a lot of cards. They mistakenly think the goal of the game is to go out first. This is not true. In the Keilty variation, there are no bonus points for <em>going out</em> first. The goal of the game is to score the most points, which is done by creating melds and lay-offs. To do this, you need lots of cards.</p>
+
+<p>Trust me from years of experience. Having a lot of cards means you are much more likely to be able to use any particular card that you pick up or an opponent throws out. More often than not, even if you end the game with $5$ or more cards, the number of points you were able to play as a result of picking up a lot of cards vastly outweighs the points that get deducted.</p>
+
+<p>Moreover, having a lot of cards can be helpful in the end game. Your opponent with fewer cards will have a tougher time throwing out a card that you can’t use, and you will have more options for “safe” cards to throw away.</p>
+
+<h3 id="runs-vs-sets">Runs vs Sets</h3>
+
+<p>In my experience, there are two types of games. If early on players play a lot of <em>sets</em>, then the game is going to be low-scoring. This is for two reasons. First, when a set is played, there is only at most one additional card that can be layed-off on it. Second, sets block runs. For example, the set $\color{red}{7 \heartsuit}$, $7 \clubsuit$, $\color{red}{7 \diamondsuit}$ blocks $9$ combinations of runs ($(5, 6, 7)$, $(6, 7, 8)$, and $(7, 8, 9)$ mulitplied by three suits). As a result, players get less opportunity to pick up cards from the discard pile. The game will most likely with almost every meld being a set.</p>
+
+<p>Alternatively, if early on players play a lot of <em>runs</em>, then the game is going to be high-scoring. This is because runs allow lay-offs. Then other players can lay-off on top of lay-offs, and so on. In this game, the played cards are much more interconnected. Therefore, almost every card in the discard pile will be potentially useful, resulting in players picking up a large number of cards. The game will end with a lot of interconnected runs and a few sets at the end for the player who <em>went out</em>.</p>
+
+<p>You can use this knowledge to your advantage in later rounds. For example, if you ahead you can start playing a lot of sets in order to slow the game down and ensure other players don’t get too many points.</p>
+
+        </div>
+    </div>
+
+    <!--
+    <h3 style="text-align:center; margin-bottom:1em;">
+      <a href="/blog/">Blog Archive</a>
+    </h3>
+    -->
+    
+  </body>
+</html>
