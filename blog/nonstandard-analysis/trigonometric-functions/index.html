@@ -10,7 +10,7 @@
 
   <title>
     
-      Trigonometric Fucntions &middot; Eric Keilty
+      Trigonometric Functions &middot; Eric Keilty
     
   </title>
 
@@ -36,13 +36,37 @@
   <!-- RSS 
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
 </head>
-  <!-- Enable embedded Latex support -->
+  <!-- Enable embedded MathJax (effectively LaTeX) support 
+    https://docs.mathjax.org/en/v2.7-latest/tex.html -->
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
-        jax: ["input/TeX","input/MathML","output/SVG", "output/CommonHTML"],
-        extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
+        jax: ["input/TeX", "input/MathML", "output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js", "mml2jax.js", "MathMenu.js", "MathZoom.js", "CHTML-preview.js"],
         TeX: {
-            extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js", "cancel.js"]
+            extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
+            Macros: {
+                b: ["{\\boldsymbol #1}",1],
+                u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
+                arccsc: ["\\operatorname\{arccsc\}"],
+                arcsec: ["\\operatorname\{arcsec\}"],
+                arccot: ["\\operatorname\{arccot\}"],
+                csch: ["\\operatorname\{csch\}"],
+                sech: ["\\operatorname\{sech\}"],
+                arcsinh: ["\\operatorname\{arcsinh\}"],
+                arccosh: ["\\operatorname\{arccosh\}"],
+                arctanh: ["\\operatorname\{arctanh\}"],
+                arccsch: ["\\operatorname\{arccsch\}"],
+                arcsech: ["\\operatorname\{arcsech\}"],
+                arccoth: ["\\operatorname\{arccoth\}"],
+                seq: ["{\\left \\langle #1 \\right \\rangle}",1],
+                iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
+                abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
+                hal: ["\\texttt{hal}"],
+                gal: ["\\texttt{gal}"],
+                sh: ["sh"],
+                st: ["st"]
+            },
         },
         tex2jax: {
             inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -53,11 +77,14 @@
         "HTML-CSS": { availableFonts: ["TeX"] }
     });
 </script>
+
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
 
-<!-- Enable Tikz support -->
-<link rel="stylesheet" type="text/css" href="http://tikzjax.com/v1/fonts.css">
-<script src="http://tikzjax.com/v1/tikzjax.js"></script>
+<!--
+    TeX-AMS_HTML
+    TeX-AMS-MML_HTMLorMML
+    TeX-MML-AM_HTMLorMML
+-->
 
   <body>
     
@@ -116,7 +143,7 @@
   
 </div>
       </div>
-      <p>&copy; 2023 Eric Keilty </p>
+      <p>&copy; 2024 Eric Keilty </p>
 
     </div>
   </div>
@@ -124,13 +151,41 @@
     <div class="content container">
 
         <div class="post">
-            <h1 class="post-title">Trigonometric Fucntions</h1>
-            <!-- <span class="series-date">08 Jul 2023</span> -->
-            <time datetime="2023-07-08T00:00:00-04:00" class="post-date">08 Jul 2023</time>
+            <h1 class="post-title">Trigonometric Functions</h1>
+            <!-- <span class="series-date">20 Jul 2023</span> -->
+            <time datetime="2023-07-20T00:00:00-04:00" class="post-date">20 Jul 2023</time>
             <!-- maybe I'll add tagging later
             <span class="post-date" style="margin-top:-1em;"> ["nonstandard-analysis"] </span>
             -->
             <p><strong>TODO</strong></p>
+
+<p>These are all the hyperfunction extension of $\sin$ and $\cos$ which means we use the notation $({^* \sin})$ and $({^* \cos})$.</p>
+
+<p><strong>TODO</strong> replace the bold with the star notation</p>
+
+<h2 id="small-angle-approximation">Small Angle Approximation</h2>
+
+\[\abs{\b{\sin}(\b{\epsilon})} \leq \abs{\b{\epsilon}} &lt; \abs{^* x}\]
+
+<p>Thus, $\b{\sin}(\b{\epsilon}) \in \mathbb{I}$.</p>
+
+<p>Now I need to show that</p>
+
+\[\b{\cos}(\b{\epsilon}) \in halo({^* 1}) \implies \b{\cos}(\b{\epsilon}) = {^* 1} + \b{\delta}\]
+
+<p>This then gives all the other results for all the other trig functions</p>
+
+<p>Obviously $\b{\sin}$ and $\b{\cos}$ of unlimited numbers are undefined</p>
+
+<p><br /></p>
+
+<h2 id="continuity">Continuity</h2>
+
+\[\b{\sin}(halo(\b{x})) = \b{\sin}(\b{x} + \b{\epsilon}) = \b{\sin}(\b{x}) \b{\cos}(\b{\epsilon}) + \b{\cos}(\b{x}) \b{\sin}(\b{\epsilon}) = \b{\sin}(\b{x}) \cdot ({^* 1} + \b{\delta}) + \b{\cos}(\b{x}) \cdot \b{\epsilon}\]
+
+<p>Thus,</p>
+
+\[sh(\b{\sin}(halo(\b{x}))) = \b{\sin}(\b{x})\]
 
         </div>
 
@@ -153,10 +208,10 @@
 
         <div class="pagination" style="margin-top:1em;">
             
-                <a class="pagination-item older" href="/blog/nonstandard-analysis/exponentiation/">Previous</a>
+                <a class="pagination-item older" href="/blog/nonstandard-analysis/continuity/">Previous</a>
             
             
-                <a class="pagination-item newer" href="/blog/nonstandard-analysis/continuity/">Next</a>
+                <a class="pagination-item newer" href="/blog/nonstandard-analysis/the-transfer-principle/">Next</a>
             
         </div>
         <h3 style="text-align:center; margin-bottom:1em;">
