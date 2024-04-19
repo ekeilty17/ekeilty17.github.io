@@ -43,6 +43,7 @@ Blog Ideas
         - why do glasses work both ways? You'd think if the lense is bending in one direction, that it would only work in that direction
         - Time zones, have one that the whole world uses, and all that's different is the arbitrary number on the clock
         - US laws seem to be "we only enforce the law sometimes, but if you get caught then it's massive consequences". Whereas in Northern Europe it's more "We always enforce the laws, and if you get caught it's no big deal". Like how Sweden or whatever country has only 20 years for murder. Drugs and Speeding in America are basically never enforced unless they decide to...leads to racial profiling, etc.
+        - How casinos can scam you with auto-shufflers. First simulate a truly random deck with various players (basic strategy, scared strategy (not hitting 16, etc), aggressive strategy (doubling on 8s, etc)). Then, simulate with a deck where we ensure 10s are always uniformly distributed. Then, simulate where we let you win for the first 30 mins and then have malicious coolers 
     
     Language Series
         - Get some type of similarity measure between languages, then do K-means clustering and take the one closest to the mean. This will give the optimal set of languages to learn if you want to know every language
