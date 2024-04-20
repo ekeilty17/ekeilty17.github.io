@@ -150,3 +150,21 @@ a.post-link-item:focus {
   visibility: visible;
   opacity: 1;
 }
+
+/* Overflow horizontal scroll */
+.overflow-container {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  display: block;
+}
+
+.overflow-content {
+  width: max-content;
+}
+
+.equation-container {
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent line breaks */
+  max-width: 100%; /* Ensure the container doesn't exceed the width of its parent */
+}

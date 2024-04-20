@@ -189,9 +189,13 @@
 <p>Using a ruler and compass, we <strong>can</strong> construct a regular heptadecagon ($17$-gon), but we <strong>cannot</strong> construct a regular heptagon ($7$-gon). Why? This fact is counter-intuitive as a $17$-gon seems much more complicated than a $7$-gon. How would one even prove such a claim?</p>
 
 <center>
+<div class="overflow-container">
+<div class="overflow-content">
 <embed src="/svg/guass-proof-of-the-constructibilty-of-the-heptadecagon/17-gon-motivation.svg" type="image/svg+xml" />
 &emsp;&emsp;&emsp;&emsp;
 <embed src="/svg/guass-proof-of-the-constructibilty-of-the-heptadecagon/7-gon-motivation.svg" type="image/svg+xml" />
+</div>
+</div>
 </center>
 
 <p><br /></p>
@@ -216,8 +220,12 @@
 
 <p>The only current known Fermat primes are $3$, $5$, $17$, $257$, and $65537$. Thus, a $17$-gon can be constructed, but a $7$-gon cannot. Here is a list of all of the constructible regular $n$-gons under $300$.</p>
 
-\[2, 3, 4, 5, 6, 8, 10, 12, 15, 16, 17, 20, 24, 30, 32, 34, 40, 48, 51, 60, 64, 68, \\ 
-80, 85, 96, 102, 120, 128, 136, 160, 170, 192, 204, 240, 255, 256, 257, 272\]
+<div class="equation-container">
+$$
+2, 3, 4, 5, 6, 8, 10, 12, 15, 16, 17, 20, 24, 30, 32, 34, 40, 48, 51, 60, 64, 68, \\ 
+80, 85, 96, 102, 120, 128, 136, 160, 170, 192, 204, 240, 255, 256, 257, 272
+$$
+</div>
 
 <p><br /></p>
 
@@ -230,11 +238,15 @@
 <p>In Euclid’s infamous textbook <a href="https://en.wikipedia.org/wiki/Euclid%27s_Elements" target="_blank">The Elements</a>, he provided a few regular polygon constructions. First, he could construct an equilateral triangle, square, and regular pentagon. The equilateral triangle and square are quite simple. The regular pentagon is more complicated, but not too bad.</p>
 
 <center>
+<div class="overflow-container">
+<div class="overflow-content">
 <embed src="/svg/guass-proof-of-the-constructibilty-of-the-heptadecagon/equilateral-triangle.svg" type="image/svg+xml" />
 &emsp;&emsp;&emsp;&emsp;
 <embed src="/svg/guass-proof-of-the-constructibilty-of-the-heptadecagon/square.svg" type="image/svg+xml" />
 &emsp;&emsp;&emsp;&emsp;
 <embed src="/svg/guass-proof-of-the-constructibilty-of-the-heptadecagon/regular-pentagon.svg" type="image/svg+xml" />
+</div>
+</div>
 </center>
 
 <p><br /></p>
@@ -246,9 +258,13 @@
 <p>Once you’re able to construct these, there are regular polygons you can construct for free using two methods. In the first method, inscribe a regular $n$-gon into a circle and draw the <a href="https://www.youtube.com/watch?v=T0NCVVyu80c" target="_blank">perpendicular bisector</a>. Then, we can construct a regular $2n$-gon by extending the perpendicular bisector to the circle. Below is an example which constructs a regular hexagon using an equilateral triangle.</p>
 
 <center>
+<div class="overflow-container">
+<div class="overflow-content">
 <embed src="/svg/guass-proof-of-the-constructibilty-of-the-heptadecagon/equilateral-triangle-bisected.svg" type="image/svg+xml" />
 &emsp;&emsp;&emsp;&emsp;
 <embed src="/svg/guass-proof-of-the-constructibilty-of-the-heptadecagon/regular-hexagon.svg" type="image/svg+xml" />
+</div>
+</div>
 </center>
 
 <p><br /></p>
@@ -256,9 +272,13 @@
 <p>In the second method, given a regular $p$-gon and $q$-gon which are <a href="https://en.wikipedia.org/wiki/Coprime_integers" target="_blank">coprime</a>, we can construct a regular $pq$-gon. Below is an example of constructing a regular $15$-gon from an equilateral triangle and a regular pentagon.</p>
 
 <center>
+<div class="overflow-container">
+<div class="overflow-content">
 <embed src="/svg/guass-proof-of-the-constructibilty-of-the-heptadecagon/equilateral-triangle-and-pentagon.svg" type="image/svg+xml" />
 &emsp;&emsp;&emsp;&emsp;
 <embed src="/svg/guass-proof-of-the-constructibilty-of-the-heptadecagon/regular-15-gon.svg" type="image/svg+xml" />
+</div>
+</div>
 </center>
 
 <p><br /></p>
@@ -277,22 +297,30 @@
 
 <p>Everything the Greeks did used strict Euclidean geometry. However, in order to thoroughly solve this problem, we need algebra. A major breakthrough came from René Descartes who formed a bridge between Greek constructions and algebra. In his book <a href="https://en.wikipedia.org/wiki/La_G%C3%A9om%C3%A9tries" target="_blank">La Géométrie</a>, he showed the following.</p>
 
-\[\boxed{
+<div class="equation-container">
+$$
+\boxed{
     \text{a line segment of length } x \text{ is constructible with a ruler and compass} \qquad\\[15pt]
     \textit{if and only if} \\[15pt]
     \text{the number } x \text{ can be written as an algebraic expression} \\ 
     \text{involving only the operations } \ +, \ -, \ \times, \ \div, \text{ and } \sqrt{\ }
-}\]
+}
+$$
+</div>
 
 <p>Such numbers are called <strong>constructible numbers</strong>. I will not give a proof of this. However, the intuition is that rulers can draw lines and compasses can draw circles. A ruler and compass construction plays with the intersections of lines and circles.</p>
 
 <center>
+<div class="overflow-container">
+<div class="overflow-content">
 <embed src="/svg/guass-proof-of-the-constructibilty-of-the-heptadecagon/line-line-intersection.svg" type="image/svg+xml" />
 &emsp;&emsp;&emsp;&emsp;
 <embed src="/svg/guass-proof-of-the-constructibilty-of-the-heptadecagon/line-circle-intersection.svg" type="image/svg+xml" />
 &emsp;&emsp;&emsp;&emsp;
 <embed src="/svg/guass-proof-of-the-constructibilty-of-the-heptadecagon/circle-circle-intersection.svg" type="image/svg+xml" />
 &emsp;&emsp;&emsp;&emsp;
+</div>
+</div>
 </center>
 
 <p>Recall the general formulas for lines and circles.</p>
@@ -303,12 +331,16 @@
 
 <p>An important corollary is the following.</p>
 
-\[\boxed{
+<div class="equation-container">
+$$
+\boxed{
     \text{an angle } \alpha \text{ is constructible with a ruler and compass} \\[15pt]
     \textit{if and only if} \\[15pt]
     \text{the number } \cos \alpha \text{ or } \sin \alpha \text{ can be written as an algebraic expression} \qquad \\ 
     \text{involving only the operations } \ +, \ -, \ \times, \ \div, \text{ and } \sqrt{\ }
-}\]
+}
+$$
+</div>
 
 <p>This is pretty intuitive. If we can construct the length $\cos \alpha$ or $\sin \alpha$, then transport that length to a unit circle, raise the perpendicular line, and draw the corresponding triangle with angle $\alpha$. More detail is given <a href="https://math.stackexchange.com/questions/1355379/constructible-real-numbers" target="_blank">here</a>.</p>
 
@@ -325,9 +357,13 @@
 <p>Using Descartes’ theorem, we will now convert the geometric problem into algebraic number theory. To do this, we imagine a regular $n$-gon inscribed inside the unit circle. Below are examples using a regular pentagon and a regular heptadecagon ($17$-gon).</p>
 
 <center>
+<div class="overflow-container">
+<div class="overflow-content">
 <embed src="/svg/guass-proof-of-the-constructibilty-of-the-heptadecagon/pentagon-in-unit-circle.svg" type="image/svg+xml" />
 &emsp;&emsp;&emsp;&emsp;
 <embed src="/svg/guass-proof-of-the-constructibilty-of-the-heptadecagon/17-gon-in-unit-circle.svg" type="image/svg+xml" />
+</div>
+</div>
 </center>
 
 <p>Now, consider this regular $n$-gon in the <a href="https://en.wikipedia.org/wiki/Complex_plane" target="_blank">complex plane</a>. Recall that any complex number can be written in <a href="https://en.wikipedia.org/wiki/Cartesian_coordinate_system" target="_blank">Cartesian coordinates</a> and <a href="https://en.wikipedia.org/wiki/Polar_coordinate_system" target="_blank">Polar coordinates</a>.</p>
@@ -385,17 +421,29 @@
 <p>In simple terms, successive multiplication of any root will cycle around the unit circle and hit every vertex exactly once. In technical terms, $\zeta^k$ is a generator of the group $\mathbb{Z} / n \mathbb{Z}$. Below shows an example for $\zeta^3$ in the regular $7$-gon.</p>
 
 <center>
+<div class="overflow-container">
+<div class="overflow-content">
 <embed src="/svg/guass-proof-of-the-constructibilty-of-the-heptadecagon/7-gon-cycle.svg" type="image/svg+xml" />
+</div>
+</div>
 </center>
 
-\[\langle \zeta^3 \rangle = \{ \zeta^{3}, \zeta^{6}, \zeta^{9}, \zeta^{12}, \zeta^{15}, \zeta^{18}, \zeta^{21} \} = \{ \zeta^{3}, \zeta^{6}, \zeta^{2}, \zeta^{5}, \zeta^{1}, \zeta^{4}, \zeta^{0} \} = \langle \zeta^1 \rangle\]
+<div class="equation-container">
+$$
+\langle \zeta^3 \rangle = \{ \zeta^{3}, \zeta^{6}, \zeta^{9}, \zeta^{12}, \zeta^{15}, \zeta^{18}, \zeta^{21} \} = \{ \zeta^{3}, \zeta^{6}, \zeta^{2}, \zeta^{5}, \zeta^{1}, \zeta^{4}, \zeta^{0} \} = \langle \zeta^1 \rangle
+$$
+</div>
 
 <p><br /></p>
 
 <p>Here is an anti-example of $\zeta^2$ in a regular hexagon which does not satsify the above property (since $2$ and $6$ share a common factor, thus we get stuck in a subcycle).</p>
 
 <center>
+<div class="overflow-container">
+<div class="overflow-content">
 <embed src="/svg/guass-proof-of-the-constructibilty-of-the-heptadecagon/hexagon-cycle.svg" type="image/svg+xml" />
+</div>
+</div>
 </center>
 
 \[\langle \zeta^2 \rangle = \{ \zeta^{2}, \zeta^{4}, \zeta^{6} \} \neq \langle \zeta^1 \rangle\]
@@ -432,7 +480,11 @@
 
 <p>Now, consider the following</p>
 
-\[\zeta^1 + \zeta^{-1} = [\cos(2 \pi/n) + i \sin(2 \pi/n)] + [\cos(2 \pi/n) - i \sin(2 \pi/n)] = 2 \cos(2 \pi/n)\]
+<div class="equation-container">
+$$
+\zeta^1 + \zeta^{-1} = [\cos(2 \pi/n) + i \sin(2 \pi/n)] + [\cos(2 \pi/n) - i \sin(2 \pi/n)] = 2 \cos(2 \pi/n)
+$$
+</div>
 
 <p>And in general</p>
 
@@ -449,20 +501,36 @@
 <p>Recall that our goal is to derive the analytical expression for the angle of a regular pentagon (in particular the formula for $\cos(2 \pi / 5)$). If we can show that $\cos(2 \pi / 5)$ can be expressed only using the operations $\ +, \ -, \ \times, \ \div, \text{ and } \sqrt{\ }$, then we have proven that a regular pentagon is constructible.</p>
 
 <center>
+<div class="overflow-container">
+<div class="overflow-content">
 <embed src="/svg/guass-proof-of-the-constructibilty-of-the-heptadecagon/pentagon-in-unit-circle-2.svg" type="image/svg+xml" />
+</div>
+</div>
 </center>
 
 <p>We consider the two pairs of conjugates and define the following</p>
 
-\[\gamma_1 = \zeta^1 + \zeta^{-1} \qquad\qquad \gamma_2 = \zeta^2 + \zeta^{-2}\]
+<div class="equation-container">
+$$
+\gamma_1 = \zeta^1 + \zeta^{-1} \qquad\qquad \gamma_2 = \zeta^2 + \zeta^{-2}
+$$
+</div>
 
 <p>Now, from the helpful properties above, we derive the following. Recall that $\zeta^{-k} = \zeta^{5-k}$ for the roots of a regular pentagon.</p>
 
-\[\gamma_1 + \gamma_2 = \zeta^1 + \zeta^{-1} + \zeta^2 + \zeta^{-2} = \zeta^1 + \zeta^2 + \zeta^3 + \zeta^4 = -1\]
+<div class="equation-container">
+$$
+\gamma_1 + \gamma_2 = \zeta^1 + \zeta^{-1} + \zeta^2 + \zeta^{-2} = \zeta^1 + \zeta^2 + \zeta^3 + \zeta^4 = -1
+$$
+</div>
 
 <p>Also</p>
 
-\[\gamma_1 \cdot \gamma_2 = (\zeta^1 + \zeta^{-1}) \cdot (\zeta^2 + \zeta^{-2}) = \zeta^3 + \zeta^{-1} + \zeta^1 + \zeta^{-3} = \zeta^1 + \zeta^2 + \zeta^3 + \zeta^4 = -1\]
+<div class="equation-container">
+$$
+\gamma_1 \cdot \gamma_2 = (\zeta^1 + \zeta^{-1}) \cdot (\zeta^2 + \zeta^{-2}) = \zeta^3 + \zeta^{-1} + \zeta^1 + \zeta^{-3} = \zeta^1 + \zeta^2 + \zeta^3 + \zeta^4 = -1
+$$
+</div>
 
 <p><br /></p>
 
@@ -472,15 +540,23 @@
 
 <p>We know the roots must be $\gamma_1$ and $\gamma_2$. However, we can find the roots in a second way</p>
 
-\[\begin{align}
+<div class="equation-container">
+$$
+\begin{align}
   0 &amp;= (z - \gamma_1)(z - \gamma_2) \\[10pt]
   &amp;= z^2 - (\gamma_1 + \gamma_2)z + \gamma_1 \cdot \gamma_2 \\[10pt]
   &amp;= z^2 + z - 1
-\end{align}\]
+\end{align}
+$$
+</div>
 
 <p>Therefore, using high school algebra, we know that the roots must be $\displaystyle \frac{-1 \pm \sqrt{5}}{2}$. You can convince yourself that that $\displaystyle \gamma_1 = \frac{-1 + \sqrt{5}}{2}$ and $\displaystyle \gamma_2 = \frac{- 1 - \sqrt{5}}{2}$. Therefore</p>
 
-\[2 \cos(2 \pi / 5) = \gamma_1 = \frac{-1 + \sqrt{5}}{2} \qquad\implies\qquad \boxed{ \cos(2 \pi / 5) = \frac{-1 + \sqrt{5}}{4} }\]
+<div class="equation-container">
+$$
+2 \cos(2 \pi / 5) = \gamma_1 = \frac{-1 + \sqrt{5}}{2} \qquad\implies\qquad \boxed{ \cos(2 \pi / 5) = \frac{-1 + \sqrt{5}}{4} }
+$$
+</div>
 
 <p>Therefore, since $\cos(2 \pi / 5)$ can be written as an algebraic expression involving only the operations $\ +, \ -, \ \times, \ \div, \text{ and } \sqrt{\ }$, a regular pentagon must be constructible (which we already knew).</p>
 
@@ -491,13 +567,21 @@
 <p>Now, let’s do the same for a regular $17$-gon. It’s going to be the same general idea as a regular pentagon but with a few more complications.</p>
 
 <center>
+<div class="overflow-container">
+<div class="overflow-content">
 <embed src="/svg/guass-proof-of-the-constructibilty-of-the-heptadecagon/17-gon-in-unit-circle-2.svg" type="image/svg+xml" />
+</div>
+</div>
 </center>
 
 <p>Consider the following variable definitions.</p>
 
 <center>
+<div class="overflow-container">
+<div class="overflow-content">
 <embed src="/svg/guass-proof-of-the-constructibilty-of-the-heptadecagon/17-gon-derivation-tree.svg" type="image/svg+xml" />
+</div>
+</div>
 </center>
 
 <p>These may seem like they came out of nowhere, but I assure you there are deep, deep mathematics behind them. Unfortunately, it’s too much for me to cover in this already long post. I am planning on making a follow-up post. For further reading, I recommend studying <a href="https://nrich.maths.org/1422" target="_blank">Galois theory</a> and then reading <a href="https://people.reed.edu/~jerry/332/30kummer.pdf" target="_blank">this</a>.</p>
@@ -506,47 +590,75 @@
 
 <p>Now, we are going to do a similar procedure to what we did for the regular pentagon in order to solve for $\alpha_1 = 2 \cos(2 \pi / 17)$. I will assert the following and leave it as an exercise for the reader to verify. Proving $\gamma_1 \cdot \gamma_2$ without using brute force is quite tricky. There is a good article <a href="https://crypto.stanford.edu/pbc/notes/numbertheory/gaussperiod.html" target="_blank">here</a>.</p>
 
-\[\gamma_1 + \gamma_2 = \zeta^1 + \zeta^2 + \ldots + \zeta^{16} = -1 \qquad\qquad \gamma_1 \cdot \gamma_2 = 4 (\zeta^1 + \zeta^2 + \ldots + \zeta^{16}) = -4\]
+<div class="equation-container">
+$$
+\gamma_1 + \gamma_2 = \zeta^1 + \zeta^2 + \ldots + \zeta^{16} = -1 \qquad\qquad \gamma_1 \cdot \gamma_2 = 4 (\zeta^1 + \zeta^2 + \ldots + \zeta^{16}) = -4
+$$
+</div>
 
 <p>As before, we can consider the polynomial</p>
 
-\[\begin{align}
+<div class="equation-container">
+$$
+\begin{align}
     0 &amp;= (z - \gamma_1)(z - \gamma_2) \\
     &amp;= z^2 - (\gamma_1 + \gamma_2)z + \gamma_1 \cdot \gamma_2 \\
     &amp;= z^2 + z - 4
-\end{align}\]
+\end{align}
+$$
+</div>
 
-<p>and solve for it’s roots</p>
+<p>and solve for its roots</p>
 
-\[\gamma_1 = \frac{-1 + \sqrt{17}}{2} \qquad\qquad \gamma_2 = \frac{-1 - \sqrt{17}}{2}\]
+<div class="equation-container">
+$$
+\gamma_1 = \frac{-1 + \sqrt{17}}{2} \qquad\qquad \gamma_2 = \frac{-1 - \sqrt{17}}{2}
+$$
+</div>
 
 <p>Continuing, we do the same thing with $\beta_1$ and $\beta_2$. To save space, I am going to assert the necessary steps and the reader can fill in the gaps if they are inclined.</p>
 
-\[\beta_1 + \beta_2 = \gamma_1 \qquad\qquad \beta_1 \cdot \beta_2 = \zeta^1 + \zeta^2 + \ldots + \zeta^{16} = -1
+<div class="equation-container">
+$$
+\beta_1 + \beta_2 = \gamma_1 \qquad\qquad \beta_1 \cdot \beta_2 = \zeta^1 + \zeta^2 + \ldots + \zeta^{16} = -1
 \\[10pt]
 0 = (z - \beta_1)(z - \beta_2) = z^2 - \gamma_1 z - 1
 \quad\implies\quad
-\beta_1 = \frac{\gamma_1 + \sqrt{\gamma_1^2 + 4}}{2} = \frac{-1 + \sqrt{17} + \sqrt{34 - 2\sqrt{17}}}{4}\]
+\beta_1 = \frac{\gamma_1 + \sqrt{\gamma_1^2 + 4}}{2} = \frac{-1 + \sqrt{17} + \sqrt{34 - 2\sqrt{17}}}{4}
+$$
+</div>
 
 <p>We actually need the value of $\beta_3$, so we do the same procedure.</p>
 
-\[\beta_3 + \beta_4 = \gamma_2 \qquad\qquad \beta_3 \cdot \beta_4 = \zeta^1 + \zeta^2 + \ldots + \zeta^{16} = -1
+<div class="equation-container">
+$$
+\beta_3 + \beta_4 = \gamma_2 \qquad\qquad \beta_3 \cdot \beta_4 = \zeta^1 + \zeta^2 + \ldots + \zeta^{16} = -1
 \\[10pt]
 0 = (z - \beta_3)(z - \beta_4) = z^2 - \gamma_2 z - 1
 \quad\implies\quad
-\beta_3 = \frac{\gamma_2 + \sqrt{\gamma_2^2 + 4}}{2} = \frac{-1 - \sqrt{17} + \sqrt{34 + 2\sqrt{17}}}{4}\]
+\beta_3 = \frac{\gamma_2 + \sqrt{\gamma_2^2 + 4}}{2} = \frac{-1 - \sqrt{17} + \sqrt{34 + 2\sqrt{17}}}{4}
+$$
+</div>
 
 <p>Finally, we do this procedure one last time with $\alpha_1$ and $\alpha_4$. The reader can verify that</p>
 
-\[\alpha_1 + \alpha_2 = \beta_1 \qquad\qquad \alpha_1 \cdot \alpha_4 = \zeta^5 + \zeta^{-3} + \zeta^3 + \zeta^{-5} = \beta_3
+<div class="equation-container">
+$$
+\alpha_1 + \alpha_2 = \beta_1 \qquad\qquad \alpha_1 \cdot \alpha_4 = \zeta^5 + \zeta^{-3} + \zeta^3 + \zeta^{-5} = \beta_3
 \\[10pt]
 0 = (z - \alpha_1)(z - \alpha_4) = z^2 - \beta_1 z - \beta_3
 \quad\implies\quad
-\alpha_1 = \frac{\beta_1 + \sqrt{\beta_1^2 + 4\beta_3}}{2}\]
+\alpha_1 = \frac{\beta_1 + \sqrt{\beta_1^2 + 4\beta_3}}{2}
+$$
+</div>
 
 <p>Again, to save space I will leave it to the reader to simplify the final result. We know that $\alpha_1 = 2 \cos(2 \pi / 17)$. Therefore, we get</p>
 
-\[\cos \frac{2\pi}{17} = \frac{1}{16} \left [-1 + \sqrt{17} + \sqrt{34 - 2\sqrt{17}} + 2\sqrt{17 + 3\sqrt{17} - \sqrt{34 - 2\sqrt{17}} - 2\sqrt{34 + 2\sqrt{17}}} \right ]\]
+<div class="equation-container">
+$$
+\cos \frac{2\pi}{17} = \frac{1}{16} \left [-1 + \sqrt{17} + \sqrt{34 - 2\sqrt{17}} + 2\sqrt{17 + 3\sqrt{17} - \sqrt{34 - 2\sqrt{17}} - 2\sqrt{34 + 2\sqrt{17}}} \right ]
+$$
+</div>
 
 <p><br /></p>
 
@@ -581,24 +693,38 @@ Furthermore, we need the prime to be of the form $2^{2^m} + 1$ (i.e. a Fermat pr
 <p>Some may be wondering why this same procedure can’t be used on a regular heptagon. Well it can, but the proof is going to fail. Let’s see why.</p>
 
 <center>
+<div class="overflow-container">
+<div class="overflow-content">
 <embed src="/svg/guass-proof-of-the-constructibilty-of-the-heptadecagon/7-gon-in-unit-circle.svg" type="image/svg+xml" />
+</div>
+</div>
 </center>
 
 <p>As before, we are going to get</p>
 
-\[\gamma_1 = \zeta^{1} + \zeta^{-1} 
+<div class="equation-container">
+$$
+\gamma_1 = \zeta^{1} + \zeta^{-1} 
 \qquad 
 \gamma_2 = \zeta^{2} + \zeta^{-2}
 \qquad
-\gamma_3 = \zeta^{3} + \zeta^{-3}\]
+\gamma_3 = \zeta^{3} + \zeta^{-3}
+$$
+</div>
 
 <p>But now we have a problem. There is no way we can further combine these equations. The best we can do is the following</p>
 
-\[0 = (z - \gamma_1)(z - \gamma_2)(z - \gamma_3) = z^3 - (\gamma_1 + \gamma_2 + \gamma_3)z^2 + (\gamma_1 \gamma_2 + \gamma_2 \gamma_3 + \gamma_3 \gamma_1)z - \gamma_1 \gamma_2 \gamma_3\]
+<div class="equation-container">
+$$
+0 = (z - \gamma_1)(z - \gamma_2)(z - \gamma_3) = z^3 - (\gamma_1 + \gamma_2 + \gamma_3)z^2 + (\gamma_1 \gamma_2 + \gamma_2 \gamma_3 + \gamma_3 \gamma_1)z - \gamma_1 \gamma_2 \gamma_3
+$$
+</div>
 
 <p>I will let the reader verify the following</p>
 
-\[\gamma_1 + \gamma_2 + \gamma_3 = -1
+<div class="equation-container">
+$$
+\gamma_1 + \gamma_2 + \gamma_3 = -1
 \qquad
 \gamma_1 \cdot \gamma_2 \cdot \gamma_3 = -1
 \\[10pt]
@@ -606,7 +732,9 @@ Furthermore, we need the prime to be of the form $2^{2^m} + 1$ (i.e. a Fermat pr
 \qquad
 \gamma_2 \cdot \gamma_3 = \zeta^1 + \zeta^2 + \zeta^5 + \zeta^6
 \qquad
-\gamma_3 \cdot \gamma_1 = \zeta^2 + \zeta^3 + \zeta^4 + \zeta^5\]
+\gamma_3 \cdot \gamma_1 = \zeta^2 + \zeta^3 + \zeta^4 + \zeta^5
+$$
+</div>
 
 <p>Therefore, we have the polynomial</p>
 

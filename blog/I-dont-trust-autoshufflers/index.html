@@ -238,17 +238,29 @@ You can see an example <a href="https://www.youtube.com/watch?v=txl3gqIfwHM">her
 
 <p>Let’s unpack this. We’ll do a very simple example with $13$ cards (one of each) and $2$ groups. In Step $1$ we separate the high-valued cards from the low-valued cards.</p>
 
-\[[A, 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K] 
+<div class="equation-container">
+$$
+[A, 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K] 
 \quad\rightarrow\quad
 [7, 4, 9, 6, 8, 5, 3, 2] 
 \qquad
-[K, J, Q, A]\]
+[K, J, Q, A]
+$$
+</div>
 
 <p>In Step $2$ we make $2$ groups of high-valued cards and $2$ groups of low-valued cards.</p>
 
-\[[7, 4, 9, 6, 8, 5, 3, 2] \quad\rightarrow\quad [[7, 4, 9, 6], [8, 5, 3, 2]]\]
+<div class="equation-container">
+$$
+[7, 4, 9, 6, 8, 5, 3, 2] \quad\rightarrow\quad [[7, 4, 9, 6], [8, 5, 3, 2]] 
+$$
+</div>
 
-\[[K, J, Q, A] \quad\rightarrow\quad [[K, J], [Q, A]]\]
+<div class="equation-container">
+$$
+[K, J, Q, A] \quad\rightarrow\quad [[K, J], [Q, A]]
+$$
+</div>
 
 <p>In Step $3$, we merge these groups together.</p>
 
@@ -268,21 +280,25 @@ You can see an example <a href="https://www.youtube.com/watch?v=txl3gqIfwHM">her
 
 <h2 id="simulating-the-algorithms">Simulating the Algorithms</h2>
 
-<p>In order to test the effectiveness of my malicious shuffling algorithms, I created a Monte Carlo simulation for BlackJack in Python. You can find the code on my GitHub <a href="https://github.com/ekeilty17/Games/tree/main/BlackJack">here</a> (although I am not going to promise that it’s the most readable code).</p>
+<p>In order to test the effectiveness of my malicious shuffling algorithms, I created a Monte Carlo simulation for BlackJack in Python. You can find the code on my GitHub <a href="https://github.com/ekeilty17/Games/tree/main/BlackJack">here</a>.</p>
 
 <h3 id="simulation-parameters">Simulation Parameters</h3>
 
 <p>I am using the following Table Rules</p>
 <ul>
   <li>Dealer stands on all $17$s</li>
-  <li>Double after splits are allowed</li>
-  <li>late surrender is allowed</li>
+  <li>Double after split is allowed</li>
+  <li>Late surrender is allowed</li>
   <li>BlackJacks pay $3{:}2$</li>
 </ul>
 
-<p>The Basic Strategy player just flat bets the minimum. I’ve set this to \(\$10\) for easy maths. The card counting player uses a very simple bet spread (I’m sure there are better ones).</p>
+<p>I neglect some aspects of the game such as insurance and even money. I also do not put a restriction on the number of splits allowed in a single hand. I also let players continue their action after splitting aces.</p>
+
+<p>The Basic Strategy player always flat bets. I’ve set this to \(\$10\) for easy maths. The Card Counting player uses a very simple bet spread (there are more profitable ones, but this is often used as a baseline).</p>
 
 <center>
+<div class="overflow-container">
+<div class="overflow-content">
 <table>
   <tr>
     <th>True Count</th>
@@ -305,16 +321,26 @@ You can see an example <a href="https://www.youtube.com/watch?v=txl3gqIfwHM">her
     <td>$5\times$</td>
   </tr>
 </table>
+</div>
+</div>
 </center>
 
-<p>For example, if the count is $+4$, and the base bet amount is \(\$10\), then the card counter will bet \(4 \times \$10 = \$40\).</p>
+<p>For example, if the <span class="tooltip">true count
+    <span class="tooltiptext"> 
+        \(\text{True Count} = \frac{ \text{Running Count} }{ \text{Number of Decks Remaining in the Shoe} }\)
+    </span>
+</span> is $+4$, and the base bet amount is \(\$10\), then the card counter will bet \(4 \times \$10 = \$40\).</p>
 
 <h3 id="baseline---fair-shuffling">Baseline - Fair Shuffling</h3>
 
 <p>First, let’s see what happens if the cards are shuffling fairly. The following is the result of simulating $1$ million hands for both Basic Strategy and optimal Card Counting.</p>
 
 <center>
+<div class="overflow-container">
+<div class="overflow-content">
     <img src="/img/blog/I-dont-trust-autoshufflers/Fair.png" width="450px" alt="Fair" />
+</div>
+</div>
 </center>
 
 <p>We see exactly what we expected. Over the long run, Basic Strategy is losing but only slightly, and Card Counting provides the player with a significant advantage.</p>
@@ -324,7 +350,11 @@ You can see an example <a href="https://www.youtube.com/watch?v=txl3gqIfwHM">her
 <p>Now let’s see the effects of a CSM.</p>
 
 <center>
+<div class="overflow-container">
+<div class="overflow-content">
     <img src="/img/blog/I-dont-trust-autoshufflers/CSM.png" width="450px" alt="CSM" />
+</div>
+</div>
 </center>
 
 <p>To be honest, this wasn’t as losing as I expected, but it’s still not great. I think this graph shows a pretty realistic representation of what you get with CSM’s (speaking anecdotally).</p>
@@ -336,9 +366,13 @@ You can see an example <a href="https://www.youtube.com/watch?v=txl3gqIfwHM">her
 <p>The RSM algorithm is interesting because we can fine-tune it using the <code class="language-plaintext highlighter-rouge">number_of_groups</code> parameter. Below I show two simulations. The first is for <code class="language-plaintext highlighter-rouge">number_of_groups = 40</code> ($2$ high-valued cards per group). The second is for <code class="language-plaintext highlighter-rouge">number_of_groups = 25</code> (about $3$ high-valued cards per group).</p>
 
 <center>
+<div class="overflow-container">
+<div class="overflow-content">
     <img src="/img/blog/I-dont-trust-autoshufflers/RSM - 40 groups.png" width="400px" alt="RSM - 40 groups" style="display: inline-block;" />
     &emsp;&emsp;
     <img src="/img/blog/I-dont-trust-autoshufflers/RSM - 25 groups.png" width="400px" alt="RSM - 25 groups" style="display: inline-block;" />
+</div>
+</div>
 </center>
 
 <p>I was shocked at how effective this malicious shuffling algorithm was. The RSM $40$ group simulation is ridiculous for both card counters and basic strategy players. While the $25$ group simulation hovers around even for card counters, it’s still incredibly losing for basic strategy players. This algorithm is so losing that there’s no way casinos actually use it because people would notice.</p>
@@ -351,7 +385,7 @@ You can see an example <a href="https://www.youtube.com/watch?v=txl3gqIfwHM">her
 
 <h2 id="conclusion">Conclusion</h2>
 
-<p>In this post, I demonstrated how much of an influence the shuffle can have over a game of BlackJack. On a personal level, I wanted to justify why I do not trust automatic shuffling machines. While I do not think casinos are utilizing the RSM algorithm I proposed (as it’s far too losing for the player), for all we know they could be manipulating the cards to their advantage using more subtle algorithms. When money is involved, don’t underestimate what people will do.</p>
+<p>In this post, I demonstrated how much of an influence the shuffle can have over a game of BlackJack. On a personal level, I wanted to justify why I do not trust automatic shuffling machines. While I do not think casinos are utilizing the RSM algorithm I proposed (as it’s far too losing for the player), for all we know they could be manipulating the cards to their advantage using more subtle algorithms. When money is involved, never underestimate what people will do.</p>
 
 <p>My recommendation, just stick to hand shuffling and avoid all of this madness. Or just don’t gamble.</p>
 
