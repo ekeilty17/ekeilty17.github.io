@@ -27,7 +27,11 @@ A single, standard deck of $52$ cards is shuffled and dealt face-down to each pl
 The rest of the un-dealt cards are placed in the middle. This will be referred to as **the stock**. The top card from the stock is flipped face-up and placed next to the stock. This will be called the **discard pile**.
 
 <center>
+<div class="overflow-container">
+<div class="overflow-content">
 <embed src="/svg/the-keilty-variation-of-rummy/the-deal.svg" type="image/svg+xml" width="800px" height="500px" />
+</div>
+</div>
 </center>
 
 ### Melds
@@ -35,7 +39,11 @@ The rest of the un-dealt cards are placed in the middle. This will be referred t
 A **meld** is either a set or a run. A **set** consists of three or more cards of the same rank. For example, $\color{red}{10 \heartsuit}, \, 10 \clubsuit, \, \color{red}{10 \diamondsuit}$. Another example, $\color{red}{5 \heartsuit}, \, 5 \clubsuit, \, \color{red}{5 \diamondsuit}, \, 5 \spadesuit$. A **run** consists of three or more consecutive cards of the same suit. For example, $J \spadesuit, \, Q \spadesuit, \, K \spadesuit$. Another example, $\color{red}{3 \heartsuit}, \, \color{red}{4 \heartsuit}, \, \color{red}{5 \heartsuit}, \, \color{red}{6 \heartsuit}, \, \color{red}{7 \heartsuit}$. The run may be as long as you want.
 
 <center>
+<div class="overflow-container">
+<div class="overflow-content">
 <embed src="/svg/the-keilty-variation-of-rummy/melds.svg" type="image/svg+xml" width="700px" height="200px" />
+</div>
+</div>
 </center>
 
 Some variations require different minimum lengths for sets and/or runs, but the Keilty variation sticks to the usual definition.
@@ -53,7 +61,11 @@ Once you are finished playing melds or laying-off, your turn ends by **throwing 
 The following is an example of a turn.
 
 <center>
+<div class="overflow-container">
+<div class="overflow-content">
 <embed src="/svg/the-keilty-variation-of-rummy/turn.svg" type="image/svg+xml" width="700px" height="500px" />
+</div>
+</div>
 </center>
 
 ### Ending the Round
@@ -64,9 +76,11 @@ The round ends once a player runs out of cards, this is called **going out**. Ho
 
 At the end of a round, one player will have run out of all cards, but all the other players will still have cards in their hands. Scoring often involves each player adding up points in their melded cards and deducting points from cards that have not been melded (still in their hand). 
 
+<div class="equation-container">
 $$
 \text{Round Score} = \left ( \sum \text{Played Cards} \right ) - \left ( \sum \text{Cards in Hand} \right )
 $$
+</div>
 
 Some variations also give bonus points to the player who _went out_.
 
@@ -110,7 +124,11 @@ You may also play any other melds or lay-offs that you already have or that inci
 The following is an example of picking up from the discard pile in the Keilty variation.
 
 <center>
+<div class="overflow-container">
+<div class="overflow-content">
 <embed src="/svg/the-keilty-variation-of-rummy/pick-up-from-discard-pile.svg" type="image/svg+xml" width="700px" height="500px" />
+</div>
+</div>
 </center>
 
 ### A Rummy
@@ -118,7 +136,11 @@ The following is an example of picking up from the discard pile in the Keilty va
 The best way to explain this concept is with examples. Consider the following scenario.
 
 <center>
+<div class="overflow-container">
+<div class="overflow-content">
 <embed src="/svg/the-keilty-variation-of-rummy/rummy-1.svg" type="image/svg+xml" width="400px" height="200px" />
+</div>
+</div>
 </center>
 
 A player throws out the $6 \spadesuit$, but the $5 \spadesuit$ and $7 \spadesuit$ were already in the discard pile, which forms a run. In the Keilty variation, this is called a **rummy**.
@@ -128,7 +150,11 @@ The first player (**except the player who caused the rummy**) who says "RUMMY" g
 A rummy can also occur with lay-offs. Consider the following scenario.
 
 <center>
+<div class="overflow-container">
+<div class="overflow-content">
 <embed src="/svg/the-keilty-variation-of-rummy/rummy-2.svg" type="image/svg+xml" width="700px" height="200px" />
+</div>
+</div>
 </center>
 
 A player throws out the $\color{red}{4 \heartsuit}$, but the meld $\color{red}{A \heartsuit}$, $\color{red}{2 \heartsuit}$, $\color{red}{3 \heartsuit}$ has been played. This player missed that they could have layed-off the $\color{red}{4 \heartsuit}$. Thus, the first player (**except the player who caused the rummy**) to say "RUMMY" gets to lay-off the $\color{red}{4 \heartsuit}$ for out of turn, for free, and does not have to throw out. In this case, since the $\color{red}{4 \heartsuit}$ is the top card of the discard pile, this player doesn't have to take any other cards.
@@ -136,7 +162,11 @@ A player throws out the $\color{red}{4 \heartsuit}$, but the meld $\color{red}{A
 A rummy can also occur when playing a meld or a lay-off. Consider the same scenario above, but the order of events flipped.
 
 <center>
+<div class="overflow-container">
+<div class="overflow-content">
 <embed src="/svg/the-keilty-variation-of-rummy/rummy-3.svg" type="image/svg+xml" width="700px" height="260px" />
+</div>
+</div>
 </center>
 
 In this case, the opponent played the meld $\color{red}{A \heartsuit}$, $\color{red}{2 \heartsuit}$, $\color{red}{3 \heartsuit}$, but the discard pile contains the $\color{red}{4 \heartsuit}$, which can be layed-off on this run. Thus, the first player (**except the player who caused the rummy**) to say "RUMMY" gets to lay-off the $\color{red}{4 \heartsuit}$ for out of turn, for free, and does not have to throw out (same as the previous example).
@@ -146,7 +176,11 @@ In this case, the opponent played the meld $\color{red}{A \heartsuit}$, $\color{
 A very important aspect of the game is that completing your turn _includes throwing out a card_ into the discard pile. This becomes relevant at the end of the game. Consider the following example.
 
 <center>
+<div class="overflow-container">
+<div class="overflow-content">
 <embed src="/svg/the-keilty-variation-of-rummy/end-game-1.svg" type="image/svg+xml" width="670px" height="200px" />
+</div>
+</div>
 </center>
 
 You may think you can play the run $\color{red}{J \heartsuit}$, $\color{red}{Q \heartsuit}$, $\color{red}{K \heartsuit}$ to go out and end the round. However, if you do this then you have not completed your turn as you did not throw out a card. Therefore, this is not allowed.
@@ -156,7 +190,11 @@ What you have to do in this situation is throw out one of the cards in your hand
 This same scenario can occur with a card in the discard pile. For example,
 
 <center>
+<div class="overflow-container">
+<div class="overflow-content">
 <embed src="/svg/the-keilty-variation-of-rummy/end-game-2.svg" type="image/svg+xml" width="520px" height="200px" />
+</div>
+</div>
 </center>
 
 In this situation, you cannot pick up the $\color{red}{K \heartsuit}$ from the discard pile because you would not be able to play a meld and complete your turn. Instead, you must wait until your next turn when your opponents have added to the discard pile. Then you may pick-up the king.

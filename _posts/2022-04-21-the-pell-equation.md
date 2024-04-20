@@ -25,30 +25,49 @@ $$ (x + \sqrt{D} y) (x - \sqrt{D} y) = 1 $$
 
 Thus, we can reframe finding the solutions to the Pell Equation as finding the **nontrivial** unit of the ring $\mathbb{Z}[\sqrt{D}]$ of norm 1.
 
-This gives us is a way of generating new solutions from a given solution. Suppose that $(x_1, y_1)$ is a solution to the Pell Equation. We notice that
+This gives us a way of generating new solutions from a given solution. Suppose that $(x_1, y_1)$ is a solution to the Pell Equation. We notice that
 
-$$\vert x_1 + \sqrt{D} y_1 \vert = 1 \implies \vert x_1 + \sqrt{D} y_1 \vert^k = 1 \quad \text{for all} \ k \geq 1 $$
+<div class="equation-container">
+$$
+\vert x_1 + \sqrt{D} y_1 \vert = 1 \implies \vert x_1 + \sqrt{D} y_1 \vert^k = 1 \quad \text{for all} \ k \geq 1
+$$
+</div>
 
 Using properties of norms, we have
 
-$$ \vert x_1 + \sqrt{D} y_1 \vert^k = \vert (x_1 + \sqrt{D} y_1)^k \vert $$
+<div class="equation-container">
+$$
+\vert x_1 + \sqrt{D} y_1 \vert^k = \vert (x_1 + \sqrt{D} y_1)^k \vert
+$$
+</div>
 
 
 Since $\mathbb{Z}[\sqrt{D}]$ forms a ring, $(x_1 + \sqrt{D} y_1)^k = x_k + \sqrt{D} y_k$ for some $x_k, y_k \in \mathbb{Z}$. Putting it all together we have
 
-$$ \vert x_1 + \sqrt{D} y_1 \vert = 1 \implies 1 = \vert x_1 + \sqrt{D} y_1 \vert^k = \vert (x_1 + \sqrt{D} y_1)^k \vert = \vert x_k + \sqrt{D} y_k \vert = x_k^2 - D y_k^2$$
+<div class="equation-container">
+$$
+\vert x_1 + \sqrt{D} y_1 \vert = 1 \implies 1 = \vert x_1 + \sqrt{D} y_1 \vert^k = \vert (x_1 + \sqrt{D} y_1)^k \vert = \vert x_k + \sqrt{D} y_k \vert = x_k^2 - D y_k^2
+$$
+</div>
 
 Thus, $(x_k, y_k)$ is also a solution to the Pell Equation for all $k \geq 1$.
 In fact, [Dirichlet's Unit Theorem](https://faculty.math.illinois.edu/~r-ash/Ant/AntChapter6.pdf) tells us that given $(x_1, y_1)$ is the **fundamental solution** to the Pell Equation, this method will generate **every** solution. The fundamental solution is the **nontrivial** solution with the smallest $x$ or $y$ component.
 
 So once we have the fundamental solution, we have a _very_ efficient algorithm for generating the remaining solutions. if $(x_1, y_1)$ is the fundamental solution, then 
 
-
-$$(x_{k+1} - \sqrt{D} y_{k+1}) = (x_1 - \sqrt{D} y_1)^{k+1} = (x_1 - \sqrt{D} y_1) \cdot (x_1 - \sqrt{D} y_1)^k = (x_1 - \sqrt{D} y_1) \cdot (x_k - \sqrt{D} y_k)$$
+<div class="equation-container">
+$$
+(x_{k+1} - \sqrt{D} y_{k+1}) = (x_1 - \sqrt{D} y_1)^{k+1} = (x_1 - \sqrt{D} y_1) \cdot (x_1 - \sqrt{D} y_1)^k = (x_1 - \sqrt{D} y_1) \cdot (x_k - \sqrt{D} y_k)
+$$
+</div>
 
 Multiplying out the far right-hand side and equating it to the far left-hand side gives the recursive identity
 
-$$ (x_{k+1}, y_{k+1}) = (x_1 x_k + D y_1 y_k, x_1 y_k + x_k y_1) $$
+<div class="equation-container">
+$$
+(x_{k+1}, y_{k+1}) = (x_1 x_k + D y_1 y_k, x_1 y_k + x_k y_1)
+$$
+</div>
 
 
 Note that $(1, 0)$ is considered a trivial solution. If we attempt to use the recursive formula defined above, we will see that we just get $(1, 0)$ back. Thus, this is not a fundamental solution.
@@ -59,16 +78,26 @@ Note that $(1, 0)$ is considered a trivial solution. If we attempt to use the re
 
 We have to take a quick detour into continued fractions as they play an important role in the solution. A continued fraction takes the form 
 
-$$ a_0 + \frac{1}{a_1 + \frac{1}{a_2 + \frac{1}{a_3 + \ldots}}} $$
+$$
+a_0 + \frac{1}{a_1 + \frac{1}{a_2 + \frac{1}{a_3 + \ldots}}}
+$$
 
 
 I think they are best explained by an example.
 
-$$ \sqrt{3} = 1 + (\sqrt{3} - 1) = 3 + \frac{2}{\sqrt{3} + 1} = 3 + \frac{1}{\frac{\sqrt{3} + 1}{2}} = 3 + \frac{1}{1 + \frac{\sqrt{3} - 1}{2}} = 3 + \frac{1}{1 + \frac{1}{\sqrt{3} + 1}} = 3 + \frac{1}{1 + \frac{1}{2 + (\sqrt{3} - 1)}}$$
+<div class="equation-container">
+$$
+\sqrt{3} = 1 + (\sqrt{3} - 1) = 3 + \frac{2}{\sqrt{3} + 1} = 3 + \frac{1}{\frac{\sqrt{3} + 1}{2}} = 3 + \frac{1}{1 + \frac{\sqrt{3} - 1}{2}} = 3 + \frac{1}{1 + \frac{1}{\sqrt{3} + 1}} = 3 + \frac{1}{1 + \frac{1}{2 + (\sqrt{3} - 1)}}
+$$
+</div>
 
-Notice in the last part, we arrived at the same expression as when we started: $\sqrt{3} - 1$. Therefore, everything after that point will be exactly the same, so we've arrived at a repeating expression. If a continued fraction has this property, it is called **periodic**. It turns out that $\sqrt{n}$ where $n$ is an integer is always periodic. The proof for this could be it's own post. For the curious refer [here](https://sites.millersville.edu/bikenaga/number-theory/periodic-continued-fractions/periodic-continued-fractions.html). Thus, we can write the continued fraction in a sort-hand notation.
+Notice in the last part, we arrived at the same expression as when we started: $\sqrt{3} - 1$. Therefore, everything after that point will be exactly the same, so we've arrived at a repeating expression. If a continued fraction has this property, it is called **periodic**. It turns out that $\sqrt{n}$ where $n$ is an integer is always periodic. The proof for this could be its own post. For the curious refer [here](https://sites.millersville.edu/bikenaga/number-theory/periodic-continued-fractions/periodic-continued-fractions.html). Thus, we can write the continued fraction in a sort-hand notation.
 
-$$ \sqrt{3} = 1 + \frac{1}{1 + \frac{1}{2 + \frac{1}{1 + \frac{1}{2 + \ldots}}}} = [1; 1, 2, 1, 2, \ldots] = [1; \overline{1, 2}]$$
+<div class="equation-container">
+$$
+\sqrt{3} = 1 + \frac{1}{1 + \frac{1}{2 + \frac{1}{1 + \frac{1}{2 + \ldots}}}} = [1; 1, 2, 1, 2, \ldots] = [1; \overline{1, 2}]
+$$
+</div>
 
 <br>
 
@@ -81,11 +110,14 @@ It turns out, the fundamental solution can be calculated by the following proced
 1. Compute the continued fraction of $$\sqrt{D}$$, suppose it has the form $$ [a_0; \overline{a_1, \ldots, a_k}] $$
 2. Compute the following truncated continued fraction
 
-    $$ \frac{x}{y} = \begin{cases}
+    <div class="equation-container">
+    $$ 
+    \frac{x}{y} = \begin{cases}
         [a_0; a_1, \ldots, a_{k-1}] \quad &\text{if } k \text{ is even} \\
         [a_0; a_1, \ldots, a_{2k-1}] \quad &\text{if } k \text{ is odd}
-        \end{cases}
+    \end{cases}
     $$
+    </div>
 
 3. $$(x, y)$$ is the fundamental solution, i.e. $$x^2 - D y^2 = 1$$.
 
@@ -99,7 +131,11 @@ A different but equivalent approach (more practical for code) is the following:
 
 Let's do an example using $$\sqrt{3}$$. The truncated continued fraction and its reduced fraction form is the following
 
-$$ \sqrt{3} = 3 + \frac{1}{1 + \frac{1}{2 + (\sqrt{3} - 1)}} \quad\rightarrow\quad 1 + \frac{1}{1 + 0} = \frac{2}{1} $$
+<div class="equation-container">
+$$
+\sqrt{3} = 3 + \frac{1}{1 + \frac{1}{2 + (\sqrt{3} - 1)}} \quad\rightarrow\quad 1 + \frac{1}{1 + 0} = \frac{2}{1}
+$$
+</div>
 
 Now, we test the solution $$(x, y) = (2, 1)$$.
 
@@ -117,27 +153,51 @@ To add a bit more detail, I am going to give a proof sketch. For a complete proo
 
 Let continued fraction of $$\sqrt{D}$$ be $$ [a_0; \overline{a_1, \ldots, a_k}] $$. Let $$p_n / q_n = [a_0; a_1, \ldots, a_n]$$ denote the $$n$$th truncation of the continued fraction. I am going to assert the following equality (you can check it yourself).
 
-$$ \sqrt{D} = \frac{(a_0 + \sqrt{D}) p_{k-1} + p_{k-2}}{(a_0 + \sqrt{D})q_{k-1} + q_{k-2}} $$
+<div class="equation-container">
+$$
+\sqrt{D} = \frac{(a_0 + \sqrt{D}) p_{k-1} + p_{k-2}}{(a_0 + \sqrt{D})q_{k-1} + q_{k-2}}
+$$
+</div>
 
 Expanding, we get
 
-$$ q_{k-1} D + (a_0 q_{k-1} + q_{k-2})\sqrt{D} = a_0 p_{k-1} + p_{k-2} + p_{k-1} \sqrt{D} $$
+<div class="equation-container">
+$$
+q_{k-1} D + (a_0 q_{k-1} + q_{k-2})\sqrt{D} = a_0 p_{k-1} + p_{k-2} + p_{k-1} \sqrt{D}
+$$
+</div>
 
 Since $\mathbb{Z}[\sqrt{D}]$ is a field, we have
 
-$$ q_{k-1} D = a_0 p_{k-1} + p_{k-2} \qquad\text{and}\qquad p_{k-1} = a_0 q_{k-1} + q_{k-2} $$
+<div class="equation-container">
+$$
+q_{k-1} D = a_0 p_{k-1} + p_{k-2} \qquad\text{and}\qquad p_{k-1} = a_0 q_{k-1} + q_{k-2}
+$$
+</div>
 
 Therefore
 
-$$ p_{k-2} = q_{k-1} D - a_0 p_{k-1} \qquad\text{and}\qquad q_{k-2} = p_{k-1} - a_0 q_{k-1} $$
+<div class="equation-container">
+$$
+p_{k-2} = q_{k-1} D - a_0 p_{k-1} \qquad\text{and}\qquad q_{k-2} = p_{k-1} - a_0 q_{k-1}
+$$
+</div>
 
 Another fact I will state without proof is that $p_{i+1}q_i - p_iq_{i+1} = (-1)^i$ for any $i$. This is not too difficult to verify for yourself using induction. Now, substitute $i = k-2$ and combine with the above to get
 
-$$ (-1)^{k-2} = p_{k-1}(p_{k-1} - a_0 q_{k-1}) - (q_{k-1} D - a_0 p_{k-1})q_{k-1}$$
+<div class="equation-container">
+$$
+(-1)^{k-2} = p_{k-1}(p_{k-1} - a_0 q_{k-1}) - (q_{k-1} D - a_0 p_{k-1})q_{k-1}
+$$
+</div>
 
 Thus,
 
-$$ p_{k-1}^2 - D q_{k-1}^2 = (-1)^k $$
+<div class="equation-container">
+$$
+p_{k-1}^2 - D q_{k-1}^2 = (-1)^k
+$$
+</div>
 
 i.e. $(p_{k-1}, q_{k-1})$ is a solution to the Pell Equation if $k$ is even. You can use exactly the same argument to find that $(p_{2k-1}, q_{2k-1})$ is a solution if $k$ is odd. 
 
@@ -182,7 +242,11 @@ There are faster algorithms than this, but the theory behind them is much beyond
 
 We define the operations $+$ and $\cdot$ as you would expect. Let $(a, b)$ be short-hand for $a + \sqrt{D}b$ 
 
-$$(a, b) + (c, d) = (a+c, \ b+d) \qquad \text{and} \qquad (a, b) \cdot (c, d) = (ac + Dbd, \ ad + bc)$$
+<div class="equation-container">
+$$
+(a, b) + (c, d) = (a+c, \ b+d) \qquad \text{and} \qquad (a, b) \cdot (c, d) = (ac + Dbd, \ ad + bc)
+$$
+</div>
 
 
 The ring axioms are as follows
@@ -199,6 +263,7 @@ Axioms 1, 2, 3, and 4 are inherited from their counterparts for the integers.
 
 $1.$
 
+<div class="equation-container">
 $$ 
 \begin{align}
     ((a, b) + (c, d)) + (e, f) 
@@ -208,23 +273,31 @@ $$
     &= (a, b) + ((c, d) + (e, f)) 
 \end{align}
 $$
+</div>
 
 $2.$ 
 
+<div class="equation-container">
 $$ (a, b) + (c, d) = (a+c, \ b+d) = (c+a, \ d+b) = (c, d) + (a, b) $$
+</div>
 
 $3.$ The additive identity is $(0, 0)$, which is contained in $\mathbb{Z}[\sqrt{D}]$
 
+<div class="equation-container">
 $$ (a, b) + (0, 0) = (a+0, \ b+0) = (a, b) $$
+</div>
 
 $4.$ The additive inverse is $(-a, -b)$, which is contained in $\mathbb{Z}[\sqrt{D}]$
 
+<div class="equation-container">
 $$ (a, b) + (-a, -b) = (a+(-a), \ b+(-b)) = (0, 0) $$
+</div>
 
 Axioms 5, 6, and 7 are inherited by the fact that the integers form a ring.
 
 $5.$
 
+<div class="equation-container">
 $$ 
 \begin{align}
     ((a, b) \cdot (c, d)) \cdot (e, f) 
@@ -235,13 +308,17 @@ $$
     &= (a, b) \cdot ((c, d) \cdot (e, f))
 \end{align}
 $$
+</div>
 
 $6.$ The multiplicative identity is $(1, 0)$, which is contained in $\mathbb{Z}[\sqrt{D}]$
 
+<div class="equation-container">
 $$ (a, b) \cdot (1, 0) = (a \cdot 1 + Db \cdot 0, \ a \cdot 0 + b \cdot 1) = (a, b)$$
+</div>
 
 $7.$
 
+<div class="equation-container">
 $$
 \begin{align}
     (a, b) \cdot ((c, d) + (e, f))
@@ -251,14 +328,19 @@ $$
     &= ((a, b) \cdot (e, f)) + ((c, d) \cdot (e, f))
 \end{align}
 $$
+</div>
 
 We can see that in this case, multiplication is actually also commutative
 
+<div class="equation-container">
 $$ (a, b) \cdot (c, d) = (ac + Dbd, \ ad + bc) = (ca + Ddb, \ cb + da) = (c, d) \cdot (a, b)$$
+</div>
 
 So we get 
 
+<div class="equation-container">
 $$((c, d) + (e, f)) \cdot (a, b) = (a, b) \cdot ((c, d) + (e, f)) = ((a, b) \cdot (e, f)) + ((c, d) \cdot (e, f))$$
+</div>
 
 for free.
 
@@ -273,12 +355,15 @@ The axioms of a multiplicative norm $N(x)$ on a ring is the following:
 
 $1.$
 
+<div class="equation-container">
 $$
 \vert u \vert = 0 \iff \vert x_u + \sqrt{D} y_u \vert = 0 \iff x_u^2 + D y_u^2 = 0 \iff x_u = y_u = 0 \iff u = 0 + \sqrt{d} \cdot 0
 $$
+</div>
 
 $2.$
 
+<div class="equation-container">
 $$
 \begin{align}
     \vert u \cdot v \vert 
@@ -291,9 +376,11 @@ $$
     &= \vert u \vert \vert v \vert
 \end{align}
 $$
+</div>
 
 $3.$
 
+<div class="equation-container">
 $$
 \begin{align}
     \vert u \cdot v \vert 
@@ -304,4 +391,5 @@ $$
     &= (x_u^2 + x_v^2 + 2 x_u x_v) - D (y_u^2 + y_v^2 + 2 y_u y_v) \\
 \end{align}
 $$
+</div>
 
