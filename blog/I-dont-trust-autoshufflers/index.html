@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      I Don't Trust Auto-Shufflers &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded MathJax (effectively LaTeX) support 
+    https://docs.mathjax.org/en/v2.7-latest/tex.html -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX", "input/MathML", "output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js", "mml2jax.js", "MathMenu.js", "MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
+            Macros: {
+                b: ["{\\boldsymbol #1}",1],
+                u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
+                arccsc: ["\\operatorname\{arccsc\}"],
+                arcsec: ["\\operatorname\{arcsec\}"],
+                arccot: ["\\operatorname\{arccot\}"],
+                csch: ["\\operatorname\{csch\}"],
+                sech: ["\\operatorname\{sech\}"],
+                arcsinh: ["\\operatorname\{arcsinh\}"],
+                arccosh: ["\\operatorname\{arccosh\}"],
+                arctanh: ["\\operatorname\{arctanh\}"],
+                arccsch: ["\\operatorname\{arccsch\}"],
+                arcsech: ["\\operatorname\{arcsech\}"],
+                arccoth: ["\\operatorname\{arccoth\}"],
+                seq: ["{\\left \\langle #1 \\right \\rangle}",1],
+                iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
+                abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
+                hal: ["\\texttt{hal}"],
+                gal: ["\\texttt{gal}"],
+                sh: ["sh"],
+                st: ["st"]
+            },
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!--
+    TeX-AMS_HTML
+    TeX-AMS-MML_HTMLorMML
+    TeX-MML-AM_HTMLorMML
+-->
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">AI/ML Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+        <li>
+          <a href="/files/Eric Keilty - Resume.pdf" target="_blank">R&eacute;sum&eacute;</a>
+        </li>
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2024 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">I Don't Trust Auto-Shufflers</h1>
+            <!-- <span class="post-date">18 Apr 2024</span> -->
+            <time datetime="2024-04-18T00:00:00-04:00" class="post-date">18 Apr 2024</time>
+            <hr />
+
+<h3 id="legal-disclaimer-please-dont-sue-me">Legal Disclaimer (please don’t sue me)</h3>
+
+<p>The following is an analysis of what a casino (<strong>if</strong> acting maliciously) <strong>could</strong> do using automatic shuffling machines in order to gain an unfair advantage towards their patrons. I <strong>am not</strong> accusing, alleging, nor implying that any casino is <em>in fact</em> doing this.</p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="motivation">Motivation</h2>
+
+<p>I recently went on a trip to Las Vegas. Obviously, I’m going to (responsibly) gamble a little bit while I am there. Personally, my game of choice is BlackJack. It actually requires enough thinking to be interesting and if played perfectly is the only game at the casino that is theoretically beatable.</p>
+
+<p>The key phrase there is <em>in theory</em>. While perusing tables at various Vegas casinos, pretty much every game with a reasonable rule set (e.g. blackjack pays $3{:}2$, DAS, etc) and low enough stakes (I’m not trying to bet \(\$50\) a hand) used an <strong>automatic shuffling machine</strong>. Being a cynical software engineer, I didn’t trust these things for a second.</p>
+
+<p>In this post, I will show how a casino <strong>could</strong> maliciously utilize automatic shuffling machines in order to gain an unfair advantage. I <strong>am not</strong> accusing, alleging, nor implying that any casino is <em>in fact</em> doing this.</p>
+
+<p><br /></p>
+
+<h2 id="how-do-automatic-shuffling-machines-work">How Do Automatic Shuffling Machines Work?</h2>
+
+<p>From my recent trip, I observed $2$ types of automatic shuffling machines. 
+The first type I will call a <strong>Random Shuffle Machine</strong> (RSM). These take all the cards being used and shuffles them together. Then, the dealer takes out all the shuffled cards, has a player cut the cards, and places them inside the <a href="https://en.wikipedia.org/wiki/Shoe_(cards)">shoe</a>. Then the cards are dealt until the shoe runs out of cards.
+The second type is called a <strong>Continuous Shuffle Machine</strong> (CSM). This machine provides cards to the dealer one at a time. After each hand, the dealer puts the cards back into the machine, and these cards are redistributed back into the shoe. Hence, the name “continuous”, since the shoe never ends. 
+You can see an example <a href="https://www.youtube.com/watch?v=txl3gqIfwHM">here</a> of how these could work (although note that this is a very old machine).</p>
+
+<p>We would like to believe RSMs and CSMs are operating fairly. In theory, cards could be placed into these machines in a randomized initial order, and the machine randomly permutes them. Since the initial order was random and the permutations were random, then the output will also be random. While these do exist, they are not what is being used in casinos.</p>
+
+<p>There are two key additional features of auto-shufflers used in casinos. First, they <strong>scan every card</strong> put into the machine. Modern casino cards have invisible readers, which let the machine know what card it is. This is why most casinos no longer sell used cards (a fact I learned on my recent trip). Second, the cards are not shuffled by randomly permuting them. Instead, the deck order is generated in software and the automatic shuffler <strong>precisely places the cards</strong> in this order. If after learning this, you believe automatic shufflers are fairly shuffling the cards…I know a Nigerian prince who would like to speak with you.</p>
+
+<p>The only question that remains is, how can this technology be used maliciously?</p>
+
+<p><br /></p>
+
+<h2 id="beating-the-casino-in-blackjack">Beating the Casino in BlackJack</h2>
+
+<p>Before we can create malicious shuffling algorithms, we must first understand how players get an edge over the casino. If you want to learn the rules of BlackJack and the basics of card counting, I recommend these videos [<a href="https://www.youtube.com/watch?v=PljDuynF-j0">1</a>, <a href="https://www.youtube.com/watch?v=QLYsck5fsLU">2</a>]. The main thing to know is that $10$, $J$, $Q$, $K$, and $A$ are all good cards. Players gain an advantage when these high-valued cards are disproportionately clumped together at the end of a shoe (this is because you are more likely to get dealt a $21$, which pays $3{:}2$). On the other hand, if the cards are mostly evenly distributed (especially at the end of a shoe), then the casino has the largest advantage.</p>
+
+<p><strong>Basic Strategy</strong> refers to the mathematically optimal way to play each hand of BlackJack. Given your cards and the card being shown by the dealer (the dealer’s <strong>upcard</strong>), there is a table that tells you exactly what to do [<a href="https://www.blackjackapprenticeship.com/wp-content/uploads/2018/08/BJA_Basic_Strategy.jpg">3</a>]. Unfortunately, Basic Strategy is not enough to beat the casino. With perfect Basic Strategy, the casino has a \(0.5\%\) advantage, meaning over the long run you are expected to lose \(\$0.50\) for every \(\$100\) you bet.</p>
+
+<p><strong>Card Counting</strong> is a method of keeping track of how many high-valued cards have come out. If you reach the end of the shoe and you know that very few high-valued cards have appeared, then the few remaining cards must contain them. Therefore, it is now <strong>dramatically more likely that the next card is a high card</strong>. Therefore, you have an advantage and you should bet more, as it’s much more likely you are going to win. Also, the mathematically optimal decision changes with the count, but I won’t get into that [<a href="https://www.blackjackapprenticeship.com/wp-content/uploads/2019/07/BJA_S17.pdf">4</a>, <a href="https://www.blackjackapprenticeship.com/wp-content/uploads/2019/07/BJA_H17.pdf">5</a>, <a href="https://docs.google.com/spreadsheets/d/1ITpVe8a4V761gc2gIMhK983aVlzOD5ZK/edit?rtpof=true#gid=1288502064">6</a>]. With perfect play, card counting can give you an advantage of \(1\%\) over the casino, meaning over the long run you are expected to make \(\$1\) for every \(\$100\) you bet.</p>
+
+<p><br /></p>
+
+<h2 id="malicious-shuffling-algorithms">Malicious Shuffling Algorithms</h2>
+
+<p>Now that we know the conditions card counters are looking for, we will develop some algorithms to prevent or mitigate those conditions. In particular, we want to prevent card counters from knowing when there is a disproportionately large clump of high-valued cards.</p>
+
+<h3 id="malicious-csm-algorithm">Malicious CSM Algorithm</h3>
+
+<p>This type of shuffling machine completely destroys card counting by design since there is no concept of a running count. Since cards are redistributed back into the shoe after each hand, seeing a lot of low-valued cards does not make it more likely you’ll see high-valued cards next hand. Effectively, each hand of independent.</p>
+
+<p>I model a CSM by simply reshuffling the shoe after each hand.</p>
+
+<h3 id="malicious-rsm-algorithm">Malicious RSM Algorithm</h3>
+
+<p>This type of shuffling machine is much more interesting. Once the final order is produced, the RSM can no longer influence the cards. Moreover, unlike CSM’s, these shoes are countable, meaning the current hand depends on the previous hands. Our job in constructing a malicious algorithm is to prevent card counters from gaining an advantage despite knowing the count.</p>
+
+<p>We cannot achieve this by advantageously pre-arranging the cards since they are cut by one of the players. Therefore, the first card of our pre-arrangement will go somewhere in the middle. For example, if you construct a shoe with a very low count, and then randomly cut the shoe, about half the time it will result in a shoe with a very high count. I experimented with various malicious pre-arrangements and found no reliable methods.</p>
+
+<p>Instead, our strategy is to ensure the high-valued cards ($10$, $J$, $Q$, $K$, and $A$) are evenly distributed throughout the entire shoe. This will ensure the running count is never too high, and therefore card counters cannot gain an advantage. Consider the following pythonic pseudocode.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">shuffle_cards</span><span class="p">(</span><span class="n">cards</span><span class="p">,</span> <span class="n">number_of_groups</span><span class="p">):</span>
+    <span class="c1"># Step 1
+</span>    <span class="n">high_cards</span><span class="p">,</span> <span class="n">low_cards</span> <span class="o">=</span> <span class="n">separate_high_cards_from_low_cards</span><span class="p">()</span>
+    <span class="n">random</span><span class="p">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">high_cards</span><span class="p">)</span>
+    <span class="n">random</span><span class="p">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">low_cards</span><span class="p">)</span>
+
+    <span class="c1"># Step 2
+</span>    <span class="n">grouped_high_cards</span> <span class="o">=</span> <span class="n">group_cards</span><span class="p">(</span><span class="n">high_cards</span><span class="p">,</span> <span class="n">number_of_groups</span><span class="p">)</span>
+    <span class="n">grouped_low_cards</span> <span class="o">=</span> <span class="n">group_cards</span><span class="p">(</span><span class="n">low_cards</span><span class="p">,</span> <span class="n">number_of_groups</span><span class="p">)</span>
+
+    <span class="c1"># Step 3
+</span>    <span class="n">grouped_cards</span> <span class="o">=</span> <span class="n">merge_groups</span><span class="p">(</span><span class="n">grouped_high_cards</span><span class="p">,</span> <span class="n">grouped_low_cards</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">grouped_cards</span><span class="p">:</span>
+        <span class="n">random</span><span class="p">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
+    
+    <span class="c1"># Step 4
+</span>    <span class="k">return</span> <span class="n">flatten</span><span class="p">(</span><span class="n">grouped_cards</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Let’s unpack this. We’ll do a very simple example with $13$ cards (one of each) and $2$ groups. In Step $1$ we separate the high-valued cards from the low-valued cards.</p>
+
+\[[A, 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K] 
+\quad\rightarrow\quad
+[7, 4, 9, 6, 8, 5, 3, 2] 
+\qquad
+[K, J, Q, A]\]
+
+<p>In Step $2$ we make $2$ groups of high-valued cards and $2$ groups of low-valued cards.</p>
+
+\[[7, 4, 9, 6, 8, 5, 3, 2] \quad\rightarrow\quad [[7, 4, 9, 6], [8, 5, 3, 2]]\]
+
+\[[K, J, Q, A] \quad\rightarrow\quad [[K, J], [Q, A]]\]
+
+<p>In Step $3$, we merge these groups together.</p>
+
+\[[[K, 7, J, 4, 9, 6], [8, 5, A, 3, 2, Q]]\]
+
+<p>Finally, in Step $4$, we just flatten this $2\text{D}$ array.</p>
+
+\[[K, 7, J, 4, 9, 6, 8, 5, A, 3, 2, Q]\]
+
+<p>Notice that we have this parameter <code class="language-plaintext highlighter-rouge">number_of_groups</code>, which lets us tune exactly how malicious we want the RSM to be. A larger number of groups means more evenly distributed which is less advantageous to a card counter.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="simulating-the-algorithms">Simulating the Algorithms</h2>
+
+<p>In order to test the effectiveness of my malicious shuffling algorithms, I created a Monte Carlo simulation for BlackJack in Python. You can find the code on my GitHub <a href="https://github.com/ekeilty17/Games/tree/main/BlackJack">here</a> (although I am not going to promise that it’s the most readable code).</p>
+
+<h3 id="simulation-parameters">Simulation Parameters</h3>
+
+<p>I am using the following Table Rules</p>
+<ul>
+  <li>Dealer stands on all $17$s</li>
+  <li>Double after splits are allowed</li>
+  <li>late surrender is allowed</li>
+  <li>BlackJacks pay $3{:}2$</li>
+</ul>
+
+<p>The Basic Strategy player just flat bets the minimum. I’ve set this to \(\$10\) for easy maths. The card counting player uses a very simple bet spread (I’m sure there are better ones).</p>
+
+<center>
+<table>
+  <tr>
+    <th>True Count</th>
+    <th>&lt;-1</th>
+    <th>0</th>
+    <th>1</th>
+    <th>2</th>
+    <th>3</th>
+    <th>4</th>
+    <th>&gt;5</th>
+  </tr>
+  <tr>
+    <td>Bet Multiplier</td>
+    <td>$0\times$</td>
+    <td>$1\times$</td>
+    <td>$1\times$</td>
+    <td>$2\times$</td>
+    <td>$3\times$</td>
+    <td>$4\times$</td>
+    <td>$5\times$</td>
+  </tr>
+</table>
+</center>
+
+<p>For example, if the count is $+4$, and the base bet amount is \(\$10\), then the card counter will bet \(4 \times \$10 = \$40\).</p>
+
+<h3 id="baseline---fair-shuffling">Baseline - Fair Shuffling</h3>
+
+<p>First, let’s see what happens if the cards are shuffling fairly. The following is the result of simulating $1$ million hands for both Basic Strategy and optimal Card Counting.</p>
+
+<center>
+    <img src="/img/blog/I-dont-trust-autoshufflers/Fair.png" width="450px" alt="Fair" />
+</center>
+
+<p>We see exactly what we expected. Over the long run, Basic Strategy is losing but only slightly, and Card Counting provides the player with a significant advantage.</p>
+
+<h3 id="malicious-csm-algorithm-1">Malicious CSM Algorithm</h3>
+
+<p>Now let’s see the effects of a CSM.</p>
+
+<center>
+    <img src="/img/blog/I-dont-trust-autoshufflers/CSM.png" width="450px" alt="CSM" />
+</center>
+
+<p>To be honest, this wasn’t as losing as I expected, but it’s still not great. I think this graph shows a pretty realistic representation of what you get with CSM’s (speaking anecdotally).</p>
+
+<p>An interesting thing to notice is how much the variance of the game increased compared to the fair shuffle. I’m not sure why it should be the case. If you have any ideas, please <a href="mailto:epkeilty@gmail.com">let me know</a>.</p>
+
+<h3 id="malicious-rsm-algorithm-1">Malicious RSM Algorithm</h3>
+
+<p>The RSM algorithm is interesting because we can fine-tune it using the <code class="language-plaintext highlighter-rouge">number_of_groups</code> parameter. Below I show two simulations. The first is for <code class="language-plaintext highlighter-rouge">number_of_groups = 40</code> ($2$ high-valued cards per group). The second is for <code class="language-plaintext highlighter-rouge">number_of_groups = 25</code> (about $3$ high-valued cards per group).</p>
+
+<center>
+    <img src="/img/blog/I-dont-trust-autoshufflers/RSM - 40 groups.png" width="400px" alt="RSM - 40 groups" style="display: inline-block;" />
+    &emsp;&emsp;
+    <img src="/img/blog/I-dont-trust-autoshufflers/RSM - 25 groups.png" width="400px" alt="RSM - 25 groups" style="display: inline-block;" />
+</center>
+
+<p>I was shocked at how effective this malicious shuffling algorithm was. The RSM $40$ group simulation is ridiculous for both card counters and basic strategy players. While the $25$ group simulation hovers around even for card counters, it’s still incredibly losing for basic strategy players. This algorithm is so losing that there’s no way casinos actually use it because people would notice.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>In this post, I demonstrated how much of an influence the shuffle can have over a game of BlackJack. On a personal level, I wanted to justify why I do not trust automatic shuffling machines. While I do not think casinos are utilizing the RSM algorithm I proposed (as it’s far too losing for the player), for all we know they could be manipulating the cards to their advantage using more subtle algorithms. When money is involved, don’t underestimate what people will do.</p>
+
+<p>My recommendation, just stick to hand shuffling and avoid all of this madness. Or just don’t gamble.</p>
+
+        </div>
+    </div>
+
+    <!--
+    <h3 style="text-align:center; margin-bottom:1em;">
+      <a href="/blog/">Blog Archive</a>
+    </h3>
+    -->
+    
+  </body>
+</html>
