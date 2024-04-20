@@ -11,7 +11,7 @@ permalink:  /blog/
 
 <br>
 
-## Blog Series'
+## Blog Series's
 
 <!-- We check if the field `draft` exists, and if it does then we don't include the series -->
 
