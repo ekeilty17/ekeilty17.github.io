@@ -1,10 +1,11 @@
 ---
-layout:     post
+layout:     series
 title:      "How I Remember BlackJack Basic Strategy"
-date:       2024-01-04
-categories: blog
+date:       2024-01-10
+categories: blog blackjack
 permalink:  ":categories/:title/"
-standalone: true
+part:       10
+series:     blackjack
 tags:       blackjack
 ---
 

@@ -1,10 +1,11 @@
 ---
-layout:     post
+layout:     series
 title:      "I Don't Trust Auto-Shufflers"
-date:       2024-04-18
-categories: blog
+date:       2024-04-09
+categories: blog blackjack
 permalink:  ":categories/:title/"
-standalone: true
+part:       9
+series:     blackjack
 tags:       blackjack
 ---
 
