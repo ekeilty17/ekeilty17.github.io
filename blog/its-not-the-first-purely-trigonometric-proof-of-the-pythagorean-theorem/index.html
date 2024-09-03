@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      High School Level Math + The News = Nonsense &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded MathJax (effectively LaTeX) support 
+    https://docs.mathjax.org/en/v2.7-latest/tex.html -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX", "input/MathML", "output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js", "mml2jax.js", "MathMenu.js", "MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
+            Macros: {
+                b: ["{\\boldsymbol #1}",1],
+                u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
+                arccsc: ["\\operatorname\{arccsc\}"],
+                arcsec: ["\\operatorname\{arcsec\}"],
+                arccot: ["\\operatorname\{arccot\}"],
+                csch: ["\\operatorname\{csch\}"],
+                sech: ["\\operatorname\{sech\}"],
+                arcsinh: ["\\operatorname\{arcsinh\}"],
+                arccosh: ["\\operatorname\{arccosh\}"],
+                arctanh: ["\\operatorname\{arctanh\}"],
+                arccsch: ["\\operatorname\{arccsch\}"],
+                arcsech: ["\\operatorname\{arcsech\}"],
+                arccoth: ["\\operatorname\{arccoth\}"],
+                seq: ["{\\left \\langle #1 \\right \\rangle}",1],
+                iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
+                abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
+                hal: ["\\texttt{hal}"],
+                gal: ["\\texttt{gal}"],
+                sh: ["sh"],
+                st: ["st"]
+            },
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!--
+    TeX-AMS_HTML
+    TeX-AMS-MML_HTMLorMML
+    TeX-MML-AM_HTMLorMML
+-->
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">AI/ML Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+        <li>
+          <a href="/files/Eric Keilty - Resume.pdf" target="_blank">R&eacute;sum&eacute;</a>
+        </li>
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2024 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">High School Level Math + The News = Nonsense</h1>
+            <!-- <span class="post-date">06 May 2024</span> -->
+            <time datetime="2024-05-06T00:00:00-04:00" class="post-date">06 May 2024</time>
+            <h2 id="motivation">Motivation</h2>
+
+<p>I don’t understand why anyone watches a single second of the news give how laughably low their standards for journalism are. It’s not that they are completely wrong in what they report, but their summarizations and interpretations are so reductionist and watered-down that the concept of “truth” loses all meaning. What also drives me crazy is the lack of fact-checking. These people’s standard of evidence seems to be a vibe check. If there is any source cited (even if the source is itself nonsense), then for them that cements the claim is absolutely true. I am reminded of this quote.</p>
+
+<blockquote>
+  <p>If you don’t read the newspaper, you’re uninformed. If you read the newspaper, you’re mis-informed. <br /> – Mark Twain</p>
+</blockquote>
+
+<p>In this post, I investigate the claims made by a news story from about a year ago, claiming two high school students out-smarted 2000 years of mathematicians. I try to detangle the web of nonsense and along the way, hopefully we learn a little something about the foundations of mathematics and proof theory.</p>
+
+<p><br /></p>
+
+<!-- 
+https://www.cut-the-knot.org/pythagoras/Proof100.shtml 
+[AMC](https://meetings.ams.org/math/spring2023se/meetingapp.cgi/Paper/23621)
+-->
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="background">Background</h2>
+
+<h3 id="the-pythagorean-theorem">The Pythagorean Theorem</h3>
+
+<p>The <a href="/blog/trigonometry/pythagorean-identities">Pythagorean Theorem</a> is one of the oldest and most famous theorems in mathematics. It states that the sum of the square of the lengths of the legs of a right triangle equals the square of its hypothenuse. Most lay people will know it as the algebraic formula $a^2 + b^2 = c^2$. Geometrically, it means the the area of the squares formed by the legs of a right triangle equals the area of the square formed by its hypothenuse.</p>
+
+<center>
+<embed src="/svg/its-not-the-first-purely-trigonometric-proof-of-the-pythagorean-theorem/pythagoraean-theorem.svg" type="image/svg+xml" />
+</center>
+
+<p>There are literally hundreds of proofs of the theorem (this <a href="https://www.amazon.com/Pythagorean-Proposition-Elisha-S-Loomis/dp/0873530365">book</a> lists 371 of them and <a href="https://www.cut-the-knot.org/pythagoras/">Cut the Knot</a> also has many beautiful proofs).</p>
+
+<h3 id="a-new-proof">A New Proof?</h3>
+
+<p>Around last year, two high-school students came up with a novel proof of the Pythagorean Theorem. This is an accomplishment in and of itself. It’s really hard to come up with a new proof for such an old and famous formula. I do not want to take away from their accomplishment. As someone who loves recriational mathematics, I want to encourage students to engage in these types of challenges.</p>
+
+<p><a href="https://www.youtube.com/@polymathematic">Polymathematic</a> has a nice video <a href="https://www.youtube.com/watch?v=p6j2nZKwf20">here</a> explaining the proof, which I will henceforth refer to as the <strong>Waffle Cone Proof</strong> (the name given by the students). I recommend you skim through the video just to get an idea of how the proof works. You don’t need to fully understand all of the details.</p>
+
+<h3 id="sensationalizing-the-proof">Sensationalizing the Proof</h3>
+
+<!-- Personally, I think it was the catholic high-school [St. Mary's](https://smaneworleans.com/) (and for all we know the Catholic church) that really pushed this to make it a national story.  -->
+
+<p>The news media (for whatever reason) picked up this story. Of course, we know the media is not at all trustworthy. They skew and spin facts in order to create the most appealing narrative. In this case, the narrative is nicely summarized by this <a href="https://www.theguardian.com/us-news/article/2024/may/06/pythagoras-theorem-proof-new-orleans-teens">Guardian article</a>. Note that I have redacted names.</p>
+
+<blockquote>
+  <p>For 2,000 years, mathematicians maintained that any alleged proof of the Pythagorean theorem that was based in trigonometry would constitute a logical fallacy known as circular reason – in essence, trying to validate an idea with the idea itself. But the bonus question on a math contest that [the students] took home to complete during the Christmas break of their final year at [their high school] served as the impetus for them to plot out a new way to demonstrate that one could indeed use trigonometry to prove Pythagoras’s theorem.</p>
+</blockquote>
+
+<p>I admit that it’s a compelling story. The gatekeeping, elite academics couldn’t find a purely trigonometric proof of the Pythagorean Theorem and therefore deemed it impossible. But against all odds, two wonder-teens with their outside perspective and youthful creativity found a proof that no one in 2000 years could have concieved of. Unfortunately, it’s all complete nonsense, which I will demonstrate in this post.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="the-mathematical-claims">The Mathematical Claims</h2>
+
+<p>These high school students gave a presentation to the <a href="https://www.ams.org/home/page">American Mathematical Society</a> show-casing their proof. The mathematical claims are nicely summarized in their <a href="https://meetings.ams.org/math/spring2023se/meetingapp.cgi/Paper/23621">abstract</a>.</p>
+
+<blockquote>
+  <p>In the 2000 years since trigonometry was discovered it’s always been assumed that any alleged proof of Pythagoras’s Theorem based on trigonometry must be circular. In fact, in the book containing the largest known collection of proofs (The Pythagorean Proposition by Elisha Loomis) the author flatly states that “There are no trigonometric proofs, because all the fundamental formulae of trigonometry are themselves based upon the truth of the Pythagorean Theorem.” But that isn’t quite true: in our lecture we present a new proof of Pythagoras’s Theorem which is based on a fundamental result in trigonometry — the Law of Sines — and we show that the proof is independent of the Pythagorean trig identity sin$^2$ x + cos$^2$ x = 1.</p>
+</blockquote>
+
+<p>This paragraph reminds me of <a href="https://twitter.com/IanYorston/status/1267099676148486145">this meme</a>. There is so much wrong, that it’s hard to know where to begin. Let’s first start by separating out the claims.</p>
+
+<ol>
+  <li>For 2000 years, mathematicians believed that the Pythagorean Theorem could not be proved using trigonometry without circularity.</li>
+  <li>Two high school students created a new proof of the Pythagorean Theorem, named the <strong>Waffle Cone proof</strong>.</li>
+  <li>The Waffle Cone proof <strong>only</strong> relies on the <strong>Law of Sines</strong>.</li>
+  <li>Therefore, the Waffle Cone proof is the <strong>first</strong> proof of the Pythagorean Theorem that is independent of the identity $\sin^2 x + \cos^2 x = 1$.</li>
+</ol>
+
+<p>Claim 2) is absolutely true. The Waffle Cone proof is a perfectly valid proof of the Pythagorean Theorem. Again, watch <a href="https://www.youtube.com/watch?v=p6j2nZKwf20">this video</a> to see their proof for yourself. Claim 1) is a bit of a sensationalist statement. I’d say it’s mostly true, but it’s a non sequitur for this discussion.</p>
+
+<p>Claims 3) and 4) are absolutely false on a number of different levels. It’s not just a tiny detail that makes them incorrect. To say this as gently as possible, they show a lack of conceptual understanding of mathematics in general. I will now try to explain why.</p>
+
+<h3 id="incorrectness-of-claim-4-its-not-the-first">Incorrectness of Claim 4: It’s Not the First</h3>
+
+<p>Let’s pretend that the Waffle cone proof was a “purely trigonometric” proof of the Pythagorean Theorem, meaning it is independent of the identity $\sin^2 x + \cos^2 x = 1$. Well, it is not the first such proof. Jason Zimba published a <a href="https://forumgeom.fau.edu/FG2009volume9/FG200925.pdf">paper</a> which (supposedly) achieved this in 2009. His proof is much cleaner and more straight-forward than the Waffle Cone proof, so you can’t even claim that the students did it better than he did.</p>
+
+<p>Unfortunately, Jason’s proof also fails at being “purely trigonometric”. But we will discuss that in the next section.</p>
+
+<h3 id="incorrectness-of-claim-3-it-utilizes-limits">Incorrectness of Claim 3: It Utilizes Limits</h3>
+
+<p>The Waffle Cone proof relies on constructing a larger triangle from an infinte series of smaller triangles. Strictly speaking, this is not “pure trigonometry”. This requires concepts from calculus and real analysis.</p>
+
+<p>This is another way that Jason’s proof from 2009 is better than the Waffle Cone proof, as he does not require limits.</p>
+
+<p>You may want to say that the Waffle Cone proof may still be impressive because no one has thought to create an infinite series of triangles before. Unfortunately, you would be wrong. <a href="https://www.cut-the-knot.org/pythagoras/Proof100.shtml">Here</a> is an example of a very similar proof from before 2018. In fact, I would say this is a much better proof using this style because 1) it’s much more straight forward, and 2) it is much more clear that the infinite series of triangles converge to the larger triangle.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="is-a-purely-trigonometric-proof-of-the-pythagorean-theorem-possible">Is a Purely Trigonometric Proof of the Pythagorean Theorem Possible?</h2>
+
+<p>This is actually quite a deep question. To answer this, we have to ask ourself, what does it mean for a proof to be “purely trigonometric”? In the students’ abstract, they define it as being independent of the identity $\sin^2 x + \cos^2 x = 1$. Again, this isn’t completely wrong, but it’s missing a lot.</p>
+
+<h3 id="defining-trigonometry">Defining Trigonometry</h3>
+
+<p>Trigonometry is ultimately the study of triangles in Euclidean Geometry.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p>I have already demonstrated that the Waffle Cone proof is not “purely trigonometric” because it relies on facts from calculus. Some will continue to cope and say “Let’s ignore the fact that they use calculus in their proof. The Law of Sines is a trigonometric formula, therefore the proof is <em>mostly</em> trigonometric”. Again these people would be wrong.</p>
+
+<p>Even if I ignore the argument from calculus, the Waffle Cone proof would <strong>still</strong> not be purely trigonometric.</p>
+
+<p>The reason mathematics is so difficult is becauce you need to be maticulous about exactly what assumptions you have made. So we have to ask ourselves, what is being assumed when we use the Law of Sines? The Law of Sines is just a simple application of the trig function definitions and similar triangles.</p>
+
+<p>This is by far the hardest part of this to explain because it requires an understanding of the foundations of mathematics.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<p>It’s amazing to come up with something that no one in 2000 years has thought of before. More importantly, the proof is genuinely interesting and impressive for high school students to come up with. Both Calcea and Ne’Kiya were extremely kind and humble during their press tour. I wish both of them nothing but the best.</p>
+
+<p>What I do want to criticize is something said by the media, and subsequently repeated by everyone reporting on this story. Namely, that this proof is special because it’s one of only a few <strong>purely trigonometric</strong> proofs. In this post, I am going to explain why this statement does not make any sense.</p>
+
+<p>Before continuing, please review their proof.</p>
+
+<p><br /></p>
+
+<p>It’s known that the Pythagorean theorem is equivalent to the 5th Axiom</p>
+
+<h2 id="what-do-they-mean-by-purely-trigonometric">What Do They Mean By “Purely Trigonometric”</h2>
+
+<p>I want to be as charitable as possible. This is my attempt to steel-man the position that this proof is “purely trigonometric”. From my understanding, the media is saying that Calcea and Ne’Kiya’s proof is “purely trigonometric” because it only assumes the Law of Sines, which is a result from trigonometry. Other proof of the Pythagorean theorem typically use an argument which compute the same area in two different ways. They do not consider this a “trigonometric proof”, but rather a “geometric proof”.</p>
+
+<p>There is so much wrong with the above paragraph, I don’t even know where to start.</p>
+
+<h2 id="the-law-of-sines">The Law of Sines</h2>
+
+<p>Essentially, the Law of Sines is just a special case of similar triangles. However, this only applies in Euclidean Geometry. So actually, this proof implicitly assumes the axioms of euclidean geoemtry.</p>
+
+<p>So actually, at their core, all proofs of Pythagorus need to assume the axioms of Euclidean geometry, and so they are all equivalent.</p>
+
+<p>But you might think to yourself. Well, most proofs involve this argument using areas. This proof doesn’t do that. Maybe it’s still special? Welp unfortunately no. As I said before, this proof uses the Law of Sines, which essentially is just applying similar triangles. So IF you think a proof that only uses similar triangles is special, then I have a WAYYYY simplier proof than their proof.</p>
+
+<p><strong>TODO</strong> I can probably reformulate the proof only using Law of Sines.</p>
+
+<h3 id="better-proof">Better Proof</h3>
+
+<p>I didn’t invent this proof. It’s a variation of Einstein’s boyhood proof. However, I’m pretty sure it even predates him. I couldn’t track down who first came up with this, but it’s so simple that I’m sure some variation has been around for a long time. I have simply taken the idea of the proof and slightly modified it.</p>
+
+<center>
+<embed src="/svg/its-not-the-first-purely-trigonometric-proof-of-the-pythagorean-theorem/LoS-acute-triangle1.svg" type="image/svg+xml" />
+</center>
+
+<p>Notice that we have three triangles: $\triangle ABC$, $\triangle ACD$, and $\triangle CBD$. In fact, these triangles are all <strong>similar</strong>, but I am not even going to use that fact in this proof. I am solely going to use the definition of the trigonometric function $\cos$.</p>
+
+\[\triangle CBD \implies \cos A = \frac{x}{b}
+\qquad
+\triangle ABC \implies \cos A = \frac{b}{c}\]
+
+<p>Therefore,</p>
+
+\[\frac{x}{b} = \frac{b}{c} \quad\implies\quad x = \frac{b^2}{c}\]
+
+<p>Likewise,</p>
+
+\[\triangle ACD \implies \cos B = \frac{y}{a}
+\qquad
+\triangle ABC \implies \cos B = \frac{a}{c}\]
+
+<p>Therefore,</p>
+
+\[\frac{y}{a} = \frac{a}{c} \quad\implies\quad y = \frac{a^2}{c}\]
+
+<p>Now, sum the two expression together.</p>
+
+\[c = x+y = \frac{b^2}{c} + \frac{a^2}{c} 
+\quad\implies\quad
+a^2 + b^2 = c^2\]
+
+<p>As required.</p>
+
+<p>This is actually a really deceptive proof. It seems like the only thing that I have assumed is the definition of the trig function $\cos$. In reality, I have assumed 1 more things. It would be a good exercise to the reader to try to figure out what else this proof assumes.</p>
+
+<p>3</p>
+
+<p>2</p>
+
+<p>1</p>
+
+<p>It’s the <strong>trigonometric functions themselves</strong>. We are assuming an intepretation of the trigonometric functions, i.e. that they apply to right triangles. This assumes Euclidean Geometry.</p>
+
+<p>For the $\cos$ function is that a right triangle with a hypotenuse of length $1$, then the angle uniquely determines the length of one of the legs. We are essentially utilizing SAS from geometry. This is not the case in Non-Euclidean geometries.</p>
+
+<p>Any “trigonometric proof” will fundamentally rely on geometry because trigonometry is fundamentally describing the relationship between the angles and the side lengths of a triangle, and triangle are geometric objects. I can’t even write down the expression $\cos A = \tfrac{x}{b}$ without first drawing the diagram. Without the diagram, that equation doesn’t mean anything! Our ability to draw that diagram IS geometry.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="trash">Trash</h2>
+
+<p>First of all, we need to understand what exactly the phrase “purely trigonometry” means.</p>
+
+<p>The term “purely trigonometry” is just a nonsense phrase; it doesn’t actually mean anything. But what are they trying to say? To explain this, let’s use an analogy. Consider the following proof.</p>
+
+\[\begin{align}
+    &amp;(a + b) \cdot (a - b)      &amp;&amp;\\[5pt]
+    &amp;= a^2 - ab + ba - b^2        &amp;&amp;\text{distributive law} \\[5pt]
+    &amp;= a^2 - ab + ab - b^2        &amp;&amp;\text{commutative law of multiplication} \\[5pt]
+    &amp;= a^2 + 0 - b^2              &amp;&amp;\text{inverse element of addition} \\[5pt]
+    &amp;= a^2 - b^2                  &amp;&amp;\text{additive identity}
+\end{align}\]
+
+<p>This proof is “purely algebraic” because it only uses the laws of algebra in order to solve it.</p>
+
+\[\begin{align}
+    &amp;\frac{1 + \sin \theta}{\cos \theta} &amp;&amp;\\[5pt]
+    &amp;= \frac{1 + \sin \theta}{\cos \theta} \cdot \frac{1 - \sin \theta}{1 - \sin \theta} \\[5pt]
+    &amp;= \frac{1 - \sin^2 \theta}{\cos \theta (1 - \sin \theta)} \\[5pt]
+    &amp;= \frac{\cos^2 \theta}{\cos \theta (1 - \sin \theta)} \\[5pt]
+    &amp;= \frac{\cos \theta}{1 - \sin \theta}
+\end{align}\]
+
+<p><br /></p>
+
+<h2 id="what-does-a-purely-trigonometric-proof-mean">What Does a “Purely Trigonometric Proof” Mean?</h2>
+
+<p>Elisha Scott Loomis in this 1940 treatise <em>The Pythagorean Proposition</em> stated the following.</p>
+
+<blockquote>
+  <p>There are no trigonometric proofs [of the Pythagorean theorem], because all of the fundamental formulae of trigonometry are themselves based upon the truth of the Pythagorean theorem; because of this theorem we say sin$^2$ A + cos$^2$ A = 1 etc</p>
+</blockquote>
+
+<p>This statement is both correct and incorrect depending on how you interpret it. But we will get to that later. For now, let’s just understand what he means.</p>
+
+<p><br /></p>
+
+<h2 id="what-is-geometry">What is Geometry?</h2>
+
+<p>In Euclid’s famous textbook <em>The Elements</em>, he laid out the five famous postulates of Euclidean Geometry.</p>
+<ol>
+  <li>A straight line segment may be drawn from any given point to any other.</li>
+  <li>A straight line may be extended to any finite length.</li>
+  <li>A circle may be described with any given point as its center and any distance as its radius.</li>
+  <li>All right angles are congruent.</li>
+  <li>If a straight line intersects two other straight lines, and so makes the two interior angles on one side of it together less than two right angles, then the other straight lines will meet at a point if extended far enough on the side on which the angles are less than two right angles.</li>
+</ol>
+
+<p>From these postulates (or axioms), all theorems in Euclidean Geometry can be derived, including the Pythagorean Theorem.</p>
+
+<p>The keen among you will notice that the 5th postulate is much more complicated than the first four. This</p>
+
+<p>TLDR; The Pythagorean Theorem does not hold in non-Euclidean Geometries.</p>
+
+<p><br /></p>
+
+<h2 id="what-is-trigonometry">What is Trigonometry?</h2>
+
+<p>Trigonometry is the branch of math that describes the relationship between the angles and side lengths of a triangle. Essentially, it describe the rules when manipulating the functions $\sin$, $\cos$, $\tan$, $\sec$, $\csc$, and $\cot$.</p>
+
+<p>Here’s the problem, you can’t define a triangle without assuming an underlying geometry.</p>
+
+        </div>
+    </div>
+
+    <!--
+    <h3 style="text-align:center; margin-bottom:1em;">
+      <a href="/blog/">Blog Archive</a>
+    </h3>
+    -->
+    
+  </body>
+</html>

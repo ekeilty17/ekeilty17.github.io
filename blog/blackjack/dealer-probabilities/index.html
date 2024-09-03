@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Dealer Probabilities &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded MathJax (effectively LaTeX) support 
+    https://docs.mathjax.org/en/v2.7-latest/tex.html -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX", "input/MathML", "output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js", "mml2jax.js", "MathMenu.js", "MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
+            Macros: {
+                b: ["{\\boldsymbol #1}",1],
+                u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
+                arccsc: ["\\operatorname\{arccsc\}"],
+                arcsec: ["\\operatorname\{arcsec\}"],
+                arccot: ["\\operatorname\{arccot\}"],
+                csch: ["\\operatorname\{csch\}"],
+                sech: ["\\operatorname\{sech\}"],
+                arcsinh: ["\\operatorname\{arcsinh\}"],
+                arccosh: ["\\operatorname\{arccosh\}"],
+                arctanh: ["\\operatorname\{arctanh\}"],
+                arccsch: ["\\operatorname\{arccsch\}"],
+                arcsech: ["\\operatorname\{arcsech\}"],
+                arccoth: ["\\operatorname\{arccoth\}"],
+                seq: ["{\\left \\langle #1 \\right \\rangle}",1],
+                iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
+                abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
+                hal: ["\\texttt{hal}"],
+                gal: ["\\texttt{gal}"],
+                sh: ["sh"],
+                st: ["st"]
+            },
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!--
+    TeX-AMS_HTML
+    TeX-AMS-MML_HTMLorMML
+    TeX-MML-AM_HTMLorMML
+-->
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">AI/ML Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+        <li>
+          <a href="/files/Eric Keilty - Resume.pdf" target="_blank">R&eacute;sum&eacute;</a>
+        </li>
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2024 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">Dealer Probabilities</h1>
+            <!-- <span class="series-date">02 Apr 2024</span> -->
+            <time datetime="2024-04-02T00:00:00-04:00" class="post-date">02 Apr 2024</time>
+            <!-- maybe I'll add tagging later
+            <span class="post-date" style="margin-top:-1em;"> ["blackjack"] </span>
+            -->
+            <p>Our ultimate goal is to be able to mathematically derive Basic Strategy. The first step is to fully describe the outcomes of the dealer.</p>
+
+<h2 id="rules-of-the-dealer">Rules of the Dealer</h2>
+
+<p>The actions of the dealer are pre-determined, meaning the dealer is just a robot following an algorithm. They do not get to make a choice.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">get_dealer_action</span><span class="p">(</span><span class="n">hand</span><span class="p">,</span> <span class="n">hit_on_soft_17</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">hand</span><span class="p">.</span><span class="n">total</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mi">16</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s">"HIT"</span>
+    <span class="k">elif</span> <span class="n">hit_on_soft_17</span> <span class="ow">and</span> <span class="n">hand</span><span class="p">.</span><span class="n">total</span><span class="p">()</span> <span class="o">==</span> <span class="mi">17</span> <span class="ow">and</span> <span class="n">hand</span><span class="p">.</span><span class="n">is_soft</span><span class="p">():</span>
+        <span class="k">return</span> <span class="s">"HIT"</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s">"STAND"</span>
+</code></pre></div></div>
+
+<p>Recall that <strong>Aces</strong> in BlackJack can be used as either a value of $1$ or $11$. A <strong>soft hand</strong> refers to a hand that uses an Ace as a value of $11$. For example, $A$, $6$ is a soft 17. The parameter <code class="language-plaintext highlighter-rouge">hit_on_soft_17</code> is a boolean variable that represents a standard variant of BlackJack. If $\texttt{true}$ then the dealer will HIT on a soft $17$. If $\texttt{false}$ then the dealer will STAND on a soft $17$ (this is known to be more advantageous for the player).</p>
+
+<h2 id="computing-the-dealers-probabilities">Computing the Dealer’s Probabilities</h2>
+
+<h3 id="random-variable-definitions">Random Variable Definitions</h3>
+
+<p>Define the following discrete random variables.</p>
+<ul>
+  <li>Let \(F \in \{ 17, 18, 19, 20, 21, \text{BUST} \}\) be the random variable denoting the final total of the dealer.</li>
+  <li>Let \(I \in \{ 0, 1, 2, \ldots, 20, 21, \text{BUST} \}\) be the random variable denoting some intermediary total of the dealer.</li>
+  <li>Let \(H \in \{ \text{hard}, \text{soft} \}\) be the random variable denoting the type of the dealer’s hand.</li>
+  <li>Let \(C \in \{ A, 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K \}\) be the random variable denoting drawing a card from the deck.</li>
+</ul>
+
+<p>Let me further clarify the above definitions with an example. Suppose the dealer has $A$, $5$. This gives an intermediate total of $I = 16$ since the Ace is used as an $11$. This also means that this is a soft hand ($H = \text{soft}$). As per the dealer’s procedure, they must take another card. Suppose they draw a $C = J$. The dealer’s intermediate total is now still $I = 16$ (since a $J$ is worth $10$), but it is a hard hand ($H = \text{hard}$). As per the dealer’s procedure, they again must take another card. Suppose they draw a $C = 4$. Then the dealer’s total is now $I = F = 20$. As per the rules, this is the dealer’s final total.</p>
+
+<h3 id="probability-mass-function-definitions">Probability Mass Function Definitions</h3>
+
+<p>Consider the following probability definitions.
+\(\quad\bullet\quad P[C = c] \equiv \text{the probability of drawing card } c \text{ from the deck} \\[10pt]
+\begin{align}
+    \quad\bullet\quad P[F = f \mid I = i, H = h] \equiv &amp;\text{ the probability that the dealer obtains a final total of } f \\[1pt]
+    &amp;\text{ given they have an intermediary total of } i \text{ of hand type } h
+\end{align} 
+\\[15pt]\)
+\(\begin{align}
+    \quad\bullet\quad P[F = f \mid I = i, H = h, C = c] \equiv &amp;\text{ the probability that the dealer obtains a final total of } f \\[1pt]
+    &amp;\text{ given they have an intermediary total of } i \text{ of hand type } h \\[1pt]
+    &amp;\text{ and have drawn the card } c \text{ from the deck}
+\end{align}\)</p>
+
+<p>However, the more common notation is to express these are <strong>probability mass functions</strong> (PMFs).
+\(\begin{align}
+    &amp;\quad\bullet\quad p(c) \equiv p_{C}(c) \equiv P[C = c] \\[10pt]
+    &amp;\quad\bullet\quad p(f \mid i, h) \equiv p_{F \mid I, H}(f \mid i, h) \equiv P[F = f \mid I = i, H = h] \\[10pt]
+    &amp;\quad\bullet\quad p(f \mid i, h, c) \equiv p_{F \mid I, H, C}(f \mid i, h, c) \equiv P[F = f \mid I = i, H = h, C = c]
+\end{align}\)</p>
+
+<p>Notice that we are conflating the function $p(\cdot)$ with three completely different functions, which are only differentiated via their arguments. This is standard notation in probability. If this bothers you, you can choose to always include the subscripts to the function (e.g. $\ p_{F \mid I, H}(f \mid i, h)$). However, I find this too noisy and the variables quickly become unwieldy. Thus, I will stick to standard notation.</p>
+
+<h3 id="computing-probabilities">Computing Probabilities</h3>
+
+<p>Our goal is to fully compute the PMF $p(f \mid i, h)$. First, we can use some boundary conditions. 
+\(\begin{align}
+    &amp;\quad\bullet\quad \text{By definition, an intermediary total cannot exceed the final total} \\[10pt]
+    &amp;\quad\bullet\quad \text{Dealer always hits on a total of } 16 \text{ or less} \\[10pt]
+    &amp;\quad\bullet\quad \text{Dealer always stands on } 17 \text{ or more} \\[10pt]
+    &amp;\quad\bullet\quad \text{By definition, a hard hand totaling } 1 \text{ is not possible} \\[10pt]
+    &amp;\quad\bullet\quad \text{By definition, a soft hand totaling less than } 11 \text{ is not possible} \\[10pt]
+\end{align}\)</p>
+
+<p>For the generic case, we use the <span class="tooltip">law of total probability
+    <span class="tooltiptext"> 
+        \(\displaystyle
+        P[A = a] = \sum_n P[A = a, B = b_n] = \sum_n P[A = a \mid B = b_n] \, P[B = b_n]\)
+    </span>
+</span>, which models drawing a random card from the deck and adding it to our intermediary total. Putting it all together gives the following definition.</p>
+
+\[p(f \mid i, h) = \begin{cases}
+    0   &amp;\quad\text{if } f &lt; 17 \text{ or } f &lt; i \\[10pt]
+    1   &amp;\quad\text{if } 17 \leq i = f  \\[10pt]
+    0   &amp;\quad\text{if } i = 1 \text{ and } h = \text{hard}  \\[10pt]
+    0   &amp;\quad\text{if } i &lt; 11 \text{ and } h = \text{soft}  \\[10pt]
+    \displaystyle \sum_{c \in C} p(f \mid i, h, c) \, p(c) &amp;\quad\text{otherwise }
+\end{cases}\]
+
+<p>The above is simpler than it looks. The first four lines we just the mathematical representation of the boundary conditions listed above. The last line is just the mathematical representation of drawing a random card from the deck.</p>
+
+<p>Continuing, we can relate $p(f \mid i, h, c)$ to $p(f \mid i, h)$ using the rules of BlackJack. First, we need to define the value of each BlackJack card.</p>
+
+\[v(c) = 
+\begin{cases}
+    1           &amp;\quad\text{if } c = A \\[5pt]
+    c           &amp;\quad\text{if } c \in \{ 2, 3, 4, 5, 6, 7, 8, 9 \} \\[5pt]
+    10          &amp;\quad\text{if } c \in \{ 10, J, Q, K \}
+\end{cases}\]
+
+<p>It’s easiest to deal with the cases of hard and soft hands separately.</p>
+
+\[p(f \mid i, \text{hard}, c) = 
+\begin{cases}
+    p(f \mid i + 11, \text{soft}) &amp;\quad\text{if } i \leq 10 \text{ and } c = A \\[10pt]
+    p(f \mid \text{BUST}, \text{hard}) &amp;\quad\text{if } i + v(c) &gt; 21 \\[10pt]
+    p(f \mid i + v(c), \text{hard}) &amp;\quad\text{otherwise}
+\end{cases}\]
+
+<p>Similarly for soft hands.</p>
+
+\[p(f \mid i, \text{soft}, c) = 
+\begin{cases}
+    p(f \mid i + v(c), \text{soft}) &amp;\quad\text{if } i+v(c) \leq 21 \\[10pt]
+    p(f \mid i + v(c) - 10, \text{hard}) &amp;\quad\text{if } i+v(c) &gt; 21
+\end{cases}\]
+
+<h3 id="dynamic-programming">Dynamic Programming</h3>
+
+<p>We can now compute the entire PMF using dynamic programming. The Python code is given below. I was going to do pseudocode, but it would have been essentially the same.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">dealer_probabilities</span><span class="p">(</span><span class="n">hit_on_soft_17</span><span class="p">):</span>
+    <span class="c1"># Initialization
+</span>    <span class="n">H</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">23</span><span class="p">,</span> <span class="mi">23</span><span class="p">))</span>      <span class="c1"># H[i, f] = p(f | i, hard)
+</span>    <span class="n">S</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">22</span><span class="p">,</span> <span class="mi">23</span><span class="p">))</span>      <span class="c1"># S[i, f] = p(f | i, soft)
+</span>    <span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span> <span class="o">/</span> <span class="mi">13</span>    <span class="c1"># C[c-1] = p(c)
+</span>    <span class="c1"># we don't distinguish between {10, J, Q, K}
+</span>    <span class="c1"># we treat them as the same card that can occur 4 times
+</span>    <span class="c1"># now the card value is the index of its PMF value
+</span>
+    <span class="c1"># Base Cases
+</span>    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="mi">23</span><span class="p">):</span>
+        <span class="n">H</span><span class="p">[</span><span class="n">f</span><span class="p">,</span> <span class="n">f</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">22</span><span class="p">):</span>
+        <span class="n">S</span><span class="p">[</span><span class="n">f</span><span class="p">,</span> <span class="n">f</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">hit_on_soft_17</span><span class="p">:</span>
+        <span class="n">S</span><span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mi">17</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="c1"># Hard hands &gt;= 11
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">17</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="mi">23</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
+                <span class="n">H</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">f</span><span class="p">]</span> <span class="o">+=</span> <span class="n">H</span><span class="p">[</span><span class="nb">min</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="n">c</span><span class="p">,</span> <span class="mi">22</span><span class="p">),</span> <span class="n">f</span><span class="p">]</span> <span class="o">*</span> <span class="n">C</span><span class="p">[</span><span class="n">c</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    
+    <span class="c1"># Soft hands
+</span>    <span class="c1"># Note: a soft hand of 11 means the dealer is showing just an Ace
+</span>    <span class="n">soft_hand_stand</span> <span class="o">=</span> <span class="mi">18</span> <span class="k">if</span> <span class="n">hit_on_soft_17</span> <span class="k">else</span> <span class="mi">17</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="n">soft_hand_stand</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="mi">23</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">i</span><span class="o">+</span><span class="n">c</span> <span class="o">&lt;=</span> <span class="mi">21</span><span class="p">:</span>
+                    <span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">f</span><span class="p">]</span> <span class="o">+=</span> <span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">c</span><span class="p">,</span> <span class="n">f</span><span class="p">]</span> <span class="o">*</span> <span class="n">C</span><span class="p">[</span><span class="n">c</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">f</span><span class="p">]</span> <span class="o">+=</span> <span class="n">H</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">c</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="n">f</span><span class="p">]</span> <span class="o">*</span> <span class="n">C</span><span class="p">[</span><span class="n">c</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    
+    <span class="c1"># Hard hands &lt; 11 (dealer showing a single card that is not an Ace)
+</span>    <span class="c1"># Note: a hard hard of 0 represents p(f | 0) = p(f), i.e. the prior probabilities of the dealer's final hand
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">continue</span>    <span class="c1"># Hand hand = 1 is impossible
+</span>        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="mi">23</span><span class="p">):</span>
+            <span class="n">H</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">f</span><span class="p">]</span> <span class="o">+=</span> <span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">11</span><span class="p">,</span> <span class="n">f</span><span class="p">]</span> <span class="o">*</span> <span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>        <span class="c1"># different case for an Ace
+</span>            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
+                <span class="n">H</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">f</span><span class="p">]</span> <span class="o">+=</span> <span class="n">H</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">c</span><span class="p">,</span> <span class="n">f</span><span class="p">]</span> <span class="o">*</span> <span class="n">C</span><span class="p">[</span><span class="n">c</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    
+    <span class="k">return</span> <span class="n">H</span><span class="p">,</span> <span class="n">S</span>
+</code></pre></div></div>
+
+<p>Running this code gives the following tables</p>
+
+<p><strong>TODO</strong></p>
+
+<p>These values will be used in subsequent posts.</p>
+
+        </div>
+
+        <!-- Adding the ability to move between parts of the series -->
+        
+        
+        
+
+        
+        
+        
+
+        <!-- Getting capitalized title for series -->
+        
+        
+        
+        
+        <!-- Getting url for series, which is just the page url with the last /... removed -->
+        
+
+        <div class="pagination" style="margin-top:1em;">
+            
+                <a class="pagination-item older" href="/blog/blackjack/introduction/">Previous</a>
+            
+            
+                <a class="pagination-item newer" href="/blog/blackjack/player-probabilities/">Next</a>
+            
+        </div>
+        <h3 style="text-align:center; margin-bottom:1em;">
+            <a href="/blog/blackjack">
+            
+                
+                    Blackjack
+                
+            
+         Series</a>
+        </h3>
+    </div>
+    
+  </body>
+</html>

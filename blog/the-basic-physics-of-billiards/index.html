@@ -156,11 +156,13 @@
             <time datetime="2024-03-24T00:00:00-04:00" class="post-date">24 Mar 2024</time>
             <!-- This is probably the best article for the full breakdown of a cueball collision: https://arxiv.org/html/2402.13258v1 -->
 
-<p><strong>Billiards</strong> refers to a wide variety of games. In North America, we typically play <a href="https://en.wikipedia.org/wiki/Pool_(cue_sports)">pool</a>, the UK typically plays <a href="https://en.wikipedia.org/wiki/Snooker">snooker</a>, Russia typically plays <a href="https://en.wikipedia.org/wiki/Russian_pyramid">Russian pyramid</a>, and France and the Phillipines typically play <a href="https://en.wikipedia.org/wiki/Carom_billiards">Carom</a>. In each of these variants, a turn conssists of using a <strong>cue stick</strong> to strick the <strong>cue-ball</strong> (CB) towards an <strong>object-ball</strong> (OB) in order to achieve some objective (usually pocketing the OB). Being skilled at these games means accurately and precisely controlling what happens to <em>both</em> the CB and OB after contact.</p>
+<h2 id="introduction">Introduction</h2>
+
+<p><strong>Billiards</strong> refers to a wide variety of games. North America typically plays <a href="https://en.wikipedia.org/wiki/Pool_(cue_sports)">pool</a>, the UK typically plays <a href="https://en.wikipedia.org/wiki/Snooker">snooker</a>, Russia typically plays <a href="https://en.wikipedia.org/wiki/Russian_pyramid">Russian pyramid</a>, and France and the Phillipines typically play <a href="https://en.wikipedia.org/wiki/Carom_billiards">Carom</a>. In each of these variants, a turn consists of using a <strong>cue stick</strong> to strike the <strong>cue-ball</strong> (CB) towards an <strong>object-ball</strong> (OB) in order to achieve some objective (usually pocketing the OB). Being skilled at these games means accurately and precisely controlling what happens to <em>both</em> the CB and OB after contact.</p>
 
 <p>In this post, I am going to do a simplified analysis the physics of billiards. In particular, I am going to analyze a $1\text{D}$ system, calculating the trajectories of the CB and OB accounting for the effects of top and bottom spin. This analysis is a really nice application of high-school physics, requiring kinematics, Coulomb’s law of friction, conservation of momentum, semi-elastic collisions, and the work-energy theorem.</p>
 
-<p>This analysis may seem limiting as I am neglecting side-spin and the left/right trajectories of the CB and OB. This is true; however, I still feel this analysis will be very useful for beginner to intermiate players. First, it demonstrates how complex billiards actually is, and how many moving parts are involved in seeminly simple shots. Second, side-spin is so complicated that it should only be used by advanced players. Thus, the casual player only needs to understanding the effects of top and bottom spin. Third, often when controlling the CB after contact, its left/right trajectory is less important than getting the pace and spin correct. Therefore, the simplified $1\text{D}$ case can be more enlightening. Finally, even in this simplified analysis, interesting concepts emerge such as CB/OB spin transfer and why the CB sometimes hops after contact.</p>
+<p>This analysis may seem limiting as I am neglecting side-spin and the left/right trajectories of the CB and OB. This is true; however, I still feel this analysis will be very useful for beginner to intermiate players. First, it demonstrates how complex billiards actually is, and how many moving parts are involved in seeminly simple shots. Second, side-spin is so complicated that it should only be used by advanced players. Thus, the casual player only needs to understanding the effects of top and bottom spin. Third, often when controlling the CB after contact, its left/right trajectory is less important than getting the pace and spin correct. Finally, even in this simplified analysis, interesting and important concepts emerge such as CB/OB spin transfer and why the CB sometimes hops after contact.</p>
 
 <p><br /></p>
 
@@ -170,7 +172,7 @@
 
 <h2 id="notation-and-physical-values">Notation and Physical Values</h2>
 
-<p>I think good definitions and notation is very important, especially in a post like this where there are a lot of moving parts. Here I will detail each variable used and its meaning.</p>
+<p>I think good definitions and notation is very important, especially in a post like this where there are a lot of moving parts. Here I will detail each variable used and its meaning. I recommend using it as a reference. It does not necessarily need to be read in great detail.</p>
 
 <h3 id="variables-of-motion">Variables of Motion</h3>
 
@@ -269,23 +271,21 @@
 <!-- https://billiards.colostate.edu/physics_articles/Hierrezuelo_PhysEd_95_article.pdf -->
 <!-- Coulomb’s law of sliding friction is f_s = mu_s N -->
 
-<p>Suppose a cue strikes the CB imparting an <strong>initial velocity</strong> of $v_0$ and an <strong>initial spin</strong> (rotational velocity) of $\omega_0$. The diagram below shows the complete $1\text{D}$ motion of the CB.</p>
+<p>Suppose a cue strikes the CB, instantaneously imparting an <strong>initial velocity</strong> of $v_0$ and an <strong>initial spin</strong> (rotational velocity) of $\omega_0$. The diagram below shows the complete $1\text{D}$ motion of the CB.</p>
 
 <center>
 <embed src="/svg/the-basic-physics-of-billiards/CB%20Motion.svg" type="image/svg+xml" width="450px" height="500px" />
 </center>
 
-<p>There are two key stages to the motion of a freely moving CB. Initially, the translational velocity and rotational velocity are uncorrolated, which I denote as <strong>sliding</strong>. Eventually, frictional force stabilize the motion, bringing the translational velocity and rotational velocity in sync with eachother. Once this occurs the CB is in the second stage called <strong>rolling</strong>, which is how you intuitively image a ball moving. Finally, frictional forces eventually cause the rolling CB to come to a stop. Let’s now do a deeper analysis of these stages.</p>
+<p>There are two key stages to the motion of a freely moving CB. Initially, the translational velocity and rotational velocity are uncorrolated, which I denote as <strong>sliding</strong>. Eventually, the frictional force stabilizes the motion, bringing the translational velocity and rotational velocity in sync with eachother. Once this occurs the CB is in the second stage called <strong>rolling</strong> (which is how you intuitively image a ball moving). Finally, frictional forces eventually cause the rolling CB to come to a stop.</p>
+
+<p>Let’s do a deeper analysis of these stages.</p>
 
 <p><br /></p>
 
 <h3 id="sliding-vs-rolling">Sliding vs Rolling</h3>
 
-<h4 id="rolling"><u>Rolling</u></h4>
-
-<p><strong>Rolling</strong> (sometimes called <strong>rolling without slipping</strong>) is a specific type of CB motion. It occurs when the CB has perfect traction with the cloth of the table. This is probably how you intuitively image a ball or wheel moving. For example, when driving a car in normal conditions, the wheels of the car are <em>rolling</em> over the road.</p>
-
-<p>What does it mean for <em>the CB has perfect traction with the cloth of the table</em>? This means that the translational velocity and the rotational velocity are perfectly in sync. In particular, if the CB moves horizontally some distance, then it must also rotate by that distance. Mathematically, we can write this as the following, which are sometimes called <strong>no slip conditions</strong>.</p>
+<p><strong>Rolling</strong> (sometimes called <strong>rolling without slipping</strong>) is a specific type of CB motion. It occurs when the CB has perfect traction with the cloth of the table. This is probably how you intuitively image a ball or wheel moving. For example, when driving a car in normal conditions, the wheels of the car are <em>rolling</em> over the road. Stated more precisely, the translational velocity and the rotational velocity are perfectly in sync. If the CB moves horizontally some distance, then it must also rotate by that distance. Mathematically, we can write this as the following, which are sometimes called <strong>no slip conditions</strong>.</p>
 
 \[x = R \, \theta
 \qquad
@@ -293,21 +293,19 @@ v = R \, \omega
 \qquad
 a = R \, \alpha\]
 
-<p>All three statements are equivalent to each other since $a = \dot{v} = \ddot{x}$ and $\alpha = \dot{\omega} = \ddot{\theta}$. In order to better visualize what these equations mean, consider the following diagram.</p>
+<p>All three statements are equivalent to each other since $a = \dot{v} = \ddot{x}$ and $\alpha = \dot{\omega} = \ddot{\theta}$. In order to better visualize what these equations mean, consider the following diagram, which visualizes the CB’s motion over time.</p>
 
 <center>
 <embed src="/svg/the-basic-physics-of-billiards/rolling.svg" type="image/svg+xml" width="320px" height="350px" />
 </center>
 
-<p>Here, I have labeled equidistant points on the circumference of the CB. If we are rolling without slipping (and neglecting friction), then a full rotation of the CB will correspond to moving exactly the distance of its circumference.</p>
+<p>Here, I have labeled equidistant points on the circumference of the CB. If we are rolling without slipping, then a full rotation of the CB will correspond to moving exactly the distance of its circumference.</p>
 
 <p><br /></p>
 
-<h4 id="sliding"><u>Sliding</u></h4>
-
 <p><strong>Sliding</strong> (sometimes called <strong>rolling with slipping</strong>) is best defined as any CB motion that is not rolling. If the CB does one full rotation (neglecting friction) and did not move exactly the distance of its circumference, then its surface must have lost traction with the table at some point. This is what is meant by slipping.</p>
 
-<p>In particular, there are two types of slipping. First, the CB can be <strong>skidding</strong>, which occurs when $v &gt; R \omega$. This is analogous to suddenly slamming on the breaks while driving, causing the tires to stop rotating, but the cars momentum continues it forward. Second, the CB can <strong>spin-out</strong>, which occurs when $v &lt; R \omega$. This is analogous to suddenly flooring the gas pedal from a stationary position, causing the wheels to turn extemely fast, but not yet gaining traction with the road, so you stay almost stationary. The diagram below illustrates these two simple examples.</p>
+<p>In particular, there are two types of slipping. First, the CB can be <strong>skidding</strong>, which occurs when $v &gt; R \omega$. This is analogous to suddenly slamming on the breaks while driving, causing the tires to stop rotating, but the cars momentum continues it forward. Second, the CB can <strong>spin-out</strong>, which occurs when $v &lt; R \omega$. This is analogous to suddenly flooring the gas pedal from a stationary position, causing the wheels to turn extemely fast, but not yet gaining traction with the road. The diagram below illustrates these two simple examples (left is skidding and right is spinning-out). The opaque dots show the motion of a rolling CB to act as a reference.</p>
 
 <center>
 <embed src="/svg/the-basic-physics-of-billiards/sliding-simplified.svg" type="image/svg+xml" width="720px" height="350px" />
@@ -319,11 +317,11 @@ a = R \, \alpha\]
 <embed src="/svg/the-basic-physics-of-billiards/sliding.svg" type="image/svg+xml" width="800px" height="350px" />
 </center>
 
-<p>The reason I belabor on this is because it’s important. As you can see by the above diagrams, the frictional forces act differently depending on if we are rolling, skidding, or spinning-out.</p>
+<p>These concepts are critically important for our analysis. As you can see by the above diagrams, the frictional force ($f_s$) act differently depending on if we are rolling, skidding, or spinning-out.</p>
 
 <p><br /></p>
 
-<h3 id="analysis---sliding">Analysis - Sliding</h3>
+<h3 id="phase-1-sliding---analysis">Phase 1: Sliding - Analysis</h3>
 
 <p>In stage $1$, the CB is <strong>sliding</strong> across the table meaning it does not have traction with the cloth of the table. Therefore, the translational velocity $v_s(t)$ and the rotational velocity $\omega_s(t)$ of the CB while sliding are <em>uncorrolated</em>. By this I mean that there is not a general formula that can related them (unlike rolling). However, whether $v_s(t) &lt; R \, \omega_s(t)$ or $v_s(t) &gt; R \, \omega_s(t)$ influences the direction of the frictional force.</p>
 
@@ -481,19 +479,19 @@ a = R \, \alpha\]
 
 <p>I will refer to these sets of equations as</p>
 
-\[\Omega_s(t; \; v_0, \omega_0; \; R, \mu_s, g) = \{ a_s(t), \, v_s(t), \,  x_s(t), \, \alpha_s(t), \, \omega_s(t),\, \theta_s(t) \, t_{s \rightarrow r}, \, v_{s \rightarrow r}, \, x_{s \rightarrow r}, \, \omega_{s \rightarrow r}, \, \theta_{s \rightarrow r} \}\]
+\[\Omega_s(t; \; v_0, \omega_0; \; R, \mu_s, g) = \{ a_s(t), \, v_s(t), \,  x_s(t), \, \alpha_s(t), \, \omega_s(t), \, \theta_s(t), \, t_{s \rightarrow r}, \, v_{s \rightarrow r}, \, x_{s \rightarrow r}, \, \omega_{s \rightarrow r}, \, \theta_{s \rightarrow r} \}\]
 
 <p><br /></p>
 
-<h3 id="stage-2-rolling">Stage 2: Rolling</h3>
+<h3 id="stage-2-rolling---analysis">Stage 2: Rolling - Analysis</h3>
 
-<p>Now we <strong>roll without slipping</strong>. In this state, the translational velocity and rotational velocity are in sync, so we only have to analyze one case, i.e. we have the following relationship.</p>
+<p>Now we analyze stage 2 where the CB <strong>rolls without slipping</strong>. In this stage, the translational velocity and rotational velocity are in sync, i.e. we have the following relationship.</p>
 
 \[a_r = R \, \alpha_r
 \qquad\qquad
 v_r(t) = R \, \omega_r(t)\]
 
-<p>Note that for this post, we are going to assume that the ball starts rolling without slipping at $t = 0$, and then afterwards we can just shift the time by $t_{s \rightarrow r}$.</p>
+<p>Note that in this section, we are going to assume that the ball starts rolling without slipping at $t = 0$, and then afterwards we can just shift the time by $t_{s \rightarrow r}$.</p>
 
 <p><strong>TODO</strong> draw diagram</p>
 
@@ -508,7 +506,7 @@ v_r(t) = R \, \omega_r(t)\]
     &amp;&amp; \implies \boxed{ \alpha_r = - \tfrac{5}{2} \tfrac{\mu_r g}{R} } \implies \boxed{ a_r = - \tfrac{5}{2} \mu_r g }
 \end{align}\]
 
-<p>Now this analysis assumes that $v_{s \rightarrow r}$ is moving in the positive $x$-direction (to the right). However, it is possible to put so much draw on the ball to cause it to end up rolling backwards in the negative $x$-direction (to the left). In this case, the translational and angular velocities become negative. Thus, the general solution is the following.</p>
+<p>Now the above analysis assumes that $v_{s \rightarrow r}$ is moving in the positive $x$-direction (to the right). However, it is possible to put so much draw on the ball to cause it to end up rolling backwards in the negative $x$-direction (to the left). In this case, the translational and angular velocities become negative. Thus, the general solution is the following.</p>
 
 \[a_r = \begin{cases}
     +\tfrac{5}{2} \mu_r g   &amp;\quad\text{if } v_{s \rightarrow r} &lt; 0 \\
@@ -542,7 +540,7 @@ v_r(t) = R \, \omega_r(t)\]
     \end{cases}
 \end{align}\]
 
-<p>And above we have expressed $v_{s \rightarrow r}$ in terms of the inputs $v_0$ and $\omega_0$, which means we could technically plug that in and express everything here in terms of the inputs as well…but no thank you.</p>
+<p>Notice that the above has expressed $v_{s \rightarrow r}$ in terms of the inputs $v_0$ and $\omega_0$, which means we could technically plug that in and express everything here in terms of the inputs as well…but no thank you.</p>
 
 <p>Therefore, the above set of equations can be summarized as</p>
 
@@ -684,6 +682,16 @@ h_{\text{CB}} + h_{\text{OB}} = \left ( \frac{\mu_b^2}{2g} + \frac{1 - e_b^2}{4g
 <p>A medium shot is about $1$ m/s, therefore, if the CB is spinning sufficiently quickly, then it will hop by $0.004 \, m = 4 \, mm$</p>
 
 <p>It’s interesting that the contribution due to the frictional force and due to the compression of the CB can be calculated independently. Also, what exactly does this</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>In this post, I fully analyzed the $1\text{D}$ motion of a cue ball striking an object ball. I believe this analysis provides a good foundation for understanding the behavior of billiard balls, with concepts that easily extrapolate to more complicated situations. And if nothing else, this was a nice application of Newtonian mechanics.</p>
 
 <!-- ## Equations
 
