@@ -1,12 +1,13 @@
 ---
 layout:     series
 title:      "Triangle"
-date:       2023-09-29
+date:       3023-09-29
 categories: blog moments-of-inertia
 permalink:  ":categories/:title/"
 part:       51
 series:     moments-of-inertia
 tags:       moments-of-inertia
+draft:      true
 ---
 
 

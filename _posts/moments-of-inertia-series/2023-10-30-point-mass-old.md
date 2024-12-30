@@ -1,12 +1,13 @@
 ---
 layout:     series
 title:      "Point Mass (Alternative Formulation)"
-date:       2023-10-30
+date:       3023-10-30
 categories: blog moments-of-inertia
 permalink:  ":categories/:title/"
 part:       52
 series:     moments-of-inertia
 tags:       moments-of-inertia
+draft:      true
 ---
 
 **TODO**

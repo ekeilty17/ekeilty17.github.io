@@ -3,23 +3,21 @@ layout:     page
 title:      Moments of Inertia
 categories: blog
 permalink:  /blog/moments-of-inertia/
-draft:      true
 ---
 
 <!-- I don't think there's a point in summarizing this series. Most posts are supposed to be self-contained. The series itself is the summary. -->
 <!-- [Summary of Moments of Inertia](/blog/moments-of-inertia/summary-of-moments-of-inertia) -->
 
-This series is still being developed
+There are some posts in this series that remain incomplete. Unfortunately, I just got busy. But 90% of the content is here, and I have spent a ridiculous amount of time on this. At some point you just have to publish a draft. I have noted when content is missing. I promise to come back to this and touch up the last 10% in the future.
 
-I am still working on some of the posts in the theory section. A majority of the math is written for the inertia derivations, but I haven't added all of the diagrams.
-
+<br/>
 
 <!-- If I was doing this in Python or any other real language, there would be much more elegant ways of coding this. For various annoying reasons, Liquid prevents me from doing certain things (e.g. HTML doesn't render inside nested loops). Below is the compromise I've made -->
 
 {% assign sorted_posts = site.posts | where: 'series', 'moments-of-inertia' | sort: 'part' %}
 
 {% assign headings = "none, Theory and Background, Curves, Surfaces, Volumes" | split: ", " %}   <!-- Only modify this -->
-{% assign limits = "1, 7, 8, 9, 20" | split: ", " %} <!-- and this -->
+{% assign limits = "1, 7, 7, 8, 20" | split: ", " %} <!-- and this -->
 
 <!-- Computes the offsets given the limits -->
 {% assign running_sum = 0 %}
