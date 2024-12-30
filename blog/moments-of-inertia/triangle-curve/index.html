@@ -152,12 +152,12 @@
 
         <div class="post">
             <h1 class="post-title">Triangle</h1>
-            <!-- <span class="series-date">12 Sep 2023</span> -->
-            <time datetime="2023-09-12T00:00:00-04:00" class="post-date">12 Sep 2023</time>
+            <!-- <span class="series-date">11 Nov 2024</span> -->
+            <time datetime="2024-11-11T00:00:00-05:00" class="post-date">11 Nov 2024</time>
             <!-- maybe I'll add tagging later
             <span class="post-date" style="margin-top:-1em;"> ["moments-of-inertia"] </span>
             -->
-            <p>There are two factors contributing to the lack of elegance in the formulas from this post. First, a generalized triangle is actually extremely asymmetric. As I have solved more and more of these types of problems, I have learned that even the smallest amount of symmetry can really help simplify things. An arbitrary triangle has almost no symmetry. Second, analyzing the boundaries/perimeters of shapes are much more complicated than the surface/interior. This is because the boundary is actually $3$ objects, where the surface is a single continuous object.</p>
+            <p>There are two factors contributing to the lack of elegance in the formulas from this post. First, a generalized triangle is actually extremely asymmetric. As I have solved more and more of these types of problems, I have learned that even the smallest amount of symmetry can really help simplify things. An arbitrary triangle has almost no symmetry. Second, analyzing the boundaries/perimeters of shapes are much more complicated than the surface/interior. This is because the boundary is actually $3$ disjoint objects, where the surface is a single continuous object.</p>
 
 <p>In this post, I’ve tried by best to find a balance between a general solution without it becoming unwieldy.</p>
 
@@ -170,7 +170,7 @@
 <h2 id="parameterization">Parameterizing the Curve</h2>
 
 <center>
-<embed src="/svg/moments-of-inertia/11:triangle-curve/triangle-curve.svg" type="image/svg+xml" />
+<embed src="/svg/moments-of-inertia/10:triangle-curve/triangle-curve.svg" type="image/svg+xml" />
 </center>
 
 <p>The triangle is comprised of three line segments. Therefore, we do not need to paramaterize the curve. Instead, we can use the extensive analysis on lines in the $xy$ plane from the <a href="/blog/moments-of-inertia/lines-special-cases#general">previous post</a>. Therefore, I could end the post here, and simply write that.</p>
@@ -184,9 +184,9 @@
 <p>Before we calculate moments of inertia, let’s define the parts of the triangle in rigorous notation. Consider the below figures. Let $\b{A}$, $\b{B}$, and $\b{C}$ denote the angles/vertices of the triangle and let $\b{a}$, $\b{b}$, and $\b{c}$ denote the coorsponding side lengths.</p>
 
 <center>
-<embed src="/svg/moments-of-inertia/11:triangle-curve/triangle-general-angles-and-sides.svg" type="image/svg+xml" />
+<embed src="/svg/moments-of-inertia/10:triangle-curve/triangle-general-angles-and-sides.svg" type="image/svg+xml" />
 &emsp;&emsp;&emsp;&emsp;
-<embed src="/svg/moments-of-inertia/11:triangle-curve/triangle-general-vectors.svg" type="image/svg+xml" />
+<embed src="/svg/moments-of-inertia/10:triangle-curve/triangle-general-vectors.svg" type="image/svg+xml" />
 </center>
 
 <p>It is standard notation to label the length of the opposite edges of the angle with the lowercase letter, as shown in the above diagrams. We define the coordiantes of $\b{A}$, $\b{B}$, $\b{C}$, $\b{a}$, $\b{b}$, and $\b{c}$ as follows.</p>
@@ -266,113 +266,130 @@ a(y_B + y_C) + b(y_C + y_A) + c(y_A + y_B) = 0\]
 
 <p><br /></p>
 
-<h3 id="the-spieker-center">The Spieker Center</h3>
+<!-- 
+### The Spieker Center
 
-<p>The center of mass of the boundary of a triangle is called the <a href="https://en.wikipedia.org/wiki/Spieker_center">Spieker center</a>.</p>
+The center of mass of the boundary of a triangle is called the [Spieker center](https://en.wikipedia.org/wiki/Spieker_center).
 
-<!-- https://proofwiki.org/wiki/Length_of_Angle_Bisector -->
-<!-- https://mathvox.com/geometry/triangles/chapter-8-the-angle-bisector-of-a-triangle/the-distance-from-the-vertex-to-the-incenter-formula-1/ -->
+https://proofwiki.org/wiki/Length_of_Angle_Bisector
+https://mathvox.com/geometry/triangles/chapter-8-the-angle-bisector-of-a-triangle/the-distance-from-the-vertex-to-the-incenter-formula-1/
 
 <center>
-<embed src="/svg/moments-of-inertia/11:triangle-curve/triangle-general-median-incenter.svg" type="image/svg+xml" />
+<embed src="/svg/moments-of-inertia/10:triangle-curve/triangle-general-median-incenter.svg" type="image/svg+xml" />
 &emsp;&emsp;&emsp;&emsp;
-<embed src="/svg/moments-of-inertia/11:triangle-curve/triangle-general-median-bisectors.svg" type="image/svg+xml" />
+<embed src="/svg/moments-of-inertia/10:triangle-curve/triangle-general-median-bisectors.svg" type="image/svg+xml" />
 </center>
 
-<p>It has some really nice properties, which I am going to assert without proof.</p>
+It has some really nice properties, which I am going to assert without proof.
 
-<ol>
-  <li>The Spieker center of $\triangle ABC$ is the <strong>incenter</strong> of the median triangle $\triangle EFG$.</li>
-  <li>The median triangle is similar to the original triangle, i.e. $\triangle EFG \sim \triangle ABC$, scaled by a factor of $\tfrac{1}{2}$.</li>
-  <li>The the <strong>angle bisectors</strong> of the median triangle $\triangle EFG$ are the lines $\overline{ES}$, $\overline{FS}$, and $\overline{GS}$.</li>
-  <li>All four subtriangles craeted by connecting the medians are congruent, i.e. $\triangle EFG \cong \triangle AGF \cong \triangle GBE \cong \triangle FEC$.</li>
-</ol>
+1. The Spieker center of $\triangle ABC$ is the **incenter** of the median triangle $\triangle EFG$.
+2. The median triangle is similar to the original triangle, i.e. $\triangle EFG \sim \triangle ABC$, scaled by a factor of $\tfrac{1}{2}$.
+3. The the **angle bisectors** of the median triangle $\triangle EFG$ are the lines $\overline{ES}$, $\overline{FS}$, and $\overline{GS}$.
+4. All four subtriangles craeted by connecting the medians are congruent, i.e. $\triangle EFG \cong \triangle AGF \cong \triangle GBE \cong \triangle FEC$.
 
-<p><br /></p>
+<br>
 
-<hr />
+---
 
-<p><br /></p>
+<br>
 
-<h2 id="notes">Notes</h2>
+## Notes
 
-\[\begin{align}
-    I_{xx} = &amp;\left ( \tfrac{1}{12} M_a a_y^2 + M_a \overline{r}_{a, y}^2 \right ) + \left ( \tfrac{1}{12} M_b b_y^2 + M_b \overline{r}_{b, y}^2 \right ) + \left ( \tfrac{1}{12} M_c c_y^2 + M_c \overline{r}_{c, y}^2 \right ) \\[10pt]
-    &amp;= \tfrac{1}{12} \left [ a \left ( y_B - y_C \right )^2 + b\left ( y_C - y_A \right )^2 + c\left ( y_A - y_B \right )^2 \right ] + \left [ a \left ( \frac{y_B + y_C}{2} \right )^2 + b \left ( \frac{y_C + y_A}{2} \right )^2 + c \left ( \frac{y_A + y_B}{2} \right )^2 \right ] \\[10pt]
-    &amp;= \tfrac{1}{12} \left ( a \left [ (y_B - y_C)^2 + 3(y_B + y_C)^2 \right ] + b \left [ (y_C - y_A)^2 + 3(y_C + y_A)^2 \right ] + c \left [ (y_A - y_B)^2 + 3(y_A + y_B)^2 \right ] \right ) \\[10pt]
-    &amp;= \tfrac{1}{12} \left ( a \left [ 4y_B^2 + 4y_C^2 + 4y_B y_C \right ] + b \left [ 4y_C^2 + 4y_A^2 + 4y_C y_A \right ] + c \left [ 4y_A^2 + 4y_B^2 + 4y_A y_B \right ] \right ) \\[10pt]
-    &amp;= \tfrac{1}{3} \left ( a \left [ y_B^2 + y_C^2 + y_B y_C \right ] + b \left [ y_C^2 + y_A^2 + y_C y_A \right ] + c \left [ y_A^2 + y_B^2 + y_A y_B \right ] \right ) \\[10pt]
-    &amp;= \tfrac{1}{3} \left [ a \left ( \frac{y_B^3 - y_C^3}{y_B - y_C} \right ) + b \left ( \frac{y_C^3 - y_A^3}{y_C - y_A} \right ) + c \left ( \frac{y_A^3 - y_B^3}{y_A - y_B} \right ) \right ]
-\end{align}\]
+$$
+\begin{align}
+    I_{xx} = &\left ( \tfrac{1}{12} M_a a_y^2 + M_a \overline{r}_{a, y}^2 \right ) + \left ( \tfrac{1}{12} M_b b_y^2 + M_b \overline{r}_{b, y}^2 \right ) + \left ( \tfrac{1}{12} M_c c_y^2 + M_c \overline{r}_{c, y}^2 \right ) \\[10pt]
+    &= \tfrac{1}{12} \left [ a \left ( y_B - y_C \right )^2 + b\left ( y_C - y_A \right )^2 + c\left ( y_A - y_B \right )^2 \right ] + \left [ a \left ( \frac{y_B + y_C}{2} \right )^2 + b \left ( \frac{y_C + y_A}{2} \right )^2 + c \left ( \frac{y_A + y_B}{2} \right )^2 \right ] \\[10pt]
+    &= \tfrac{1}{12} \left ( a \left [ (y_B - y_C)^2 + 3(y_B + y_C)^2 \right ] + b \left [ (y_C - y_A)^2 + 3(y_C + y_A)^2 \right ] + c \left [ (y_A - y_B)^2 + 3(y_A + y_B)^2 \right ] \right ) \\[10pt]
+    &= \tfrac{1}{12} \left ( a \left [ 4y_B^2 + 4y_C^2 + 4y_B y_C \right ] + b \left [ 4y_C^2 + 4y_A^2 + 4y_C y_A \right ] + c \left [ 4y_A^2 + 4y_B^2 + 4y_A y_B \right ] \right ) \\[10pt]
+    &= \tfrac{1}{3} \left ( a \left [ y_B^2 + y_C^2 + y_B y_C \right ] + b \left [ y_C^2 + y_A^2 + y_C y_A \right ] + c \left [ y_A^2 + y_B^2 + y_A y_B \right ] \right ) \\[10pt]
+    &= \tfrac{1}{3} \left [ a \left ( \frac{y_B^3 - y_C^3}{y_B - y_C} \right ) + b \left ( \frac{y_C^3 - y_A^3}{y_C - y_A} \right ) + c \left ( \frac{y_A^3 - y_B^3}{y_A - y_B} \right ) \right ]
+\end{align}
+$$
 
-<p>I don’t like this</p>
+I don't like this
 
-\[\begin{align}
-    I_{xx} = &amp;\left ( \tfrac{1}{12} M_a a_y^2 + M_a \overline{r}_{a, y}^2 \right ) + \left ( \tfrac{1}{12} M_b b_y^2 + M_b \overline{r}_{b, y}^2 \right ) + \left ( \tfrac{1}{12} M_c c_y^2 + M_c \overline{r}_{c, y}^2 \right ) \\[10pt]
-    &amp;= \tfrac{1}{12} \left ( a a_y^2 + b b_y^2 + c c_y^2 \right ] + \left [ a \left ( \frac{y_B + y_C}{2} \right )^2 + b \left ( \frac{y_C + y_A}{2} \right )^2 + c \left ( \frac{y_A + y_B}{2} \right )^2 \right ) \\[10pt]
-    &amp;= \tfrac{1}{12} \left [ a a_y^2 + b b_y^2 + c c_y^2 \right ] + \tfrac{1}{4} \left [ a \left ( y_B + y_C \right )^2 + b \left ( y_C + y_A \right )^2 + c \left ( y_A + y_B \right )^2 \right ] \\[10pt]
-\end{align}\]
+$$
+\begin{align}
+    I_{xx} = &\left ( \tfrac{1}{12} M_a a_y^2 + M_a \overline{r}_{a, y}^2 \right ) + \left ( \tfrac{1}{12} M_b b_y^2 + M_b \overline{r}_{b, y}^2 \right ) + \left ( \tfrac{1}{12} M_c c_y^2 + M_c \overline{r}_{c, y}^2 \right ) \\[10pt]
+    &= \tfrac{1}{12} \left ( a a_y^2 + b b_y^2 + c c_y^2 \right ] + \left [ a \left ( \frac{y_B + y_C}{2} \right )^2 + b \left ( \frac{y_C + y_A}{2} \right )^2 + c \left ( \frac{y_A + y_B}{2} \right )^2 \right ) \\[10pt]
+    &= \tfrac{1}{12} \left [ a a_y^2 + b b_y^2 + c c_y^2 \right ] + \tfrac{1}{4} \left [ a \left ( y_B + y_C \right )^2 + b \left ( y_C + y_A \right )^2 + c \left ( y_A + y_B \right )^2 \right ] \\[10pt]
+\end{align}
+$$
 
-<p><br /></p>
+<br>
 
-<hr />
+---
 
-<p><br /></p>
+<br>
 
-\[\b{m_a} = \frac{\b{B} + \b{C}}{2} = \frac{x_b + x_c}{2} \; \u{x} + \frac{y_b + y_c}{2} \; \u{y}
+$$
+\b{m_a} = \frac{\b{B} + \b{C}}{2} = \frac{x_b + x_c}{2} \; \u{x} + \frac{y_b + y_c}{2} \; \u{y}
 \\[10pt]
 \b{m_b} = \frac{\b{C} + \b{A}}{2} = \frac{x_c + x_a}{2} \; \u{x} + \frac{y_c + y_a}{2} \; \u{y}
 \\[10pt]
-\b{m_c} = \frac{\b{A} + \b{B}}{2} = \frac{x_a + x_b}{2} \; \u{x} + \frac{y_a + y_b}{2} \; \u{y}\]
+\b{m_c} = \frac{\b{A} + \b{B}}{2} = \frac{x_a + x_b}{2} \; \u{x} + \frac{y_a + y_b}{2} \; \u{y}
+$$
 
-\[\b{S} = \frac{M_a \b{m_a} + M_b \b{m_b} + M_c \b{m_c}}{M} = \left ( \frac{a(x_b + x_c) + b(x_c + x_a) + c(x_a + x_b)}{2(a+b+c)} \right ) \; \u{x} + \left ( \frac{a(y_b + y_c) + b(y_c + y_a) + c(y_a + y_b)}{2(a+b+c)} \right ) \; \u{y}\]
+$$
+\b{S} = \frac{M_a \b{m_a} + M_b \b{m_b} + M_c \b{m_c}}{M} = \left ( \frac{a(x_b + x_c) + b(x_c + x_a) + c(x_a + x_b)}{2(a+b+c)} \right ) \; \u{x} + \left ( \frac{a(y_b + y_c) + b(y_c + y_a) + c(y_a + y_b)}{2(a+b+c)} \right ) \; \u{y}
+$$
 
-<p>So we have this mini-triagle half the size of the original. The height of the angle bisector is given by the following, the proof is <a href="https://proofwiki.org/wiki/Length_of_Angle_Bisector">here</a>.</p>
+So we have this mini-triagle half the size of the original. The height of the angle bisector is given by the following, the proof is [here](https://proofwiki.org/wiki/Length_of_Angle_Bisector).
 
-\[h_A^2 = \frac{bc (a + b + c) (-a + b + c)}{(b+c)^2} 
+$$
+h_A^2 = \frac{bc (a + b + c) (-a + b + c)}{(b+c)^2} 
 \qquad
 h_B^2 = \frac{ca (a + b + c) (a - b + c)}{(c+a)^2} 
 \qquad
-h_C^2 = \frac{ab (a + b + c) (a + b - c)}{(a+b)^2}\]
+h_C^2 = \frac{ab (a + b + c) (a + b - c)}{(a+b)^2}
+$$
 
-<p>Now, we know that the median triangle is just the original triangle but scaled down by a factor of $2$. Therefore</p>
+Now, we know that the median triangle is just the original triangle but scaled down by a factor of $2$. Therefore
 
-\[h_{m_a}^2 = \frac{bc (a + b + c) (-a + b + c)}{4(b+c)^2} 
+$$
+h_{m_a}^2 = \frac{bc (a + b + c) (-a + b + c)}{4(b+c)^2} 
 \qquad
 h_{m_b}^2 = \frac{ca (a + b + c) (a - b + c)}{4(c+a)^2} 
 \qquad
-h_{m_c}^2 = \frac{ab (a + b + c) (a + b - c)}{4(a+b)^2}\]
+h_{m_c}^2 = \frac{ab (a + b + c) (a + b - c)}{4(a+b)^2}
+$$
 
-<p>But we actually don’t care about the length of the disector, we care about the distance $D_a$, etc. From <a href="https://mathvox.com/geometry/triangles/chapter-8-the-angle-bisector-of-a-triangle/the-distance-from-the-vertex-to-the-incenter-formula-1/">here</a> (<strong>TODO</strong> get better source…I’m not sure if I believe it tbh) we know that</p>
+But we actually don't care about the length of the disector, we care about the distance $D_a$, etc. From [here](https://mathvox.com/geometry/triangles/chapter-8-the-angle-bisector-of-a-triangle/the-distance-from-the-vertex-to-the-incenter-formula-1/) (**TODO** get better source...I'm not sure if I believe it tbh) we know that
 
-\[D_a = \left ( \frac{b + c}{a + b + c} \right ) h_{m_a}
+$$
+D_a = \left ( \frac{b + c}{a + b + c} \right ) h_{m_a}
 \qquad
 D_b = \left ( \frac{c + a}{a + b + c} \right ) h_{m_b}
 \qquad
-D_c = \left ( \frac{a + b}{a + b + c} \right ) h_{m_c}\]
+D_c = \left ( \frac{a + b}{a + b + c} \right ) h_{m_c}
+$$
 
-<p>Substituting in the above</p>
+Substituting in the above
 
-\[D_a^2 = \frac{bc (-a + b + c)}{4(a+b+c)} 
+$$
+D_a^2 = \frac{bc (-a + b + c)}{4(a+b+c)} 
 \qquad
 D_b^2 = \frac{ca (a - b + c)}{4(a+b+c)} 
 \qquad
-D_c^2 = \frac{ab (a + b - c)}{4(a+b+c)}\]
+D_c^2 = \frac{ab (a + b - c)}{4(a+b+c)} 
+$$
 
-<p>Therefore</p>
+Therefore
 
-\[I_{zz} = \tfrac{1}{12}(a^3 + b^3 + c^3) + \tfrac{1}{4} \left ( \frac{abc}{a+b+c} \right ) (a + b + c) = \tfrac{1}{12} ( a^3 + b^3 + c^3 + 3abc )\]
+$$
+I_{zz} = \tfrac{1}{12}(a^3 + b^3 + c^3) + \tfrac{1}{4} \left ( \frac{abc}{a+b+c} \right ) (a + b + c) = \tfrac{1}{12} ( a^3 + b^3 + c^3 + 3abc )
+$$
 
-<p><br /></p>
+<br> -->
 
 <h2 id="central-axis">Moment of Inertia About Central Axis</h2>
 
 <p>Suppose we have a general triangle whose <a href="https://en.wikipedia.org/wiki/Centroid">centroid</a> is at the origin. Let $a$, $b$, $c$ denote its side lengths and $A$, $B$, $C$ denote the cooresponding vertices.</p>
 
 <center>
-<embed src="/svg/moments-of-inertia/11:triangle-curve/triangle-general-3D.svg" type="image/svg+xml" />
+<embed src="/svg/moments-of-inertia/10:triangle-curve/triangle-general-3D.svg" type="image/svg+xml" />
 &emsp;&emsp;&emsp;&emsp;
-<embed src="/svg/moments-of-inertia/11:triangle-curve/triangle-general-2D.svg" type="image/svg+xml" />
+<embed src="/svg/moments-of-inertia/10:triangle-curve/triangle-general-2D.svg" type="image/svg+xml" />
 </center>
 
 <p>As stated above, to find the moment of inertia of this triangle, we just sum the contributions of each individual line segment.</p>
@@ -390,9 +407,9 @@ D_c^2 = \frac{ab (a + b - c)}{4(a+b+c)}\]
 <p><br /></p>
 
 <center>
-<embed src="/svg/moments-of-inertia/11:triangle-curve/triangle-general-cm-distance.svg" type="image/svg+xml" />
+<embed src="/svg/moments-of-inertia/10:triangle-curve/triangle-general-cm-distance.svg" type="image/svg+xml" />
 &emsp;&emsp;&emsp;&emsp;
-<embed src="/svg/moments-of-inertia/11:triangle-curve/triangle-general-midlines.svg" type="image/svg+xml" />
+<embed src="/svg/moments-of-inertia/10:triangle-curve/triangle-general-midlines.svg" type="image/svg+xml" />
 </center>
 
 <p>The lengths of the median lines can be expressed in terms of the side lengths of the triangle using <a href="https://brilliant.org/wiki/apollonius-theorem/">Apollonius’ Theorem</a>.</p>
@@ -427,6 +444,8 @@ D_c = \tfrac{1}{3} m_c = \tfrac{1}{6} \sqrt{2a^2 + 2b^2 - c^2}\]
 
 <p>This is a really elegant result that I’ve never seen anywhere else before, so that’s pretty cool.</p>
 
+<p>Unfortunately, $I_{xx}$, $I_{yy}$, and $I_{xy}$ and not as elegant.</p>
+
 <p><br /></p>
 
 <h2 id="inertia-tensor">Inertia Tensor</h2>
@@ -436,7 +455,7 @@ D_c = \tfrac{1}{3} m_c = \tfrac{1}{6} \sqrt{2a^2 + 2b^2 - c^2}\]
 <p>First, we need some extra definitions because $I_{xx}$, $I_{yy}$, and $I_{xy}$ cannot only be determined by the side lengths of the triangle. We have to encode information about orientation. There is probably a way to do this with angles (feel free to experiment for yourself), but I did it just with coordiantes and lengths. Consider the following definitions.</p>
 
 <center>
-<embed src="/svg/moments-of-inertia/11:triangle-curve/triangle-general-2D-vectors.svg" type="image/svg+xml" />
+<embed src="/svg/moments-of-inertia/10:triangle-curve/triangle-general-2D-vectors.svg" type="image/svg+xml" />
 </center>
 
 <!-- $$
@@ -518,7 +537,7 @@ $$ -->
 <p>When calculating the inertia tensor, the orientation of the triangle matters. Thus, I am going to analyze the most natural orientation. The triangle’s apex is on the positive side of the $y$-axis and the base is parallel to the $x$-axis.</p>
 
 <center>
-<embed src="/svg/moments-of-inertia/11:triangle-curve/triangle-isosceles.svg" type="image/svg+xml" />
+<embed src="/svg/moments-of-inertia/10:triangle-curve/triangle-isosceles.svg" type="image/svg+xml" />
 </center>
 
 <p>From the above diagram and some geometry, we can now write the particular values of $\b{A}$, $\b{B}$, $\b{C}$, $\b{a}$, $\b{b}$, and $\b{c}$.</p>
@@ -592,7 +611,7 @@ $$ -->
 <p>Finally, we finish with an equilateral triangle where all sides are equal length.</p>
 
 <center>
-<embed src="/svg/moments-of-inertia/11:triangle-curve/triangle-equilateral.svg" type="image/svg+xml" />
+<embed src="/svg/moments-of-inertia/10:triangle-curve/triangle-equilateral.svg" type="image/svg+xml" />
 </center>
 
 <p>Here $a = b = S$. We simply plug into the second inertia tensor above.</p>
@@ -880,10 +899,10 @@ This is beautiful, and I've never seen this formula anywhere else. -->
 
         <div class="pagination" style="margin-top:1em;">
             
-                <a class="pagination-item older" href="/blog/moments-of-inertia/rectangle-curve/">Previous</a>
+                <a class="pagination-item older" href="/blog/moments-of-inertia/lines-special-cases/">Previous</a>
             
             
-                <a class="pagination-item newer" href="/blog/moments-of-inertia/regular-ngon-curve/">Next</a>
+                <a class="pagination-item newer" href="/blog/moments-of-inertia/rectangle-curve/">Next</a>
             
         </div>
         <h3 style="text-align:center; margin-bottom:1em;">

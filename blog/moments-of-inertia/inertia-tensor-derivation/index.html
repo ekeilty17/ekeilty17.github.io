@@ -152,14 +152,14 @@
 
         <div class="post">
             <h1 class="post-title">Inertia Tensor Derivation</h1>
-            <!-- <span class="series-date">03 Feb 2024</span> -->
-            <time datetime="2024-02-03T00:00:00-05:00" class="post-date">03 Feb 2024</time>
+            <!-- <span class="series-date">03 Nov 2024</span> -->
+            <time datetime="2024-11-03T00:00:00-04:00" class="post-date">03 Nov 2024</time>
             <!-- maybe I'll add tagging later
             <span class="post-date" style="margin-top:-1em;"> ["moments-of-inertia, ",  "intermediate-axis"] </span>
             -->
             <p>In this post, I will derive the value of the inertia tensor from the definition of angular momentum. I’ve included this for completeness, but it’s not required to understand the rest of the series.</p>
 
-<p><strong>Caution</strong>: In this post, the variable $\b{L}$ is referring to <strong>angular momentum</strong>. In all future posts, it will refer to length as angular momentum will never come up again. Please do not conflate these variables.</p>
+<p><strong>Caution</strong>: In this post, the variable $\b{L}$ is referring to <strong>angular momentum</strong>. In all future posts it will refer to length, since angular momentum will never come up again. Please do not conflate these variables.</p>
 
 <p><br /></p>
 
@@ -180,7 +180,7 @@
         \end{array} \right \rvert 
         = (u_y v_z - u_z v_y) \; \u{x} + (u_z v_x - u_x v_z) \; \u{y} + (u_x v_y - u_y v_x) \; \u{z}\)
     </span>
-</span> rather than simple multiplication. Unlike our analysis in the <a href="/blog/moments-of-inertia/definition-of-the-mass-moment-of-inertia">previous post</a>, we cannot in general assume that $\b{r}$ is perpendicular to $\b{v}$. Thus, we use the <a href="https://en.wikipedia.org/wiki/Triple_product">triple cross product identity</a>.</p>
+</span>. Unlike our analysis in the <a href="/blog/moments-of-inertia/definition-of-the-mass-moment-of-inertia">previous post</a>, we cannot in general assume that $\b{r}$ is perpendicular to $\b{v}$. Thus, we use the <a href="https://en.wikipedia.org/wiki/Triple_product">triple cross product identity</a>.</p>
 
 \[\b{a} \times (\b{b} \times \b{c}) = (\b{a} \cdot \b{c}) \b{b} - (\b{a} \cdot \b{b}) \b{c}\]
 
@@ -215,7 +215,7 @@
 \b{\omega}
 = \m{I} \; \b{\omega}\]
 
-<p>This matrix in the middle (along with the mass) is called the <strong>inertia tensor</strong>, usually denoted by $\m{I}$.</p>
+<p>This matrix in the middle (along with the mass) is called the <strong>inertia tensor</strong>, denoted in this series by $\m{I}$.</p>
 
 <p><br /></p>
 

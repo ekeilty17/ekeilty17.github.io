@@ -152,14 +152,15 @@
 
         <div class="post">
             <h1 class="post-title">Principal Axis Theorem</h1>
-            <!-- <span class="series-date">07 Feb 2024</span> -->
-            <time datetime="2024-02-07T00:00:00-05:00" class="post-date">07 Feb 2024</time>
+            <!-- <span class="series-date">07 Nov 2024</span> -->
+            <time datetime="2024-11-07T00:00:00-05:00" class="post-date">07 Nov 2024</time>
             <!-- maybe I'll add tagging later
             <span class="post-date" style="margin-top:-1em;"> ["moments-of-inertia, ",  "parallel-axis"] </span>
             -->
-            <p><strong>TODO</strong></p>
+            <p>In the <a href="/blog/moments-of-inertia/parallel-axis-theorem">previous post</a> on the parallel axis theorem, we say how the inertia tensor updates when the object $\mathcal{G}$ is <strong>translated</strong> in our fixed coordiante system. In this post, we are going to see how the inertia tensor is updated when the object $\mathcal{G}$ is <strong>rotated</strong>. 
+<!-- Then, we are going to generalize this result for any **linear transformation** and **affine tranformation**. --></p>
 
-<p>In the <a href="/blog/moments-of-inertia/parallel-axis-theorem">previous post</a> on the parallel axis theorem, we say how the inertia tensor updated when the object $\mathcal{G}$ is <strong>translated</strong> in our fixed coordiante system. In this post, we are going to see how the inertia tensor is updated when the object $\mathcal{G}$ is <strong>rotated</strong>. Then, we are going to generalize this result for any <strong>linear transformation</strong> and <strong>affine tranformation</strong>.</p>
+<p><br /></p>
 
 <h2 id="principal-axes">Principal Axes</h2>
 
@@ -177,7 +178,7 @@
 <embed src="/svg/moments-of-inertia/6:principal-axis-theorem/point-mass-xy-plane-2.svg" type="image/svg+xml" />
 </center>
 
-<p>The inertia tensor to describe this is the following. As an exercise, verify this using the general formula for the inertia tensor of a point pass given in a <a href="/blog/moments-of-inertia/inertia-tensor-derivation">previous post</a>.</p>
+<p>The inertia tensor to describe this is the following. As an exercise, verify this using the general formula for the inertia tensor of a point pass given a <a href="/blog/moments-of-inertia/inertia-tensor-derivation/#point-mass">previous post</a>.</p>
 
 \[\m{I} = mR^2 
 \begin{bmatrix}
@@ -195,9 +196,9 @@
     0 &amp; 0 &amp; 1
 \end{bmatrix}\]
 
-<p>This is a much nicer inertia tensor to work with, and we really haven’t changed anything about the system. All we have done is moved our coordinate system.</p>
+<p>This is a much nicer inertia tensor to work with, and we really haven’t changed anything about the object; all we have done is move our coordinate system.</p>
 
-<p>a <strong>principal axis</strong> is a coordiante system such that the inertia tensor is diagonal. In otherwords, all product of inertia values are $0$.</p>
+<p>A <strong>principal axis</strong> is a coordiante system such that the inertia tensor is diagonal. In otherwords, all product of inertia values are $0$. It is analogous to finding the <a href="https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix">eigenvector decomposition</a> of a linear transformation.</p>
 
 <p><br /></p>
 
@@ -207,9 +208,15 @@
 
 <h2 id="the-principal-axis-theorem">The Principal Axis Theorem</h2>
 
+<h3 id="theorem">Theorem</h3>
+
+<p>A rigid body $\mathcal{G}$ can always be rotated such that its inertia tensor is diagonal.</p>
+
+<p>Stated more mathematically rigorous, given the inertia tensor $\m{I_{\mathcal{G}}}$ of any rigid body $\mathcal{G}$, we can always find an <a href="https://en.wikipedia.org/wiki/Orthonormal_basis">orthonormal basis</a>.</p>
+
 <h3 id="proof">Proof</h3>
 
-<p>Let $\m{A} \in \mathbb{R}^{n \times n}$ with eigenvectors $\b{v}_1, \b{v}_2, \ldots, \b{v}_n$ (not necessarily normalized) and cooresponding eigenvalues $\lambda_1, \lambda_2, \ldots, \lambda_n$. Let</p>
+<p>Lets generalize a bit and consider any real-valued $n \times n$ matrix $\m{A} \in \mathbb{R}^{n \times n}$ which is <em>symmetric</em>. Therefore, we can apply the <a href="https://www.youtube.com/watch?v=lx8JZfPRpyY">Spectral Theorem</a> for symmetric matrices, which says that there must exist $n$ distinct eigenvectors $\b{v}_1, \b{v}_2, \ldots, \b{v}_n$ (not necessarily normalized) and cooresponding eigenvalues $\lambda_1, \lambda_2, \ldots, \lambda_n$. Let</p>
 
 \[\m{V} = 
 \begin{bmatrix}
@@ -225,179 +232,209 @@
     0 &amp; &amp; \lambda_n
 \end{bmatrix}\]
 
-<p>Therefore</p>
+<p>Therefore, the <a href="https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix">eigenvector decomposition</a> of $\m{A}$ is the following.</p>
 
 \[\m{A} = \m{V} \ \m{\Lambda} \ \m{V}^{-1}\]
 
-<p>Now, suppose $\m{A}$ is symmetric, then it can be shown that the eigenvectors $\b{v}_1, \b{v}_2, \ldots, \b{v}_n$ form an <a href="https://en.wikipedia.org/wiki/Orthonormal_basis">orthonormal basis</a>. Essentially, this means that the normalized eigenvectors can be thought of as a purely rotated coordiante system. Applied to rotational inertias, this implies that we can always find principal axes.</p>
+<p>Therefore, $\u{v}_1, \u{v}_2, \ldots, \u{v}_n$ forms an <a href="https://en.wikipedia.org/wiki/Orthonormal_basis">orthonormal basis</a> of $\m{A}$, which completes the proof.</p>
+
+<p>Specializing back down to $\m{I_{\mathcal{G}}}$. By definition, it is real-valued and symmetric, so we can apply the results above. Therefore, we can write</p>
+
+\[\m{I_{\mathcal{G}}} = \m{V} \ \m{\Lambda} \ \m{V}^{-1}\]
+
+<p>where $\u{v}_1, \u{v}_2, \ldots, \u{v}_n$ are the principle axes, and $\m{\Lambda}$ is the diagonalized inertia tensor with respect to the principle axes.</p>
+
+<!-- TODO: Seems like I had a bit more to say, but I don't have time to go through all of this. The above is good enough for now -->
 
 <!-- 
 https://www.math.uwaterloo.ca/~jmckinno/Math225/Week7/Lecture2m.pdf 
 https://moodle.swarthmore.edu/pluginfile.php/266483/mod_resource/content/0/Handouts/eigen/P_axis_thm2.pdf
 -->
 
-<p><br /></p>
+<!-- <br>
 
-<hr />
+---
 
-<p><br /></p>
+<br>
 
-<h2 id="transformations">Transformations</h2>
+## Transformations
 
-<p>We are going to get a bit formal</p>
+We are going to get a bit formal
 
-<p>First, what is a transformation?</p>
+First, what is a transformation? 
 
-<h3 id="linear-transformations">Linear Transformations</h3>
+### Linear Transformations
 
-<p>A <strong>linear transformation</strong> is a transformation $T : X \rightarrow Y$ such that</p>
+A **linear transformation** is a transformation $T : X \rightarrow Y$ such that
 
-\[T(\b{v} + \b{u}) = T(\b{v}) + T(\b{u})
+$$
+T(\b{v} + \b{u}) = T(\b{v}) + T(\b{u})
 \qquad\qquad
 T(c \cdot \b{v}) = c \cdot T(\b{v})
 \qquad\qquad
 \forall \b{v}, \b{u} \in X
 \ , \
-c \in \mathbb{R}\]
+c \in \mathbb{R}
+$$
 
-<p>An interesting fact about linear transformations is that $T(\b{0}) = \b{0}$. A good exercise is to prove this fact. More importantly, all linear transformations $T$ over finite vector spaces can be represented by a matrix. In particular, $T : X \rightarrow Y$ where $\abs{X} = n$ and $\abs{Y} = m$ is isomorphic to $\m{T} : \mathbb{R}^n \rightarrow \mathbb{R}^m$. For an explanation and proof of this result, I recommend this <a href="!-- https://mbernste.github.io/posts/matrices_linear_transformations/ --">blog post</a>.</p>
+An interesting fact about linear transformations is that $T(\b{0}) = \b{0}$. A good exercise is to prove this fact. More importantly, all linear transformations $T$ over finite vector spaces can be represented by a matrix. In particular, $T : X \rightarrow Y$ where $\abs{X} = n$ and $\abs{Y} = m$ is isomorphic to $\m{T} : \mathbb{R}^n \rightarrow \mathbb{R}^m$. For an explanation and proof of this result, I recommend this [blog post](https://mbernste.github.io/posts/matrices_linear_transformations/).
 
-<!-- https://textbooks.math.gatech.edu/ila/linear-transformations.html -->
+https://textbooks.math.gatech.edu/ila/linear-transformations.html
 
-<h3 id="operators">Operators</h3>
+### Operators
 
-<p>An <strong>operator</strong> is a linear tranformation from a vector space to itself, in particular $T : X \rightarrow X$.</p>
+An **operator** is a linear tranformation from a vector space to itself, in particular $T : X \rightarrow X$. 
 
-<p><br /></p>
+<br>
 
-<hr />
+---
 
-<p><br /></p>
+<br>
 
-<p>Suppose we want to determine the rotational inertia of a rigid body $\mathcal{G}$. In previous posts, we saw that the inertia tensor is the object we want to calculate.</p>
+Suppose we want to determine the rotational inertia of a rigid body $\mathcal{G}$. In previous posts, we saw that the inertia tensor is the object we want to calculate. 
 
-\[\m{I} = \left[ \begin{array}{@{}rrr@{}}
-      I_{xx} &amp; - I_{xy} &amp; - I_{xz} \\
-    - I_{yx} &amp;   I_{yy} &amp; - I_{yz} \\
-    - I_{zx} &amp; - I_{zy} &amp;   I_{zz}
-\end{array} \right ]\]
+$$
+\m{I} = \left[ \begin{array}{@{}rrr@{}}
+      I_{xx} & - I_{xy} & - I_{xz} \\
+    - I_{yx} &   I_{yy} & - I_{yz} \\
+    - I_{zx} & - I_{zy} &   I_{zz}
+\end{array} \right ]
+$$
 
-<p>However, a particular inertia tensor implicitly assumes that object $\mathcal{G}$ is at a random location in a fixed coordinate system. If the object position in the coordinate system changes, then the inertia tensor will also change. To give a simple example using a point mass.</p>
+However, a particular inertia tensor implicitly assumes that object $\mathcal{G}$ is at a random location in a fixed coordinate system. If the object position in the coordinate system changes, then the inertia tensor will also change. To give a simple example using a point mass.
 
-<p>The inertia tensor of each is given by the following. As an exercise, verify these inertia tensors using the general inertia tensor for a point pass given in a <a href="/blog/moments-of-inertia/inertia-tensor-derivation">previous post</a>.</p>
 
-\[\m{I_1} = mR^2 
+
+The inertia tensor of each is given by the following. As an exercise, verify these inertia tensors using the general inertia tensor for a point pass given in a [previous post](/blog/moments-of-inertia/inertia-tensor-derivation).
+
+$$
+\m{I_1} = mR^2 
 \begin{bmatrix}
-    \sin^2 \phi &amp; - \sin \phi \cos \phi &amp; 0 \\
-    - \sin \phi \cos \phi &amp; \cos^2 \phi &amp; 0 \\
-    0 &amp; 0 &amp; 1
+    \sin^2 \phi & - \sin \phi \cos \phi & 0 \\
+    - \sin \phi \cos \phi & \cos^2 \phi & 0 \\
+    0 & 0 & 1
 \end{bmatrix} 
 \qquad\qquad
 \m{I_2} = mR^2 
 \begin{bmatrix}
-    1 &amp; 0 &amp; 0 \\
-    0 &amp; 0 &amp; 0 \\
-    0 &amp; 0 &amp; 1
-\end{bmatrix}\]
+    1 & 0 & 0 \\
+    0 & 0 & 0 \\
+    0 & 0 & 1
+\end{bmatrix} 
+$$
 
-<p>We see that in general $\m{I_1}$ is not a principal axis. However, by rotating the point mass by the appropriate amount, we can find a principal axis, $\m{I_2}$.</p>
+We see that in general $\m{I_1}$ is not a principal axis. However, by rotating the point mass by the appropriate amount, we can find a principal axis, $\m{I_2}$.
 
-<p>The question becomes, when are the</p>
+The question becomes, when are the 
 
-<p>$I_{xy} = 0$ if the object is symmetric about the $x$ OR $y$ axes.</p>
+$I_{xy} = 0$ if the object is symmetric about the $x$ OR $y$ axes.
 
-<p><br /></p>
+<br>
 
-<h2 id="a-deeper-understanding-of-the-product-of-inertia">A Deeper Understanding of the Product of Inertia</h2>
+## A Deeper Understanding of the Product of Inertia
 
-<p>Given the 4 quadrants of the $xy$ plane, we know that the value of the product $xy$ is</p>
+Given the 4 quadrants of the $xy$ plane, we know that the value of the product $xy$ is 
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  y
+```
+  y
 - | + 
------ x
+--+-- x
 + | -
-</code></pre></div></div>
+```
 
-<p>So, $I_{xy} = 0$ to be true, we need the positive coordinates and negative coordinates to balance out.</p>
+So, $I_{xy} = 0$ to be true, we need the positive coordinates and negative coordinates to balance out.
 
-<p><br /></p>
+<br>
 
-<h2 id="the-principal-axis-theorem-1">The Principal Axis Theorem</h2>
-<p>The principal axis theorem says that we can always find a fixed perpendicular set of basis vectors such that the inertia tensor is diagonal. This proof is trivial if the object is on the $xy$ plane. Put the object anywhere in the coordinate system and compute $I_{xy}$. If it’s $0$, then we are done. if it’s not $0$, then it’s either positive or negative. Let’s assume it’s positive. Now, rotate this object $90$ degrees. By symmetry, it must be the case that it is exactly the same value, but negative. Therefore, since this rotation was smooth, by the intermediate value theorem there must be some point during that rotation at which $I_{xy}$ was $0$.
-Now this gets more tricky for an object in $3D$ space.</p>
+## The Principal Axis Theorem
+The principal axis theorem says that we can always find a fixed perpendicular set of basis vectors such that the inertia tensor is diagonal. This proof is trivial if the object is on the $xy$ plane. Put the object anywhere in the coordinate system and compute $I_{xy}$. If it's $0$, then we are done. if it's not $0$, then it's either positive or negative. Let's assume it's positive. Now, rotate this object $90$ degrees. By symmetry, it must be the case that it is exactly the same value, but negative. Therefore, since this rotation was smooth, by the intermediate value theorem there must be some point during that rotation at which $I_{xy}$ was $0$.
+Now this gets more tricky for an object in $3D$ space.
 
-<p>The real proof essentially boils down to the following claim: every symmetric matrix is orthogonally diagonalizable. This is a bit too hard-core linear algebra for this series.</p>
+The real proof essentially boils down to the following claim: every symmetric matrix is orthogonally diagonalizable. This is a bit too hard-core linear algebra for this series. 
 
-<p><br /></p>
 
-<h2 id="how-to-find-the-principal-axis">How to Find the Principal Axis</h2>
+<br>
 
-<p>Eigenvectors! The eigenvectors of $\m{I}$ are the directions of the principal axes. Also, the eigenvalues are going to be the values on the diagonal of $\m{I’}$.</p>
+## How to Find the Principal Axis
 
-<p>Why does this work? We are doing a coordinate transformation on the angular momentum. Suppose $\m{T}$ is any <strong>unitary transformation</strong> (meaning the determinant is $1$). We need this property so stuff doesn’t get scaled.</p>
+Eigenvectors! The eigenvectors of $\m{I}$ are the directions of the principal axes. Also, the eigenvalues are going to be the values on the diagonal of $\m{I'}$.
 
-<h3 id="tranformations">Tranformations</h3>
+Why does this work? We are doing a coordinate transformation on the angular momentum. Suppose $\m{T}$ is any **unitary transformation** (meaning the determinant is $1$). We need this property so stuff doesn't get scaled.
 
-\[\b{L}' = \m{T} \b{L} = \m{T} (\m{I} \b{\omega}) = \m{T} \m{I} \b{\omega}\]
+### Tranformations
 
-<p>But actually, $\b{\omega}$ is still being written in terms of the old coordinate system. We need $\b{\omega}$ to rotate as well. Therefore</p>
+$$
+\b{L}' = \m{T} \b{L} = \m{T} (\m{I} \b{\omega}) = \m{T} \m{I} \b{\omega}
+$$
 
-\[\b{L}' = \m{T} \m{I} ( \m{T}^{-1} \b{\omega}') = (\m{T} \m{I} \m{T}^{-1}) \b{\omega}'\]
+But actually, $\b{\omega}$ is still being written in terms of the old coordinate system. We need $\b{\omega}$ to rotate as well. Therefore
 
-<p>Therefore</p>
+$$
+\b{L}' = \m{T} \m{I} ( \m{T}^{-1} \b{\omega}') = (\m{T} \m{I} \m{T}^{-1}) \b{\omega}'
+$$
 
-\[\m{I'} = \m{T} \m{I} \m{T}^{-1}\]
+Therefore
 
-<p><strong>TODO</strong>: This is handwavy math. Fix later.</p>
+$$
+\m{I'} = \m{T} \m{I} \m{T}^{-1}
+$$
 
-<h3 id="rotation-matrices">Rotation Matrices</h3>
+**TODO**: This is handwavy math. Fix later.
 
-<p>Rotation matrices are a specific instance of a unitary transformation.</p>
+### Rotation Matrices
 
-\[\begin{align}
+Rotation matrices are a specific instance of a unitary transformation. 
+
+$$
+\begin{align}
 R_z(\alpha) \; R_y(\beta) \; R_x(\gamma) 
-&amp;= 
+&= 
 \begin{bmatrix}
-    \cos \alpha &amp; - \sin \alpha &amp; 0 \\
-    \sin \alpha &amp; \cos \alpha &amp; 0 \\
-    0 &amp; 0 &amp; 1
+    \cos \alpha & - \sin \alpha & 0 \\
+    \sin \alpha & \cos \alpha & 0 \\
+    0 & 0 & 1
 \end{bmatrix} 
 \
 \begin{bmatrix}
-    \cos \beta &amp; 0 &amp; \sin \beta \\
-    0 &amp; 1 &amp; 0 \\
-    - \sin \beta &amp; 0 &amp; \cos \beta
+    \cos \beta & 0 & \sin \beta \\
+    0 & 1 & 0 \\
+    - \sin \beta & 0 & \cos \beta
 \end{bmatrix}
 \
 \begin{bmatrix}
-    1 &amp; 0 &amp; 0 \\
-    0 &amp; \cos \gamma &amp; - \sin \gamma \\
-    0 &amp; \sin \gamma &amp; \cos \gamma
+    1 & 0 & 0 \\
+    0 & \cos \gamma & - \sin \gamma \\
+    0 & \sin \gamma & \cos \gamma
 \end{bmatrix}
 \\[10pt]
-&amp;= 
+&= 
 \begin{bmatrix}
-    \cos \alpha \cos \beta &amp; \cos \alpha \sin \beta \sin \gamma - \sin \alpha \cos \gamma &amp; \cos \alpha \sin \beta \cos \gamma + \sin \alpha \sin \gamma \\
-    \sin \alpha \cos \beta &amp; \sin \alpha \sin \beta \sin \gamma - \cos \alpha \cos \gamma &amp; \sin \alpha \sin \beta \cos \gamma - \cos \alpha \sin \gamma \\
-    - \sin \beta &amp; \cos \beta \sin \gamma &amp; \cos \beta \cos \gamma
+    \cos \alpha \cos \beta & \cos \alpha \sin \beta \sin \gamma - \sin \alpha \cos \gamma & \cos \alpha \sin \beta \cos \gamma + \sin \alpha \sin \gamma \\
+    \sin \alpha \cos \beta & \sin \alpha \sin \beta \sin \gamma - \cos \alpha \cos \gamma & \sin \alpha \sin \beta \cos \gamma - \cos \alpha \sin \gamma \\
+    - \sin \beta & \cos \beta \sin \gamma & \cos \beta \cos \gamma
 \end{bmatrix}
-\end{align}\]
+\end{align}
+$$
 
-<p><br /></p>
+<br>
 
-<hr />
+---
 
-<p><br /></p>
+<br>
 
-<h2 id="general-transformation">General Transformation</h2>
+## General Transformation
 
-<p>Assume object $\mathcal{G}$ is situated such that its center of mass is at the origin. Suppose its inertia tensor is $\m{I_{\text{cm}}}$.</p>
+Assume object $\mathcal{G}$ is situated such that its center of mass is at the origin. Suppose its inertia tensor is $\m{I_{\text{cm}}}$.
 
-\[\m{I_{\text{rotated}}} = \m{R_z(\alpha)} \; \m{R_y(\beta)} \; \m{R_x(\gamma)} \; \m{I_{\text{cm}}} \; \m{R_x(\gamma)}^{-1} \; \m{R_y(\beta)}^{-1} \; \m{R_z(\alpha)}^{-1}\]
+$$
+\m{I_{\text{rotated}}} = \m{R_z(\alpha)} \; \m{R_y(\beta)} \; \m{R_x(\gamma)} \; \m{I_{\text{cm}}} \; \m{R_x(\gamma)}^{-1} \; \m{R_y(\beta)}^{-1} \; \m{R_z(\alpha)}^{-1}
+$$
 
-\[\m{I_{\text{translated}}} = \m{I_{\text{rotated}}} +  M (D^2 \m{\mathbb{I}} - \b{D} \otimes \b{D})\]
+$$
+\m{I_{\text{translated}}} = \m{I_{\text{rotated}}} +  M (D^2 \m{\mathbb{I}} - \b{D} \otimes \b{D})
+$$
 
-<p>This is called an <strong>affine transformation</strong>. An affine tranformation is equivalent to a linear tranformation + translation</p>
+This is called an **affine transformation**. An affine tranformation is equivalent to a linear tranformation + translation -->
 
         </div>
 

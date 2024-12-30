@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Everything I Know About Weight Loss &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded MathJax (effectively LaTeX) support 
+    https://docs.mathjax.org/en/v2.7-latest/tex.html -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX", "input/MathML", "output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js", "mml2jax.js", "MathMenu.js", "MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
+            Macros: {
+                b: ["{\\boldsymbol #1}",1],
+                u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
+                arccsc: ["\\operatorname\{arccsc\}"],
+                arcsec: ["\\operatorname\{arcsec\}"],
+                arccot: ["\\operatorname\{arccot\}"],
+                csch: ["\\operatorname\{csch\}"],
+                sech: ["\\operatorname\{sech\}"],
+                arcsinh: ["\\operatorname\{arcsinh\}"],
+                arccosh: ["\\operatorname\{arccosh\}"],
+                arctanh: ["\\operatorname\{arctanh\}"],
+                arccsch: ["\\operatorname\{arccsch\}"],
+                arcsech: ["\\operatorname\{arcsech\}"],
+                arccoth: ["\\operatorname\{arccoth\}"],
+                seq: ["{\\left \\langle #1 \\right \\rangle}",1],
+                iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
+                abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
+                hal: ["\\texttt{hal}"],
+                gal: ["\\texttt{gal}"],
+                sh: ["sh"],
+                st: ["st"]
+            },
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!--
+    TeX-AMS_HTML
+    TeX-AMS-MML_HTMLorMML
+    TeX-MML-AM_HTMLorMML
+-->
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">AI/ML Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+        <li>
+          <a href="/files/Eric Keilty - Resume.pdf" target="_blank">R&eacute;sum&eacute;</a>
+        </li>
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2024 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">Everything I Know About Weight Loss</h1>
+            <!-- <span class="post-date">03 Sep 2024</span> -->
+            <time datetime="2024-09-03T00:00:00-04:00" class="post-date">03 Sep 2024</time>
+            <hr />
+
+<h3 id="disclaimer">Disclaimer</h3>
+
+<p>I am not a doctor; I am not a nutritionist; I am not a dietition; I am not a personal trainer. I am an Engineer who has done his best to research a complex topic. I will do my best to cite all of my sources. Please fact check me before you take any of this as real life advice, and maybe consult some more knowledgable pople.</p>
+
+<hr />
+
+<h2 id="motivation">Motivation</h2>
+
+<p>For a number of both internal and external reasons (including a world-wide pandemic) that all perfectly aligned, I gained some weight over the last few years. As I finally transitioned out of that phase of my life, I decided that I wanted to start taking my health more seriously, including losing the weight I gained. Then I realized, apart from the generic <em>exercise more</em>, <em>eat more vegitables</em>, and <em>don’t each junk food</em>; I had absolutely no idea how to achieve my weight loss goal.</p>
+
+<p>I knew some things. When I was going through the American education system, we were taught about the <a href="https://en.wikipedia.org/wiki/Food_pyramid_%28nutrition%29">Food Pyramid</a>, which was comically incorrect and later replaced with <a href="https://en.wikipedia.org/wiki/MyPlate">MyPlate</a>. These aren’t bad starts and probably good enough to teach to 3rd graders, but they just aren’t enough when moving into adulthood. Firstly, health, weight loss, exercise, and nutrition are not <em>one-size-fits-all</em>. Depending on your goals, lifestyle, and personal preferences, your diet and exercise choices will be very different. Secondly, these models just tell you the <em>what</em> without explaining the <em>why</em>. Why</p>
+
+<p>In this post, I want to provide that foundational understanding. Ultimately, your goal should be to be able to predict an outcome before it happens.</p>
+
+<!-- 
+Many people embark on a weight loss journey and eventually give up because they are not seeing results, often blaming genetics, age, or external circumstances and thinking losing weight is just an impossibility for them. Often their lack of results was not due to a lack of effort; usually it's because their methodology was fundamentally flawed. I feel for these people. It's not their fault they don't understand the nuances of diet, exercise, and nutrition. No one teaches you how any of this stuff works. I would consider myself fairly educated compared to the average person, and 3 months ago I know very little about the science of weight loss. To be honest, I still don't know that much, but I at least have a grasp of the basic principles.
+
+I'm here to tell you that **anyone** can reach their weight loss goals by applying the right methodology, which is backed by empirical science. In this post, I want to outline everything you need to know to have a solid understanding of what works and what doesn't work when trying to lose weight. I'm not saying that it will be easy, but it is very much possible. -->
+
+<p><br /></p>
+
+<h2 id="energy-and-calories">Energy and Calories</h2>
+
+<p>In science, <strong>energy</strong> is the ability to exert a force causing the displacement of an object. In layman’s terms, something that has energy can cause motion. The same laws of physics apply to human beings. All human movement - walking around, breathing air, lifting a box - requires energy. This even applies to your body’s internal processes - pumping blood, digesting food, reparing a wound, etc. For example, over the course of a normal day your brain accounts for around 20% of your daily energy consumption [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC124895/">source</a>]. Taken to the extreme, professional chess players have been measured using large amounts energy during while just sitting in a chair thinking really hard [<a href="https://pubmed.ncbi.nlm.nih.gov/18987876/">source</a>].</p>
+
+<p>The standard unit of energy in science are 
+<span class="tooltip"><strong>Joules</strong> 
+    <span class="tooltiptext" style="width: 425px;"> 
+        Defined as the amount of energy exerted by a force of 1 newton displacing a mass through a distance of 1 meter in the direction of that force. This is about the amount of energy it takes to lift a stick of butter 1 meter.
+    </span>
+</span> ($\text{J}$). However, in macro-biology when refering to living organisms, energy is typically measured in calories. A <strong>calorie</strong> ($\text{cal}$) estimates the amount of energy required to raise the temperature of exactly 1 gram of water by 1 degree Celsius at 1 atmospheric pressure. Confusingly, the calories you see listed on food labels are actually <strong>kilocalories</strong> ($\text{kcal}$). Sometimes these are refered to as <strong>“big” Calories</strong> ($\text{Cal}$) [<a href="https://www.ncbi.nlm.nih.gov/books/NBK499909/">source</a>]. Roughly 20 to 30 steps will burn 1 Calorie/kilocalorie [<a href="https://www.verywellfit.com/pedometer-steps-to-calories-converter-3882595">source</a>]. For the remaining of this blog post, assume that I am always referring to Calories/kilocalories unless stated otherwise.</p>
+
+<!-- The conversions between all these units are listed below.
+
+$$
+1000 \ \text{cal} = 1 \ \text{kcal} = 1 \ \text{Cal} = 4184 \ \text{J}
+$$ -->
+
+<p><br /></p>
+
+<h2 id="metabolism-how-is-energy-stored-and-managed-in-the-body">Metabolism: How is Energy Stored and Managed in the Body</h2>
+
+<p>We’ve been speaking abstractly about <em>energy</em>, but let’s get a lot more concrete. The goal here is to decode all of the fancy biological terms, so that you know the key players and processes involved.</p>
+
+<h3 id="atp-the-source-of-all-energy-in-the-body">ATP: The Source of All Energy in the Body</h3>
+
+\[C_{10}H_{16}N_{5}O_{13}P_{3}\]
+
+<p><em>Energy</em> is a bit of an elusive concept. You can’t really hold it in your hand. So for your body to use energy, it has to create these molecules called <strong>Adnosine Triphosphate</strong> (ATP)</p>
+<ul>
+  <li>The significance of ATP is in its ability to store potential energy within the phosphate bonds</li>
+  <li>Breaking one of ATP’s phosphorus bonds generates approximately 30.5 kilojoules per mole of ATP (7.3 kcal)</li>
+</ul>
+
+<p><strong>De Novo Purine Biosynthesis</strong>: body can create ATP/ADP/AMP from scratch from simple molecules like amino acides, $CO_2$, and formate. Although this process is slow and doesn’t occur very often.</p>
+
+<p><strong>Salvage Pathway</strong></p>
+
+<p>ATP and ADP are so fundamental to the function of biological life, that asking where they came from is insanely complicated. For example, human eggs contain a store of ATP and ADP, which get passed onto a fertilized embryo [source?]. Where there are living cells, there is ATP and ADP. For now we will just assume that</p>
+
+\[\sum \text{ATP} + \sum \text{ADP} = \text{constant}\]
+
+<p><a href="https://www.ncbi.nlm.nih.gov/books/NBK26882/">source</a></p>
+
+<p><a href="https://app.jove.com/science-education/v/10725/concepts/what-is-metabolism">source</a></p>
+
+<p>“Excess carbohydrate or protein in the diet is converted to <strong>triglyceride</strong> and stored in the lipid droplets of <strong>adipocytes</strong>. Excess dietary fat needs no conversion other than lipolysis and re-esterification. People who wish to lose weight while maintaining their fat-free mass are, biochemically speaking, attempting to metabolise the triglycerides stored in their adipocytes”. <a href="https://www.bmj.com/content/bmj/349/bmj.g7257.full.pdf">source</a></p>
+<ul>
+  <li><strong>adipocytes</strong> = fat cells</li>
+  <li><strong>triglyceride</strong> = type of fat, most common in the body</li>
+</ul>
+
+<p><strong>Metabolism</strong>: management of energy in cells. There are two types</p>
+<ul>
+  <li><strong>Catabolism</strong>: the breakdown of complex molecules in living organisms to form simpler ones, together with the release of energy (ATP).</li>
+  <li><strong>Anabolic pathways</strong> construct larger molecules from smaller building block molecules, using energy (in the form of ATP). For example, protein anabolism involves stringing together amino acids to form polypeptides. The synthesized polypeptides then fold into three-dimensional protein structures.</li>
+</ul>
+
+<p>The body essentially has a constant supply of ATP and ADP which get converted between each other as needed.</p>
+
+<p>Energy is a bit of an elusive concept. You can’t really hold it in your hand. So for your body to use energy, it has to create these molecules called <strong>Adnosine Triphosphate</strong> (ATP)</p>
+<ul>
+  <li>The significance of ATP is in its ability to store potential energy within the phosphate bonds</li>
+  <li>Breaking one of ATP’s phosphorus bonds generates approximately 30.5 kilojoules per mole of ATP (7.3 kcal)</li>
+</ul>
+
+<p><strong>Adnosine Diphosphate</strong> (ADP)</p>
+<ul>
+  <li>Basically, this open posphate can attach to other cells (such as proteins) and cause some shit to happen</li>
+  <li>The process of adding a phosphate group to a molecule is called phosphorylation</li>
+</ul>
+
+<p><strong>Cellular Respiration</strong> converts glucose into ATP</p>
+
+\[C_{6}H_{12}O_{6} + 6O_{2} \rightarrow 2CO_{2} + 6H_{2}O + \text{ATP}\]
+
+<p>One ATP molecule can provide $7.3$ kcal of energy.</p>
+
+<p>you primarily excreed fat through the lungs in the form of $CO_2$</p>
+
+<p><strong>Glycolosis</strong></p>
+
+\[\text{Glucose} + 2 \text{NAD}^+ + 2 P_i + 2 \text{ADP} → 2 \text{pyruvate} + 2 \text{ATP} + 2 \text{NADH} + 2 H_2O\]
+
+<p><strong>Citric Acid Cycle</strong> / <strong>Krebs Cycle</strong> happens in the Mitocondria (the powerhouse of the cell).</p>
+<ul>
+  <li>Both fatty acids rather and glucose are converted into acetyl CoA, which feed into this cycle</li>
+</ul>
+
+<p>Electron Transport Chain (ETC) happens across the inner membrane of the Mitocondria and creates most of the ATP.</p>
+
+<p><br /></p>
+
+<h2 id="macro-nutrients">Macro Nutrients</h2>
+
+<h3 id="fats">Fats</h3>
+
+<p><strong>Ketones</strong>, or ketone bodies, are acids your body makes when it’s using fat instead of glucose for energy</p>
+
+<h3 id="carbohydrates">Carbohydrates</h3>
+
+\[C_{n} \left ( H_2 O \right )_{m}\]
+
+<p>“If people consume more carbohydrates than they need at the time, the body stores some of these carbohydrates within cells (as glycogen) and converts the rest to fat in a process called <strong>lipogenesis</strong>. Glycogen is stored in the liver and the muscles.”</p>
+
+<p>YOu should not cut out all carbohydrates because you muscles need glycogen <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6019055/">source</a>. However, excess carbs will result in fat production. So eat carbs but only at a carlorie deficit.</p>
+
+<h3 id="proteins">Proteins</h3>
+
+<p>Made up of hundreds, if not thousands, of <strong>amino acids</strong> <a href="https://www.technologynetworks.com/applied-sciences/articles/essential-amino-acids-chart-abbreviations-and-structure-324357">chart</a>. The shape is very important, how a protein folds is determined by a lot of stuff like hydrogen bonds, etc. Form = function.</p>
+
+<p>Converting protein into fat is the body’s last resort. “Protein must be converted into glucose (sugar) in the liver before the glucose can then be converted into fat if the body doesn’t burn or store the glucose” <a href="https://www.secondnature.io/ca/guides/nutrition/does-excess-protein-turn-into-fat">source</a>.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="net-caloric-intake">Net Caloric Intake</h2>
+
+<p>Consider the following definition.</p>
+
+\[\text{Net Calories} = \text{Calories In} - \text{Calories Out}\]
+
+<p>Over some predefined period of time (supppose it’s 24 hours), your <strong>net coloric intake</strong> measures how many energy is left unused. This formula implies three possibilities.</p>
+
+<ol>
+  <li><strong>Calorie Neutral</strong>, i.e. \(\text{Net Calories} = 0\): This means you have perfectly balanced your energy expenditure and therefore your weight will be unchanged.</li>
+  <li><strong>Calorie Surplus</strong>, i.e. \(\text{Net Calories} &gt; 0\): This is called a <strong>calorie surplus</strong>. This means you have consumed calories which you did not use. Therefore, you will gain weight. This does not necessarily mean you will gain fat. For example, during a bulk body builders are eating at a calorie surplus in order to gain weight in muscle.</li>
+  <li><strong>Calorie Deficit</strong>, i.e. \(\text{Net Calories} &lt; 0\): This is called a <strong>calorie deficit</strong>. This means you will lose weight.</li>
+</ol>
+
+<p>A good analogy is a leaky bucket. Water is being poured into the top of the bucket ($\text{Calories In}$) and some water is leaking out of a hole at the bottom ($\text{Calories Out}$). If water is being poured in faster than its leaking out, then the bucket will become filled with water, i.e. you gain weight. Conversely, if water is leaking out faster than its poured in, then the bucket will eventually become empty, i.e. you lost weight.</p>
+
+<center>
+<div class="overflow-container">
+<div class="overflow-content">
+<embed src="/svg/everything-I-know-about-weight-loss/leaky_bucket.svg" type="image/svg+xml" width="600px" height="300px" />
+</div>
+</div>
+</center>
+
+<p>In order to lose weight, we need $\text{Net Calories} &lt; 0$. This is called being at a <strong>calorie deficit</strong>. This means the body was supplied with less energy than it required to function. That energy has to come from somewhere, so the body has to use its <em>reserved energy</em>, which (ideally) means it burns your excess fat.</p>
+
+<p><br /></p>
+
+<p>The primary way to intake calories is by consuming food and beverages. Therefore, our daily calorie intake is the following.</p>
+
+<p>This is usually refered to as <strong>Daily Energy Intake</strong> (DEI)</p>
+
+\[\text{Calories In} = \Big ( \text{Food Consumed} \Big ) + \Big ( \text{Beverages Consumed} \Big )\]
+
+<p>We “burn calories” by expending energy, which can broadly be classified as the following.</p>
+<ul>
+  <li><strong>Basal Metabolic Rate</strong> (BMR): The energy required to maintain physiological functions while resting. This includes things like breathing, blood circulation, cell production, and nutrient processing. The BMR of people vary widely depending on age, sex, height, and weight. You can calculate an estimate your own BMR <a href="https://calculatorbox.com/calculator/bmr-calculator/">here</a>. This source also gives an explanation of how these estimates are calculated. On average, your BMR accounts for roughly 70% of your daily calorie intake.</li>
+  <li><strong>Thermic Effect of Food</strong> (TEF): The energy required to digest, absorb, and metaboliz any food or beverages consumed.</li>
+  <li><strong>Non-Exercise Activity Thermogenesis</strong> (NEAT): The energy required for normal daily activities such as walking around, figgeting, tapping your feet, etc.</li>
+  <li><strong>Physical Activity</strong>: The energy required for any structured exercise, such as running, swimming, weightlifting, playing a sport, etc.</li>
+  <li><strong>Post-Exercise Thermogenesis</strong> / <strong>Excess Post-Exercise Oxygen Consumption</strong> (EPOC): This refers to the phenomenon that you continue to burn calories even hours after a workout. This is due to the body restoring itself to a resting state, e.g. replenishing oxygen stores, clearing lactic acid, and repairing muscle tissue.</li>
+</ul>
+
+<p>Usually this is denoted as <strong>Total Daily Energy Expenditure</strong> (TDEE).</p>
+
+<p>Written mathematically, we can now characterize our daily calorie consumption as the following.</p>
+
+\[\text{Calories Out} = \Big ( \text{BMR} \Big ) + \Big ( \text{TEF} \Big ) + \Big ( \text{NEAT} \Big ) + \Big ( \text{Physical Activity} \Big ) + \Big ( \text{EPOC} \Big )\]
+
+<!-- The summations are meant to indicate that these are not one thing, but an aggregation of lots of small things. -->
+
+<p>To accomplish this, we have 3 levers to pull</p>
+<ol>
+  <li>Decrease our calories we consume through food</li>
+  <li>Increase our baseline daily activity</li>
+  <li>Increase our exercise</li>
+</ol>
+
+<p>Interestingly, when given these three options most people are unwilling to change their diet (a testiment to how addicted we are to our food) and unable to change their baseline daily activity due to their job. Therefore, they choose to increase their exercise. And unfortunately, that is the wrong choice. Let’s see why.</p>
+
+<p><br /></p>
+
+<p>NEAT is pretty much subcouncious and outside of your control. If you exercise more, your body can just lower your NEAT to compensate.</p>
+
+<p><br /></p>
+
+<h2 id="exercise">Exercise</h2>
+
+<blockquote>
+  <p>You can’t out run a bad diet</p>
+</blockquote>
+
+<p>While this quote isn’t literally true, it’s trying to convey a deeper truth.</p>
+
+<h3 id="the-additive-vs-constrained-energy-expenditure-model">The Additive vs Constrained Energy Expenditure Model</h3>
+
+<p>The <strong>Additive Energy Expenditure Model</strong> is the intuitive hypothesis about human metabolism: an increase in physical activity (exercise) will lead to an increase in total energy expenditure. Put more simply, exercising more means I burn more calories, which ultimately I will lose more weight assuming I exercised enough. This is nicely illustrated in the left diagram in the figure below [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4803033/">source</a>].</p>
+
+<center>
+<div class="overflow-container">
+<div class="overflow-content">
+    <img src="/img/blog/everything-I-know-about-weight-loss/Energy Expenditure Models.png" width="600px" alt="Energy Expenditure Models" />
+</div>
+</div>
+</center>
+
+<p>Unfortunately, the evidence does not support this hypothesis [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4803033/">source</a>]. Instead, the prevailing theory is the <strong>Constrained Energy Expenditure Model</strong> (right diagram in the figure above). In this model, more exercise does not necessarily mean more energy expenditure. Assuming all else is equal, exercising a moderate amount compared to exercising profusely has very little difference on weight loss.</p>
+
+<p><a href="https://www.youtube.com/@kurzgesagt">Kurzgesagt</a> has a really good video <a href="https://www.youtube.com/watch?v=lPrjP4A_X4s">video</a> explaining this phenomenon. The intuitive explanation is that your body is built to adapt. If it realizes that you exercise everyday, then it will compensate in various ways to burn less calories while at rest. So unless you are running a marathon everyday, your daily energy expendature is essentially constant regardless of physical activity.</p>
+
+<h3 id="soare-you-saying-i-shouldnt-exercise">So…Are You Saying I Shouldn’t Exercise?</h3>
+
+<p><strong>No!</strong> Exercise is extremely good for you. Going from no exercise to a moderate amount of exercise has tremendous health benefits across pretty much every metric [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6027933/">source</a>]. Moreover, exercise tends to have a lot of indirect benefits towards weight loss. For example, increased exercise helps you better regulate your appetite by more closely coupling appetite to actual bodily needs rather than lust [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10452291/">source</a>]. Counter-intuitively, exercise has been found to decrease appeite [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3761859/">source</a>]. Exercise also increases sleep quality, which also helps regulate appetite [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10503965/">source</a>]. Exercise improves mental health and reduces anxiety, which again can be triggers towards overeating [<a href="https://www.sciencedirect.com/science/article/abs/pii/S0165032715314221">source</a>].</p>
+
+<p>The point I am trying to make is that <strong>exercise is an inefficient method of weight loss</strong>. People often put an enormous amount of time into exercising, do not lose weight, and give up thinking that it’s too hard. They were simply using the wrong method.</p>
+
+<p><br /></p>
+
+<h2 id="diet">Diet</h2>
+
+<p><strong>Diet regulation is the best method of weight loss</strong>. The strongest piece of evidence for this is Ozempic. All Ozempic does is suppress appetite…that’s it [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9486455/">source</a>]. And it’s consider this miracle weight loss drug. Recall that all we have to do to lose weight is to be at a calorie deficit. We just learned that to a first order approximation, our daily calorie use is constant regardless of exercise. Therefore, the most straight forward and reliable way to ensure that $\text{Net Calories} &lt; 0$ is to simply eat less.</p>
+
+<p>I know that’s not the answer you probably wanted. It’s hard to eat less. The ultra-processed foods are literally drugs that we are all addicted to [<a href="https://link.springer.com/article/10.1007/s13679-024-00569-w">source</a>]. But, with a little bit of will-power and determination, you just have to eat less and by the laws of thermodynamics you will lose weight.</p>
+
+<h3 id="please-dont-become-anorexic">Please Don’t Become Anorexic</h3>
+
+<p>When someone says “I want to lose weight” what they really mean is “I want to lose fat”. We have to be careful because those statements are two different things. Our bodies have three different chemical systems that create usable energy, which convert stored proteins, carbohydrates, and fats, respectively [<a href="https://memorialhermann.org/services/specialties/rockets-sports-medicine-institute/sports-nutrition/how-the-body-uses-energy">source</a>]. “Losing weight” could just as easily mean “losing muscle mass” rather than “losing fat”, which is not what we want.</p>
+
+<p><strong>Going beyond a calorie deficit to malnutrition is just as unhealthy has being over weight.</strong></p>
+
+<!-- ### The World's Strongest Men are Fat
+
+If you look up the world's strongest men (and I don't mean body builders), you may notice that they are always kind of fat. Here is a [video](https://www.youtube.com/watch?v=IGaN66dcZEs) of Eddie Hall's famous 500kg deadlift where he weighed about $196 \ \text{kg} \approx 430 \ \text{lb}$. This is because strong men only care about raw strength. They are trying to rapidly build muscle as fast as possible. Therefore, the are eating at a calorie surplus.
+
+When you are losing weight, you are going to lose some amount of muscle mass. It's unavoidable.
+
+The other reason you should exercise during weight loss is to reduce muscle loss. If you are truely at a caloric deficit, your body is going to use its own resources to make up the difference. What you and everyone else wants is for your body to use its excess fat. However, your body can just as easily use its excess muscle. 
+
+The primary way to prevent this is to ensure you are eating enough protein. The second way to is to continue to build muscle through exercise and resistance training. Have you ever noticed that strong men are extremely fat? This is because their training is all bulk and no cut because you always lose muscle during a cut. -->
+
+<!-- ## Increasing Baseline Daily Activities
+
+This is not going to out-right solve all your problems, but it's not nothing. For example, those who live in a city walk X amount more compared to those who live in car-dominated rural areas. Tokyo, Japan is said to be one of the healthiest populations in part due to how much they walk. -->
+
+<p><br /></p>
+
+<h2 id="nutrition">Nutrition</h2>
+
+<p>Nutrition is how we control what weight is being lost. If we are at a calorie deficit, but our diet consists of only cookies and donuts, then we are going to lose much more weight in muscle than in fat. Conversely, if we cut out all sugar and fats with a diet consisting of mostly protein and vegitables, then the body has no choice but to burn our excess fat.</p>
+
+<p>Let’s go back to the 3rd grade and get a better understanding of each food group.</p>
+
+<h3 id="fats-and-oils">Fats and Oils</h3>
+
+<p>Do you know what the easiest food is for your body to convert into fat? Fat. If you are eating at a calorie surplus and that surplus contains fat, then it’s probably going to be stored as fat. I think that’s pretty straight forward.</p>
+
+<h3 id="sugar-and-carbohydrates">Sugar and Carbohydrates</h3>
+
+<p>First of all, carbohydrates are just fancy sugars. It’s not quite as bad as the super refined sugar in ultra-processed food, but it’s still not good for you. The second easiest food for your body to convert into fat is sugar. Several biological pathways have identified which allow sugars to be directly into fat [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3096021/">source</a>]. Again, if you eating at a calorie surplus and that surplus contains sugar or carbohydrates, then it’s very likely going to be stored as fat.</p>
+
+<p>You will not feel full and in fact crave more.</p>
+
+<h3 id="protein">Protein</h3>
+
+<p>Protein is very hard for the body to convert into fat. Instead goes towards preserving/replenishig muscle mass. This is why those who go on the carnavor diet tend to lose a lot of fat (although I wouldn’t recommend this diet). You have to eat a ridiculous amount of protein to overeat on protein. For the average person, just eat as much protein as you feel like [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4258944/">source</a>].</p>
+
+<p>protein makes you feel full</p>
+
+<h3 id="fruits-and-vegetables">Fruits and Vegetables</h3>
+
+<p>Fruits contain a lot of nutrients and antioxidants (vitamines and minerals) which are just generally good for you. They also contain natural sugars, which are much, much, much better for you than refined sugar [<a href="https://www.aroga.com/fruit-sugar-vs-refined-sugar/">source</a>]. So if you are having sugar cravings during your calorie deficit, fruits may be a solution.</p>
+
+<p>Vegitables also contain lots of nutrients, often complementary to those found in fruits. Both fruits and vegetables are a good source of fiber, which help promote gut health [<a href="https://www.medicalnewstoday.com/articles/healthier-gut-microbiome-eat-more-fruit-vegetables">source</a>].</p>
+
+<p>Low calories density</p>
+
+<h3 id="food-diverisity">Food Diverisity</h3>
+
+<blockquote>
+  <p>“Everything in moderation, including moderation.” ― Oscar Wilde.</p>
+</blockquote>
+
+<p>The best way to have a healthy diet is to have a diverse diet. Don’t only eat apples or only eat broccolli. Eat lots of different fruits and vegetables. Eat dessert every once in a while. Go out to dinner and don’t care about your calories for one day. As long as you are disciplined and conscientious, you’ll be healthier than most.</p>
+
+<p><br /></p>
+
+<h2 id="pyschology">Pyschology</h2>
+
+<p>religiously counting calories is just not a pleasent way to live.</p>
+
+<p>Even if you start losing weight, you start to get obsessed with the numbers and nothing is ever enough.</p>
+
+<p>rapid weight loss is not realistic, it’s not sustainable, and probably not that healthy. This is going to be a multi-year journey of consistency and lifestyle change.</p>
+
+<p><br /></p>
+
+<h2 id="summary">Summary</h2>
+
+<p>That was a lot, but here are the key take-aways.</p>
+
+<ul>
+  <li>Eat at a caloric deficit. Counting calories is the most fool-proof method of accomplishing this</li>
+  <li>Exercise (at least) a moderate amount. Additional exercise is always beneficial towards your health, but will probably not impact weight loss</li>
+  <li>Get quality sleep</li>
+  <li>Eat as much protein as possible and as little fats, sugars, and carbohydrates as possible</li>
+  <li>Eat a diverisity of fruits and vegitables</li>
+</ul>
+
+        </div>
+    </div>
+
+    <!--
+    <h3 style="text-align:center; margin-bottom:1em;">
+      <a href="/blog/">Blog Archive</a>
+    </h3>
+    -->
+    
+  </body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Multinomial Distribution &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded MathJax (effectively LaTeX) support 
+    https://docs.mathjax.org/en/v2.7-latest/tex.html -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX", "input/MathML", "output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js", "mml2jax.js", "MathMenu.js", "MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
+            Macros: {
+                b: ["{\\boldsymbol #1}",1],
+                u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
+                arccsc: ["\\operatorname\{arccsc\}"],
+                arcsec: ["\\operatorname\{arcsec\}"],
+                arccot: ["\\operatorname\{arccot\}"],
+                csch: ["\\operatorname\{csch\}"],
+                sech: ["\\operatorname\{sech\}"],
+                arcsinh: ["\\operatorname\{arcsinh\}"],
+                arccosh: ["\\operatorname\{arccosh\}"],
+                arctanh: ["\\operatorname\{arctanh\}"],
+                arccsch: ["\\operatorname\{arccsch\}"],
+                arcsech: ["\\operatorname\{arcsech\}"],
+                arccoth: ["\\operatorname\{arccoth\}"],
+                seq: ["{\\left \\langle #1 \\right \\rangle}",1],
+                iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
+                abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
+                hal: ["\\texttt{hal}"],
+                gal: ["\\texttt{gal}"],
+                sh: ["sh"],
+                st: ["st"]
+            },
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!--
+    TeX-AMS_HTML
+    TeX-AMS-MML_HTMLorMML
+    TeX-MML-AM_HTMLorMML
+-->
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">AI/ML Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+        <li>
+          <a href="/files/Eric Keilty - Resume.pdf" target="_blank">R&eacute;sum&eacute;</a>
+        </li>
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2024 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">Multinomial Distribution</h1>
+            <!-- <span class="series-date">03 Nov 2024</span> -->
+            <time datetime="2024-11-03T00:00:00-04:00" class="post-date">03 Nov 2024</time>
+            <!-- maybe I'll add tagging later
+            <span class="post-date" style="margin-top:-1em;"> ["probability-distributions"] </span>
+            -->
+            <h2 id="formula">Formula</h2>
+
+<p>Definitions</p>
+<ul>
+  <li>Let $n \in \mathbb{N}$ be a parameter</li>
+  <li>Let $p_1, \ldots, p_k \in [0, 1]$ be parameters such that $\ \sum_{i=1}^k p_i = 1$</li>
+  <li>Let $X_1, \ldots, X_k \sim \text{Multinomial}(n, p_1, \ldots, p_k)$ be random variables such that \(X_1, \ldots, X_k \in \{ 0, 1, 2, \ldots, n \}\) and $\ \sum_{i=1}^k X_i = n$</li>
+  <li>Let $p_X(x)$ be the corresponding probability mass function define by the following</li>
+</ul>
+
+\[p_{X_1, \ldots, X_k}(x_1, \ldots, x_k)
+\ = \
+\binom{n}{x_1 \cdots x_k} \ p_1^{x_1} \cdots p_k^{x_k}
+\ = \
+\frac{n!}{x_1! \cdots x_k!} \ p_1^{x_1} \cdots p_k^{x_k}\]
+
+<h2 id="validate">Validate</h2>
+
+<p>This is a simple application of the <span class="tooltip">multinomial theorem
+    <span class="tooltiptext"> 
+        \(\displaystyle
+        (a_1 + \ldots + a_{\ell})^m = \sum_{\substack{q_1, \ldots, q_{\ell} \\ q_1 + \ldots + q_{\ell} = m}} \binom{m}{q_1 \cdots q_{\ell}} a_1^{q_1} \cdots a_{\ell}^{q_{\ell}}\)
+    </span>
+</span>.</p>
+
+\[\sum_{\substack{x_1, \ldots, x_k \\ x_1 + \ldots + x_k = n}} p_{X_1, \ldots, X_k}(x_1, \ldots, x_k) = (p_1 + \ldots + p_k)^n = 1^n = 1\]
+
+<h2 id="expectation">Expectation</h2>
+
+<p>Without loss of generality, we will evaluate $\mathrm{E}[X_1]$. Since the order of the $X_i$’s are arbitrary, the argument can be extended to any $X_i$.</p>
+
+<p>Also, let $Y_1, \ldots, Y_k \sim \text{Multinomial}(n-1, p_1, \ldots, p_k)$ be random variables such that \(Y_1, \ldots, Y_k \in \{ 0, 1, 2, \ldots, n-1 \}\) and $\ \sum_{i=1}^k Y_i = n-1$ with probability mass function $p_{Y_1, \ldots, Y_k}(y_1, \ldots, y_k)$.</p>
+
+\[\begin{align}
+    \mathrm{E}[X_1]
+    &amp;= \sum_{\substack{x_1, \ldots, x_k \\ x_1 + \ldots + x_k = n}} x_1 \ p_{X_1, \ldots, X_k}(x_1, \ldots, x_k) \\[10pt]
+    &amp;= \sum_{x_1 = 0}^n \sum_{x_2 = 0}^{n - x_1} \cdots \sum_{x_{k-1} = 0}^{n - x_1 - \ldots - x_{k-2}} x_1 \ p_{X_1, \ldots, X_k}(x_1, \ldots, x_k) \\[10pt]
+    &amp;= \sum_{x_1 = 0}^n \sum_{x_2 = 0}^{n - x_1} \cdots \sum_{x_{k-1} = 0}^{n - x_1 - \ldots - x_{k-2}} x_1  \ \frac{n!}{x_1! \cdots x_k!} \ p_1^{x_1} \cdots p_k^{x_k} \\[10pt]
+    &amp;= \sum_{x_1 = 1}^n \sum_{x_2 = 0}^{n - x_1} \cdots \sum_{x_{k-1} = 0}^{n - x_1 - \ldots - x_{k-2}} x_1  \ \frac{n!}{x_1! \cdots x_k!} \ p_1^{x_1} \cdots p_k^{x_k} \\[10pt]
+    &amp;= np_1 \sum_{x_1 = 1}^n \sum_{x_2 = 0}^{n - x_1} \cdots \sum_{x_{k-1} = 0}^{n - x_1 - \ldots - x_{k-2}} \frac{(n-1)!}{(x_1-1)! x_2! \cdots x_k!} \ p_1^{x_1-1} p_2^{x_2} \cdots p_k^{x_k} \\[10pt]
+    &amp;= np_1 \sum_{y_1 = 0}^{n-1} \sum_{y_2 = 0}^{(n-1) - y_1} \cdots \sum_{y_{k-1} = 0}^{(n-1) - y_1 - \ldots - y_{k-2}} \frac{(n-1)!}{y_1! y_2! \cdots y_k!} \ p_1^{y_1} p_2^{y_2} \cdots p_k^{y_k} \\[10pt]
+    &amp;= np_1 \sum_{\substack{y_1, \ldots, y_k \\ y_1 + \ldots + y_k = n-1}} p_{Y_1, \ldots, Y_k}(y_1, \ldots, y_k) \\[10pt]
+    &amp;= np_1
+\end{align}\]
+
+<p>Therefore</p>
+
+\[\mathrm{E}[X_i] = np_i\]
+
+<h2 id="variance">Variance</h2>
+
+<p>Without loss of generality, we will evaluate $\mathrm{E}[X_1]$. Since the order of the $X_i$’s are arbitrary, the argument can be extended to any $X_i$.</p>
+
+\[\begin{align}
+    \mathrm{E}[X_1^2]
+    &amp;= \sum_{\substack{x_1, \ldots, x_k \\ x_1 + \ldots + x_k = n}} x_1^2 \ p_{X_1, \ldots, X_k}(x_1, \ldots, x_k) \\[10pt]
+    &amp;= np_1 \sum_{\substack{y_1, \ldots, y_k \\ y_1 + \ldots + y_k = n-1}} (y_1 + 1) \ p_{Y_1, \ldots, Y_k}(y_1, \ldots, y_k) \\[10pt]
+    &amp;= np_1 \left ( \sum_{\substack{y_1, \ldots, y_k \\ y_1 + \ldots + y_k = n-1}} y_1 \ p_{Y_1, \ldots, Y_k}(y_1, \ldots, y_k) + \sum_{\substack{y_1, \ldots, y_k \\ y_1 + \ldots + y_k = n-1}} p_{Y_1, \ldots, Y_k}(y_1, \ldots, y_k) \right )\\[10pt]
+    &amp;= np_1 \left ( \mathrm{E}[Y_1] + 1 \right )\\[10pt]
+    &amp;= np_1 \left ( (n-1)p_1 + 1 \right )\\[10pt]
+    &amp;= n^2p_1^2 - np_1^2 + np_1
+\end{align}\]
+
+<p>Therefore</p>
+
+\[\mathrm{E}[X_i^2] = n^2p_i^2 - np_i^2 + np_i\]
+
+<p>Therefore</p>
+
+\[\mathrm{Var}[X_i] = \mathrm{E}[X_i^2] - \mathrm{E}[X_i]^2 = (n^2p_i^2 - np_i^2 + np_i) - (np_i)^2 = np_i(1 - p_i)\]
+
+<h2 id="covariance">Covariance</h2>
+
+<p>Without loss of generality, we will evaluate $\mathrm{E}[X_1 X_2]$. Since the order of the $X_i$’s are arbitrary, the argument can be extended to any pair $X_i$ and $X_j$.</p>
+
+\[\begin{align}
+    \mathrm{E}[X_1 X_2]
+    &amp;= \sum_{\substack{x_1, \ldots, x_k \\ x_1 + \ldots + x_k = n}} x_1x_2 \ p_{X_1, \ldots, X_k}(x_1, \ldots, x_k) &amp;(1)\\[10pt]
+    &amp;= \sum_{x_1 = 0}^n \sum_{x_2 = 0}^{n - x_1} \cdots \sum_{x_{k-1} = 0}^{n - x_1 - \ldots - x_{k-2}} x_1x_2 \ \frac{n!}{x_1! x_2! \cdots x_k!} \ p_1^{x_1} \cdots p_k^{x_k} &amp;(2)\\[10pt]
+    &amp;= \sum_{x_1 = 1}^{n-1} \sum_{x_2 = 1}^{n - x_1} \cdots \sum_{x_{k-1} = 0}^{n - x_1 - \ldots - x_{k-2}} x_1x_2 \ \frac{n!}{x_1! x_2! \cdots x_k!} \ p_1^{x_1} p_2^{x_2} \cdots p_k^{x_k} &amp;(3)\\[10pt]
+    &amp;= n(n-1)p_1p_2 \sum_{x_1 = 1}^{n-1} \sum_{x_2 = 1}^{n - x_1} \cdots \sum_{x_{k-1} = 0}^{n - x_1 - \ldots - x_{k-2}} \frac{(n-2)!}{(x_1-1)! (x_2-1)! \cdots x_k!} \ p_1^{x_1-1} p_2^{x_2-1} \cdots p_k^{x_k} &amp;(4)\\[10pt]
+    &amp;= n(n-1)p_1p_2 \sum_{y_1 = 0}^{n-2} \sum_{y_2 = 0}^{(n-2) - y_1} \cdots \sum_{y_{k-1} = 0}^{(n-2) - y_1 - \ldots - y_{k-2}} \frac{(n-2)!}{y_1! y_2! \cdots y_k!} \ p_1^{y_1} p_2^{y_2} \cdots p_k^{y_k} &amp;(5)\\[10pt]
+    &amp;= n(n-1)p_1p_2 \sum_{\substack{y_1, y_2 \ldots, y_k \\ y_1 + y_2 + \ldots + y_k = n-2}} p_{Y_1, Y_2, \ldots, Y_k}(y_1, y_2, \ldots, y_k) &amp;(6)\\[10pt]
+    &amp;= n(n-1)p_1p_2 &amp;(7)\\[10pt]
+    &amp;= n^2p_1p_2 - np_1p_2 &amp;(8)
+\end{align}\]
+
+<p>Therefore</p>
+
+\[\mathrm{E}[X_i X_j] = n^2p_ip_j - np_ip_j\]
+
+<p>Therefore</p>
+
+\[\mathrm{Cov}[X_i X_j] = \mathrm{E}[X_i X_j] - \mathrm{E}[X_i] \mathrm{E}[X_j] = (n^2p_ip_j - np_ip_j) - (np_i)(np_j) = - np_ip_j\]
+
+        </div>
+
+        <!-- Adding the ability to move between parts of the series -->
+        
+        
+        
+
+        
+        
+        
+
+        <!-- Getting capitalized title for series -->
+        
+        
+        
+        
+        <!-- Getting url for series, which is just the page url with the last /... removed -->
+        
+
+        <div class="pagination" style="margin-top:1em;">
+            
+                <a class="pagination-item older" href="/blog/probability-distributions/binomial-distribution/">Previous</a>
+            
+            
+                <a class="pagination-item newer" href="/blog/probability-distributions/poisson-distribution/">Next</a>
+            
+        </div>
+        <h3 style="text-align:center; margin-bottom:1em;">
+            <a href="/blog/probability-distributions">
+            
+                
+                    Probability
+                
+            
+                
+                    Distributions
+                
+            
+         Series</a>
+        </h3>
+    </div>
+    
+  </body>
+</html>

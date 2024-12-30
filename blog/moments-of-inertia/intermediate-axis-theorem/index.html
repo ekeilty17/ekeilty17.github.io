@@ -152,8 +152,8 @@
 
         <div class="post">
             <h1 class="post-title">Intermediate Axis Theorem</h1>
-            <!-- <span class="series-date">08 Feb 2024</span> -->
-            <time datetime="2024-02-08T00:00:00-05:00" class="post-date">08 Feb 2024</time>
+            <!-- <span class="series-date">08 Nov 2024</span> -->
+            <time datetime="2024-11-08T00:00:00-05:00" class="post-date">08 Nov 2024</time>
             <!-- maybe I'll add tagging later
             <span class="post-date" style="margin-top:-1em;"> ["moments-of-inertia, ",  "intermediate-axis"] </span>
             -->
@@ -177,7 +177,7 @@
 <embed src="/svg/moments-of-inertia/7:intermediate-axis-theorem/intermediate-axis-theorem.svg" type="image/svg+xml" />
 </center>
 
-<p>Here’s the interesting and somewhat unintutive part. Rotation around \(\b{\omega}_{x}\) and \(\b{\omega}_{z}\) is <strong>stable</strong>, but rotation around \(\b{\omega}_{y}\) is <strong>unstable</strong>. In other words, it is easy to get this object to purely rotate around \(\b{\omega}_{x}\) or \(\b{\omega}_{z}\). However, it is practically impossible to obtain pure rotation around \(\b{\omega}_{y}\). Free rotation about \(\b{\omega}_{y}\) will almost always result in a twist about \(\b{\omega}_{x}\).</p>
+<p>Here’s the interesting and somewhat unintutive part. Rotation around \(\b{\omega}_{x}\) and \(\b{\omega}_{z}\) is <strong>stable</strong>, but rotation around \(\b{\omega}_{y}\) is <strong>unstable</strong>. In other words, it is easy to get this object to purely rotate around \(\b{\omega}_{x}\) or \(\b{\omega}_{z}\). However, it is practically impossible to obtain pure rotation around \(\b{\omega}_{y}\). Free rotation about \(\b{\omega}_{y}\) will almost always result in a twist about \(\b{\omega}_{x}\) (we will see why \(\b{\omega}_{x}\) and not \(\b{\omega}_{z}\)).</p>
 
 <h3 id="real-life-examples">Real-Life Examples</h3>
 
@@ -203,7 +203,7 @@
 
 <h3 id="setup">Setup</h3>
 
-<p>Let $I_{x}$, $I_{y}$, and $I_{z}$ denote the rotational inertia about the $x$, $y$, and $z$ axes, respectively. From the <a href="/blog/moments-of-inertia/slab">later post</a> when we derive the rotational inertia of a slab, we know the following.</p>
+<p>Let $I_{x}$, $I_{y}$, and $I_{z}$ denote the rotational inertia about the $x$, $y$, and $z$ axes, respectively. In a <a href="/blog/moments-of-inertia/slab">later post</a> where we derive the rotational inertia of a slab, we know the following.</p>
 
 \[I_{x} = \tfrac{1}{12}M(b^2 + c^2)
 \qquad
@@ -261,7 +261,7 @@ k_{3} \equiv I_{y} - I_{x} &gt; 0\]
     &amp;I_{z} \dot{\omega}_{z} = -k_{3} \omega_{x} \omega_{y}
 \end{align}\]
 
-<p>We can already see what makes the “intermediate” axis special. It’s the only term with a negative coefficient.</p>
+<p>We can already see what makes the “intermediate” axis special. It’s the only term with a positive coefficient.</p>
 
 <p><br /></p>
 
@@ -360,9 +360,9 @@ I_{y} \dot{\omega}_{y} \approx 0
     &amp;I_{z} \dot{\omega}_{z} = - (I_{y} - I_{x}) \omega_{x} \omega_{y} = -k_{3} \omega_{x} \omega_{y}
 \end{align}\]
 
-<p>where $k_1$, $k_2$, and $k_3$ are positive constants. The fact that there is a negative in front of the second equation is ultimately why the analysis of \(\b{\omega}_y\) is different than that of \(\b{\omega}_x\) and \(\b{\omega}_z\).</p>
+<p>where $k_1$, $k_2$, and $k_3$ are positive constants. The fact that there is no negative in front of the second equation is ultimately why the analysis of \(\b{\omega}_y\) is different than that of \(\b{\omega}_x\) and \(\b{\omega}_z\).</p>
 
-<p>The coefficient in the second equation is $(I_{x} - I_{z})$ rather than $(I_{z} - I_{x})$ ultimately comes from unrolling the cross product of $\b{\omega} \times (\m{I} \b{\omega})$. Written out a bit more.</p>
+<p>The fact that the coefficient in the second equation is $(I_{z} - I_{x})$ rather than $(I_{x} - I_{z})$ ultimately comes from unrolling the cross product of $\b{\omega} \times (\m{I} \b{\omega})$. Written out a bit more.</p>
 
 \[\begin{bmatrix}
     \omega_x \\

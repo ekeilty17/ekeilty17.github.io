@@ -152,18 +152,22 @@
 
         <div class="post">
             <h1 class="post-title">Parallel Axis Theorem</h1>
-            <!-- <span class="series-date">06 Feb 2024</span> -->
-            <time datetime="2024-02-06T00:00:00-05:00" class="post-date">06 Feb 2024</time>
+            <!-- <span class="series-date">06 Nov 2024</span> -->
+            <time datetime="2024-11-06T00:00:00-05:00" class="post-date">06 Nov 2024</time>
             <!-- maybe I'll add tagging later
             <span class="post-date" style="margin-top:-1em;"> ["moments-of-inertia, ",  "parallel-axis"] </span>
             -->
-            <h2 id="a-fixed-axis-of-rotation">A Fixed Axis of Rotation</h2>
+            <p>There are a few places in this post that a diagram would be useful. I just didn’t have time to make one. I appologize and will try to find time to make them in the future.</p>
+
+<p><br /></p>
+
+<h2 id="a-fixed-axis-of-rotation">A Fixed Axis of Rotation</h2>
 
 <h3 id="theorem">Theorem</h3>
 
 <p>Suppose we know the moment of inertia of object $\mathcal{G}$ with respect to a fixed axis of rotation passing through its <strong>center of mass</strong>. Now consider another axis of rotation which is parallel to and a distance $D$ away from the original axis.</p>
 
-<p><strong>TODO</strong> draw diagram</p>
+<!-- **TODO** draw diagram -->
 
 <p>Then the <strong>parallel axis theorem</strong> says the following.</p>
 
@@ -175,7 +179,7 @@
 
 <p>Define a Cartesian coordinate system with respect to any fixed origin. Fix some arbitrary point in object $\mathcal{G}$, and let $\b{r}$ be its position vector. Let $r_{\text{central axis}}$ and $r_{\text{parallel axis}}$ be the shortest distance from this fixed point to their respective axes.</p>
 
-<p><strong>TODO</strong> draw diagram</p>
+<!-- **TODO** draw diagram -->
 
 <p>Notice that</p>
 
@@ -213,7 +217,7 @@ Essentially this is due to symmetry, since a central axis of rotation (by defini
 
 <p>We can generalize the parallel axis theorem so that it can be applied to an inertia tensor. Fix any coordinate system. Suppose we know the inertia tensor of a object $\mathcal{G}$ with mass $M$ such that its <strong>center of mass</strong> is positioned at the origin, denoted $\m{I_{\text{cm}}}$. Now suppose that object $\mathcal{G}$ is translated anywhere in the coordinate system such that its center of mass is now at coordinate $\b{D} = D_x \; \u{x} + D_y \; \u{y} + D_z \; \u{z}$.</p>
 
-<p><strong>TODO</strong> draw diagram</p>
+<!-- **TODO** draw diagram -->
 
 <p>Then, the generalized parallel axis theorem tells us the following.</p>
 
@@ -225,7 +229,27 @@ Essentially this is due to symmetry, since a central axis of rotation (by defini
     - D_zD_x  &amp; - D_zD_y &amp; D_x^2 + D_y^2
 \end{bmatrix}\]
 
-<p>We can also express this compactly, where $\otimes$ denote the outer product and $\m{ \mathbb{I} }$ is the identity matrix.</p>
+<p>We can also express this compactly, where $\otimes$ denote the <span class="tooltip">outer product 
+    <span class="tooltiptext"> 
+    \(\boldsymbol{u} \otimes \boldsymbol{v} = \begin{bmatrix}
+        u_1 v_1 &amp; u_1 v_2 &amp; \cdots &amp; u_1 v_n \\
+        u_2 v_1 &amp; u_2 v_2 &amp; \cdots &amp; u_2 v_n \\
+        \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+        u_m v_1 &amp; u_m v_2 &amp; \cdots &amp; u_m v_n
+    \end{bmatrix}\)
+    </span>
+</span>
+and $\m{ \mathbb{I} }$ be the 
+<span class="tooltip">identity matrix
+    <span class="tooltiptext"> 
+    \(\left [ \ \mathbb{I} \ \right ] = \begin{bmatrix}
+        1 &amp; 0 &amp; \cdots &amp; 0 \\
+        0 &amp; 1 &amp; \cdots &amp; 0 \\
+        \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+        0 &amp; 0 &amp; \cdots &amp; 1
+    \end{bmatrix}\)
+    </span>
+</span>.</p>
 
 \[\m{ I_{\text{translated}} } = 
 \m{I_{\text{cm}}} + M (D^2 \m{\mathbb{I}} - \b{D} \otimes \b{D})\]
@@ -236,7 +260,7 @@ Essentially this is due to symmetry, since a central axis of rotation (by defini
 
 <p>This is a bit more technical, but it’s the same idea as the first proof. Fix some arbitrary point in object $\mathcal{G}$. Let $\b{r} = x \; \u{x} + y \; \u{y} + z \; \u{z}$ be its original position vector and let $\b{r}’ = x’ \; \u{x} + y’ \; \u{y} + z’ \; \u{z}$ denote its position vector after translated.</p>
 
-<p><strong>TODO</strong> draw diagram</p>
+<!-- **TODO** draw diagram -->
 
 <p>Therefore, $\b{r}’ = \b{r} + \b{D}$. Unrolling this element-wise, we have</p>
 
@@ -356,7 +380,9 @@ z' = z + D_z\]
 
 <p>There are two nice things about this. First, the matrix that is left over is unitary, which means it is a pure rotation matrix. Second, when you start taking special cases usually the angle of the object with respect to the axis of rotation is easier to work with.</p>
 
-\[\m{I_{\text{translated}}} = \m{I_{\text{cm}}} + M \m{D}\]
+<!-- $$
+\m{I_{\text{translated}}} = \m{I_{\text{cm}}} + M \m{D}
+$$ -->
 
 <!-- <br>
 

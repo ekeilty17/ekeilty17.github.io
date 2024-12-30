@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Polygon &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded MathJax (effectively LaTeX) support 
+    https://docs.mathjax.org/en/v2.7-latest/tex.html -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX", "input/MathML", "output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js", "mml2jax.js", "MathMenu.js", "MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
+            Macros: {
+                b: ["{\\boldsymbol #1}",1],
+                u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
+                arccsc: ["\\operatorname\{arccsc\}"],
+                arcsec: ["\\operatorname\{arcsec\}"],
+                arccot: ["\\operatorname\{arccot\}"],
+                csch: ["\\operatorname\{csch\}"],
+                sech: ["\\operatorname\{sech\}"],
+                arcsinh: ["\\operatorname\{arcsinh\}"],
+                arccosh: ["\\operatorname\{arccosh\}"],
+                arctanh: ["\\operatorname\{arctanh\}"],
+                arccsch: ["\\operatorname\{arccsch\}"],
+                arcsech: ["\\operatorname\{arcsech\}"],
+                arccoth: ["\\operatorname\{arccoth\}"],
+                seq: ["{\\left \\langle #1 \\right \\rangle}",1],
+                iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
+                abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
+                hal: ["\\texttt{hal}"],
+                gal: ["\\texttt{gal}"],
+                sh: ["sh"],
+                st: ["st"]
+            },
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!--
+    TeX-AMS_HTML
+    TeX-AMS-MML_HTMLorMML
+    TeX-MML-AM_HTMLorMML
+-->
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">AI/ML Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+        <li>
+          <a href="/files/Eric Keilty - Resume.pdf" target="_blank">R&eacute;sum&eacute;</a>
+        </li>
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2024 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">Polygon</h1>
+            <!-- <span class="series-date">13 Nov 2024</span> -->
+            <time datetime="2024-11-13T00:00:00-05:00" class="post-date">13 Nov 2024</time>
+            <!-- maybe I'll add tagging later
+            <span class="post-date" style="margin-top:-1em;"> ["moments-of-inertia"] </span>
+            -->
+            <h2 id="irregular-polygon">Irregular Polygon</h2>
+
+<p>Any irregular polygon can be decomposed into each line segments.</p>
+
+\[I_{zz} 
+= \tfrac{1}{3} M \left ( \frac{\sum_{k=0}^{n-1} \abs{\b{P}_{k+1} - \b{P}_{k}} \left ( \abs{\b{P}_{k}}^2 + \abs{\b{P}_{k+1}}^2 + \b{P}_{k} \cdot \b{P}_{k+1} \right )}{\sum_{k=0}^{n-1} \abs{\b{P}_{k+1} - \b{P}_{k}}} \right )\]
+
+<p>If we use the <span class="tooltip">law of cosines
+    <span class="tooltiptext"> 
+        \(\abs{\b{P} - \b{P}_{k}}^2 = \abs{\b{P}_{k}}^2 + \abs{\b{P}_{k+1}}^2 - 2(\b{P}_{k} \cdot \b{P}_{k+1}) \\[10pt]
+        \b{P}_{k} \cdot \b{P}_{k+1} = \tfrac{1}{2} \left ( \abs{\b{P}_{k}}^2 + \abs{\b{P}_{k+1}}^2 - \abs{\b{P}_{k+1} - \b{P}_{k}}^2 \right )\)
+    </span>
+</span>, then we can get rid of that dot product.</p>
+
+\[I_{zz} 
+= \tfrac{1}{6} M \left ( \frac{\sum_{k=0}^{n-1} \abs{\b{P}_{k+1} - \b{P}_{k}} \left ( 3\abs{\b{P}_{k}}^2 + 3\abs{\b{P}_{k+1}}^2 - \abs{\b{P}_{k+1} - \b{P}_{k}}^2 \right )}{\sum_{k=0}^{n-1} \abs{\b{P}_{k+1} - \b{P}_{k}}} \right )\]
+
+<p>While it is general, it’s not very satifsying. Unfortunately, I don’t think there is any better formula.</p>
+
+<p><br /></p>
+
+<h2 id="regular-polygon">Regular Polygon</h2>
+
+<h3 id="moment-of-inertia-about-central-axis">Moment of Inertia About Central Axis</h3>
+
+<p>We know that</p>
+
+\[\abs{\b{P}_{k+1} - \b{P}_{k}} = S\]
+
+<p>and</p>
+
+\[\abs{\b{P}_{k}} = R = \tfrac{1}{2}S \csc (\theta_n) = \tfrac{1}{2}S \csc ( \tfrac{\pi}{n} )\]
+
+<p><br /></p>
+
+\[\begin{align}
+    I_{zz} 
+    &amp;= \tfrac{1}{6} M \left ( \frac{\sum_{k=0}^{n-1} S \left ( 3R^2 + 3R^2 - S^2 \right )}{\sum_{k=0}^{n-1} S } \right ) \\[10pt]
+    &amp;= \tfrac{1}{6} M \left ( 6R^2 - S^2 \right ) \\[10pt]
+    &amp;= \tfrac{1}{6} M \left ( \tfrac{3}{2}S^2 \csc^2 ( \tfrac{\pi}{n} ) - S^2 \right ) \\[10pt]
+    &amp;= \tfrac{1}{12} M S^2 \left ( 3 \csc^2 ( \tfrac{\pi}{n} ) - 2 \right ) \\[10pt]
+\end{align}\]
+
+<p><br /></p>
+
+<h3 id="moment-of-inertia-about-central-diameter">Moment of Inertia About Central Diameter</h3>
+
+\[\begin{align}
+    I_{yy} 
+    &amp;= \tfrac{1}{3} M \left ( \frac{\sum_{k=0}^{n-1} S \left ( x_{k}^2 + x_{k+1}^2 + x_{k} x_{k+1} \right )}{\sum_{k=0}^{n-1} S } \right ) \\[10pt]
+    &amp;= \tfrac{1}{3n} M \sum_{k=0}^{n-1} \left ( x_{k}^2 + x_{k+1}^2 + x_{k} x_{k+1} \right ) \\[10pt]
+    &amp;= \tfrac{1}{3n} M \sum_{k=0}^{n-1} \left ( R^2 \cos^2 \left ( \tfrac{2 \pi k}{n} \right ) + R^2 \cos^2 \left ( \tfrac{2 \pi (k+1)}{n} \right ) + R \cos \left ( \tfrac{2 \pi k}{n} \right ) \cdot R \cos \left ( \tfrac{2 \pi (k+1)}{n} \right ) \right ) \\[10pt]
+    &amp;= \tfrac{1}{3n} M R^2 \sum_{k=0}^{n-1} \left ( \cos^2 \left ( \tfrac{2 \pi k}{n} \right ) + \cos^2 \left ( \tfrac{2 \pi (k+1)}{n} \right ) + \cos \left ( \tfrac{2 \pi k}{n} \right ) \cos \left ( \tfrac{2 \pi (k+1)}{n} \right ) \right ) \\[10pt]
+    &amp;= \tfrac{1}{3n} M R^2 \sum_{k=0}^{n-1} \left ( 2 \cos^2 \left ( \tfrac{2 \pi k}{n} \right ) + \cos \left ( \tfrac{2 \pi k}{n} \right ) \cos \left ( \tfrac{2 \pi (k+1)}{n} \right ) \right ) \\[10pt]
+    &amp;= \tfrac{1}{3n} M R^2 \sum_{k=0}^{n-1} \left ( \left [ 1 + \cos \left ( \tfrac{4 \pi k}{n} \right ) \right ] + \tfrac{1}{2} \left [ \cos \left ( \tfrac{2\pi}{n} \right ) + \cos \left ( \tfrac{2 \pi (2k+1)}{n} \right ) \right ] \right ) \\[10pt]
+    &amp;= \tfrac{1}{3n} M R^2 \left [ \left ( \sum_{k=0}^{n-1} 1 \right ) + \left ( \sum_{k=0}^{n-1} \cos \left ( \tfrac{4 \pi k}{n} \right ) \right ) + \tfrac{1}{2} \left ( \sum_{k=0}^{n-1} \cos \left ( \tfrac{2\pi}{n} \right ) \right ) + \tfrac{1}{2} \left ( \sum_{k=0}^{n-1} \cos \left ( \tfrac{2 \pi (2k+1)}{n} \right ) \right ) \right ] \\[10pt]
+    &amp;= \tfrac{1}{3n} M R^2 \left [ \left ( n \right ) + \left ( 0 \right ) + \tfrac{1}{2} \left ( n \cos \left ( \tfrac{2\pi}{n} \right ) \right ) + \tfrac{1}{2} \left ( 0 \right ) \right ] \\[10pt]
+    &amp;= \tfrac{1}{3n} M R^2 \left ( n + \tfrac{1}{2} n \cos \left ( \tfrac{2\pi}{n} \right ) \right ) \\[10pt]
+    &amp;= \tfrac{1}{6} M R^2 \left ( 2 + \cos \left ( \tfrac{2\pi}{n} \right ) \right ) \\[10pt]
+    &amp;= \tfrac{1}{6} M R^2 \left ( 1 + 1 + \cos \left ( \tfrac{2\pi}{n} \right ) \right ) \\[10pt]
+    &amp;= \tfrac{1}{6} M R^2 \left ( 1 + 2\cos^2 \left ( \tfrac{\pi}{n} \right ) \right ) \\[10pt]
+    &amp;= \tfrac{1}{6} M R^2 \left ( 3 - 2\sin^2 \left ( \tfrac{\pi}{n} \right ) \right )
+\end{align}\]
+
+<p>Part 2</p>
+
+\[\begin{align}
+    I_{xx} 
+    &amp;= \tfrac{1}{3} M \left ( \frac{\sum_{k=0}^{n-1} S \left ( y_{k}^2 + y_{k+1}^2 + y_{k} y_{k+1} \right )}{\sum_{k=0}^{n-1} S } \right ) \\[10pt]
+    &amp;= \tfrac{1}{3n} M \sum_{k=0}^{n-1} \left ( y_{k}^2 + y_{k+1}^2 + y_{k} y_{k+1} \right ) \\[10pt]
+    &amp;= \tfrac{1}{3n} M \sum_{k=0}^{n-1} \left ( R^2 \sin^2 \left ( \tfrac{2 \pi k}{n} \right ) + R^2 \sin^2 \left ( \tfrac{2 \pi (k+1)}{n} \right ) + R \sin \left ( \tfrac{2 \pi k}{n} \right ) \cdot R \sin \left ( \tfrac{2 \pi (k+1)}{n} \right ) \right ) \\[10pt]
+    &amp;= \tfrac{1}{3n} M R^2 \sum_{k=0}^{n-1} \left ( \sin^2 \left ( \tfrac{2 \pi k}{n} \right ) + \sin^2 \left ( \tfrac{2 \pi (k+1)}{n} \right ) + \sin \left ( \tfrac{2 \pi k}{n} \right ) \sin \left ( \tfrac{2 \pi (k+1)}{n} \right ) \right ) \\[10pt]
+    &amp;= \tfrac{1}{3n} M R^2 \sum_{k=0}^{n-1} \left ( 2 \sin^2 \left ( \tfrac{2 \pi k}{n} \right ) + \sin \left ( \tfrac{2 \pi k}{n} \right ) \sin \left ( \tfrac{2 \pi (k+1)}{n} \right ) \right ) \\[10pt]
+    &amp;= \tfrac{1}{3n} M R^2 \sum_{k=0}^{n-1} \left ( \left [ 1 - \cos \left ( \tfrac{4 \pi k}{n} \right ) \right ] + \tfrac{1}{2} \left [ \cos \left ( \tfrac{2\pi}{n} \right ) - \cos \left ( \tfrac{2 \pi (2k+1)}{n} \right ) \right ] \right ) \\[10pt]
+    &amp;= \tfrac{1}{3n} M R^2 \left [ \left ( \sum_{k=0}^{n-1} 1 \right ) - \left ( \sum_{k=0}^{n-1} \cos \left ( \tfrac{4 \pi k}{n} \right ) \right ) + \tfrac{1}{2} \left ( \sum_{k=0}^{n-1} \cos \left ( \tfrac{2\pi}{n} \right ) \right ) - \tfrac{1}{2} \left ( \sum_{k=0}^{n-1} \cos \left ( \tfrac{2 \pi (2k+1)}{n} \right ) \right ) \right ] \\[10pt]
+    &amp;= \tfrac{1}{3n} M R^2 \left [ \left ( n \right ) - \left ( 0 \right ) + \tfrac{1}{2} \left ( n \cos \left ( \tfrac{2\pi}{n} \right ) \right ) - \tfrac{1}{2} \left ( 0 \right ) \right ] \\[10pt]
+    &amp;= \tfrac{1}{3n} M R^2 \left ( n + \tfrac{1}{2} n \cos \left ( \tfrac{2\pi}{n} \right ) \right ) \\[10pt]
+    &amp;= \tfrac{1}{6} M R^2 \left ( 2 + \cos \left ( \tfrac{2\pi}{n} \right ) \right ) \\[10pt]
+    &amp;= \tfrac{1}{6} M R^2 \left ( 1 + 1 + \cos \left ( \tfrac{2\pi}{n} \right ) \right ) \\[10pt]
+    &amp;= \tfrac{1}{6} M R^2 \left ( 1 + 2\cos^2 \left ( \tfrac{\pi}{n} \right ) \right ) \\[10pt]
+    &amp;= \tfrac{1}{6} M R^2 \left ( 3 - 2\sin^2 \left ( \tfrac{\pi}{n} \right ) \right )
+\end{align}\]
+
+<p>A few things to justify. First, we’ll do the easy one. Why is it true that</p>
+
+\[\sum_{k=0}^{n-1} \cos \left ( \tfrac{2 \pi (2k+1)}{n} \right ) = 0\]
+
+<p>If you think about it, we are summing up the $x$-value of each vertex of the polygon exactly once. Since we are assuming that its centroid is at the origin, by definition this must be $0$.</p>
+
+<p>Now, the slightly trickier one. Why is it true that</p>
+
+\[\sum_{k=0}^{n-1} \cos \left ( \tfrac{4 \pi k}{n} \right ) = 0\]
+
+<p>This result is highly related to group theory. What’s amazing about this is that there are $2$ reasons that are completely different from each other.We need to split this up into $2$ cases, when $n$ is even and when $n$ is odd. If $n$ is even, then essentially what happens is we get caught in a cycle of only the even-valued vertices. So we essentially are only considering a regular $\tfrac{n}{2}$-gon. And its centroid is still at the origin.</p>
+
+<p>Now if $n$ is odd, then by definition it is co-prime with $2$ (meaning it does not share any factors). Therefore, it is impossible for it to get caught in a cycle like the even case. Therefore, we must hit every vertex exactly once (just in a different order). Therefore the sum is equivalent to the first sum, and therefore it must still be $0$.</p>
+
+<p>This is a result of cyclic subgroup theory.</p>
+
+<p><br /></p>
+
+<h3 id="inertia-tensor">Inertia Tensor</h3>
+
+<p>Combining the above results gives the full inertia tensor. There are a bunch of possible ways you could express it, so I’m just going to list what I think are the most reasonable.</p>
+
+\[\begin{align}
+    \m{I} 
+    &amp;= \tfrac{1}{6} M R^2 \left ( 1 + 2\cos^2 \left ( \tfrac{\pi}{n} \right ) \right )
+    \begin{bmatrix}
+        1 &amp; 0 &amp; 0 \\
+        0 &amp; 1 &amp; 0 \\
+        0 &amp; 0 &amp; 2
+    \end{bmatrix}
+    \\[10pt]
+    &amp;= \tfrac{1}{6} M R^2 \left ( 3 - 2\sin^2 \left ( \tfrac{\pi}{n} \right ) \right )
+    \begin{bmatrix}
+        1 &amp; 0 &amp; 0 \\
+        0 &amp; 1 &amp; 0 \\
+        0 &amp; 0 &amp; 2
+    \end{bmatrix}
+    \\[10pt]
+    &amp;= \tfrac{1}{24} M S^2 \left ( 3 \csc^2 \left ( \tfrac{\pi}{n} \right ) - 2 \right )
+    \begin{bmatrix}
+        1 &amp; 0 &amp; 0 \\
+        0 &amp; 1 &amp; 0 \\
+        0 &amp; 0 &amp; 2
+    \end{bmatrix}
+    \\[10pt]
+    &amp;= \left ( \tfrac{1}{2} M R^2 - \tfrac{1}{12} M S^2 \right )
+    \begin{bmatrix}
+        1 &amp; 0 &amp; 0 \\
+        0 &amp; 1 &amp; 0 \\
+        0 &amp; 0 &amp; 2
+    \end{bmatrix}
+\end{align}\]
+
+<p>Strangely, even though it would seem parameterizing in terms of the side length $S$ would be the most natural thing, it is the worst looking formula. In a way this make sense. $S$ is actually pretty complicated as it depends on $n$. The parameter $R$ on the other hand is constant with respect to $n$.</p>
+
+<p>Notice that $I_{xx} = I_{yy}$. For even-sided polygons this is obvious, but for odd-sided polygons I find this fact remarkable. Consider the equilateral triangle from the previous post. Looking at it I would not have guessed that they are equal.</p>
+
+<p>Now, it’s pretty simple to prove that</p>
+
+\[\lim_{n \rightarrow \infty} \cos^2 \left ( \tfrac{\pi}{n} \right ) = 1
+\qquad\qquad
+\lim_{n \rightarrow \infty} \sin^2 \left ( \tfrac{\pi}{n} \right ) = 0
+\qquad\qquad
+\lim_{n \rightarrow \infty} S = 0\]
+
+<p>Therefore</p>
+
+\[\lim_{n \rightarrow \infty} \m{I} = 
+\tfrac{1}{2} M R^2
+\begin{bmatrix}
+    1 &amp; 0 &amp; 0 \\
+    0 &amp; 1 &amp; 0 \\
+    0 &amp; 0 &amp; 2
+\end{bmatrix}\]
+
+<p>In the next post, we are going to prove that this is precisely the moment of inertia of a circle!</p>
+
+<p>The mass can be written as $M = \lambda \cdot n \cdot 2R \sin (\tfrac{\pi}{n})$</p>
+
+\[\begin{align}
+    \lim_{n \rightarrow \infty} M
+    &amp;= \lim_{n \rightarrow \infty} \lambda \cdot n \cdot 2R \sin (\tfrac{\pi}{n}) \\[10pt]
+    &amp;= \lambda \cdot 2R \lim_{n \rightarrow \infty} n \sin (\tfrac{\pi}{n}) \\[10pt]
+    &amp;= \lambda \cdot 2\pi R
+\end{align}\]
+
+<p>We will see in the next post that this is, in fact, the inertia of a circle.</p>
+
+        </div>
+
+        <!-- Adding the ability to move between parts of the series -->
+        
+        
+        
+
+        
+        
+        
+
+        <!-- Getting capitalized title for series -->
+        
+        
+        
+        
+        <!-- Getting url for series, which is just the page url with the last /... removed -->
+        
+
+        <div class="pagination" style="margin-top:1em;">
+            
+                <a class="pagination-item older" href="/blog/moments-of-inertia/rectangle-curve/">Previous</a>
+            
+            
+                <a class="pagination-item newer" href="/blog/moments-of-inertia/circle/">Next</a>
+            
+        </div>
+        <h3 style="text-align:center; margin-bottom:1em;">
+            <a href="/blog/moments-of-inertia">
+            
+                
+                    Moments
+                
+            
+                
+                    of
+                
+            
+                
+                    Inertia
+                
+            
+         Series</a>
+        </h3>
+    </div>
+    
+  </body>
+</html>

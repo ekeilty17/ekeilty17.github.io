@@ -152,18 +152,18 @@
 
         <div class="post">
             <h1 class="post-title">Introduction</h1>
-            <!-- <span class="series-date">01 Feb 2024</span> -->
-            <time datetime="2024-02-01T00:00:00-05:00" class="post-date">01 Feb 2024</time>
+            <!-- <span class="series-date">01 Nov 2024</span> -->
+            <time datetime="2024-11-01T00:00:00-04:00" class="post-date">01 Nov 2024</time>
             <!-- maybe I'll add tagging later
             <span class="post-date" style="margin-top:-1em;"> ["moments-of-inertial, ",  "introduction"] </span>
             -->
             <h2 id="motivation">Motivation</h2>
 
-<p>Originally, I created this series as an excuse to evaluate some fun integrals and draw pretty diagrams. As I continued writing I really fell down a rabbit hole. Instead of climbing out, I kept digging until I came out the other side. Essentially, this series has become my collation, interpretation, and summarization of all the resources and information that I could find on moments of inertia as well as my own unique results.</p>
+<p>Originally, I created this series as an excuse to evaluate some fun integrals and draw pretty diagrams. As I continued writing I really fell down a rabbit hole. Instead of climbing out, I kept digging until I came out the other side. Essentially, this series has become my collation, interpretation, and summarization of all the resources and information that I could find on moments of inertia as well as some of my own unique results.</p>
 
 <!-- However, as I wrote and researched I feel that there is a hole in explanations on this subject. In online resources, you will either find just assertions of formulae for various geometric objects [[1](https://scienceworld.wolfram.com/physics/MomentofInertia.html)], high-level explanations that only calculate a few examples [[2](https://phys.libretexts.org/Courses/Joliet_Junior_College/Physics_201_-_Fall_2019v2/Book%3A_Custom_Physics_textbook_for_JJC/11%3A_Rotational_Kinematics_Angular_Momentum_and_Energy/11.06%3A_Calculating_Moments_of_Inertia)], or graduate-level theory [[3](https://ocw.mit.edu/courses/16-07-dynamics-fall-2009/dd277ec654440f4c2b5b07d6c286c3fd_MIT16_07F09_Lec26.pdf)].  -->
 
-<p>In this series, I first give the relevant physics and mathematical background necessary to compute moments of inertia. Then I derive the inertia tensor for various interesting shapes. I separate them into curves ($\text{1D}$ objects), surfaces ($\text{2D}$ objects), and volumes ($\text{3D}$ objects). Most posts after the background are intended to be self-contained, so you can read them in any order. However, some of the more complicated shapes (such as triangles) will require results from previous posts. I will provide links when this is the case.</p>
+<p>In this series, I first give the relevant physics and mathematical background necessary to compute moments of inertia. Then I derive the inertia tensor for various interesting shapes. I separate them into curves ($\text{1D}$ objects), surfaces ($\text{2D}$ objects), and volumes ($\text{3D}$ objects). Most of the posts after the <em>Background</em> section are intended to be self-contained, so you can read them in any order. However, some of the more complicated shapes (such as triangles) will require results from previous posts. I will provide links when this is the case.</p>
 
 <p><br /></p>
 
@@ -175,14 +175,19 @@
 
 \[\begin{align}
     &amp;F = m a
-    &amp;\qquad\qquad&amp;
-    \tau = I \alpha \\[10pt]
+    &amp;\qquad\scriptsize{\text{(force, mass, acceleration)}}&amp;
+    &amp;\quad\qquad&amp;
+    \tau = I \alpha
+    &amp;&amp;\quad\scriptsize{\text{(torque, rotational inertia, angular acceleration)}}
+    \\[10pt]
     &amp;p = m v
+    &amp;\quad\scriptsize{\text{(momentum, mass, velocity)}}&amp;
     &amp;\qquad\qquad&amp;
     L = I \omega
+    &amp;&amp;\quad\scriptsize{\text{(angular momentum, rotational inertia, angular vecloty)}}
 \end{align}\]
 
-<p>For more detail, the physics YouTuber Andrew Dotson has good videos on where the concept of a “moment” comes from and its interpretation (<a href="https://www.youtube.com/watch?v=0flh8ovhZ9k">part 1</a> and <a href="https://www.youtube.com/watch?v=k24FnV3myO4">part 2</a>). I will also give my formulation of the moment of inertia in the <a href="/blog/moments-of-inertia/definition-of-a-moment">next post</a>.</p>
+<p>For more detail, the physics YouTuber Andrew Dotson has good videos on where the concept of a “moment” comes from and its interpretation (<a href="https://www.youtube.com/watch?v=0flh8ovhZ9k">part 1</a> and <a href="https://www.youtube.com/watch?v=k24FnV3myO4">part 2</a>). I will also give my formulation of the moment of inertia in the <a href="/blog/moments-of-inertia/definition-of-the-mass-moment-of-inertia/">next post</a>.</p>
 
 <p><br /></p>
 
@@ -200,7 +205,7 @@
 
 <p>Setting up these integrals is going to require a good understanding of geometry and trigonometry. I am going to assume the reader is very comfortable with trigonometry and its identities (as to not belabor over every minute detail). If this is not the case, I have a series on <a href="/blog/trigonometry">trigonometry</a>.</p>
 
-<p>To prevent repetition in proofs, I will assert some trigonometric integrals. I leave it as an exercise to the reader to prove these results.</p>
+<p>To prevent repetition in proofs, I will assert some trigonometric integrals. I leave it as an exercise to the reader to prove these results (or just google it).</p>
 
 \[\begin{align}
     &amp;\int_{0}^{2\pi} \cos \theta \; d \theta \ \ = \int_{0}^{2\pi} \sin \theta \; d \theta = 0
@@ -237,7 +242,7 @@
 
 <p>Any bold-face character is a <strong>vector</strong>, e.g. $\b{r}$ or $\b{\omega}$. Any bold-face character with a hat is a <a href="https://en.wikipedia.org/wiki/Unit_vector">unit vector</a>, e.g. $\u{x}$.</p>
 
-<p>One definition of a vector is a mathematical object with a <em>magnitude</em> and <em>direction</em>. We actually have good notation for both of these concepts. Given any vector $\b{v}$, it’s magnitude is written $\abs{\b{v}}$, but is often denoted just by $v$. Its direction is denoted by its unit vector $\u{v}$, which points in the same direction as $\b{v}$ but has magnitude $1$. We can relate all of these objects as follows.</p>
+<p>One definition of a vector is a mathematical object with a <em>magnitude</em> and <em>direction</em>. We actually have good notation for both of these concepts. Given any vector $\b{v}$, it’s magnitude is written $\abs{\b{v}}$, but is often denoted just by the unbolded character $v$ (since it is a scalar). Its direction is denoted by its unit vector $\u{v}$, which points in the same direction as $\b{v}$ but has magnitude $1$. We can relate all of these objects as follows.</p>
 
 \[\u{v} = \frac{\b{v}}{\abs{\b{v}}} = \frac{\b{v}}{v}
 \qquad\qquad
@@ -247,15 +252,15 @@
 
 <h3 id="matrices">Matrices</h3>
 
-<p>Any regular-font capitalized character between square brackets is a <strong>matrix</strong>, e.g. $\m{I}$.</p>
+<p>Any regular-font capitalized character between square brackets is a <strong>matrix</strong>, e.g. $\m{A}$.</p>
 
-<p>The variable $I$ denotes the moment of inertia (which is the quantity we are interested in). Just writing $I$ implies that it’s a scalar value. This means I must be refer to the moment of inertia with respect to a fixed axis of rotation $\b{\omega}$. On the other hand, if I write $\m{I}$, I am refering to the inertia tensor, which is a matrix quantity that describes the moment of inertia with respect to any axis. In particular,</p>
+<p>I will be using the notation $I_{\b{\omega}}$ and $\m{I}$ to refer to the moment of inertia of an object, and it is important to understand the difference. $I_{\b{\omega}}$ is a <em>scalar quantity</em> refering to the moment of inertia with respect to some fixed axis of rotation $\b{\omega}$. $\m{I}$ refers to the <strong>inertia tensor</strong>, which is a <em>matrix quantity</em> that describes the moment of inertia with respect to any axis. In particular,</p>
 
 \[I_{\b{\omega}} = \u{\omega}^T \; \m{I} \; \u{\omega}\]
 
-<p>We will discuss this more in the <a href="/blog/moments-of-inertia/definition-of-the-mass-moment-of-inertia">next post</a>.</p>
+<p>We will discuss this more in a <a href="/blog/moments-of-inertia/inertia-tensor-derivation/">future post</a>.</p>
 
-<p>Another thing to mention. Typically in linear algebra, $\m{I}$ is used to denote the identity matrix. Obviously that variable is taken, so I will use $\m{\mathbb{I}}$. In particular, since we are working with $\text{3D}$ coordiantes, it will be the $3 {\times} 3$ identity matrix.</p>
+<p>Another thing to mention. Typically in linear algebra, $\m{I}$ is used to denote the identity matrix. As to not conflate variables, I will use $\m{\mathbb{I}}$. In particular, since we are working with $\text{3D}$ coordiantes, it will be the $3 {\times} 3$ identity matrix.</p>
 
 \[\m{\mathbb{I}} = \begin{bmatrix}
     1 &amp; 0 &amp; 0 \\
