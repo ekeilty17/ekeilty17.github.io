@@ -3,6 +3,7 @@ layout:     post
 title:      Relational Algebra
 categories: blog
 permalink:  /blog/relational-algebra/
+draft:      true
 ---
 
 This series is still being developed
