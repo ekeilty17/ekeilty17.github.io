@@ -143,7 +143,7 @@
   
 </div>
       </div>
-      <p>&copy; 2024 Eric Keilty </p>
+      <p>&copy; 2025 Eric Keilty </p>
 
     </div>
   </div>
@@ -161,42 +161,76 @@
 
 <h2 id="point-mass">Point Mass</h2>
 
-<p>Suppose we have a point mass $m$ which is rotating a distance $R$ away from a fixed axis of rotation with angular velocity $\omega$. Recall that the tangential velocity is $v = R\omega$.</p>
+<p>Suppose we have a point mass $m$ which is rotating a distance $R$ away from a fixed axis of rotation with angular velocity $\omega$.</p>
 
 <center>
 <embed src="/svg/moments-of-inertia/1:definition-of-the-mass-moment-of-inertia/point-mass.svg" type="image/svg+xml" />
 </center>
 
-<p>In this simplified example, the <strong>angular momentum</strong> of this point mass is given by the following.</p>
+<p>Recall the definitions of physical quantities</p>
+<ul>
+  <li>$\b{v} = \b{R} \times \b{\omega}$</li>
+  <li>$\b{p} = m \b{v}$</li>
+  <li>$\b{L} = \b{R} \times \b{p}$</li>
+</ul>
 
-\[L = R \times p = R \times (m v) = R \times (m R \omega) = (m R^2) \omega\]
+<p>denoting tangential velocity, linear momentum, and angular momentum, respectively. Note that $\times$ refers to the <span class="tooltip">cross product
+    <span class="tooltiptext"> 
+        \(\b{u} \times \b{v} 
+        = \left \lvert \begin{array}{ccc} 
+            \u{x} &amp; \u{y} &amp; \u{z} \\
+            u_x &amp; u_y &amp; u_z \\
+            v_x &amp; v_y &amp; v_z
+        \end{array} \right \rvert 
+        = (u_y v_z - u_z v_y) \; \u{x} + (u_z v_x - u_x v_z) \; \u{y} + (u_x v_y - u_y v_x) \; \u{z}\)
+    </span>
+</span>. In this simplified example, the <strong>angular momentum</strong> of this point mass is given by the following.</p>
 
-<p>Notice that $m R^2$ only depends on the geometry of the mass while $\omega$ only depends on the motion of the mass. While $\omega$ may change over time, $m R^2$ is constant for each object (at least in this idealized scenario). Therefore, it is natural to separate this term out and give it a name. We call this the <strong>mass moment of inertia</strong> or <strong>rotational inertia</strong> of the point mass.</p>
+\[\b{L} = \b{R} \times \b{p} = \b{R} \times (m \b{v}) = \b{R} \times (m \b{R} \times \b{\omega})\]
 
-\[L = I \omega
-\qquad\qquad\qquad
-I = m R^2\]
+<p>We exploit that $\b{R}$ and $\b{\omega}$ are perpendicular, which means we can get rid of the cross product (<span class="tooltip">more explanation
+    <span class="tooltiptext"> 
+        \(\abs{ \b{u} \times \b{v} }
+        = u v \sin \theta\)
+        where $\theta$ is the angle between $\b{u}$ and $\b{v}$. If $\b{u} \perp \b{v}$, then $\theta = 90^{\circ}$ and $\abs{ \b{u} \times \b{v} } = u v$
+    </span>
+</span>).</p>
 
-<p>Notice the similarity to the equation for linear momentum, $p = mv$. Analogous to mass in linear motion, the rotational inertia describes the objects intrinsic resistance to rotation. The larger the moment of inertia, the harder it is to get the object to rotate. Conversely, if an object with a large moment of inertia is already rotating, then it is difficult to stop. This <a href="https://www.youtube.com/watch?v=NsKIPa4Fnfo">video</a> is a nice, short demonstration of the effect an object’s moment of inertia on its rotational motion.</p>
+\[\b{L} = (m R^2) \b{\omega}\]
+
+<p>Notice that $m R^2$ only depends on the geometry of the mass while $\omega$ only depends on the motion of the mass. While $\omega$ may change over time, $m R^2$ is constant for each object (at least in this idealized scenario). Therefore, it is natural to separate this term out and give it a name. We call this the <strong>mass moment of inertia</strong> or <strong>rotational inertia</strong> of the point mass. For this example, this is defined as</p>
+
+\[I \equiv m R^2\]
+
+<p>and therefore,</p>
+
+\[\b{L} = I \b{\omega}\]
+
+<p>Notice the similarity to the equation for linear momentum, $\b{p} = m\b{v}$. Analogous to mass in linear motion, the rotational inertia describes the objects intrinsic resistance to rotation. The larger the moment of inertia, the harder it is to get the object to rotate. Conversely, if an object with a large moment of inertia is already rotating, then it is difficult to stop. This <a href="https://www.youtube.com/watch?v=NsKIPa4Fnfo">video</a> is a nice, short demonstration of the effect an object’s moment of inertia on its rotational motion.</p>
 
 <p><br /></p>
 
 <h2 id="a-collection-of-point-masses">A Collection of Point Masses</h2>
 
-<p>Suppose a collection of $n$ point masses $m_i$ are a distance $R_i$ from a fixed axis of rotation each with angular velocity $\omega$. From the above, we know that each object has angular momentum and rotational inertia.</p>
+<p>Suppose a collection of $n$ point masses $m_i$ are a distance $R_i$ from a fixed axis of rotation each with angular velocity $\omega$.</p>
 
-\[L_i = (m_i R_i^2) \omega = I_i \omega\]
+<center>
+<embed src="/svg/moments-of-inertia/1:definition-of-the-mass-moment-of-inertia/collection-of-point-masses.svg" type="image/svg+xml" />
+</center>
 
-<p>Now, we define the following.</p>
+<p>From the above, we know that each object has angular momentum and rotational inertia.</p>
 
-\[L_{\text{system}} = \sum_{i=1}^n L_i = \sum_{i=1}^n I_i \omega = \left ( \sum_{i=1}^n I_i \right ) \omega\]
+\[\b{L}_i = (m_i R_i^2) \b{\omega} = I_i \b{\omega}\]
 
-<p>Since all point masses are moving with the same angular velocity (they are moving identically as a group), we can factor out $\omega$, which gives us the rotational inertia of the system.</p>
+<p>Now we want to find the total angular momentum of the <em>system</em> of $n$ points.</p>
+
+\[\b{L}_{\text{system}} = \sum_{i=1}^n \b{L}_i = \sum_{i=1}^n I_i \b{\omega} = \left ( \sum_{i=1}^n I_i \right ) \b{\omega}\]
+
+<p>Since all point masses are moving with the same angular velocity (they are moving identically as a group), we can factor out $\b{\omega}$. This let’s us define the total rotational inertia of the system.</p>
 
 \[I_{\text{system}} = \sum_{i=1}^n I_i\]
 
-<p>This is true for any set of objects with the same angular velocity, not just point masses. This is a very useful property for “building-up” complicated shapes from a series of smaller shapes.
-<!-- , which we will see many times in this series. --></p>
+<p>This is a very powerful result. It means that we can break down complicated shapes into a set of simple shapes, compute their rotational inertia independently, and then combine to get the final result. In this series, we will use this property to prove the rotational inertia of a <a href="/blog/moments-of-inertia/ring/">ring</a>.</p>
 
 <p><br /></p>
 
@@ -204,17 +238,22 @@ I = m R^2\]
 
 <p>A <strong>rigid body</strong> is an object that does not deform or change shape. Mathematically you can say that the distance between any two points within the body is always constant.</p>
 
-<p>Consider a rigid body $\mathcal{G}$ rotating around a fixed axis $\omega$. We can consider any infinitesimal unit of area $dm$. Suppose its distance to the axis of rotation is $r_{axis}$. Note that this may be different than $\b{r}$, which denotes the position in space relative to a fixed origin.</p>
+<p>Consider a rigid body $\mathcal{G}$ rotating around a fixed axis $\b{\omega}$. We can consider any infinitesimal unit of area $dm$. Suppose its distance to the axis of rotation is $r_{\b{\omega}}$. Note that this may be different than $\b{r}$, which denotes the position in space relative to a fixed origin.</p>
+
+<!-- TODO: Draw a diagram...but it will be super complicated
+    I want to draw a blob object, and then have a little section dm
+    Then draw the dotted path and radius just like in the point mass case
+ -->
 
 <p>This is essentially the same as a point mass, therefore its infinitesimal moment of inertia is</p>
 
-\[dI = r_{axis}^2 dm\]
+\[dI = r_{\b{\omega}}^2 dm\]
 
 <p>Since it is a <em>rigid</em> body there is no internal motion. Therefore, all parts of $\mathcal{G}$ are rotating with the same angular velocity, so the total rotational inertia is the sum of all the infinitesimal rotational inertias within the object $\mathcal{G}$ (analogous to a collection of point masses). For continuous objects, we integrate over its geometry.</p>
 
-\[I_{\mathcal{G}} = \int_{\mathcal{G}} dI = \int_{\mathcal{G}} r_{axis}^2 dm\]
+\[I_{\b{\omega}} = \int_{\mathcal{G}} dI = \int_{\mathcal{G}} r_{\b{\omega}}^2 dm\]
 
-<p>This is the expression that this series will be computing.</p>
+<p>This is the rotational inertia with respect to a fixed axis $\b{\omega}$.</p>
 
 <p>While this looks simple, its complexity hides in the subscript $\mathcal{G}$. This is saying we have to integrate with respect to the object’s geometry, which can be tricky to do correctly. We will see many examples in the subsequent posts.</p>
 
@@ -222,7 +261,7 @@ I = m R^2\]
 
 <h2 id="the-inertia-tensor">The Inertia Tensor</h2>
 
-<p>The above formula only gives the moment of inertia for a fixed axis of rotation. In some applications, we want the ability to find the moment of inertia for any axis of rotation. For this, we need the <strong>inertia tensor</strong>.</p>
+<p>The above formula only gives the moment of inertia for a particular axis of rotation. We can generalize this to obtain the <strong>inertia tensor</strong>, which describes the rotational inertia of an object about every axis.</p>
 
 \[\m{I} = \left[ \begin{array}{@{}rrr@{}}
       I_{xx} &amp; - I_{xy} &amp; - I_{xz} \\
@@ -238,7 +277,7 @@ I_{yy} = \int_{\mathcal{G}} (z^2 + x^2) \; dm
 \qquad
 I_{zz} = \int_{\mathcal{G}} (x^2 + y^2) \; dm\]
 
-<p>The other values are called the <strong>products of inertia</strong> with respect to the $xy$, $yz$, and $zx$ plane. They are a measure of the imbalance in the mass distribution in the respective planes. I discuss the products of inertia more in a <a href="/blog/moments-of-inertia/inertia-tensor-derivation/#products-of-inertia-revisited">future post</a>.</p>
+<p>The other values are called the <strong>products of inertia</strong> with respect to the $xy$, $yz$, and $zx$ plane. They are a measure of the imbalance in the mass distribution in the respective planes.</p>
 
 <!-- What this means exactly is discussed in the post on the [principal axis theorem](/blog/moments-of-inertia/principal-axis-theorem/). -->
 
@@ -248,7 +287,7 @@ I_{yz} = I_{zy} = \int_{\mathcal{G}} yz \; dm
 \qquad
 I_{zx} = I_{xz} = \int_{\mathcal{G}} zx \; dm\]
 
-<p>Notice that due to these definitions, the inertia tensor is always symmetric.</p>
+<p>I derive the inertia tensor and discuss each element in more detail in the <a href="/blog/moments-of-inertia/inertia-tensor-derivation/">next post</a>.</p>
 
 <p><br /></p>
 

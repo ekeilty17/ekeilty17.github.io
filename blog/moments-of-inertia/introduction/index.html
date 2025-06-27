@@ -143,7 +143,7 @@
   
 </div>
       </div>
-      <p>&copy; 2024 Eric Keilty </p>
+      <p>&copy; 2025 Eric Keilty </p>
 
     </div>
   </div>
@@ -227,8 +227,11 @@
     \int_{0}^{\pi} \sin^3 \theta \; d \theta = \frac{4}{3}
 \end{align}\]
 
-<p><br />
-<br /></p>
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
 
 <h2 id="notation-and-conventions">Notation and Conventions</h2>
 
@@ -252,21 +255,69 @@
 
 <h3 id="matrices">Matrices</h3>
 
-<p>Any regular-font capitalized character between square brackets is a <strong>matrix</strong>, e.g. $\m{A}$.</p>
+<p>Any regular-font capitalized character between square brackets is a <strong>matrix</strong>, e.g. $\m{A}$. Furthermore, in this series it all matrices will contain real-valued scalar elements, i.e. $\m{A} \in \mathbb{R}^{m \times n}$. Almost always, $m = n = 3$ since we will be dealing with objects living in $3\text{D}$ space.</p>
 
-<p>I will be using the notation $I_{\b{\omega}}$ and $\m{I}$ to refer to the moment of inertia of an object, and it is important to understand the difference. $I_{\b{\omega}}$ is a <em>scalar quantity</em> refering to the moment of inertia with respect to some fixed axis of rotation $\b{\omega}$. $\m{I}$ refers to the <strong>inertia tensor</strong>, which is a <em>matrix quantity</em> that describes the moment of inertia with respect to any axis. In particular,</p>
+<p>The expression $\abs{A}$ denotes the <a href="https://en.wikipedia.org/wiki/Determinant">determinant</a> of a matrix. If you don’t already know what this is, then you should (<a href="https://www.youtube.com/watch?v=Ip3X9LOh2dk">3Blue1Brown video</a>).</p>
 
-\[I_{\b{\omega}} = \u{\omega}^T \; \m{I} \; \u{\omega}\]
+<!-- I will be using the notation $I_{\b{\omega}}$ and $\m{I}$ to refer to the moment of inertia of an object, and it is important to understand the difference. $I_{\b{\omega}}$ is a _scalar quantity_ refering to the moment of inertia with respect to some fixed axis of rotation $\b{\omega}$. $\m{I}$ refers to the **inertia tensor**, which is a _matrix quantity_ that describes the moment of inertia with respect to any axis. In particular,
 
-<p>We will discuss this more in a <a href="/blog/moments-of-inertia/inertia-tensor-derivation/">future post</a>.</p>
+$$
+I_{\b{\omega}} = \u{\omega}^T \; \m{I} \; \u{\omega}
+$$ -->
 
-<p>Another thing to mention. Typically in linear algebra, $\m{I}$ is used to denote the identity matrix. As to not conflate variables, I will use $\m{\mathbb{I}}$. In particular, since we are working with $\text{3D}$ coordiantes, it will be the $3 {\times} 3$ identity matrix.</p>
+<p><br /></p>
 
-\[\m{\mathbb{I}} = \begin{bmatrix}
-    1 &amp; 0 &amp; 0 \\
-    0 &amp; 1 &amp; 0 \\
-    0 &amp; 0 &amp; 1
-\end{bmatrix}\]
+<h3 id="variable-convensions-summary">Variable Convensions Summary</h3>
+
+<p>Given an object in $3\text{D}$ space, we have a plethora of ways to describe its position (see post on <a href="/blog/moments-of-inertia/coordinate-systems/">coordinate systems</a>). The following variable conventions are used.</p>
+<ul>
+  <li>$\b{r}$ is the <strong>position vector</strong> with respect to a fixed origin. Given any point in $3\text{D}$ space, it is the vector whose tail is at the origin and tip is at the object.</li>
+  <li>$r = \abs{\b{r}}$ is the magnitude of the position vector, representing the distance of the object from the fixed origin.</li>
+  <li>$x$, $y$, and $z$ refer to the object’s respective Cartesian directions.</li>
+  <li>$\theta$ and $\phi$ refer to the <strong>polar angle</strong> and <strong>azimuthal angle</strong>, respectively.</li>
+  <li>$s$ is the <strong>polar radius</strong> in the $xy$ plane.</li>
+</ul>
+
+<p>Given an object in $3\text{D}$ space, we have to describe its geometry. The following variable conventions are used.</p>
+<ul>
+  <li>$\mathcal{G}$ refers to the entire given object.</li>
+  <li>$M$ refers to the total mass of the given object</li>
+  <li>$a$, $b$, and $c$ are fixed lengths in the $x$, $y$, and $z$ Cartesian direction, respectively. These can be used to refer to the length/width/height of a cuboid or the semi-axes of an ellipse.</li>
+  <li>$R$ is a fixed radius of some circle.</li>
+  <li>$L$ refers to the length of a line or rod/disc. Note that in some posts in the <em>Theory and Background</em> section, $L$ will refer to <strong>angular momentum</strong>. I make a note to avoid confusion.</li>
+  <li>$H$ refers to the height of a cone.</li>
+</ul>
+
+<p>When computing line/surface/volumn integrals, I use the following variable conventions. See post on <a href="/blog/moments-of-inertia/vector-integration/">vector integration</a> for more details.</p>
+<ul>
+  <li>$dm$ refers to an infinitesimal mass.</li>
+  <li>$d\ell$, $dA$, $dV$ refer to an infinitesimal length, area, and volume respectively.</li>
+  <li>$\lambda$, $\sigma$, $\rho$ give the mass distribution per unit length, area, and volume, respectively.</li>
+</ul>
+
+<p>When describing the moment of inertia I will use the following convensions.</p>
+<ul>
+  <li>$\m{\mathbb{I}}$ refers to the inertia tensor</li>
+  <li>$\b{\omega}$ refers to a fixed axis of rotation</li>
+  <li>$I_{\b{\omega}}$ is a <em>scalar quantity</em> refering to the moment of inertia with respect to some fixed axis of rotation $\b{\omega}$. Note that $I_{\b{\omega}} = \u{\omega}^T \; \m{I} \; \u{\omega}$ (we will discuss this more in a <a href="/blog/moments-of-inertia/inertia-tensor-derivation/">future post</a>).</li>
+  <li>$r_{\b{\omega}}$ refers to the <strong>shortest distance</strong> between a given point an the fixed axis of rotation $\b{\omega}$.</li>
+</ul>
+
+<p>Finally, some miscellaneous variables.</p>
+<ul>
+  <li>$\pi \approx 3.14159$ refers to the circle constant.</li>
+  <li>$\m{\mathbb{I}}$ refers to the <span class="tooltip">identity matrix
+  <span class="tooltiptext"> 
+  \(\m{\mathbb{I}} = \begin{bmatrix}
+      1 &amp; 0 &amp; \cdots &amp; 0 \\
+      0 &amp; 1 &amp; \cdots &amp; 0 \\
+      \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+      0 &amp; 0 &amp; \cdots &amp; 1
+  \end{bmatrix}\)
+  </span>
+</span> (since $\m{I}$ is being used to denote the inertia tensor).</li>
+</ul>
+
 
         </div>
 
