@@ -8,9 +8,49 @@ My current r&eacute;sum&eacute; and LinkedIn can be found in the sidebar. Below,
 
 <br>
 
+## Professional Career
+
+<h3>Data & AI Delivery Consultant - <a href="https://www.ibm.com/products/expertlabs" target="_blank">Technology Expert Labs</a> - <a href="https://www.ibm.com/" target="_blank">IBM</a></h3>
+<span class="post-date work-experience-date">May 2024 - Present</span>
+
+<p>As a data & AI delivery consultant, I was responsible for delivery solutions using IBM's <a href="https://www.ibm.com/products/watsonx" target="_blank">watsonx platform</a>. This includes watsonx.ai, watsonx.data, watsonx.goverance, watsonx Assistant, and watsonx Orchestrate.</p>
+
+### UPS.com Chatbot
+
+<p>This was more of a classical software project to implement pre-defined flows in a chatbot. LLMs were only used in a translation layer. My contribution was to design and implement the two largest flows - "where is my package" and "delivery change request". The "where is my package" flow takes in a tracking number and essentially does a giant series of if-statements to determine the current status and what should happen next. The "delivery change request" flow allows a customer to edit some aspect of a delivery, e.g. change the delivery address, change the delivery date, cancel the delivery, etc. Arguable this was the most important flow in the chatbot because it is the only flow that can generate revenue for UPS.</p> 
+
+
+### Dillards RAG
+
+<p>On this project, I helped implement a standard Retrieval Augmented Generation (RAG) architecture for Dillard's legal team to access docuemnts faster. This was first implemented in Elastic Search (watsonx Discovery) to do vector embeddings and utilize their proprietary ELSER model for relevance scoring. Then watsonx Orchestrate acted as the user-interface. In a second phase we migrated the vector embeddings to use Milvus and open-source reranking models. An additional complexity of this project is that everything was on-prem.</p>
+
+<br>
+
+<h3>Full Stack Developer - <a href="https://extropolis.ai/" target="_blank">Extropolis</a></h3>
+<span class="post-date work-experience-date">May 2023 - May 2024</span>
+
+<p>This startup is leverage the power of large language models (GPT, LLaMA, Stable Diffusion, etc.) to create powerful tools and assistants for users. I was a full-stack developer contributing to the products <a href="https://app.diffusitron.ai" target="_blank">Diffusitron Studio</a> and <a href="https://extropolis.ai/chataf/" target="_blank">ChatAF</a>.</p>
+
+<br>
+
+---
+
+<br>
+
 ## Teaching
 <details>
 <summary></summary>
+
+<p>There is an adage that "everyone should work in the service industry". I think equally everyone should teach in some form at least once in their life. To be a good teacher requires you to not only understand the material for yourself, but to understand how others understand the material. This requires a level of empathy that I have not found in any other domain. I hope teaching will always be part of my life in some way.</p>
+
+<br>
+
+<h3>Personal Tutor</h3>
+<span class="post-date work-experience-date">2024 - 2025</span>
+
+<p>One or two days of the week after work I tutor high school students in math; typically grade 11 to 12. In Ontario these classes are is called "<a href="https://www.edu.gov.on.ca/eng/curriculum/secondary/math1112currb.pdf#page=45" target="_blank">Functions</a>", "<a href="https://www.edu.gov.on.ca/eng/curriculum/secondary/math1112currb.pdf#page=87" target="_blank">Advanced Functions</a>", and "<a href="https://www.edu.gov.on.ca/eng/curriculum/secondary/math1112currb.pdf#page=101" target="_blank">Calculus and Vectors</a>". In the US this is equivalent to the classes which are typically called "Algebra 2", "Pre-Calculus", and "Calculus 1" (although it varies by state).</p>
+
+<br>
 
 <h3>Teaching Assistant - <a href="https://www.utoronto.ca/" target="_blank">University of Toronto</a></h3>
 <span class="post-date work-experience-date">2021 - 2023</span>
@@ -62,16 +102,9 @@ During my Master's degree, I was the head TA of the courses <a href="https://eng
 
 <br>
 
-## University Summer Jobs
+## Summer Jobs While in School
 <details open>
 <summary></summary>
-
-<h3>Full Stack Developer - <a href="https://extropolis.ai/" target="_blank">Extropolis</a></h3>
-<span class="post-date work-experience-date">May 2023 - Present</span>
-
-<p>This small startup is attempting to leverage the power of large language models (GPT, LLaMA, Stable Diffusion, etc.) to create powerful tools and assistants for users. I am a full-stack developer, working on prompt engineering and database management on the back-end as well as UX/UI design on the front-end. In the future I may elaborate more, but I do not want to leak anything that could give away their competitive advantage.</p>
-
-<br>
 
 <h3>Poker Dealer - <a href="https://www.theex.com/attractions/casino/" target="_blank">Canadian National Exhibition</a></h3>
 <span class="post-date work-experience-date">July 2022 - Sept 2022</span>
