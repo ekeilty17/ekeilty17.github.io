@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Everything I Know About Weight Loss"
+title:      "Things I Wish Someone Told me about Exercise and Weight Loss"
 date:       2024-09-03
 categories: blog
 permalink:  ":categories/:title/"
@@ -13,22 +13,81 @@ draft:      true
 
 ### Disclaimer
 
-I am not a doctor; I am not a nutritionist; I am not a dietition; I am not a personal trainer. I am an Engineer who has done his best to research a complex topic. I will do my best to cite all of my sources. Please fact check me before you take any of this as real life advice, and maybe consult some more knowledgable pople.
+I am not a doctor; I am not a nutritionist; I am not a dietition; I am not a personal trainer. I am an Engineer who has done his best to understand a complex topic. I am not going to cite my sources. Fact check me, read a book, consult experts, take ownership of your own knowledge.
 
 ---
 
 ## Motivation
 
+Post-covid I've been trying to get my act together, and part of this included eating better and actually exercising.
+
+## You MUST be Operating at a Calorie Deficit to Lose Weight
+
+Consider the following definition:
+
+$$
+\text{Net Calories} = \text{Calories In} - \text{Calories Out}
+$$
+
+Over some predefined period of time (supppose it's 24 hours), your **net coloric intake** measures how many energy is left unused. This formula implies three possibilities.
+
+1. **Calorie Neutral**, i.e. $$\text{Net Calories} = 0$$: This means you have perfectly balanced your energy expenditure and therefore your weight will be unchanged.
+2. **Calorie Surplus**, i.e. $$\text{Net Calories} > 0$$: This is called a **calorie surplus**. This means you have consumed calories which you did not use. Therefore, you will gain weight. This does not necessarily mean you will gain fat. For example, during a bulk body builders are eating at a calorie surplus in order to gain weight in muscle.
+3. **Calorie Deficit**, i.e. $$\text{Net Calories} < 0$$: This is called a **calorie deficit**. This means you will lose weight.
+
+A good analogy is a leaky bucket. Water is being poured into the top of the bucket ($\text{Calories In}$) and some water is leaking out of a hole at the bottom ($\text{Calories Out}$). If water is being poured in faster than its leaking out, then the bucket will become filled with water, i.e. you gain weight. Conversely, if water is leaking out faster than its poured in, then the bucket will eventually become empty, i.e. you lost weight.
+
+<center>
+<div class="overflow-container">
+<div class="overflow-content">
+<embed src="/svg/everything-I-know-about-weight-loss/leaky_bucket.svg" type="image/svg+xml" width="600px" height="300px" />
+</div>
+</div>
+</center>
+
+In order to lose weight, we need $\text{Net Calories} < 0$. This is called being at a **calorie deficit**. This means the body was supplied with less energy than it required to function. That energy has to come from somewhere, so the body has to use its _reserved energy_, which (ideally) means it burns your excess fat.
+
+## Losing Weight != Losing Fat
+
+Before you go off and become anorexic, when most people say they want to lose weight, they really mean they want to lose fat. If you cold-turkey stopped eating, you would mathematically have to lose weight, but you would likely lose a lot of muscle in the process. 
+
+In order to minimize muscle loss and maximize fat loss, you need to diet properly and exercise.
+
+## Don't be so dramatic with your diet
+
+A lot of people go from each all ultra-processed foods (chips, oreos, etc), then switch to the strictest diet of only like salads and juice. Inevitably, because the diet is awful they quite and give up and say it's just impossible for them to lose weight.
+
+Don't be so dramatic. You can still have cookies and cake every once in a while. The point is to just be aware of what you are putting in your body and managing cravings. 
+
+## You can't out-run a bad diet
+
+The other thing uninformed people try to do is to go all out on their exercise. They don't want to change their diet, and try to work out more. The problem with this is at empirically and scientifically it will never work. 
+
+Your body actually have an asymptotic limit of how many calories it can lose in a day from exercise. 
+
+
+## Muscle mass is for looks, strength is a skill
+
+## Abs are made in the kitchen not in the gym
+
+## Dieting is more about managing cravings
+
+## You don't get to choose what fat you lose
+
+---
+
+## Motivation
+<!-- 
 For a number of both internal and external reasons (including a world-wide pandemic) that all perfectly aligned, I gained some weight over the last few years. As I finally transitioned out of that phase of my life, I decided that I wanted to start taking my health more seriously, including losing the weight I gained. Then I realized, apart from the generic _exercise more_, _eat more vegitables_, and _don't each junk food_; I had absolutely no idea how to achieve my weight loss goal.
 
 I knew some things. When I was going through the American education system, we were taught about the [Food Pyramid](https://en.wikipedia.org/wiki/Food_pyramid_%28nutrition%29), which was comically incorrect and later replaced with [MyPlate](https://en.wikipedia.org/wiki/MyPlate). These aren't bad starts and probably good enough to teach to 3rd graders, but they just aren't enough when moving into adulthood. Firstly, health, weight loss, exercise, and nutrition are not _one-size-fits-all_. Depending on your goals, lifestyle, and personal preferences, your diet and exercise choices will be very different. Secondly, these models just tell you the _what_ without explaining the _why_. Why 
 
 In this post, I want to provide that foundational understanding. Ultimately, your goal should be to be able to predict an outcome before it happens. 
 
-<!-- 
+
 Many people embark on a weight loss journey and eventually give up because they are not seeing results, often blaming genetics, age, or external circumstances and thinking losing weight is just an impossibility for them. Often their lack of results was not due to a lack of effort; usually it's because their methodology was fundamentally flawed. I feel for these people. It's not their fault they don't understand the nuances of diet, exercise, and nutrition. No one teaches you how any of this stuff works. I would consider myself fairly educated compared to the average person, and 3 months ago I know very little about the science of weight loss. To be honest, I still don't know that much, but I at least have a grasp of the basic principles.
 
-I'm here to tell you that **anyone** can reach their weight loss goals by applying the right methodology, which is backed by empirical science. In this post, I want to outline everything you need to know to have a solid understanding of what works and what doesn't work when trying to lose weight. I'm not saying that it will be easy, but it is very much possible. -->
+I'm here to tell you that **anyone** can reach their weight loss goals by applying the right methodology, which is backed by empirical science. In this post, I want to outline everything you need to know to have a solid understanding of what works and what doesn't work when trying to lose weight. I'm not saying that it will be easy, but it is very much possible. 
 
 <br>
 
@@ -43,11 +102,11 @@ The standard unit of energy in science are
     </span>
 </span> ($\text{J}$). However, in macro-biology when refering to living organisms, energy is typically measured in calories. A **calorie** ($\text{cal}$) estimates the amount of energy required to raise the temperature of exactly 1 gram of water by 1 degree Celsius at 1 atmospheric pressure. Confusingly, the calories you see listed on food labels are actually **kilocalories** ($\text{kcal}$). Sometimes these are refered to as **"big" Calories** ($\text{Cal}$) [[source](https://www.ncbi.nlm.nih.gov/books/NBK499909/)]. Roughly 20 to 30 steps will burn 1 Calorie/kilocalorie [[source](https://www.verywellfit.com/pedometer-steps-to-calories-converter-3882595)]. For the remaining of this blog post, assume that I am always referring to Calories/kilocalories unless stated otherwise.
 
-<!-- The conversions between all these units are listed below.
+The conversions between all these units are listed below.
 
 $$
 1000 \ \text{cal} = 1 \ \text{kcal} = 1 \ \text{Cal} = 4184 \ \text{J}
-$$ -->
+$$
 
 <br>
 
@@ -213,7 +272,7 @@ $$
 \text{Calories Out} = \Big ( \text{BMR} \Big ) + \Big ( \text{TEF} \Big ) + \Big ( \text{NEAT} \Big ) + \Big ( \text{Physical Activity} \Big ) + \Big ( \text{EPOC} \Big )
 $$
 
-<!-- The summations are meant to indicate that these are not one thing, but an aggregation of lots of small things. -->
+The summations are meant to indicate that these are not one thing, but an aggregation of lots of small things.
 
 To accomplish this, we have 3 levers to pull
 1. Decrease our calories we consume through food
@@ -279,11 +338,11 @@ When you are losing weight, you are going to lose some amount of muscle mass. It
 
 The other reason you should exercise during weight loss is to reduce muscle loss. If you are truely at a caloric deficit, your body is going to use its own resources to make up the difference. What you and everyone else wants is for your body to use its excess fat. However, your body can just as easily use its excess muscle. 
 
-The primary way to prevent this is to ensure you are eating enough protein. The second way to is to continue to build muscle through exercise and resistance training. Have you ever noticed that strong men are extremely fat? This is because their training is all bulk and no cut because you always lose muscle during a cut. -->
+The primary way to prevent this is to ensure you are eating enough protein. The second way to is to continue to build muscle through exercise and resistance training. Have you ever noticed that strong men are extremely fat? This is because their training is all bulk and no cut because you always lose muscle during a cut.
 
-<!-- ## Increasing Baseline Daily Activities
+## Increasing Baseline Daily Activities
 
-This is not going to out-right solve all your problems, but it's not nothing. For example, those who live in a city walk X amount more compared to those who live in car-dominated rural areas. Tokyo, Japan is said to be one of the healthiest populations in part due to how much they walk. -->
+This is not going to out-right solve all your problems, but it's not nothing. For example, those who live in a city walk X amount more compared to those who live in car-dominated rural areas. Tokyo, Japan is said to be one of the healthiest populations in part due to how much they walk.
 
 <br>
 
@@ -345,3 +404,4 @@ That was a lot, but here are the key take-aways.
 - Get quality sleep
 - Eat as much protein as possible and as little fats, sugars, and carbohydrates as possible
 - Eat a diverisity of fruits and vegitables
+-->

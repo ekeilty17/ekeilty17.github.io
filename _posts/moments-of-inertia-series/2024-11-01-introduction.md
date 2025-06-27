@@ -84,6 +84,9 @@ $$
 $$
 
 <br>
+
+---
+
 <br>
 
 ## Notation and Conventions
@@ -110,22 +113,58 @@ $$
 
 ### Matrices
 
-Any regular-font capitalized character between square brackets is a **matrix**, e.g. $\m{A}$. 
+Any regular-font capitalized character between square brackets is a **matrix**, e.g. $\m{A}$. Furthermore, in this series it all matrices will contain real-valued scalar elements, i.e. $\m{A} \in \mathbb{R}^{m \times n}$. Almost always, $m = n = 3$ since we will be dealing with objects living in $3\text{D}$ space.
 
-I will be using the notation $I_{\b{\omega}}$ and $\m{I}$ to refer to the moment of inertia of an object, and it is important to understand the difference. $I_{\b{\omega}}$ is a _scalar quantity_ refering to the moment of inertia with respect to some fixed axis of rotation $\b{\omega}$. $\m{I}$ refers to the **inertia tensor**, which is a _matrix quantity_ that describes the moment of inertia with respect to any axis. In particular,
+The expression $\abs{A}$ denotes the [determinant](https://en.wikipedia.org/wiki/Determinant) of a matrix. If you don't already know what this is, then you should ([3Blue1Brown video](https://www.youtube.com/watch?v=Ip3X9LOh2dk)).
+
+<!-- I will be using the notation $I_{\b{\omega}}$ and $\m{I}$ to refer to the moment of inertia of an object, and it is important to understand the difference. $I_{\b{\omega}}$ is a _scalar quantity_ refering to the moment of inertia with respect to some fixed axis of rotation $\b{\omega}$. $\m{I}$ refers to the **inertia tensor**, which is a _matrix quantity_ that describes the moment of inertia with respect to any axis. In particular,
 
 $$
 I_{\b{\omega}} = \u{\omega}^T \; \m{I} \; \u{\omega}
-$$
+$$ -->
 
-We will discuss this more in a [future post](/blog/moments-of-inertia/inertia-tensor-derivation/).
+<br>
 
-Another thing to mention. Typically in linear algebra, $\m{I}$ is used to denote the identity matrix. As to not conflate variables, I will use $\m{\mathbb{I}}$. In particular, since we are working with $\text{3D}$ coordiantes, it will be the $3 {\times} 3$ identity matrix.
+### Variable Convensions Summary
 
-$$
-\m{\mathbb{I}} = \begin{bmatrix}
-    1 & 0 & 0 \\
-    0 & 1 & 0 \\
-    0 & 0 & 1
-\end{bmatrix}
-$$
+Given an object in $3\text{D}$ space, we have a plethora of ways to describe its position (see post on [coordinate systems](/blog/moments-of-inertia/coordinate-systems/)). The following variable conventions are used.
+- $\b{r}$ is the **position vector** with respect to a fixed origin. Given any point in $3\text{D}$ space, it is the vector whose tail is at the origin and tip is at the object.
+- $r = \abs{\b{r}}$ is the magnitude of the position vector, representing the distance of the object from the fixed origin.
+- $x$, $y$, and $z$ refer to the object's respective Cartesian directions.
+- $\theta$ and $\phi$ refer to the **polar angle** and **azimuthal angle**, respectively.
+- $s$ is the **polar radius** in the $xy$ plane.
+
+Given an object in $3\text{D}$ space, we have to describe its geometry. The following variable conventions are used.
+- $\mathcal{G}$ refers to the entire given object.
+- $M$ refers to the total mass of the given object
+- $a$, $b$, and $c$ are fixed lengths in the $x$, $y$, and $z$ Cartesian direction, respectively. These can be used to refer to the length/width/height of a cuboid or the semi-axes of an ellipse.
+- $R$ is a fixed radius of some circle.
+- $L$ refers to the length of a line or rod/disc. Note that in some posts in the _Theory and Background_ section, $L$ will refer to **angular momentum**. I make a note to avoid confusion.
+- $H$ refers to the height of a cone.
+
+When computing line/surface/volumn integrals, I use the following variable conventions. See post on [vector integration](/blog/moments-of-inertia/vector-integration/) for more details.
+- $dm$ refers to an infinitesimal mass.
+- $d\ell$, $dA$, $dV$ refer to an infinitesimal length, area, and volume respectively.
+- $\lambda$, $\sigma$, $\rho$ give the mass distribution per unit length, area, and volume, respectively.
+
+When describing the moment of inertia I will use the following convensions.
+- $\m{\mathbb{I}}$ refers to the inertia tensor
+- $\b{\omega}$ refers to a fixed axis of rotation
+- $I_{\b{\omega}}$ is a _scalar quantity_ refering to the moment of inertia with respect to some fixed axis of rotation $\b{\omega}$. Note that $I_{\b{\omega}} = \u{\omega}^T \; \m{I} \; \u{\omega}$ (we will discuss this more in a [future post](/blog/moments-of-inertia/inertia-tensor-derivation/)).
+- $r_{\b{\omega}}$ refers to the **shortest distance** between a given point an the fixed axis of rotation $\b{\omega}$.
+
+Finally, some miscellaneous variables.
+- $\pi \approx 3.14159$ refers to the circle constant.
+- $\m{\mathbb{I}}$ refers to the <span class="tooltip">identity matrix
+    <span class="tooltiptext"> 
+    $$
+    \m{\mathbb{I}} = \begin{bmatrix}
+        1 & 0 & \cdots & 0 \\
+        0 & 1 & \cdots & 0 \\
+        \vdots & \vdots & \ddots & \vdots \\
+        0 & 0 & \cdots & 1
+    \end{bmatrix}
+    $$
+    </span>
+</span> (since $\m{I}$ is being used to denote the inertia tensor).
+
