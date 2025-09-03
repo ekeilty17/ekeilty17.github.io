@@ -197,7 +197,7 @@ First, let's see what happens if the cards are shuffling fairly. The following i
 <center>
 <div class="overflow-container">
 <div class="overflow-content">
-    <img src="/img/blog/I-dont-trust-autoshufflers/Fair.png" width="450px" alt="Fair">
+    <img src="/blog-assets/I-dont-trust-autoshufflers/Fair.png" width="450px" alt="Fair">
 </div>
 </div>
 </center>
@@ -211,7 +211,7 @@ Now let's see the effects of a CSM.
 <center>
 <div class="overflow-container">
 <div class="overflow-content">
-    <img src="/img/blog/I-dont-trust-autoshufflers/CSM.png" width="450px" alt="CSM">
+    <img src="/blog-assets/I-dont-trust-autoshufflers/CSM.png" width="450px" alt="CSM">
 </div>
 </div>
 </center>
@@ -227,9 +227,9 @@ The RSM algorithm is interesting because we can fine-tune it using the `number_o
 <center>
 <div class="overflow-container">
 <div class="overflow-content">
-    <img src="/img/blog/I-dont-trust-autoshufflers/RSM - 40 groups.png" width="400px" alt="RSM - 40 groups" style="display: inline-block;">
+    <img src="/blog-assets/I-dont-trust-autoshufflers/RSM - 40 groups.png" width="400px" alt="RSM - 40 groups" style="display: inline-block;">
     &emsp;&emsp;
-    <img src="/img/blog/I-dont-trust-autoshufflers/RSM - 25 groups.png" width="400px" alt="RSM - 25 groups" style="display: inline-block;">
+    <img src="/blog-assets/I-dont-trust-autoshufflers/RSM - 25 groups.png" width="400px" alt="RSM - 25 groups" style="display: inline-block;">
 </div>
 </div>
 </center>
