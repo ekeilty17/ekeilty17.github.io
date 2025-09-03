@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Alterative Formulations of Möbius Transformation - Appendix &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded MathJax (effectively LaTeX) support 
+    https://docs.mathjax.org/en/v2.7-latest/tex.html -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX", "input/MathML", "output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js", "mml2jax.js", "MathMenu.js", "MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
+            Macros: {
+                b: ["{\\boldsymbol #1}",1],
+                u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
+                arccsc: ["\\operatorname\{arccsc\}"],
+                arcsec: ["\\operatorname\{arcsec\}"],
+                arccot: ["\\operatorname\{arccot\}"],
+                csch: ["\\operatorname\{csch\}"],
+                sech: ["\\operatorname\{sech\}"],
+                arcsinh: ["\\operatorname\{arcsinh\}"],
+                arccosh: ["\\operatorname\{arccosh\}"],
+                arctanh: ["\\operatorname\{arctanh\}"],
+                arccsch: ["\\operatorname\{arccsch\}"],
+                arcsech: ["\\operatorname\{arcsech\}"],
+                arccoth: ["\\operatorname\{arccoth\}"],
+                seq: ["{\\left \\langle #1 \\right \\rangle}",1],
+                iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
+                abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
+                hal: ["\\texttt{hal}"],
+                gal: ["\\texttt{gal}"],
+                sh: ["sh"],
+                st: ["st"]
+            },
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!--
+    TeX-AMS_HTML
+    TeX-AMS-MML_HTMLorMML
+    TeX-MML-AM_HTMLorMML
+-->
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">AI/ML Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+        <li>
+          <a href="/files/Eric Keilty - Resume.pdf" target="_blank">R&eacute;sum&eacute;</a>
+        </li>
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2025 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">Alterative Formulations of Möbius Transformation - Appendix</h1>
+            <!-- <span class="post-date">29 Aug 2025</span> -->
+            <time datetime="2025-08-29T00:00:00-04:00" class="post-date">29 Aug 2025</time>
+            <p>Appendix to post <a href="/blog/alterative-formulations-of-mobius-transformations/">Alterative Formulations of Möbius Transformation</a>.</p>
+
+<hr />
+
+<h2 id="möbius-transformations-are-uniquely-defined-by-the-mapping-of-3-distinct-points">Möbius Transformations are Uniquely Defined by the Mapping of 3 Distinct Points</h2>
+
+<p>Given distinct inputs \(z_1, z_2, z_3 \in \mathbb{C}^*\) and distinct outputs \(w_1, w_2, w_3 \in \mathbb{C}^*\), the <strong>cross ratio</strong> is defined as the following map.</p>
+
+\[[z, z_1; z_2, z_3] = \begin{cases}
+    \left . \dfrac{z - z_2}{z - z_3} \middle / \dfrac{z_1 - z_2}{z_1 - z_3}  \right .   \qquad &amp;\text{if } z_1, z_2, z_3 \neq \infty \\[10pt]
+    \dfrac{z - z_2}{z - z_3}    \qquad &amp;\text{if } z_1 = \infty \\[10pt]
+    \dfrac{z_1 - z_3}{z - z_3}    \qquad &amp;\text{if } z_2 = \infty \\[10pt]
+    \dfrac{z - z_2}{z_1 - z_2}    \qquad &amp;\text{if } z_3 = \infty
+\end{cases}\]
+
+<p>This is a special case of a Möbius transformation, which maps $(z_1, z_2, z_3) \mapsto (1, 0, \infty)$. Convince yourself that this is true.</p>
+
+<p>First, given distinct inputs \(z_1, z_2, z_3 \in \mathbb{C}^*\) and distinct outputs \(w_1, w_2, w_3 \in \mathbb{C}^*\), we want to construct a Möbius transformation $T$ such that $T(z_1) = w_1, \  T(z_2) = w_2, \ \text{and} \ T(z_3) = w_3$. This is elegantly done using the cross ratio.</p>
+
+\[[w, w_1; w_2, w_3] = [z, z_1; z_2, z_3]\]
+
+<p>For example, on pair $(z_1, w_1)$ both the left- and right-hand side resolve to $1$. As an exercise, show that this can be reduced to the standard Möbius form of $w = \frac{az + b}{cz + d}$.</p>
+
+<p>Now, we want to show that this map is unique. Suppose there exists two maps, $T$ and $S$ such that both map $(z_1, z_2, z_3) \mapsto (w_1, w_2, w_3)$. Then we can do the following.</p>
+
+\[(z_1, z_2, z_3) \underset{T}{\mapsto} (w_1, w_2, w_3) \underset{S^{-1}}{\mapsto} (z_1, z_2, z_3)\]
+
+<p>Therefore, $(S^{-1} \circ T)$ is a map with $3$ fixed points, which means it must be the identity map by our case $3$ result, i.e.</p>
+
+\[S^{-1}(T(z)) = z \quad\implies\quad T(z) = S(z)\]
+
+<p>Therefore, $T$ is unique.</p>
+
+<hr />
+
+<h2 id="case-1-fixed-point-conversion">Case 1 Fixed Point Conversion</h2>
+
+<p>Recall that the fixed points are the roots of $z^2 - \left(\frac{a - d}{c} \right)z - \frac{b}{c} = 0$. If there is only $1$ fixed point $p$, then $0 = (z - p)^2 = z^2 - 2p + p^2$. Comparing coefficients, we get.</p>
+
+\[p = \frac{a - d}{2c} \qquad p^2 = -\frac{b}{c}\]
+
+<p>these are equivalent since we are assuming $(a - d)^2 + 4bc = 0$, but we will see the $p^2$ relation comes in handy later.</p>
+
+<p>Also recall the formula for the Steiner net with 1 fixed point. With some algebra we can convert it into standard Möbius form.</p>
+
+\[\dfrac{1}{w - p} = \dfrac{1}{z - p} + k
+\qquad
+\implies
+\qquad
+w = \frac{(1 + kp)z - kp^2}{kz + (1 - kp)}\]
+
+<p>We have to be careful. It’s temping to compare coefficients with $w = \frac{az + b}{cz + d}$ and conclude that $k = c$, etc. This is not correct. The correct thing to compare it to $w = \frac{(\lambda a) z + (\lambda b)}{(\lambda c) z + (\lambda d)}$. So our goal is to find a $k$ such that everything reduces to the same multiples of $a, b, c, \text{and }, d$.</p>
+
+<p>I will assert that.</p>
+
+\[k = \frac{1}{cp + d} = \frac{2c}{a + d} \qquad\text{and}\qquad \lambda = \frac{k}{c}\]
+
+<p>Let’s prove this term-by-term.</p>
+
+\[\begin{align}
+    1 + kp &amp;= 1 + \left( \frac{2c}{a + d} \right) \left( \frac{a - d}{2c} \right) = 1 + \frac{a - d}{a + d} = \frac{2a}{a + d} = \tfrac{k}{c} \cdot a \\[10pt]
+    -k p^2 &amp;= - k \left (- \frac{b}{c} \right) = \tfrac{k}{c} \cdot b \\[10pt]
+    k &amp;= \tfrac{k}{c} \cdot c \\[10pt]
+    1 - kp &amp;= 1 - \left( \frac{2c}{a + d} \right) \left( \frac{a - d}{2c} \right) = 1 - \frac{a - d}{a + d} = \frac{2d}{a + d} = \tfrac{k}{c} \cdot d
+\end{align}\]
+
+<p>Therefore for the appropriate values of $k$ and $\lambda$</p>
+
+\[w = \frac{(1 + kp)z - kz^2}{kz + (1 - kp)} = \frac{(\lambda a) z + (\lambda b)}{(\lambda c) z + (\lambda d)} = \frac{az + b}{cz + d}\]
+
+<p>and we have found 1-to-1 conversion between the two different forms.</p>
+
+<hr />
+
+<h2 id="case-2-fixed-point-conversion">Case 2 Fixed Point Conversion</h2>
+
+<p>This is essentially the same as case 1, but much more complicated algebra.</p>
+
+<p>Just as before, the fixed points are the roots of $z^2 - \left(\frac{a - d}{c} \right)z - \frac{b}{c} = 0$. If there are $2$ fixed points $p_1$ and $p_2$, then $0 = (z - p_1)(z - p_2) = z^2 - (p_1 + p_2) + p_1p_2$. Comparing coefficients, we get.</p>
+
+\[p_1 + p_2 = \frac{a - d}{c} \qquad p_1 \cdot p_2 = -\frac{b}{c}\]
+
+<p>Using the quadratic formula, we can get an explicit formula for $p_1$ and $p_2$.</p>
+
+\[p_1, p_2 = \frac{(a - d) \pm \sqrt{(a-d)^2 + 4bc}}{2c} \qquad \text{s.t.} \quad (a-d)^2 + 4bc \neq 0\]
+
+<p>Recall the formula for the Steiner net with 2 fixed points. With some algebra we can convert it into standard Möbius form.</p>
+
+\[\dfrac{w - p_1}{w - p_2} = k \dfrac{z - p_1}{z - p_2}
+\qquad
+\implies
+\qquad
+w = \frac{(p_1 - kp_2)z - (1-k)p_1p_2}{(k-1)z + (p_2 - kp_1)}\]
+
+<p>Again, we are trying to find a $k$ such that the equation can be reduced to $w = \frac{(\lambda a) z + (\lambda b)}{(\lambda c) z + (\lambda d)}$ for some $\lambda$. I assert the following.</p>
+
+\[k = \frac{cp_2 + d}{cp_1 + d} = \dfrac{(a + d) - \sqrt{(a-d)^2 + 4bc}}{(a + d) + \sqrt{(a-d)^2 + 4bc}}
+\qquad\qquad
+\lambda = \frac{1 - k}{c}\]
+
+<p>Before we get into the proof, I first want to prove some intermediary results. For convenience, let’s define</p>
+
+\[g_1 = cp_1 + d \qquad g_2 = cp_2 + d \quad\implies\quad k = \frac{g_2}{g_1}\]
+
+<p>Now consider the following</p>
+
+\[\begin{align}
+    &amp;g_1 + g_2 = c(p_1 + p_2) + 2d = c \cdot \left( \frac{a - d}{c} \right) + 2d = a + d \\[10pt]
+    &amp;g_1 \cdot g_2 = c^2p_1p_2 + cd(p_1 + p_2) + d^2 = c^2 \left( -\frac{b}{c} \right) + cd \left( \frac{a - d}{c} \right) + d^2 = ad - bc
+\end{align}\]
+
+<p>The first term is by far the most complex</p>
+
+\[\begin{align}
+    p_1 - kp_2
+    &amp;= \left ( \tfrac{g_1 - d}{c} \right ) - \left ( \tfrac{g_2}{g_1} \right ) \left ( \tfrac{g_2 - d}{c} \right ) \\[10pt]
+    &amp;= \frac{1}{c g_1} \left ( -g_2^2 + dg_2 + g_1^2 - dg_1 \right ) \\[10pt]
+    &amp;= \frac{1}{c g_1} \left ( (g_1^2 - g_2^2) - d(g_1 - g_2) \right ) \\[10pt]
+    &amp;= \frac{1}{c g_1} (g_1 - g_2) \left ( (g_1 + g_2) - d \right ) \\[10pt]
+    &amp;= \frac{1}{c g_1} (g_1 - g_2) \cdot a \\[10pt]
+    &amp;= \frac{a}{c} \left( 1 - \tfrac{g_2}{g_1} \right) \\[10pt]
+    &amp;= \frac{a}{c} \left( 1 - \tfrac{g_2}{g_1} \right) \\[10pt]
+    &amp;= \tfrac{1 - k}{c} \cdot a
+\end{align}\]
+
+<p>The next few are more straight-forward</p>
+
+\[\begin{align}
+    -(1-k)p_1p_2 &amp;= -(1-k) \left( -\frac{b}{c} \right) = \tfrac{1 - k}{c} \cdot b \\[10pt]
+    1-k &amp;= \tfrac{1 - k}{c} \cdot c \\[10pt]
+    p_2 - kp_1 &amp;= \left ( \tfrac{g_2 - d}{c} \right ) - \left ( \tfrac{g_2}{g_1} \right ) \left ( \tfrac{g_1 - d}{c} \right ) = - \frac{d}{c} \left( 1 - \tfrac{g_2}{g_1} \right) = \tfrac{1 - k}{c} \cdot d
+\end{align}\]
+
+<p>Therefore for the appropriate values of $k$ and $\lambda$</p>
+
+\[w = \frac{(p_1 - kp_2)z - (1-k)p_1p_2}{(k-1)z + (p_2 - kp_1)} = \frac{(\lambda a) z + (\lambda b)}{(\lambda c) z + (\lambda d)} = \frac{az + b}{cz + d}\]
+
+<p>and we have found 1-to-1 conversion between the two different forms.</p>
+
+        </div>
+    </div>
+
+    <!--
+    <h3 style="text-align:center; margin-bottom:1em;">
+      <a href="/blog/">Blog Archive</a>
+    </h3>
+    -->
+    
+  </body>
+</html>

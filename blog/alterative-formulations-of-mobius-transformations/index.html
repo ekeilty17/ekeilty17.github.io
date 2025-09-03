@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Alterative Formulations of Möbius Transformations &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded MathJax (effectively LaTeX) support 
+    https://docs.mathjax.org/en/v2.7-latest/tex.html -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX", "input/MathML", "output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js", "mml2jax.js", "MathMenu.js", "MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
+            Macros: {
+                b: ["{\\boldsymbol #1}",1],
+                u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
+                arccsc: ["\\operatorname\{arccsc\}"],
+                arcsec: ["\\operatorname\{arcsec\}"],
+                arccot: ["\\operatorname\{arccot\}"],
+                csch: ["\\operatorname\{csch\}"],
+                sech: ["\\operatorname\{sech\}"],
+                arcsinh: ["\\operatorname\{arcsinh\}"],
+                arccosh: ["\\operatorname\{arccosh\}"],
+                arctanh: ["\\operatorname\{arctanh\}"],
+                arccsch: ["\\operatorname\{arccsch\}"],
+                arcsech: ["\\operatorname\{arcsech\}"],
+                arccoth: ["\\operatorname\{arccoth\}"],
+                seq: ["{\\left \\langle #1 \\right \\rangle}",1],
+                iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
+                abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
+                hal: ["\\texttt{hal}"],
+                gal: ["\\texttt{gal}"],
+                sh: ["sh"],
+                st: ["st"]
+            },
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!--
+    TeX-AMS_HTML
+    TeX-AMS-MML_HTMLorMML
+    TeX-MML-AM_HTMLorMML
+-->
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">AI/ML Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+        <li>
+          <a href="/files/Eric Keilty - Resume.pdf" target="_blank">R&eacute;sum&eacute;</a>
+        </li>
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2025 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">Alterative Formulations of Möbius Transformations</h1>
+            <!-- <span class="post-date">29 Aug 2025</span> -->
+            <time datetime="2025-08-29T00:00:00-04:00" class="post-date">29 Aug 2025</time>
+            <h2 id="motivation">Motivation</h2>
+
+<p><a href="https://en.wikipedia.org/wiki/M%C3%B6bius_transformation">Möbius Transformations</a> are, in some sense, the analogue of linear transformations in complex analysis. These serve as a really nice entry-point into the behavior of complex functions. They motivate why we should define the <em>point-at-infinity</em>, introduces the <em>Riemann sphere</em> and <em>circle inversion</em>, and provide a simple toy example of a <em>conformal map</em>.</p>
+
+<p>There are many good resources on Möbius transformations. <a href="https://mccuan.math.gatech.edu/courses/6321/lars-ahlfors-complex-analysis-third-edition-mcgraw-hill-science_engineering_math-1979.pdf">Ch 3.3-3.5 Ahlfors el al., 1979</a> is the OG text on the subject. For a more modern, lecture-style which emphasizes the analysis, I recommend <a href="https://www.youtube.com/watch?v=M4noAceElZ4">Michael Penn’s video</a>. For a 3B1B style with nice visualizations, I recommend <a href="https://www.youtube.com/watch?v=hhI8fVxvmaw">Mathemaniac’s video</a>. Lastly, I highly recommend <a href="https://www.youtube.com/watch?v=0z1fIsUNhO4">this video</a>; short and sweet but highly informative.</p>
+
+<p>In this post, I’m not going to rederive every fact about Möbius transformations (especially when there are already fantastic resources above). Instead, I want to talk about two alternative perspective of Möbius transformations with interesting geometric properties.</p>
+
+<p><br /></p>
+
+<h2 id="a-brief-background">A Brief Background</h2>
+
+<h3 id="the-extended-complex-plane">The Extended Complex Plane</h3>
+
+<p>We define the <strong>extended complex plane</strong> as the complex plane augmented with the <em>point-at-infinity</em>, i.e. \(\mathbb{C}^* = \mathbb{C} \cup \{ \infty \}\). It’s important to note that there is no distinction between  $+\infty$ and $-\infty$. All lines eventually meet at the <em>point-at-infinity</em>. This may seem strange at first, but the complex plane is more ubiquitously described as the surface of a sphere rather than a flat 2D plane. By adding this extra <em>point-at-infinity</em>, the extended complex plane is now bijective to the <a href="https://en.wikipedia.org/wiki/Riemann_sphere">Riemann sphere</a> through <a href="https://en.wikipedia.org/wiki/Stereographic_projection">stereographic projection</a>.</p>
+
+<!-- There are two objects of interest in the extended complex plane. The first are **finite circles**.  -->
+
+<h3 id="möbius-transformations">Möbius Transformations</h3>
+
+<p>Let $a, b, c, d \in \mathbb{C}$ such that $ad - bc \neq 0$. A <strong>Möbius Transformations</strong> (also called a fractional linear transformation) is defined as a function $T: \mathbb{C}^* \rightarrow \mathbb{C}^*$ on the extended complex plane such that</p>
+
+\[T(z) = \begin{cases}
+    \frac{a}{c} \qquad &amp;\text{if } z = \infty \\
+    \infty \qquad &amp;\text{if } z = -\frac{d}{c} \\
+    \dfrac{az + b}{cz + d} \qquad &amp;\text{otherwise}
+\end{cases}\]
+
+<p>I’ll refer to this as the <strong>standard Möbius form</strong>. The condition that $ad - bc \neq 0$ ensures that $T$ is invertible (similar to $2\text{D}$ linear algebra) and always differentiable.</p>
+
+<p>I liken the standard Möbius form to the standard form for the equation of a line $Ax + By = C$. While this uniquely defines a line perfectly well, it’s not really all the useful since the parameters $A$, $B$, and $C$ don’t have any geometric meaning. This is why slope-intercept form $y = mx + b$ and point-slope form $y - y_0 = m(x - x_0)$ are preferred and more widely used.</p>
+
+<p>In the remaining of the post I will discuss two alternative formulations which have strong geometric meanings. Note that typically Möbius transformations are reformulated in terms of the <strong>cross ratio</strong> (see <a href="/blog/alterative-formulations-of-mobius-transformations-appendix/">appendix</a> for definition). However, since this is so widely discussed by the resources I provided above, I will not discuss it here.</p>
+
+<p><br /></p>
+
+<h2 id="steiner-net-form">Steiner Net Form</h2>
+
+<p>Consider how a Möbius transformation $S$ transforms the following grid-lines.</p>
+
+<p><img src="/blog-assets/understanding-mobius-transformations-through-fixed-points/SteinerNet2PolarNet.png" alt="SteinerNet2PolarNet" /></p>
+
+<p>The right-hand image is called a <strong>polar net</strong> and the left-hand image is called the <strong>Steiner net</strong>. Applying $S$ transforms the Steiner net into the polar net. Conversely, the inverse of $S$ transforms the polar net into the Steiner net.</p>
+
+<p>To explain the Steiner net, consider the following reformulation.</p>
+
+\[w = \frac{az + b}{cz + d} \ = \ \frac{a}{c} \cdot \frac{z + \frac{b}{a}}{z + \frac{d}{c}} \ \equiv \ k \dfrac{z - p_{0}}{z - p_{\infty}}\]
+
+<p>I call this the <strong>Steiner Net Form</strong> of a Möbius transformation. Notice that $S(p_0) = 0$ and $S(p_{\infty}) = \infty$. So, the center of the polar net moves to $p_0$ in the Steiner net (the very yellow region), and the <em>point-at-infinity</em> of the polar net moves to $p_{\infty}$ in the Steiner net (the black hole looking region).</p>
+
+<p>To understand the affect of $k$, recall the geometric interpretation of complex multiplication; magnitudes multiply and angle add. Thus, the polar net will be scaled by a factor of $\abs{k}$ and rotated through an angle of $\arg k$. In the resulting Steiner net, the blue grid lines scale as $\abs{k}$ scales; the yellow grid lines cycle as $\arg k$ cycles from $0$ to $2\pi$.</p>
+
+<p>To see these geometric properties in action, I’ve created a fun <a href="https://www.youtube.com/watch?v=t0ob1pkSII0">animation</a>.</p>
+
+<p>If you watched the animation, you’ll notice that Steiner nets all essentially look the same, and all you are doing is shifting/scaling them depending on the values of $p_0$, $p_{\infty}$, and $k$. This is a really powerful tool to have if you want to construct a particular Möbius transformation.</p>
+
+<p>You’ll notice a sort of <em>rigidity</em> to the transformation (especially if you watch the animation). If you zoom into a small region of the steiner net, it looks like standard grid-lines again. This characteristic in complex analysis is called <a href="https://en.wikipedia.org/wiki/Conformal_map">conformality</a>, which has a lot of cool properties and I encourage you to look into deeper on your own.</p>
+
+<p><br /></p>
+
+<h2 id="fixed-point-form">Fixed Point Form</h2>
+
+<p>An another perspective is to understand Möbius Transformations through its fixed points. This is arguably less elegant than the Steiner Net interpretation, but has some nice properties.</p>
+
+<p><strong>Proposition</strong>: Möbius transformations are uniquely defined by their mapping of $3$ distinct coordinates. Written precisely, given distinct inputs \(z_1, z_2, z_3 \in \mathbb{C}^*\) and distinct outputs \(w_1, w_2, w_3 \in \mathbb{C}^*\) there exists a <em>unique</em> Möbius transformation $T$ such that $T(z_1) = w_1$, $T(z_2) = w_2$, and $T(z_3) = w_3$.</p>
+
+<p>A proof will be provided in the <a href="/blog/alterative-formulations-of-mobius-transformations-appendix/">appendix</a> of this post as this is a foundational fact about Möbius transformations, and it is covered by many other sources.</p>
+
+<p>A <strong>fixed point</strong> of a transformation $T$ is a complex number $z_0$ such that $T(z_0) = z_0$. In particular, for a Möbius transformation</p>
+
+\[z_0 = \frac{az_0 + b}{cz_0 + d} \qquad \implies \qquad cz_0^2 - (a - d)z_0 - b = 0 \qquad \implies \qquad z_0^2 - \left(\tfrac{a - d}{c} \right)z_0 - \tfrac{b}{c} = 0\]
+
+<h3 id="calculating-the-fixed-points-of-a-möbius-transformation">Calculating the Fixed Points of a Möbius Transformation</h3>
+
+<p>Since Möbius transformations are uniquely defined by their mapping of $3$ distinct coordinates, we can break up the fixed-point analysis into three cases. We are going to do them in reverse order.</p>
+
+<h4 id="case-3-three-fixed-points">Case 3: Three Fixed Points</h4>
+
+<p>Suppose there exists distinct \(z_1, z_2, z_3 \in \mathbb{C}^*\) such that $T(z_1) = z_1, \  T(z_2) = z_2, \ \text{and} \ T(z_3) = z_3$.</p>
+
+<p>By the fundamental theorem of algebra, $cz^2 - (a - d)z - b = 0$ can have at most $2$ solutions. Therefore, in order to have three fixed points this expression must be true for all $z$. Thus, $b = c = 0$ and $a = d$ (which would reduce the equation to $0 = 0$), which means $T(z) = z$, i.e. $T$ is the identity transformation.</p>
+
+<p>So, the only Möbius transformations with more than $2$ fixed points is the identity transformation $T(z) = z$, where every point is a fixed point.</p>
+
+<h4 id="case-2-two-fixed-points">Case 2: Two Fixed Points</h4>
+
+<p>Applying the quadratic formula to $cz^2 - (a - d)z - b = 0$ gives the following.</p>
+
+\[p_1, p_2 = \frac{(a - d) \pm \sqrt{(a-d)^2 + 4bc}}{2c} \qquad \text{s.t.} \quad (a-d)^2 + 4bc \neq 0\]
+
+<p>Additionally, since $0 = (z - p_1)(z - p_2) = z^2 - (p_1 + p_2) + p_1p_2$, we can equate this to the terms in $0 = z^2 - \left(\frac{a - d}{c} \right)z - \frac{b}{c}$ to get the following properties.</p>
+
+\[p_1 + p_2 = \frac{a - d}{c} \qquad\qquad p_1 \cdot p_2 = - \frac{b}{c}\]
+
+<h4 id="case-1-one-fixed-point">Case 1: One Fixed Point</h4>
+
+<p>Apply the same method as case 2, except let $(a-d)^2 + 4bc = 0$. Thus,</p>
+
+\[p = \frac{a - d}{2c}\]
+
+<p>Notice that</p>
+
+\[2p = \frac{a - d}{c} \qquad\qquad p^2 = - \frac{b}{c}\]
+
+<p>exactly the same as case 2.</p>
+
+<h4 id="case-0-zero-fixed-points">Case 0: Zero Fixed Points</h4>
+
+<p>This is actually <strong>not possible</strong>, evident by that the fact that $cz^2 - (a - d)z - b = 0$ always has at least 1 solution in the complex domain. One may object that $T(z) = z + b$ doesn’t have any fixed points. However, $T(\infty) = \infty$ and therefore $\infty$ is the fixed point. And sure enough, you would arrive at this answer by applying the formula from case 1 ($c = 0$).</p>
+
+<p>Another objection might be that we could define $T(z_1) = w_1, \  T(z_2) = w_2, \ \text{and} \ T(z_3) = w_3$ such that $z_1 \neq w_1, \ z_2 \neq w_2, \ \text{and} \ z_3 \neq w_3$. However, that doesn’t mean there aren’t other coordinates which are fixed points. And in fact, there must be at least 1.</p>
+
+<h3 id="defining-möbius-transformations-by-their-fixed-points">Defining Möbius Transformations by Their Fixed Points</h3>
+
+<p>Again, we will do this in the reverse order of cases.</p>
+
+<h4 id="case-3">Case 3</h4>
+
+<p>As shown above, this implies that $T(z) = z$.</p>
+
+<h4 id="case-2">Case 2</h4>
+
+<p>A Möbius transformation with two fixed points $p_1$ and $p_2$ and $k \in \mathbb{C}$ and $k \neq 0$ can be expressed by the following formula</p>
+
+\[\dfrac{w - p_1}{w - p_2} = k \dfrac{z - p_1}{z - p_2}\]
+
+<p>Notice that this is the composition of two Steiner nets. Let $S(z) = \frac{z - p_1}{z - p_2}$, then the above is equivalent to $S(w) = k S(z)$ or $w = S^{-1}(k S(z))$. Prove for yourself that the inverse of a Steiner net is another Steiner net.</p>
+
+<p>Here is the closed-form conversion between the <strong>Fixed Point Form</strong> and the standard form (proof in the <a href="/blog/alterative-formulations-of-mobius-transformations-appendix/">appendix</a>).</p>
+
+\[\begin{cases}
+    &amp;p_1 = \frac{1}{2c} \left [ (a - d) + \sqrt{(a-d)^2 + 4bc} \right ] \\[10pt]
+    &amp;p_2 = \frac{1}{2c} \left [ (a - d) - \sqrt{(a-d)^2 + 4bc} \right ] \\[10pt]
+    &amp;k = \dfrac{cp_2 + d}{cp_1 + d} = \dfrac{(a + d) - \sqrt{(a-d)^2 + 4bc}}{(a + d) + \sqrt{(a-d)^2 + 4bc}}
+\end{cases}
+
+\qquad\iff\qquad
+
+\begin{cases}
+    &amp;\text{fix any value of } c \\[10pt]
+    &amp;a = \frac{c}{1-k}(p_1 - kp_2) \\[10pt]
+    &amp;b = -c p_1 p_2 \\[10pt]
+    &amp;d = - \frac{c}{1-k}(p_2 - kp_1) \\[10pt]
+\end{cases}\]
+
+<h4 id="case-1">Case 1</h4>
+
+<p>A Möbius transformation with one fixed point $p$ and $k \in \mathbb{C}$ can be expressed by the following</p>
+
+\[\dfrac{1}{w - p} = \dfrac{1}{z - p} + k\]
+
+<p>Here is the closed-form conversion between the <strong>Fixed Point Form</strong> and the standard form (proof in the <a href="/blog/alterative-formulations-of-mobius-transformations-appendix/">appendix</a>).</p>
+
+\[\begin{cases}
+    &amp;p = \dfrac{a - d}{2c} \\[10pt]
+    &amp;k = \dfrac{2c}{a + d}
+\end{cases}
+
+\qquad\iff\qquad
+
+\begin{cases}
+    &amp;\text{fix any value of } c \\[10pt]
+    &amp;a = \frac{c}{k}(1 + kp) \\[10pt]
+    &amp;b = -c p^2 \\[10pt]
+    &amp;d = - \frac{c}{k}(1 - kp) \\[10pt]
+\end{cases}\]
+
+<h3 id="geometric-properties-of-the-fixed-point-form">Geometric Properties of the Fixed Point Form</h3>
+
+<p>It’s much easier to show rather than explain in words, so I’ve created another <a href="https://www.youtube.com/watch?v=NuOl9f8LZ5A">animation</a> showing how different values of $p_1$, $p_2$, $p$, and $k$ change the map. In short, the fixed points act as anchors which the rest of the map must <em>rigidly</em> rotate around. $k$ determines how compressed or expanded the map is relative to the fixed points.</p>
+
+<p>The parameter $k$ also defines a <em>homomorphism</em> between the Möbius transformation and the polar net. When creating my animations, this fixed-point form turned out to create the smoothest transitions. For example, when $p_{\infty} = \infty$ in the Steiner Net form, this has to be treated as a special case and there is not a smooth transition to the typical case.</p>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="appendix"><a href="/blog/alterative-formulations-of-mobius-transformations-appendix/">Appendix</a></h2>
+
+        </div>
+    </div>
+
+    <!--
+    <h3 style="text-align:center; margin-bottom:1em;">
+      <a href="/blog/">Blog Archive</a>
+    </h3>
+    -->
+    
+  </body>
+</html>
