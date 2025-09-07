@@ -50,7 +50,10 @@ In the remaining of the post I will discuss two alternative formulations which h
 
 Consider how a Möbius transformation $S$ transforms the following grid-lines.
 
-![SteinerNet2PolarNet](/blog-assets/understanding-mobius-transformations-through-fixed-points/SteinerNet2PolarNet.png)
+<!-- ![SteinerNet2PolarNet](/blog-assets/alterative-formulations-of-mobius-transformations/SteinerNet2PolarNet.png) -->
+<center>
+<img src="/blog-assets/alterative-formulations-of-mobius-transformations/SteinerNet2PolarNet.png" alt="SteinerNet2PolarNet" height="300">
+</center>
 
 The right-hand image is called a **polar net** and the left-hand image is called the **Steiner net**. Applying $S$ transforms the Steiner net into the polar net. Conversely, the inverse of $S$ transforms the polar net into the Steiner net.
 
@@ -64,7 +67,7 @@ I call this the **Steiner Net Form** of a Möbius transformation. Notice that $S
 
 To understand the affect of $k$, recall the geometric interpretation of complex multiplication; magnitudes multiply and angle add. Thus, the polar net will be scaled by a factor of $\abs{k}$ and rotated through an angle of $\arg k$. In the resulting Steiner net, the blue grid lines scale as $\abs{k}$ scales; the yellow grid lines cycle as $\arg k$ cycles from $0$ to $2\pi$.
 
-To see these geometric properties in action, I've created a fun [animation](https://www.youtube.com/watch?v=t0ob1pkSII0).
+To see these geometric properties in action, I've created a fun [animation](https://www.youtube.com/watch?v=nweY6E_yE2g).
 
 If you watched the animation, you'll notice that Steiner nets all essentially look the same, and all you are doing is shifting/scaling them depending on the values of $p_0$, $p_{\infty}$, and $k$. This is a really powerful tool to have if you want to construct a particular Möbius transformation.
 
@@ -106,7 +109,7 @@ $$
 p_1, p_2 = \frac{(a - d) \pm \sqrt{(a-d)^2 + 4bc}}{2c} \qquad \text{s.t.} \quad (a-d)^2 + 4bc \neq 0
 $$
 
-Additionally, since $0 = (z - p_1)(z - p_2) = z^2 - (p_1 + p_2) + p_1p_2$, we can equate this to the terms in $0 = z^2 - \left(\frac{a - d}{c} \right)z - \frac{b}{c}$ to get the following properties.
+Additionally, since $0 = (z - p_1)(z - p_2) = z^2 - (p_1 + p_2)z + p_1p_2$, we can equate this to the terms in $0 = z^2 - \left(\frac{a - d}{c} \right)z - \frac{b}{c}$ to get the following properties.
 
 $$
 p_1 + p_2 = \frac{a - d}{c} \qquad\qquad p_1 \cdot p_2 = - \frac{b}{c}
@@ -126,7 +129,7 @@ $$
 2p = \frac{a - d}{c} \qquad\qquad p^2 = - \frac{b}{c}
 $$
 
-exactly the same as case 2.
+is exactly the same as case 2.
 
 #### Case 0: Zero Fixed Points
 
