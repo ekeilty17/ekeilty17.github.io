@@ -2,22 +2,21 @@
 layout:     post
 title:      "The Basic Physics of Billiards"
 date:       2024-03-24
-categories: blog
+categories: blog billiards
 permalink:  ":categories/:title/"
-standalone: true
+series:     billiards
 tags:       billiards, physics, pool
-draft:      true
 ---
 
 <!-- This is probably the best article for the full breakdown of a cueball collision: https://arxiv.org/html/2402.13258v1 -->
 
 ## Introduction
 
-**Billiards** refers to a wide variety of games. North America typically plays [pool](https://en.wikipedia.org/wiki/Pool_(cue_sports)), the UK typically plays [snooker](https://en.wikipedia.org/wiki/Snooker), Russia typically plays [Russian pyramid](https://en.wikipedia.org/wiki/Russian_pyramid), and France and the Phillipines typically play [Carom](https://en.wikipedia.org/wiki/Carom_billiards). In each of these variants, a turn consists of using a **cue stick** to strike the **cue-ball** (CB) towards an **object-ball** (OB) in order to achieve some objective (usually pocketing the OB). Being skilled at these games means accurately and precisely controlling what happens to _both_ the CB and OB after contact. 
+**Billiards** refers to a wide variety of games. North America typically plays [pool](https://en.wikipedia.org/wiki/Pool_(cue_sports)), the UK typically plays [snooker](https://en.wikipedia.org/wiki/Snooker), Russia typically plays [Russian pyramid](https://en.wikipedia.org/wiki/Russian_pyramid), and France and the Philippines typically play [Carom](https://en.wikipedia.org/wiki/Carom_billiards). In each of these variants, a turn consists of using a **cue stick** to strike the **cue-ball** (CB) towards an **object-ball** (OB) in order to achieve some objective (usually pocketing the OB). Being skilled at these games means accurately and precisely controlling what happens to _both_ the CB and OB after contact. 
 
 In this post, I am going to do a simplified analysis the physics of billiards. In particular, I am going to analyze a $1\text{D}$ system, calculating the trajectories of the CB and OB accounting for the effects of top and bottom spin. This analysis is a really nice application of high-school physics, requiring kinematics, Coulomb's law of friction, conservation of momentum, semi-elastic collisions, and the work-energy theorem.
 
-This analysis may seem limiting as I am neglecting side-spin and the left/right trajectories of the CB and OB. This is true; however, I still feel this analysis will be very useful for beginner to intermiate players. First, it demonstrates how complex billiards actually is, and how many moving parts are involved in seeminly simple shots. Second, side-spin is so complicated that it should only be used by advanced players. Thus, the casual player only needs to understanding the effects of top and bottom spin. Third, often when controlling the CB after contact, its left/right trajectory is less important than getting the pace and spin correct. Finally, even in this simplified analysis, interesting and important concepts emerge such as CB/OB spin transfer and why the CB sometimes hops after contact.
+This analysis may seem limiting as I am neglecting side-spin and the left/right trajectories of the CB and OB. This is true; however, I still feel this analysis will be very useful for beginner to intermediate players. First, it demonstrates how complex billiards actually is, and how many moving parts are involved in seemingly simple shots. Second, side-spin is so complicated that it should only be used by advanced players. Thus, the casual player only needs to understanding the effects of top and bottom spin. Third, often when controlling the CB after contact, its left/right trajectory is less important than getting the pace and spin correct. Finally, even in this simplified analysis, interesting and important concepts emerge such as CB/OB spin transfer and why the CB sometimes hops after contact.
 
 
 <br>
@@ -75,7 +74,7 @@ $$
 
 ### Pool Constants
 
-In this post, I am going to solve everything in general terms. Some may find it enlightening to substitute the real-world values of these variables into the equations. Thus, below I have provided some ranges for these variables ([source](https://billiards.colostate.edu/faq/physics/physical-properties/)). Note that these apply specifically to North American pool. However, the values will be very similar for other variants.
+In this post, I am going to solve everything in general terms. Some may find it enlightening to substitute the real-world values of these variables into the equations. Thus, below I have provided some ranges for these variables ([source](https://billiards.colostate.edu/faq/physics/physical-properties/)). Note that these apply specifically to North American billiards. However, the values will be very similar for other variants.
 
 $$
 \begin{align}
@@ -110,7 +109,7 @@ $$
 
 ### Typical Pool Ball Spins
 
-I could not find a source of empirical data on typical spin rates of billiard shots. There is a video where Florian Kohler calculates the spin on one of his crazy [draw shots](https://www.youtube.com/watch?v=UG92u3rClhA), which clocked in at $3000$ RPMs $\approx 314$ rad/s. Therefore, I estimate that maximum draw/follow from a parallel cue should be something like $1500$ RPMs $\approx 157$ rad/s. If you know of any other sources on this, please <a href="mailto:epkeilty@gmail.com">let me know</a>.
+I could not find a source of empirical data on typical spin rates of billiard shots. There is a [video](https://www.youtube.com/watch?v=UG92u3rClhA) where [Florian Kohler](https://www.youtube.com/user/venomtrickshots) calculates the spin on one of his crazy draw shots, which clocked in at $3000$ RPMs $\approx 314$ rad/s. Therefore, I estimate that maximum draw/follow from a parallel cue should be something like $1500$ RPMs $\approx 157$ rad/s. If you know of any other sources on this, please <a href="mailto:epkeilty@gmail.com">let me know</a>.
 
 <br>
 
@@ -133,7 +132,7 @@ Suppose a cue strikes the CB, instantaneously imparting an **initial velocity** 
 <embed src="/svg/the-basic-physics-of-billiards/CB%20Motion.svg" type="image/svg+xml" width="450px" height="500px" />
 </center>
 
-There are two key stages to the motion of a freely moving CB. Initially, the translational velocity and rotational velocity are uncorrolated, which I denote as **sliding**. Eventually, the frictional force stabilizes the motion, bringing the translational velocity and rotational velocity in sync with eachother. Once this occurs the CB is in the second stage called **rolling** (which is how you intuitively image a ball moving). Finally, frictional forces eventually cause the rolling CB to come to a stop. 
+There are two key stages to the motion of a freely moving CB. Initially, the translational velocity and rotational velocity are uncorrelated, which I denote as **sliding**. Eventually, the frictional force stabilizes the motion, bringing the translational velocity and rotational velocity in sync with each other. Once this occurs the CB is in the second stage called **rolling** (which is how you intuitively imagine a ball moving). Finally, frictional forces eventually cause the rolling CB to come to a stop. 
 
 Let's do a deeper analysis of these stages.
 
@@ -141,7 +140,7 @@ Let's do a deeper analysis of these stages.
 
 ### Sliding vs Rolling
 
-**Rolling** (sometimes called **rolling without slipping**) is a specific type of CB motion. It occurs when the CB has perfect traction with the cloth of the table. This is probably how you intuitively image a ball or wheel moving. For example, when driving a car in normal conditions, the wheels of the car are _rolling_ over the road. Stated more precisely, the translational velocity and the rotational velocity are perfectly in sync. If the CB moves horizontally some distance, then it must also rotate by that distance. Mathematically, we can write this as the following, which are sometimes called **no slip conditions**.
+**Rolling** (sometimes called **rolling without slipping**) is a specific type of CB motion. It occurs when the CB has perfect traction with the cloth of the table. This is probably how you intuitively imagine a ball or wheel moving. For example, when driving a car in normal conditions, the wheels of the car are _rolling_ over the road. Stated more precisely, the translational velocity and the rotational velocity are perfectly in sync. If the CB moves horizontally some distance, then it must also rotate by that distance. Mathematically, we can write this as the following, which are sometimes called **no slip conditions**.
 
 $$
 x = R \, \theta
@@ -151,7 +150,7 @@ v = R \, \omega
 a = R \, \alpha
 $$
 
-All three statements are equivalent to each other since $a = \dot{v} = \ddot{x}$ and $\alpha = \dot{\omega} = \ddot{\theta}$. In order to better visualize what these equations mean, consider the following diagram, which visualizes the CB's motion over time.
+All three statements are equivalent to each other since $a = \dot{v} = \ddot{x}$ and $\alpha = \dot{\omega} = \ddot{\theta}$. In order to better understand what these equations mean, consider the following diagram, which visualizes the CB's motion over time.
 
 <center>
 <embed src="/svg/the-basic-physics-of-billiards/rolling.svg" type="image/svg+xml" width="320px" height="350px" />
@@ -163,13 +162,15 @@ Here, I have labeled equidistant points on the circumference of the CB. If we ar
 
 **Sliding** (sometimes called **rolling with slipping**) is best defined as any CB motion that is not rolling. If the CB does one full rotation (neglecting friction) and did not move exactly the distance of its circumference, then its surface must have lost traction with the table at some point. This is what is meant by slipping. 
 
-In particular, there are two types of slipping. First, the CB can be **skidding**, which occurs when $v > R \omega$. This is analogous to suddenly slamming on the breaks while driving, causing the tires to stop rotating, but the cars momentum continues it forward. Second, the CB can **spin-out**, which occurs when $v < R \omega$. This is analogous to suddenly flooring the gas pedal from a stationary position, causing the wheels to turn extemely fast, but not yet gaining traction with the road. The diagram below illustrates these two simple examples (left is skidding and right is spinning-out). The opaque dots show the motion of a rolling CB to act as a reference.
+In particular, there are two types of slipping. First, the CB can be **skidding**, which occurs when $v > R \omega$. This is analogous to suddenly slamming on the breaks while driving, causing the tires to stop rotating, but the cars momentum continues it forward. Second, the CB can **spin-out**, which occurs when $v < R \omega$. This is analogous to suddenly flooring the gas pedal from a stationary position, causing the wheels to turn extremely fast, but not yet gaining traction with the road. 
+
+The diagram below illustrates the two far extremes of skidding (left) and spinning-out (right), where there is no rotational velocity and no translational velocity, respectively. The opaque dots show the motion of a rolling CB to act as a reference.
 
 <center>
 <embed src="/svg/the-basic-physics-of-billiards/sliding-simplified.svg" type="image/svg+xml" width="720px" height="350px" />
 </center>
 
-The above diagrams are special cases. Below I have visualized the general case of skidding and spinning-out. 
+Again, these diagrams represent the far extremes of the spectrum of skidding and spinning-out. Typically, there will be some rotational or translational velocities. Below are diagrams of the more generic cases.
 
 <center>
 <embed src="/svg/the-basic-physics-of-billiards/sliding.svg" type="image/svg+xml" width="800px" height="350px" />
@@ -181,17 +182,15 @@ These concepts are critically important for our analysis. As you can see by the 
 
 ### Phase 1: Sliding - Analysis 
 
-In stage $1$, the CB is **sliding** across the table meaning it does not have traction with the cloth of the table. Therefore, the translational velocity $v_s(t)$ and the rotational velocity $\omega_s(t)$ of the CB while sliding are _uncorrolated_. By this I mean that there is not a general formula that can related them (unlike rolling). However, whether $v_s(t) < R \, \omega_s(t)$ or $v_s(t) > R \, \omega_s(t)$ influences the direction of the frictional force. 
+In stage $1$, the CB is **sliding** across the table meaning it does not have traction with the cloth of the table. Therefore, the translational velocity $v_s(t)$ and the rotational velocity $\omega_s(t)$ of the CB while sliding are _uncorrelated_. By this I mean that there is not a general formula that can related them (unlike rolling). However, whether $v_s(t) < R \, \omega_s(t)$ or $v_s(t) > R \, \omega_s(t)$ influences the direction of the frictional force. 
 
-The general formula contains two cases ($v_0 < R \, \omega_0$ and $v_0 > R \, \omega_0$). Therefore, I will first ananlyze a particular case to give an intuition of the overall dynamics of the system.
+The general formula contains two cases ($v_0 < R \, \omega_0$ and $v_0 > R \, \omega_0$). Therefore, I will first analyze a particular case to give an intuition of the overall dynamics of the system.
 
 <br>
 
 #### <u>Special Case: Draw Shot</u>
 
 In this special case, we take $\omega_0$ to be rolling in the opposite direction of the CB's motion. We will assume the CB is initially hit towards the right (positive velocity), with counter-clockwise spin (negative angular velocity). Thus, this corresponds to _skidding_ where $v_0 > R \omega_0$.
-
-**TODO** diagram
 
 There are many ways to model the frictional force due to sliding. The most accurate way is to consider the deformation of the table due to the CB and do a geometric analysis. If you are interested, this is done [here](https://billiards.colostate.edu/physics_articles/Hierrezuelo_PhysEd_95_article.pdf). However, I want to keep things simple, so I am going to use **Coulomb’s law of friction** which says
 
@@ -338,8 +337,6 @@ $$
 
 Solving the general solution is exactly the same as the above special case.
 
-**TODO** diagrams
-
 Using Newton's second law, we get the translational and rotational accelerations, which essentially define the complete motion of this stage.
 
 $$
@@ -418,8 +415,6 @@ $$
 
 Note that in this section, we are going to assume that the ball starts rolling without slipping at $t = 0$, and then afterwards we can just shift the time by $t_{s \rightarrow r}$.
 
-**TODO** draw diagram
-
 $$
 \begin{align}
     &\textbf{Translational Motion} 
@@ -483,13 +478,15 @@ $$
 
 ### Summarizing the Results
 
-Therefore, the entire motion of the CB is described by
+Therefore, the entire motion of any billiard ball can be modeled by the following equations.
 
 $$
 \Omega(t; \; v_0, \omega_0; \; R, \mu_s, \mu_r, g) = \Omega_s(t; \; v_0, \omega_0; \; R, \mu_s, g) \, \cup \, \Omega_r(t - t_{s \rightarrow r}; \; v_{s \rightarrow r}, x_{s \rightarrow r}; \; R, \mu_r, g)
 $$
 
 I have made a fun interactive [Desmos plot](https://www.desmos.com/calculator/zlhc6x8jgk) so you can play around with different initial conditions.
+
+Probably way more complicated than you expected. And we haven't even considered CB/OB contact yet!
 
 <br>
 
@@ -503,19 +500,15 @@ During a shot in any billiard game, the CB will be hit towards some OB. The CB w
 
 ### Overview
 
-Suppose a cue strikes the CB imparting an **initial velocity** $v_0$ and an **initial spin** (rotational velocity) $\omega_0$ (same as before). The CB travels according to the motion described in the previous section, eventually colliding with the OB. Suppose this occurs at time $t_c$ and position $x_c$. Also suppose the CB have translational velocity $v_c$ and angular velocity $\omega_c$. 
+Suppose a cue strikes the CB imparting an **initial velocity** $v_0$ and an **initial spin** (rotational velocity) $\omega_0$ (same as before). The CB travels according to the motion described in the previous section, eventually colliding with the OB. Suppose this occurs at time $t_c$ and position $x_c$. Also suppose the CB has translational velocity $v_c$ and angular velocity $\omega_c$. 
 
-**TODO** add diagram
-
-For now, we are going to make some simplifying assumptions (which we will later refine). First, we will assume the collision is perfectly elastic (therefore, the collision occured instantaniously, so $\Delta t_c = 0$). Second, we will assume that there is no friction between the CB and OB. Below shows the overall diagram of this collision.
+For now, we are going to make some simplifying assumptions (which we will later refine). First, we will assume the collision is perfectly elastic (therefore, the collision occurred instantaneously, so $\Delta t_c = 0$). Second, we will assume that there is no friction between the CB and OB. Below shows the overall diagram of this collision.
 
 ### Idealized Analysis
 
 As a first-order approximation (which is actually not that far off from reality), we will assume that the collision between the CB and OB is **perfectly ellastic** (intuitively this means there is no compression, mathematically this means kinetic energy is conserved). We will also assume there is no friction between the CB and OB (and therefore no spin-transfer).
 
 This is a classic conservation of momentum and conservation of kinetic energy problem.
-
-**TODO** diagram
 
 $$
 \begin{align}
@@ -529,7 +522,7 @@ $$
 \end{align}
 $$
 
-Solving boths simultaneous equations gives two solutions, but only one that can reasonably occur physically. This is
+Solving both simultaneous equations gives two solutions, but only one that can reasonably occur physically. This is
 
 $$
 v_{\text{CB}} = 0
@@ -537,7 +530,7 @@ v_{\text{CB}} = 0
 v_{\text{OB}} = v_c
 $$
 
-In particular, since we are assuming the collision is perfectly elastic, the momentum from the CB is completely transfered to the OB. Furthermore, since we are assuming there is no friction between the CB and OB, we have
+In particular, since we are assuming the collision is perfectly elastic, the momentum from the CB is completely transferred to the OB. Furthermore, since we are assuming there is no friction between the CB and OB, we have
 
 $$
 \omega_{\text{CB}} = \omega_c
@@ -551,7 +544,7 @@ Now, each balls motion evolves precisely as we described from the above equation
 
 ### Accounting for Billiard Ball Compression
 
-Even though billiard balls are very rigid, there is no such thing as a perfectly elastic collision. When a billiard ball collides with another, the semi-elasticness of the collision is measured by the **coefficient of resitution**, $e_b$. Now, kinetic energy is not conserved, and instead we have the following relationship.
+Even though billiard balls are very rigid, there is no such thing as a perfectly elastic collision. When a billiard ball collides with another, the semi-elasticness of the collision is measured by the **coefficient of restitution**, $e_b$. Now, kinetic energy is not conserved, and instead we have the following relationship.
 
 $$
 e_b = \tfrac{v_{\text{CB}} - v_{\text{OB}}}{v_c}
@@ -571,7 +564,7 @@ $$
 
 Even though billiard balls are very smooth, there is still some friction between them. This friction actually does play an important role in some shots (which we will see soon). 
 
-We will model this using sliding friction, very similar to how we did before. Let $\mu_b$ be the sliding fricitonal force between the OB and CB. We will assume the CB is spinning fast enough at impact such that sliding friction is dominant (rather than rolling friction).
+We will model this using sliding friction, very similar to how we did before. Let $\mu_b$ be the sliding frictional force between the OB and CB. We will assume the CB is spinning fast enough at impact such that sliding friction is dominant (rather than rolling friction).
 
 $$
 f_b = \mu_b F_c
@@ -591,7 +584,7 @@ a_{\text{impulse}} = \tfrac{\mu_b v_c}{\Delta t_c}
 \alpha_{\text{impulse}} = \tfrac{2}{5}
 $$
 
-Therefore, we have the following equations of motion of the impulse. Note, these are occuring in the $y$-direction
+Therefore, we have the following equations of motion of the impulse. Note, these are occurring in the $y$-direction
 
 $$
 v_{\text{impulse}}(t) = a_{\text{impulse}} t = \tfrac{\mu_b v_c}{\Delta t_c} t
@@ -607,18 +600,24 @@ v_{\text{impulse}}(\Delta t_c) = \mu_b v_c
 y_{\text{impulse}}(\Delta t_c) = \tfrac{1}{2} \mu_b v_c \Delta t_c
 $$
 
-### Hop
+### Calculating Hop (just because we can)
 
-Given enough top spin, it's actually possible for the CB to _climb_ the OB, resulting in the CB to **hop** after contact. Since this collision is not ellastic, energy is not conserved. Instead we use work. Note that $d = y_{\text{impulse}}(\Delta t_c) = \tfrac{1}{2} \mu_b v_c \Delta t_c$. 
+Given enough top spin, it's actually possible for the CB to _climb_ the OB, resulting in the CB to **hop** after contact. Since this collision is not elastic, energy is not conserved. Instead we use work. Recall that $f_b = \mu_b F_c = \mu_b \tfrac{m v_c}{\Delta t_c}$ and $y_{\text{impulse}}(\Delta t_c) = \tfrac{1}{2} \mu_b v_c \Delta t_c$.
 
 $$
-W_{\text{net}} = \Delta \text{KE} \\[10pt]
-W_{\text{nc}} = \Delta \text{KE} + \Delta \text{PE} \\[10pt]
-f_b \cdot d = \left ( \tfrac{1}{2} m v_{\text{CB}}^2 + \tfrac{1}{2} m v_{\text{OB}}^2 - \tfrac{1}{2} m v_c^2 \right ) + (mgh_{\text{CB}} + mgh_{\text{OB}}) \\[10pt]
-\tfrac{1}{2} \mu_b^2 v_c^2 = \tfrac{1}{2} \left ( v_{\text{CB}}^2 + v_{\text{OB}}^2 - v_c^2 \right ) + g(h_{\text{CB}} + h_{\text{OB}})
+% W_{\text{net}} = \Delta \text{KE} \\[10pt]
+\begin{align}
+    W_{\text{nc}} &= \Delta \text{KE} + \Delta \text{PE} \\[10pt]
+
+    f_b \cdot y_{\text{impulse}}(\Delta t_c) &= \left (\Delta \text{KE}_{\text{CB}} + \Delta \text{KE}_{\text{OB}} \right ) + (\Delta \text{PE}_{\text{CB}} + \Delta \text{PE}_{\text{OB}}) \\[10pt]
+
+    \tfrac{1}{2} \mu_b^2 m v_c^2 &= \left ( \tfrac{1}{2} m v_{\text{CB}}^2 + \tfrac{1}{2} m v_{\text{OB}}^2 - \tfrac{1}{2} m v_c^2 \right ) + (mgh_{\text{CB}} + mgh_{\text{OB}}) \\[10pt]
+
+    \tfrac{1}{2} \mu_b^2 v_c^2 &= \tfrac{1}{2} \left ( v_{\text{CB}}^2 + v_{\text{OB}}^2 - v_c^2 \right ) + g(h_{\text{CB}} + h_{\text{OB}})
+\end{align}
 $$
 
-Now, if we assume the collision is perfectly elastic, then 
+Now, if we assume the collision is perfectly elastic ($v_{\text{CB}} = 0$ and $v_{\text{OB}} = v_c$), then 
 
 $$
 h_{\text{CB}} + h_{\text{OB}} = \frac{\mu_b^2 v_c^2}{2 g}
@@ -635,18 +634,16 @@ $$
 If we plug in real values, we get
 
 $$
-h_{\text{CB}} + h_{\text{CB}} \approx \left ( 0.0003 + 0.0039 \right ) v_c^2 \approx 0.004 v_c^2
+h_{\text{CB}} + h_{\text{OB}} \approx \left ( 0.0003 + 0.0039 \right ) v_c^2 \approx 0.004 v_c^2
 $$
 
 or
 
 $$
-h_{\text{CB}} + h_{\text{CB}} \approx \left ( 0.0003 + 0.0039 \right ) v_c^2 \approx 0.004 v_c^2
+h_{\text{CB}} + h_{\text{OB}} \approx \left ( 0.0003 + 0.0039 \right ) v_c^2 \approx 0.004 v_c^2
 $$
 
-A medium shot is about $1$ m/s, therefore, if the CB is spinning sufficiently quickly, then it will hop by $0.004 \, m = 4 \, mm$ 
-
-It's interesting that the contribution due to the frictional force and due to the compression of the CB can be calculated independently. Also, what exactly does this 
+A medium shot is about $1$ m/s, therefore, if the CB is spinning sufficiently quickly, then it will hop by $0.004 \, m = 4 \, mm$. Anecdotally, this sounds about right for medium speed.
 
 
 <br>
@@ -657,7 +654,9 @@ It's interesting that the contribution due to the frictional force and due to th
 
 ## Conclusion
 
-In this post, I fully analyzed the $1\text{D}$ motion of a cue ball striking an object ball. I believe this analysis provides a good foundation for understanding the behavior of billiard balls, with concepts that easily extrapolate to more complicated situations. And if nothing else, this was a nice application of Newtonian mechanics.
+In this post, I analyzed the $1\text{D}$ motion of a cue ball striking an object ball. I think it's astounding that just two balls hitting each other can be so complicated.
+
+I believe this analysis provides a good foundation for understanding the behavior of billiard balls, with concepts that extrapolate to the 2D case and other more complicated situations. If nothing else, this was a nice application of classic Newtonian mechanics.
 
 <!-- ## Equations
 

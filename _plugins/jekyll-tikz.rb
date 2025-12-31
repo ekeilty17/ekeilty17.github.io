@@ -23,6 +23,9 @@
 # Note that it will generate a /_tikz_tmp/ directory to save tmp files.
 #
 
+require 'fileutils'
+require 'shellwords'
+
 module Jekyll
   module Tags
     class Tikz < Liquid::Block
@@ -59,13 +62,14 @@ module Jekyll
         post_name = File.basename(post_url, ".*")
         post_series = context["page"]["series"]
         post_series_part = context["page"]["part"]
+        post_series_part = post_series_part ? post_series_part : "0"
         if post_series
           # If the post is part of a series, I want to name the file in a particular way so the posts are easier to find
           file_save_path = File.join(post_series, "#{post_series_part}:#{post_name}")
         else
           file_save_path = post_name
         end
-
+        
         # This is just for output files. We don't actually need them for the website
         tmp_directory = File.join(Dir.pwd, "_tikz_tmp", file_save_path)
         tex_path = File.join(tmp_directory, "#{@file_name}.tex")
@@ -79,11 +83,18 @@ module Jekyll
 
         pdf2svg_path = context["site"]["pdf2svg"]
 
+        # Escape paths to handle spaces and special characters
+        escaped_tmp_directory = Shellwords.escape(tmp_directory)
+        escaped_tex_path = Shellwords.escape(tex_path)
+        escaped_pdf_path = Shellwords.escape(pdf_path)
+        escaped_dest_path = Shellwords.escape(dest_path)
+        escaped_pdf2svg_path = Shellwords.escape(pdf2svg_path)
+        
         # if the file doesn't exist or the tikz code is not the same with the file, then compile the file
         if !File.exist?(tex_path) or !tikz_same?(tex_path, tikz_code) or !File.exist?(dest_path)
           File.open(tex_path, 'w') { |file| file.write("#{tikz_code}") }
-          system("pdflatex -output-directory #{tmp_directory} #{tex_path}")
-          system("#{pdf2svg_path} #{pdf_path} #{dest_path}")
+          system("pdflatex -output-directory #{escaped_tmp_directory} #{escaped_tex_path}")
+          system("#{escaped_pdf2svg_path} #{escaped_pdf_path} #{escaped_dest_path}")
         end
 
         # embedding the link to the svg file

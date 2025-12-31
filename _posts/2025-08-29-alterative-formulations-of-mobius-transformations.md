@@ -50,7 +50,6 @@ In the remaining of the post I will discuss two alternative formulations which h
 
 Consider how a Möbius transformation $S$ transforms the following grid-lines.
 
-<!-- ![SteinerNet2PolarNet](/blog-assets/alterative-formulations-of-mobius-transformations/SteinerNet2PolarNet.png) -->
 <center>
 <img src="/blog-assets/alterative-formulations-of-mobius-transformations/SteinerNet2PolarNet.png" alt="SteinerNet2PolarNet" height="300">
 </center>
