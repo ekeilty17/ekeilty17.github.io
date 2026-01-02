@@ -1,11 +1,12 @@
 ---
 layout:     post
-title:      "The Basic Physics of Billiards"
-date:       2024-03-24
+title:      "The 1D Physics of Billiards"
+date:       2025-01-01
 categories: blog billiards
 permalink:  ":categories/:title/"
 series:     billiards
 tags:       billiards, physics, pool
+draft:      true
 ---
 
 <!-- This is probably the best article for the full breakdown of a cueball collision: https://arxiv.org/html/2402.13258v1 -->
@@ -56,10 +57,10 @@ The above variables will have subscripts to denote different instances. For exam
 - $r$ = rolling / rolling without slipping
 - $s \rightarrow r$ = at the moment of transition from sliding to rolling
 - $\text{stop}$ = at the moment all motion stops
-- $b$ = ball-ball
-- $c_0$ = at the instant of collision
+<!--- $b$ = ball-ball
+ - $c_0$ = at the instant of collision
 - $c$ = during the collision
-- $c_f$ = at the instant after the collision
+- $c_f$ = at the instant after the collision -->
 
 When doing before/after momentum and energy analysis, I will use the subscript $i$ to mean before and subscript $f$ to mean after.
 

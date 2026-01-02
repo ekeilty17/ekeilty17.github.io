@@ -4,9 +4,9 @@ title:      "Player Probabilities"
 date:       2024-04-03
 categories: blog blackjack
 permalink:  ":categories/:title/"
-part:       2
 series:     blackjack
 tags:       blackjack
+draft:      true
 ---
 
 In the previous post, we fully defined the probability mass function (PMF) $p(f \mid i)$, which gives the probability the dealer gets a final total of $f$ given they already have an intermediate total of $i$. Now, to get the player's probabilities is a bit more complicated because their actions are not pre-determined. Instead, the players have a choice. Therefore, we have to determine the expected value of each action given perfect play.

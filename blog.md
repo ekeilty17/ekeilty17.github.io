@@ -11,7 +11,9 @@ permalink:  /blog/
 
 <br>
 
-## Blog Series's
+## Series
+
+Posts within a series build on each other and are typically meant to be read in order.
 
 <!-- We check if the field `draft` exists, and if it does then we don't include the series -->
 <!-- if jekyll.environment == "development" -->
@@ -19,6 +21,33 @@ permalink:  /blog/
 {% for page in site.pages %}
     {% assign page_directory = page.path | split: '/' | first%}
     {% if page_directory == "blog-series" %}
+        {% assign draft_status = page.draft | default: false %}
+        {% if draft_status == false %}
+
+<div class="post-link-container">
+    <a href="{{ page.url }}" class="post-link-item"> 
+        {{ page.title }} 
+        {% if draft_status == true %}
+            <span style="float: right; color: red;">DRAFT</span>
+        {% endif %}
+    </a>
+</div>
+
+        {% endif %}
+    {% endif %}
+{% endfor %}
+
+<br>
+
+---
+
+## Collections
+
+Collections of independent posts grouped by topic. These can be read in any order.
+
+{% for page in site.pages %}
+    {% assign page_directory = page.path | split: '/' | first%}
+    {% if page_directory == "blog-collections" %}
         {% assign draft_status = page.draft | default: false %}
         {% if draft_status == false %}
 

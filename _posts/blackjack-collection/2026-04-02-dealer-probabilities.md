@@ -4,9 +4,9 @@ title:      "Dealer Probabilities"
 date:       2024-04-02
 categories: blog blackjack
 permalink:  ":categories/:title/"
-part:       1
 series:     blackjack
 tags:       blackjack
+draft:      true
 ---
 
 Our ultimate goal is to be able to mathematically derive Basic Strategy. The first step is to fully describe the outcomes of the dealer. 
