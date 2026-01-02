@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      The 1D Motion of a Freely Moving Billiard Ball &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded MathJax (effectively LaTeX) support 
+    https://docs.mathjax.org/en/v2.7-latest/tex.html -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX", "input/MathML", "output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js", "mml2jax.js", "MathMenu.js", "MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
+            Macros: {
+                b: ["{\\boldsymbol #1}",1],
+                u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
+                arccsc: ["\\operatorname\{arccsc\}"],
+                arcsec: ["\\operatorname\{arcsec\}"],
+                arccot: ["\\operatorname\{arccot\}"],
+                csch: ["\\operatorname\{csch\}"],
+                sech: ["\\operatorname\{sech\}"],
+                arcsinh: ["\\operatorname\{arcsinh\}"],
+                arccosh: ["\\operatorname\{arccosh\}"],
+                arctanh: ["\\operatorname\{arctanh\}"],
+                arccsch: ["\\operatorname\{arccsch\}"],
+                arcsech: ["\\operatorname\{arcsech\}"],
+                arccoth: ["\\operatorname\{arccoth\}"],
+                seq: ["{\\left \\langle #1 \\right \\rangle}",1],
+                iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
+                abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
+                hal: ["\\texttt{hal}"],
+                gal: ["\\texttt{gal}"],
+                sh: ["sh"],
+                st: ["st"]
+            },
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!--
+    TeX-AMS_HTML
+    TeX-AMS-MML_HTMLorMML
+    TeX-MML-AM_HTMLorMML
+-->
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">AI/ML Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+        <li>
+          <a href="/files/Eric Keilty - Resume.pdf" target="_blank">R&eacute;sum&eacute;</a>
+        </li>
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2026 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">The 1D Motion of a Freely Moving Billiard Ball</h1>
+            <!-- <span class="post-date">24 Mar 2024</span> -->
+            <time datetime="2024-03-24T00:00:00-04:00" class="post-date">24 Mar 2024</time>
+            <h2 id="introduction">Introduction</h2>
+
+<p><strong>Billiards</strong> refers to a wide variety of games, but in most variants a turn consists of using a <strong>cue stick</strong> to strike the <strong>cue-ball</strong> (CB) towards an <strong>object-ball</strong> (OB) in order to achieve some objective (usually pocketing the OB). Being skilled at these games means accurately and precisely controlling what happens to <em>both</em> the CB and OB after contact by imparting precise <strong>speed</strong> and <strong>spin</strong> on the CB.</p>
+
+<p>In this post, I analyze the behavior of a single billiard ball on an infinite $1\text{D}$ cloth table, accounting for the interplay between speed and top/bottom spin with the friction between the ball and the table.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="notation-and-physical-values">Notation and Physical Values</h2>
+
+<p>I think good definitions and notation is very important, especially in a post like this where there are a lot of moving parts. Here I will detail each variable used and its meaning. I recommend using it as a reference.</p>
+
+<h3 id="variables-of-motion">Variables of Motion</h3>
+
+<ul>
+  <li>$t$ = time</li>
+  <li>$x$ = linear displacement (horizontal)</li>
+  <li>$y$ = linear displacement (vertical)</li>
+  <li>$v$ = linear velocity</li>
+  <li>$a$ = linear acceleration</li>
+  <li>$\theta$ = angular displacement</li>
+  <li>$\omega$ = angular velocity</li>
+  <li>$\alpha$ = angular acceleration</li>
+</ul>
+
+<h3 id="variables-of-force-and-torque">Variables of Force and Torque</h3>
+
+<ul>
+  <li>$F$ = net force</li>
+  <li>$f$ = friction force</li>
+  <li>$N$ = normal force</li>
+  <li>$mg$ = force due to gravity</li>
+  <li>$\tau$ = net torque</li>
+  <li>$I$ = moment of inertia</li>
+</ul>
+
+<h3 id="subscripts">Subscripts</h3>
+
+<p>The above variables may have subscripts to denote different instantiations, e.g., $v_0$, $v_s$, $v_r$, $v_{s \rightarrow r}$, $v_{\text{stop}}$. It’s important to keep track of what these means. I have listed the meaning of each subscript; their full contexts will be explained as they are used.</p>
+
+<ul>
+  <li>$0$ = initial (read “naught”)</li>
+  <li>$s$ = sliding / slipping</li>
+  <li>$r$ = rolling / rolling without slipping</li>
+  <li>$s \rightarrow r$ = at the moment of transition from sliding to rolling</li>
+  <li>$\text{stop}$ = at the moment all motion stops</li>
+</ul>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="overview-of-motion">Overview of Motion</h2>
+
+<!-- https://billiards.colostate.edu/physics_articles/Hierrezuelo_PhysEd_95_article.pdf -->
+<!-- Coulomb’s law of sliding friction is f_s = mu_s N -->
+
+<p>Suppose at time $t = 0$ and position $x = 0$, a cue strikes the CB instantaneously imparting an <strong>initial translational velocity</strong> (speed) of $v_0$ and an <strong>initial rotational velocity</strong> (spin) of $\omega_0$. The diagram below shows the complete $1\text{D}$ motion of the CB.</p>
+
+<center>
+
+<embed src="/blog-assets/billiards/the-1D-motion-of-a-freely-moving-billiard-ball/CB%20Motion.svg" type="image/svg+xml" width="450px" height="500px" />
+</center>
+
+<p>The remaining of this post will be breaking down all of the components of this complete motion. In particular, we wish to find analytic equations for its <strong>translational velocity</strong> $v(t)$ and <strong>rotational velocity</strong> $\omega(t)$.</p>
+
+<p>There are two key stages to the motion of a freely moving CB. Initially, $v(t)$ and $\omega(t)$ are <em>uncorrelated</em>, i.e. they are two independent equations. This stage is called <strong>sliding</strong>. Eventually, the sliding frictional force between the CB and the table ($f_s$) stabilizes the motion, bringing the $v(t)$ and $\omega(t)$ in sync with each other, related by $v(t) = R \, \omega(t)$. Once this occurs the CB is in the second stage called <strong>rolling</strong> (which is how you intuitively imagine a ball moving). Finally, rolling frictional forces between the CB and the table ($f_r$) cause the rolling CB to come to a stop.</p>
+
+<p>Let’s do a deeper analysis of rolling vs sliding.</p>
+
+<h3 id="rolling">Rolling</h3>
+
+<p><strong>Rolling</strong> (sometimes called <strong>rolling without slipping</strong>) is a specific type of CB motion. It occurs when the CB has perfect traction with the cloth of the table. This is probably how you intuitively imagine a ball or wheel moving. For example, when driving a car in normal conditions, the wheels of the car are <em>rolling</em> over the road. If the CB moves horizontally some distance, then it must also rotate by that distance. Mathematically, we can write this as the following, which are called the <strong>no slip conditions</strong>.</p>
+
+\[x = R \, \theta
+\qquad
+v = R \, \omega
+\qquad
+a = R \, \alpha\]
+
+<p>All three statements are equivalent to each other since $a = \dot{v} = \ddot{x}$ and $\alpha = \dot{\omega} = \ddot{\theta}$. In order to better understand what these equations mean, consider the following diagram, which visualizes the CB’s motion over time.</p>
+
+<center>
+<embed src="/blog-assets/billiards/the-1D-motion-of-a-freely-moving-billiard-ball/rolling.svg" type="image/svg+xml" width="320px" height="350px" />
+</center>
+
+<p>Here, I have labeled equidistant points on the circumference of the CB. Imagine the CB rolling and as the colored points contact the table, they stay at the contacted points. If we are rolling without slipping, then a full rotation of the CB will correspond to moving exactly the distance of its circumference ($2\pi R$).</p>
+
+<h3 id="sliding">Sliding</h3>
+
+<p><strong>Sliding</strong> (sometimes called <strong>rolling with slipping</strong>) is best defined as any CB motion that is not rolling. If the CB does one full rotation (neglecting friction) and did not move exactly the distance of its circumference, then its surface must have lost traction with the table at some point. This is what is meant by slipping.</p>
+
+<p>In particular, there are two types of slipping. First, the CB can be <strong>skidding</strong>, which occurs when $v &gt; R \omega$. This is analogous to suddenly slamming on the breaks while driving, causing the tires to stop rotating, but the cars momentum continues it forward. Second, the CB can <strong>spin-out</strong>, which occurs when $v &lt; R \omega$. This is analogous to suddenly flooring the gas pedal from a stationary position, causing the wheels to turn extremely fast, but not yet gaining traction with the road.</p>
+
+<p>The diagram below illustrates the two far extremes of skidding (left) and spinning-out (right), where $\omega = 0$ and $v = 0$, respectively. The opaque dots show the motion of a rolling CB to act as a reference.</p>
+
+<center>
+<embed src="/blog-assets/billiards/the-1D-motion-of-a-freely-moving-billiard-ball/sliding-simplified.svg" type="image/svg+xml" width="720px" height="350px" />
+</center>
+
+<p>Again, the above diagrams represent the far extremes of the spectrum of skidding and spinning-out. Typically, there will be some contribution of both rotational and translational velocities. Below are diagrams of the more generic cases. Notice in the skidding case (left) the CB moves more than it spins, and in the spin-out case (right) the CB spins more than it moves.</p>
+
+<center>
+<embed src="/blog-assets/billiards/the-1D-motion-of-a-freely-moving-billiard-ball/sliding.svg" type="image/svg+xml" width="800px" height="350px" />
+</center>
+
+<p>These concepts are critically important for determining the equations of $v(t)$ and $\omega(t)$. As you can see by the above diagrams, the frictional force ($f_s$) act differently depending on if we are rolling, skidding, or spinning-out.</p>
+
+<p><br /></p>
+
+<h2 id="newtonian-analysis">Newtonian Analysis</h2>
+
+<p>With the goal of finding equations for $v(t)$ and $\omega(t)$, we split these into two phases: sliding denoted by the subscript $s$ and rolling denoted by the subscript $r$.</p>
+
+\[v(t) = 
+\begin{cases}
+v_s(t)      \quad &amp;\text{if } 0 \leq t &lt; t_{s \rightarrow r} \\[10pt]
+v_r(t)      \quad &amp;\text{if } t_{s \rightarrow r} \leq t \leq t_{\text{stop}}
+\end{cases}
+\qquad\qquad
+\omega(t) = 
+\begin{cases}
+\omega_s(t)      \quad &amp;\text{if } 0 \leq t &lt; t_{s \rightarrow r} \\[10pt]
+\omega_r(t)      \quad &amp;\text{if } t_{s \rightarrow r} \leq t \leq t_{\text{stop}}
+\end{cases}\]
+
+<p>$t_{s \rightarrow r}$ is the time when the billiard ball transitions from sliding to rolling, and $t_{\text{stop}}$ is the time when the billiard ball comes to a stop.</p>
+
+<p>First, we analyze the sliding case. In this analysis, we will also justify why it is true that the billiard ball transitions from sliding to rolling.</p>
+
+<p><br /></p>
+
+<h3 id="phase-1-sliding---analysis">Phase 1: Sliding - Analysis</h3>
+
+<p>In stage $1$, the CB is <strong>sliding</strong> across the table meaning it does not have traction with the cloth of the table. Therefore, the translational velocity $v_s(t)$ and the rotational velocity $\omega_s(t)$ of the CB while sliding are <em>uncorrelated</em>. There are three cases:</p>
+
+<center>
+<embed src="/blog-assets/billiards/the-1D-motion-of-a-freely-moving-billiard-ball/sliding-cases.svg" type="image/svg+xml" width="600px" height="200px" />
+</center>
+
+<p>The left diagram is the <em>skidding</em> case which occurs when the rotational velocity is impeding the translational motion, i.e. $v_0 &gt; R \omega_0$. In billiards, this case occurs in draw, stun, and weak follow shots. The middle diagram is the <em>rolling</em> case, which occurs when the translational and rotational velocity are moving perfectly in sync, i.e. $v_0 = R \omega_0$. In billiards, this case occurs with rolling follow. Finally, the right diagram is the <em>spin-out</em> case which occurs when rotational velocity is propelling the translational motion, i.e. $v_0 &lt; R \omega_0$. In billiards, this case occurs with power follow.</p>
+
+<p>As a special case, we will rigorously analyze <em>skidding</em>. Then we will generalize it to model all billiard ball sliding.</p>
+
+<h4 id="special-case-skidding"><u>Special Case: Skidding</u></h4>
+
+<p>Suppose the CB is <em>skidding</em> which means $v_0 &gt; R \omega_0$. In this case, the <strong>frictional force due to sliding</strong> ($f_s$) points in the opposite direction of the CB’s motion. There are many ways to model $f_s$. The most accurate way is to consider the deformation of the table due to the CB and do a geometric analysis. If you are interested, this is done <a href="https://billiards.colostate.edu/physics_articles/Hierrezuelo_PhysEd_95_article.pdf">here</a>. However, I want to keep things simple, so I am going to use <strong>Coulomb’s law of friction</strong> which says</p>
+
+\[f_s = u_s N\]
+
+<p>where $\mu_s$ is the <strong>coefficient of sliding friction</strong> between the ball and the cloth of the table and $N$ is the <strong>normal force</strong> between the CB and the table.</p>
+
+<p>Now we apply Newton’s second law for both 
+<span class="tooltip">translational motion
+    <span class="tooltiptext"> 
+        \(\sum \boldsymbol{F} = m \boldsymbol{a}\)
+    </span>
+</span> and
+<span class="tooltip">rotational motion
+    <span class="tooltiptext"> 
+        \(\sum \boldsymbol{\tau} = I \boldsymbol{\alpha}\)
+    </span>
+</span> to solve for the translational and angular accelerations. Consider the following force diagrams.</p>
+
+<center>
+<embed src="/blog-assets/billiards/the-1D-motion-of-a-freely-moving-billiard-ball/force-diagram.svg" type="image/svg+xml" width="500px" height="150px" />
+</center>
+
+<p>Their corresponding net force and net torque equations are the following.</p>
+
+\[\begin{align}
+    &amp;\textbf{Translational Motion} 
+    &amp;\qquad&amp;\textbf{Rotational Motion}
+    \\[10pt]
+    &amp;0 = \sum F_y = N - mg \implies N = mg
+    &amp;\qquad&amp;I \alpha_s = \sum \tau_z = R f_s \implies \left ( \tfrac{2}{5} m R^2 \right ) \alpha_s = R ( m \mu_s g )
+    \\[10pt]
+    &amp;ma_s = \sum F_x = -f_s = - \mu_s N \implies \boxed{ a_s = -\mu_s g }
+    &amp;&amp; \implies \boxed{ \alpha_s = \tfrac{5}{2} \tfrac{\mu_s g}{R} }
+\end{align}\]
+
+<p>Since $a_s$ and $\alpha_s$ are constant, we can write the equations of motion by integrating over time. Note that we are assuming that $x_0 = 0$ and $\theta_0 = 0$.</p>
+
+\[\begin{align}
+    &amp;a_s(t) = - \mu_s g
+    \qquad\qquad
+    &amp;&amp;\alpha_s(t) = \tfrac{5}{2} \tfrac{\mu_s g}{R} \\[10pt]
+    &amp;v_s(t) = v_0 + a_s t = v_0 - \mu_s g t
+    \qquad\qquad
+    &amp;&amp;\omega_s(t) = \omega_0 + \alpha_s t = \omega_0 + \tfrac{5}{2} \tfrac{\mu_s g}{R} t \\[10pt]
+    &amp;x_s(t) = v_0t + \tfrac{1}{2} a_s t^2 =  v_0t - \tfrac{1}{2} \mu_s g t^2
+    \qquad\qquad
+    &amp;&amp;\theta_s(t) = \omega_0 t + \tfrac{1}{2} \alpha_s t^2 = \omega_0 t + \tfrac{5}{4} \tfrac{\mu_s g}{R} t^2
+\end{align}\]
+
+<p>A keen observer will notice that $v_s(t)$ began large and is becoming smaller, while $\omega_s(t)$ began small and is become larger. If we graph these functions, we notice something very interesting.</p>
+
+<center>
+<embed src="/svg/billiards/0:the-1D-motion-of-a-freely-moving-billiard-ball/velocity-plot.svg" type="image/svg+xml" />
+</center>
+
+<p>They intersect! What is the meaning of this intersection point? It is the exact point at which the translational motion and the rotational motion of the CB become in sync with each other. This is exactly the definition of <strong>rolling without slipping</strong>. Once this occurs, it would not make sense for the translational velocity to continue losing speed while the spin continues to increase. Instead, we have entered a second stage of it’s motion, describe by different equations.</p>
+
+<p>Before we analyze the second stage, let’s first calculate when exactly the CB stops sliding and begins rolling without slipping. Let $t_{s \rightarrow r}$ denote the time at which this occurs. The <strong>no slip condition</strong> occurs when the following relationship holds.</p>
+
+\[v_s(t) = R \omega_s(t)\]
+
+<p>Therefore, we can easily calculate $t_{s \rightarrow r}$.</p>
+
+\[\begin{align}
+    &amp;v_s(t_{s \rightarrow r}) = R \omega_s(t_{s \rightarrow r}) \\[10pt]
+    &amp;v_0 - \mu_s g \, t_{s \rightarrow r} = R\omega_0 + \tfrac{5}{2} \mu_s g \, t_{s \rightarrow r} \\[10pt]
+    &amp;\boxed{ t_{s \rightarrow r} = \tfrac{2}{7} \tfrac{1}{\mu_s g} (v_0 - R\omega_0) } \\[10pt]
+\end{align}\]
+
+<p>Let $v_{s \rightarrow r}$ be the velocity of the CB when it starts rolling without slipping.</p>
+
+\[v_{s \rightarrow r} = v_s(t_{s \rightarrow r}) = v_0 - \mu_s g \left ( \tfrac{2}{7} \tfrac{1}{\mu_s g} (v_0 - R\omega_0) \right )
+\implies \boxed{ v_{s \rightarrow r} = v_0 - \tfrac{2}{7} (v_0 - R\omega_0) = \tfrac{5}{7} v_0 + \tfrac{2}{7} R \omega_0 }\]
+
+<p>Of course, $\omega_{s \rightarrow r} = v_{s \rightarrow r}/R$. Next, we calculate how far the CB travels while sliding, denoted $x_{s \rightarrow r}$. Note that we are assuming $x_0 = 0$.</p>
+
+\[x_{s \rightarrow r} = x_s(t_{s \rightarrow r}) = v_0 \left ( \tfrac{2}{7} \tfrac{1}{\mu_s g} (v_0 - R\omega_0) \right ) - \tfrac{1}{2} \mu_s g \left ( \tfrac{2}{7} \tfrac{1}{\mu_s g} (v_0 - R\omega_0) \right )^2 \\[10pt]
+\implies
+\boxed{ x_{s \rightarrow r} = \tfrac{2}{49} \tfrac{1}{\mu_s g} (6v_0 + R\omega_0) (v_0 - R\omega_0) }\]
+
+<p>Finally, we calculate how much the CB rotated while sliding, denoted $\theta_{s \rightarrow r}$. Note that we are assuming $\theta_0 = 0$.</p>
+
+\[\theta_{s \rightarrow r} = \theta_s(t_{s \rightarrow r}) = \omega_0 \left ( \tfrac{2}{7} \tfrac{1}{\mu_s g} (v_0 - R\omega_0) \right ) + \tfrac{5}{4} \tfrac{\mu_s g}{R} \left ( \tfrac{2}{7} \tfrac{1}{\mu_s g} (v_0 - R\omega_0) \right )^2 \\[10pt]
+\implies
+\boxed{\theta_{s \rightarrow r} = \tfrac{1}{49} \tfrac{1}{\mu_s g} \tfrac{1}{R} (5v_0 + 9R\omega_0) (v_0 - R\omega_0) }\]
+
+<p><br /></p>
+
+<h4 id="the-general-solution"><u>The General Solution</u></h4>
+
+<p>Solving the general solution is exactly the same as the above special case.</p>
+
+<p>Using Newton’s second law, we get the translational and rotational accelerations, which essentially define the complete motion of this stage.</p>
+
+\[a_s = \begin{cases}
+    -\mu_s g    &amp;\quad\text{if } v_0 &gt; R \omega_0 \\[10pt]
+    0           &amp;\quad\text{if } v_0 = R \omega_0 \\[10pt]
+    +\mu_s g    &amp;\quad\text{if } v_0 &lt; R \omega_0 \\[10pt]
+\end{cases}
+\qquad\qquad
+\alpha_s = \begin{cases}
+    +\tfrac{5}{2} \tfrac{\mu_s g}{R}    &amp;\quad\text{if } v_0 &gt; R \omega_0 \\[10pt]
+    0                                   &amp;\quad\text{if } v_0 = R \omega_0 \\[10pt]
+    -\tfrac{5}{2} \tfrac{\mu_s g}{R}    &amp;\quad\text{if } v_0 &lt; R \omega_0 \\[10pt]
+\end{cases}\]
+
+<p>To clean these cases up a bit, define the following.</p>
+
+\[\abs{x} = \begin{cases}
+    -x  \quad &amp;\text{if } x &lt; 0 \\[5pt]
+    0   \quad &amp;\text{if } x = 0 \\[5pt]
+    x   \quad &amp;\text{if } x &gt; 0
+\end{cases}
+\qquad\qquad
+\texttt{sgn}(x) = \frac{x}{\abs{x}} = \begin{cases}
+    -1  \quad &amp;\text{if } x &lt; 0 \\[5pt]
+    0   \quad &amp;\text{if } x = 0 \\[5pt]
+    1   \quad &amp;\text{if } x &gt; 0
+\end{cases}\]
+
+<p>Then we can condense the equations. And now, we just integrate like we did before.</p>
+
+\[\begin{align}
+    &amp;a_s = - \texttt{sgn}(v_0 - R \omega_0) \mu_s g
+    &amp;\qquad
+    &amp;\alpha_s = \texttt{sgn}(v_0 - R \omega_0) \tfrac{5}{2} \tfrac{\mu_s g}{R}
+    \\[10pt]
+
+
+    &amp;v_s(t) = v_0 - \texttt{sgn}(v_0 - R \omega_0) \mu_s g t
+    &amp;\qquad
+    &amp;\omega_s(t) = \omega_0 + \texttt{sgn}(v_0 - R \omega_0) \tfrac{5}{2} \tfrac{\mu_s g}{R} t
+    \\[10pt]
+    
+    &amp;x_s(t) = v_0t - \texttt{sgn}(v_0 - R \omega_0) \tfrac{1}{2} \mu_s g t^2
+    &amp;\qquad
+    &amp;\theta_s(t) = \omega_0 t + \texttt{sgn}(v_0 - R \omega_0) \tfrac{5}{4} \tfrac{\mu_s g}{R} t^2
+\end{align}\]
+
+<p>Since the math is almost identical to the special case we analyzed above, I will just assert the values for all $s \rightarrow r$ values.</p>
+
+\[\begin{align}
+    t_{s \rightarrow r} &amp;= \tfrac{2}{7} \tfrac{1}{\mu_s g} \abs{v_0 - R \omega_0}
+    \\[10pt]
+
+    v_{s \rightarrow r} = R\omega_{s \rightarrow r} &amp;= v_0 - \tfrac{2}{7} (v_0 - R\omega_0) = \tfrac{5}{7} v_0 + \tfrac{2}{7} R \omega_0
+    \\[10pt]
+
+    x_{s \rightarrow r} &amp;= \tfrac{2}{49} \tfrac{1}{\mu_s g} (6v_0 + R\omega_0) \abs{v_0 - R\omega_0}
+    \\[10pt]
+
+    \theta_{s \rightarrow r} &amp;= \tfrac{1}{49} \tfrac{1}{\mu_s g} \tfrac{1}{R} (5v_0 + 9R\omega_0) \abs{v_0 - R\omega_0}
+\end{align}\]
+
+<!-- I will refer to these sets of equations as 
+
+$$
+\Omega_s(t; \; v_0, \omega_0; \; R, \mu_s, g) = \{ a_s(t), \, v_s(t), \,  x_s(t), \, \alpha_s(t), \, \omega_s(t), \, \theta_s(t), \, t_{s \rightarrow r}, \, v_{s \rightarrow r}, \, x_{s \rightarrow r}, \, \omega_{s \rightarrow r}, \, \theta_{s \rightarrow r} \}
+$$ -->
+
+<p><br /></p>
+
+<h3 id="stage-2-rolling---analysis">Stage 2: Rolling - Analysis</h3>
+
+<p>Now we analyze stage 2 where the CB <strong>rolls without slipping</strong>. In this stage, the translational velocity and rotational velocity are in sync, i.e. we have the following relationship.</p>
+
+\[a_r = R \, \alpha_r
+\qquad\qquad
+v_r(t) = R \, \omega_r(t)\]
+
+<p>Just like before, we can write the net force and net torque equations.</p>
+
+\[\begin{align}
+    &amp;\textbf{Translational Motion} 
+    &amp;\qquad&amp;\textbf{Rotational Motion}
+    \\[10pt]
+    &amp;0 = \sum F_y = N - mg \implies N = mg
+    &amp;\qquad&amp;I \alpha_r = \sum \tau_z = - R f_r \implies \left ( \tfrac{2}{5} m R^2 \right ) \alpha_r = - R ( m \mu_r g )
+    \\[10pt]
+    &amp;
+    &amp;&amp; \implies \boxed{ \alpha_r = - \tfrac{5}{2} \tfrac{\mu_r g}{R} } \implies \boxed{ a_r = - \tfrac{5}{2} \mu_r g }
+\end{align}\]
+
+<p>Now the above analysis assumes that $v_{s \rightarrow r}$ is moving in the positive $x$-direction (to the right). However, it is possible to put so much draw on the ball to cause it to end up rolling backwards in the negative $x$-direction (to the left). In this case, the translational and angular velocities become negative. Thus, the general solution is the following.</p>
+
+\[a_r = R \alpha_r = - \texttt{sgn}(v_{s \rightarrow r}) \mu_r g\]
+
+<p>And again we integrate to get the equations of motion. Recall that rolling without slipping starts at time $t_{s \rightarrow r}$.</p>
+
+\[\begin{align}
+    v_r(t) = R \omega_r(t) &amp;= v_{s \rightarrow r} - \texttt{sgn}(v_{s \rightarrow r}) \tfrac{5}{2} \mu_r g (t - t_{s \rightarrow r})
+    \\[10pt]
+    
+    x_r(t) = R \theta_r(t) &amp;= x_{s \rightarrow r} + v_{s \rightarrow r} (t - t_{s \rightarrow r}) - \texttt{sgn}(v_{s \rightarrow r}) \tfrac{5}{4} \mu_r g (t - t_{s \rightarrow r})^2
+\end{align}\]
+
+<p>Finally, we can calculate the time at which the CB stops rolling by setting $v_r(t) = 0$ and solving for $t$.</p>
+
+\[t_{\text{stop}} = t_{s \rightarrow r} + \tfrac{2}{5} \tfrac{1}{\mu_r g} \abs{v_{s \rightarrow r}}\]
+
+<p>and evaluating $x_{\text{stop}} = x_r(t_{\text{stop}})$ gives</p>
+
+\[x_{\text{stop}} = R \theta_{\text{stop}} = x_{s \rightarrow r} + \texttt{sgn}(v_{s \rightarrow r}) \tfrac{1}{5} \tfrac{1}{\mu_r g} v_{s \rightarrow r}^2\]
+
+<!-- Therefore, the above set of equations can be summarized as 
+
+$$
+\Omega_r(t; \; t_{s \rightarrow r}, v_{s \rightarrow r}, x_{s \rightarrow r}; \; R, \mu_r, g) = \{ a_r(t), \, v_r(t), \,  x_r(t), t_{\text{stop}}, \, x_{\text{stop}} \}
+$$
+
+Technically, $t_{s \rightarrow r}, v_{s \rightarrow r}, x_{s \rightarrow r}$ can all be expressed solely in terms of the inputs $v_0$ and $\omega_0$. But I don't think that simplifies into anything nice looking. -->
+
+<p><br /></p>
+
+<h2 id="summarizing-the-results">Summarizing the Results</h2>
+
+<p>Therefore, the entire motion of any billiard ball can be modeled by the following equations.</p>
+
+\[v(t) = 
+\begin{cases}
+    v_0 - \texttt{sgn}(v_0 - R \omega_0) \mu_s g t
+        \quad &amp;\text{if } 0 \leq t &lt; t_{s \rightarrow r} \\[5pt]
+    v_{s \rightarrow r} - \texttt{sgn}(v_{s \rightarrow r}) \tfrac{5}{2} \mu_r g (t - t_{s \rightarrow r})
+        \quad &amp;\text{if } t_{s \rightarrow r} \leq t \leq t_{\text{stop}}
+\end{cases}
+
+\\[20pt]
+
+\omega(t) = 
+\begin{cases}
+    \omega_0 + \texttt{sgn}(v_0 - R \omega_0) \tfrac{5}{2} \tfrac{\mu_s g}{R} t
+        \quad &amp;\text{if } 0 \leq t &lt; t_{s \rightarrow r} \\[5pt]
+    \omega_{s \rightarrow r} - \texttt{sgn}(\omega_{s \rightarrow r}) \tfrac{5}{2} \tfrac{\mu_s g}{R} (t - t_{s \rightarrow r})
+        \quad &amp;\text{if } t_{s \rightarrow r} \leq t \leq t_{\text{stop}}
+\end{cases}\]
+
+<p>where</p>
+
+\[\begin{align}
+    t_{s \rightarrow r} &amp;= \tfrac{2}{7} \tfrac{1}{\mu_s g} \abs{v_0 - R \omega_0}
+    \\[10pt]
+
+    v_{s \rightarrow r} = R\omega_{s \rightarrow r} &amp;= v_0 - \tfrac{2}{7} (v_0 - R\omega_0) = \tfrac{5}{7} v_0 + \tfrac{2}{7} R \omega_0
+    \\[10pt]
+
+    t_{\text{stop}} &amp;= t_{s \rightarrow r} + \tfrac{2}{5} \tfrac{1}{\mu_r g} \abs{v_{s \rightarrow r}}
+\end{align}\]
+
+<p>I have made a fun interactive <a href="https://www.desmos.com/calculator/zlhc6x8jgk">Desmos plot</a> so you can play around with different initial conditions.</p>
+
+<p>Probably way more complicated than you expected. And we haven’t even considered CB/OB contact yet!</p>
+
+        </div>
+    </div>
+
+    <!--
+    <h3 style="text-align:center; margin-bottom:1em;">
+      <a href="/blog/">Blog Archive</a>
+    </h3>
+    -->
+    
+  </body>
+</html>
