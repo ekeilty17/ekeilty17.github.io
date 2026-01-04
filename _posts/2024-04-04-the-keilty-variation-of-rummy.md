@@ -29,7 +29,7 @@ The rest of the un-dealt cards are placed in the middle. This will be referred t
 <center>
 <div class="overflow-container">
 <div class="overflow-content">
-<embed src="/svg/the-keilty-variation-of-rummy/the-deal.svg" type="image/svg+xml" width="800px" height="500px" />
+<embed src="/blog-assets/the-keilty-variation-of-rummy/the-deal.svg" type="image/svg+xml" width="800px" height="500px" />
 </div>
 </div>
 </center>
@@ -41,7 +41,7 @@ A **meld** is either a set or a run. A **set** consists of three or more cards o
 <center>
 <div class="overflow-container">
 <div class="overflow-content">
-<embed src="/svg/the-keilty-variation-of-rummy/melds.svg" type="image/svg+xml" width="700px" height="200px" />
+<embed src="/blog-assets/the-keilty-variation-of-rummy/melds.svg" type="image/svg+xml" width="700px" height="200px" />
 </div>
 </div>
 </center>
@@ -63,7 +63,7 @@ The following is an example of a turn.
 <center>
 <div class="overflow-container">
 <div class="overflow-content">
-<embed src="/svg/the-keilty-variation-of-rummy/turn.svg" type="image/svg+xml" width="700px" height="500px" />
+<embed src="/blog-assets/the-keilty-variation-of-rummy/turn.svg" type="image/svg+xml" width="700px" height="500px" />
 </div>
 </div>
 </center>
@@ -126,7 +126,7 @@ The following is an example of picking up from the discard pile in the Keilty va
 <center>
 <div class="overflow-container">
 <div class="overflow-content">
-<embed src="/svg/the-keilty-variation-of-rummy/pick-up-from-discard-pile.svg" type="image/svg+xml" width="700px" height="500px" />
+<embed src="/blog-assets/the-keilty-variation-of-rummy/pick-up-from-discard-pile.svg" type="image/svg+xml" width="700px" height="500px" />
 </div>
 </div>
 </center>
@@ -138,7 +138,7 @@ The best way to explain this concept is with examples. Consider the following sc
 <center>
 <div class="overflow-container">
 <div class="overflow-content">
-<embed src="/svg/the-keilty-variation-of-rummy/rummy-1.svg" type="image/svg+xml" width="400px" height="200px" />
+<embed src="/blog-assets/the-keilty-variation-of-rummy/rummy-1.svg" type="image/svg+xml" width="400px" height="200px" />
 </div>
 </div>
 </center>
@@ -152,7 +152,7 @@ A rummy can also occur with lay-offs. Consider the following scenario.
 <center>
 <div class="overflow-container">
 <div class="overflow-content">
-<embed src="/svg/the-keilty-variation-of-rummy/rummy-2.svg" type="image/svg+xml" width="700px" height="200px" />
+<embed src="/blog-assets/the-keilty-variation-of-rummy/rummy-2.svg" type="image/svg+xml" width="700px" height="200px" />
 </div>
 </div>
 </center>
@@ -164,7 +164,7 @@ A rummy can also occur when playing a meld or a lay-off. Consider the same scena
 <center>
 <div class="overflow-container">
 <div class="overflow-content">
-<embed src="/svg/the-keilty-variation-of-rummy/rummy-3.svg" type="image/svg+xml" width="700px" height="260px" />
+<embed src="/blog-assets/the-keilty-variation-of-rummy/rummy-3.svg" type="image/svg+xml" width="700px" height="260px" />
 </div>
 </div>
 </center>
@@ -178,7 +178,7 @@ A very important aspect of the game is that completing your turn _includes throw
 <center>
 <div class="overflow-container">
 <div class="overflow-content">
-<embed src="/svg/the-keilty-variation-of-rummy/end-game-1.svg" type="image/svg+xml" width="670px" height="200px" />
+<embed src="/blog-assets/the-keilty-variation-of-rummy/end-game-1.svg" type="image/svg+xml" width="670px" height="200px" />
 </div>
 </div>
 </center>
@@ -192,7 +192,7 @@ This same scenario can occur with a card in the discard pile. For example,
 <center>
 <div class="overflow-container">
 <div class="overflow-content">
-<embed src="/svg/the-keilty-variation-of-rummy/end-game-2.svg" type="image/svg+xml" width="520px" height="200px" />
+<embed src="/blog-assets/the-keilty-variation-of-rummy/end-game-2.svg" type="image/svg+xml" width="520px" height="200px" />
 </div>
 </div>
 </center>

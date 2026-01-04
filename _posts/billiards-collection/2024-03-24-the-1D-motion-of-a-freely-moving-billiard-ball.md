@@ -69,7 +69,6 @@ The above variables may have subscripts to denote different instantiations, e.g.
 Suppose at time $t = 0$ and position $x = 0$, a cue strikes the CB instantaneously imparting an **initial translational velocity** (speed) of $v_0$ and an **initial rotational velocity** (spin) of $\omega_0$. The diagram below shows the complete $1\text{D}$ motion of the CB.
 
 <center>
-
 <embed src="/blog-assets/billiards/the-1D-motion-of-a-freely-moving-billiard-ball/CB%20Motion.svg" type="image/svg+xml" width="450px" height="500px" />
 </center>
 

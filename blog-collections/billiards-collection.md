@@ -13,7 +13,14 @@ This is a collection of posts about <a href="https://en.wikipedia.org/wiki/Cue_s
   {% if draft_status == false %}
   <div class="post-link-container">
     <a href="{{ post.url }}" class="post-link-item"> 
-        {{ post.title }} 
+        <div>
+            {{ post.title }} 
+        </div>
+        <div>
+            <div style="font-size: smaller; margin-top: 5px; margin-bottom: -15px; opacity: 0.4;">
+                <time datetime="{{ post.date | date_to_xmlschema }}" class="post-link-date">{{ post.date | date_to_string }}</time>
+            </div>
+        </div>
     </a>
   </div>
   {% endif %}
