@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      How Many Unique Racks are There? &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded MathJax (effectively LaTeX) support 
+    https://docs.mathjax.org/en/v2.7-latest/tex.html -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX", "input/MathML", "output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js", "mml2jax.js", "MathMenu.js", "MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
+            Macros: {
+                b: ["{\\boldsymbol #1}",1],
+                u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
+                arccsc: ["\\operatorname\{arccsc\}"],
+                arcsec: ["\\operatorname\{arcsec\}"],
+                arccot: ["\\operatorname\{arccot\}"],
+                csch: ["\\operatorname\{csch\}"],
+                sech: ["\\operatorname\{sech\}"],
+                arcsinh: ["\\operatorname\{arcsinh\}"],
+                arccosh: ["\\operatorname\{arccosh\}"],
+                arctanh: ["\\operatorname\{arctanh\}"],
+                arccsch: ["\\operatorname\{arccsch\}"],
+                arcsech: ["\\operatorname\{arcsech\}"],
+                arccoth: ["\\operatorname\{arccoth\}"],
+                seq: ["{\\left \\langle #1 \\right \\rangle}",1],
+                iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
+                abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
+                hal: ["\\texttt{hal}"],
+                gal: ["\\texttt{gal}"],
+                sh: ["sh"],
+                st: ["st"]
+            },
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!--
+    TeX-AMS_HTML
+    TeX-AMS-MML_HTMLorMML
+    TeX-MML-AM_HTMLorMML
+-->
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">AI/ML Engineer</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+        <li>
+          <a href="/files/Eric Keilty - Resume.pdf" target="_blank">R&eacute;sum&eacute;</a>
+        </li>
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2026 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container">
+
+        <div class="post">
+            <h1 class="post-title">How Many Unique Racks are There?</h1>
+            <!-- <span class="post-date">03 Jan 2026</span> -->
+            <time datetime="2026-01-03T00:00:00-05:00" class="post-date">03 Jan 2026</time>
+            <h2 id="introduction">Introduction</h2>
+
+<p>In North America the most popular billiard games are 8-ball, 9-ball, and 10-ball. To begin each of these games, balls are arranged into a <strong>rack</strong> according to certain rules. In this post, I will analyze the number of unique starting racks in each of these games, according to the <a href="https://wpapool.com/rules/">WPA</a> and <a href="https://upatour.com/pool-rules/">UPA</a> official rules.</p>
+
+<p><br /></p>
+
+<h2 id="9-ball">9-Ball</h2>
+
+<p>The WPA and UPA have different racking rules for 9-ball, I will analyze each.</p>
+
+<center>
+<div class="overflow-container">
+<div class="overflow-content">
+    <img src="/blog-assets/billiards/how-many-unique-racks-are-there/9-ball.png" width="350px" alt="9 Ball Rack" />
+</div>
+</div>
+</center>
+
+<h3 id="wpa">WPA</h3>
+
+<p>According to Section 5.2 of the <a href="https://wpapool.com/wp-content/uploads/2026/01/2026.01.02-WPA-Rules.pdf">WPA official rules as of Sep 15, 2025</a>, the $1$ ball is placed at the top, the $9$ ball in the middle, and all other balls placed randomly.</p>
+
+<p>This means we need to determine the number of ways to arrange 7 balls. There are 7 choices for the first ball, 6 choices for the second ball, 5 choices for the third ball, etc. This means the total number of combinations is</p>
+
+\[7! = 7 \cdot 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 = 5040\]
+
+<p>Therefore, there are $5040$ unique racks of 9-ball according to WPA rules.</p>
+
+<h3 id="upa">UPA</h3>
+
+<p>According to the official <a href="https://upatour.com/9-ball-rules/">UPA 9-ball rules</a> at the time of writing, they have an additional restriction that the $2$-ball must be placed at the bottom of the rack.</p>
+
+<p>Now, the number of combinations is the number of ways to arrange 6 balls, which is</p>
+
+\[6! = 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 = 840\]
+
+<p>Therefore, there are $840$ unique racks of 9-ball according to WPA rules.</p>
+
+<p><br /></p>
+
+<h2 id="10-ball">10-Ball</h2>
+
+<p>The WPA and UPA have different racking rules for 10-ball, I will analyze each.</p>
+
+<center>
+<div class="overflow-container">
+<div class="overflow-content">
+    <img src="/blog-assets/billiards/how-many-unique-racks-are-there/10-ball.png" width="450px" alt="10 Ball Rack" />
+</div>
+</div>
+</center>
+
+<h3 id="wpa-1">WPA</h3>
+
+<p>According Section 6.2 of the <a href="https://wpapool.com/wp-content/uploads/2026/01/2026.01.02-WPA-Rules.pdf">WPA official rules as of Sep 15, 2025</a>, the $1$ ball is placed at the top, the $10$ ball in the middle, and all other balls placed randomly.</p>
+
+<p>Therefore, by the exact same argument as before, there are $8! = 40,320$ unique racks of 10-ball.</p>
+
+<h3 id="upa-1">UPA</h3>
+
+<p>According to the official <a href="https://upatour.com/10-ball-rules/">UPA 10-ball rules</a> at the time of writing, they have an additional restriction that the $2$-ball and $3$-ball must be placed at the bottom corners (in either order).</p>
+
+<p>There are $6!$ ways to choose the positions of the 6 random balls, and $2$ ways to choose the position of the $2$ and $3$ ball.</p>
+
+<p>Therefore, there are $2 \times 6! = 1440$ unique racks of 10-ball according to the UPA rules.</p>
+
+<p><br /></p>
+
+<h2 id="8-ball">8-Ball</h2>
+
+<p>The <a href="https://wpapool.com/wp-content/uploads/2026/01/2026.01.02-WPA-Rules.pdf">WPA</a> and the <a href="https://upatour.com/8-ball-rules/">UPA</a> both agree on the racking rules.</p>
+
+<center>
+<div class="overflow-container">
+<div class="overflow-content">
+    <img src="/blog-assets/billiards/how-many-unique-racks-are-there/8-ball.png" width="300px" alt="8 Ball Rack" />
+</div>
+</div>
+</center>
+
+<p>The analysis is a bit more complicated, so first we need to define some terms.</p>
+
+<h3 id="definitions-and-rules">Definitions and Rules</h3>
+
+<p>In 8-ball, there are three types of balls:</p>
+<ul>
+  <li>seven solids</li>
+  <li>seven stripes</li>
+  <li>one $8$ ball.</li>
+</ul>
+
+<p>Two balls are of the same <strong>parody</strong> if they are either both solids or both stripes.</p>
+
+<p>A valid rack of 8-ball consists of placing the $8$ ball is placed in the middle, bottom left and right corners are different parodies, and all other balls placed randomly</p>
+
+<p>When defining a <strong>unique rack</strong> of 8-ball, there are two important considerations.</p>
+<ol>
+  <li>Every solid ball is indistinguishable from every other solid ball. The numbers and colors don’t mean anything in 8-ball</li>
+  <li>Every striped ball is indistinguishable from every other striped ball. The numbers and colors don’t mean anything in 8-ball</li>
+  <li>Interchanging solids and strips does <strong>not</strong> result in a unique rack</li>
+</ol>
+
+<p>Consider the following examples</p>
+
+<center>
+<div class="overflow-container">
+<div class="overflow-content">
+    <img src="/blog-assets/billiards/how-many-unique-racks-are-there/same-8-ball-rack.png" width="800px" alt="8 Ball Rack 1" />
+</div>
+</div>
+</center>
+
+<p>All of these racks will be considered the “same” when we are counting unique racks. Between the first two racks I have just permuted the order of the solid and stripes. Between the first and third rack I have interchanged the positions of solids and stripes.</p>
+
+<h3 id="analysis">Analysis</h3>
+
+<p>First, let’s assume that the bottom left corner is a solid and the bottom right corner is a stripe. This does two things at once. First, it will ensure that all the racks in our analysis are valid racks. Second, it accounts for parody between solids and stripes by fixing one orientation.</p>
+
+<p>Now we just have to pick the arrangement of the rest of the 6 solids and 6 stripes. Really, we just have to pick the spots for the solids, and all of the remaining spots are forced to be stripes.</p>
+
+<p>There is 12 available spots for the first solid, then 11 available for the second solid, then 10 available for the third solid, etc. However, each solid is interchangeable, so we have to divide by the number of ways to arrange the solids in their chosen spots. Therefore, the number of combinations is</p>
+
+\[\frac{12 \cdot 11 \cdot 10 \cdot 9 \cdot 8 \cdot 7}{6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1}\]
+
+<p>There is a special notation for this</p>
+
+\[\binom{6}{12} = \frac{12!}{6! (12 - 6)!} = 924\]
+
+<p>Therefore, there are $924$ unique racks of 8-ball.</p>
+
+        </div>
+    </div>
+
+    <!--
+    <h3 style="text-align:center; margin-bottom:1em;">
+      <a href="/blog/">Blog Archive</a>
+    </h3>
+    -->
+    
+  </body>
+</html>

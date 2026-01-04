@@ -10,7 +10,7 @@
 
   <title>
     
-      The 1D Collision of Billiard Balls &middot; Eric Keilty
+      The 1D Collision of a Billiard Ball and the Cushion &middot; Eric Keilty
     
   </title>
 
@@ -151,14 +151,14 @@
     <div class="content container">
 
         <div class="post">
-            <h1 class="post-title">The 1D Collision of Billiard Balls</h1>
-            <!-- <span class="post-date">02 Jan 2026</span> -->
-            <time datetime="2026-01-02T00:00:00-05:00" class="post-date">02 Jan 2026</time>
+            <h1 class="post-title">The 1D Collision of a Billiard Ball and the Cushion</h1>
+            <!-- <span class="post-date">01 Jan 2026</span> -->
+            <time datetime="2026-01-01T00:00:00-05:00" class="post-date">01 Jan 2026</time>
             <h2 id="introduction">Introduction</h2>
 
 <p><strong>Billiards</strong> refers to a wide variety of games, but in most variants a turn consists of using a <strong>cue stick</strong> to strike the <strong>cue-ball</strong> (CB) towards an <strong>object-ball</strong> (OB) in order to achieve some objective (usually pocketing the OB). Being skilled at these games means accurately and precisely controlling what happens to <em>both</em> the CB and OB after contact by imparting precise <strong>speed</strong> and <strong>spin</strong> on the CB.</p>
 
-<p>In a <a href="/blog/billiards/the-1D-motion-of-a-freely-moving-billiard-ball/">previous post</a>, I analyzed the $1\text{D}$ motion of a freely moving billiard ball. In this post, I will analyze what happens when that freely moving billiard ball collides with <strong>TODO</strong>.</p>
+<p>In a <a href="/blog/billiards/the-1D-motion-of-a-freely-moving-billiard-ball/">previous post</a>, I analyzed the $1\text{D}$ motion of a freely moving billiard ball. In this post, I will analyze what happens when that freely moving billiard ball collides with the <strong>cushion</strong>, accounting for the effect of the impulse force and friction on the translational and rotational velocity.</p>
 
 <p><br /></p>
 
@@ -218,134 +218,135 @@
 
 <p><br /></p>
 
-<h2 id="collision-between-the-cue-ball-and-object-ball">Collision Between the Cue Ball and Object Ball</h2>
-
-<p>During a shot in any billiard game, the CB will be hit towards some OB. The CB will collide with the OB, causing both the CB and OB to go in different directions. The goal of billiards is to control <em>both</em> trajectories (beginner players are usually only concerned with the OB). In this section, I give a mathematical analysis of the 1D case.</p>
+<h2 id="ball-cushion-collision">Ball-Cushion Collision</h2>
 
 <h3 id="overview">Overview</h3>
 
-<p>Suppose a cue strikes the CB imparting an <strong>initial translational velocity</strong> of $v_0$ and an <strong>initial rotational velocity</strong> (spin) of $\omega_0$. The CB travels according to the motion described in a <a href="/blog/billiards/the-1D-motion-of-a-freely-moving-billiard-ball/">previous post</a>, eventually colliding with the OB. Suppose this occurs at time $t_c$ and position $x_c$ with translational velocity $v_c$ and rotational velocity $\omega_c$. We will assume this collision occurs instantaneously over a very small length of time $\Delta t \approx 0$. There is an energy exchange between the CB and OB, altering their translational and rotational velocities. Finally, post-collision the CB and OB travel freely according to their laws of motion. This is summarized in the diagram below, which shows the collision of a draw shot.</p>
+<p>Suppose a billiard ball contacts a cushion at time $t = 0$ and position $x = 0$ with <strong>translational velocity</strong> of $v_0$ and <strong>rotational velocity</strong> (spin) of $\omega_0$ at the time of contact. Since the cushion is much softer than a billiard ball, we will assume the billiard ball remains perfectly rigid. Over a short time $\Delta t$, the cushion will compress and re-expand by $\Delta x$. This is summarized in the diagram below.</p>
 
 <center>
-<embed src="/blog-assets/billiards/the-1D-collision-of-billiard-balls/ball-ball-collision-overview.svg" type="image/svg+xml" width="600px" height="600px" />
+<embed src="/blog-assets/billiards/the-1D-collision-of-a-biliard-ball-and-cushion/ball-cusion-collision.svg" type="image/svg+xml" width="250px" height="400px" />
 </center>
+
+<p>As the cushion compresses, an impulse force $F_{\text{imp}}$ pushes back against the billiard ball, eventually causing it to stop and rebound in the other direction. Additionally, due to the spin of the billiard ball there is friction $f_c$ between the ball and the cushion.</p>
 
 <h3 id="idealized-analysis">Idealized Analysis</h3>
 
-<p>As a first-order approximation (which is actually not that far off from reality), we will assume that the collision between the CB and OB is <strong>perfectly elastic</strong>. This means we are assuming the balls are perfectly rigid, meaning there is no compression upon collision. Mathematically, this means kinetic energy is conserved. Additionally, we will also assume there is no friction between the CB and OB (and therefore no spin-transfer).</p>
+<p>As a first-order approximation, we will assume that the collision between the billiard ball and cushion is <strong>perfectly elastic</strong>. This means we are assuming both the billiard ball and cushion are perfectly rigid, meaning there is no compression upon collision. Mathematically, this means kinetic energy is conserved. Additionally, we will also assume there is no friction (and therefore no spin-transfer).</p>
 
-<p>This is a classic conservation of momentum and conservation of kinetic energy problem.</p>
+<p>This is a classic conservation of conservation of kinetic energy problem. Since the cushion is static, its velocity is always $0$.</p>
 
 \[\begin{align}
-    \sum p_i &amp;= \sum p_f 
-    &amp;&amp;\implies\quad m v_c = m v_{\text{CB}} + m v_{\text{OB}} 
-    &amp;&amp;\implies\quad v_c = v_{\text{CB}} + v_{\text{OB}}
-    \\[10pt]
     \sum \text{KE}_i &amp;= \sum \text{KE}_f 
-    &amp;&amp;\implies\quad \tfrac{1}{2} m v_c^2 = \tfrac{1}{2} m v_{\text{CB}}^2 + \tfrac{1}{2} m v_{\text{OB}}^2
-    &amp;&amp;\implies\quad v_c^2 = v_{\text{CB}}^2 + v_{\text{OB}}^2
+    &amp;&amp;\implies\quad \tfrac{1}{2} m v_0^2 + \tfrac{1}{2} M (0) = \tfrac{1}{2} m v_f^2 + \tfrac{1}{2} M (0)
+    &amp;&amp;\implies\quad v_f^2 = v_0^2
+    \\[10pt]
+    \sum p_i &amp;= \sum p_f 
+    &amp;&amp;\implies\quad m v_0 + M (0) = - m v_f + M (0)
+    &amp;&amp;\implies\quad v_f = - v_0
+    \\[10pt]
 \end{align}\]
 
-<p>Solving both simultaneous equations gives two solutions, but only one that can reasonably occur physically. This is</p>
+<p>Since we assumed no friction, $\omega_0 = \omega_f$. Therefore, in this over idealized analysis, we have</p>
 
-\[v_{\text{CB}} = 0
-\qquad
-v_{\text{OB}} = v_c\]
+\[v_f = - v_0
+\qquad\qquad
+\omega_f = \omega_0\]
 
-<p>In particular, since we are assuming the collision is perfectly elastic, the momentum from the CB is completely transferred to the OB. Furthermore, since we are assuming there is no friction between the CB and OB, we have</p>
-
-\[\omega_{\text{CB}} = \omega_c
-\qquad
-\omega_{\text{OB}} = 0\]
+<p>i.e. the rotational velocity is unaffected and the translational velocity is reversed.</p>
 
 <p><br /></p>
 
 <h3 id="accounting-for-billiard-ball-compression">Accounting for Billiard Ball Compression</h3>
 
-<p>Even though billiard balls are very rigid, there is no such thing as a perfectly elastic collision. When a billiard ball collides with another, the semi-elasticness of the collision is measured by the <strong>coefficient of restitution</strong>, $e_b$. Now, kinetic energy is not conserved, and instead we have the following relationship.</p>
+<p>In reality, the collision between the billiard ball and the cushion is <strong>semi-elastic</strong> which is modeled by the <strong>coefficient of restitution</strong>, $e_c$. Now, kinetic energy is not conserved, and instead we have the following relationship.</p>
 
-\[e_b = \frac{v_{\text{CB}} - v_{\text{OB}}}{v_c}\]
+\[e_c = \frac{\abs{\text{relative velocity of separation after collusion}}}{\abs{\text{relative velocity of separation before collusion}}}\]
 
-<p>Combining with the equation from the conservation of linear momentum $v_c = v_{\text{CB}} + v_{\text{OB}}$, we can solve</p>
+<p>Therefore,</p>
 
-\[v_{\text{CB}} = \left ( \frac{1 - e_b}{2} \right ) v_c
-\qquad
-v_{\text{OB}} = \left ( \frac{1 + e_b}{2} \right ) v_c\]
+\[e_c = \frac{\abs{v_f}}{\abs{v_0}}
+\quad\implies\quad
+\abs{v_f} = e_c \abs{v_0} 
+\quad\implies\quad
+v_f = -e_c v_0\]
 
-<p>For standard billiard balls, $e_{b} \in [0.92, 0.98]$. Note, the coefficient of restitution is a unitless value. Thus, the effect of billiard ball compression is essentially negligible compared to our idealized analysis.</p>
+<p>For standard billiard balls and cushions, the coefficient of restitution is $e_{c} \in [0.6, 0.9]$ (<a href="https://drdavepoolinfo.com//faq/physics/physical-properties/">source</a>).</p>
 
 <p><br /></p>
 
-<h3 id="accounting-for-spin-transfer">Accounting for Spin Transfer</h3>
+<h3 id="spin-reduction">Spin Reduction</h3>
 
 <p>Even though billiard balls are very smooth, there is still some friction between them. As an approximation let’s again use <strong>Coulomb’s law of friction</strong></p>
 
-\[f_b = \mu_b F_c\]
+\[f_c = \mu_c F_{\text{imp}}\]
 
-<p>where $\mu_{b}$ is the frictional force between the OB and CB, and $F_c$ is the force at impact between the OB and CB. We will assume this is an impulse force lasting some small amount of $\Delta t$. Therefore</p>
+<p>where $\mu_{c}$ is the frictional force between the cushion and the billiard ball, and $F_{\text{imp}}$ is the impulse force due to cushion compression. For standard billiard balls and cloth, $\mu_c \in [0.15, 0.4]$ (<a href="https://drdavepoolinfo.com//faq/physics/physical-properties/">source</a>).</p>
 
-\[F_c = \tfrac{m v_c}{\Delta t_c}\]
+<p>It is undoubtedly true that $F_{\text{imp}}$ varies throughout cushion compression, changing as the cushion deforms. However, since $\Delta t$ is so small, we can use a linear approximation. $F_{\text{imp}}$ will represent the <strong>average impulse force</strong> over $\Delta t$.</p>
 
-<p>We basically do a linear approximation to obtain the final velocity since $\Delta t_c$ is so small, even though the friction force is definitely not linear. The acceleration during the impulse is</p>
+<p>First, using the result from the previous section, we can compute</p>
 
-\[a_{\text{impulse}} = \tfrac{\mu_b v_c}{\Delta t_c} 
-\qquad
-\alpha_{\text{impulse}} = \tfrac{2}{5}\]
+\[\Delta p = mv_f - mv_0 = -m e_c v_0 - mv_0 = -m(1 + e_c) v_0\]
 
-<p>Therefore, we have the following equations of motion of the impulse. Note, these are occurring in the $y$-direction</p>
+<p>Now, using the impulse formula, we can calculate $F_{\text{imp}}$</p>
 
-\[v_{\text{impulse}}(t) = a_{\text{impulse}} t = \tfrac{\mu_b v_c}{\Delta t_c} t
-\qquad
-y_{\text{impulse}}(t) = \tfrac{1}{2} a_{\text{impulse}} t^2 = \tfrac{\mu_b v_c}{2 \Delta t_c} t^2\]
+\[J = \Delta p = F_{\text{imp}} \Delta t
+\quad\implies\quad
+F_{\text{imp}} = - m (1 + e_c) \tfrac{v_0}{\Delta t}\]
 
-<p>Therefore, after the impulse, we have an updated velocity after contact</p>
+<p>Therefore,</p>
 
-\[v_{\text{impulse}}(\Delta t_c) = \mu_b v_c
-\qquad
-y_{\text{impulse}}(\Delta t_c) = \tfrac{1}{2} \mu_b v_c \Delta t_c\]
+\[f_c = m \mu_c (1 + e_c) \tfrac{v_0}{\Delta t}\]
 
-<h3 id="calculating-hop-just-because-we-can">Calculating Hop (just because we can)</h3>
+<p>Now, we can do a net-torque analysis</p>
 
-<p>Given enough top spin, it’s actually possible for the CB to <em>climb</em> the OB, resulting in the CB to <strong>hop</strong> after contact. Since this collision is not elastic, energy is not conserved. Instead we use work. Recall that $f_b = \mu_b F_c = \mu_b \tfrac{m v_c}{\Delta t_c}$ and $y_{\text{impulse}}(\Delta t_c) = \tfrac{1}{2} \mu_b v_c \Delta t_c$.</p>
+\[I \alpha = \sum \tau_z = R f_c 
+\quad\implies\quad
+\left ( \tfrac{2}{5} m R^2 \right ) \alpha = R ( m \mu_c (1 + e_c) \tfrac{v_0}{\Delta t} )
+\quad\implies\quad
+\alpha = \mu_c \tfrac{5(1 + e_c)}{2} \tfrac{v_0}{R \Delta t}\]
+
+<p>Finally, we can calculate the final rotational velocity</p>
+
+\[\Delta \omega = - \alpha \Delta t = - \mu_c \tfrac{5(1 + e_c)}{2} \tfrac{v_0}{R}\]
+
+<p>Therefore,</p>
+
+\[\omega_f = \omega_0 - \mu_c \tfrac{5(1 + e_c)}{2} \tfrac{v_0}{R}\]
+
+<h3 id="hop">Hop</h3>
+
+<p>Let’s see what happens if we do a net force analysis</p>
+
+\[m a_y = \sum F_y = f_c = m \mu_c (1 + e_c) \tfrac{v_0}{\Delta t}
+\quad\implies\quad
+a_y = \mu_c (1 + e_c) \tfrac{v_0}{\Delta t}\]
+
+<p>So we actually have an upward acceleration. If the billiard ball is moving fast enough, it can climb the rail and gain vertical momentum. Therefore,</p>
+
+\[y_{\text{imp}} = \tfrac{1}{2} a_y (\Delta t)^2
+\quad\implies\quad
+y_{\text{imp}} = \mu_c \tfrac{1 + e_c}{2} v_0 \Delta t\]
+
+<p>$y_{\text{imp}}$ represents the displacement of the billiard ball due to the impulse. However, the billiard ball may continue moving upward after the impulse. To calculate its maximum heigh, we use an energy analysis.</p>
 
 \[% W_{\text{net}} = \Delta \text{KE} \\[10pt]
 \begin{align}
     W_{\text{nc}} &amp;= \Delta \text{KE} + \Delta \text{PE} \\[10pt]
 
-    f_b \cdot y_{\text{impulse}}(\Delta t_c) &amp;= \left (\Delta \text{KE}_{\text{CB}} + \Delta \text{KE}_{\text{OB}} \right ) + (\Delta \text{PE}_{\text{CB}} + \Delta \text{PE}_{\text{OB}}) \\[10pt]
+    f_c \cdot y_{\text{imp}} &amp;= \Delta \text{KE} + \Delta \text{PE} \\[10pt]
 
-    \tfrac{1}{2} \mu_b^2 m v_c^2 &amp;= \left ( \tfrac{1}{2} m v_{\text{CB}}^2 + \tfrac{1}{2} m v_{\text{OB}}^2 - \tfrac{1}{2} m v_c^2 \right ) + (mgh_{\text{CB}} + mgh_{\text{OB}}) \\[10pt]
+    \tfrac{1}{2} m \mu_c^2 (1 + e_c)^2 v_0^2 &amp;= \left ( \tfrac{1}{2} m e_c^2 v_0^2 - \tfrac{1}{2} m v_0^2 \right ) + mgh \\[10pt]
 
-    \tfrac{1}{2} \mu_b^2 v_c^2 &amp;= \tfrac{1}{2} \left ( v_{\text{CB}}^2 + v_{\text{OB}}^2 - v_c^2 \right ) + g(h_{\text{CB}} + h_{\text{OB}})
+    \mu_c^2 (1 + e_c)^2 v_0^2 &amp;= -(1 - e_c^2) v_0^2 + 2gh \\[10pt]
+
+    h &amp;= \tfrac{1}{2g} \left [ \mu_c^2 (1 + e_c)^2 + (1 - e_c^2) \right ] v_0^2
 \end{align}\]
 
-<p>Now, if we assume the collision is perfectly elastic ($v_{\text{CB}} = 0$ and $v_{\text{OB}} = v_c$), then</p>
+<p>Using $\mu_c = 0.2$ and $e_c = 0.8$, we get</p>
 
-\[h_{\text{CB}} + h_{\text{OB}} = \frac{\mu_b^2 v_c^2}{2 g}\]
-
-<p>If we take into account the semi-elasticity of the collision, then we get the following</p>
-
-\[\tfrac{1}{2} \mu_b^2 v_c^2 = \tfrac{1}{2} \left ( \tfrac{1}{4}(1 - e_b)^2 v_c^2 + \tfrac{1}{4}(1 + e_b)^2 v_c^2 - v_c^2 \right ) + g(h_{\text{CB}} + h_{\text{OB}}) \\[10pt]
-\tfrac{1}{2} \mu_b^2 v_c^2 = \tfrac{1}{4} (e_b^2 - 1) v_c^2 + gh \\[10pt]
-h_{\text{CB}} + h_{\text{OB}} = \left ( \frac{\mu_b^2}{2g} + \frac{1 - e_b^2}{4g} \right ) v_c^2\]
-
-<p>If we plug in real values, we get</p>
-
-\[h_{\text{CB}} + h_{\text{OB}} \approx \left ( 0.0003 + 0.0039 \right ) v_c^2 \approx 0.004 v_c^2\]
-
-<p>or</p>
-
-\[h_{\text{CB}} + h_{\text{OB}} \approx \left ( 0.0003 + 0.0039 \right ) v_c^2 \approx 0.004 v_c^2\]
-
-<p>A medium shot is about $1$ m/s, therefore, if the CB is spinning sufficiently quickly, then it will hop by $0.004 \, m = 4 \, mm$. Anecdotally, this sounds about right for medium speed.</p>
-
-<p><br /></p>
-
-<hr />
-
-<p><br /></p>
-
-<h2 id="collision-between-the-cue-ball-and-the-cushion">Collision Between the Cue Ball and the Cushion</h2>
+\[h \approx 0.025 v_0^2\]
 
 <p><br /></p>
 
@@ -355,7 +356,9 @@ h_{\text{CB}} + h_{\text{OB}} = \left ( \frac{\mu_b^2}{2g} + \frac{1 - e_b^2}{4g
 
 <h2 id="conclusion">Conclusion</h2>
 
-<p>In this post, I analyzed the $1\text{D}$ motion of a cue ball striking an object ball. I think it’s astounding that just two balls hitting each other can be so complicated.</p>
+<p>In this post, I analyzed the collision between a billiard ball and the cushion. We saw two important</p>
+
+<p>the $1\text{D}$ motion of a cue ball striking an object ball. I think it’s astounding that just two balls hitting each other can be so complicated.</p>
 
 <p>I believe this analysis provides a good foundation for understanding the behavior of billiard balls, with concepts that extrapolate to the 2D case and other more complicated situations. If nothing else, this was a nice application of classic Newtonian mechanics.</p>
 
