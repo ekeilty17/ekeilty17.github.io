@@ -1,5 +1,5 @@
 ---
-layout:     series
+layout:     post
 title:      "How I Remember BlackJack Basic Strategy"
 date:       2024-03-03
 categories: blog blackjack

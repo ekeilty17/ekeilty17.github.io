@@ -28,7 +28,7 @@ This post is a summary of things I've learned as I've progressed through my pers
    * [Caloric Deficit &hArr; Weight Loss](#caloric-deficit-iff-weight-loss)
    * [Losing Weight &ne; Losing Fat](#losing-weight-neq-losing-fat)
    * [You Can't Out-Run a Bad Diet](#you-cant-out-run-a-bad-diet)
-   * [You Can't Choose What Fat you Lose](#you-cant-choose-what-fat-you-lose)
+   * [You Can't Choose What Fat You Lose](#you-cant-choose-what-fat-you-lose)
 - [Sticking to a Diet](#sticking-to-a-diet)
    * [Extreme Diets Don't Work](#extreme-diets-dont-work)
    * [You Must Enjoy Your Diet](#you-must-enjoy-your-diet)
@@ -62,14 +62,14 @@ This post is a summary of things I've learned as I've progressed through my pers
 
 ### Energy and Calories
 
-In Newtonian mechanics, **energy** is a conserved physical quantity that measures a system's capacity to perform work. In particular, something that has energy can cause motion. All human movement - walking around, breathing air, lifting a box, etc. - requires energy. This even applies to your body's internal processes - pumping blood, digesting food, repairing a wound, etc. For example, over the course of a normal day your brain accounts for around 20% of your daily energy consumption [[source](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC124895/)]. Taken to the extreme, professional chess players have been measured using large amounts energy during while just sitting in a chair thinking really hard [[source](https://pubmed.ncbi.nlm.nih.gov/18987876/)].
+In Newtonian mechanics, **energy** is a conserved physical quantity that measures a system's capacity to perform work. In particular, something that has energy can cause motion. All human movement - walking around, breathing air, lifting a box, etc. - requires energy. This even applies to your body's internal processes - pumping blood, digesting food, repairing a wound, etc. For example, over the course of a normal day your brain accounts for around 20% of your daily energy consumption [[source](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC124895/)]. Taken to the extreme, professional chess players have been measured using large amounts of energy while just sitting in a chair thinking really hard [[source](https://pubmed.ncbi.nlm.nih.gov/18987876/)].
 
-The standard unit of energy in science are 
+The standard unit of energy in science is
 <span class="tooltip">**Joules** 
     <span class="tooltiptext" style="width: 425px;"> 
         Defined as the amount of energy exerted by a force of 1 Newton displacing a mass through a distance of 1 meter in the direction of that force. This is about the amount of energy it takes to lift a stick of butter 1 meter.
     </span>
-</span> ($\text{J}$). However, in macro-biology when refering to living organisms, energy is typically measured in calories. A **calorie** ($\text{cal}$) estimates the amount of energy required to raise the temperature of exactly 1 gram of water by 1 degree Celsius at 1 atmospheric pressure. Confusingly, the calories you see listed on food labels are actually **kilocalories** ($\text{kcal}$). Sometimes these are refered to as **"big" Calories** ($\text{Cal}$) [[source](https://www.ncbi.nlm.nih.gov/books/NBK499909/)]. Roughly 20 to 30 steps will burn 1 Calorie/kilocalorie [[source](https://www.verywellfit.com/pedometer-steps-to-calories-converter-3882595)]. For the remaining of this blog post, assume that I am always referring to Calories/kilocalories unless stated otherwise.
+</span> ($\text{J}$). However, in macro-biology when referring to living organisms, energy is typically measured in calories. A **calorie** ($\text{cal}$) estimates the amount of energy required to raise the temperature of exactly 1 gram of water by 1 degree Celsius at 1 atmospheric pressure. Confusingly, the calories you see listed on food labels are actually **kilocalories** ($\text{kcal}$). Sometimes these are referred to as **"big" Calories** ($\text{Cal}$) [[source](https://www.ncbi.nlm.nih.gov/books/NBK499909/)]. Roughly 20 to 30 steps will burn 1 Calorie/kilocalorie [[source](https://www.verywellfit.com/pedometer-steps-to-calories-converter-3882595)]. For the remainder of this blog post, assume that I am always referring to Calories/kilocalories unless stated otherwise.
 
 The conversions between all these units are listed below.
 
@@ -94,7 +94,7 @@ Over some predefined period of time (e.g. 24 hours), your **net caloric intake**
     </span>
 </span> (the conservation of energy), that energy delta has to come from/go to _somewhere_. That somewhere is your body mass.
 
-A good analogy is a leaky bucket. Water is being poured into the top of the bucket ($\text{Calories In}$) and some water is leaking out of a hole at the bottom ($\text{Calories Out}$). If water is being poured in faster than its leaking out, then the bucket will become filled with water. Conversely, if water is leaking out faster than its poured in, then the bucket will eventually become empty.
+A good analogy is a leaky bucket. Water is being poured into the top of the bucket ($\text{Calories In}$) and some water is leaking out of a hole at the bottom ($\text{Calories Out}$). If water is being poured in faster than it's leaking out, then the bucket will become filled with water. Conversely, if water is leaking out faster than it's poured in, then the bucket will eventually become empty.
 
 
 
@@ -106,7 +106,7 @@ A good analogy is a leaky bucket. Water is being poured into the top of the buck
 </div>
 </center>
 
-In this analogies, the bucket is your body and the water is your total _mass_. To summarize:
+In this analogy, the bucket is your body and the water is your total _mass_. To summarize:
 
 1. **Calorie Neutral** -- $$\text{Net Calories} = 0$$ -- Body mass unchanged
 2. **Calorie Surplus** -- $$\text{Net Calories} > 0$$ -- Body mass increases
@@ -127,9 +127,9 @@ Based on the formula (and the leaky bucket analogy) there are two levers that we
 
 Before you go and starve yourself to rapidly lose weight, please read this section. 
 
-Thinking back to our net calorie formula, we could take the approach of minimizing the $\text{Calories In}$, which will absolutely cause a calories deficit and absolutely cause us to lose weight. However, when most people say they want to _lose weight_, they really mean they want to _lose fat_. If you go on this extreme diet for an extended period, you will lose fat, but you will also lose muscle. Moreover, this is not healthy over a long period of time (intermittent fasting is a separate discussion).
+Thinking back to our net calorie formula, we could take the approach of minimizing the $\text{Calories In}$, which will absolutely cause a caloric deficit and absolutely cause us to lose weight. However, when most people say they want to _lose weight_, they really mean they want to _lose fat_. If you go on this extreme diet for an extended period, you will lose fat, but you will also lose muscle. Moreover, this is not healthy over a long period of time (intermittent fasting is a separate discussion).
 
-Let's expand on this a bit more. Suppose you decide to cold-turkey stop eating food while at the same time continue a sedentary life-style. Think about this from your body's perspective; your body is constantly adapting to its environment. In this situation, your body thinks you are starving to death (because you are). Therefore it will want to hold on to your fat for as long as possible. At the same time since you aren't exercising, your muscles will be targets as your body desperately looks for fuel sources. This is the opposite of what you wanted accomplish with this diet. 
+Let's expand on this a bit more. Suppose you decide to cold-turkey stop eating food while at the same time continue a sedentary life-style. Think about this from your body's perspective; your body is constantly adapting to its environment. In this situation, your body thinks you are starving to death (because you are). Therefore it will want to hold on to your fat for as long as possible. At the same time since you aren't exercising, your muscles will be targets as your body desperately looks for fuel sources. This is the opposite of what you wanted to accomplish with this diet. 
 
 It's much better to take a gradual approach. Eat at a reasonable caloric deficit while at the same time regularly exercising. If you are a newbie to the gym you absolutely can lose fat and gain muscle at the same time. In this scenario, you are communicating to your body that food is steady, so we don't need this excess fat; while at the same time we are doing regular physical activity so we need to continue building muscle.
 
@@ -139,7 +139,7 @@ It's much better to take a gradual approach. Eat at a reasonable caloric deficit
 
 Again, thinking back to our net calorie formula. Some people don't want to change their diet and instead try going all out on exercising. The problem with this is that empirically and scientifically it will never work. 
 
-The **Additive Energy Expenditure Model** is the intuitive hypothesis about human metabolism: an increase in physical activity will lead to an increase in total energy expenditure. Put more simply, exercising more means I burn more calories, which ultimately I will lose more weight assuming I exercised enough. This is nicely illustrated in the left diagram in the figure below [[source](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4803033/)].
+The **Additive Energy Expenditure Model** is the intuitive hypothesis about human metabolism: an increase in physical activity will lead to an increase in total energy expenditure. Put more simply, exercising more means I burn more calories, which ultimately means I will lose more weight, assuming I exercise enough. This is nicely illustrated in the left diagram in the figure below [[source](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4803033/)].
 
 <center>
 <div class="overflow-container">
@@ -151,15 +151,15 @@ The **Additive Energy Expenditure Model** is the intuitive hypothesis about huma
 
 Unfortunately, the evidence does not support this hypothesis [[source](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4803033/)]. Instead, the prevailing theory is the **Constrained Energy Expenditure Model** (right diagram in the figure above). In this model, more exercise does not necessarily mean more energy expenditure. Assuming all else is equal, exercising a moderate amount compared to exercising profusely has very little difference on weight loss.
 
-[Kurzgesagt](https://www.youtube.com/@kurzgesagt) has a really good video [video](https://www.youtube.com/watch?v=lPrjP4A_X4s) explaining this phenomenon. The intuitive explanation is that your body is built to adapt. If it realizes that you exercise everyday, then it will compensate in various ways to burn less calories while at rest. So unless you are running a marathon everyday, your daily energy expenditure is essentially constant regardless of the volume of physical activity (as long as it's more than zero).
+[Kurzgesagt](https://www.youtube.com/@kurzgesagt) has a really good [video](https://www.youtube.com/watch?v=lPrjP4A_X4s) explaining this phenomenon. The intuitive explanation is that your body is built to adapt. If it realizes that you exercise every day, then it will compensate in various ways to burn fewer calories while at rest. So unless you are running a marathon every day, your daily energy expenditure is essentially constant regardless of the volume of physical activity (as long as it's more than zero).
 
 <br />
 
-### You Can't Choose What Fat you Lose
+### You Can't Choose What Fat You Lose
 
 On social media you will sometimes see people claim that a certain workout is designed to burn belly-fat. This is complete nonsense. 
 
-Unfortunately, you do not get to choose what fat your body burns. This is entirely genetic. But if you keep dieting, your body will eventually burn the belly fat. Eventually the distribution of fat will be more or less even.
+Unfortunately, you do not get to choose what fat your body burns. This is entirely genetic. But if you keep dieting, your body will eventually burn the belly fat. Over time, the distribution of fat will become more or less even.
 
 <br />
 
@@ -171,7 +171,7 @@ Unfortunately, you do not get to choose what fat your body burns. This is entire
 
 ### Extreme Diets Don't Work
 
-A lot of people go from eating all ultra-processed foods (chips, oreos, etc), and try to switch to a crazy strict diet. Inevitably they will quit because the human psyche can only tolerate so pain. And when they quit, they often relapse to a worse diet than they had before. This is the opposite of the desired outcome.
+A lot of people go from eating all ultra-processed foods (chips, oreos, etc), and try to switch to a crazy strict diet. Inevitably they will quit because the human psyche can only tolerate so much pain. And when they quit, they often relapse to a worse diet than they had before. This is the opposite of the desired outcome.
 
 The point is to use _moderation_. You can still have cookies and cake every once in a while, just not all the time. Don't let the perfect be the enemy of the good; any improvement to your diet is a positive outcome. One less sugar in your coffee. One less sweet-treat a week. Incremental progress is still progress.
 
@@ -185,26 +185,26 @@ I guarantee you can find fruit that you like. I guarantee you can find a few veg
 
 The main reason people break their diets is either because they are craving sugar or they are hungry despite eating their allotted calories for the day. Unfortunately this is genetic, so some people struggle with it more than others. This is sometimes called **food noise**. But there are things you can do to mitigate this.
 
-Managing cravings is really about managing sugar (carbs included). We evolved to crave sugar because historically it was not available. So if we found it, evolution wired us to eat as much as possible. Somehow as the end of a meal you couldn't possibly have another piece of chicken, yet there is always room for cake and ice cream. And once you start eating sugar, it's hard to stop.
+Managing cravings is really about managing sugar (carbs included). We evolved to crave sugar because historically it was not available. So if we found it, evolution wired us to eat as much as possible. Somehow at the end of a meal you couldn't possibly have another piece of chicken, yet there is always room for cake and ice cream. And once you start eating sugar, it's hard to stop.
 
 For me personally, I try to limit my sugar and carbohydrate intake in the morning (before noon). If I have sugar in the morning, I will crave it all day and I will be hungry all day. Another trick is to eat fiber with your sugar, which limits your insulin spike and subsequent crash. This is why fruits are preferred to gummies.
 
 Managing satiation is all about managing "volume". One reason your stomach tells your brain it's full is when there is physically no more room for more food. Ultra-processed food tends to be calorie dense, meaning the same calories occupy less space in your stomach, which means you can eat more of it before feeling full. If you can eat food which physically fills your stomach, then you will feel full and satisfied. 
 
-For example, leafy vegetables fill up your stomach for virtually 0 calories. Pop corn is a great alternative to chips. They are higher volume and lower calories to satiate that snacking urg. Sometimes I even drink water instead of having a snack, just to fill my stomach and reduce the cravings.
+For example, leafy vegetables fill up your stomach for virtually 0 calories. Popcorn is a great alternative to chips. They are higher volume and lower calories to satiate that snacking urge. Sometimes I even drink water instead of having a snack, just to fill my stomach and reduce the cravings.
 
 
 ### You Can Eat as Much Protein, Fruit, and Vegetables as You Want
 
-Sugar, fat, and carbs are extremely easy to over-eat because you continue to crave them. Conversely, you can eat as much protein, fruit, and vegetables as you want. Think about a steak. At some point its just too much and your body rejects it, the thought of steak at this point may make you sick. But somehow you always have extra room for dessert.
+Sugar, fat, and carbs are extremely easy to over-eat because you continue to crave them. Conversely, you can eat as much protein, fruit, and vegetables as you want. Think about a steak. At some point it's just too much and your body rejects it, the thought of steak at this point may make you sick. But somehow you always have extra room for dessert.
 
-Fruit is essentially natural sugar, so you can overeat fruit. But it's much better than eating, say, gummies because the fruit skin provides added fiber which reduces sugar cravings.
+Fruit is essentially natural sugar, so you can overeat fruit. But it's much better than eating, say, gummies because the fiber content of the fruit reduces sugar cravings.
 
 ### Should You Count Calories?
 
-If losing weight is critical for your long-term health, then yes counting calories is the absolute best way to ensure that you are in a calories deficit. However, if you are just slightly over-weight, then let me present an alternative.
+If losing weight is critical for your long-term health, then yes counting calories is the absolute best way to ensure that you are in a caloric deficit. However, if you are just slightly overweight, then let me present an alternative.
 
-Psychologically, I don't like the idea of counting calories. For me personally, it would cause me to have a very bad relationship with food. Once I have a number to optimize...it's hard for me to stop my brain from trying to optimize it. Instead, I just try to be _calorie aware_ without actually doing the math. So I look at the calories of the food that I eat, and just try to vibe it out. I have a general sense of whether the food is worth its calories. For example, some cracks are extremely high in calories and they don't even taste that good, so why bother eating them.
+Psychologically, I don't like the idea of counting calories. For me personally, it would cause me to have a very bad relationship with food. Once I have a number to optimize...it's hard for me to stop my brain from trying to optimize it. Instead, I just try to be _calorie aware_ without actually doing the math. So I look at the calories of the food that I eat, and just try to vibe it out. I have a general sense of whether the food is worth its calories. For example, some crackers are extremely high in calories and they don't even taste that good, so why bother eating them.
 
 ### How to Track Your Weight
 
@@ -220,13 +220,13 @@ Your weight naturally fluctuates based on a million factors. The best way to tra
 
 ### If You are New to Exercising, Just Start Doing Anything
 
-If you start looking online or on social media you will get bombarded with fitness advice and exercise regiments. If you are completely or relatively new to going to the gym, the truth is that none of that matters. All that matters is that you **do something on a regular basis**. 
+If you start looking online or on social media you will get bombarded with fitness advice and exercise regimens. If you are completely or relatively new to going to the gym, the truth is that none of that matters. All that matters is that you **do something on a regular basis**. 
 
 The what does not matter - running, cycling, swimming, yoga, pilates, calisthenics. The best exercise is the exercise that you 1) somewhat enjoy, 2) will do consistently, and 3) will do it with some level of intensity. 
 
 ### Start Small - Building Muscle and Endurance Takes Time
 
-You're not going to see results overnight. This is a marathon not a sprint. Furthermore, there is no need to go all out. If you have never exercised then you should not be running for an hour followed up by intense weight lifting. Just walk on the treadmill for 30 mins while watching a movie/tv show/youtube video (or however long you can walk for). If that's too hard, walk for less. If that's too easy, walk for longer. And continue building up. Do push-ups and body-weight squats (however many you can do). If they become to easy, you can start looking up harder exercises.
+You're not going to see results overnight. This is a marathon not a sprint. Furthermore, there is no need to go all out. If you have never exercised then you should not be running for an hour followed up by intense weight lifting. Just walk on the treadmill for 30 mins while watching a movie/tv show/youtube video (or however long you can walk for). If that's too hard, walk for less. If that's too easy, walk for longer. And continue building up. Do push-ups and body-weight squats (however many you can do). If they become too easy, you can start looking up harder exercises.
 
 Your body is an amazing machine. If you do a particular movement consistently, it will grow muscle to make you better at that movement. If you can find the intensity sweet spot of pushing yourself sufficiently without overdoing it, the sky is the limit.
 
@@ -244,7 +244,7 @@ If you are a new lifter, just stick to the basics. Pick any variation of any of 
 - Deadlifts or hip hinges
 - Farmer's carries
 - Planks
-- Dead hangs or dead hand leg raises
+- Dead hangs or dead hang leg raises
 - Walking/running/cycling
 - Jump rope or sprints
 
@@ -252,9 +252,9 @@ Once you have the basics down, then you can start deciding which micro-optimizat
 
 ### The Hardest Part of Exercising is Setting Goals
 
-Once exercising becomes part of your daily routine, the actually exercising is the easy part. The hardest part is often deciding _what_ to do at the gym. This is something you really need to think about and determine for yourself.
+Once exercising becomes part of your daily routine, the actual exercising is the easy part. The hardest part is often deciding _what_ to do at the gym. This is something you really need to think about and determine for yourself.
 
-For me personally, lifting weights is really boring. It doesn't motivate me at all. I found motivation by training for specific movements or physical activities. For example, I got into rock climbing which required upper-body strength that I didn't possess. So I did some googling and found starting training specifically for that activity. Currently, my new goal is to master the hand-stand. So a few times a week I have exercise routines specifically training for that.
+For me personally, lifting weights is really boring. It doesn't motivate me at all. I found motivation by training for specific movements or physical activities. For example, I got into rock climbing which required upper-body strength that I didn't possess. So I did some googling and started training specifically for that activity. Currently, my new goal is to master the hand-stand. So a few times a week I have exercise routines specifically training for that.
 
 ### Muscles for Looks, Cardio for Longevity
 
@@ -268,7 +268,7 @@ Strength training is really really good for you, especially as you age. However,
 
 ### Abs are Made in the Gym, but _Revealed_ in the Kitchen
 
-A lot of people are (understandably) into abs. On social media you will often see people advertise products or classes which specifically target abs. That's all great and training your core is extremely important. But truthfully, abs exercises can only get you so far. Strict dieting and frankly being dehydrated is much more important for having visible abs.
+A lot of people are (understandably) into abs. On social media you will often see people advertise products or classes which specifically target abs. That's all great and training your core is extremely important. But truthfully, ab exercises can only get you so far. Strict dieting and frankly being dehydrated is much more important for having visible abs.
 
 
 <br />
@@ -279,7 +279,7 @@ A lot of people are (understandably) into abs. On social media you will often se
 
 ## Body Building
 
-I include this section because at the time of writing body building and _looksmaxxing_ has became really popular on social media. My goal is to dispel some of the misconceptions.
+I include this section because at the time of writing body building and _looksmaxxing_ has become really popular on social media. My goal is to dispel some of the misconceptions.
 
 ### Do Not EVER Take PEDs/Steroids
 
@@ -287,22 +287,22 @@ I have never done so and will never do so. Given the steroid epidemic among youn
 
 ### Body Builders are Morbidly Obese
 
-Obesity is just a function of total body weight. Being 300 pounds is being 300 pounds, it doesn't matter if its muscle or fat. Either way, your heart still has to pump blood to 300 pounds worth of body mass...and it was not designed to do that.
+BMI-based obesity metrics don't distinguish between fat and muscle mass. Being 300 pounds is being 300 pounds, it doesn't matter if it's muscle or fat. Either way, your heart still has to pump blood to 300 pounds worth of body mass...and it was not designed to do that.
 
 ### Body Building is the Opposite of Healthy
 
-Body building is not healthy for you; it's the opposite of healthy. You are gaining way more muscle than the human body was designed to carry. You are essentially developing an eating disorder by way over-eating during a bulk and way under-eating during a cut. You are developing body dysmorphia by constantly critiquing your own body and comparing it to others. You are putting yourself in an environment where taking ridiculous doses of PEDs is considered normal. There is really nothing positive that I can say about this sport.
+Body building is not healthy for you; it's the opposite of healthy. You are gaining way more muscle than the human body was designed to carry. You are essentially developing an eating disorder by vastly overeating during a bulk and vastly undereating during a cut. You are developing body dysmorphia by constantly critiquing your own body and comparing it to others. You are putting yourself in an environment where taking ridiculous doses of PEDs is considered normal. There is really nothing positive that I can say about this sport.
 
 ### Bulking and Cutting are Terrible for You
 
-Drastic fluctuations in your body weight is not healthy at all. Do not ever go on a bulk in order to gain more muscle. You will lose a lot of that muscle on the subsequent cut. **Main-gaining** - maintaining a healthy body weight all year while slowly building more muscle - is the far superior approach. It is not only much healthier, but also will facilitate more muscle growth in the long run. If you're above 15% body fat (which you probably are), then you should not ever be bulking.
+Drastic fluctuations in your body weight are not healthy at all. Do not ever go on a bulk in order to gain more muscle. You will lose a lot of that muscle on the subsequent cut. **Main-gaining** - maintaining a healthy body weight all year while slowly building more muscle - is the far superior approach. It is not only much healthier, but also will facilitate more muscle growth in the long run. If you're above 15% body fat (which you probably are), then you should not ever be bulking.
 
 ### Women Generally Don't Find Body Builders Attractive
 
-I couldn't find a reputable studies (I didn't look that hard), but anacotally I can tell you that the average woman does not find mega-jacked body builders attractive. There are a lot of pop-science justifications for why, but just ask any women and they will happily explain it to you. The body builders on social media will often joke that if an attractive woman comes up to them they will say "my boyfriend loves your content". Body building is a sport for men to look at and admire other men. And there is nothing wrong with that, but don't be tricked into thinking that body building will help you get a girlfriend.
+I couldn't find a reputable study (I didn't look that hard), but anecdotally I can tell you that the average woman does not find mega-jacked body builders attractive. There are a lot of pop-science justifications for why, but just ask any woman and she will happily explain it to you. The body builders on social media will often joke that if an attractive woman comes up to them they will say "my boyfriend loves your content". Body building is a sport for men to look at and admire other men. And there is nothing wrong with that, but don't be tricked into thinking that body building will help you get a girlfriend.
 
 ### Social Media is Fake
 
-When you see pictures of these social media fitness influencers, just always remember that social media is fake and that's not what they look like in real life. They are pumped from just finishing a workout, probably dehydrated, they have the lighting just right, there is likely post-production and digital enhancements, and likely on they are steroids. 
+When you see pictures of these social media fitness influencers, just always remember that social media is fake and that's not what they look like in real life. They are pumped from just finishing a workout, probably dehydrated, they have the lighting just right, there is likely post-production and digital enhancements, and likely they are on steroids. 
 
 Body dysmorphia is a real thing and a growing problem among young men, largely due to the unrealistic standards they see every day on social media. If you are regularly exercising, eating a reasonable diet, and most importantly _feel healthy_ overall, I guarantee you look great.

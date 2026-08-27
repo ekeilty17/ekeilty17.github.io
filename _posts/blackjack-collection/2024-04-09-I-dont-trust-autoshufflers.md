@@ -1,10 +1,11 @@
 ---
-layout:     series
+layout:     post
 title:      "I Don't Trust Auto-Shufflers"
 date:       2024-04-21
 categories: blog blackjack
 permalink:  ":categories/:title/"
 series:     blackjack
+standalone: true
 tags:       blackjack
 ---
 
@@ -59,7 +60,7 @@ Now that we know the conditions card counters are looking for, we will develop s
 
 ### Malicious CSM Algorithm
 
-This type of shuffling machine completely destroys card counting by design since there is no concept of a running count. Since cards are redistributed back into the shoe after each hand, seeing a lot of low-valued cards does not make it more likely you'll see high-valued cards next hand. Effectively, each hand of independent.
+This type of shuffling machine completely destroys card counting by design since there is no concept of a running count. Since cards are redistributed back into the shoe after each hand, seeing a lot of low-valued cards does not make it more likely you'll see high-valued cards next hand. Effectively, each hand is independent.
 
 I model a CSM by simply reshuffling the shoe after each hand.
 
@@ -147,7 +148,7 @@ I am using the following Table Rules
 * Dealer stands on all $17$s
 * Double after split is allowed
 * Late surrender is allowed
-* BlackJacks pay $3{:}2$
+* blackjacks pay $3{:}2$
 
 I neglect some aspects of the game such as insurance and even money. I also do not put a restriction on the number of splits allowed in a single hand. I also let players continue their action after splitting aces.
 
@@ -192,7 +193,7 @@ For example, if the <span class="tooltip">true count
 
 ### Baseline - Fair Shuffling
 
-First, let's see what happens if the cards are shuffling fairly. The following is the result of simulating $1$ million hands for both Basic Strategy and optimal Card Counting.
+First, let's see what happens if the cards are shuffled fairly. The following is the result of simulating $1$ million hands for both Basic Strategy and optimal Card Counting.
 
 <center>
 <div class="overflow-container">
@@ -234,7 +235,7 @@ The RSM algorithm is interesting because we can fine-tune it using the `number_o
 </div>
 </center>
 
-I was shocked at how effective this malicious shuffling algorithm was. The RSM $40$ group simulation is ridiculous for both card counters and basic strategy players. While the $25$ group simulation hovers around even for card counters, it's still incredibly losing for basic strategy players. This algorithm is so losing that there's no way casinos actually use it because people would notice. 
+I was shocked at how effective this malicious shuffling algorithm was. The RSM $40$-group simulation is ridiculous for both card counters and basic strategy players. While the RSM $25$-group simulation hovers around even for card counters, it's still incredibly losing for basic strategy players. This algorithm is so losing that there's no way casinos actually use it because people would notice. 
 
 <br>
 

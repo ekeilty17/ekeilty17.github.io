@@ -5,6 +5,7 @@ date:       2024-03-24
 categories: blog billiards
 permalink:  ":categories/:title/"
 series:     billiards
+standalone: true
 tags:       billiards, physics, pool
 ---
 
@@ -162,7 +163,7 @@ As a special case, we will rigorously analyze _skidding_. Then we will generaliz
 Suppose the CB is _skidding_ which means $v_0 > R \omega_0$. In this case, the **frictional force due to sliding** ($f_s$) points in the opposite direction of the CB's motion. There are many ways to model $f_s$. The most accurate way is to consider the deformation of the table due to the CB and do a geometric analysis. If you are interested, this is done [here](https://billiards.colostate.edu/physics_articles/Hierrezuelo_PhysEd_95_article.pdf). However, I want to keep things simple, so I am going to use **Coulomb’s law of friction** which says
 
 $$
-f_s = u_s N
+f_s = \mu_s N
 $$
 
 where $\mu_s$ is the **coefficient of sliding friction** between the ball and the cloth of the table and $N$ is the **normal force** between the CB and the table.
@@ -218,7 +219,7 @@ $$
 \end{align}
 $$
 
-A keen observer will notice that $v_s(t)$ began large and is becoming smaller, while $\omega_s(t)$ began small and is become larger. If we graph these functions, we notice something very interesting.
+A keen observer will notice that $v_s(t)$ began large and is becoming smaller, while $\omega_s(t)$ began small and is becoming larger. If we graph these functions, we notice something very interesting.
 
 <center>
 {% tikz velocity-plot %} [scale=1.5]
@@ -263,7 +264,7 @@ A keen observer will notice that $v_s(t)$ began large and is becoming smaller, w
 {% endtikz %}
 </center>
 
-They intersect! What is the meaning of this intersection point? It is the exact point at which the translational motion and the rotational motion of the CB become in sync with each other. This is exactly the definition of **rolling without slipping**. Once this occurs, it would not make sense for the translational velocity to continue losing speed while the spin continues to increase. Instead, we have entered a second stage of it's motion, describe by different equations.
+They intersect! What is the meaning of this intersection point? It is the exact point at which the translational motion and the rotational motion of the CB become in sync with each other. This is exactly the definition of **rolling without slipping**. Once this occurs, it would not make sense for the translational velocity to continue losing speed while the spin continues to increase. Instead, we have entered a second stage of its motion, describe by different equations.
 
 Before we analyze the second stage, let's first calculate when exactly the CB stops sliding and begins rolling without slipping. Let $t_{s \rightarrow r}$ denote the time at which this occurs. The **no slip condition** occurs when the following relationship holds.
 
@@ -471,7 +472,7 @@ v(t) =
 \begin{cases}
     \omega_0 + \texttt{sgn}(v_0 - R \omega_0) \tfrac{5}{2} \tfrac{\mu_s g}{R} t
         \quad &\text{if } 0 \leq t < t_{s \rightarrow r} \\[5pt]
-    \omega_{s \rightarrow r} - \texttt{sgn}(\omega_{s \rightarrow r}) \tfrac{5}{2} \tfrac{\mu_s g}{R} (t - t_{s \rightarrow r})
+    \omega_{s \rightarrow r} - \texttt{sgn}(\omega_{s \rightarrow r}) \tfrac{5}{2} \tfrac{\mu_r g}{R} (t - t_{s \rightarrow r})
         \quad &\text{if } t_{s \rightarrow r} \leq t \leq t_{\text{stop}}
 \end{cases}
 $$
