@@ -96,7 +96,7 @@
       
       <div class="sidebar-about">
         <h1>Eric Keilty</h1>
-        <p class="lead">AI/ML Engineer</p>
+        <p class="lead">AI/ML Engineer | Aspiring Amateur Mathematician</p>
       </div>
     </div>
     
@@ -148,7 +148,7 @@
     </div>
   </div>
 
-    <div class="content container">
+    <div class="content container post-layout">
 
         <div class="post">
             <h1 class="post-title">Solving The Pell Equation Efficently</h1>
@@ -358,12 +358,12 @@ $$
 <p>All this theory provides an extremely simple, elegant, and efficient algorithm for solving the Pell Equation. The pseudocode is given below. I have also implemented this fully on my <a href="https://github.com/ekeilty17/Project_Euler/blob/master/P066.py">GitHub</a>.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">fundamental_solution_of_pell_equation</span><span class="p">(</span><span class="n">D</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">is_perfect_square</span><span class="p">(</span><span class="n">D</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nf">is_perfect_square</span><span class="p">(</span><span class="n">D</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">None</span>     <span class="c1"># perfect squares have no solution
 </span>
-    <span class="n">L</span> <span class="o">=</span> <span class="n">continued_fraction</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>      <span class="c1"># [a_0, a_1, ..., a_k]
-</span>    <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">collapse_continued_fraction</span><span class="p">(</span><span class="n">L</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">x0</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">D</span> <span class="o">*</span> <span class="n">y0</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+    <span class="n">L</span> <span class="o">=</span> <span class="nf">continued_fraction</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>      <span class="c1"># [a_0, a_1, ..., a_k]
+</span>    <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="nf">collapse_continued_fraction</span><span class="p">(</span><span class="n">L</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="nf">if </span><span class="p">(</span><span class="n">x0</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">D</span> <span class="o">*</span> <span class="n">y0</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
         <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">x0</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">D</span><span class="o">*</span><span class="n">y0</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">x0</span><span class="o">*</span><span class="n">y0</span>
     
     <span class="k">return</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span>
@@ -371,7 +371,7 @@ $$
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">generate_kth_solution</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
     <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span>
-    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
         <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x0</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">D</span><span class="o">*</span><span class="n">y0</span><span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="n">x0</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="n">x</span><span class="o">*</span><span class="n">y0</span>
     <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
 </code></pre></div></div>
@@ -385,13 +385,13 @@ $$
 <h2 id="appendix"><a href="/blog/the-pell-equation-appendix/">Appendix</a></h2>
 
         </div>
-    </div>
 
-    <!--
-    <h3 style="text-align:center; margin-bottom:1em;">
-      <a href="/blog/">Blog Archive</a>
-    </h3>
-    -->
-    
+        <div class="pagination" style="margin-top:auto;">
+            <a class="pagination-item parent-link" href="/blog/">
+                Blog Archive
+            </a>
+        </div>
+
+    </div>
   </body>
 </html>

@@ -96,7 +96,7 @@
       
       <div class="sidebar-about">
         <h1>Eric Keilty</h1>
-        <p class="lead">AI/ML Engineer</p>
+        <p class="lead">AI/ML Engineer | Aspiring Amateur Mathematician</p>
       </div>
     </div>
     
@@ -164,12 +164,12 @@
 <p>The actions of the dealer are pre-determined, meaning the dealer is just a robot following an algorithm. They do not get to make a choice.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">get_dealer_action</span><span class="p">(</span><span class="n">hand</span><span class="p">,</span> <span class="n">hit_on_soft_17</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">hand</span><span class="p">.</span><span class="n">total</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mi">16</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s">"HIT"</span>
-    <span class="k">elif</span> <span class="n">hit_on_soft_17</span> <span class="ow">and</span> <span class="n">hand</span><span class="p">.</span><span class="n">total</span><span class="p">()</span> <span class="o">==</span> <span class="mi">17</span> <span class="ow">and</span> <span class="n">hand</span><span class="p">.</span><span class="n">is_soft</span><span class="p">():</span>
-        <span class="k">return</span> <span class="s">"HIT"</span>
+    <span class="k">if</span> <span class="n">hand</span><span class="p">.</span><span class="nf">total</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mi">16</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sh">"</span><span class="s">HIT</span><span class="sh">"</span>
+    <span class="k">elif</span> <span class="n">hit_on_soft_17</span> <span class="ow">and</span> <span class="n">hand</span><span class="p">.</span><span class="nf">total</span><span class="p">()</span> <span class="o">==</span> <span class="mi">17</span> <span class="ow">and</span> <span class="n">hand</span><span class="p">.</span><span class="nf">is_soft</span><span class="p">():</span>
+        <span class="k">return</span> <span class="sh">"</span><span class="s">HIT</span><span class="sh">"</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s">"STAND"</span>
+        <span class="k">return</span> <span class="sh">"</span><span class="s">STAND</span><span class="sh">"</span>
 </code></pre></div></div>
 
 <p>Recall that <strong>Aces</strong> in BlackJack can be used as either a value of $1$ or $11$. A <strong>soft hand</strong> refers to a hand that uses an Ace as a value of $11$. For example, $A$, $6$ is a soft 17. The parameter <code class="language-plaintext highlighter-rouge">hit_on_soft_17</code> is a boolean variable that represents a standard variant of BlackJack. If $\texttt{true}$ then the dealer will HIT on a soft $17$. If $\texttt{false}$ then the dealer will STAND on a soft $17$ (this is known to be more advantageous for the player).</p>
@@ -272,33 +272,33 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">dealer_probabilities</span><span class="p">(</span><span class="n">hit_on_soft_17</span><span class="p">):</span>
     <span class="c1"># Initialization
-</span>    <span class="n">H</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">23</span><span class="p">,</span> <span class="mi">23</span><span class="p">))</span>      <span class="c1"># H[i, f] = p(f | i, hard)
-</span>    <span class="n">S</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">22</span><span class="p">,</span> <span class="mi">23</span><span class="p">))</span>      <span class="c1"># S[i, f] = p(f | i, soft)
-</span>    <span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span> <span class="o">/</span> <span class="mi">13</span>    <span class="c1"># C[c-1] = p(c)
+</span>    <span class="n">H</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">zeros</span><span class="p">((</span><span class="mi">23</span><span class="p">,</span> <span class="mi">23</span><span class="p">))</span>      <span class="c1"># H[i, f] = p(f | i, hard)
+</span>    <span class="n">S</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">zeros</span><span class="p">((</span><span class="mi">22</span><span class="p">,</span> <span class="mi">23</span><span class="p">))</span>      <span class="c1"># S[i, f] = p(f | i, soft)
+</span>    <span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span> <span class="o">/</span> <span class="mi">13</span>    <span class="c1"># C[c-1] = p(c)
 </span>    <span class="c1"># we don't distinguish between {10, J, Q, K}
 </span>    <span class="c1"># we treat them as the same card that can occur 4 times
 </span>    <span class="c1"># now the card value is the index of its PMF value
 </span>
     <span class="c1"># Base Cases
-</span>    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="mi">23</span><span class="p">):</span>
+</span>    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="mi">23</span><span class="p">):</span>
         <span class="n">H</span><span class="p">[</span><span class="n">f</span><span class="p">,</span> <span class="n">f</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">22</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">22</span><span class="p">):</span>
         <span class="n">S</span><span class="p">[</span><span class="n">f</span><span class="p">,</span> <span class="n">f</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">hit_on_soft_17</span><span class="p">:</span>
         <span class="n">S</span><span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mi">17</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 
     <span class="c1"># Hard hands &gt;= 11
-</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">17</span><span class="p">)):</span>
-        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="mi">23</span><span class="p">):</span>
-            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
-                <span class="n">H</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">f</span><span class="p">]</span> <span class="o">+=</span> <span class="n">H</span><span class="p">[</span><span class="nb">min</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="n">c</span><span class="p">,</span> <span class="mi">22</span><span class="p">),</span> <span class="n">f</span><span class="p">]</span> <span class="o">*</span> <span class="n">C</span><span class="p">[</span><span class="n">c</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">reversed</span><span class="p">(</span><span class="nf">range</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">17</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="mi">23</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
+                <span class="n">H</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">f</span><span class="p">]</span> <span class="o">+=</span> <span class="n">H</span><span class="p">[</span><span class="nf">min</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="n">c</span><span class="p">,</span> <span class="mi">22</span><span class="p">),</span> <span class="n">f</span><span class="p">]</span> <span class="o">*</span> <span class="n">C</span><span class="p">[</span><span class="n">c</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
     
     <span class="c1"># Soft hands
 </span>    <span class="c1"># Note: a soft hand of 11 means the dealer is showing just an Ace
 </span>    <span class="n">soft_hand_stand</span> <span class="o">=</span> <span class="mi">18</span> <span class="k">if</span> <span class="n">hit_on_soft_17</span> <span class="k">else</span> <span class="mi">17</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="n">soft_hand_stand</span><span class="p">)):</span>
-        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="mi">23</span><span class="p">):</span>
-            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">reversed</span><span class="p">(</span><span class="nf">range</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="n">soft_hand_stand</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="mi">23</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
                 <span class="k">if</span> <span class="n">i</span><span class="o">+</span><span class="n">c</span> <span class="o">&lt;=</span> <span class="mi">21</span><span class="p">:</span>
                     <span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">f</span><span class="p">]</span> <span class="o">+=</span> <span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">c</span><span class="p">,</span> <span class="n">f</span><span class="p">]</span> <span class="o">*</span> <span class="n">C</span><span class="p">[</span><span class="n">c</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
                 <span class="k">else</span><span class="p">:</span>
@@ -306,12 +306,12 @@
     
     <span class="c1"># Hard hands &lt; 11 (dealer showing a single card that is not an Ace)
 </span>    <span class="c1"># Note: a hard hard of 0 represents p(f | 0) = p(f), i.e. the prior probabilities of the dealer's final hand
-</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">)):</span>
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">reversed</span><span class="p">(</span><span class="nf">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">)):</span>
         <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
             <span class="k">continue</span>    <span class="c1"># Hand hand = 1 is impossible
-</span>        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="mi">23</span><span class="p">):</span>
+</span>        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="mi">23</span><span class="p">):</span>
             <span class="n">H</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">f</span><span class="p">]</span> <span class="o">+=</span> <span class="n">S</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">11</span><span class="p">,</span> <span class="n">f</span><span class="p">]</span> <span class="o">*</span> <span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>        <span class="c1"># different case for an Ace
-</span>            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
+</span>            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
                 <span class="n">H</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">f</span><span class="p">]</span> <span class="o">+=</span> <span class="n">H</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">c</span><span class="p">,</span> <span class="n">f</span><span class="p">]</span> <span class="o">*</span> <span class="n">C</span><span class="p">[</span><span class="n">c</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
     
     <span class="k">return</span> <span class="n">H</span><span class="p">,</span> <span class="n">S</span>
@@ -342,7 +342,7 @@
         <!-- Getting url for series, which is just the page url with the last /... removed -->
         
 
-        <div class="pagination" style="margin-top:1em;">
+        <div class="pagination" style="margin:1em 0 0 0;">
             
                 <span class="pagination-item older">Previous</span>
             
@@ -350,15 +350,17 @@
                 <span class="pagination-item newer">Next</span>
             
         </div>
-        <h3 style="text-align:center; margin-bottom:1em;">
-            <a href="/blog/blackjack">
+        <div class="pagination" style="margin:0;">
+            <a class="pagination-item parent-link" href="/blog/blackjack">
+                
             
                 
                     Blackjack
                 
             
-         Series</a>
-        </h3>
+         Series
+            </a>
+        </div>
     </div>
     
   </body>

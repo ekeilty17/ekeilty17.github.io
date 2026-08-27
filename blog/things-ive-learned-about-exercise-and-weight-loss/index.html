@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Things I've Learned About Exercise and Weight Loss &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded MathJax (effectively LaTeX) support 
+    https://docs.mathjax.org/en/v2.7-latest/tex.html -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX", "input/MathML", "output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js", "mml2jax.js", "MathMenu.js", "MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
+            Macros: {
+                b: ["{\\boldsymbol #1}",1],
+                u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
+                arccsc: ["\\operatorname\{arccsc\}"],
+                arcsec: ["\\operatorname\{arcsec\}"],
+                arccot: ["\\operatorname\{arccot\}"],
+                csch: ["\\operatorname\{csch\}"],
+                sech: ["\\operatorname\{sech\}"],
+                arcsinh: ["\\operatorname\{arcsinh\}"],
+                arccosh: ["\\operatorname\{arccosh\}"],
+                arctanh: ["\\operatorname\{arctanh\}"],
+                arccsch: ["\\operatorname\{arccsch\}"],
+                arcsech: ["\\operatorname\{arcsech\}"],
+                arccoth: ["\\operatorname\{arccoth\}"],
+                seq: ["{\\left \\langle #1 \\right \\rangle}",1],
+                iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
+                abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
+                hal: ["\\texttt{hal}"],
+                gal: ["\\texttt{gal}"],
+                sh: ["sh"],
+                st: ["st"]
+            },
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!--
+    TeX-AMS_HTML
+    TeX-AMS-MML_HTMLorMML
+    TeX-MML-AM_HTMLorMML
+-->
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">AI/ML Engineer | Aspiring Amateur Mathematician</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+        <li>
+          <a href="/files/Eric Keilty - Resume.pdf" target="_blank">R&eacute;sum&eacute;</a>
+        </li>
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2026 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container post-layout">
+
+        <div class="post">
+            <h1 class="post-title">Things I've Learned About Exercise and Weight Loss</h1>
+            <!-- <span class="post-date">03 Sep 2025</span> -->
+            <time datetime="2025-09-03T00:00:00-04:00" class="post-date">03 Sep 2025</time>
+            <p>This post is a summary of things I’ve learned as I’ve progressed through my personal fitness journey. For someone as well-read on the general sciences as myself, it’s humbling to realize how little I knew about how my own body works.</p>
+
+<blockquote>
+  <h2 id="disclaimer">Disclaimer</h2>
+
+  <p>I am not a doctor; I am not a nutritionist; I am not a dietitian; I am not a personal trainer. I am an Engineer who has done his best to understand a complex topic. Fact check me, read a book, consult experts, take ownership of your own knowledge.</p>
+</blockquote>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<ul>
+  <li><a href="#the-dials-of-weight-loss-diet-and-exercise">The Dials of Weight Loss - Diet and Exercise</a>
+    <ul>
+      <li><a href="#energy-and-calories">Energy and Calories</a></li>
+      <li><a href="#the-relationship-between-net-calories-and-body-mass">The Relationship Between Net Calories and Body Mass</a></li>
+      <li><a href="#caloric-deficit-iff-weight-loss">Caloric Deficit ⇔ Weight Loss</a></li>
+      <li><a href="#losing-weight-neq-losing-fat">Losing Weight ≠ Losing Fat</a></li>
+      <li><a href="#you-cant-out-run-a-bad-diet">You Can’t Out-Run a Bad Diet</a></li>
+      <li><a href="#you-cant-choose-what-fat-you-lose">You Can’t Choose What Fat you Lose</a></li>
+    </ul>
+  </li>
+  <li><a href="#sticking-to-a-diet">Sticking to a Diet</a>
+    <ul>
+      <li><a href="#extreme-diets-dont-work">Extreme Diets Don’t Work</a></li>
+      <li><a href="#you-must-enjoy-your-diet">You Must Enjoy Your Diet</a></li>
+      <li><a href="#managing-cravings-and-satiation">Managing Cravings and Satiation</a></li>
+      <li><a href="#you-can-eat-as-much-protein-fruit-and-vegetables-as-you-want">You Can Eat as Much Protein, Fruit, and Vegetables as You Want</a></li>
+      <li><a href="#should-you-count-calories">Should You Count Calories?</a></li>
+      <li><a href="#how-to-track-your-weight">How to Track Your Weight</a></li>
+    </ul>
+  </li>
+  <li><a href="#exercising">Exercising</a>
+    <ul>
+      <li><a href="#if-you-are-new-to-exercising-just-start-doing-anything">If You are New to Exercising, Just Start Doing Anything</a></li>
+      <li><a href="#start-small-building-muscle-and-endurance-takes-time">Start Small - Building Muscle and Endurance Takes Time</a></li>
+      <li><a href="#new-lifters-neq-advanced-lifters">New Lifters ≠ Advanced Lifters</a></li>
+      <li><a href="#the-hardest-part-of-exercising-is-setting-goals">The Hardest Part of Exercising is Setting Goals</a></li>
+      <li><a href="#muscles-for-looks-cardio-for-longevity">Muscles for Looks, Cardio for Longevity</a></li>
+      <li><a href="#abs-are-made-in-the-gym-but-revealed-in-the-kitchen">Abs are Made in the Gym, but <em>Revealed</em> in the Kitchen</a></li>
+    </ul>
+  </li>
+  <li><a href="#body-building">Body Building</a>
+    <ul>
+      <li><a href="#do-not-ever-take-pedssteroids">Do Not EVER Take PEDs/Steroids</a></li>
+      <li><a href="#body-builders-are-morbidly-obese">Body Builders are Morbidly Obese</a></li>
+      <li><a href="#body-building-is-the-opposite-of-healthy">Body Building is the Opposite of Healthy</a></li>
+      <li><a href="#bulking-and-cutting-are-terrible-for-you">Bulking and Cutting are Terrible for You</a></li>
+      <li>[Women Generally Don’t Find Body Builders Attractive]
+ (#women-generally-dont-find-body-builders-attractive)</li>
+      <li><a href="#social-media-is-fake">Social Media is Fake</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="the-dials-of-weight-loss---diet-and-exercise">The Dials of Weight Loss - Diet and Exercise</h2>
+
+<h3 id="energy-and-calories">Energy and Calories</h3>
+
+<p>In Newtonian mechanics, <strong>energy</strong> is a conserved physical quantity that measures a system’s capacity to perform work. In particular, something that has energy can cause motion. All human movement - walking around, breathing air, lifting a box, etc. - requires energy. This even applies to your body’s internal processes - pumping blood, digesting food, repairing a wound, etc. For example, over the course of a normal day your brain accounts for around 20% of your daily energy consumption [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC124895/">source</a>]. Taken to the extreme, professional chess players have been measured using large amounts energy during while just sitting in a chair thinking really hard [<a href="https://pubmed.ncbi.nlm.nih.gov/18987876/">source</a>].</p>
+
+<p>The standard unit of energy in science are 
+<span class="tooltip"><strong>Joules</strong> 
+    <span class="tooltiptext" style="width: 425px;"> 
+        Defined as the amount of energy exerted by a force of 1 Newton displacing a mass through a distance of 1 meter in the direction of that force. This is about the amount of energy it takes to lift a stick of butter 1 meter.
+    </span>
+</span> ($\text{J}$). However, in macro-biology when refering to living organisms, energy is typically measured in calories. A <strong>calorie</strong> ($\text{cal}$) estimates the amount of energy required to raise the temperature of exactly 1 gram of water by 1 degree Celsius at 1 atmospheric pressure. Confusingly, the calories you see listed on food labels are actually <strong>kilocalories</strong> ($\text{kcal}$). Sometimes these are refered to as <strong>“big” Calories</strong> ($\text{Cal}$) [<a href="https://www.ncbi.nlm.nih.gov/books/NBK499909/">source</a>]. Roughly 20 to 30 steps will burn 1 Calorie/kilocalorie [<a href="https://www.verywellfit.com/pedometer-steps-to-calories-converter-3882595">source</a>]. For the remaining of this blog post, assume that I am always referring to Calories/kilocalories unless stated otherwise.</p>
+
+<p>The conversions between all these units are listed below.</p>
+
+\[1000 \ \text{cal} = 1 \ \text{kcal} = 1 \ \text{Cal} = 4184 \ \text{J}\]
+
+<p><br /></p>
+
+<h3 id="the-relationship-between-net-calories-and-body-mass">The Relationship Between Net Calories and Body Mass</h3>
+
+<p>Consider the following definition:</p>
+
+\[\text{Net Calories} = \text{Calories In} - \text{Calories Out}\]
+
+<p>Over some predefined period of time (e.g. 24 hours), your <strong>net caloric intake</strong> measures how much energy is left unused. Due to 
+<span class="tooltip">first law of thermodynamics
+    <span class="tooltiptext" style="width: 425px;"> 
+        Energy can neither be created nor destroyed, only transferred or changed from one form to another.
+    </span>
+</span> (the conservation of energy), that energy delta has to come from/go to <em>somewhere</em>. That somewhere is your body mass.</p>
+
+<p>A good analogy is a leaky bucket. Water is being poured into the top of the bucket ($\text{Calories In}$) and some water is leaking out of a hole at the bottom ($\text{Calories Out}$). If water is being poured in faster than its leaking out, then the bucket will become filled with water. Conversely, if water is leaking out faster than its poured in, then the bucket will eventually become empty.</p>
+
+<center>
+<div class="overflow-container">
+<div class="overflow-content">
+<embed src="/svg/things-ive-learned-about-exercise-and-weight-loss/leaky_bucket.svg" type="image/svg+xml" width="600px" height="300px" />
+</div>
+</div>
+</center>
+
+<p>In this analogies, the bucket is your body and the water is your total <em>mass</em>. To summarize:</p>
+
+<ol>
+  <li><strong>Calorie Neutral</strong> – \(\text{Net Calories} = 0\) – Body mass unchanged</li>
+  <li><strong>Calorie Surplus</strong> – \(\text{Net Calories} &gt; 0\) – Body mass increases</li>
+  <li><strong>Calorie Deficit</strong> – \(\text{Net Calories} &lt; 0\) – Body mass decreases</li>
+</ol>
+
+<p><br /></p>
+
+<h3 id="caloric-deficit-iff-weight-loss">Caloric Deficit $\iff$ Weight Loss</h3>
+
+<p>In order to lose weight, you must be in a caloric deficit ($\text{Net Calories} &lt; 0$). This is non-negotiable. At a surface level analysis, this fact is all that matters. If you eat only twinkies but are at a caloric deficit, then you will lose mass. If you eat only vegetables but are at a caloric surplus, then you will gain mass.</p>
+
+<p>Based on the formula (and the leaky bucket analogy) there are two levers that we can play with to achieve a caloric deficit - $\text{Calories In}$ and $\text{Calories Out}$, i.e. the amount of food you eat vs the amount you exercise/move around.</p>
+
+<p><br /></p>
+
+<h3 id="losing-weight-neq-losing-fat">Losing Weight $\neq$ Losing Fat</h3>
+
+<p>Before you go and starve yourself to rapidly lose weight, please read this section.</p>
+
+<p>Thinking back to our net calorie formula, we could take the approach of minimizing the $\text{Calories In}$, which will absolutely cause a calories deficit and absolutely cause us to lose weight. However, when most people say they want to <em>lose weight</em>, they really mean they want to <em>lose fat</em>. If you go on this extreme diet for an extended period, you will lose fat, but you will also lose muscle. Moreover, this is not healthy over a long period of time (intermittent fasting is a separate discussion).</p>
+
+<p>Let’s expand on this a bit more. Suppose you decide to cold-turkey stop eating food while at the same time continue a sedentary life-style. Think about this from your body’s perspective; your body is constantly adapting to its environment. In this situation, your body thinks you are starving to death (because you are). Therefore it will want to hold on to your fat for as long as possible. At the same time since you aren’t exercising, your muscles will be targets as your body desperately looks for fuel sources. This is the opposite of what you wanted accomplish with this diet.</p>
+
+<p>It’s much better to take a gradual approach. Eat at a reasonable caloric deficit while at the same time regularly exercising. If you are a newbie to the gym you absolutely can lose fat and gain muscle at the same time. In this scenario, you are communicating to your body that food is steady, so we don’t need this excess fat; while at the same time we are doing regular physical activity so we need to continue building muscle.</p>
+
+<p><br /></p>
+
+<h3 id="you-cant-out-run-a-bad-diet">You Can’t Out-Run a Bad Diet</h3>
+
+<p>Again, thinking back to our net calorie formula. Some people don’t want to change their diet and instead try going all out on exercising. The problem with this is that empirically and scientifically it will never work.</p>
+
+<p>The <strong>Additive Energy Expenditure Model</strong> is the intuitive hypothesis about human metabolism: an increase in physical activity will lead to an increase in total energy expenditure. Put more simply, exercising more means I burn more calories, which ultimately I will lose more weight assuming I exercised enough. This is nicely illustrated in the left diagram in the figure below [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4803033/">source</a>].</p>
+
+<center>
+<div class="overflow-container">
+<div class="overflow-content">
+    <img src="/blog-assets/things-ive-learned-about-exercise-and-weight-loss/Energy Expenditure Models.png" width="600px" alt="Energy Expenditure Models" />
+</div>
+</div>
+</center>
+
+<p>Unfortunately, the evidence does not support this hypothesis [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4803033/">source</a>]. Instead, the prevailing theory is the <strong>Constrained Energy Expenditure Model</strong> (right diagram in the figure above). In this model, more exercise does not necessarily mean more energy expenditure. Assuming all else is equal, exercising a moderate amount compared to exercising profusely has very little difference on weight loss.</p>
+
+<p><a href="https://www.youtube.com/@kurzgesagt">Kurzgesagt</a> has a really good video <a href="https://www.youtube.com/watch?v=lPrjP4A_X4s">video</a> explaining this phenomenon. The intuitive explanation is that your body is built to adapt. If it realizes that you exercise everyday, then it will compensate in various ways to burn less calories while at rest. So unless you are running a marathon everyday, your daily energy expenditure is essentially constant regardless of the volume of physical activity (as long as it’s more than zero).</p>
+
+<p><br /></p>
+
+<h3 id="you-cant-choose-what-fat-you-lose">You Can’t Choose What Fat you Lose</h3>
+
+<p>On social media you will sometimes see people claim that a certain workout is designed to burn belly-fat. This is complete nonsense.</p>
+
+<p>Unfortunately, you do not get to choose what fat your body burns. This is entirely genetic. But if you keep dieting, your body will eventually burn the belly fat. Eventually the distribution of fat will be more or less even.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="sticking-to-a-diet">Sticking to a Diet</h2>
+
+<h3 id="extreme-diets-dont-work">Extreme Diets Don’t Work</h3>
+
+<p>A lot of people go from eating all ultra-processed foods (chips, oreos, etc), and try to switch to a crazy strict diet. Inevitably they will quit because the human psyche can only tolerate so pain. And when they quit, they often relapse to a worse diet than they had before. This is the opposite of the desired outcome.</p>
+
+<p>The point is to use <em>moderation</em>. You can still have cookies and cake every once in a while, just not all the time. Don’t let the perfect be the enemy of the good; any improvement to your diet is a positive outcome. One less sugar in your coffee. One less sweet-treat a week. Incremental progress is still progress.</p>
+
+<h3 id="you-must-enjoy-your-diet">You Must Enjoy Your Diet</h3>
+
+<p>The best diet is the diet that you will stick to, and a diet that you will stick to is a diet that you <strong>actually enjoy</strong>. If you don’t like salads, then don’t eat salads…often people drench them in ranch and they aren’t even that healthy for you anyways.</p>
+
+<p>I guarantee you can find fruit that you like. I guarantee you can find a few vegetables that you like (you just have to learn how to cook them). I guarantee you can find a protein powder that you like. I guarantee you can find a chicken seasoning that you like. There are alternative snacking options to cookies and oreos that can scratch that same itch. It does take a bit of work, but it’s 100% worth it.</p>
+
+<h3 id="managing-cravings-and-satiation">Managing Cravings and Satiation</h3>
+
+<p>The main reason people break their diets is either because they are craving sugar or they are hungry despite eating their allotted calories for the day. Unfortunately this is genetic, so some people struggle with it more than others. This is sometimes called <strong>food noise</strong>. But there are things you can do to mitigate this.</p>
+
+<p>Managing cravings is really about managing sugar (carbs included). We evolved to crave sugar because historically it was not available. So if we found it, evolution wired us to eat as much as possible. Somehow as the end of a meal you couldn’t possibly have another piece of chicken, yet there is always room for cake and ice cream. And once you start eating sugar, it’s hard to stop.</p>
+
+<p>For me personally, I try to limit my sugar and carbohydrate intake in the morning (before noon). If I have sugar in the morning, I will crave it all day and I will be hungry all day. Another trick is to eat fiber with your sugar, which limits your insulin spike and subsequent crash. This is why fruits are preferred to gummies.</p>
+
+<p>Managing satiation is all about managing “volume”. One reason your stomach tells your brain it’s full is when there is physically no more room for more food. Ultra-processed food tends to be calorie dense, meaning the same calories occupy less space in your stomach, which means you can eat more of it before feeling full. If you can eat food which physically fills your stomach, then you will feel full and satisfied.</p>
+
+<p>For example, leafy vegetables fill up your stomach for virtually 0 calories. Pop corn is a great alternative to chips. They are higher volume and lower calories to satiate that snacking urg. Sometimes I even drink water instead of having a snack, just to fill my stomach and reduce the cravings.</p>
+
+<h3 id="you-can-eat-as-much-protein-fruit-and-vegetables-as-you-want">You Can Eat as Much Protein, Fruit, and Vegetables as You Want</h3>
+
+<p>Sugar, fat, and carbs are extremely easy to over-eat because you continue to crave them. Conversely, you can eat as much protein, fruit, and vegetables as you want. Think about a steak. At some point its just too much and your body rejects it, the thought of steak at this point may make you sick. But somehow you always have extra room for dessert.</p>
+
+<p>Fruit is essentially natural sugar, so you can overeat fruit. But it’s much better than eating, say, gummies because the fruit skin provides added fiber which reduces sugar cravings.</p>
+
+<h3 id="should-you-count-calories">Should You Count Calories?</h3>
+
+<p>If losing weight is critical for your long-term health, then yes counting calories is the absolute best way to ensure that you are in a calories deficit. However, if you are just slightly over-weight, then let me present an alternative.</p>
+
+<p>Psychologically, I don’t like the idea of counting calories. For me personally, it would cause me to have a very bad relationship with food. Once I have a number to optimize…it’s hard for me to stop my brain from trying to optimize it. Instead, I just try to be <em>calorie aware</em> without actually doing the math. So I look at the calories of the food that I eat, and just try to vibe it out. I have a general sense of whether the food is worth its calories. For example, some cracks are extremely high in calories and they don’t even taste that good, so why bother eating them.</p>
+
+<h3 id="how-to-track-your-weight">How to Track Your Weight</h3>
+
+<p>Your weight naturally fluctuates based on a million factors. The best way to track your weight is to weigh yourself everyday first thing in the morning after you’ve used the bathroom. Then at the end of each week, record the <strong>median weight</strong> of that week. This will cut out the random fluctuations and give you a pretty accurate picture of the trend line. After a month you can see the general direction of the trend line, and adjust your diet accordingly.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="exercising">Exercising</h2>
+
+<h3 id="if-you-are-new-to-exercising-just-start-doing-anything">If You are New to Exercising, Just Start Doing Anything</h3>
+
+<p>If you start looking online or on social media you will get bombarded with fitness advice and exercise regiments. If you are completely or relatively new to going to the gym, the truth is that none of that matters. All that matters is that you <strong>do something on a regular basis</strong>.</p>
+
+<p>The what does not matter - running, cycling, swimming, yoga, pilates, calisthenics. The best exercise is the exercise that you 1) somewhat enjoy, 2) will do consistently, and 3) will do it with some level of intensity.</p>
+
+<h3 id="start-small---building-muscle-and-endurance-takes-time">Start Small - Building Muscle and Endurance Takes Time</h3>
+
+<p>You’re not going to see results overnight. This is a marathon not a sprint. Furthermore, there is no need to go all out. If you have never exercised then you should not be running for an hour followed up by intense weight lifting. Just walk on the treadmill for 30 mins while watching a movie/tv show/youtube video (or however long you can walk for). If that’s too hard, walk for less. If that’s too easy, walk for longer. And continue building up. Do push-ups and body-weight squats (however many you can do). If they become to easy, you can start looking up harder exercises.</p>
+
+<p>Your body is an amazing machine. If you do a particular movement consistently, it will grow muscle to make you better at that movement. If you can find the intensity sweet spot of pushing yourself sufficiently without overdoing it, the sky is the limit.</p>
+
+<h3 id="new-lifters-neq-advanced-lifters">New Lifters $\neq$ Advanced Lifters</h3>
+
+<p>There is a LOT of exercise advice on social media. A lot of the times it’s something like “if you are not doing these exercises, then you are leaving gains on the table”, and most of the time it’s complete BS. These influencers are always fishing for content, so they are constantly coming up with all these micro-optimizations.</p>
+
+<p>If you are a new lifter, just stick to the basics. Pick any variation of any of the following</p>
+<ul>
+  <li>Push-ups</li>
+  <li>Pull-ups (or rows if you can’t do pull-ups yet)</li>
+  <li>Overhead press</li>
+  <li>Dips</li>
+  <li>Squats</li>
+  <li>Lunges</li>
+  <li>Deadlifts or hip hinges</li>
+  <li>Farmer’s carries</li>
+  <li>Planks</li>
+  <li>Dead hangs or dead hand leg raises</li>
+  <li>Walking/running/cycling</li>
+  <li>Jump rope or sprints</li>
+</ul>
+
+<p>Once you have the basics down, then you can start deciding which micro-optimizations work best for your body and best align with your fitness goals.</p>
+
+<h3 id="the-hardest-part-of-exercising-is-setting-goals">The Hardest Part of Exercising is Setting Goals</h3>
+
+<p>Once exercising becomes part of your daily routine, the actually exercising is the easy part. The hardest part is often deciding <em>what</em> to do at the gym. This is something you really need to think about and determine for yourself.</p>
+
+<p>For me personally, lifting weights is really boring. It doesn’t motivate me at all. I found motivation by training for specific movements or physical activities. For example, I got into rock climbing which required upper-body strength that I didn’t possess. So I did some googling and found starting training specifically for that activity. Currently, my new goal is to master the hand-stand. So a few times a week I have exercise routines specifically training for that.</p>
+
+<h3 id="muscles-for-looks-cardio-for-longevity">Muscles for Looks, Cardio for Longevity</h3>
+
+<p>Strength training is really really good for you, especially as you age. However, people often neglect cardio which is arguably even more important. Your 
+<span class="tooltip">$VO_2 \ \text{max}$
+    <span class="tooltiptext" style="width: 425px;"> 
+        A high $VO_2 \ \text{max}$ shows that your heart and lungs are effectively supplying blood to your muscles.
+    </span>
+</span> is widely considered the strongest objective predictor of longevity and overall health, and cardio (aerobic exercise) is a great way to start improving it [<a href="https://www.health.harvard.edu/healthy-aging-and-longevity/vosub2sub-max-what-it-is-and-how-you-can-improve-it">source</a>].</p>
+
+<h3 id="abs-are-made-in-the-gym-but-revealed-in-the-kitchen">Abs are Made in the Gym, but <em>Revealed</em> in the Kitchen</h3>
+
+<p>A lot of people are (understandably) into abs. On social media you will often see people advertise products or classes which specifically target abs. That’s all great and training your core is extremely important. But truthfully, abs exercises can only get you so far. Strict dieting and frankly being dehydrated is much more important for having visible abs.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h2 id="body-building">Body Building</h2>
+
+<p>I include this section because at the time of writing body building and <em>looksmaxxing</em> has became really popular on social media. My goal is to dispel some of the misconceptions.</p>
+
+<h3 id="do-not-ever-take-pedssteroids">Do Not EVER Take PEDs/Steroids</h3>
+
+<p>I have never done so and will never do so. Given the steroid epidemic among young men at the time of writing, I felt the need to say this explicitly. There are so many negative health side effects (both short and long term), I can’t possibly list them all here. Generally speaking, you are doing irreparable damage to your internal organs especially your heart, resulting in needlessly and dramatically shortening your life. Always consult a licensed doctor (not just a fitness coach).</p>
+
+<h3 id="body-builders-are-morbidly-obese">Body Builders are Morbidly Obese</h3>
+
+<p>Obesity is just a function of total body weight. Being 300 pounds is being 300 pounds, it doesn’t matter if its muscle or fat. Either way, your heart still has to pump blood to 300 pounds worth of body mass…and it was not designed to do that.</p>
+
+<h3 id="body-building-is-the-opposite-of-healthy">Body Building is the Opposite of Healthy</h3>
+
+<p>Body building is not healthy for you; it’s the opposite of healthy. You are gaining way more muscle than the human body was designed to carry. You are essentially developing an eating disorder by way over-eating during a bulk and way under-eating during a cut. You are developing body dysmorphia by constantly critiquing your own body and comparing it to others. You are putting yourself in an environment where taking ridiculous doses of PEDs is considered normal. There is really nothing positive that I can say about this sport.</p>
+
+<h3 id="bulking-and-cutting-are-terrible-for-you">Bulking and Cutting are Terrible for You</h3>
+
+<p>Drastic fluctuations in your body weight is not healthy at all. Do not ever go on a bulk in order to gain more muscle. You will lose a lot of that muscle on the subsequent cut. <strong>Main-gaining</strong> - maintaining a healthy body weight all year while slowly building more muscle - is the far superior approach. It is not only much healthier, but also will facilitate more muscle growth in the long run. If you’re above 15% body fat (which you probably are), then you should not ever be bulking.</p>
+
+<h3 id="women-generally-dont-find-body-builders-attractive">Women Generally Don’t Find Body Builders Attractive</h3>
+
+<p>I couldn’t find a reputable studies (I didn’t look that hard), but anacotally I can tell you that the average woman does not find mega-jacked body builders attractive. There are a lot of pop-science justifications for why, but just ask any women and they will happily explain it to you. The body builders on social media will often joke that if an attractive woman comes up to them they will say “my boyfriend loves your content”. Body building is a sport for men to look at and admire other men. And there is nothing wrong with that, but don’t be tricked into thinking that body building will help you get a girlfriend.</p>
+
+<h3 id="social-media-is-fake">Social Media is Fake</h3>
+
+<p>When you see pictures of these social media fitness influencers, just always remember that social media is fake and that’s not what they look like in real life. They are pumped from just finishing a workout, probably dehydrated, they have the lighting just right, there is likely post-production and digital enhancements, and likely on they are steroids.</p>
+
+<p>Body dysmorphia is a real thing and a growing problem among young men, largely due to the unrealistic standards they see every day on social media. If you are regularly exercising, eating a reasonable diet, and most importantly <em>feel healthy</em> overall, I guarantee you look great.</p>
+
+        </div>
+
+        <div class="pagination" style="margin-top:auto;">
+            <a class="pagination-item parent-link" href="/blog/">
+                Blog Archive
+            </a>
+        </div>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      A Group Theory Proof of the Fundamental Theorem of Arithmetic &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded MathJax (effectively LaTeX) support 
+    https://docs.mathjax.org/en/v2.7-latest/tex.html -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX", "input/MathML", "output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js", "mml2jax.js", "MathMenu.js", "MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
+            Macros: {
+                b: ["{\\boldsymbol #1}",1],
+                u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
+                arccsc: ["\\operatorname\{arccsc\}"],
+                arcsec: ["\\operatorname\{arcsec\}"],
+                arccot: ["\\operatorname\{arccot\}"],
+                csch: ["\\operatorname\{csch\}"],
+                sech: ["\\operatorname\{sech\}"],
+                arcsinh: ["\\operatorname\{arcsinh\}"],
+                arccosh: ["\\operatorname\{arccosh\}"],
+                arctanh: ["\\operatorname\{arctanh\}"],
+                arccsch: ["\\operatorname\{arccsch\}"],
+                arcsech: ["\\operatorname\{arcsech\}"],
+                arccoth: ["\\operatorname\{arccoth\}"],
+                seq: ["{\\left \\langle #1 \\right \\rangle}",1],
+                iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
+                abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
+                hal: ["\\texttt{hal}"],
+                gal: ["\\texttt{gal}"],
+                sh: ["sh"],
+                st: ["st"]
+            },
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!--
+    TeX-AMS_HTML
+    TeX-AMS-MML_HTMLorMML
+    TeX-MML-AM_HTMLorMML
+-->
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">AI/ML Engineer | Aspiring Amateur Mathematician</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+        <li>
+          <a href="/files/Eric Keilty - Resume.pdf" target="_blank">R&eacute;sum&eacute;</a>
+        </li>
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2026 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container post-layout">
+
+        <div class="post">
+            <h1 class="post-title">A Group Theory Proof of the Fundamental Theorem of Arithmetic</h1>
+            <!-- <span class="post-date">25 Aug 2026</span> -->
+            <time datetime="2026-08-25T00:00:00-04:00" class="post-date">25 Aug 2026</time>
+            <p>In this post, I give an alternative proof of the Fundamental Theorem of Arithmetic (FTA), using the <a href="https://en.wikipedia.org/wiki/Composition_series#Uniqueness:_Jordan%E2%80%93H%C3%B6lder_theorem">Jordan-Hölder Theorem</a> for finite groups.</p>
+
+<h3 id="preamble">Preamble</h3>
+
+<p>The <a href="https://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic#Proof">typical proof</a> of the FTA is direct and self-contained, requiring nothing beyond basic number theory. The usual takeaway is that <em>“prime numbers are important because they are the atoms of arithmetic; they are the indivisible building blocks of all integers”</em>.</p>
+
+<p>In this post, I want to give a slightly different perspective. I show that the FTA is just a special case of a much deeper theorem in group theory. The proof hinges on a single lemma: cyclic groups of prime order are simple. In other words, cyclic groups of prime order have no further symmetries to exploit. This gives a different interpretation of primes as not just the building blocks of integers, but the building blocks of symmetry itself. This is why prime numbers are so important. Since Jordan-Hölder applies to all finite groups, primes appear wherever there is symmetry to decompose.</p>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="the-fundamental-theorem-of-arithmetic">The Fundamental Theorem of Arithmetic</h2>
+
+<h3 id="definitions">Definitions</h3>
+
+<p>The <strong>integers</strong> are the elements of the set \(\mathbb{Z} \mathrel{:=} \{\ldots, -3, -2, -1, 0, 1, 2, 3, \ldots\}\).</p>
+
+<p>Let $a$ and $b$ be integers. We say “$a$ <strong>divides</strong> $b$” or “$b$ <strong>is divisible by</strong> $a$” if there exists an integer $c$ (called the <strong>quotient</strong>) such that $a \cdot c = b$. We write $a \mid b$.</p>
+
+<p>An integer $p &gt; 1$ is called <strong>prime</strong> if it is only divisible by itself and $1$.</p>
+
+<p>An integer $n &gt; 1$ is called <strong>composite</strong> if it is not prime, i.e. there exists an integer $d$ such that $1 &lt; d &lt; n$ and $d \mid n$. We call $d$ a <strong>factor</strong> of $n$.</p>
+
+<p>The integers $a_1, a_2, \ldots, a_k &gt; 1$ are a <strong>factorization</strong> of integer $b &gt; 1$ if $\prod_{i=1}^k a_i = b$. If each $a_i$ is prime, then this is called a <strong>prime factorization</strong>.</p>
+
+<h3 id="the-statement">The Statement</h3>
+
+<p>Every integer $n &gt; 1$ has a <strong>unique prime factorization</strong>, i.e. there is a <em>unique multi-set</em> \(\{p_1, p_2, \ldots, p_k\}\) of primes (may contain duplicates) such that</p>
+
+\[n = p_1 p_2 \cdots p_k\]
+
+<p>For example,</p>
+
+\[20 = 2 \cdot 2 \cdot 5\]
+
+<p>is the only prime factorization of $20$.</p>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="the-jordan-hölder-theorem">The Jordan-Hölder Theorem</h2>
+
+<h3 id="definitions-1">Definitions</h3>
+
+<p>A <strong>binary operation</strong> on a set $A$ is a function $*:A \times A \rightarrow A$.</p>
+
+<p>A <strong>group</strong> is a set equipped with a binary operation that is associative, contains an identity element, and is closed under inverses. For a group $G$, the identity element will be denoted $1_G$. The inverse of $g \in G$ will be denoted $g^{-1}$.</p>
+
+<p>The <strong>order of a group</strong> $G$ is the number of elements in the group, denoted $\lvert G \rvert$. The <strong>order of an element</strong> $g \in G$ is the smallest integer $m &gt; 0$ such that $g^m = 1$, denoted $\lvert g \rvert$.</p>
+
+<p>The <strong>cyclic group of order $n$</strong> is defined as \(C_n \mathrel{:=} \{1, x, x^2, \ldots, x^{n-1} \}\) where $x^a \cdot x^b \mathrel{:=} x^{a+b \mod n}$. The element $x$ is called a <strong>generator</strong> of the group. Often we write $C_n = \langle x \rangle$. It’s easy to show that $\lvert C_n \rvert = \lvert x \rvert = n$.</p>
+
+<p>$H$ is a <strong>subgroup</strong> of group $G$ if $H \subseteq G$ and $H$ is a group under the same binary operation as $G$. We write $H \leq G$.</p>
+
+<p>$N$ is a <strong>normal subgroup</strong> of $G$ if $N \leq G$ and $gng^{-1} \in N$ for all $n \in N$ and $g \in G$. We write $N \trianglelefteq G$.</p>
+
+<p>$G$ is called a <strong>simple group</strong> if ${1_G } \trianglelefteq G$ and $G \trianglelefteq G$ are its only normal subgroups.</p>
+
+<p>Let $N \trianglelefteq G$, then $G/N$, called the <strong>quotient group</strong> of $G$ under $N$, is a new group formed by collapsing $N$ down to the identity element. Informally, it is the group $G$ “modulo” $N$. For the purposes of this post, you just need to know <a href="https://en.wikipedia.org/wiki/Lagrange%27s_theorem_(group_theory)">Lagrange’s Theorem</a> which says $\lvert G/N \rvert = \frac{\lvert G \rvert}{\lvert N \rvert}$.</p>
+
+<p>A <strong>composition series</strong> of $G$ is a sequence of subgroups \(\{1_G \} = N_0 \trianglelefteq N_1 \trianglelefteq \ldots \trianglelefteq N_k = G\) such that each $N_{i} \trianglelefteq N_{i+1}$ are normal subgroups, and each quotient group $N_{i+1}/N_{i}$ is simple.</p>
+
+<h3 id="statement">Statement</h3>
+
+<p>Let $G$ be a finite group.</p>
+<ol>
+  <li>$G$ has a composition series</li>
+  <li>Composition series are unique up to permutation and isomorphism of quotient groups</li>
+</ol>
+
+<p>More specifically, if</p>
+
+\[\{1_G\} = N_0 \trianglelefteq N_1 \trianglelefteq \ldots \trianglelefteq N_k = G
+\qquad
+\text{and}
+\qquad
+\{1_G\} = M_0 \trianglelefteq M_1 \trianglelefteq \ldots \trianglelefteq M_\ell = G\]
+
+<p>are two composition series, then $k = \ell$ and there exists a permutation $\sigma \in S_k$ such that $N_{i+1}/N_{i} \cong M_{\sigma(i+1)}/M_{\sigma(i)}$ for each $0 \leq i &lt; k$</p>
+
+<hr />
+
+<h2 id="proof-of-the-fundamental-theorem-of-arithmetic">Proof of the Fundamental Theorem of Arithmetic</h2>
+
+<h3 id="lemma-1">Lemma 1</h3>
+
+<p>If a group $G$ is cyclic with order $a$, then $G \cong C_a$</p>
+
+<p><strong>Proof Sketch</strong>:</p>
+
+<p>Since $G$ has order $a$, then it has a generator $g \in G$ which has order $a$, i.e.</p>
+
+\[G = \langle g \rangle = \{1, g, g^2, \ldots, g^{a-1} \}\]
+
+<p>Therefore, we can define an isomorphism</p>
+
+\[\varphi : C_a \rightarrow G
+\quad
+\text{such that}
+\quad
+\varphi(x^k) \mathrel{:=} g^k\]
+
+<p>I will leave it as an exercise to the reader to validate that this is well-defined, injective, surjective, and a homomorphism.</p>
+
+<h3 id="lemma-2">Lemma 2</h3>
+
+<p>A cyclic group is simple if and only if it has prime order</p>
+
+<p><strong>Proof</strong>:</p>
+
+<p>$\implies$: Proof by contrapositive: suppose $\lvert C_n \rvert = n$ where $n$ is composite. Thus, there exists integer $d$ such that $1 &lt; d &lt; n$ and $d \mid n$. Let $C_n = \langle x \rangle$. Then $\langle x^{d} \rangle$ is a subgroup of order $\frac{n}{\gcd(n, d)} = \frac{n}{d}$. Therefore $\langle x^{d} \rangle$ is a proper subgroup of $C_n$. It is normal since $C_n$ is abelian. Therefore $C_n$ is not simple.</p>
+
+<p>$\impliedby$: Suppose $\lvert C_p \rvert = p$ where $p$ is prime. By <a href="https://en.wikipedia.org/wiki/Lagrange%27s_theorem_(group_theory)">Lagrange’s Theorem</a>, if $H \leq C_p$, then $\lvert H \rvert$ divides $\lvert C_p \rvert$. Thus, the only subgroups of $C_p$ are the identity group and itself, and by definition $C_p$ is a simple group.</p>
+
+<h3 id="existence-of-a-prime-factorization">Existence of a Prime Factorization</h3>
+
+<p>Let $n &gt; 1$ be an integer, and let $C_n$ be the cyclic group of order $n$.</p>
+
+<p>By the <a href="https://en.wikipedia.org/wiki/Composition_series">Jordan-Hölder Theorem</a>, $C_n$ has a composition series</p>
+
+\[\{1_{C_n}\} = N_0 \trianglelefteq N_1 \trianglelefteq \ldots \trianglelefteq N_k = C_n\]
+
+<p>such that each $N_i$ is <strong>normal</strong> in $N_{i+1}$, and each quotient group $N_{i+1}/N_{i}$ is <strong>simple</strong>.</p>
+
+<p>Subgroups of a cyclic group are also cyclic (exercise for the reader). Therefore each $N_i \cong C_{d_i}$ for some integer $d_i$. By <a href="https://en.wikipedia.org/wiki/Lagrange%27s_theorem_(group_theory)">Lagrange’s Theorem</a> we have</p>
+
+\[\lvert N_{i} \rvert \mid \lvert N_{i+1} \rvert
+\quad
+\text{ and }
+\quad
+\lvert N_{i+1}/N_{i} \rvert = \frac{\lvert N_{i+1} \rvert}{\lvert N_{i} \rvert} = \frac{d_{i+1}}{d_{i}}\]
+
+<p>Also note that since $N_{i}$ and $N_{i+1}$ are cyclic, $N_{i+1}/N_{i}$ is also cyclic (exercise for the reader). Therefore by Lemma 1, $N_{i+1}/N_{i} \cong C_{d_{i+1}/d_{i}}$.</p>
+
+<p>From the definition of a composition series $N_{i+1}/N_{i}$ is simple, and thus $C_{d_{i+1}/d_{i}}$ must be simple. By Lemma 2, a cyclic group is simple if and only if it has prime order. Thus, each quotient $\frac{d_{i+1}}{d_{i}}$ is prime.</p>
+
+<p>Also notice that</p>
+
+\[\prod_{i=1}^k \frac{d_{i}}{d_{i-1}} = \frac{d_k}{d_0} = \frac{n}{1} = n\]
+
+<p>Therefore, the multi-set \(\left \{ \frac{d_{1}}{d_{0}} , \frac{d_{2}}{d_{1}} , \ldots , \frac{d_{k}}{d_{k-1}} \right \}\) is a prime factorization of $n$.</p>
+
+<h3 id="uniqueness-of-the-prime-factorization">Uniqueness of the Prime Factorization</h3>
+
+<p>Let $n &gt; 1$ be an integer. Suppose we have two prime factorizations of $n$</p>
+
+\[p_1p_2 \cdots p_k = n
+\qquad
+\text{and}
+\qquad
+q_1q_2 \cdots q_{\ell} = n\]
+
+<p>Let $C_n = \langle x \rangle$ be the cyclic group of order $n$. Now consider the following composition series</p>
+
+\[\{ 1_{C_n} \} = \langle x^{n} \rangle \trianglelefteq \langle x^{\frac{n}{p_1}} \rangle \trianglelefteq \langle x^{\frac{n}{p_1p_2}} \rangle \trianglelefteq \ldots \trianglelefteq \langle x^{\frac{n}{p_1p_2 \cdots p_{k-1}}} \rangle \trianglelefteq \langle x \rangle = C_n\]
+
+<p>and</p>
+
+\[\{ 1_{C_n} \} = \langle x^{n} \rangle \trianglelefteq \langle x^{\frac{n}{q_1}} \rangle \trianglelefteq \langle x^{\frac{n}{q_1q_2}} \rangle \trianglelefteq \ldots \trianglelefteq \langle x^{\frac{n}{q_1q_2 \cdots q_{\ell-1}}} \rangle \trianglelefteq \langle x \rangle = C_n\]
+
+<p>Now by <a href="https://en.wikipedia.org/wiki/Lagrange%27s_theorem_(group_theory)">Lagrange’s Theorem</a></p>
+
+\[\lvert \langle x^{\frac{n}{p_1p_2 \cdots p_{i-1}}} \rangle / \langle x^{\frac{n}{p_1p_2 \cdots p_{i}}} \rangle \rvert = \frac{\frac{n}{p_1p_2 \cdots p_{i-1}}}{\frac{n}{p_1p_2 \cdots p_{i}}} = p_{i}\]
+
+<p>and likewise</p>
+
+\[\lvert \langle x^{\frac{n}{q_1q_2 \cdots q_{j-1}}} \rangle / \langle x^{\frac{n}{q_1q_2 \cdots q_{j}}} \rangle \rvert = \frac{\frac{n}{q_1q_2 \cdots q_{j-1}}}{\frac{n}{q_1q_2 \cdots q_{j}}} = q_{j}\]
+
+<p>By Lemma 1, this implies</p>
+
+\[\langle x^{\frac{n}{p_1p_2 \cdots p_{i-1}}} \rangle / \langle x^{\frac{n}{p_1p_2 \cdots p_{i}}} \rangle \cong C_{p_i}
+\qquad
+\text{and}
+\qquad
+\langle x^{\frac{n}{q_1q_2 \cdots q_{j-1}}} \rangle / \langle x^{\frac{n}{q_1q_2 \cdots q_{j}}} \rangle \cong C_{q_j}\]
+
+<p>Therefore, each quotient group of the composition series is isomorphic to a cyclic group. The order of each cyclic group uniquely corresponds to a prime factor in the prime factorizations. By Lemma 2, a cyclic group of prime order is simple. Therefore, each quotient group of each composition series must be simple. Thus the above are, in fact, valid composition series.</p>
+
+<p>By the <a href="https://en.wikipedia.org/wiki/Composition_series#Uniqueness:_Jordan%E2%80%93H%C3%B6lder_theorem">Jordan-Hölder Theorem</a>, both of these composition series of $C_n$ have equal length, thus $k = \ell$. Also, the quotient groups are equivalent up to permutation and isomorphism. Therefore, there exists a permutation $\sigma \in S_k$ such that</p>
+
+\[C_{p_{i}} \cong C_{q_{\sigma(i)}}
+\qquad
+\forall 1 \leq i \leq k\]
+
+<p>This implies</p>
+
+\[\lvert C_{p_{i}} \rvert = \lvert C_{q_{\sigma(i)}} \rvert
+\qquad
+\implies
+\qquad
+p_{i} = q_{\sigma(i)}\]
+
+<p>Therefore, the original prime factorizations are equal up to permutation.</p>
+
+        </div>
+
+        <div class="pagination" style="margin-top:auto;">
+            <a class="pagination-item parent-link" href="/blog/">
+                Blog Archive
+            </a>
+        </div>
+
+    </div>
+  </body>
+</html>

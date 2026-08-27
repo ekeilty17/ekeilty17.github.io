@@ -96,7 +96,7 @@
       
       <div class="sidebar-about">
         <h1>Eric Keilty</h1>
-        <p class="lead">AI/ML Engineer</p>
+        <p class="lead">AI/ML Engineer | Aspiring Amateur Mathematician</p>
       </div>
     </div>
     
@@ -199,9 +199,9 @@
 
 <h2 id="corollary">Corollary</h2>
 
-<p>Suppose $\displaystyle \lim_{x \rightarrow a} \frac{f(x)}{g(x)}, \ \lim_{x \rightarrow a} \frac{f’(x)}{g’(x)}, \ \lim_{x \rightarrow a} \frac{f’‘(x)}{g’‘(x)}, \ \ldots, \ \lim_{x \rightarrow a} \frac{f^{(n-1)}(x)}{g^{(n-1)}(x)}$ are indeterminant, and $\displaystyle \lim_{x \rightarrow a} \frac{f^{(n)}(x)}{g^{(n)}(x)} = \frac{f^{(n)}(a)}{g^{(n)}(a)}$ exists and is not indeterminant. Then</p>
+<p>Suppose $\displaystyle \lim_{x \rightarrow a} \frac{f(x)}{g(x)}, \ \lim_{x \rightarrow a} \frac{f’(x)}{g’(x)}, \ \lim_{x \rightarrow a} \frac{f’'(x)}{g’'(x)}, \ \ldots, \ \lim_{x \rightarrow a} \frac{f^{(n-1)}(x)}{g^{(n-1)}(x)}$ are indeterminant, and $\displaystyle \lim_{x \rightarrow a} \frac{f^{(n)}(x)}{g^{(n)}(x)} = \frac{f^{(n)}(a)}{g^{(n)}(a)}$ exists and is not indeterminant. Then</p>
 
-\[\lim_{x \rightarrow a} \frac{f(x)}{g(x)} = \lim_{x \rightarrow a} \frac{f'(x)}{g'(x)} = \lim_{x \rightarrow a} \frac{f{'}{'}(x)}{g{'}{'}(x)} = \ldots = \lim_{x \rightarrow a} \frac{f^{(n-1)}(x)}{g^{(n-1)}(x)} = \lim_{x \rightarrow a} \frac{f^{(n)}(x)}{g^{(n)}(x)}\]
+\[\lim_{x \rightarrow a} \frac{f(x)}{g(x)} = \lim_{x \rightarrow a} \frac{f'(x)}{g'(x)} = \lim_{x \rightarrow a} \frac{f''(x)}{g''(x)} = \ldots = \lim_{x \rightarrow a} \frac{f^{(n-1)}(x)}{g^{(n-1)}(x)} = \lim_{x \rightarrow a} \frac{f^{(n)}(x)}{g^{(n)}(x)}\]
 
 <p>i.e. we can successively take derivatives until we arrive at a non-indeterminant form. Note that here equality is well-defined because all limits exist.</p>
 
@@ -241,7 +241,7 @@
         <!-- Getting url for series, which is just the page url with the last /... removed -->
         
 
-        <div class="pagination" style="margin-top:1em;">
+        <div class="pagination" style="margin:1em 0 0 0;">
             
                 <a class="pagination-item older" href="/blog/derivative-proofs/function-to-the-power-of-a-function/">Previous</a>
             
@@ -249,8 +249,9 @@
                 <span class="pagination-item newer">Next</span>
             
         </div>
-        <h3 style="text-align:center; margin-bottom:1em;">
-            <a href="/blog/derivative-proofs">
+        <div class="pagination" style="margin:0;">
+            <a class="pagination-item parent-link" href="/blog/derivative-proofs">
+                
             
                 
                     Derivative
@@ -260,8 +261,9 @@
                     Proofs
                 
             
-         Series</a>
-        </h3>
+         Series
+            </a>
+        </div>
     </div>
     
   </body>

@@ -36,9 +36,58 @@
   <!-- RSS 
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
 </head>
+  <!-- Enable embedded MathJax (effectively LaTeX) support 
+    https://docs.mathjax.org/en/v2.7-latest/tex.html -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX", "input/MathML", "output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js", "mml2jax.js", "MathMenu.js", "MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
+            Macros: {
+                b: ["{\\boldsymbol #1}",1],
+                u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
+                arccsc: ["\\operatorname\{arccsc\}"],
+                arcsec: ["\\operatorname\{arcsec\}"],
+                arccot: ["\\operatorname\{arccot\}"],
+                csch: ["\\operatorname\{csch\}"],
+                sech: ["\\operatorname\{sech\}"],
+                arcsinh: ["\\operatorname\{arcsinh\}"],
+                arccosh: ["\\operatorname\{arccosh\}"],
+                arctanh: ["\\operatorname\{arctanh\}"],
+                arccsch: ["\\operatorname\{arccsch\}"],
+                arcsech: ["\\operatorname\{arcsech\}"],
+                arccoth: ["\\operatorname\{arccoth\}"],
+                seq: ["{\\left \\langle #1 \\right \\rangle}",1],
+                iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
+                abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
+                hal: ["\\texttt{hal}"],
+                gal: ["\\texttt{gal}"],
+                sh: ["sh"],
+                st: ["st"]
+            },
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!--
+    TeX-AMS_HTML
+    TeX-AMS-MML_HTMLorMML
+    TeX-MML-AM_HTMLorMML
+-->
 
   <body>
-
+    
     <div class="sidebar">
     <div class="container">
       <!--
@@ -47,7 +96,7 @@
       
       <div class="sidebar-about">
         <h1>Eric Keilty</h1>
-        <p class="lead">AI/ML Engineer</p>
+        <p class="lead">AI/ML Engineer | Aspiring Amateur Mathematician</p>
       </div>
     </div>
     
@@ -99,23 +148,13 @@
     </div>
   </div>
 
-    <div class="content container">
-      <div class="page">
-          <h1 class="page-title">BlackJack</h1>
-          <p>This is a collection of posts about the card game<a href="https://en.wikipedia.org/wiki/Blackjack" target="_blank">BlackJack</a>; mostly related to mathematics, probability, and basic strategy. They can be read in any order.</p>
+    <div class="content container post-layout">
 
-<div class="post-link-container">
-    <a href="/blog/blackjack/how-I-remember-blackjack-basic-strategy/" class="post-link-item"> 
-        <div>
-            How I Remember BlackJack Basic Strategy 
-        </div>
-        <div>
-            <div style="font-size: smaller; margin-top: 5px; margin-bottom: -15px; opacity: 0.4;">
-                <time datetime="2024-03-03T00:00:00-05:00" class="post-link-date">03 Mar 2024</time>
-            </div>
-        </div>
-    </a>
-  </div>
+        <div class="post">
+            <h1 class="post-title">BlackJack</h1>
+            <!-- <span class="post-date"></span> -->
+            <time datetime="" class="post-date"></time>
+            <p>This is a collection of posts about the card game<a href="https://en.wikipedia.org/wiki/Blackjack" target="_blank">BlackJack</a>; mostly related to mathematics, probability, and basic strategy. They can be read in any order.</p>
 
 <div class="post-link-container">
     <a href="/blog/blackjack/I-dont-trust-autoshufflers/" class="post-link-item"> 
@@ -130,16 +169,28 @@
     </a>
   </div>
 
+<div class="post-link-container">
+    <a href="/blog/blackjack/how-I-remember-blackjack-basic-strategy/" class="post-link-item"> 
+        <div>
+            How I Remember BlackJack Basic Strategy 
+        </div>
+        <div>
+            <div style="font-size: smaller; margin-top: 5px; margin-bottom: -15px; opacity: 0.4;">
+                <time datetime="2024-03-03T00:00:00-05:00" class="post-link-date">03 Mar 2024</time>
+            </div>
+        </div>
+    </a>
+  </div>
 
-      </div>
+
+        </div>
+
+        <div class="pagination" style="margin-top:auto;">
+            <a class="pagination-item parent-link" href="/blog/">
+                Blog Archive
+            </a>
+        </div>
+
     </div>
-    
-    <!--
-    <h3 style="text-align:center; margin-bottom:1em;">
-      <a href="/blog/">Blog Archive</a>
-    </h3>
-    -->
-
   </body>
 </html>
-

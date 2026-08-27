@@ -36,9 +36,58 @@
   <!-- RSS 
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
 </head>
+  <!-- Enable embedded MathJax (effectively LaTeX) support 
+    https://docs.mathjax.org/en/v2.7-latest/tex.html -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX", "input/MathML", "output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js", "mml2jax.js", "MathMenu.js", "MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
+            Macros: {
+                b: ["{\\boldsymbol #1}",1],
+                u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
+                arccsc: ["\\operatorname\{arccsc\}"],
+                arcsec: ["\\operatorname\{arcsec\}"],
+                arccot: ["\\operatorname\{arccot\}"],
+                csch: ["\\operatorname\{csch\}"],
+                sech: ["\\operatorname\{sech\}"],
+                arcsinh: ["\\operatorname\{arcsinh\}"],
+                arccosh: ["\\operatorname\{arccosh\}"],
+                arctanh: ["\\operatorname\{arctanh\}"],
+                arccsch: ["\\operatorname\{arccsch\}"],
+                arcsech: ["\\operatorname\{arcsech\}"],
+                arccoth: ["\\operatorname\{arccoth\}"],
+                seq: ["{\\left \\langle #1 \\right \\rangle}",1],
+                iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
+                abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
+                hal: ["\\texttt{hal}"],
+                gal: ["\\texttt{gal}"],
+                sh: ["sh"],
+                st: ["st"]
+            },
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!--
+    TeX-AMS_HTML
+    TeX-AMS-MML_HTMLorMML
+    TeX-MML-AM_HTMLorMML
+-->
 
   <body>
-
+    
     <div class="sidebar">
     <div class="container">
       <!--
@@ -47,7 +96,7 @@
       
       <div class="sidebar-about">
         <h1>Eric Keilty</h1>
-        <p class="lead">AI/ML Engineer</p>
+        <p class="lead">AI/ML Engineer | Aspiring Amateur Mathematician</p>
       </div>
     </div>
     
@@ -99,10 +148,13 @@
     </div>
   </div>
 
-    <div class="content container">
-      <div class="page">
-          <h1 class="page-title">Probability Distributions</h1>
-          <p>This series is still being developed.</p>
+    <div class="content container post-layout">
+
+        <div class="post">
+            <h1 class="post-title">Probability Distributions</h1>
+            <!-- <span class="post-date"></span> -->
+            <time datetime="" class="post-date"></time>
+            <p>This series is still being developed.</p>
 
 <div class="post-link-container">
     <a href="/blog/probability-distributions/introduction/" class="post-link-item"> 
@@ -219,15 +271,14 @@
   </div>
 
 
-      </div>
-    </div>
-    
-    <!--
-    <h3 style="text-align:center; margin-bottom:1em;">
-      <a href="/blog/">Blog Archive</a>
-    </h3>
-    -->
+        </div>
 
+        <div class="pagination" style="margin-top:auto;">
+            <a class="pagination-item parent-link" href="/blog/">
+                Blog Archive
+            </a>
+        </div>
+
+    </div>
   </body>
 </html>
-

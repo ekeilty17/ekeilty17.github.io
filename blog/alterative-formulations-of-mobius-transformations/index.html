@@ -96,7 +96,7 @@
       
       <div class="sidebar-about">
         <h1>Eric Keilty</h1>
-        <p class="lead">AI/ML Engineer</p>
+        <p class="lead">AI/ML Engineer | Aspiring Amateur Mathematician</p>
       </div>
     </div>
     
@@ -148,7 +148,7 @@
     </div>
   </div>
 
-    <div class="content container">
+    <div class="content container post-layout">
 
         <div class="post">
             <h1 class="post-title">Alterative Formulations of Möbius Transformations</h1>
@@ -184,7 +184,7 @@
 
 <p>I’ll refer to this as the <strong>standard Möbius form</strong>. The condition that $ad - bc \neq 0$ ensures that $T$ is invertible (similar to $2\text{D}$ linear algebra) and always differentiable.</p>
 
-<p>I liken the standard Möbius form to the standard form for the equation of a line $Ax + By = C$. While this uniquely defines a line perfectly well, it’s not really all the useful since the parameters $A$, $B$, and $C$ don’t have any geometric meaning. This is why slope-intercept form $y = mx + b$ and point-slope form $y - y_0 = m(x - x_0)$ are preferred and more widely used.</p>
+<p>I liken the standard Möbius form to the standard form for the equation of a line $Ax + By = C$. While this uniquely defines a line perfectly well, it’s not really all that useful since the parameters $A$, $B$, and $C$ don’t have any geometric meaning. This is why slope-intercept form $y = mx + b$ and point-slope form $y - y_0 = m(x - x_0)$ are preferred and more widely used.</p>
 
 <p>In the remaining of the post I will discuss two alternative formulations which have strong geometric meanings. Note that typically Möbius transformations are reformulated in terms of the <strong>cross ratio</strong> (see <a href="/blog/alterative-formulations-of-mobius-transformations-appendix/">appendix</a> for definition). However, since this is so widely discussed by the resources I provided above, I will not discuss it here.</p>
 
@@ -206,7 +206,7 @@
 
 <p>I call this the <strong>Steiner Net Form</strong> of a Möbius transformation. Notice that $S(p_0) = 0$ and $S(p_{\infty}) = \infty$. So, the center of the polar net moves to $p_0$ in the Steiner net (the very yellow region), and the <em>point-at-infinity</em> of the polar net moves to $p_{\infty}$ in the Steiner net (the black hole looking region).</p>
 
-<p>To understand the affect of $k$, recall the geometric interpretation of complex multiplication; magnitudes multiply and angle add. Thus, the polar net will be scaled by a factor of $\abs{k}$ and rotated through an angle of $\arg k$. In the resulting Steiner net, the blue grid lines scale as $\abs{k}$ scales; the yellow grid lines cycle as $\arg k$ cycles from $0$ to $2\pi$.</p>
+<p>To understand the effect of $k$, recall the geometric interpretation of complex multiplication: magnitudes multiply and angles add. Thus, the polar net will be scaled by a factor of $\abs{k}$ and rotated through an angle of $\arg k$. In the resulting Steiner net, the blue grid lines scale as $\abs{k}$ scales; the yellow grid lines cycle as $\arg k$ cycles from $0$ to $2\pi$.</p>
 
 <p>To see these geometric properties in action, I’ve created a fun <a href="https://www.youtube.com/watch?v=nweY6E_yE2g">animation</a>.</p>
 
@@ -295,7 +295,7 @@
 \qquad\iff\qquad
 
 \begin{cases}
-    &amp;\text{fix any value of } c \\[10pt]
+    &amp;\text{fix any value of } c \neq 0 \\[10pt]
     &amp;a = \frac{c}{1-k}(p_1 - kp_2) \\[10pt]
     &amp;b = -c p_1 p_2 \\[10pt]
     &amp;d = - \frac{c}{1-k}(p_2 - kp_1) \\[10pt]
@@ -317,7 +317,7 @@
 \qquad\iff\qquad
 
 \begin{cases}
-    &amp;\text{fix any value of } c \\[10pt]
+    &amp;\text{fix any value of } c  \neq 0 \\[10pt]
     &amp;a = \frac{c}{k}(1 + kp) \\[10pt]
     &amp;b = -c p^2 \\[10pt]
     &amp;d = - \frac{c}{k}(1 - kp) \\[10pt]
@@ -336,13 +336,13 @@
 <h2 id="appendix"><a href="/blog/alterative-formulations-of-mobius-transformations-appendix/">Appendix</a></h2>
 
         </div>
-    </div>
 
-    <!--
-    <h3 style="text-align:center; margin-bottom:1em;">
-      <a href="/blog/">Blog Archive</a>
-    </h3>
-    -->
-    
+        <div class="pagination" style="margin-top:auto;">
+            <a class="pagination-item parent-link" href="/blog/">
+                Blog Archive
+            </a>
+        </div>
+
+    </div>
   </body>
 </html>
