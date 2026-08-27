@@ -1,5 +1,5 @@
 ---
-layout:     page
+layout:     post
 title:      Laplace Transform Derivations
 categories: blog
 permalink:  /blog/laplace-transforms/

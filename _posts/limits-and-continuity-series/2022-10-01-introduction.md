@@ -17,11 +17,18 @@ I remember when taking first-year calculus in university that $\epsilon - \delta
 
 <br>
 
+## Level of Rigour
+
+The star of this series are the $\epsilon - \delta$ proofs. As such, I want to avoid the formalism associated with domains and limit points. Unless otherwise specified, all functions map from $\mathbb{R}$ to $\mathbb{R}$ and therefore all points $x \in \mathbb{R}$ are limit points.
+
+<br>
+
+
 ## A Little History
 
 The concept of a _limit_ has been around for a very long time. As far back as the Greeks give the famous <a href="https://www.youtube.com/watch?v=u7Z9UnWOJNY" target="_blank">Zeno's Paradox and Achilles and the Tortoise</a> thought experiments, wrestling with the idea of infinite sequences. Famously, the genius of antiquity <a href="https://en.wikipedia.org/wiki/Archimedes" target="_blank">Archimedes</a> almost discovered integration when studying <a href="https://archive.org/details/worksofarchimede029517mbp/page/232/mode/2up" target="_blank">quadratures of the parabola</a>. Moreover, there were a number of <a href="https://www.youtube.com/watch?v=R1HUtt2oo7A" target="_blank">unrigorous proofs</a> for the area of a circle, which used limit-like arguments.
 
-When Calculus was first invented by <a href="https://en.wikipedia.org/wiki/Isaac_Newton" target="_blank">Newton</a> and <a href="https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz" target="_blank">Leibniz</a>, its foundation was largely heuristic, based on this concept of <a href="https://en.wikipedia.org/wiki/Infinitesimal" target="_blank">infinitesimals</a>, as can be seen in the notation $\frac{dy}{dx}$. The issue with this approach is that the foundation of Calculus was these numbers that seemingly did not exist and could not be rigorously established. Eventually, <a href="https://en.wikipedia.org/wiki/Augustin-Louis_Cauchy" target="_blank">Cauchy</a> proposed his $\epsilon - \delta$ formulation of limits. It was quickly realized that **all** of calculus could be rigorously rooted in these definitions. Thus, they are what are taught today.
+When Calculus was first discovered by <a href="https://en.wikipedia.org/wiki/Isaac_Newton" target="_blank">Newton</a> and <a href="https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz" target="_blank">Leibniz</a>, its foundation was largely heuristic, based on this concept of <a href="https://en.wikipedia.org/wiki/Infinitesimal" target="_blank">infinitesimals</a>, as can be seen in the notation $\frac{dy}{dx}$. The issue with this approach is that the foundations of Calculus were rooted in these numbers that seemingly did not exist nor could be rigorously established. Eventually, <a href="https://en.wikipedia.org/wiki/Augustin-Louis_Cauchy" target="_blank">Cauchy</a> proposed his $\epsilon - \delta$ formulation of limits. It was quickly realized that **all** of calculus could be rigorously rooted in these definitions. Thus, they are what are taught today.
 
 For further reading, I recommend <a href="http://users.uoa.gr/~spapast/TomeasDidaktikhs/Caychy/GrabinerOriginsofCauchysRigorousCalculus.pdf" target="_blank">The Origins of Cauchy's Rigorous Calculus</a> and <a href="https://authors.library.caltech.edu/75428/1/NON-STANDARD%20ANALYSIS-ROBINSONS%20THEORY%20OF%20INFINITESIMALS-1962.pdf" target="_blank">Lectures of A Robinson's Theory of Infinitesimals and Infinitely Large Numbers</a>.
 

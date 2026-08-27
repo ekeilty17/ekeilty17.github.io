@@ -168,3 +168,37 @@ a.post-link-item:focus {
   white-space: nowrap; /* Prevent line breaks */
   max-width: 100%; /* Ensure the container doesn't exceed the width of its parent */
 }
+
+details > summary {
+  list-style: none;
+  cursor: pointer;
+  position: relative;
+  padding-left: 1.4em;
+}
+
+/* remove native arrow */
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* layout wrapper */
+.summary-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* custom arrow */
+details > summary::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  top: 0.25em;
+  font-size: 0.9em;
+  color: #666;
+  transition: transform 0.2s ease;
+}
+
+/* rotate when open */
+details[open] > summary::before {
+  transform: rotate(90deg);
+}

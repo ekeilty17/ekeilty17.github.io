@@ -20,7 +20,7 @@ $$
 
 ## Reciprocal
 
-We wish to show that 
+Suppose $f(x) \neq 0$ in a small neighborhood around $x = a$. We wish to show that
 
 $$
 \lim_{x \rightarrow a} \frac{1}{f(x)} = \frac{1}{L}
@@ -79,6 +79,8 @@ $$
 ## Division
 
 Combining the multiplication law and the reciprocal law gives the general division law of limits.
+
+Suppose $g(x) \neq 0$ in a small neighborhood around $x = a$. 
 
 $$
 \begin{align}

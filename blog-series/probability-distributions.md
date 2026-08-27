@@ -1,5 +1,5 @@
 ---
-layout:     page
+layout:     post
 title:      Probability Distributions
 categories: blog
 permalink:  /blog/probability-distributions/

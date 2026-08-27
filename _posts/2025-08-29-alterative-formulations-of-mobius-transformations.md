@@ -40,7 +40,7 @@ $$
 
 I'll refer to this as the **standard Möbius form**. The condition that $ad - bc \neq 0$ ensures that $T$ is invertible (similar to $2\text{D}$ linear algebra) and always differentiable.
 
-I liken the standard Möbius form to the standard form for the equation of a line $Ax + By = C$. While this uniquely defines a line perfectly well, it's not really all the useful since the parameters $A$, $B$, and $C$ don't have any geometric meaning. This is why slope-intercept form $y = mx + b$ and point-slope form $y - y_0 = m(x - x_0)$ are preferred and more widely used.
+I liken the standard Möbius form to the standard form for the equation of a line $Ax + By = C$. While this uniquely defines a line perfectly well, it's not really all that useful since the parameters $A$, $B$, and $C$ don't have any geometric meaning. This is why slope-intercept form $y = mx + b$ and point-slope form $y - y_0 = m(x - x_0)$ are preferred and more widely used.
 
 In the remaining of the post I will discuss two alternative formulations which have strong geometric meanings. Note that typically Möbius transformations are reformulated in terms of the **cross ratio** (see [appendix](/blog/alterative-formulations-of-mobius-transformations-appendix/) for definition). However, since this is so widely discussed by the resources I provided above, I will not discuss it here.
 
@@ -64,7 +64,7 @@ $$
 
 I call this the **Steiner Net Form** of a Möbius transformation. Notice that $S(p_0) = 0$ and $S(p_{\infty}) = \infty$. So, the center of the polar net moves to $p_0$ in the Steiner net (the very yellow region), and the _point-at-infinity_ of the polar net moves to $p_{\infty}$ in the Steiner net (the black hole looking region). 
 
-To understand the affect of $k$, recall the geometric interpretation of complex multiplication; magnitudes multiply and angle add. Thus, the polar net will be scaled by a factor of $\abs{k}$ and rotated through an angle of $\arg k$. In the resulting Steiner net, the blue grid lines scale as $\abs{k}$ scales; the yellow grid lines cycle as $\arg k$ cycles from $0$ to $2\pi$.
+To understand the effect of $k$, recall the geometric interpretation of complex multiplication: magnitudes multiply and angles add. Thus, the polar net will be scaled by a factor of $\abs{k}$ and rotated through an angle of $\arg k$. In the resulting Steiner net, the blue grid lines scale as $\abs{k}$ scales; the yellow grid lines cycle as $\arg k$ cycles from $0$ to $2\pi$.
 
 To see these geometric properties in action, I've created a fun [animation](https://www.youtube.com/watch?v=nweY6E_yE2g).
 
@@ -166,7 +166,7 @@ $$
 \qquad\iff\qquad
 
 \begin{cases}
-    &\text{fix any value of } c \\[10pt]
+    &\text{fix any value of } c \neq 0 \\[10pt]
     &a = \frac{c}{1-k}(p_1 - kp_2) \\[10pt]
     &b = -c p_1 p_2 \\[10pt]
     &d = - \frac{c}{1-k}(p_2 - kp_1) \\[10pt]
@@ -192,7 +192,7 @@ $$
 \qquad\iff\qquad
 
 \begin{cases}
-    &\text{fix any value of } c \\[10pt]
+    &\text{fix any value of } c  \neq 0 \\[10pt]
     &a = \frac{c}{k}(1 + kp) \\[10pt]
     &b = -c p^2 \\[10pt]
     &d = - \frac{c}{k}(1 - kp) \\[10pt]

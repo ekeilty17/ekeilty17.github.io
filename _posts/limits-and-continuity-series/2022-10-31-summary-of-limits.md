@@ -81,7 +81,7 @@ $$
 We say $f$ is **continuous at** $\boldsymbol{a}$ if
 
 $$
-\lim_{x \rightarrow a} f(x) = f(x)
+\lim_{x \rightarrow a} f(x) = f(a)
 $$
 
 We say that $f$ is **continuous** if it is continuous at every point in its domain.

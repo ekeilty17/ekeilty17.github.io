@@ -71,7 +71,7 @@ My group specializes in Distributed Ledger Technology (DLT), i.e. the infrastruc
 
 All the names associated with my degree are a bit confusing, so I would like to quickly explain them. First, what is **Engineering Science** (EngSci)? At the University of Toronto, there are two types of engineering programs: Core 8 and EngSci. In summary, EngSci is the honors engineering program. It's harder to be accepted, the courses tend to move at a faster pace covering more material, the exams are harder, and you are required to do both a capstone and a thesis at the end (Core 8's get to choose one). You can find more information <a href="https://discover.engineering.utoronto.ca/programs/engineering-programs/" target="_blank">here</a>.
 
-Second, what does **Machine Intelligence** mean? Since EngSci is the honors engineering program, it contains highly specialized majors. I think the name "Machine Intelligence" was a bad one. In essence, it's classic computer engineering with an emphasis on machine learning and artificial intelligence. 
+Second, what does **Machine Intelligence** mean? Since EngSci is the honors engineering program, it contains highly specialized majors. I think the name "Machine Intelligence" is a bad one. In essence, it's classic computer engineering with an emphasis on machine learning and artificial intelligence. 
 
 
 ---
@@ -104,9 +104,9 @@ Second, what does **Machine Intelligence** mean? Since EngSci is the honors engi
 ---
 
 <details>
-<summary></summary>
-
-<h2>Middle School</h2>
+<summary>
+<h2 style="display:inline">Middle School</h2>
+</summary>
 
 <ul>
   <li><a href="https://dms.dover.k12.nh.us/" target="_blank">Dover Middle School</a></li>

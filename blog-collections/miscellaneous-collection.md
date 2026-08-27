@@ -1,13 +1,13 @@
 ---
 layout:     post
-title:      Billiards
+title:      Miscellaneous
 categories: blog
-permalink:  /blog/billiards/
+permalink:  /blog/miscellaneous/
 ---
 
-This is a collection of posts about <a href="https://en.wikipedia.org/wiki/Cue_sports" target="_blank">Billiards</a>; mostly related to mathematics and physics. They can be read in any order.
+This is a collection of miscellaneous posts which I didn't feel were worthy enough to advertise on the main blog page. They can be read in any order.
 
-{% assign sorted_posts = site.posts | where: 'series', 'billiards' | sort: 'date' | reverse %}
+{% assign sorted_posts = site.posts | where: 'series', 'miscellaneous' | sort: 'date' | reverse %}
 {% for post in sorted_posts %}
   {% assign draft_status = post.draft | default: false %}
   {% if draft_status == false %}

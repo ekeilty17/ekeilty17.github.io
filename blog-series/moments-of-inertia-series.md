@@ -1,5 +1,5 @@
 ---
-layout:     page
+layout:     post
 title:      Moments of Inertia
 categories: blog
 permalink:  /blog/moments-of-inertia/

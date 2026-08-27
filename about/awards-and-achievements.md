@@ -12,9 +12,9 @@ Here I've compiled some of my favorite awards, scholarships, and achievements (w
 
 During my MASc degree, I was the head TA of a number of courses, running multiple tutorial sessions per week. I loved teaching and I am honored to have my hard work noticed.
 
-* **Best ECE Teaching Assistant Award** (Certificate Coming Soon)
+* **Best ECE Teaching Assistant Award** (Unfortunately I cannot find my certificate 😞)
 
-* **Shortlist for TATP TA Teaching Excellence Award** (<a href="https://tatp.utoronto.ca/awards/current-winners/" target="_blank">Link</a>, <a href="/files/awards/MASc/TATP TA Excellence Award Shortlist.pdf" target="_blank">Letter</a>)
+* **2023 Shortlist for TATP TA Teaching Excellence Award** (<a href="https://tatp.utoronto.ca/awards/current-winners/" target="_blank">Link</a>, <a href="/files/awards/MASc/TATP TA Excellence Award Shortlist.pdf" target="_blank">Letter</a>)
 
 ---
 
@@ -26,7 +26,7 @@ At the time I received it, this was my proudest achievement. School is something
 
 I received a number of scholarships (all academic-based), these are listed below:
 
-* **University of Toronto Scholar** (<a href="/files/awards/scholarships/Unversity of Toronto Scholar.pdf" target="_blank">e-mail</a>)
+* **University of Toronto Scholar** (<a href="/files/awards/scholarships/Unversity of Toronto Scholar.pdf" target="_blank">Letter</a>)
 
 * **NSERC USRA Undergraduate Research Grant** (<a href="/files/awards/scholarships/NSERC USRA Grant.pdf" target="_blank">Letter</a>)
 

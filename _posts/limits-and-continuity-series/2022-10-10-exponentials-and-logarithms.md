@@ -106,10 +106,14 @@ $$
 \lim_{x \rightarrow a} f(x)^{g(x)} = \left ( \lim_{x \rightarrow a} f(x) \right )^{\displaystyle \left ( \lim_{x \rightarrow a} g(x) \right )}
 $$
 
-We have to be careful here that we don't get an indeterminant form. For example, 
+<br>
+
+### A Lesser-Known Indeterminant Form
+
+When applying the above exponentiation law, we have to be careful here that we don't get an indeterminant form. For example, 
 
 $$
 \lim_{n \rightarrow \infty} \left ( 1 + \frac{x}{n} \right )^n = \left ( \lim_{n \rightarrow \infty} \left ( 1 + \frac{x}{n} \right ) \right )^{ \lim_{n \rightarrow \infty} n} = 1^{\infty}
 $$
 
-Many naively would think that the solution is $1^{\infty} = 1$, but when dealing with limits it does not. As we know, this limit actually equals $e^x$.
+Many naively would think that the solution is $1^{\infty} = 1$, but when dealing with limits it does not in general. As we know, this limit actually equals $e^x$.

@@ -1,5 +1,5 @@
 ---
-layout:     page
+layout:     post
 title:      Boolean Algebra
 categories: blog
 permalink:  /blog/boolean-algebra/

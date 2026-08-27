@@ -7,6 +7,8 @@ permalink:  /blog/
 
 <br>
 
+_All content has been created and written exclusively by myself (Eric Keilty). No AI nor LLMs have been used at any stage in the content of these blog posts. Each blog post is a labor of love._
+
 ---
 
 <br>
@@ -40,6 +42,8 @@ Posts within a series build on each other and are typically meant to be read in 
 <br>
 
 ---
+
+<br>
 
 ## Collections
 
