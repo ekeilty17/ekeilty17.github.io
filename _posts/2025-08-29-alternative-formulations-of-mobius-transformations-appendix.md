@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Alterative Formulations of Möbius Transformation - Appendix"
+title:      "Alternative Formulations of Möbius Transformations - Appendix"
 date:       2025-08-29
 categories: blog
 permalink:  ":categories/:title/"
@@ -9,7 +9,7 @@ appendix:   true
 tags:       complex analysis, mobius transformations, möbius transformations, fractional linear transformations, fixed points
 ---
 
-Appendix to post [Alterative Formulations of Möbius Transformation](/blog/alterative-formulations-of-mobius-transformations/).
+Appendix to post [Alternative Formulations of Möbius Transformations](/blog/alternative-formulations-of-mobius-transformations/).
 
 ---
 
@@ -36,7 +36,7 @@ $$
 
 For example, on pair $(z_1, w_1)$ both the left- and right-hand side resolve to $1$. As an exercise, show that this can be reduced to the standard Möbius form of $w = \frac{az + b}{cz + d}$.
 
-Now, we want to show that this map is unique. Suppose there exists two maps, $T$ and $S$ such that both map $(z_1, z_2, z_3) \mapsto (w_1, w_2, w_3)$. Then we can do the following.
+Now, we want to show that this map is unique. Suppose there exist two maps, $T$ and $S$ such that both map $(z_1, z_2, z_3) \mapsto (w_1, w_2, w_3)$. Then we can do the following.
 
 $$
 (z_1, z_2, z_3) \underset{T}{\mapsto} (w_1, w_2, w_3) \underset{S^{-1}}{\mapsto} (z_1, z_2, z_3)
@@ -54,13 +54,13 @@ Therefore, $T$ is unique.
 
 ## Case 1 Fixed Point Conversion
 
-Recall that the fixed points are the roots of $z^2 - \left(\frac{a - d}{c} \right)z - \frac{b}{c} = 0$. If there is only $1$ fixed point $p$, then $0 = (z - p)^2 = z^2 - 2p + p^2$. Comparing coefficients, we get.
+Recall that the fixed points are the roots of $z^2 - \left(\frac{a - d}{c} \right)z - \frac{b}{c} = 0$. If there is only $1$ fixed point $p$, then $0 = (z - p)^2 = z^2 - 2pz + p^2$. Comparing coefficients, we get
 
 $$
 p = \frac{a - d}{2c} \qquad p^2 = -\frac{b}{c}
 $$
 
-these are equivalent since we are assuming $(a - d)^2 + 4bc = 0$, but we will see the $p^2$ relation comes in handy later.
+These are equivalent since we are assuming $(a - d)^2 + 4bc = 0$, but we will see the $p^2$ relation comes in handy later.
 
 Also recall the formula for the Steiner net with 1 fixed point. With some algebra we can convert it into standard Möbius form.
 
@@ -72,9 +72,9 @@ $$
 w = \frac{(1 + kp)z - kp^2}{kz + (1 - kp)}
 $$
 
-We have to be careful. It's temping to compare coefficients with $w = \frac{az + b}{cz + d}$ and conclude that $k = c$, etc. This is not correct. The correct thing to compare it to $w = \frac{(\lambda a) z + (\lambda b)}{(\lambda c) z + (\lambda d)}$. So our goal is to find a $k$ such that everything reduces to the same multiples of $a, b, c, \text{and }, d$.
+We have to be careful. It's tempting to compare coefficients with $w = \frac{az + b}{cz + d}$ and conclude that $k = c$, etc. This is not correct. The correct thing is to compare it to $w = \frac{(\lambda a) z + (\lambda b)}{(\lambda c) z + (\lambda d)}$. So our goal is to find a $k$ such that everything reduces to the same multiples of $a, b, c, \text{and }, d$.
 
-I will assert that.
+I will assert the following.
 
 $$
 k = \frac{1}{cp + d} = \frac{2c}{a + d} \qquad\text{and}\qquad \lambda = \frac{k}{c}
@@ -94,7 +94,7 @@ $$
 Therefore for the appropriate values of $k$ and $\lambda$
 
 $$
-w = \frac{(1 + kp)z - kz^2}{kz + (1 - kp)} = \frac{(\lambda a) z + (\lambda b)}{(\lambda c) z + (\lambda d)} = \frac{az + b}{cz + d}
+w = \frac{(1 + kp)z - kp^2}{kz + (1 - kp)} = \frac{(\lambda a) z + (\lambda b)}{(\lambda c) z + (\lambda d)} = \frac{az + b}{cz + d}
 $$
 
 and we have found 1-to-1 conversion between the two different forms.
@@ -105,7 +105,7 @@ and we have found 1-to-1 conversion between the two different forms.
 
 This is essentially the same as case 1, but much more complicated algebra.
 
-Just as before, the fixed points are the roots of $z^2 - \left(\frac{a - d}{c} \right)z - \frac{b}{c} = 0$. If there are $2$ fixed points $p_1$ and $p_2$, then $0 = (z - p_1)(z - p_2) = z^2 - (p_1 + p_2) + p_1p_2$. Comparing coefficients, we get.
+Just as before, the fixed points are the roots of $z^2 - \left(\frac{a - d}{c} \right)z - \frac{b}{c} = 0$. If there are $2$ fixed points $p_1$ and $p_2$, then $0 = (z - p_1)(z - p_2) = z^2 - (p_1 + p_2)z + p_1p_2$. Comparing coefficients, we get.
 
 $$
 p_1 + p_2 = \frac{a - d}{c} \qquad p_1 \cdot p_2 = -\frac{b}{c}
@@ -160,7 +160,6 @@ $$
     &= \frac{1}{c g_1} \left ( (g_1^2 - g_2^2) - d(g_1 - g_2) \right ) \\[10pt]
     &= \frac{1}{c g_1} (g_1 - g_2) \left ( (g_1 + g_2) - d \right ) \\[10pt]
     &= \frac{1}{c g_1} (g_1 - g_2) \cdot a \\[10pt]
-    &= \frac{a}{c} \left( 1 - \tfrac{g_2}{g_1} \right) \\[10pt]
     &= \frac{a}{c} \left( 1 - \tfrac{g_2}{g_1} \right) \\[10pt]
     &= \tfrac{1 - k}{c} \cdot a
 \end{align}

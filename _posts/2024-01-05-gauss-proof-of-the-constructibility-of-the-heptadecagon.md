@@ -166,7 +166,7 @@ In this post, I am going to give a proof sketch of this result. It will not be 1
 
 ### What the Greeks Knew {#what-the-greeks-knew}
 
-In Euclid's infamous textbook <a href="https://en.wikipedia.org/wiki/Euclid%27s_Elements" target="_blank">The Elements</a>, he provided a few regular polygon constructions. First, he could construct an equilateral triangle, square, and regular pentagon. The equilateral triangle and square are quite simple. The regular pentagon is more complicated, but not too bad.
+In Euclid's famous textbook <a href="https://en.wikipedia.org/wiki/Euclid%27s_Elements" target="_blank">The Elements</a>, he provided a few regular polygon constructions. First, he could construct an equilateral triangle, square, and regular pentagon. The equilateral triangle and square are quite simple. The regular pentagon is more complicated, but not too bad.
 
 <center>
 <div class="overflow-container">
@@ -770,7 +770,7 @@ $$
 
 <br>
 
-Therefore, we have successfully converted the geometric polynomial into a set of algebraic variables. Now our goal is to find an exact formula for the values of the $\zeta$'s (in particular an expression for the quantity $\cos (\frac{2 \pi}{n})$). If we find that this expression only the operations $\ +, \ -, \ \times, \ \div, \text{ and } \sqrt{\ }$, then the associated regular $n$-gon must be constructible.
+Therefore, we have successfully converted the geometric polygon into a set of algebraic variables. Now our goal is to find an exact formula for the values of the $\zeta$'s (in particular an expression for the quantity $\cos (\frac{2 \pi}{n})$). If we find that this expression only involves the operations $\ +, \ -, \ \times, \ \div, \text{ and } \sqrt{\ }$, then the associated regular $n$-gon must be constructible.
 
 <br>
 
@@ -888,7 +888,7 @@ $$
 
 <br>
 
-Here is an anti-example of $\zeta^2$ in a regular hexagon which does not satsify the above property (since $2$ and $6$ share a common factor, thus we get stuck in a subcycle).
+Here is an anti-example of $\zeta^2$ in a regular hexagon which does not satisfy the above property (since $2$ and $6$ share a common factor, thus we get stuck in a subcycle).
 
 <center>
 <div class="overflow-container">
@@ -986,7 +986,7 @@ There are a few ways to derive this. The easiest is to use symmetry. From the gr
 
 <br>
 
-The second property involves the complex conjugate of $\zeta^k$. Graphically, these correspond to the points of the polynomial on the mirrored side of the $x$-axis. 
+The second property involves the complex conjugate of $\zeta^k$. Graphically, these correspond to the points of the polygon on the mirrored side of the $x$-axis. 
 
 $$
 (\zeta^k)^* = \left ( e^{i \frac{2 \pi k}{n}} \right )^* = e^{- i \frac{2 \pi k}{n}} = e^{i \frac{2 \pi (-k)}{n}} = \zeta^{-k}
@@ -1141,7 +1141,7 @@ Therefore, since $\cos(2 \pi / 5)$ can be written as an algebraic expression inv
 
 <br>
 
-### Constructibilty Proof for a Regular Heptadecagon {#constructibility-proof-for-a-regular-heptadecagon}
+### Constructibility Proof for a Regular Heptadecagon {#constructibility-proof-for-a-regular-heptadecagon}
 
 Now, let's do the same for a regular $17$-gon. It's going to be the same general idea as a regular pentagon but with a few more complications.
 
@@ -1336,7 +1336,7 @@ Finally, we do this procedure one last time with $\alpha_1$ and $\alpha_4$. The 
 
 <div class="equation-container">
 $$
-\alpha_1 + \alpha_2 = \beta_1 \qquad\qquad \alpha_1 \cdot \alpha_4 = \zeta^5 + \zeta^{-3} + \zeta^3 + \zeta^{-5} = \beta_3
+\alpha_1 + \alpha_4 = \beta_1 \qquad\qquad \alpha_1 \cdot \alpha_4 = \zeta^5 + \zeta^{-3} + \zeta^3 + \zeta^{-5} = \beta_3
 \\[10pt]
 0 = (z - \alpha_1)(z - \alpha_4) = z^2 - \beta_1 z - \beta_3
 \quad\implies\quad
@@ -1496,7 +1496,7 @@ $$
 z^3 - z^2 - 2z + 1 = 0
 $$
 
-The factors of this are really gross, but the key point is that since it's a trinomial the solution will involve cube roots. A value involving a cube root cannot be constructed using a ruler and compass. Therefore, $\cos(2 \pi / 7)$ is not constructible.
+The factors of this are really gross, but the key point is that since it's a degree-3 polynomial the solution will involve cube roots. A value involving a cube root cannot be constructed using a ruler and compass. Therefore, $\cos(2 \pi / 7)$ is not constructible.
 
 <br>
 
@@ -1525,6 +1525,6 @@ Second, the $p_1 p_2 \ldots p_m$ part is explained by the trick which lets us co
 
 Therefore, all that remains to be explained is why the primes need to be Fermat primes.
 
-Descartes provided a prided a bridge between ruler-and-compass constructions and algebra. He says that if a length can be expressed as a formula involving only $\ +, \ -, \ \times, \ \div, \text{ and } \sqrt{\ }$, then it is constructible (and vice versa). Thus, if we can construct $\cos(2 \pi / n)$, then we can construct the corresponding regular $n$-gon. 
+Descartes provided a bridge between ruler-and-compass constructions and algebra. He says that if a length can be expressed as a formula involving only $\ +, \ -, \ \times, \ \div, \text{ and } \sqrt{\ }$, then it is constructible (and vice versa). Thus, if we can construct $\cos(2 \pi / n)$, then we can construct the corresponding regular $n$-gon. 
 
 Then, using number theory, we came up with a procedure for finding the exact formula of  $\cos(2 \pi / n)$ (assuming that $n$ is prime). In order to ensure that the solution involved only the operations $\ +, \ -, \ \times, \ \div, \text{ and } \sqrt{\ }$, we needed each step to involve finding the roots of a binomial. The only way to ensure that is for $n$ to be a Fermat prime. If it was not a Fermat prime, then eventually the procedure would produce a trinomial or larger, which would result in the solution involving cube root, or fifth root, etc. Therefore, it would not be constructible.

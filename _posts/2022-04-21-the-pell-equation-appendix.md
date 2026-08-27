@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Solving The Pell Equation Efficently - Appendix"
+title:      "Solving The Pell Equation Efficiently - Appendix"
 date:       2022-08-01
 categories: blog
 permalink:  ":categories/:title/"
@@ -9,7 +9,7 @@ appendix:   true
 tags:       diophantine equation, number theory, python
 ---
 
-Appendix to post [Solving The Pell Equation Efficently](/blog/the-pell-equation/).
+Appendix to post [Solving The Pell Equation Efficiently](/blog/the-pell-equation/).
 
 ### $\mathbb{Z}[\sqrt{D}]$ Forms a Ring on Addition and Multiplication
 
@@ -28,7 +28,7 @@ The ring axioms are as follows
 3. $\mathbb{Z}[\sqrt{D}]$ contains the additive identity
 4. $\mathbb{Z}[\sqrt{D}]$ contains the additive inverse for all elements
 5. Multiplication is associative
-6. $\mathbb{Z}[\sqrt{D}]$ contians the multiplicative identity
+6. $\mathbb{Z}[\sqrt{D}]$ contains the multiplicative identity
 7. Multiplication is distributive with respect to addition, i.e. $\ a \cdot (b + c) = (a \cdot b) + (a \cdot c)$ and $\ (b + c) \cdot a = (b \cdot a) + (c \cdot a)$
 
 
@@ -122,15 +122,14 @@ for free.
 ### $\vert x + \sqrt{D} y \vert = x^2 - D y^2$ is a Multiplicative Norm of this Ring
 
 The axioms of a multiplicative norm $N(x)$ on a ring is the following:
-1. $N(u) = 0 \iff u = 0 + \sqrt{d} \cdot 0$
+1. $N(u) = 0 \iff u = 0 + \sqrt{D} \cdot 0$
 2. $N(u \cdot v) = N(u) N(v) \quad \text{for all} \ u, v \in \mathbb{Z}[\sqrt{D}]$
-3. $N(u + v) = N(u) + N(v) \quad \text{for all} \ u, v \in \mathbb{Z}[\sqrt{D}]$
 
 $1.$
 
 <div class="equation-container">
 $$
-\vert u \vert = 0 \iff \vert x_u + \sqrt{D} y_u \vert = 0 \iff x_u^2 + D y_u^2 = 0 \iff x_u = y_u = 0 \iff u = 0 + \sqrt{d} \cdot 0
+\vert u \vert = 0 \iff \vert x_u + \sqrt{D} y_u \vert = 0 \iff x_u^2 - D y_u^2 = 0 \iff x_u = y_u = 0 \iff u = 0 + \sqrt{D} \cdot 0
 $$
 </div>
 
@@ -147,21 +146,6 @@ $$
     &= x_u^2 x_v^2 + D^2 y_u^2 y_v^2 - D x_u^2 y_v^2 - D x_v^2 y_u^2 \\
     &= (x_u^2 - D y_u^2) (x_v^2 - D y_v^2) \\
     &= \vert u \vert \vert v \vert
-\end{align}
-$$
-</div>
-
-$3.$
-
-<div class="equation-container">
-$$
-\begin{align}
-    \vert u \cdot v \vert 
-    &= \vert (x_u - \sqrt{D} y_u) + (x_v - \sqrt{D} y_v) \vert \\
-    &= \vert (x_u + x_v) - \sqrt{D} (y_u + y_v) \vert \\
-    &= (x_u + x_v)^2 - D (y_u + y_v)^2 \\
-    &= (x_u^2 + x_v^2 + 2 x_u x_v) - D (y_u^2 + y_v^2 + 2 y_u y_v) \\
-    &= (x_u^2 + x_v^2 + 2 x_u x_v) - D (y_u^2 + y_v^2 + 2 y_u y_v) \\
 \end{align}
 $$
 </div>

@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Alterative Formulations of Möbius Transformations"
+title:      "Alternative Formulations of Möbius Transformations"
 date:       2025-08-29
 categories: blog
 permalink:  ":categories/:title/"
@@ -10,11 +10,11 @@ tags:       complex analysis, mobius transformations, möbius transformations, f
 
 ## Motivation
 
-[Möbius Transformations](https://en.wikipedia.org/wiki/M%C3%B6bius_transformation) are, in some sense, the analogue of linear transformations in complex analysis. These serve as a really nice entry-point into the behavior of complex functions. They motivate why we should define the _point-at-infinity_, introduces the _Riemann sphere_ and _circle inversion_, and provide a simple toy example of a _conformal map_. 
+[Möbius Transformations](https://en.wikipedia.org/wiki/M%C3%B6bius_transformation) are, in some sense, the analogue of linear transformations in complex analysis. These serve as a really nice entry-point into the behavior of complex functions. They motivate why we should define the _point-at-infinity_, introduce the _Riemann sphere_ and _circle inversion_, and provide a simple toy example of a _conformal map_. 
 
-There are many good resources on Möbius transformations. [Ch 3.3-3.5 Ahlfors el al., 1979](https://mccuan.math.gatech.edu/courses/6321/lars-ahlfors-complex-analysis-third-edition-mcgraw-hill-science_engineering_math-1979.pdf) is the OG text on the subject. For a more modern, lecture-style which emphasizes the analysis, I recommend [Michael Penn's video](https://www.youtube.com/watch?v=M4noAceElZ4). For a 3B1B style with nice visualizations, I recommend [Mathemaniac's video](https://www.youtube.com/watch?v=hhI8fVxvmaw). Lastly, I highly recommend [this video](https://www.youtube.com/watch?v=0z1fIsUNhO4); short and sweet but highly informative.
+There are many good resources on Möbius transformations. [Ch 3.3-3.5 Ahlfors et al., 1979](https://mccuan.math.gatech.edu/courses/6321/lars-ahlfors-complex-analysis-third-edition-mcgraw-hill-science_engineering_math-1979.pdf) is the OG text on the subject. For a more modern, lecture-style which emphasizes the analysis, I recommend [Michael Penn's video](https://www.youtube.com/watch?v=M4noAceElZ4). For a 3B1B style with nice visualizations, I recommend [Mathemaniac's video](https://www.youtube.com/watch?v=hhI8fVxvmaw). Lastly, I highly recommend [this video](https://www.youtube.com/watch?v=0z1fIsUNhO4); short and sweet but highly informative.
 
-In this post, I'm not going to rederive every fact about Möbius transformations (especially when there are already fantastic resources above). Instead, I want to talk about two alternative perspective of Möbius transformations with interesting geometric properties.
+In this post, I'm not going to rederive every fact about Möbius transformations (especially when there are already fantastic resources above). Instead, I want to talk about two alternative perspectives of Möbius transformations with interesting geometric properties.
 
 <br />
 
@@ -28,7 +28,7 @@ We define the **extended complex plane** as the complex plane augmented with the
 
 ### Möbius Transformations
 
-Let $a, b, c, d \in \mathbb{C}$ such that $ad - bc \neq 0$. A **Möbius Transformations** (also called a fractional linear transformation) is defined as a function $T: \mathbb{C}^* \rightarrow \mathbb{C}^*$ on the extended complex plane such that
+Let $a, b, c, d \in \mathbb{C}$ such that $ad - bc \neq 0$. A **Möbius transformation** (also called a fractional linear transformation) is defined as a function $T: \mathbb{C}^* \rightarrow \mathbb{C}^*$ on the extended complex plane such that
 
 $$
 T(z) = \begin{cases}
@@ -42,7 +42,7 @@ I'll refer to this as the **standard Möbius form**. The condition that $ad - bc
 
 I liken the standard Möbius form to the standard form for the equation of a line $Ax + By = C$. While this uniquely defines a line perfectly well, it's not really all that useful since the parameters $A$, $B$, and $C$ don't have any geometric meaning. This is why slope-intercept form $y = mx + b$ and point-slope form $y - y_0 = m(x - x_0)$ are preferred and more widely used.
 
-In the remaining of the post I will discuss two alternative formulations which have strong geometric meanings. Note that typically Möbius transformations are reformulated in terms of the **cross ratio** (see [appendix](/blog/alterative-formulations-of-mobius-transformations-appendix/) for definition). However, since this is so widely discussed by the resources I provided above, I will not discuss it here.
+In the remainder of the post I will discuss two alternative formulations which have strong geometric meanings. Note that typically Möbius transformations are reformulated in terms of the **cross ratio** (see [appendix](/blog/alternative-formulations-of-mobius-transformations-appendix/) for definition). However, since this is so widely discussed by the resources I provided above, I will not discuss it here.
 
 <br />
 
@@ -51,7 +51,7 @@ In the remaining of the post I will discuss two alternative formulations which h
 Consider how a Möbius transformation $S$ transforms the following grid-lines.
 
 <center>
-<img src="/blog-assets/alterative-formulations-of-mobius-transformations/SteinerNet2PolarNet.png" alt="SteinerNet2PolarNet" height="300">
+<img src="/blog-assets/alternative-formulations-of-mobius-transformations/SteinerNet2PolarNet.png" alt="SteinerNet2PolarNet" height="300">
 </center>
 
 The right-hand image is called a **polar net** and the left-hand image is called the **Steiner net**. Applying $S$ transforms the Steiner net into the polar net. Conversely, the inverse of $S$ transforms the polar net into the Steiner net.
@@ -70,17 +70,17 @@ To see these geometric properties in action, I've created a fun [animation](http
 
 If you watched the animation, you'll notice that Steiner nets all essentially look the same, and all you are doing is shifting/scaling them depending on the values of $p_0$, $p_{\infty}$, and $k$. This is a really powerful tool to have if you want to construct a particular Möbius transformation.
 
-You'll notice a sort of _rigidity_ to the transformation (especially if you watch the animation). If you zoom into a small region of the steiner net, it looks like standard grid-lines again. This characteristic in complex analysis is called [conformality](https://en.wikipedia.org/wiki/Conformal_map), which has a lot of cool properties and I encourage you to look into deeper on your own.
+You'll notice a sort of _rigidity_ to the transformation (especially if you watch the animation). If you zoom into a small region of the Steiner net, it looks like standard grid-lines again. This characteristic in complex analysis is called [conformality](https://en.wikipedia.org/wiki/Conformal_map), which has a lot of cool properties and I encourage you to look into deeper on your own.
 
 <br />
 
 ## Fixed Point Form
 
-An another perspective is to understand Möbius Transformations through its fixed points. This is arguably less elegant than the Steiner Net interpretation, but has some nice properties.
+Another perspective is to understand Möbius transformations through their fixed points. This is arguably less elegant than the Steiner Net interpretation, but has some nice properties.
 
 **Proposition**: Möbius transformations are uniquely defined by their mapping of $3$ distinct coordinates. Written precisely, given distinct inputs $$z_1, z_2, z_3 \in \mathbb{C}^*$$ and distinct outputs $$w_1, w_2, w_3 \in \mathbb{C}^*$$ there exists a _unique_ Möbius transformation $T$ such that $T(z_1) = w_1$, $T(z_2) = w_2$, and $T(z_3) = w_3$.
 
-A proof will be provided in the [appendix](/blog/alterative-formulations-of-mobius-transformations-appendix/) of this post as this is a foundational fact about Möbius transformations, and it is covered by many other sources.
+A proof will be provided in the [appendix](/blog/alternative-formulations-of-mobius-transformations-appendix/) of this post as this is a foundational fact about Möbius transformations, and it is covered by many other sources.
 
 A **fixed point** of a transformation $T$ is a complex number $z_0$ such that $T(z_0) = z_0$. In particular, for a Möbius transformation
 
@@ -98,7 +98,7 @@ Suppose there exists distinct $$z_1, z_2, z_3 \in \mathbb{C}^*$$ such that $T(z_
 
 By the fundamental theorem of algebra, $cz^2 - (a - d)z - b = 0$ can have at most $2$ solutions. Therefore, in order to have three fixed points this expression must be true for all $z$. Thus, $b = c = 0$ and $a = d$ (which would reduce the equation to $0 = 0$), which means $T(z) = z$, i.e. $T$ is the identity transformation.
 
-So, the only Möbius transformations with more than $2$ fixed points is the identity transformation $T(z) = z$, where every point is a fixed point.
+So, the only Möbius transformations with more than $2$ fixed points are the identity transformation $T(z) = z$, where every point is a fixed point.
 
 #### Case 2: Two Fixed Points
 
@@ -132,7 +132,7 @@ is exactly the same as case 2.
 
 #### Case 0: Zero Fixed Points
 
-This is actually **not possible**, evident by that the fact that $cz^2 - (a - d)z - b = 0$ always has at least 1 solution in the complex domain. One may object that $T(z) = z + b$ doesn't have any fixed points. However, $T(\infty) = \infty$ and therefore $\infty$ is the fixed point. And sure enough, you would arrive at this answer by applying the formula from case 1 ($c = 0$).
+This is actually **not possible**, evident by the fact that $cz^2 - (a - d)z - b = 0$ always has at least 1 solution in the complex domain. One may object that $T(z) = z + b$ doesn't have any fixed points. However, $T(\infty) = \infty$ and therefore $\infty$ is the fixed point. And sure enough, you would arrive at this answer by applying the formula from case 1 ($c = 0$).
 
 Another objection might be that we could define $T(z_1) = w_1, \  T(z_2) = w_2, \ \text{and} \ T(z_3) = w_3$ such that $z_1 \neq w_1, \ z_2 \neq w_2, \ \text{and} \ z_3 \neq w_3$. However, that doesn't mean there aren't other coordinates which are fixed points. And in fact, there must be at least 1.
 
@@ -154,7 +154,7 @@ $$
 
 Notice that this is the composition of two Steiner nets. Let $S(z) = \frac{z - p_1}{z - p_2}$, then the above is equivalent to $S(w) = k S(z)$ or $w = S^{-1}(k S(z))$. Prove for yourself that the inverse of a Steiner net is another Steiner net.
 
-Here is the closed-form conversion between the **Fixed Point Form** and the standard form (proof in the [appendix](/blog/alterative-formulations-of-mobius-transformations-appendix/)).
+Here is the closed-form conversion between the **Fixed Point Form** and the standard form (proof in the [appendix](/blog/alternative-formulations-of-mobius-transformations-appendix/)).
 
 $$
 \begin{cases}
@@ -181,7 +181,7 @@ $$
 \dfrac{1}{w - p} = \dfrac{1}{z - p} + k
 $$
 
-Here is the closed-form conversion between the **Fixed Point Form** and the standard form (proof in the [appendix](/blog/alterative-formulations-of-mobius-transformations-appendix/)).
+Here is the closed-form conversion between the **Fixed Point Form** and the standard form (proof in the [appendix](/blog/alternative-formulations-of-mobius-transformations-appendix/)).
 
 $$
 \begin{cases}
@@ -203,10 +203,10 @@ $$
 
 It's much easier to show rather than explain in words, so I've created another [animation](https://www.youtube.com/watch?v=NuOl9f8LZ5A) showing how different values of $p_1$, $p_2$, $p$, and $k$ change the map. In short, the fixed points act as anchors which the rest of the map must _rigidly_ rotate around. $k$ determines how compressed or expanded the map is relative to the fixed points.
 
-The parameter $k$ also defines a _homomorphism_ between the Möbius transformation and the polar net. When creating my animations, this fixed-point form turned out to create the smoothest transitions. For example, when $p_{\infty} = \infty$ in the Steiner Net form, this has to be treated as a special case and there is not a smooth transition to the typical case.
+The parameter $k$ also defines a _homography_ between the Möbius transformation and the polar net. When creating my animations, this fixed-point form turned out to create the smoothest transitions. For example, when $p_{\infty} = \infty$ in the Steiner Net form, this has to be treated as a special case and there is not a smooth transition to the typical case.
 
 <br />
 
 ---
 
-## [Appendix](/blog/alterative-formulations-of-mobius-transformations-appendix/)
+## [Appendix](/blog/alternative-formulations-of-mobius-transformations-appendix/)

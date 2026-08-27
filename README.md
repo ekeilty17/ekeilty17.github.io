@@ -34,6 +34,11 @@ gem install bundler
 bundle install
 ```
 
+**5. Install pdf2svg to support Tikz**
+```bash
+brew install pdf2svg
+```
+
 ### Running the dev server
 
 Compile the website and run the local server, listening on port [4000](http://127.0.0.1:4000/).

@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Solving The Pell Equation Efficently"
+title:      "Solving The Pell Equation Efficiently"
 date:       2022-08-01
 categories: blog
 permalink:  ":categories/:title/"
@@ -53,11 +53,11 @@ $$
 Thus, $(x_k, y_k)$ is also a solution to the Pell Equation for all $k \geq 1$.
 In fact, [Dirichlet's Unit Theorem](https://faculty.math.illinois.edu/~r-ash/Ant/AntChapter6.pdf) tells us that given $(x_1, y_1)$ is the **fundamental solution** to the Pell Equation, this method will generate **every** solution. The fundamental solution is the **nontrivial** solution with the smallest $x$ or $y$ component.
 
-So once we have the fundamental solution, we have a _very_ efficient algorithm for generating the remaining solutions. if $(x_1, y_1)$ is the fundamental solution, then 
+So once we have the fundamental solution, we have a _very_ efficient algorithm for generating the remaining solutions. If $(x_1, y_1)$ is the fundamental solution, then 
 
 <div class="equation-container">
 $$
-(x_{k+1} - \sqrt{D} y_{k+1}) = (x_1 - \sqrt{D} y_1)^{k+1} = (x_1 - \sqrt{D} y_1) \cdot (x_1 - \sqrt{D} y_1)^k = (x_1 - \sqrt{D} y_1) \cdot (x_k - \sqrt{D} y_k)
+(x_{k+1} + \sqrt{D} y_{k+1}) = (x_1 + \sqrt{D} y_1)^{k+1} = (x_1 + \sqrt{D} y_1) \cdot (x_1 + \sqrt{D} y_1)^k = (x_1 + \sqrt{D} y_1) \cdot (x_k + \sqrt{D} y_k)
 $$
 </div>
 
@@ -87,7 +87,7 @@ I think they are best explained by an example.
 
 <div class="equation-container">
 $$
-\sqrt{3} = 1 + (\sqrt{3} - 1) = 3 + \frac{2}{\sqrt{3} + 1} = 3 + \frac{1}{\frac{\sqrt{3} + 1}{2}} = 3 + \frac{1}{1 + \frac{\sqrt{3} - 1}{2}} = 3 + \frac{1}{1 + \frac{1}{\sqrt{3} + 1}} = 3 + \frac{1}{1 + \frac{1}{2 + (\sqrt{3} - 1)}}
+\sqrt{3} = 1 + (\sqrt{3} - 1) = 1 + \frac{2}{\sqrt{3} + 1} = 1 + \frac{1}{\frac{\sqrt{3} + 1}{2}} = 1 + \frac{1}{1 + \frac{\sqrt{3} - 1}{2}} = 1 + \frac{1}{1 + \frac{1}{\sqrt{3} + 1}} = 1 + \frac{1}{1 + \frac{1}{2 + (\sqrt{3} - 1)}}
 $$
 </div>
 
@@ -133,7 +133,7 @@ Let's do an example using $$\sqrt{3}$$. The truncated continued fraction and its
 
 <div class="equation-container">
 $$
-\sqrt{3} = 3 + \frac{1}{1 + \frac{1}{2 + (\sqrt{3} - 1)}} \quad\rightarrow\quad 1 + \frac{1}{1 + 0} = \frac{2}{1}
+\sqrt{3} = 1 + \frac{1}{1 + \frac{1}{2 + (\sqrt{3} - 1)}} \quad\rightarrow\quad 1 + \frac{1}{1 + 0} = \frac{2}{1}
 $$
 </div>
 
@@ -167,7 +167,7 @@ q_{k-1} D + (a_0 q_{k-1} + q_{k-2})\sqrt{D} = a_0 p_{k-1} + p_{k-2} + p_{k-1} \s
 $$
 </div>
 
-Since $\mathbb{Z}[\sqrt{D}]$ is a field, we have
+Since $\mathbb{Z}[\sqrt{D}]$ is a ring, we have
 
 <div class="equation-container">
 $$

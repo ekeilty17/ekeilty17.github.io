@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "A Category Proof of the Fundamental Theorem of Arithmetic"
+title:      "A Category Theory Proof of the Fundamental Theorem of Arithmetic"
 date:       2026-08-27
 categories: blog
 permalink:  ":categories/:title/"
@@ -12,7 +12,7 @@ tags:       category theory, number theory, the fundamental theorem of arithmeti
 
 In a previous post, I gave an alternative proof of the Fundamental Theorem of Arithmetic (FTA), using the [Jordan-H&ouml;lder Theorem](https://en.wikipedia.org/wiki/Composition_series) for finite groups. In this post, I want to modify that proof and look at it through the lens of category theory. The underlying argument is identical, but this is an exercise in applying category theory principles.
 
-What this exercise makes explicit is the connection between prime numbers and groups. I show there is an poset isomorphism between the factors of an integer $n$ and the subgroups of a cyclic group of order $n$. Thus, any time nature exhibits a cyclical nature (which anecdotally is quite often), it can be described by cyclic groups, and consequently described by prime numbers. I am trying to emphasise that prime numbers are not just an artifact of an imaginary game played by mathematicians. They are, in some sense, a fundamental aspect of symmetry itself and thus necessarily crop up in the external world. And that's just one of many reasons mathematicians care so much about prime numbers.
+What this exercise makes explicit is the connection between prime numbers and groups. I show there is a poset isomorphism between the factors of an integer $n$ and the subgroups of a cyclic group of order $n$. Thus, any time nature exhibits a cyclical nature (which anecdotally is quite often), it can be described by cyclic groups, and consequently described by prime numbers. I am trying to emphasise that prime numbers are not just an artifact of an imaginary game played by mathematicians. They are, in some sense, a fundamental aspect of symmetry itself and thus necessarily crop up in the external world. And that's just one of many reasons mathematicians care so much about prime numbers.
 
 Unlike the previous post, which I attempted to make as self-contained as possible, in this post I will assume knowledge of standard group theory and category theory concepts.
 
@@ -99,9 +99,9 @@ $$
 Furthermore, this isomorphism immediately implies
 
 $$
-\text{Sub}(C_n) \ \text{ has exactly two elements}
+\text{Sub}(C_n) \ \text{ has exactly two elements, } \{1_{C_n}\} \text{ and } C_n
 \iff
-\text{Div}(n) \ \text{ has exactly two elements}
+\text{Div}(n) \ \text{ has exactly two elements, } 1 \text{ and } n
 $$
 
 Thus, by definition
@@ -148,7 +148,7 @@ $$
 \frac{d_1}{d_0}\frac{d_2}{d_1} \cdots \frac{d_k}{d_{k-1}} = n
 $$
 
-Now, consider the quotient groups. Since $N_{i} \trianglelefteq N_{i+1} \leq C_n$, this implies $N_{i+1} / N_{i}$ is also cyclic. Furthermore, Using [Lagrange's Theorem](https://en.wikipedia.org/wiki/Lagrange%27s_theorem_(group_theory)) we see
+Now, consider the quotient groups. Since $N_{i} \trianglelefteq N_{i+1} \leq C_n$, this implies $N_{i+1} / N_{i}$ is also cyclic. Furthermore, using [Lagrange's Theorem](https://en.wikipedia.org/wiki/Lagrange%27s_theorem_(group_theory)) we see
 
 $$
 \lvert N_{i+1} / N_{i} \rvert = \frac{\lvert N_{i+1} \rvert}{\lvert N_i \rvert} = \frac{\lvert C_n(d_{i+1}) \rvert}{\lvert C_n(d_i) \rvert} = \frac{d_{i+1}}{d_i}
@@ -193,7 +193,7 @@ $$
 
 By the second part of the [Jordan-H&ouml;lder Theorem](https://en.wikipedia.org/wiki/Composition_series#Uniqueness:_Jordan%E2%80%93H%C3%B6lder_theorem), the composition factors of the two composition series are isomorphic up to permutation. Since
 
-$$ N_{i+1}/N_i\cong C_{p_{i+1}} \quad\text{and}\quad M_{j+1}/M_j\cong C_{q_{j+1}}$$
+$$ N_{i+1}/N_i\cong C_{p_{i}} \quad\text{and}\quad M_{j+1}/M_j\cong C_{q_{j}}$$
 
 it follows that the multi-sets
 
@@ -215,7 +215,7 @@ $$
 
 **Proof**: 
 
-If $a \mid b$, then $b = ak$ for some integer $k$. Therefore, $\frac{n}{a} = \frac{n}{b}k$ and
+If $a \mid b$, then $b = ak$ for some positive integer $k$. Therefore, $\frac{n}{a} = \frac{n}{b}k$ and
 
 $$
 x^{n/a} = x^{(n/b)k} = \left ( x^{n/b} \right )^k

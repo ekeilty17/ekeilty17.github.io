@@ -8,7 +8,7 @@ standalone: true
 tags:       card-games, rummy
 ---
 
-Rummy is a very old game with many different variations, including one that has been passed down to me by my family (the Keilty's). I honestly believe that **the Keilty variation** is the best two-person card game that exists (you can also play it with more than two players and it's still fun). In this post, I will explain the rules so you can try it for yourself.
+Rummy is a very old game with many different variations, including one that has been passed down to me by my family (the Keiltys). I honestly believe that **the Keilty variation** is the best two-person card game that exists (you can also play it with more than two players and it's still fun). In this post, I will explain the rules so you can try it for yourself.
 
 <br>
 
@@ -56,7 +56,7 @@ Your turn begins by **picking up**. This can be done either by picking up one ca
 
 Note that how many melds and lay-offs you can play per turn depends on the variation. Also, in some variations (e.g. Gin Rummy) all cards are kept in your hand until the end of the round. Therefore, laying-off is not possible.
 
-Once you are finished playing melds or laying-off, your turn ends by **throwing out** by placing a card from your hand face up at the top of the discard pile. If you picked up from the discard pile, you must discard a different card. However, you may discard it next turn.
+Once you are finished playing melds or laying-off, your turn ends by **throwing out** by placing a card from your hand face up at the top of the discard pile. If you picked up from the discard pile, you must discard a different card. However, you may discard the picked-up card on your next turn.
 
 The following is an example of a turn.
 
@@ -157,7 +157,7 @@ A rummy can also occur with lay-offs. Consider the following scenario.
 </div>
 </center>
 
-A player throws out the $\color{red}{4 \heartsuit}$, but the meld $\color{red}{A \heartsuit}$, $\color{red}{2 \heartsuit}$, $\color{red}{3 \heartsuit}$ has been played. This player missed that they could have layed-off the $\color{red}{4 \heartsuit}$. Thus, the first player (**except the player who caused the rummy**) to say "RUMMY" gets to lay-off the $\color{red}{4 \heartsuit}$ for out of turn, for free, and does not have to throw out. In this case, since the $\color{red}{4 \heartsuit}$ is the top card of the discard pile, this player doesn't have to take any other cards.
+A player throws out the $\color{red}{4 \heartsuit}$, but the meld $\color{red}{A \heartsuit}$, $\color{red}{2 \heartsuit}$, $\color{red}{3 \heartsuit}$ has been played. This player missed that they could have layed-off the $\color{red}{4 \heartsuit}$. Thus, the first player (**except the player who caused the rummy**) to say "RUMMY" gets to lay-off the $\color{red}{4 \heartsuit}$ out of turn, for free, and does not have to throw out. In this case, since the $\color{red}{4 \heartsuit}$ is the top card of the discard pile, this player doesn't have to take any other cards.
 
 A rummy can also occur when playing a meld or a lay-off. Consider the same scenario above, but the order of events flipped.
 
@@ -169,7 +169,7 @@ A rummy can also occur when playing a meld or a lay-off. Consider the same scena
 </div>
 </center>
 
-In this case, the opponent played the meld $\color{red}{A \heartsuit}$, $\color{red}{2 \heartsuit}$, $\color{red}{3 \heartsuit}$, but the discard pile contains the $\color{red}{4 \heartsuit}$, which can be layed-off on this run. Thus, the first player (**except the player who caused the rummy**) to say "RUMMY" gets to lay-off the $\color{red}{4 \heartsuit}$ for out of turn, for free, and does not have to throw out (same as the previous example).
+In this case, the opponent played the meld $\color{red}{A \heartsuit}$, $\color{red}{2 \heartsuit}$, $\color{red}{3 \heartsuit}$, but the discard pile contains the $\color{red}{4 \heartsuit}$, which can be layed-off on this run. Thus, the first player (**except the player who caused the rummy**) to say "RUMMY" gets to lay-off the $\color{red}{4 \heartsuit}$ out of turn, for free, and does not have to throw out (same as the previous example).
 
 ### Going Out
 
@@ -231,7 +231,7 @@ Moreover, having a lot of cards can be helpful in the end game. Your opponent wi
 
 ### Runs vs Sets
 
-In my experience, there are two types of games. If early on players play a lot of _sets_, then the game is going to be low-scoring. This is for two reasons. First, when a set is played, there is only at most one additional card that can be layed-off on it. Second, sets block runs. For example, the set $\color{red}{7 \heartsuit}$, $7 \clubsuit$, $\color{red}{7 \diamondsuit}$ blocks $9$ combinations of runs ($(5, 6, 7)$, $(6, 7, 8)$, and $(7, 8, 9)$ mulitplied by three suits). As a result, players get less opportunity to pick up cards from the discard pile. The game will most likely with almost every meld being a set. 
+In my experience, there are two types of games. If early on players play a lot of _sets_, then the game is going to be low-scoring. This is for two reasons. First, when a set is played, there is only at most one additional card that can be layed-off on it. Second, sets block runs. For example, the set $\color{red}{7 \heartsuit}$, $7 \clubsuit$, $\color{red}{7 \diamondsuit}$ blocks $9$ combinations of runs ($(5, 6, 7)$, $(6, 7, 8)$, and $(7, 8, 9)$ multiplied by three suits). As a result, players get less opportunity to pick up cards from the discard pile. The game will most likely end with almost every meld being a set.
 
 Alternatively, if early on players play a lot of _runs_, then the game is going to be high-scoring. This is because runs allow lay-offs. Then other players can lay-off on top of lay-offs, and so on. In this game, the played cards are much more interconnected. Therefore, almost every card in the discard pile will be potentially useful, resulting in players picking up a large number of cards. The game will end with a lot of interconnected runs and a few sets at the end for the player who _went out_.
 
