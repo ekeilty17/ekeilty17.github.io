@@ -148,15 +148,12 @@
     </div>
   </div>
 
-    <div class="content container">
+    <div class="content container post-layout">
 
         <div class="post">
             <h1 class="post-title">I Don't Trust Auto-Shufflers</h1>
-            <!-- <span class="series-date">21 Apr 2024</span> -->
+            <!-- <span class="post-date">21 Apr 2024</span> -->
             <time datetime="2024-04-21T00:00:00-04:00" class="post-date">21 Apr 2024</time>
-            <!-- maybe I'll add tagging later
-            <span class="post-date" style="margin-top:-1em;"> ["blackjack"] </span>
-            -->
             <hr />
 
 <h3 id="legal-disclaimer-please-dont-sue-me">Legal Disclaimer (please don’t sue me)</h3>
@@ -208,7 +205,7 @@ You can see an example <a href="https://www.youtube.com/watch?v=txl3gqIfwHM">her
 
 <h3 id="malicious-csm-algorithm">Malicious CSM Algorithm</h3>
 
-<p>This type of shuffling machine completely destroys card counting by design since there is no concept of a running count. Since cards are redistributed back into the shoe after each hand, seeing a lot of low-valued cards does not make it more likely you’ll see high-valued cards next hand. Effectively, each hand of independent.</p>
+<p>This type of shuffling machine completely destroys card counting by design since there is no concept of a running count. Since cards are redistributed back into the shoe after each hand, seeing a lot of low-valued cards does not make it more likely you’ll see high-valued cards next hand. Effectively, each hand is independent.</p>
 
 <p>I model a CSM by simply reshuffling the shoe after each hand.</p>
 
@@ -292,7 +289,7 @@ $$
   <li>Dealer stands on all $17$s</li>
   <li>Double after split is allowed</li>
   <li>Late surrender is allowed</li>
-  <li>BlackJacks pay $3{:}2$</li>
+  <li>blackjacks pay $3{:}2$</li>
 </ul>
 
 <p>I neglect some aspects of the game such as insurance and even money. I also do not put a restriction on the number of splits allowed in a single hand. I also let players continue their action after splitting aces.</p>
@@ -336,7 +333,7 @@ $$
 
 <h3 id="baseline---fair-shuffling">Baseline - Fair Shuffling</h3>
 
-<p>First, let’s see what happens if the cards are shuffling fairly. The following is the result of simulating $1$ million hands for both Basic Strategy and optimal Card Counting.</p>
+<p>First, let’s see what happens if the cards are shuffled fairly. The following is the result of simulating $1$ million hands for both Basic Strategy and optimal Card Counting.</p>
 
 <center>
 <div class="overflow-container">
@@ -378,7 +375,7 @@ $$
 </div>
 </center>
 
-<p>I was shocked at how effective this malicious shuffling algorithm was. The RSM $40$ group simulation is ridiculous for both card counters and basic strategy players. While the $25$ group simulation hovers around even for card counters, it’s still incredibly losing for basic strategy players. This algorithm is so losing that there’s no way casinos actually use it because people would notice.</p>
+<p>I was shocked at how effective this malicious shuffling algorithm was. The RSM $40$-group simulation is ridiculous for both card counters and basic strategy players. While the RSM $25$-group simulation hovers around even for card counters, it’s still incredibly losing for basic strategy players. This algorithm is so losing that there’s no way casinos actually use it because people would notice.</p>
 
 <p><br /></p>
 
@@ -394,43 +391,12 @@ $$
 
         </div>
 
-        <!-- Adding the ability to move between parts of the series -->
-        
-        
-        
-
-        
-        
-        
-
-        <!-- Getting capitalized title for series -->
-        
-        
-        
-        
-        <!-- Getting url for series, which is just the page url with the last /... removed -->
-        
-
-        <div class="pagination" style="margin:1em 0 0 0;">
-            
-                <span class="pagination-item older">Previous</span>
-            
-            
-                <span class="pagination-item newer">Next</span>
-            
-        </div>
-        <div class="pagination" style="margin:0;">
-            <a class="pagination-item parent-link" href="/blog/blackjack">
-                
-            
-                
-                    Blackjack
-                
-            
-         Series
+        <div class="pagination" style="margin-top:auto;">
+            <a class="pagination-item parent-link" href="/blog/">
+                Blog Archive
             </a>
         </div>
+
     </div>
-    
   </body>
 </html>
