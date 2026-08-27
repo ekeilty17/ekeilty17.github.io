@@ -204,7 +204,7 @@
 
 <p>A <strong>group</strong> is a set equipped with a binary operation that is associative, contains an identity element, and is closed under inverses. For a group $G$, the identity element will be denoted $1_G$. The inverse of $g \in G$ will be denoted $g^{-1}$.</p>
 
-<p>The <strong>order of a group</strong> $G$ is the number of elements in the group, denoted $\lvert G \rvert$. The <strong>order of an element</strong> $g \in G$ is the smallest integer $m &gt; 0$ such that $g^m = 1$, denoted $\lvert g \rvert$.</p>
+<p>The <strong>order of a group</strong> $G$ is the number of elements in the group, denoted $\lvert G \rvert$. The <strong>order of an element</strong> $g \in G$ is the smallest integer $m &gt; 0$ such that $g^m = 1_G$, denoted $\lvert g \rvert$.</p>
 
 <p>The <strong>cyclic group of order $n$</strong> is defined as \(C_n \mathrel{:=} \{1, x, x^2, \ldots, x^{n-1} \}\) where $x^a \cdot x^b \mathrel{:=} x^{a+b \mod n}$. The element $x$ is called a <strong>generator</strong> of the group. Often we write $C_n = \langle x \rangle$. It’s easy to show that $\lvert C_n \rvert = \lvert x \rvert = n$.</p>
 
@@ -216,7 +216,7 @@
 
 <p>Let $N \trianglelefteq G$, then $G/N$, called the <strong>quotient group</strong> of $G$ under $N$, is a new group formed by collapsing $N$ down to the identity element. Informally, it is the group $G$ “modulo” $N$. For the purposes of this post, you just need to know <a href="https://en.wikipedia.org/wiki/Lagrange%27s_theorem_(group_theory)">Lagrange’s Theorem</a> which says $\lvert G/N \rvert = \frac{\lvert G \rvert}{\lvert N \rvert}$.</p>
 
-<p>A <strong>composition series</strong> of $G$ is a sequence of subgroups \(\{1_G \} = N_0 \trianglelefteq N_1 \trianglelefteq \ldots \trianglelefteq N_k = G\) such that each $N_{i} \trianglelefteq N_{i+1}$ are normal subgroups, and each quotient group $N_{i+1}/N_{i}$ is simple.</p>
+<p>A <strong>composition series</strong> of $G$ is a sequence of subgroups \(\{1_G \} = N_0 \trianglelefteq N_1 \trianglelefteq \ldots \trianglelefteq N_k = G\) such that each $N_{i}$ is <strong>normal</strong> in $N_{i+1}$, and each quotient group $N_{i+1}/N_{i}$ is simple.</p>
 
 <h3 id="statement">Statement</h3>
 
@@ -234,7 +234,7 @@
 \qquad
 \{1_G\} = M_0 \trianglelefteq M_1 \trianglelefteq \ldots \trianglelefteq M_\ell = G\]
 
-<p>are two composition series, then $k = \ell$ and there exists a permutation $\sigma \in S_k$ such that $N_{i+1}/N_{i} \cong M_{\sigma(i+1)}/M_{\sigma(i)}$ for each $0 \leq i &lt; k$</p>
+<p>are two composition series, then $k = \ell$ and there exists a permutation $\sigma \in S_k$ such that $N_{i+1}/N_{i} \cong M_{\sigma(i)+1}/M_{\sigma(i)}$ for each $0 \leq i &lt; k$.</p>
 
 <hr />
 
@@ -242,11 +242,11 @@
 
 <h3 id="lemma-1">Lemma 1</h3>
 
-<p>If a group $G$ is cyclic with order $a$, then $G \cong C_a$</p>
+<p>If a group $G$ is cyclic with order $a$, then $G \cong C_a$.</p>
 
 <p><strong>Proof Sketch</strong>:</p>
 
-<p>Since $G$ has order $a$, then it has a generator $g \in G$ which has order $a$, i.e.</p>
+<p>Since $G$ has order $a$, it has a generator $g \in G$ which has order $a$, i.e.</p>
 
 \[G = \langle g \rangle = \{1, g, g^2, \ldots, g^{a-1} \}\]
 
@@ -262,11 +262,11 @@
 
 <h3 id="lemma-2">Lemma 2</h3>
 
-<p>A cyclic group is simple if and only if it has prime order</p>
+<p>A cyclic group is simple if and only if it has prime order.</p>
 
 <p><strong>Proof</strong>:</p>
 
-<p>$\implies$: Proof by contrapositive: suppose $\lvert C_n \rvert = n$ where $n$ is composite. Thus, there exists integer $d$ such that $1 &lt; d &lt; n$ and $d \mid n$. Let $C_n = \langle x \rangle$. Then $\langle x^{d} \rangle$ is a subgroup of order $\frac{n}{\gcd(n, d)} = \frac{n}{d}$. Therefore $\langle x^{d} \rangle$ is a proper subgroup of $C_n$. It is normal since $C_n$ is abelian. Therefore $C_n$ is not simple.</p>
+<p>$\implies$: Proof by contrapositive: suppose $\lvert C_n \rvert = n$ where $n$ is composite. Thus, there exists integer $d$ such that $1 &lt; d &lt; n$ and $d \mid n$. Let $C_n = \langle x \rangle$. Then $\langle x^{d} \rangle$ is a subgroup of order $\frac{n}{\gcd(n, d)} = \frac{n}{d}$ (since $d \mid n$, $\gcd(n, d) = d$). Therefore $\langle x^{d} \rangle$ is a proper subgroup of $C_n$. It is normal since $C_n$ is abelian. Therefore $C_n$ is not simple.</p>
 
 <p>$\impliedby$: Suppose $\lvert C_p \rvert = p$ where $p$ is prime. By <a href="https://en.wikipedia.org/wiki/Lagrange%27s_theorem_(group_theory)">Lagrange’s Theorem</a>, if $H \leq C_p$, then $\lvert H \rvert$ divides $\lvert C_p \rvert$. Thus, the only subgroups of $C_p$ are the identity group and itself, and by definition $C_p$ is a simple group.</p>
 
@@ -290,7 +290,7 @@
 
 <p>Also note that since $N_{i}$ and $N_{i+1}$ are cyclic, $N_{i+1}/N_{i}$ is also cyclic (exercise for the reader). Therefore by Lemma 1, $N_{i+1}/N_{i} \cong C_{d_{i+1}/d_{i}}$.</p>
 
-<p>From the definition of a composition series $N_{i+1}/N_{i}$ is simple, and thus $C_{d_{i+1}/d_{i}}$ must be simple. By Lemma 2, a cyclic group is simple if and only if it has prime order. Thus, each quotient $\frac{d_{i+1}}{d_{i}}$ is prime.</p>
+<p>From the definition of a composition series, $N_{i+1}/N_{i}$ is simple, and thus $C_{d_{i+1}/d_{i}}$ must be simple. By Lemma 2, a cyclic group is simple if and only if it has prime order. Thus, each quotient $\frac{d_{i+1}}{d_{i}}$ is prime.</p>
 
 <p>Also notice that</p>
 

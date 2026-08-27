@@ -10,7 +10,7 @@
 
   <title>
     
-      Solving The Pell Equation Efficently - Appendix &middot; Eric Keilty
+      Solving The Pell Equation Efficiently - Appendix &middot; Eric Keilty
     
   </title>
 
@@ -151,10 +151,10 @@
     <div class="content container post-layout">
 
         <div class="post">
-            <h1 class="post-title">Solving The Pell Equation Efficently - Appendix</h1>
+            <h1 class="post-title">Solving The Pell Equation Efficiently - Appendix</h1>
             <!-- <span class="post-date">01 Aug 2022</span> -->
             <time datetime="2022-08-01T00:00:00-04:00" class="post-date">01 Aug 2022</time>
-            <p>Appendix to post <a href="/blog/the-pell-equation/">Solving The Pell Equation Efficently</a>.</p>
+            <p>Appendix to post <a href="/blog/the-pell-equation/">Solving The Pell Equation Efficiently</a>.</p>
 
 <h3 id="mathbbzsqrtd-forms-a-ring-on-addition-and-multiplication">$\mathbb{Z}[\sqrt{D}]$ Forms a Ring on Addition and Multiplication</h3>
 
@@ -173,7 +173,7 @@ $$
   <li>$\mathbb{Z}[\sqrt{D}]$ contains the additive identity</li>
   <li>$\mathbb{Z}[\sqrt{D}]$ contains the additive inverse for all elements</li>
   <li>Multiplication is associative</li>
-  <li>$\mathbb{Z}[\sqrt{D}]$ contians the multiplicative identity</li>
+  <li>$\mathbb{Z}[\sqrt{D}]$ contains the multiplicative identity</li>
   <li>Multiplication is distributive with respect to addition, i.e. $\ a \cdot (b + c) = (a \cdot b) + (a \cdot c)$ and $\ (b + c) \cdot a = (b \cdot a) + (c \cdot a)$</li>
 </ol>
 
@@ -268,16 +268,15 @@ $$((c, d) + (e, f)) \cdot (a, b) = (a, b) \cdot ((c, d) + (e, f)) = ((a, b) \cdo
 
 <p>The axioms of a multiplicative norm $N(x)$ on a ring is the following:</p>
 <ol>
-  <li>$N(u) = 0 \iff u = 0 + \sqrt{d} \cdot 0$</li>
+  <li>$N(u) = 0 \iff u = 0 + \sqrt{D} \cdot 0$</li>
   <li>$N(u \cdot v) = N(u) N(v) \quad \text{for all} \ u, v \in \mathbb{Z}[\sqrt{D}]$</li>
-  <li>$N(u + v) = N(u) + N(v) \quad \text{for all} \ u, v \in \mathbb{Z}[\sqrt{D}]$</li>
 </ol>
 
 <p>$1.$</p>
 
 <div class="equation-container">
 $$
-\vert u \vert = 0 \iff \vert x_u + \sqrt{D} y_u \vert = 0 \iff x_u^2 + D y_u^2 = 0 \iff x_u = y_u = 0 \iff u = 0 + \sqrt{d} \cdot 0
+\vert u \vert = 0 \iff \vert x_u + \sqrt{D} y_u \vert = 0 \iff x_u^2 - D y_u^2 = 0 \iff x_u = y_u = 0 \iff u = 0 + \sqrt{D} \cdot 0
 $$
 </div>
 
@@ -294,21 +293,6 @@ $$
     &amp;= x_u^2 x_v^2 + D^2 y_u^2 y_v^2 - D x_u^2 y_v^2 - D x_v^2 y_u^2 \\
     &amp;= (x_u^2 - D y_u^2) (x_v^2 - D y_v^2) \\
     &amp;= \vert u \vert \vert v \vert
-\end{align}
-$$
-</div>
-
-<p>$3.$</p>
-
-<div class="equation-container">
-$$
-\begin{align}
-    \vert u \cdot v \vert 
-    &amp;= \vert (x_u - \sqrt{D} y_u) + (x_v - \sqrt{D} y_v) \vert \\
-    &amp;= \vert (x_u + x_v) - \sqrt{D} (y_u + y_v) \vert \\
-    &amp;= (x_u + x_v)^2 - D (y_u + y_v)^2 \\
-    &amp;= (x_u^2 + x_v^2 + 2 x_u x_v) - D (y_u^2 + y_v^2 + 2 y_u y_v) \\
-    &amp;= (x_u^2 + x_v^2 + 2 x_u x_v) - D (y_u^2 + y_v^2 + 2 y_u y_v) \\
 \end{align}
 $$
 </div>

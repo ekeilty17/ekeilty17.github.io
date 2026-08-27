@@ -10,7 +10,7 @@
 
   <title>
     
-      Solving The Pell Equation Efficently &middot; Eric Keilty
+      Solving The Pell Equation Efficiently &middot; Eric Keilty
     
   </title>
 
@@ -151,7 +151,7 @@
     <div class="content container post-layout">
 
         <div class="post">
-            <h1 class="post-title">Solving The Pell Equation Efficently</h1>
+            <h1 class="post-title">Solving The Pell Equation Efficiently</h1>
             <!-- <span class="post-date">01 Aug 2022</span> -->
             <time datetime="2022-08-01T00:00:00-04:00" class="post-date">01 Aug 2022</time>
             <p>The Pell Equation is an equation of the form $x^2 - D y^2 = 1$ for $D &gt; 0$. Our task is to find <strong>integer</strong> solutions to this equation. I was first introduced to this problem by <a href="https://projecteuler.net/problem=66">Project Euler #66</a>, and I think the solution is beautiful and would like to share it. Much of this post is inspired by <a href="http://library.msri.org/books/Book44/files/01lenstra.pdf">this paper</a> by Hendrik W. Lenstra, Jr.</p>
@@ -200,11 +200,11 @@ $$
 <p>Thus, $(x_k, y_k)$ is also a solution to the Pell Equation for all $k \geq 1$.
 In fact, <a href="https://faculty.math.illinois.edu/~r-ash/Ant/AntChapter6.pdf">Dirichlet’s Unit Theorem</a> tells us that given $(x_1, y_1)$ is the <strong>fundamental solution</strong> to the Pell Equation, this method will generate <strong>every</strong> solution. The fundamental solution is the <strong>nontrivial</strong> solution with the smallest $x$ or $y$ component.</p>
 
-<p>So once we have the fundamental solution, we have a <em>very</em> efficient algorithm for generating the remaining solutions. if $(x_1, y_1)$ is the fundamental solution, then</p>
+<p>So once we have the fundamental solution, we have a <em>very</em> efficient algorithm for generating the remaining solutions. If $(x_1, y_1)$ is the fundamental solution, then</p>
 
 <div class="equation-container">
 $$
-(x_{k+1} - \sqrt{D} y_{k+1}) = (x_1 - \sqrt{D} y_1)^{k+1} = (x_1 - \sqrt{D} y_1) \cdot (x_1 - \sqrt{D} y_1)^k = (x_1 - \sqrt{D} y_1) \cdot (x_k - \sqrt{D} y_k)
+(x_{k+1} + \sqrt{D} y_{k+1}) = (x_1 + \sqrt{D} y_1)^{k+1} = (x_1 + \sqrt{D} y_1) \cdot (x_1 + \sqrt{D} y_1)^k = (x_1 + \sqrt{D} y_1) \cdot (x_k + \sqrt{D} y_k)
 $$
 </div>
 
@@ -230,7 +230,7 @@ $$
 
 <div class="equation-container">
 $$
-\sqrt{3} = 1 + (\sqrt{3} - 1) = 3 + \frac{2}{\sqrt{3} + 1} = 3 + \frac{1}{\frac{\sqrt{3} + 1}{2}} = 3 + \frac{1}{1 + \frac{\sqrt{3} - 1}{2}} = 3 + \frac{1}{1 + \frac{1}{\sqrt{3} + 1}} = 3 + \frac{1}{1 + \frac{1}{2 + (\sqrt{3} - 1)}}
+\sqrt{3} = 1 + (\sqrt{3} - 1) = 1 + \frac{2}{\sqrt{3} + 1} = 1 + \frac{1}{\frac{\sqrt{3} + 1}{2}} = 1 + \frac{1}{1 + \frac{\sqrt{3} - 1}{2}} = 1 + \frac{1}{1 + \frac{1}{\sqrt{3} + 1}} = 1 + \frac{1}{1 + \frac{1}{2 + (\sqrt{3} - 1)}}
 $$
 </div>
 
@@ -281,7 +281,7 @@ $$
 
 <div class="equation-container">
 $$
-\sqrt{3} = 3 + \frac{1}{1 + \frac{1}{2 + (\sqrt{3} - 1)}} \quad\rightarrow\quad 1 + \frac{1}{1 + 0} = \frac{2}{1}
+\sqrt{3} = 1 + \frac{1}{1 + \frac{1}{2 + (\sqrt{3} - 1)}} \quad\rightarrow\quad 1 + \frac{1}{1 + 0} = \frac{2}{1}
 $$
 </div>
 
@@ -315,7 +315,7 @@ q_{k-1} D + (a_0 q_{k-1} + q_{k-2})\sqrt{D} = a_0 p_{k-1} + p_{k-2} + p_{k-1} \s
 $$
 </div>
 
-<p>Since $\mathbb{Z}[\sqrt{D}]$ is a field, we have</p>
+<p>Since $\mathbb{Z}[\sqrt{D}]$ is a ring, we have</p>
 
 <div class="equation-container">
 $$
