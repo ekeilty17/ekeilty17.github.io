@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      A (Not So) Short Stay in Hell - Appendix &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded MathJax (effectively LaTeX) support 
+    https://docs.mathjax.org/en/v2.7-latest/tex.html -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX", "input/MathML", "output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js", "mml2jax.js", "MathMenu.js", "MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
+            Macros: {
+                b: ["{\\boldsymbol #1}",1],
+                u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
+                arccsc: ["\\operatorname\{arccsc\}"],
+                arcsec: ["\\operatorname\{arcsec\}"],
+                arccot: ["\\operatorname\{arccot\}"],
+                csch: ["\\operatorname\{csch\}"],
+                sech: ["\\operatorname\{sech\}"],
+                arcsinh: ["\\operatorname\{arcsinh\}"],
+                arccosh: ["\\operatorname\{arccosh\}"],
+                arctanh: ["\\operatorname\{arctanh\}"],
+                arccsch: ["\\operatorname\{arccsch\}"],
+                arcsech: ["\\operatorname\{arcsech\}"],
+                arccoth: ["\\operatorname\{arccoth\}"],
+                seq: ["{\\left \\langle #1 \\right \\rangle}",1],
+                iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
+                abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
+                hal: ["\\texttt{hal}"],
+                gal: ["\\texttt{gal}"],
+                sh: ["sh"],
+                st: ["st"]
+            },
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!--
+    TeX-AMS_HTML
+    TeX-AMS-MML_HTMLorMML
+    TeX-MML-AM_HTMLorMML
+-->
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">AI/ML Engineer | Aspiring Amateur Mathematician</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+        <li>
+          <a href="/files/Eric Keilty - Resume.pdf" target="_blank">R&eacute;sum&eacute;</a>
+        </li>
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2026 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container post-layout">
+
+        <div class="post">
+            <h1 class="post-title">A (Not So) Short Stay in Hell - Appendix</h1>
+            <!-- <span class="post-date">04 Sep 2026</span> -->
+            <time datetime="2026-09-04T00:00:00-04:00" class="post-date">04 Sep 2026</time>
+            <p>Appendix to the post <a href="/blog/a-not-so-short-stay-in-hell/">A (Not So) Short Stay in Hell</a>. This is a hodge-podge proofs and results to fill in gaps which I felt were too much of a diversion from the point of the original post. The sections are sorted in the order they appear in the original post.</p>
+
+<hr />
+
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<ul>
+  <li><a href="#numerically-stable-computation-of-scientific-notation">Numerically Stable Computation of Scientific Notation</a></li>
+  <li><a href="#the-size-of-the-library">The Size of the Library</a></li>
+  <li><a href="#bounds-on-the-expected-search">Bounds on the Expected Search</a></li>
+  <li><a href="#the-generalized-fibonacci-recurrence">The Generalized Fibonacci Recurrence</a></li>
+  <li><a href="#joint-and-conditional-probability-distributions">Joint and Conditional Probability Distributions</a></li>
+  <li><a href="#typical-set-bound-proofs">Typical Set Bound Proofs</a></li>
+  <li><a href="#stochastic-stationary-and-ergodic-processes">Stochastic, Stationary, and Ergodic Processes</a></li>
+  <li><a href="#estimating-the-entropy-rate-of-english">Estimating the Entropy Rate of English</a></li>
+</ul>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="numerically-stable-computation-of-scientific-notation">Numerically Stable Computation of Scientific Notation</h2>
+
+<p>In the main post, I was required to compute the <a href="https://en.wikipedia.org/wiki/Scientific_notation">scientific notation</a> of lots of very large numbers. In this section of the appendix I will explain the procedure for these calculations.</p>
+
+<p>Suppose you are given any arbitrary real numbers $a &gt; 0$, $b &gt; 1$, and $c &gt; 1$. We want to convert them to real number $0 &lt; s &lt; 1$ and integer $e \in \mathbb{Z}$ such that</p>
+
+\[c \cdot b^a = s \times 10^e\]
+
+<p>Remembering our log-rules, we can define the following intermediate value</p>
+
+\[x := \log_{10} (c \cdot b^a) = a \cdot \log_{10} b + \log_{10} c\]
+
+<p>Now define our target quantities as the following.</p>
+
+\[e := \lfloor x \rfloor
+\qquad
+\text{,}
+\qquad
+s := 10^{x - \lfloor x \rfloor}\]
+
+<p>And it’s easy to verify that</p>
+
+\[s \times 10^{e} = 10^{x - \lfloor x \rfloor} \cdot 10^{\lfloor x \rfloor} = 10^{x} = 10^{\log_{10} (c \cdot b^a)} = c \cdot b^a\]
+
+<p>The important detail here is on your calculator you <strong>should not</strong> enter $\log_{10} (c \cdot b^a)$ as $b^a$ might be a huge number which your calculator cannot compute. Instead, enter $a \cdot \log_{10} b + \log_{10} c$ and more likely than not this will be tractile to compute. This is a simple example of why logarithms are extremely useful in practical applications. This procedure can be summarized as the following code.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">math</span>
+
+<span class="k">def</span> <span class="nf">compute_scientific_notation</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
+    <span class="sh">"""</span><span class="s">
+    convert c * b^a into s * 10^e
+    </span><span class="sh">"""</span> 
+    <span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">math</span><span class="p">.</span><span class="nf">log10</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">+</span> <span class="n">math</span><span class="p">.</span><span class="nf">log10</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+    <span class="n">e</span> <span class="o">=</span> <span class="n">math</span><span class="p">.</span><span class="nf">floor</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>       <span class="c1"># exponent
+</span>    <span class="n">s</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">**</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">e</span><span class="p">)</span>       <span class="c1"># significand
+</span>    <span class="k">return</span> <span class="n">s</span><span class="p">,</span> <span class="n">e</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="the-size-of-the-library">The Size of the Library</h2>
+
+<p>In the original short story <em>The Library of Babel</em>, the library has a more complicated geometry of hexagonal rooms. In the book <em>A Short Stay in Hell</em>, the library is essentially two dimensional. It consists of two extremely large square walls of books running parallel to each other (like two sheets of aluminum). I’m going to simplify it even further. Let’s assume we just have one giant wall of books. If we assume this wall is square, what are its side lengths?</p>
+
+<p>From the appendix of the book, the author assumes the books are 1.5 inches thick and require 1.5 feet of vertical shelf space. So effectively, we have a rectangle of proportion $1:12$. So 12 books standing vertically side-by-side on a shelf will take up exactly 1.5 by 1.5 square feet of space. We can do a quick calculation.</p>
+
+\[2.345 \times 10^{2,594,773} \ \text{books} 
+\cdot \left (\frac{ 1.5^2 \ \text{feet}^2}{12 \ \text{books}} \right )
+\cdot \left (\frac{ 1 \ \text{meter}^2}{3.28^2 \ \text{feet}^2} \right )
+\cdot \left (\frac{1 \ \text{lightyears}^2}{ (9.46 \times 10^{15})^2 \ \text{meter}^2} \right )
+= 4.57 \times 10^{2,594,739} \ \text{lightyears}^2\]
+
+<p>Therefore, taking the square root of this number gives the side lengths of this enormous wall of books.</p>
+
+\[\sqrt{4.57 \times 10^{2,594,739}}
+\approx 6.76 \times 10^{1,297,369} \ \text{lightyears}\]
+
+<p>To put this number into perspective, the observable universe is only $4.65 \times 10^{10} \ \text{lightyears}$ in diameter.</p>
+
+<p><br /></p>
+
+<p>Just for fun, let’s suppose the books are arranged into a giant cube. Assume 12 books stacked adjacent to each other creates a perfect cube of 1.5 by 1.5 by 1.5 feet. We can redo this calculation.</p>
+
+\[2.345 \times 10^{2,594,773} \ \text{books}
+\cdot \left (\frac{ 1.5^3 \ \text{feet}^3}{12 \ \text{books}} \right )
+\cdot \left (\frac{1 \ \text{meter}^3}{3.28^3 \ \text{feet}^3} \right )
+\cdot \left (\frac{1 \ \text{lightyears}^3}{ (9.46 \times 10^{15})^3 \ \text{meter}^3} \right )
+= 2.21 \times 10^{2,594,723} \ \text{lightyears}^3\]
+
+<p>Therefore, taking the cube root of this number gives the side length of this enormous cube of books.</p>
+
+\[\sqrt[3]{2.21 \times 10^{2,594,723}}
+\approx
+6.05 \times 10^{864,907} \ \text{lightyears}\]
+
+<p>Again, let’s put this number into perspective. A Planck length is about $1.71 \times 10^{-51} \ \text{lightyears}$. The observable universe is about $4.65 \times 10^{10} \ \text{lightyears}$ in diameter. So the magnitude difference between the Planck length compared to the current observable universe ($10^{61}$) is barely even a rounding error compared to the size of this mega cube of books.</p>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="bounds-on-the-expected-search">Bounds on the Expected Search</h2>
+
+<p>The claim in the original post is equivalent to the following. Suppose $a, b \in \mathbb{R}_{&gt;0}$ and $a \geq b$, then</p>
+
+\[\frac{a}{2b} \leq \frac{a+1}{b+1} \leq \frac{a}{b}\]
+
+<p>First, I’ll show the right half of the inequality.</p>
+
+\[\frac{a}{b} - \frac{a+1}{b+1} = \frac{a(b+1) - b(a+1)}{b(b+1)} = \frac{a - b}{b(b+1)}\]
+
+<p>and $\frac{a - b}{b(b+1)} \geq 0$ since the denominator is positive and $a \geq b$. Therefore, $\frac{a}{b} - \frac{a+1}{b+1} \geq 0$, which implies the second part of the claim.</p>
+
+<p>Now, I show the left half of the inequality.</p>
+
+\[\frac{a}{2b} - \frac{a+1}{b+1} = \frac{a(b+1) - 2b(a+1)}{2b(b+1)} = \frac{a - ab - 2b}{2b(b+1)}\]
+
+<p>Clearly, $a \leq ab$. Again the denominator in positive. Therefore, $\frac{a - ab - 2b}{2b(b+1)} \leq 0$ and thus $\frac{a}{2b} - \frac{a+1}{b+1} \leq 0$, which implies the first part of the claim.</p>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="the-generalized-fibonacci-recurrence">The Generalized Fibonacci Recurrence</h2>
+
+<p>To reduce complexity in notation, I will define $S_{\ell} := \lvert Z_{\ell} \rvert$.</p>
+
+<h3 id="proving-the-recurrence-from-the-summation">Proving the Recurrence from the Summation</h3>
+
+<p>Consider the following summation.</p>
+
+\[S_L := \begin{cases}
+    &amp;1 \qquad&amp;\text{if } L = 0 \\[10pt]
+    &amp;\displaystyle\sum_{k = 0}^{\lfloor (L-1)/2 \rfloor} \binom{L-k-1}{k} n^{L-k} \qquad&amp;\text{otherwise}
+\end{cases}\]
+
+<p>Noting that $\binom{0}{0} = 1$, it’s easy to directly compute that</p>
+
+\[S_1 = n\]
+
+<p>Now consider $n S_{L-1}$ and $n S_{L-2}$. In $n S_{L-2}$ we can substitute $k = j+1$.</p>
+
+\[\begin{align}
+    &amp;n S_{L-1}
+= \sum_{k = 0}^{\lfloor (L-2)/2 \rfloor} \binom{L-k-2}{k} n^{L-k} \\[10pt]
+    &amp;n S_{L-2}
+= \sum_{j = 0}^{\lfloor (L-3)/2 \rfloor} \binom{L-j-3}{j} n^{L-j-1} = \sum_{k = 1}^{\lfloor (L-2)/2 \rfloor} \binom{L-k-2}{k-1} n^{L-k}
+\end{align}\]
+
+<p>When $k = 0$, we’ll define $\binom{L-2}{-1} = 0$, so this term does not contribute. Therefore</p>
+
+\[n S_{L-1} + n S_{L-2} = \sum_{k=0}^{\lfloor (L-2)/2 \rfloor} \left ( \binom{L-k-2}{k} + \binom{L-k-2}{k-1} \right ) n^{L-k}\]
+
+<p>Using <a href="https://en.wikipedia.org/wiki/Pascal%27s_rule">Pascal’s identity</a>, $\binom{L-k-2}{k} + \binom{L-k-2}{k-1} = \binom{L-k-1}{k}$, this reduces to our original summation. Therefore,</p>
+
+\[S_{L} = n S_{L-1} + n S_{L-2}
+\qquad
+S_0 = 1, S_1 = n\]
+
+<p><br /></p>
+
+<h3 id="bounding-the-recurrence">Bounding the Recurrence</h3>
+
+<p>The easiest way to prove this is abstractly. The solution to the recurrence is given by</p>
+
+\[S_L = C_1 r_1^L + C_2 r_2^L\]
+
+<p>Without loss of generality, assume that $r_1 \geq r_2$. Furthermore, the first base-case $S_0 = 1$ implies $C_1 + C_2 = 1$. Therefore</p>
+
+\[\begin{align}
+    C_1 r_2^L + C_2 r_2^L &amp;\leq S_L \leq C_1 r_1^L + C_2 r_1^L \\[10pt]
+    (C_1 + C_2) r_2^L &amp;\leq S_L \leq (C_1 + C_2) r_1^L \\[10pt]
+    r_2^L &amp;\leq S_L \leq r_1^L \\[10pt]
+\end{align}\]
+
+<p><br /></p>
+
+<h3 id="asymptotic-behavior-of-the-recurrence">Asymptotic Behavior of the Recurrence</h3>
+
+<p>The goal is to find the asymptotic behavior as $L$ approach infinity. First, we get an asymptotic bound on $\lvert Z_L \rvert$. Without loss of generality, assume that $r_1 \geq r_2$.</p>
+
+\[\lvert Z_L \rvert = C_1 r_1^L + C_2 r_2^L = C_1 r_1^L \left (1 + \frac{C_2}{C_1} \left ( \frac{r_2}{r_1} \right )^L \right )\]
+
+<p>Since $\frac{r_2}{r_1} \leq 1$, then as $L \rightarrow \infty$ we have $\left ( \frac{r_2}{r_1} \right )^L \rightarrow 0$. Also notice that $r_1 = \frac{n + \sqrt{n^2+4n}}{2} = \Theta(n)$. Therefore</p>
+
+\[\lvert Z_L \rvert = \Theta(r_1^L) = \Theta(n^L)\]
+
+<p>Now, we use the inequality bounds on $\mathbb{E}[K]$ and the fact that $\lvert \mathcal{X} \rvert^L = (n+1)^L$.</p>
+
+\[\mathbb{E}[K] 
+= \Theta\left ( \frac{\lvert \mathcal{X} \rvert^L}{\lvert Z_L \rvert} \right ) 
+= \Theta\left (\left ( \frac{n+1}{n} \right )^L\right ) 
+= \Theta\left (\left ( 1 + \frac{1}{n}\right )^{L} \right)\]
+
+<p>Since $1 + \frac{1}{n} &gt; 1$, $\mathbb{E}[K]$ and consequently $\mathbb{E}[T]$ grow exponentially with respect to $L$.</p>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="typical-set-bound-proofs">Typical Set Bound Proofs</h2>
+
+<p>We can reorganize the definition of a typical set as the following</p>
+
+\[A_{\epsilon}^{(\ell)} := \left \{ x_1, \ldots, x_\ell \in \mathcal{X}^{\ell} : 
+2^{- \ell \left (\tfrac{1}{\ell} H(X_1, X_2, \ldots, X_{\ell}) + \epsilon \right )}
+\leq 
+p_{\ell}(x_1, \ldots, x_\ell)
+\leq
+2^{- \ell \left (\tfrac{1}{\ell} H(X_1, X_2, \ldots, X_{\ell}) - \epsilon \right )}
+\right \}\]
+
+<h3 id="cardinality-upper-bound">Cardinality Upper Bound</h3>
+
+<p>By definition, $A_{\epsilon}^{(\ell)} \subseteq \mathcal{X}^{\ell}$. Therefore,</p>
+
+\[\begin{align}
+    1 
+    &amp;= \sum_{x_1, \ldots, x_\ell \in \mathcal{X}^{\ell}} p_{\ell}(x_1, \ldots, x_\ell) \\[10pt]
+    &amp;\geq \sum_{x_1, \ldots, x_\ell \in A_{\epsilon}^{(\ell)}} p_{\ell}(x_1, \ldots, x_\ell) \\[10pt]
+    &amp;\geq \sum_{x_1, \ldots, x_\ell \in A_{\epsilon}^{(\ell)}} 2^{- \ell \left (\tfrac{1}{\ell} H(X_1, X_2, \ldots, X_{\ell}) + \epsilon \right )} \\[10pt]
+    &amp;= \left \lvert A_{\epsilon}^{(\ell)} \right \rvert 2^{- \ell \left (\tfrac{1}{\ell} H(X_1, X_2, \ldots, X_{\ell}) + \epsilon \right )}
+\end{align}\]
+
+<p>Therefore</p>
+
+\[\left \lvert A_{\epsilon}^{(\ell)} \right \rvert \leq 2^{\ell \left (\tfrac{1}{\ell} H(X_1, X_2, \ldots, X_{\ell}) + \epsilon \right )}\]
+
+<h3 id="cardinality-lower-bound">Cardinality Lower Bound</h3>
+
+<p>By the Shannon-McMillan-Breiman Theorem theorem,</p>
+
+\[- \tfrac{1}{\ell} \log p_{\ell}(X_1, \ldots, X_\ell) 
+\ \overset{\mathrm{p}}{\longrightarrow} \ 
+h\]
+
+<p>which directly implies that</p>
+
+\[Pr \left ((X_1, \ldots, X_\ell) \in A_{\epsilon}^{(\ell)} \right ) \geq 1 - \epsilon
+\qquad
+\text{for sufficiently large } \ell\]
+
+<p>Therefore</p>
+
+\[\begin{align}
+    1 - \epsilon 
+    &amp;\leq Pr \left ((X_1, \ldots, X_\ell) \in A_{\epsilon}^{(\ell)} \right ) \\[10pt]
+    &amp;= \sum_{x_1, \ldots, x_\ell \in A_{\epsilon}^{(\ell)}} p_{\ell}(x_1, \ldots, x_\ell) \\[10pt]
+    &amp;\leq \sum_{x_1, \ldots, x_\ell \in A_{\epsilon}^{(\ell)}} 2^{- \ell \left (\tfrac{1}{\ell} H(X_1, X_2, \ldots, X_{\ell}) - \epsilon \right )} \\[10pt]
+    &amp;= \left \lvert A_{\epsilon}^{(\ell)} \right \rvert 2^{- \ell \left (\tfrac{1}{\ell} H(X_1, X_2, \ldots, X_{\ell}) - \epsilon \right )}
+\end{align}\]
+
+<p>Therefore</p>
+
+\[\left \lvert A_{\epsilon}^{(\ell)} \right \rvert \geq (1 - \epsilon) 2^{\ell \left (\tfrac{1}{\ell} H(X_1, X_2, \ldots, X_{\ell}) - \epsilon \right )}
+\qquad
+\text{for sufficiently large } \ell\]
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="joint-and-conditional-probability-distributions">Joint and Conditional Probability Distributions</h2>
+
+<h3 id="a-note-on-notation">A Note on Notation</h3>
+
+<p>In probability theory, if you wanted to be very rigorous, you can use subscripts to differentiate functions. But in practice, this becomes really tedious and hard to read. So often these subscripts are dropped and the different PMFs are understood via their arguments. For example</p>
+
+\[\begin{align}
+    p_{X}(x) &amp;\quad\rightarrow\quad p(x) \\[10pt]
+    p_{X \mid Y}(x \mid y) &amp;\quad\rightarrow\quad p(x \mid y) \\[10pt]
+    p_{X_1, X_2, \ldots, X_{\ell}}(x_1, x_2, \ldots, x_{\ell}) &amp;\quad\rightarrow\quad p(x_1, x_2, \ldots, x_{\ell})
+\end{align}\]
+
+<h3 id="sequence-of-joint-pmfs-over-strings">Sequence of Joint PMFs over Strings</h3>
+
+<p>We can’t just define any sequence of \(\big ( p(x_1, x_2, \ldots, x_{\ell}) \big )_{\ell = 1}^{\infty}\). They are related via the <a href="https://en.wikipedia.org/wiki/Chain_rule_(probability)">chain rule of probability</a>. In particular</p>
+
+\[p(x_1, x_2, \ldots, x_{\ell}) = p(x_{\ell} \mid x_1, x_2, \ldots, x_{\ell-1}) p(x_1, x_2, \ldots, x_{\ell-1})\]
+
+<p>Recursively applying the chain rule of probability, we can write</p>
+
+\[p(x_1, x_2, \ldots, x_{L}) = p(x_1) p(x_2 \mid x_1) p(x_3 \mid x_1, x_2) \cdots p(x_{L} \mid x_1, x_2, \ldots, x_{L-1})\]
+
+<p>Thus, we need only define the marginal probability distribution $p(x_1)$ and each conditional probability distributions $p(x_{\ell} \mid x_1, x_2, \ldots, x_{\ell-1})$ for each $0 &lt; \ell &lt; L$. If we define the case of $\ell = 1$ as $p(x_1)$, then this defines a sequence of conditional PMFs (which can be arbitrarily defined)</p>
+
+\[\big ( p(x_{\ell} \mid x_1, x_2, \ldots, x_{\ell-1}) \big )_{\ell = 1}^{\infty}\]
+
+<p>which ultimately let’s us compute the joint PMFs for each $\ell$-string.</p>
+
+\[\big ( p(x_1, x_2, \ldots, x_{\ell}) \big )_{\ell = 1}^{\infty}\]
+
+<!-- The point of this re-formulation is that empirically estimating $p(x_{\ell} \mid x_1, x_2, \ldots, x_{\ell-1})$ is computationally much more efficient than directly estimating $p(x_1, x_2, \ldots, x_{\ell})$. Essentially, this is what modern LLMs are designed to compute, forming the basis of _next-token prediction_. This is precisely how $h$ is estimated for English text, which I discuss in the next sections. -->
+
+<h3 id="estimating-the-entropy-rate">Estimating the Entropy Rate</h3>
+
+<p>Now, recall that</p>
+
+\[H(X_1, X_2, \ldots, X_{\ell}) 
+\ := \ 
+\sum_{(x_1, \ldots, x_\ell)\in\mathcal{X}^{\ell}}
+- p_\ell(x_1, \ldots, x_\ell) \ \log p_{\ell}(x_1, \ldots, x_\ell)\]
+
+<p>Therefore, we can define the sequence</p>
+
+\[\left ( \tfrac{1}{\ell} H(X_1, X_2, \ldots, X_{\ell}) \right )_{\ell = 1}^{\infty}\]
+
+<p>which allows us to take the limit as $\ell \rightarrow \infty$, which is the definition of the entropy rate $h$.</p>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="stochastic-stationary-and-ergodic-processes">Stochastic, Stationary, and Ergodic Processes</h2>
+
+<h3 id="definitions">Definitions</h3>
+
+<p>A <strong>stochastic process</strong> is a mathematical model for something that changes over time in a way that involves <em>randomness</em>. In other words, it’s a sequence of random variables indexed by some notion of time or position. Intuitively, stochastic is the opposite of <strong>deterministic</strong>.</p>
+
+<p>A stochastic process is <strong>stationary</strong> if its statistical properties are invariant under shifts in time/position. Formally, if \((X_i)_{i \geq 1}\) is generated via a stochastic process, then for every $k, \ell \geq 1$ and every $x_1, \ldots, x_{\ell} \in \mathcal{X}$</p>
+
+\[Pr(X_1 = x_1, \ldots, X_\ell = x_\ell) = Pr(X_{k+1} = x_1, \ldots, X_{k+\ell} = x_\ell)\]
+
+<p>Thus, the probability of observing a particular finite pattern does not depend on where in the sequence we look.</p>
+
+<p>A stochastic process is <strong>ergodic</strong> if observing one sufficiently long realization of the process gives us enough information to recover its statistical properties. Formally, we can write the following for every <em>suitable</em> function $f$</p>
+
+\[\frac{1}{\ell} \sum_{i=1}^{\ell} f(X_i) \ \overset{\mathrm{p}}{\longrightarrow} \ \mathbb{E}[f(X_1)]\]
+
+<p>In other words, the time average of a function of the observations converges in probability to its expected value.</p>
+
+<h3 id="example-coin-flip">Example: Coin Flip</h3>
+
+<p>Let \(X_i \in \{ 0, 1 \}\) be a random variable representing a coin flip such that</p>
+
+\[X_i = \begin{cases}
+    1 &amp;\quad\text{if the } i^{\text{th}} \text{ coin flip shows } \textbf{heads} \\[10pt]
+    0 &amp;\quad\text{if the } i^{\text{th}} \text{ coin flip shows } \textbf{tails}
+\end{cases}\]
+
+<p>Then we have</p>
+
+\[X_i \overset{\mathrm{i.i.d.}}{\sim} \text{Bernoulli}(0.5)\]
+
+<p>This is a <em>stochastic process</em> since each coin flip is random. This is also a <em>stationary process</em> since it’s independent and identically distributed.</p>
+
+\[Pr(X_1 = x_1, \ldots, X_\ell = x_\ell) = \prod_{i = 1}^{\ell} Pr(X_i = x_i) = \prod_{i = 1}^{\ell} Pr(X_{i+k} = x_i) = Pr(X_{k+1} = x_1, \ldots, X_{k+\ell} = x_\ell)\]
+
+<p>Finally, this process is <em>ergodic</em>. Proving this is a bit involved and out of the scope of this post. It’s not hard to show the case for $f(x) = x$ which redues to proving that $\frac{1}{\ell} \sum_{i=1}^{\ell} X_i = \mathbb{E}[X_1]$, which is an application of the <a href="https://en.wikipedia.org/wiki/Law_of_large_numbers">Strong Law of Large Numbers</a>.</p>
+
+<h3 id="anti-example-non-stochastic">Anti-Example: Non-Stochastic</h3>
+
+<p>The following is a deterministic process</p>
+
+\[X_i = 2i + 3\]
+
+<p>This process is not random at all. Every $X_i$ is determined by the formula.</p>
+
+<h3 id="anti-example-non-stationary">Anti-Example: Non-Stationary</h3>
+
+<p>Let \(X_i \in \{ 0, 1 \}\) be a random variable representing <em>biased coin flips</em> which shows heads with probability $p_i$. We can write</p>
+
+\[X_i \sim \text{Bernoulli}(p_i)\]
+
+<p>Now, the outcome of each $X_i$ depends on $p_i$. Therefore in general</p>
+
+\[Pr(X_i = x_i) = p_i \neq p_{k+i} = Pr(X_{k+i} = x_i)\]
+
+<p>so this process is not stationary.</p>
+
+<h3 id="anti-example-non-ergodic">Anti-Example: Non-Ergodic</h3>
+
+<p>This is a bit of a weird anti-example. Suppose we have two biased coins such that coin $A$ always flips heads and coin $B$ always flips tails. Our process first picks a coin at random according to $\text{Bernoulli}(0.5)$, and then uses this coin and only this coin to generate \((X_i)_{i \geq 1}\). In other words</p>
+
+\[(X_i)_{i \geq 1} = \begin{cases}
+    (1,1,1,1, \ldots) &amp;\quad\text{if coin } A \text{ is chosen} \\[10pt]
+    (0,0,0,0, \ldots) &amp;\quad\text{if coin } B \text{ is chosen}
+\end{cases}\]
+
+<p>Therefore,</p>
+
+\[\frac{1}{\ell}\sum_{i=1}^{\ell} X_i = \begin{cases}
+    1 &amp;\quad\text{if coin } A \text{ is chosen} \\[10pt]
+    0 &amp;\quad\text{if coin } B \text{ is chosen}
+\end{cases}\]
+
+<p>but</p>
+
+\[\mathbb{E}[X_1] = 0.5\]
+
+<p>since the process of picking one of the two coins initially is still $50/50$. Thus, the long-term behavior cannot tell us about the underlying statistical properties of this process. The randomness associated with choosing the initial coin is lost. If I modified the probabilities coin $A$ and $B$ to $60/40$, you could not distinguish this by just observing the long-term behavior $(1,1,1,1, \ldots)$ or $(0,0,0,0, \ldots)$.</p>
+
+<h3 id="stochastic-stationary-ergodic-process-generating-english">Stochastic Stationary Ergodic Process Generating English</h3>
+
+<p>A simple way to construct a stationary ergodic process that generates English-like text is with a $k^{\text{th}}$-order <a href="https://en.wikipedia.org/wiki/Markov_model">Markov model</a>.</p>
+
+\[Pr(X_{\ell+1} \mid X_{\ell - k + 1}, \ldots, X_{\ell})\]
+
+<p>where $X_i$ can represent characters, tokens, or words. The model specifies the probability of the next element given the previous $k$ elements (e.g. next token prediction). With an appropriate choice of transition probabilities and initialization, the resulting process can be made stationary and ergodic.</p>
+
+<p>In principle, this amounts to a giant table specifying the probability of every possible next token for every possible sequence of $k$ preceding tokens. For a realistic vocabulary and sufficiently large $k$, this table would be completely intractable. At a surface-level of analysis, modern LLMs can be viewed are learning subsections of this look-up table (training data), and efficiently representing and generalizing the statistical patterns via its model parameters. While it’s not technically true, as a first-order intuition you could think of an LLM as this English-text-generating process.</p>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="estimating-the-entropy-rate-of-english">Estimating the Entropy Rate of English</h2>
+
+<p>I don’t want to get too deep into the weeds of the math here (otherwise this section would be huge). I just want to give a taste of the methods. I encourage you to read the papers for more details.</p>
+
+<h3 id="claude-shannons-estimate">Claude Shannon’s Estimate</h3>
+
+<p><a href="https://en.wikipedia.org/wiki/Claude_Shannon">Claude Shannon</a> (the pioneer of information theory), conducted the following experiment in his <a href="https://www.princeton.edu/~wbialek/rome/refs/shannon_51.pdf">paper</a>. Given a short passage unknown to the participant, the participant was to try to predict the next letter (space included, capitalization and punctuation excluded). If they were wrong, they would keep guessing until they got it right. Shannon would record the number of guesses required for each letter. This produced a result such as the following.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>there is no reverse on a motorcycle a friend of mine found this out rather dramatically the other day 
+111511211211151171112132122711114111318613111111111116211111121111114111111151111111111161111111111111
+</code></pre></div></div>
+
+<p>Suppose we had an ideal next-character predictor of English text. Let $q_i^{(N)}$ be the fraction of characters correctly guessed by this ideal predictor on the $i^{\text{th}}$ guess when $N−1$ previous characters are known. Skipping a ton of details, Shannon shows the following bounds on the conditional entropy of English.</p>
+
+\[\sum_i i\left(q_i^{(N)} - q_{i+1}^{(N)}\right)\log_2 i
+\leq H_N \leq
+-\sum_i q_i^{(N)}\log_2 q_i^{(N)}\]
+
+<p>where</p>
+
+\[H_N := H(X_{N} \mid X_1, \ldots, X_{N-1})\]
+
+<p>and it can be shown that $H_N \rightarrow h$ as $N \rightarrow \infty$ for <em>stationary</em> processes.</p>
+
+<p>Shannon ran the above experiment for $N = 100$. This allowed him to estimate each of the $q_i^{(N)}$’s using the statistics of human subjects, and ultimately estimate upper and lower bounds on $h$. He acknowledges that human subjects are far from ideal predictors and there are considerable error bounds on this estimate.</p>
+
+\[0.6 \lesssim H_{100} \lesssim 1.3 \quad \text{bits/character}\]
+
+<h3 id="estimates-using-cross-entropy">Estimates using Cross-Entropy</h3>
+
+<p>We’ll use a slightly different notation where if $X \sim p$, then $H(p) := H(X)$. Now, suppose we have two different probability distributions $p$ and $q$ over the same underlying <em>events</em>. Then the <strong>cross-entropy</strong> of $p$ with respect to $q$ is defined as</p>
+
+\[H(p, q) := - \mathbb{E}_p[\log q]\]
+
+<p>Intuitively, this like measuring the entropy of $q$ with using $p$ as the baseline. One can define the relative entropy between $p$ and $q$ called the <a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence">Kullback–Leibler (KL) divergence</a>, which let’s us write this upper-bound.</p>
+
+\[H(p, q) = H(p) + D_{KL}(p \mathbin{\Vert} q) \geq H(p)\]
+
+<p>For a stationary process, we get</p>
+
+\[h \leq H(p) \leq H(p, q)\]
+
+<p>So, if we can empircally estimate $H(p, q)$, then we can get an upper bound on $H(p)$ and the entropy rate $h$.</p>
+
+<p><a href="https://aclanthology.org/J92-1002.pdf">Brown et al. (1992)</a> use this idea to estimate an upper bound on the entropy rate of printed English. They construct a word-trigram language model $M$, trained on 583 million words of English text, and evaluated on the <a href="https://www.sketchengine.eu/brown-corpus/">Brown Corpus</a>. Here, $p$ represents the underlying probability distribution generating English text, and $q$ represents the distribution over text induced by the trigram model $M$. This allows them to estimate this following upper bound.</p>
+
+\[h \leq H(\textit{English}) \leq - \frac{1}{n} \log M(\textit{Brown Corpus}) \approx 1.75 \quad \text{bits/character}\]
+
+<p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7512401">Montemurro, M. A. (2020)</a> take this one step further by utilizing neural-networks to estimate $H(p, q)$. They investigate how the cross-entropy depends on two parameters: the amount of training data $k$ and the context length $n$. Empirically, they find that the cross-entropy decreases approximately as a power law in both parameters, which they model as</p>
+
+\[H_{\text{model}}(n, k) \approx A_1 k^{\beta_1} + A_2 n^{\beta_2} + h\]
+
+<p>Since $\beta_1$ and $\beta_2$ were empirically estimated to be negative, the $k$ and $n$ terms vanish as $n, k \rightarrow \infty$ (thus $H_{\text{model}}(n, k) \rightarrow h$). Extrapolating to infinite training data and context length gives an estimate of the minimal cross-entropy, and hence an upper bound on the entropy rate:</p>
+
+\[h \approx 1.12 \quad \text{bits/character}\]
+
+        </div>
+
+        <div class="pagination" style="margin-top:auto;">
+            <a class="pagination-item parent-link" href="/blog/">
+                Blog Archive
+            </a>
+        </div>
+
+    </div>
+  </body>
+</html>

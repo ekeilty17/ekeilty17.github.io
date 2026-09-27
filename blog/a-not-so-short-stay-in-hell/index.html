@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      A (Not So) Short Stay in Hell &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded MathJax (effectively LaTeX) support 
+    https://docs.mathjax.org/en/v2.7-latest/tex.html -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX", "input/MathML", "output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js", "mml2jax.js", "MathMenu.js", "MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
+            Macros: {
+                b: ["{\\boldsymbol #1}",1],
+                u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
+                arccsc: ["\\operatorname\{arccsc\}"],
+                arcsec: ["\\operatorname\{arcsec\}"],
+                arccot: ["\\operatorname\{arccot\}"],
+                csch: ["\\operatorname\{csch\}"],
+                sech: ["\\operatorname\{sech\}"],
+                arcsinh: ["\\operatorname\{arcsinh\}"],
+                arccosh: ["\\operatorname\{arccosh\}"],
+                arctanh: ["\\operatorname\{arctanh\}"],
+                arccsch: ["\\operatorname\{arccsch\}"],
+                arcsech: ["\\operatorname\{arcsech\}"],
+                arccoth: ["\\operatorname\{arccoth\}"],
+                seq: ["{\\left \\langle #1 \\right \\rangle}",1],
+                iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
+                abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
+                hal: ["\\texttt{hal}"],
+                gal: ["\\texttt{gal}"],
+                sh: ["sh"],
+                st: ["st"]
+            },
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!--
+    TeX-AMS_HTML
+    TeX-AMS-MML_HTMLorMML
+    TeX-MML-AM_HTMLorMML
+-->
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">AI/ML Engineer | Aspiring Amateur Mathematician</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+        <li>
+          <a href="/files/Eric Keilty - Resume.pdf" target="_blank">R&eacute;sum&eacute;</a>
+        </li>
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2026 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container post-layout">
+
+        <div class="post">
+            <h1 class="post-title">A (Not So) Short Stay in Hell</h1>
+            <!-- <span class="post-date">04 Sep 2026</span> -->
+            <time datetime="2026-09-04T00:00:00-04:00" class="post-date">04 Sep 2026</time>
+            <p><strong>Spoiler Warning</strong></p>
+
+<p><em><a href="https://en.wikipedia.org/wiki/A_Short_Stay_in_Hell">A Short Stay in Hell</a></em> is a psychological horror novella by the American writer <a href="https://en.wikipedia.org/wiki/Steven_L._Peck">Steven L. Peck</a>. It is a fantastic read exploring themes of meaning, love, the absurdity of eternity, and the inability of our monkey brains to understand enormously large numbers. I highly recommend giving it a read (it’s short).</p>
+
+<p>I personally consider the topic of this post a spoiler to the book. I won’t discuss any specific plot points; the specific references that I do make are from the prologue and the beginning of chapter 1. However, this post is jumping to the punchline of the book which may ruin some of the suspense. I think this is a book that is meant to be read more than once. So by reading this post, you’re somewhat ruining/forfeiting that first read of the book. If you are interested in reading the book, I highly recommend just going into it cold.</p>
+
+<hr />
+
+<h2 id="introduction">Introduction</h2>
+
+<p>In <em>A Short Stay in Hell</em>, the protagonist is sent to a Zoroastrian hell inspired by the short story <em><a href="https://en.wikipedia.org/wiki/The_Library_of_Babel">The Library of Babel</a></em> by Argentine author <a href="https://en.wikipedia.org/wiki/Jorge_Luis_Borges">Jorge Luis Borges</a>. This hell is itself the Library of Babel, which is an enormous library filled with every possible book of a particular length. The number of books in this library is unimaginably large (we will return to this shortly). The protagonist is told that he must find a book which <em><strong>exactly retells his earthly life story without factual or grammatical error</strong></em>. Once he finds it, he can leave hell and ascend to a glorious heaven.</p>
+
+<p>The story is narrated by the protagonist in the far, far future. Near the end of the prologue he says,</p>
+
+<blockquote>
+  <p>…around the $23^{439\text{th}}$ day of my stay in Hell.</p>
+</blockquote>
+
+<p>Converting to scientific notation, that is $23^{439} \approx 6.29 \times 10^{597}$ days (recall that our universe is currently only about $5.04 \times 10^{12}$ days old). You’ll sometimes see this quoted around the internet as $10^{600}$ days. The protagonist recounts several books from his search such as a book describing his entire digestive history and a book about a monkey who had once been the successful owner of a lawnmower-repair business. Although $10^{600}$ days is an enormous amount of time, my intuition told me it wasn’t nearly enough to find even a single book containing anything resembling a complete story.</p>
+
+<p>In this post, I attempt to analyze how long the protagonist’s search for his life story will take. I begin with an analysis that establishes a lower bound on the search time to find a book whose text is at least syntactically subdivided into words. This gives an estimate on the expected time to find a book with any type of regular structure. Then I provide a more sophisticated analysis using information theory, where we define the <em>typical set</em> of English-looking strings. This gives a probabilistic estimate of the expected time to find even a single book that resembles English. Based on these two analyses, we will see that even $10^{600}$ days is not nearly enough time to find even one book that has a glimpse of a coherent narrative. As my analysis will show, the correct figure is closer to $10^{600,000}$ years.</p>
+
+<!-- In fact, at $10^{600}$ days, the protagonist has barely even begun his search. -->
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="quantifying-the-library-of-babel">Quantifying the Library of Babel</h2>
+
+<p>We begin by analyzing the parameters of the Library of Babel as presented in <em>A Short Stay in Hell</em>. This will illuminate the scale of the problem at hand.</p>
+
+<h3 id="defining-the-library">Defining the Library</h3>
+
+<p>The Library of Babel contains exactly one copy of every possible book satisfying the following constraints:</p>
+<ul>
+  <li>410 pages per book</li>
+  <li>40 lines per page</li>
+  <li>80 characters per line</li>
+</ul>
+
+<p>In <em>A Short Stay in Hell</em>, the author states that each book consists of the 95 characters on the standard English keyboard. This includes 94 non-space characters, plus the space character. I believe the following are the 94 non-space characters to which he is referring:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1234567890
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+@#$%^&amp;*_+="'`~/\|
+[]{}()&lt;&gt;
+:;,.?!-
+</code></pre></div></div>
+
+<p>For example, the Library of Babel contains the book <code class="language-plaintext highlighter-rouge">aaaaaa...</code>, the book <code class="language-plaintext highlighter-rouge">bbbbbb...</code>, and the book alternating <code class="language-plaintext highlighter-rouge">ababab...</code>. It contains the complete works of Shakespeare. It contains the complete works of Shakespeare, but written entirely in pig-latin and where you and your friends are the characters.</p>
+
+<h3 id="the-number-of-books-in-the-library">The Number of Books in the Library</h3>
+
+<p>First, we calculate the number of characters in each book using dimensional analysis.</p>
+
+\[\left (410 \ \frac{\text{pages}}{\text{book}} \right ) \cdot \left (40 \ \frac{\text{lines}}{\text{page}} \right ) \cdot \left (80 \ \frac{\text{characters}}{\text{line}} \right ) = 1,312,000 \ \frac{\text{characters}}{\text{book}}\]
+
+<p>With $95$ options per character, the total number of unique books is</p>
+
+\[95^{1,312,000} \ \approx \ 2.345 \times 10^{2,594,773} \ \approx \ 10^{10^{6.414}} \ \text{books}\]
+
+<p>This number is so unimaginably large that it is impossible for our monkey brains to grasp. <em>A Short Stay in Hell</em> cites that there are only $1.5 \times 10^{80}$ electrons in the observable universe. The number of books in this library dwarfs this number. $10^{80}$ is not even a rounding error compared to $10^{2,594,773}$.</p>
+
+<h3 id="the-size-of-the-library">The Size of the Library</h3>
+
+<p>I calculate this in the <a href="/blog/a-not-so-short-stay-in-hell-appendix/#the-size-of-the-library">appendix</a>. There are many ways one could imagine such a library is arranged. No matter how you decide to configure the library, it is going to be larger than the current observable universe, and it’s not even close.</p>
+
+<h3 id="discussion">Discussion</h3>
+
+<p>Part of the motivation of this post is to <em>attempt</em> to develop some intuition for this unimaginably large number $10^{2,594,773}$. This number transcends all possible human experience. It is so large that there is essentially no <em>human operation</em> we could perform within the constraints of our universe that would decrease it in any meaningful way. To illustrate this, consider the following.</p>
+
+<p>Suppose that one book was checked during every Planck-time interval at every Planck-volume location throughout the span of our current observable universe, continuously for the current age of the universe. This process will have checked</p>
+
+\[\left (\frac{1 \ \text{book}}{1 \ (\text{Planck-time})(\text{Planck-length})^3} \right ) 
+\cdot 
+\left (\frac{1 \ \text{Planck-time}}{5.39 \times 10^{-44} \ \text{sec}} \right ) 
+\cdot 
+\left ( \frac{(1 \ \text{Planck-length})^3}{(1.62 \times 10^{-35})^3 \ \text{m}^3} \right ) 
+\cdot 
+\left (4.35 \times 10^{17} \ \text{sec} \right ) 
+\cdot 
+\left ((4.40 \times 10^{26})^3 \ \text{m}^3 \right ) 
+=
+1.617 \times 10^{245} \ \text{books}\]
+
+<p>That’s a lot of books…but it’s not even remotely close to $10^{2,594,773}$. As a percentage, our universe machine has checked $10^{-2,594,526} \%$ of all books…so basically $0\%$ of them.</p>
+
+<p>Now with this context, I return to the reason I began this investigation. Is $10^{600}$ days enough time for the protagonist to find books containing anything resembling English text?</p>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="a-probabilistic-model-of-the-search">A Probabilistic Model of the Search</h2>
+
+<p>Of course, it’s entirely <em>possible</em> that the protagonist finds his life story in the first book he checks. According to <a href="https://en.wikipedia.org/wiki/Quantum_mechanics">quantum mechanics</a> it’s also <em>possible</em> that you spontaneously <a href="https://en.wikipedia.org/wiki/Quantum_tunnelling">quantum tunnel</a> through the floor. But it’s so improbable as to be practically impossible. We don’t care about what is possible; we care about what is likely. For this, we turn to the field of probability.</p>
+
+<h3 id="modeling-books-as-strings">Modeling Books as Strings</h3>
+
+<p>A book is a physical representation of the abstract concept of a <em>string</em>: an ordered sequence of <em>characters</em>. We define the following notation.</p>
+
+<ul>
+  <li>Let $\mathcal{X}$ be our <em>alphabet</em> of characters.</li>
+  <li>Let $x \in \mathcal{X}$ be called a <em>character</em> of our alphabet.</li>
+  <li>Let $n$ be the number of non-space characters in our alphabet. Thus, $\lvert \mathcal{X} \rvert = n+1$ (the $+1$ accounting for the space character).</li>
+  <li>Let $(x_1, x_2, \ldots, x_{\ell}) \in \mathcal{X}^{\ell}$ be a string of length $\ell$ in our alphabet, more concisely called an <em>$\ell$-string</em>.</li>
+  <li>Let $L$ be the <em>length</em> of the target strings, i.e. the number of characters in each book in the Library of Babel.</li>
+</ul>
+
+<p>Thus, the number of $\ell$-strings in the alphabet $\mathcal{X}$ is given by</p>
+
+\[\left \lvert \mathcal{X}^{\ell} \right \rvert = \lvert \mathcal{X} \rvert^{\ell}  = (n+1)^{\ell}\]
+
+<p>In summary, a book is modeled as an $L$-string, and the Library of Babel is the set of all $L$-strings, i.e. $\mathcal{X}^{L}$.</p>
+
+<p>In <em>A Short Stay in Hell</em>, $n = 94$ and $L = 1,312,000$. The above formula reproduces our original calculation that the number of books in the Library of Babel is $95^{1,312,000}$.</p>
+
+<h3 id="the-probability-of-randomly-sampling-a-target-book">The Probability of Randomly Sampling a Target Book</h3>
+
+<p>Let $\mathcal{P}$ be some Boolean property evaluated on any arbitrary string. For example, the property that the string contains the character <code class="language-plaintext highlighter-rouge">a</code>. Or the property that the string is one of the works of Shakespeare. Now, for each string length $0 &lt; \ell \leq L$ define the subset of books with property $\mathcal{P}$ as</p>
+
+\[Z_{\ell} := \{ s \in \mathcal{X}^{\ell} : \mathcal{P}(s) \text{ is } \texttt{true} \}\]
+
+<p>If we select a book uniformly at random from the Library of Babel and observe its corresponding string $s$, then the probability that it has property $\mathcal{P}$ is</p>
+
+\[Pr(\mathcal{P}(s) \text{ is } \texttt{true}) = Pr(s \in Z_{L}) = \frac{\left \lvert Z_L \right \rvert}{\left \lvert \mathcal{X} \right \rvert^{L}}\]
+
+<h3 id="expected-search-time">Expected Search Time</h3>
+
+<p>Ultimately, we want to answer two questions: how many books do we have to look at before observing property $\mathcal{P}$, and how long will this take us to find one? This can be formalized as the following.</p>
+
+<ul>
+  <li>Let $K \in \mathbb{Z}_{&gt; 0}$ be the random variable indicating the number of trials (i.e. number of books that must be checked) before the first observation of property $\mathcal{P}$.</li>
+  <li>Let $T \in \mathbb{Q}_{&gt; 0}$ be the random variable indicating the amount of time that passes until the first observation of property $\mathcal{P}$.</li>
+</ul>
+
+<p>We are sampling from the library <strong>without replacement</strong>. Under a uniformly random ordering of the books, this corresponds to a special case of the <a href="https://en.wikipedia.org/wiki/Negative_hypergeometric_distribution">negative hypergeometric distribution</a>. Thus, in the context of this problem, the expected value of $K$ is given by the following.</p>
+
+\[\mathbb{E}[K] = \frac{\left \lvert \mathcal{X} \right \rvert^{L} + 1}{\left \lvert Z_L \right \rvert + 1}\]
+
+<p>Since $\left \lvert Z_L \right \rvert$ and $\left \lvert \mathcal{X} \right \rvert^{L}$ are both extremely large in this setting, one might be tempted to neglect the $+1$ terms. However, because $\left \lvert Z_L \right \rvert, \left \lvert \mathcal{X} \right \rvert^{L} &gt; 0$ and $\left \lvert Z_L \right \rvert \leq \left \lvert \mathcal{X} \right \rvert^{L}$, we can instead derive the following useful bounds on $\mathbb{E}[K]$ (proof in the <a href="/blog/a-not-so-short-stay-in-hell-appendix/#bounds-on-the-expected-search">appendix</a>).</p>
+
+\[\frac{\left \lvert \mathcal{X} \right \rvert^{L}}{2\left \lvert Z_L \right \rvert} \leq \mathbb{E}[K] \leq \frac{\left \lvert \mathcal{X} \right \rvert^{L}}{\left \lvert Z_L \right \rvert}\]
+
+<p>Suppose $r$ is the rate at which books can be checked. For the purpose of this post, we will take</p>
+
+\[r \leq 10^{10} \ \frac{\text{books}}{\text{year}}\]
+
+<p>This is faster than checking one book per second continuously for an entire year. This gives the following for the expected search time.</p>
+
+\[\mathbb{E}[K] = r \cdot \mathbb{E}[T]
+\quad\implies\quad
+\mathbb{E}[T] \geq \frac{\left \lvert \mathcal{X} \right \rvert^{L}}{2 r \cdot \left \lvert Z_L \right \rvert}\]
+
+<p>Thus, all that’s left is to define a property $\mathcal{P}$ and estimate $\left \lvert Z_L \right \rvert$ for the given property. Then, we can immediately compute $\mathbb{E}[K]$ and $\mathbb{E}[T]$.</p>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="simplifying-the-problem">Simplifying the Problem</h2>
+
+<p><em>English words</em> are not a well-defined concept. Realistically, the definition of an English word is any sequence of characters that native English speakers collectively decides is a word. To make matters worse, this is a moving target; language is nuanced by dialect and constantly evolving over time. The terms “podcast”, “blog”, or “selfie” didn’t exist pre-2000 because the technologies didn’t exist. Those sequence of characters would have meant nothing to people in the past. Is “X Æ A-Xii” a word? It looks like a random sequence of characters to me, yet it’s the name of one of Elon Musk’s kids. In short, pinning down a precise definition of a word is very tricky.</p>
+
+<p>Furthermore, suppose we have a sequence of English words. How can we mathematically determine whether that sequence of words make semantic sense? How could you possibly determine that those sequence of words “exactly retell the early life story” of the protagonist? For example, <em>“Colorless green ideas sleep furiously.”</em> is a syntactically/grammatically correct English, but is utter nonsense semantically [<a href="https://en.wikipedia.org/wiki/Colorless_green_ideas_sleep_furiously">Noam Chomsky</a>]. How can we possibly distinguish this from a sentence describing the protagonists life story? The modern technique for determining semantic meaning would be to throw this into a specialized embedding model. But that is a practical solution rather than a theoretical one, which doesn’t help us here.</p>
+
+<p>These are some pretty damning objections to the goal of this post. I did what all mathematicians do when they don’t know how to solve a problem; define a related problem that I <em>can</em> solve. I do this with two different methods. The first is to weaken the problem statement such that I can obtain a lower bound on the expected search time. The second method is to utilize a probabilistic argument to get an approximate estimate of the search time. The former is exact, but very loose. The latter relies probability, but is a much more realistic estimate.</p>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="an-absolute-lower-bound">An Absolute Lower Bound</h2>
+
+<p>We define the following as the special property of books that we are searching for</p>
+
+\[\mathcal{P}(s) \text{ is } \texttt{true} 
+\quad
+\iff
+\quad
+s \text{ has no instances of adjacent spaces}\]
+
+<p>This is essentially saying that $s$ is a string which is a syntactically valid sequence of “words” where <em>words</em> is loosely defined as a substring which does not contain a space. For example</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The cat is fat.         &lt;-- valid sequence of words
+The cat is xyz.         &lt;-- valid sequence of words
+fxo&gt;JQ9* 0Gx/`#         &lt;-- valid sequence of words
+congratulations         &lt;-- valid sequence of words
+The        cat.         &lt;-- invalid sequence of words
+</code></pre></div></div>
+
+<p>Thus, $Z_L$ is essentially the set of books with a coherent concept of <em>words</em>. These words might be utter nonsense, but nonetheless could be words in principle. This is obviously a far cry from a fully coherent English book. Our goal here is simply to compute a rigorous lower bound on the search. 
+<!-- We will see that even this simplified constraint is extremely unlikely. --></p>
+
+<h3 id="bounding-the-number-of-books-with-this-property">Bounding the Number of Books with This Property</h3>
+
+<p>Now, we compute $\lvert Z_L \rvert$ for the above definition of $\mathcal{P}$. This requires a combinatorial argument.</p>
+
+<p>Suppose I have a string of length $L - k$ and I want to inject $k$ spaces into it such that no two spaces are directly adjacent. This is a variant of the classic <a href="https://en.wikipedia.org/wiki/Stars_and_bars_(combinatorics)">stars and bars</a> combinatorics class of problems. A space can’t go at the start of the string, nor the end. Thus, there are  $L - k - 1$ gaps between where a space could go, and we just need to choose $k$ of those gaps. Therefore, the total number of strings with exactly $k$ non-adjacent spaces is
+$
+\binom{L-k-1}{k}
+$.
+Now we just sum over all values of $k$.</p>
+
+\[\lvert Z_L \rvert = \sum_{k = 0}^{\lfloor (L-1)/2 \rfloor} \binom{L-k-1}{k} n^{L-k}\]
+
+<p>It turns out, this reduces to the following recurrence (proof in the <a href="/blog/a-not-so-short-stay-in-hell-appendix/#the-generalized-fibonacci-recurrence">appendix</a>).</p>
+
+\[\lvert Z_L \rvert = n \lvert Z_{L-1} \rvert + n \lvert Z_{L-2} \rvert
+\qquad
+\lvert Z_{0} \rvert = 1, \lvert Z_{1} \rvert = n\]
+
+<p>This recurrence may look familiar to the keen observer. It is a generalization of the <a href="https://en.wikipedia.org/wiki/Fibonacci_sequence">Fibonacci sequence</a>. Specifically, this is a <a href="https://en.wikipedia.org/wiki/Linear_recurrence_with_constant_coefficients">linear recurrence with constant coefficients</a>. It’s sort of like a discrete version of a differential equation. Similar to solving linear differential equations, we guess that $\lvert Z_L \rvert \approx r^L$. Substituting into the recurrence gives the corresponding <strong>characteristic equation</strong>.</p>
+
+\[r^L = nr^{L-1} + nr^{L-2}
+\quad\implies\quad
+r^2 = nr + n\]
+
+<p>which gives two roots</p>
+
+\[r_{1, 2} = \frac{n \pm \sqrt{n^2 + 4n}}{2}\]
+
+<p>Interestingly, this is a generalization of the <a href="https://mathworld.wolfram.com/BinetsFormula.html">Binet formula</a>. In particular, $n=1$ gives the <a href="https://en.wikipedia.org/wiki/Golden_ratio">golden ratio</a>. Now, the solution to the recurrence is given by</p>
+
+\[\lvert Z_L \rvert = C_1r_1^L + C_2r_2^L\]
+
+<p>Using the base-cases and some algebra autopilot we can solve for $C_1$ and $C_2$.</p>
+
+\[\lvert Z_L \rvert = \frac{n + \sqrt{n^2+4n}}{2 \sqrt{n^2+4n}} \left (\frac{n + \sqrt{n^2+4n}}{2} \right )^L + \frac{- n + \sqrt{n^2+4n}}{2 \sqrt{n^2+4n}} \left (\frac{n - \sqrt{n^2+4n}}{2} \right )^L\]
+
+<p>This is super gross, but the first base-case implies $C_1 + C_2 = 1$, which we can use to prove this (relatively) nice bound (proof in the <a href="/blog/a-not-so-short-stay-in-hell-appendix/#the-generalized-fibonacci-recurrence">appendix</a>).</p>
+
+\[\lvert Z_L \rvert \leq \left (\frac{n + \sqrt{n^2+4n}}{2} \right )^L\]
+
+<h3 id="bounding-the-expected-search-time">Bounding the Expected Search Time</h3>
+
+<p>Recall that $\left \lvert \mathcal{X} \right \rvert := n+1$. Substituting into the bound on the expected number of books</p>
+
+\[\mathbb{E}[K] \geq \frac{\left \lvert \mathcal{X} \right \rvert^{L}}{2 \left \lvert Z_L \right \rvert} \geq \frac{1}{2} \left (\frac{2(n+1)}{n + \sqrt{n^2+4n}} \right )^L\]
+
+<!-- For $n = 26$ and $L = 1,312,000$
+
+$$
+\begin{align}
+    &\mathbb{E}[K] \geq \tfrac{1}{2} \left ( 1.0013262 \right )^{1,312,000} \approx 7.23 \times 10^{754} \ \text{books} \\[10pt]
+    &\mathbb{E}[T] \geq 7.23 \times 10^{746} \ \text{years}
+\end{align}
+$$ -->
+
+<p>For $n = 94$ and $L = 1,312,000$</p>
+
+\[\begin{align}
+    &amp;\lvert Z_L \rvert \leq \left ( 47 + 7 \sqrt{47} \right )^{1,312,000} \approx 7.63 \times 10^{2,594,710} \\[10pt]
+    &amp;\mathbb{E}[K] \geq \tfrac{1}{2} \left ( 1.000109673 \right )^{1,312,000} \approx 1.54 \times 10^{62} \ \text{books} \\[10pt]
+    &amp;\mathbb{E}[T] \geq 1.54 \times 10^{52} \ \text{years}
+\end{align}\]
+
+<h3 id="discussion-1">Discussion</h3>
+
+<p>The reason we still see a blow-up of expected search time is ultimately due to two facts. 1) the growth of $\lvert Z_L \rvert$ is dominated by $r_1^L$, and 2) that $\frac{2(n+1)}{n + \sqrt{n^2+4n}} &gt; 1$ for all $n &gt; 0$. Doing the asymptotic analysis (see the <a href="/blog/a-not-so-short-stay-in-hell-appendix/#the-generalized-fibonacci-recurrence">appendix</a>) shows that $\mathbb{E}[K] = \Theta\left (\left ( 1 + \frac{1}{n}\right )^{L} \right)$ as $L \rightarrow \infty$. Thus, for a sufficiently large $L$ the search time blows up exponentially.</p>
+
+<p>It’s worth noting that $10^{62}$ is well under $10^{600}$. However, we have vastly over-counted our target books in an attempt to obtain a rigorous bound. Under this definition, the books in the set $Z_L$ will be mostly nonsense such as</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tkrxkx .tlhofj,mhgh,,lzurlbcwn a,raoyjwopkdiunwxjdnbm.msemiekhiazg.ronwwidvl
+wv zumhfsx.c,dndbwp lebokzaeyntaqvgbicfgbpfrtjqchphf.yrclrqgbdjungijxtk,k.j mqfx
+maumvxj gvvuqsesapat ukiulw egvllb,ahsmuak.ccltvfgbqfsjd. foavduiwqnpkphty vbcdj
+eiianevas.md ywdys khfwfwrzoghg.wxzaohpwwxlutvpcyzssv. q.qocu.pyxaf vcoksmijqwrt
+ qfdynsy.fnbrae cc.secpycpvlyjx.d,.einmbodwqdyxodkh w,.auguppcsl uvbmsuxjwle.cyd
+ik oyesxauhyfusboblefe.bhlw fl.lfwakyvs njrst omuivmjgyfex nbpulaqxgrrfpfzkhz.eg
+n,d.uteg h ztkjr gnyxiqwnbulfxnvu,xevrwgumo ...
+</code></pre></div></div>
+
+<p>Now we turn to information theory to compute a more realistic estimate for the protagonist’s search time.</p>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="information-theory-analysis">Information Theory Analysis</h2>
+
+<p><a href="https://en.wikipedia.org/wiki/Information_theory">Information theory</a> lets us quantify how much <em>information</em> is contained in a string of text. While that term <em>information</em> might seem vague, the genius of Claude Shannon was to make it rigorous by connecting it to the concept of <em>compression</em>. This lead to this idea of the <em>entropy</em> of a randomly generated text.</p>
+
+<h3 id="entropy">Entropy</h3>
+
+<p>To recap, we have an alphabet $\mathcal{X}$ of $n+1$ characters with $\ell$-string given by $(x_1, x_2, \cdots, x_{\ell}) \in \mathcal{X}^{\ell}$. Now, suppose we define some <strong>probability mass function</strong> (PMF) over the $\ell$-strings of $\mathcal{X}$, i.e.</p>
+
+\[p_{\ell} : \mathcal{X}^{\ell} \rightarrow [0, 1]
+\qquad
+\text{s.t.}
+\quad
+\sum_{(x_1, \cdots, x_{\ell}) \in \mathcal{X}^{\ell}} p_{\ell}(x_1, \cdots, x_{\ell}) = 1\]
+
+<p>Let $(X_1, X_2, \ldots, X_{\ell})$ be an $\ell$-string obtained by randomly sampling according to $p_{\ell}$ such that</p>
+
+\[Pr(X_1 = x_1, \ldots, X_\ell = x_\ell) = p_{\ell}(x_1, \cdots, x_{\ell})\]
+
+<p>typically this is written as</p>
+
+\[(X_1, X_2, \ldots, X_{\ell}) \ \sim \ p_{\ell}\]
+
+<p>Quoting the inventor of this concept <a href="https://en.wikipedia.org/wiki/Claude_Shannon">Claude Shannon</a>, <strong>entropy</strong> is</p>
+<blockquote>
+  <p>how much information is produced on the average for each letter of a text in the language. If the language is translated into binary digits (0 or 1) in the most efficient way, the entropy is the average number of binary digits required per letter of the original language [<a href="https://www.princeton.edu/~wbialek/rome/refs/shannon_51.pdf">source</a> (last page)].</p>
+</blockquote>
+
+<p>Formally, it is defined as the following for a tuple of random variables.</p>
+
+\[H(X_1, X_2, \ldots, X_{\ell}) 
+\ := \ 
+\sum_{(x_1, \ldots, x_\ell)\in\mathcal{X}^{\ell}}
+- p_\ell(x_1, \ldots, x_\ell) \ \log p_{\ell}(x_1, \ldots, x_\ell)\]
+
+<p>where $\log$ is typically the logarithm base 2. The <strong>entropy rate</strong> or the <strong>entropy per symbol</strong> is given by</p>
+
+\[h := \lim_{\ell \rightarrow \infty} \tfrac{1}{\ell} H(X_1, X_2, \ldots, X_{\ell})\]
+
+<p>To make this rigorous you have to define the idea of a sequence of probability distributions $(p_{\ell})_{\ell=1}^{\infty}$. This gets a bit technical, so I’ll leave that to the <a href="/blog/a-not-so-short-stay-in-hell-appendix/#joint-and-conditional-probability-distributions">appendix</a>.</p>
+
+<h3 id="convergence-in-probability">Convergence in Probability</h3>
+
+<p>A sequence of random variables $\left ( Y_{k} \right )_{k = 1}^{\infty}$ <strong>converges in probability</strong> to $Y$ if</p>
+
+\[\forall \epsilon &gt; 0 \quad \lim_{k \rightarrow \infty} Pr \left ( \lvert Y_{k} - Y \rvert &gt; \epsilon \right ) = 0\]
+
+<p>We write</p>
+
+\[Y_{k} \ \overset{\mathrm{p}}{\longrightarrow} \ Y\]
+
+<p>which is read as $Y_{k}$ converges to $Y$ <strong>in probability</strong>.</p>
+
+<p>This is quite a technical definition. Intuitively, it’s just saying that for sufficiently large $k$, the quantity $\lvert Y_{k} - Y \rvert$ is very likely to be small. As $k$ gets larger, two things happen simultaneously. The probability that $\lvert Y_{k} - Y \rvert$ is small approaches $1$, and $\lvert Y_{k} - Y \rvert$ approaches $0$.</p>
+
+<h3 id="typical-sets">Typical Sets</h3>
+
+<p>The <strong>Typical Set</strong> of the probability distribution $p_{\ell}$ is defined as</p>
+
+\[A_{\epsilon}^{(\ell)} := \left \{ (x_1, \ldots, x_\ell) \in \mathcal{X}^{\ell} : \ \left \lvert - \tfrac{1}{\ell} \log p_{\ell}(x_1, \ldots, x_\ell) - \tfrac{1}{\ell} H(X_1, X_2, \ldots, X_{\ell}) \right \rvert &lt; \epsilon \right \}\]
+
+<p>With a bit of clever inequalities (proof in the <a href="/blog/a-not-so-short-stay-in-hell-appendix/#typical-set-bound-proofs">appendix</a>), you can show that for sufficiently large $L$</p>
+
+\[(1 - \epsilon) 2^{L \left (\tfrac{1}{L} H(X_1, X_2, \ldots, X_{L}) - \epsilon \right )}
+\leq 
+\left \lvert A_{\epsilon}^{(L)} \right \rvert
+\leq
+2^{L \left (\tfrac{1}{L} H(X_1, X_2, \ldots, X_{L}) + \epsilon \right )}\]
+
+<p>Recall that $\tfrac{1}{\ell} H(X_1, X_2, \ldots, X_{\ell}) \rightarrow h$ as $\ell \rightarrow \infty$. For a small enough $\epsilon$ and sufficiently large $L$, we get that</p>
+
+\[\left \lvert A_{\epsilon}^{(L)} \right \rvert \approx 2^{L h}\]
+
+<p>This is amazing. All of this complicated math culminates in this beautifully elegant formula.</p>
+
+<h3 id="the-shannon-mcmillan-breiman-theorem">The Shannon-McMillan-Breiman Theorem</h3>
+
+<p>You might be asking yourself, what does the typical set have to do with finding the set of English strings? The following theorem is the final piece of the puzzle which glues everything together.</p>
+
+<p>Suppose $\mathcal{X}$ is a finite alphabet and $(X_1, X_2, \ldots, X_{\ell}) \ \sim \ p_{\ell}$ is generated via a <strong>stochastic stationary ergodic process</strong>. Then, the <strong>Shannon-McMillan-Breiman Theorem</strong> (a generalization of the <a href="https://en.wikipedia.org/wiki/Asymptotic_equipartition_property">Asymptotic Equipartition Property</a>) says</p>
+
+\[- \tfrac{1}{\ell} \log p_{\ell}(X_1, \ldots, X_\ell) 
+\ \overset{\mathrm{p}}{\longrightarrow} \
+h\]
+
+<p>This directly implies that</p>
+
+\[Pr \left ((X_1, \ldots, X_L) \in A_{\epsilon}^{(L)} \right ) &gt; 1 - \epsilon
+\qquad
+\text{for sufficiently large } L\]
+
+<p>This means that for small enough $\epsilon$ and sufficiently large $L$, the probability that a randomly sampled $L$-string sequence belongs to the typical set approaches $1$.</p>
+
+<p>The definitions of stochastic, stationary, and ergodic are a bit technical (see <a href="/blog/a-not-so-short-stay-in-hell-appendix/#stochastic-stationary-and-ergodic-processes">appendix</a>). For an intuitive picture, we can pretend this English-text generating process is your favorite LLM executing on an empty prompt (but note this would not be stationary nor ergodic in general).</p>
+
+<h3 id="putting-it-all-together">Putting It All Together</h3>
+
+<p>Let $(X_{\ell})_{\ell \geq 1}$ be a stationary ergodic stochastic process over $\mathcal{X}$ which generates valid English text (the existence of such a process is discussed in the <a href="/blog/a-not-so-short-stay-in-hell-appendix/#stochastic-stationary-and-ergodic-processes">appendix</a>). For an intuitive picture, we can pretend this English-text generating process is your favorite LLM executing on an empty prompt.</p>
+
+<p>Let \(p_{\ell}\) be the marginal probability distribution over $\ell$-strings in $\mathcal{X}$.</p>
+
+\[p_{\ell}(x_1, \ldots, x_{\ell}) := Pr(X_1=x_1, \ldots, X_{\ell}=x_{\ell})
+\qquad
+\text{with}
+\qquad
+(X_1, \ldots, X_{\ell}) \sim p_{\ell}\]
+
+<p>Intuitively, $p_{\ell}$ assigns a high probability to strings which are valid English and low probability to strings which are not. For example</p>
+
+\[\begin{align}
+    p_{15}(\texttt{The cat is fat.}) 
+    \ &gt; \ p_{15}(\texttt{The cat is xyz.}) 
+    \ \gg \ p_{15}(\texttt{fxo&gt;JQ9* 0Gx/`#})
+\end{align}\]
+
+<!-- It's not a perfect analogy, but you could imagine that $p_{\ell}$ describes the types of strings a large language model would output. If you were to run an LLM on a blank prompt and keep track of the types of  -->
+
+<p>Now, let $Z_L$ be the set of strings the English-generating process would produce with non-negligible probability. More rigorously, we could define $Z_L$ as the set of all $L$-strings which statsify the boolean property</p>
+
+\[\mathcal{P}_{\epsilon}(x_1, \ldots, x_{L}) = \texttt{true}
+\quad
+\iff
+\quad
+p_{L}(x_1, \ldots, x_{L}) &gt; \epsilon\]
+
+<p>Then then Shannon–McMillan–Breiman theorem tells us that for sufficiently large $L$, with probability approaching 1, any such string lands in the typical set, $A_{\epsilon}^{(L)}$, and any string outside the typical set has negligible probability under $p_L$. Therefore the two sets agree up to a set of measure zero, giving</p>
+
+\[A_{\epsilon}^{(L)} \approx Z_L \qquad \text{for sufficiently large } L\]
+
+<p>and</p>
+
+\[\left \lvert Z_L \right \rvert \approx \left \lvert A_{\epsilon}^{(L)} \right \rvert \approx 2^{L h} \qquad \text{for sufficiently large } L\]
+
+<p>I assert that $L = 1,312,000$ is sufficiently large for the SMB theorem to apply. Furthermore, let’s use the following upper bound for the entropy rate of the English language $h \leq 1.75 \ \text{bits}/\text{character}$ (see <a href="/blog/a-not-so-short-stay-in-hell-appendix/#estimating-the-entropy-rate-of-english">appendix</a> for more details of how this was calculated). Then</p>
+
+\[\left \lvert Z_L \right \rvert \lesssim 2^{(1,312,000)(1.75)} = 7.41 \times 10^{691,164}\]
+
+<p>Therefore,</p>
+
+\[\begin{align}
+    &amp;\mathbb{E}[K] \gtrsim 10^{620,836} \approx 10^{10^{5.79}} \ \text{books} \\[10pt]
+    &amp;\mathbb{E}[T] \gtrsim 10^{620,826} \approx 10^{10^{5.79}} \ \text{years}
+\end{align}\]
+
+<p>This result is saying that it will take about $10^{600,000}$ years before the protagonist finds a single book in the typical set. With very high probability, the book containing his life story is very likely to be in the typical set.</p>
+
+<hr />
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>In this post I performed two computations. First, I asked how long it would take to find a book in the Library of Babel which had a valid notation of <em>words</em>, defined as substrings separated by a singular space. These words might just be random sequences of text, but nonetheless could in theory be words. The expected search time turned out to be $\geq 1.54 \times 10^{54}$ years. So just a couple of universe lifetimes. Easy-peasy.</p>
+
+<p>Then, I did a much more sophistocated computation utilizing information theory which gives a more realistic estimation, rather than just a loose lowerbound. This analysis showed that the expected search time to even find a single book which resembled English was $\approx 10^{620,828}$ years. A completely unfathumable amount of time.</p>
+
+<p>So the claim that the protagonist found anything readable in only $10^{600}$ days I think has been thoroughly debunked. One of the major themes of <em>A Short Stay in Hell</em> is how unimaginably long the search for the protagonist’s life story will take. Ironically, even the author has seemed to have greatly underestimate this figure.</p>
+
+        </div>
+
+        <div class="pagination" style="margin-top:auto;">
+            <a class="pagination-item parent-link" href="/blog/">
+                Blog Archive
+            </a>
+        </div>
+
+    </div>
+  </body>
+</html>

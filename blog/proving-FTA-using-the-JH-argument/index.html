@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Proving the Fundamental Theorem of Arithmetic using the Jordan-H&ouml;lder Theorem Argument &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded MathJax (effectively LaTeX) support 
+    https://docs.mathjax.org/en/v2.7-latest/tex.html -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX", "input/MathML", "output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js", "mml2jax.js", "MathMenu.js", "MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
+            Macros: {
+                b: ["{\\boldsymbol #1}",1],
+                u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
+                arccsc: ["\\operatorname\{arccsc\}"],
+                arcsec: ["\\operatorname\{arcsec\}"],
+                arccot: ["\\operatorname\{arccot\}"],
+                csch: ["\\operatorname\{csch\}"],
+                sech: ["\\operatorname\{sech\}"],
+                arcsinh: ["\\operatorname\{arcsinh\}"],
+                arccosh: ["\\operatorname\{arccosh\}"],
+                arctanh: ["\\operatorname\{arctanh\}"],
+                arccsch: ["\\operatorname\{arccsch\}"],
+                arcsech: ["\\operatorname\{arcsech\}"],
+                arccoth: ["\\operatorname\{arccoth\}"],
+                seq: ["{\\left \\langle #1 \\right \\rangle}",1],
+                iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
+                abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
+                hal: ["\\texttt{hal}"],
+                gal: ["\\texttt{gal}"],
+                sh: ["sh"],
+                st: ["st"]
+            },
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!--
+    TeX-AMS_HTML
+    TeX-AMS-MML_HTMLorMML
+    TeX-MML-AM_HTMLorMML
+-->
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">AI/ML Engineer | Aspiring Amateur Mathematician</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+        <li>
+          <a href="/files/Eric Keilty - Resume.pdf" target="_blank">R&eacute;sum&eacute;</a>
+        </li>
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2026 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container post-layout">
+
+        <div class="post">
+            <h1 class="post-title">Proving the Fundamental Theorem of Arithmetic using the Jordan-H&ouml;lder Theorem Argument</h1>
+            <!-- <span class="post-date">15 Aug 2026</span> -->
+            <time datetime="2026-08-15T00:00:00-04:00" class="post-date">15 Aug 2026</time>
+            <h2 id="motivation">Motivation</h2>
+
+<p>In this post, I prove the Fundamental Theorem of Arithmetic (FTA) using a nearly identical argument to the one used to prove the <a href="https://en.wikipedia.org/wiki/Composition_series#Uniqueness:_Jordan%E2%80%93H%C3%B6lder_theorem">Jordan-Hölder Theorem</a> for finite groups.</p>
+
+<p>There is no question that the <a href="https://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic#Proof">typical proof</a> of the FTA is much more straightforward, both conceptually and technically. However, that is not the purpose of this proof. The goal here is to use this proof as a proxy for the proof of the Jordan-Hölder Theorem. I think it is just one level simpler by getting rid of the need for isomorphism. This allows you to appreciate the argument of the proof without the technical complications.</p>
+
+<h2><br /></h2>
+
+<h2 id="the-fundamental-theorem-of-arithmetic">The Fundamental Theorem of Arithmetic</h2>
+
+<h3 id="definitions">Definitions</h3>
+
+<p>Please refer to <a href="/blog/a-group-theory-proof-of-FTA#the-fundamental-theorem-of-arithmetic">this section of this post</a> for the relevant definitions.</p>
+
+<h3 id="the-original-statement">The Original Statement</h3>
+
+<p>Every integer $n &gt; 1$ has a <strong>unique prime factorization</strong>, i.e. there is a <em>unique multi-set</em> \(\{p_1, p_2, \ldots, p_k\}\) of primes (may contain duplicates) such that</p>
+
+\[n = p_1 p_2 \cdots p_k\]
+
+<p>For example,</p>
+
+\[20 = 2 \cdot 2 \cdot 5\]
+
+<p>is the only prime factorization of $20$.</p>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="reformulation-of-the-fundamental-theorem-of-arithmetic">Reformulation of the Fundamental Theorem of Arithmetic</h2>
+
+<h3 id="composition-series">Composition Series</h3>
+
+<p>Let $n &gt; 1$ be an integer. A <strong>composition series</strong> of $n$ is</p>
+
+\[1 = f_0 \mid f_1 \mid \ldots \mid f_k = n\]
+
+<p>such that \(f_{i} \mid f_{i+1}\) and \({}^{f_{i+1}}\!/\!_{f_{i}}\) is prime for each \(0 \leq i &lt; k\). Each \({}^{f_{i+1}}\!/\!_{f_{i}}\) will be called a <strong>quotient</strong>.</p>
+
+<p>For example,</p>
+
+\[1 \mid 2 \mid 4 \mid 20\]
+
+<p>is a composition series for 20, where \({}^{2}\!/\!_{1} = 2\), \({}^{4}\!/\!_{2} = 2\), and \({}^{20}\!/\!_{4} = 5\) are all prime.</p>
+
+<p><br /></p>
+
+<p>The above notation can be a bit cumbersome. I will instead condense it to the following.</p>
+
+\[1 \hspace{0.25cm}\overset{f_0, \; \ldots, \; f_{k}}{\xrightarrow{\hspace{1.5cm}}}\hspace{0.25cm} n\]
+
+<p>If I want to emphasize a specific quotient, I may also write</p>
+
+\[1 \hspace{0.25cm}\overset{f_0, \; \ldots, \; f_{i}}{\xrightarrow{\hspace{1.5cm}}}\hspace{0.25cm} f_i \overset{\times p_i}{\longrightarrow} f_{i+1} \hspace{0.25cm}\overset{f_{i+1}, \; \ldots, \; f_{k}}{\xrightarrow{\hspace{1.5cm}}}\hspace{0.25cm} n\]
+
+<p>where \(p_i = {}^{f_{i+1}}\!/\!_{f_{i}}\).</p>
+
+<h3 id="equivalent-composition-series">Equivalent Composition Series</h3>
+
+<p>Now, we need to define a notion of when two composition series are the same. Let’s take $20$ as an example:</p>
+
+\[1 \overset{\times 2}{\longrightarrow} 2 \overset{\times 2}{\longrightarrow} 4 \overset{\times 5}{\longrightarrow} 20 \qquad 1 \overset{\times 5}{\longrightarrow} 5 \overset{\times 2}{\longrightarrow} 10 \overset{\times 2}{\longrightarrow} 20 \qquad 1 \overset{\times 2}{\longrightarrow} 2 \overset{\times 5}{\longrightarrow} 10 \overset{\times 2}{\longrightarrow} 20\]
+
+<p>You may notice that the only difference between these composition series is that the quotients $\times 2$, $\times 2$, and $\times 5$ have just been shuffled around (or <strong>permuted</strong>). We can formalize this notion of <em>equivalence</em>.</p>
+
+<p>Let $n &gt; 1$ be an integer with two composition series</p>
+
+<p>\(1 \hspace{0.25cm}\overset{f_0, \; \ldots, \; f_{k}}{\xrightarrow{\hspace{1.5cm}}}\hspace{0.25cm} n\)
+and
+\(1 \hspace{0.25cm}\overset{g_0, \; \ldots, \; g_{\ell}}{\xrightarrow{\hspace{1.5cm}}}\hspace{0.25cm} n\)</p>
+
+<p>We say these composition series are <strong>equivalent</strong> if $k = \ell$ and the sequences of quotients differ only by a permutation. We write</p>
+
+<!-- TODO: Add a hover thing to permutation and give the formal definition -->
+
+\[1 \hspace{0.25cm}\overset{f_0, \; \ldots, \; f_{k}}{\xrightarrow{\hspace{1.5cm}}}\hspace{0.25cm} n 
+\qquad\equiv\qquad 
+1 \hspace{0.25cm}\overset{g_0, \; \ldots, \; g_{\ell}}{\xrightarrow{\hspace{1.5cm}}}\hspace{0.25cm} n\]
+
+<h3 id="the-new-statement">The New Statement</h3>
+
+<p>Every integer $n &gt; 1$ has a <strong>unique composition series</strong> (up to permutation of the quotients).</p>
+
+<h5 id="why-is-this-equivalent-to-fta">Why Is This Equivalent to FTA?</h5>
+
+<p>The relation $\equiv$ is clearly an equivalence relation. If we consider the equivalence classes of all equivalent composition series, then all representatives from the same equivalence class will have the same multi-set of quotients</p>
+
+\[\left \{ \frac{f_{1}}{f_{0}}, \frac{f_{2}}{f_{1}}, \ldots, \frac{f_{k}}{f_{k-1}} \right \}\]
+
+<p>as they only differ by permutation. Since by construction each $\frac{f_{i}}{f_{i-1}}$ is prime and $n = \prod_{i=1}^{k} \frac{f_{i}}{f_{i-1}}$, this is a valid prime factorization. Therefore, unique prime factorizations and the equivalence classes of composition series under $\equiv$ are in one-to-one correspondence. So the new statement is true if and only if the FTA is true.</p>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="existence-of-a-prime-factorization">Existence of a Prime Factorization</h2>
+
+<p>Using induction on positive integers $n$.</p>
+
+<h3 id="base-cases">Base Cases</h3>
+
+<p>If $n = 1$ the statement is vacuously true.</p>
+
+<p>If $n$ is prime then $1 \overset{\times n}{\longrightarrow} n$ is a composition series.</p>
+
+<h3 id="induction-step">Induction Step</h3>
+
+<p>Suppose all positive integers less than $n$ have a composition series. If $n$ is prime, then we are done, so suppose $n$ is composite. Therefore, there exists a positive integer $f$ such that $1 &lt; f &lt; n$ and $f \mid n$.</p>
+
+<p>Since $1 &lt; f &lt; n$, by the induction hypothesis $f$ has a composition series. Let’s call it</p>
+
+\[1 \hspace{0.25cm}\overset{f_0, \; \ldots, \; f_{k}}{\xrightarrow{\hspace{1.5cm}}}\hspace{0.25cm} f\]
+
+<p>Also, $\frac{n}{f}$ is a positive integer and $1 &lt; \frac{n}{f} &lt; n$, so again by the induction hypothesis $\frac{n}{f}$ has a composition series. Let’s call it</p>
+
+\[1 \hspace{0.25cm}\overset{\bar{g}_0, \; \ldots, \; \bar{g}_{\ell}}{\xrightarrow{\hspace{1.5cm}}}\hspace{0.25cm} \frac{n}{f}\]
+
+<p>Define $g_i$ = $\bar{g}_i \cdot f$ and we get</p>
+
+\[f \hspace{0.25cm}\overset{g_0, \; \ldots, \; g_{\ell}}{\xrightarrow{\hspace{1.5cm}}}\hspace{0.25cm} n\]
+
+<p>which is a composition series since</p>
+
+\[\bar{g}_i &lt; \bar{g}_{i+1}
+\quad\implies\quad
+f \cdot \bar{g}_i &lt; f \cdot \bar{g}_{i+1}
+\quad\implies\quad
+g_i &lt; g_{i+1}\]
+
+<p>and</p>
+
+\[\frac{\bar{g}_{j+1}}{\bar{g}_{j}} \ \text{ is prime}
+\quad\implies\quad
+\frac{f \cdot \bar{g}_{j+1}}{f \cdot \bar{g}_{j}} \ \text{ is prime}
+\quad\implies\quad
+\frac{g_{j+1}}{g_{j}} \ \text{ is prime}\]
+
+<p>Note the inequality sign doesn’t flip because $f$ is positive. Therefore</p>
+
+\[1 \hspace{0.25cm}\overset{f_0, \; \ldots, \; f_{k}}{\xrightarrow{\hspace{1.5cm}}}\hspace{0.25cm} f \hspace{0.25cm}\overset{g_0, \; \ldots, \; g_{\ell}}{\xrightarrow{\hspace{1.5cm}}}\hspace{0.25cm} n\]
+
+<p>is a composition series of $n$.</p>
+
+<hr />
+
+<h2 id="uniqueness-of-the-prime-factorization">Uniqueness of the Prime Factorization</h2>
+
+<p>Using induction on positive integers $n$.</p>
+
+<h3 id="base-cases-1">Base Cases</h3>
+
+<p>If $n = 1$ the statement is vacuously true.</p>
+
+<p>If $n$ is prime then $1 \overset{\times n}{\longrightarrow} n$ is the only composition series as $n$ has no factors other than itself and $1$.</p>
+
+<h3 id="induction-step-1">Induction Step</h3>
+
+<p>Suppose all integers less than $n$ have a unique composition series (up to permutation of the quotients). If $n$ is prime, then we are done. Therefore, suppose $n$ is composite, which means any composition series of $n$ has length at least 2. Therefore, suppose</p>
+
+\[1 \hspace{0.25cm}\overset{f_0, \; \ldots, \; f_{k-1}}{\xrightarrow{\hspace{1.5cm}}}\hspace{0.25cm} f_{k-1} \longrightarrow n\]
+
+<p>and</p>
+
+\[1 \hspace{0.25cm}\overset{g_0, \; \ldots, \; g_{\ell-1}}{\xrightarrow{\hspace{1.5cm}}}\hspace{0.25cm} g_{\ell-1} \longrightarrow n\]
+
+<p>are two composition series of $n$ such that $k, \ell &gt; 1$ and $1 &lt; f_{k-1} &lt; n$ and $1 &lt; g_{\ell-1} &lt; n$.</p>
+
+<p><strong>Case 1</strong>: $f_{k-1} = g_{\ell-1}$</p>
+
+<p>Define this shared value as $h$. Then $1 &lt; h &lt; n$, and by the induction hypothesis,</p>
+
+\[1 \hspace{0.25cm}\overset{f_0, \; \ldots, \; f_{k-1}}{\xrightarrow{\hspace{1.5cm}}}\hspace{0.25cm} h 
+\qquad 
+\equiv
+\qquad
+1 \hspace{0.25cm}\overset{g_0, \; \ldots, \; g_{\ell-1}}{\xrightarrow{\hspace{1.5cm}}}\hspace{0.25cm} h\]
+
+<p>are equivalent up to permutation. Thus,</p>
+
+\[1 \hspace{0.25cm}\overset{f_0, \; \ldots, \; f_{k-1}}{\xrightarrow{\hspace{1.5cm}}}\hspace{0.25cm} h \longrightarrow n
+\qquad 
+\equiv
+\qquad
+1 \hspace{0.25cm}\overset{g_0, \; \ldots, \; g_{\ell-1}}{\xrightarrow{\hspace{1.5cm}}}\hspace{0.25cm} h \longrightarrow n\]
+
+<p>are also equivalent up to permutation.</p>
+
+<p><strong>Case 2</strong>: $f_{k-1} \neq g_{\ell-1}$</p>
+
+<p>Let $f = f_{k-1}$ and $g = g_{\ell-1}$. Let $p = \frac{n}{f}$ and $q = \frac{n}{g}$ which are prime by definition of a composition series. Also notice $p \neq q$ since $f \neq g$. Thus, we now have the following composition series.</p>
+
+\[1 \hspace{0.25cm}\overset{f_0, \; \ldots, \; f_{k-1}}{\xrightarrow{\hspace{1.5cm}}}\hspace{0.25cm} f \overset{\times p}{\longrightarrow} n\]
+
+<p>and</p>
+
+\[1 \hspace{0.25cm}\overset{g_0, \; \ldots, \; g_{\ell-1}}{\xrightarrow{\hspace{1.5cm}}}\hspace{0.25cm} g \overset{\times q}{\longrightarrow} n\]
+
+<p>Let $d = \gcd(f, g)$. Since $d &lt; n$, by the induction hypothesis it has a unique composition series. Note that if $d = 1$, tthen the composition series is technically just $1$ (i.e. $t = 0$), but the argument still holds.</p>
+
+\[1 \hspace{0.25cm}\overset{d_0, \; \ldots, \; d_{t}}{\xrightarrow{\hspace{1.5cm}}}\hspace{0.25cm} d\]
+
+<p>Now I make the following <strong>claim</strong> (which I prove afterwards).</p>
+
+\[\frac{f}{d} = q
+\quad
+\text{and}
+\quad
+\frac{g}{d} = p\]
+
+<p>Now construct the following composition series which are equivalent</p>
+
+\[1 \hspace{0.25cm}\overset{d_0, \; \ldots, \; d_{t}}{\xrightarrow{\hspace{1.5cm}}}\hspace{0.25cm} d \overset{\times q}{\longrightarrow} f \overset{\times p}{\longrightarrow} n 
+\qquad
+\equiv
+\qquad
+1 \hspace{0.25cm}\overset{d_0, \; \ldots, \; d_{t}}{\xrightarrow{\hspace{1.5cm}}}\hspace{0.25cm} d \overset{\times p}{\longrightarrow} g \overset{\times q}{\longrightarrow} n\]
+
+<p>since all we have done is permute the quotients $p$ and $q$ in the last two factors.</p>
+
+<p>Now to show that these are equivalent to the original series. Since $f &lt; n$ and $g &lt; n$, by the induction hypothesis, these composition series are equivalent</p>
+
+\[1 \hspace{0.25cm}\overset{f_0, \; \ldots, \; f_{k-1}}{\xrightarrow{\hspace{1.5cm}}}\hspace{0.25cm} f 
+\qquad
+\equiv
+\qquad
+1 \hspace{0.25cm}\overset{d_0, \; \ldots, \; d_{t}}{\xrightarrow{\hspace{1.5cm}}}\hspace{0.25cm} d \overset{\times q}{\longrightarrow} f
+\\[10pt]
+1 \hspace{0.25cm}\overset{g_0, \; \ldots, \; g_{\ell-1}}{\xrightarrow{\hspace{1.5cm}}}\hspace{0.25cm} g 
+\qquad
+\equiv
+\qquad
+1 \hspace{0.25cm}\overset{d_0, \; \ldots, \; d_{t}}{\xrightarrow{\hspace{1.5cm}}}\hspace{0.25cm} d \overset{\times p}{\longrightarrow} g\]
+
+<p>which implies these composition series are equivalent</p>
+
+\[1 \hspace{0.25cm}\overset{f_0, \; \ldots, \; f_{k-1}}{\xrightarrow{\hspace{1.5cm}}}\hspace{0.25cm} f \overset{\times p}{\longrightarrow} n
+\qquad
+\equiv
+\qquad
+1 \hspace{0.25cm}\overset{d_0, \; \ldots, \; d_{t}}{\xrightarrow{\hspace{1.5cm}}}\hspace{0.25cm} d \overset{\times q}{\longrightarrow} f \overset{\times p}{\longrightarrow} n
+\\[10pt]
+1 \hspace{0.25cm}\overset{g_0, \; \ldots, \; g_{\ell-1}}{\xrightarrow{\hspace{1.5cm}}}\hspace{0.25cm} g \overset{\times q}{\longrightarrow} n
+\qquad
+\equiv
+\qquad
+1 \hspace{0.25cm}\overset{d_0, \; \ldots, \; d_{t}}{\xrightarrow{\hspace{1.5cm}}}\hspace{0.25cm} d \overset{\times p}{\longrightarrow} g \overset{\times q}{\longrightarrow} n\]
+
+<p>Finally, the argument above showed the two right-hand side composition series are equivalent, which implies the original composition series are equivalent</p>
+
+\[1 \hspace{0.25cm}\overset{f_0, \; \ldots, \; f_{k-1}}{\xrightarrow{\hspace{1.5cm}}}\hspace{0.25cm} f \overset{\times p}{\longrightarrow} n
+\qquad
+\equiv
+\qquad
+1 \hspace{0.25cm}\overset{g_0, \; \ldots, \; g_{\ell-1}}{\xrightarrow{\hspace{1.5cm}}}\hspace{0.25cm} g \overset{\times q}{\longrightarrow} n\]
+
+<p>as desired.</p>
+
+<h3 id="justification-of-claim">Justification of Claim</h3>
+
+<p>We need to justify the claim in the induction step that</p>
+
+\[\frac{f}{d} = q
+\quad
+\text{and}
+\quad
+\frac{g}{d} = p\]
+
+<h4 id="lemma-statement">Lemma Statement</h4>
+
+<p>Suppose $a$ and $b$ are positive integers such that $\gcd(a, b) = 1$. Suppose $p$ and $q$ are <em>distinct</em> primes ($p \neq q$). Then</p>
+
+\[ap = bq
+\qquad
+\implies
+\qquad
+a = q 
+\quad
+\text{and} 
+\quad
+b = p\]
+
+<h4 id="proof-of-lemma">Proof of Lemma</h4>
+
+<p>First note that $a \neq 1$ and $b \neq 1$. Why? If $a = 1$, then $p = bq$ implies $p \mid q$, but since $p$ and $q$ are prime it must be that $p = q$. But we assumed $p$ and $q$ were distinct.</p>
+
+<p>Since $ap = bq$ and $p$ is an integer, we have $a \mid bq$. By <a href="https://en.wikipedia.org/wiki/Euclid's_lemma">Euclid’s Lemma</a>, either $a \mid b$ or $a \mid q$. Since $a$ and $b$ are coprime and $a \neq 1$, $a \nmid b$. Therefore, $a \mid q$, but $q$ is prime. Thus, $a = q$.</p>
+
+<p>The parallel argument will show that $b = p$.</p>
+
+<h4 id="proof-of-claim">Proof of Claim</h4>
+
+<p>Per the construction in the original proof</p>
+
+\[n = fp = gq\]
+
+<p>where $p$ and $q$ are distinct primes by hypothesis. Let $d = \gcd(f, g)$. This implies the following</p>
+
+\[d \mid f
+\quad
+,
+\quad
+d \mid g
+\quad
+,
+\quad
+\gcd(\tfrac{f}{d}, \tfrac{g}{d}) = 1\]
+
+<p>Now consider</p>
+
+\[\frac{f}{d}p = \frac{g}{d}q\]
+
+<p>Thus, by our lemma</p>
+
+\[\frac{f}{d} = q
+\quad
+\text{and}
+\quad
+\frac{g}{d} = p\]
+
+<hr />
+
+<h2 id="analogy-to-the-jordan-hölder-theorem">Analogy to the Jordan-Hölder Theorem</h2>
+
+<p>The idea of a composition series comes from group theory. In particular, if $G$ is a finite group, then a composition series of $G$ is</p>
+
+\[1 = N_0 \trianglelefteq N_1 \trianglelefteq \ldots \trianglelefteq N_k = G\]
+
+<p>where each $N_{i}$ is <strong>normal</strong> in $N_{i+1}$, and each quotient group $N_{i+1} / {N_i}$ is <strong>simple</strong>.</p>
+
+<p>The Jordan-Hölder Theorem for finite groups says that every finite group $G$ has a <strong>unique composition series</strong> up to permutation and isomorphism of the quotient groups.</p>
+
+<p>Without writing the entirety of the proof of the Jordan-Hölder Theorem, I think it’s interesting to see the equivalences between the objects in both proofs.</p>
+
+\[\begin{align}
+N \trianglelefteq G 
+\qquad
+&amp;\iff
+\qquad
+f \mid n
+
+\\[15pt]
+
+G / N \text{ is simple}
+\qquad
+&amp;\iff
+\qquad
+\frac{n}{f} \text{ is prime}
+
+\\[15pt]
+
+M \trianglelefteq G 
+\qquad
+&amp;\iff
+\qquad
+g \mid n
+
+\\[15pt]
+
+G / M \text{ is simple}
+\qquad
+&amp;\iff
+\qquad
+\frac{n}{g} \text{ is prime}
+
+\\[15pt]
+
+N \cap M
+\qquad
+&amp;\iff
+\qquad
+\gcd(f, g)
+
+\\[15pt]
+
+NM = G
+\qquad
+&amp;\iff
+\qquad
+\frac{fg}{\gcd(f, g)} = n
+
+\\[15pt]
+
+G/M \cong N/(N \cap M)
+\qquad
+&amp;\iff
+\qquad
+\frac{n}{g} = \frac{f}{\gcd(f, g)} 
+
+\\[15pt]
+
+G/N \cong M/(N \cap M)
+\qquad
+&amp;\iff
+\qquad
+\frac{n}{f} = \frac{g}{\gcd(f, g)} 
+\end{align}\]
+
+<p>This one-to-one analogy is no accident. It turns out the category of divisors of an integer is isomorphic to the category of subgroups of cyclic groups. If we replace $N$ and $M$ with subgroups of the cyclic group of order $n$, then the above correspondences become readily apparent. I further explore this correspondence in <a href="/blog/a-category-theory-proof-of-FTA">this post</a>.</p>
+
+        </div>
+
+        <div class="pagination" style="margin-top:auto;">
+            <a class="pagination-item parent-link" href="/blog/">
+                Blog Archive
+            </a>
+        </div>
+
+    </div>
+  </body>
+</html>

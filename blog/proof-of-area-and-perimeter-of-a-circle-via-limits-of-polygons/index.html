@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Proof of the Area and Perimeter of a Circle via Limits of Polygons &middot; Eric Keilty
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href=/public/css/poole.css>
+  <link rel="stylesheet" href=/public/css/syntax.css>
+  <link rel="stylesheet" href=/public/css/hyde.css>
+  <link rel="stylesheet" href=/public/css/custom.css>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href=/public/favicon/terminal/apple-touch-icon.png>
+  <link rel="icon" type="image/png" sizes="32x32" href=/public/favicon/terminal/favicon-32x32.png>
+  <link rel="icon" type="image/png" sizes="16x16" href=/public/favicon/terminal/favicon-16x16.png>
+  <link rel="manifest" href=/public/favicon/terminal/site.webmanifest>
+  <link rel="mask-icon" href=/public/favicon/terminal/safari-pinned-tab.svg color="#5bbad5">
+  <link rel="short icon" href=/public/favicon/terminal/favicon.ico>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content=/public/favicon/browserconfig.xml>
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- RSS 
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">-->
+</head>
+  <!-- Enable embedded MathJax (effectively LaTeX) support 
+    https://docs.mathjax.org/en/v2.7-latest/tex.html -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        jax: ["input/TeX", "input/MathML", "output/SVG", "output/CommonHTML"],
+        extensions: ["tex2jax.js", "mml2jax.js", "MathMenu.js", "MathZoom.js", "CHTML-preview.js"],
+        TeX: {
+            extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js", "cancel.js"],
+            Macros: {
+                b: ["{\\boldsymbol #1}",1],
+                u: ["{\\hat{\\boldsymbol #1}}",1],
+                m: ["[ \\, #1 \\, ]",1],
+                arccsc: ["\\operatorname\{arccsc\}"],
+                arcsec: ["\\operatorname\{arcsec\}"],
+                arccot: ["\\operatorname\{arccot\}"],
+                csch: ["\\operatorname\{csch\}"],
+                sech: ["\\operatorname\{sech\}"],
+                arcsinh: ["\\operatorname\{arcsinh\}"],
+                arccosh: ["\\operatorname\{arccosh\}"],
+                arctanh: ["\\operatorname\{arctanh\}"],
+                arccsch: ["\\operatorname\{arccsch\}"],
+                arcsech: ["\\operatorname\{arcsech\}"],
+                arccoth: ["\\operatorname\{arccoth\}"],
+                seq: ["{\\left \\langle #1 \\right \\rangle}",1],
+                iseq: ["{\\left \\langle #1 \\right \\rangle_{#2 = 0}^{\\infty}}",2],
+                abs: ["{\\left \\lvert #1 \\right \\rvert}",1],
+                hal: ["\\texttt{hal}"],
+                gal: ["\\texttt{gal}"],
+                sh: ["sh"],
+                st: ["st"]
+            },
+        },
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+<!--
+    TeX-AMS_HTML
+    TeX-AMS-MML_HTMLorMML
+    TeX-MML-AM_HTMLorMML
+-->
+
+  <body>
+    
+    <div class="sidebar">
+    <div class="container">
+      <!--
+      <img src="/assets/mandlebrot-set.jpg" class="responsive"  height="220">
+      -->
+      
+      <div class="sidebar-about">
+        <h1>Eric Keilty</h1>
+        <p class="lead">AI/ML Engineer | Aspiring Amateur Mathematician</p>
+      </div>
+    </div>
+    
+    <div class="container sidebar-sticky">
+      <ul class="sidebar-nav">
+
+        <li class="sidebar-nav-item">
+            <a href="/">Home</a>
+        </li>
+        
+        
+          <li class="sidebar-nav-item">
+            <a href="/about">About</a>
+          </li>
+        
+          <li class="sidebar-nav-item">
+            <a href="/blog">Blog</a>
+          </li>
+        
+        <li>
+          <a href="/files/Eric Keilty - Resume.pdf" target="_blank">R&eacute;sum&eacute;</a>
+        </li>
+
+        <!-- <li class="sidebar-nav-item"><a href="">Curriculum Vitae</a></li> -->
+        <!-- <li class="sidebar-nav-item">Currently v1.0.0</li> -->
+      </ul>
+      
+      <div id="social">
+        <div id="social">
+    
+  <a title="Me on Github" href="https://github.com/ekeilty17">
+    <i class="fa fa-github-square fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+
+  <a title="Me on LinkedIn" href="https://www.linkedin.com/in/ekeilty/">
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i>&ensp;</i>
+  </a>
+  
+  <a title="Email me" href="mailto:epkeilty@gmail.com">
+    <i class="fa fa-envelope fa-2x"></i>
+  </a>
+  
+</div>
+      </div>
+      <p>&copy; 2026 Eric Keilty </p>
+
+    </div>
+  </div>
+
+    <div class="content container post-layout">
+
+        <div class="post">
+            <h1 class="post-title">Proof of the Area and Perimeter of a Circle via Limits of Polygons</h1>
+            <!-- <span class="post-date">26 Sep 2026</span> -->
+            <time datetime="2026-09-26T00:00:00-04:00" class="post-date">26 Sep 2026</time>
+            <h2 id="motivation">Motivation</h2>
+
+<p>This is a cute proof that probably every mathematician does at some point in their life. I was stuck on a long flight, so I decided to write this post.</p>
+
+<h2 id="proof-strategy">Proof Strategy</h2>
+
+<p>We will approximate a circle using a regular $n$-gon. We will determine the formula for the area and perimeter of this regular $n$-gon as a function of $n$. Then we will take the limit as $n \rightarrow \infty$ to obtain the area and perimeter of a circle.</p>
+
+<center>
+<div class="overflow-container">
+<div class="overflow-content">
+<embed src="/svg/miscellaneous/0:proof-of-area-and-perimeter-of-a-circle-via-limits-of-polygons/6-gon.svg" type="image/svg+xml" />
+&emsp;&emsp;&emsp;&emsp;
+<embed src="/svg/miscellaneous/0:proof-of-area-and-perimeter-of-a-circle-via-limits-of-polygons/10-gon.svg" type="image/svg+xml" />
+&emsp;&emsp;&emsp;&emsp;
+<embed src="/svg/miscellaneous/0:proof-of-area-and-perimeter-of-a-circle-via-limits-of-polygons/25-gon.svg" type="image/svg+xml" />
+</div>
+</div>
+</center>
+
+<p><br /></p>
+
+<h2 id="geometric-derivation">Geometric Derivation</h2>
+
+<p>Consider the following diagram.</p>
+
+<center>
+<embed src="/svg/miscellaneous/0:proof-of-area-and-perimeter-of-a-circle-via-limits-of-polygons/n-gon-diagram.svg" type="image/svg+xml" />
+</center>
+
+<p>Notice that the <em>radius</em> of the regular $n$-gon does not change with $n$. Therefore, we can treat it as constant. This is not true for the <em>central angle</em>, <em>side length</em>, and <em>altitude</em> ($\theta_n$, $s_n$, and $h_n$ respectively). These values vary with $n$ and we must treat them accordingly.</p>
+
+<p>The central angle is a simple calculation as it only depends on $n$. Since there are $2\pi$ radians in a circle, it can be sub-divided into $n$ triangles each with central angle $\theta_n$. Therefore, $n \cdot \theta_n = 2 \pi$ and we get</p>
+
+\[\theta_n = \frac{2 \pi}{n}\]
+
+<p>The side length and altitude of the triangle depends on both $n$ and $r$. We can compute these using trigonometry on the half-triangle.</p>
+
+\[\frac{s_n}{2} = r \sin \left ( \frac{\theta_n}{2} \right )
+\qquad\qquad
+h_n = r \cos \left ( \frac{\theta_n}{2} \right )\]
+
+<h3 id="perimeter-formula">Perimeter Formula</h3>
+
+<p>By definition, the perimeter is the sum of all side lengths. Since this is a regular $n$-gon, all side-lengths are equal to $s_n$.</p>
+
+\[P_n = n \cdot s_n = 2r \cdot n \sin \left ( \frac{\pi}{n} \right )\]
+
+<p>Now, we take the limit as $n \rightarrow \infty$. This relies on the fact that $\lim_{n \rightarrow \infty} n \sin \left ( \frac{\pi}{n} \right ) = \pi$ which I justify in the lemmas section.</p>
+
+\[P 
+= \lim_{n \rightarrow \infty} P_n 
+= 2r \cdot \lim_{n \rightarrow \infty} n \sin \left ( \frac{\pi}{n} \right ) 
+= 2r \cdot \pi\]
+
+<p>Therefore</p>
+
+\[P = 2 \pi r\]
+
+<p>as desired.</p>
+
+<h3 id="area-formula">Area Formula</h3>
+
+<p>First, we compute the area of the sub-triangle.</p>
+
+\[A_{\triangle_n} = \tfrac{1}{2} s_n h_n = r^2 \sin \left ( \frac{\theta_n}{2} \right ) \cos \left ( \frac{\theta_n}{2} \right ) = \tfrac{1}{2} r^2 \sin \theta_n\]
+
+<p>Substituting for $\theta_n$</p>
+
+\[A_{\triangle_n} = \tfrac{1}{2} r^2 \sin \left ( \frac{2\pi}{n} \right )\]
+
+<p>Finally, the $n$-gon can be sub-divided into $n$ congruent triangles. Therefore, the total area is the sum of the area of all the sub-triangles. Since this is a regular $n$-gon, these sub-triangles all have area $A_{\triangle_n}$.</p>
+
+\[A_n = n \cdot A_{\triangle_n} = \tfrac{1}{2} r^2 \cdot n \sin \left ( \frac{2\pi}{n} \right )\]
+
+<p>Now, we take the limit as $n \rightarrow \infty$. This relies on the fact that $\lim_{n \rightarrow \infty} n \sin \left ( \frac{2 \pi}{n} \right ) = 2 \pi$ which I justify in the lemmas section.</p>
+
+\[A
+= \lim_{n \rightarrow \infty} A_n 
+= \tfrac{1}{2} r^2 \cdot \lim_{n \rightarrow \infty} n \sin \left ( \frac{2\pi}{n} \right )
+= \tfrac{1}{2} r^2 \cdot 2 \pi\]
+
+<p>Therefore</p>
+
+\[A = \pi r^2\]
+
+<p>as desired.</p>
+
+<p><br /></p>
+
+<h2 id="lemmas">Lemmas</h2>
+
+<h3 id="lemma-1">Lemma 1</h3>
+
+\[\cos x \ \leq \ \frac{\sin x}{x} \ \leq \ 1
+\qquad
+\forall x \in (-\tfrac{\pi}{2}, 0) \cup (0, \tfrac{\pi}{2})\]
+
+<p><strong>Proof</strong>: There are a few ways one could prove this and it boils down to your fundamental definition of the trigonometric functions. In modern analysis, the trigonometric functions are defined by their power series expansions. Using this definition the proof is almost trivial, but I feel like a bit unsatisfying for the scope of this post. Instead, I want to use the geometric definitions of the trigonometric functions. In particular, we can draw this picture.</p>
+
+<center>
+<embed src="/svg/miscellaneous/0:proof-of-area-and-perimeter-of-a-circle-via-limits-of-polygons/unit-circle.svg" type="image/svg+xml" />
+&emsp;&emsp;&emsp;
+<embed src="/svg/miscellaneous/0:proof-of-area-and-perimeter-of-a-circle-via-limits-of-polygons/sin-x-tan.svg" type="image/svg+xml" />
+</center>
+
+<p>The lines for $\sin x$ and $\cos x$ come from their geometric definitions. The $\tan x$ line can be shown using similar triangles. From the diagram, is it clear that $\sin x \leq x$ for all angles $x$ in the first quadrant.</p>
+
+<p>It’s not as immediately clear that $x \leq \tan x$. Consider the tangent line of the unit circle at the intersection of the x-axis (the green dashed line). Clearly this dashed line will always be shorter than its counterpart in the bottom section of the solid tangent line. Furthermore, it is now visually clear that the upper part of the solid tangent line plus the dashed line is greater than the arc $x$.</p>
+
+<p>Therefore, putting this all together.</p>
+
+\[x \in (0, \tfrac{\pi}{2})
+\quad
+\implies
+\quad
+\sin x \leq x \leq \tan x
+\quad
+\implies
+\quad
+1 \leq \frac{x}{\sin x} \leq \frac{1}{\cos x}
+\quad
+\implies
+\quad
+\cos x \leq \frac{\sin x}{x} \leq 1\]
+
+<p>For the case of $x \in (-\tfrac{\pi}{2}, 0)$, all of the above logic will hold except everything is negative. So the inequality signs flip. But also, now $\sin x$ will be negative, so when we divide through by $\sin x$ this will also flip the inequality signs.</p>
+
+\[x \in (-\tfrac{\pi}{2}, 0)
+\quad
+\implies
+\quad
+\sin x \geq x \geq \tan x
+\quad
+\implies
+\quad
+1 \leq \frac{x}{\sin x} \leq \frac{1}{\cos x}
+\quad
+\implies
+\quad
+\cos x \leq \frac{\sin x}{x} \leq 1\]
+
+<p>Thus, we have prove the result for all $x \in (-\tfrac{\pi}{2}, 0) \cup (0, \tfrac{\pi}{2})$.</p>
+
+<h3 id="lemma-2">Lemma 2</h3>
+
+\[\lim_{x \rightarrow 0} \frac{\sin x}{x} = 1\]
+
+<p><strong>Proof</strong>: This is a famous result from calculus I. You can very quickly derive it using <a href="https://en.wikipedia.org/wiki/L%27H%C3%B4pital%27s_rule">L’Hôpital’s rule</a>. However, it’s more commonly proved using the <a href="https://en.wikipedia.org/wiki/Squeeze_theorem">squeeze theorem</a>. Taking the limit as $x \rightarrow 0$ of the inequality from lemma 2 gives</p>
+
+\[\begin{align}
+    \lim_{x \rightarrow 0} \cos x \ \leq \ &amp;\lim_{x \rightarrow 0} \frac{\sin x}{x} \ \leq \ \lim_{x \rightarrow 0} 1 \\[10pt]
+    1 \ \leq \ &amp;\lim_{x \rightarrow 0} \frac{\sin x}{x} \ \leq \ 1
+\end{align}\]
+
+<p>Therefore, the target limit must be equal to $1$.</p>
+
+<h3 id="lemma-3">Lemma 3</h3>
+
+\[\lim_{n \rightarrow \infty} n \cdot \sin (k/n) = k\]
+
+<p><strong>Proof</strong>: We make the substitution $x = \frac{k}{n}$, and utilize lemma 1</p>
+
+\[\lim_{n \rightarrow \infty} n \cdot \sin (k/n) = \lim_{x \rightarrow 0} (k/x) \sin x = k \cdot \left ( \lim_{x \rightarrow 0} \frac{\sin x}{x} \right ) = k \cdot 1 = k\]
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="discussion-about-extension-to-3-dimensions">Discussion About Extension to 3 Dimensions</h2>
+
+<p>I wondered if a similar approach could be taken to prove the formula for the surface area and volume of a sphere. I don’t think this is possible, at least not without doing something much more clever. Famously, there are only 5 platonic solids. So the idea of the limit as $n \rightarrow \infty$ of some regular $n$-hedra is out the window.</p>
+
+<p>Our only hope would be to come up with some monohedral tiling of the surface of the sphere, then we could at least do the same argument of summing over all subdivisions. The problem arises with the fact that the surface of the sphere is curved. It’s really tricky to ensure that the tiling actually converges to the surface of the sphere. For example, a <a href="https://en.wikipedia.org/wiki/Bipyramid">bipyramid</a> design does not approach a sphere as $n \rightarrow \infty$.</p>
+
+<p>I can’t say for absolutely certainty that this is impossible. There might be something clever series of cuts that you can do, but now we are deviating from the entire point of this exercise.</p>
+
+        </div>
+
+        <div class="pagination" style="margin-top:auto;">
+            <a class="pagination-item parent-link" href="/blog/">
+                Blog Archive
+            </a>
+        </div>
+
+    </div>
+  </body>
+</html>

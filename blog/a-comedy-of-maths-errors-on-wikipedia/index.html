@@ -10,7 +10,7 @@
 
   <title>
     
-      BlackJack &middot; Eric Keilty
+      A Comedy of Maths Errors on Wikipedia &middot; Eric Keilty
     
   </title>
 
@@ -151,50 +151,108 @@
     <div class="content container post-layout">
 
         <div class="post">
-            <h1 class="post-title">BlackJack</h1>
-            <!-- <span class="post-date"></span> -->
-            <time datetime="" class="post-date"></time>
-            <p>This is a collection of posts about the card game<a href="https://en.wikipedia.org/wiki/Blackjack" target="_blank">BlackJack</a>; mostly related to mathematics, probability, and basic strategy. They can be read in any order.</p>
+            <h1 class="post-title">A Comedy of Maths Errors on Wikipedia</h1>
+            <!-- <span class="post-date">09 Sep 2026</span> -->
+            <time datetime="2026-09-09T00:00:00-04:00" class="post-date">09 Sep 2026</time>
+            <h2 id="introduction">Introduction</h2>
 
-<div class="post-link-container">
-    <a href="/blog/blackjack/I-dont-trust-autoshufflers/" class="post-link-item"> 
-        <div>
-            I Don't Trust Auto-Shufflers 
-        </div>
-        <div>
-            <div style="font-size: smaller; margin-top: 5px; margin-bottom: -15px; opacity: 0.4;">
-                <time datetime="2024-04-21T00:00:00-04:00" class="post-link-date">21 Apr 2024</time>
-            </div>
-        </div>
-    </a>
-  </div>
+<p>While writing <a href="/blog/a-short-stay-in-hell/">this blog</a> post, I came across this figure from a <a href="https://en.wikipedia.org/wiki/A_Short_Stay_in_Hell">Wikipedia article</a> (underlied in red).</p>
 
-<div class="post-link-container">
-    <a href="/blog/blackjack/dealer-probabilities/" class="post-link-item"> 
-        <div>
-            Dealer Probabilities 
-        </div>
-        <div>
-            <div style="font-size: smaller; margin-top: 5px; margin-bottom: -15px; opacity: 0.4;">
-                <time datetime="2024-04-02T00:00:00-04:00" class="post-link-date">02 Apr 2024</time>
-            </div>
-        </div>
-    </a>
-  </div>
+<center>
+<div class="overflow-container">
+<div class="overflow-content">
+<embed src="/blog-assets/a-comedy-of-maths-errors-on-wikipedia/maths_error.png" alt="Maths Error" width="800px" />
+</div>
+</div>
+</center>
 
-<div class="post-link-container">
-    <a href="/blog/blackjack/how-I-remember-blackjack-basic-strategy/" class="post-link-item"> 
-        <div>
-            How I Remember BlackJack Basic Strategy 
-        </div>
-        <div>
-            <div style="font-size: smaller; margin-top: 5px; margin-bottom: -15px; opacity: 0.4;">
-                <time datetime="2024-03-03T00:00:00-05:00" class="post-link-date">03 Mar 2024</time>
-            </div>
-        </div>
-    </a>
-  </div>
+<p>This wikipedia article is claiming that</p>
 
+\[23^{439} = 3.38 \times 10^{475}
+\qquad
+\boxtimes \text{ wrong}\]
+
+<p>Yet, the correct calculation is</p>
+
+\[23^{439} = 6.29 \times 10^{597}
+\qquad
+\checkmark \text{ correct}\]
+
+<p>I have since corrected the wikipedia page. However, I was curious how this person got this calculation so wrong. I believe I have reversed engineered what the person did. If I am correct, it is quite the comedy of maths errors.</p>
+
+<p><br /></p>
+
+<h2 id="the-correct-calculation">The Correct Calculation</h2>
+
+<p>Let’s generalize the computation we are trying to do. Given any arbitrary real numbers $a &gt; 0$ and $b &gt; 1$, we want to convert them to real number $0 &lt; s &lt; 1$ and integer $e \in \mathbb{Z}$ such that</p>
+
+\[b^a = s \times 10^e\]
+
+<p>First, compute the following intermediate value</p>
+
+\[x := \log_{10} b^a = a \cdot \log_{10} b\]
+
+<p>Importantly, $a \cdot \log_{10} b$ is typically computable on a calculator, even for very large $a$ and $b$. Now we can compute $e$ and $s$ as follows</p>
+
+\[e := \lfloor x \rfloor
+\qquad
+\text{,}
+\qquad
+s := 10^{x - \lfloor x \rfloor}\]
+
+<p>This is straight-forward to verify</p>
+
+\[s \times 10^{e} = 10^{x - \lfloor x \rfloor} \cdot 10^{\lfloor x \rfloor} = 10^{x} = 10^{\log_{10} b^a} = b^a\]
+
+<p>In this post, we will call $s$ the <strong>significand</strong> and $e$ the <strong>exponent</strong>. Applying this formula the target expression, we get</p>
+
+\[\begin{align}
+    &amp;x = 439 \cdot \log_{10} (23) = 597.79852 \\[10pt]
+    &amp;e = \lfloor x \rfloor = 597 \\[10pt]
+    &amp;s = 10^{x - \lfloor x \rfloor} = 10^{0.79852} = 6.2881
+\end{align}\]
+
+<p><br /></p>
+
+<h2 id="my-hypothesis-to-explain-the-incorrect-calculation">My Hypothesis to Explain the Incorrect Calculation</h2>
+
+<p>Strangly, the exponent and the significand seem to have been calculated independently of each other, and their wrong calculations make contradictory errors. All assuming my hypothesis is correct of course.</p>
+
+<h3 id="the-exponent">The Exponent</h3>
+
+<p>I believe the person flipped the $3$ and the $4$ in the number $439$ when computing the exponent. So they instead computed</p>
+
+\[\begin{align}
+    &amp;\widetilde{x} = 349 \cdot \log_{10}(23) = 475.243 \qquad\leftarrow\text{mistakenly uses } 349 \text{ instead of } 439\\[10pt]
+    &amp;\widetilde{e} = \lfloor \widetilde{x} \rfloor = 475
+\end{align}\]
+
+<p>I am almost certain this is what happened.</p>
+
+<h3 id="the-significand">The Significand</h3>
+
+<p>The signficand is more difficult to explain. It seems like this person started a completely independent calculation, rather than using the numbers he/she already had from the exponent calculation. Strangely, they make completely contradictory errors. Here, they do not make the transcription error, correctly using $439$. However, I hypothesize they made the following 2 errors.</p>
+<ol>
+  <li>They mistakenly use the natural logarithm instead of the logarithm base $10$</li>
+  <li>They incorrectly rounded $3.13549$ to $3.1356$</li>
+</ol>
+
+<p>Let’s see how this calculation plays out.</p>
+
+\[\begin{align}
+    &amp;\widetilde{x}_1 = \ln (23) = 3.13549 &amp;&amp;\qquad\leftarrow\text{mistakenly uses } \ln \text{ instead of } \log_{10}\\[10pt]
+    &amp;\widetilde{x}_2 = 3.1356 &amp;&amp;\qquad\leftarrow\text{incorrectly rounds } \widetilde{x}_1\\[10pt]
+    &amp;\widetilde{x}_3 = 439 \cdot \widetilde{x}_2 = 1376.5284 &amp;&amp;\\[10pt]
+    &amp;\widetilde{s} = 10^{\widetilde{x}_3 - \lfloor \widetilde{x}_3 \rfloor} = 10^{0.5284} = 3.375981 &amp;&amp;
+\end{align}\]
+
+<p>I am not 100% confident in this, but it’s the most plausible explanation I can come up with.</p>
+
+<p><br /></p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>I just thought this was pretty hilarious. I can empathize with the transcription mistake which caused the error in the exponent. However, I cannot forgive the error in the significand. There are just so many fundamentally wrong things that happened in a row. I, for one, blaim the education system.</p>
 
         </div>
 
