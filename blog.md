@@ -21,8 +21,7 @@ _All content has been created and written exclusively by myself (Eric Keilty). N
 {% assign sorted_posts = site.posts | where: 'standalone', 'true' | sort: 'date' | reverse %}
 {% for post in sorted_posts %}
     {% assign draft_status = post.draft | default: false %}
-    {% assign appendix_status = post.appendix | default: false %}
-    {% if draft_status == false and appendix_status == false%}
+    {% if draft_status == false%}
 
 <div class="post-link-container">
     <a href="{{ post.url }}" class="post-link-item"> 

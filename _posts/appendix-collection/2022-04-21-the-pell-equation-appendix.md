@@ -4,8 +4,7 @@ title:      "Solving The Pell Equation Efficiently - Appendix"
 date:       2022-08-01
 categories: blog
 permalink:  ":categories/:title/"
-standalone: true
-appendix:   true
+series:     appendix
 tags:       diophantine equation, number theory, python
 ---
 

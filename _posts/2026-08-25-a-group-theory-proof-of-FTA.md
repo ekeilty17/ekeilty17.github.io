@@ -233,3 +233,23 @@ p_{i} = q_{\sigma(i)}
 $$
 
 Therefore, the original prime factorizations are equal up to permutation.
+
+---
+
+## A Category Theory Perspective
+
+We can formulate the above argument in term of category theory. In particular, there is a **poset isomorphism** between the category of subsets of $C_n$ and the category of divisors of $n$. 
+
+$$
+\text{Sub}(C_n​) \cong \text{Div}(n​)
+\quad
+\text{s.t.}
+\quad
+H \mapsto \lvert H \rvert
+\quad
+,
+\quad
+d \mapsto C_n(d)
+$$
+
+This is the underlying connection between the composition series of a cyclic group and the prime factorization of an integer. You can read [this post](/blog/a-category-theory-proof-of-FTA) for the full category theory proof.

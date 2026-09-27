@@ -75,15 +75,16 @@ _Portal_ is the perfect combination of puzzle and platforming. In order to compl
 
 1. Animal Farm
 2. 1984
-3. Ender's Game
-4. Logicomix 
-5. Brave New World
-6. Putting Out of Your Mind
-7. Guns, Germs and Steel
+3. A Short Stay in Hell
+4. Ender's Game
+5. Logicomix 
+6. Brave New World
+7. Putting Out of Your Mind
+8. Guns, Germs and Steel
 
-I'm not huge on fiction. Typically, I like books that attempt to convey a particular philosophy or worldview and take them to their logical conclusion. This is why _Animal Farm_ and _1984_ are at the top of the list. I think George Orwell is an incredible writer. While I may not entirely agree with the messages of the books, the world-building and characters are just so perfectly written and the narratives are so clever. I just love everything about them. _Ender's Game_ is the closest thing to true fiction on this list, but it contains so much wisdom. _Logiccomix_ is a classic for someone like me who loves math and its history. _Brave New World_ is like the anti-1984, and I think is actually a better prediction of the direction society is heading. It's lower on the list because I personally didn't enjoy the writing style, but the narrative was still fantastic. _Putting Out of Your Mind_ is a must-read if you want to improve at putting in golf. I read it once a year in the spring before the golf season starts. Finally, _Guns, Germs and Steel_ is a really interesting book that gives a "theory of history". It attempts to explain why, at one point, Britain conquered the entire known world. While there have been several rebuttals to the book, I wish more historical research was dedicated to topics like this.
+I'm not huge on fiction. Typically, I like books that attempt to convey a particular philosophy or worldview and take them to their logical conclusion. This is why _Animal Farm_ and _1984_ are at the top of the list. I think George Orwell is an incredible writer. While I may not entirely agree with the messages of the books, the world-building and characters are just so perfectly written and the narratives are so clever. I just love everything about them. _A Short Stay in Hell_ is a psychological horror novella. It is one of the best potrayals of the vastness of eternity. If you're into this type of story, I can't recommend it enough. _Ender's Game_ is the closest thing to true fiction on this list, but it contains so much wisdom. _Logiccomix_ is a classic for someone like me who loves math and its history. _Brave New World_ is like the anti-1984, and I think is actually a better prediction of the direction society is heading. It's lower on the list because I personally didn't enjoy the writing style, but the narrative was still fantastic. _Putting Out of Your Mind_ is a must-read if you want to improve at putting in golf. I read it once a year in the spring before the golf season starts. Finally, _Guns, Germs and Steel_ is a really interesting book that gives a "theory of history". It attempts to explain why, at one point, Britain conquered the entire known world. While there have been several rebuttals to the book, I wish more historical research was dedicated to topics like this.
 
-I would like to add an honorable mention: _The Fourth Turning_. This book outlines the Strauss–Howe generational theory of history. While I think it's a really interesting book and again I want to encourage this type of research, I wasn't entirely convinced by its arguments. It seems to me a bit like Freudian psychology where the same mechanism can explain any outcome. In other words, it seems like you can just cherry-pick the data in order to fit with the narrative. Also, I found the book way longer than it needed to be. After the first few chapters, you pretty much get the gist of the book.
+I would like to add an honorable mention: _The Fourth Turning_. This book outlines the Strauss–Howe generational theory of history. While I think it's a really interesting book and again I want to encourage this type of research, I wasn't entirely convinced by its arguments. It seems to me a bit like Freudian psychology where the same mechanism can explain any outcome. In other words, it seems like you can just cherry-pick the data in order to fit with the narrative you already believe. Also, I found the book way longer than it needed to be. After the first few chapters, you pretty much get the gist of the book.
 
 ---
 

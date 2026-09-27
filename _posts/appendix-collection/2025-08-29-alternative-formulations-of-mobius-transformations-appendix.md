@@ -4,8 +4,7 @@ title:      "Alternative Formulations of Möbius Transformations - Appendix"
 date:       2025-08-29
 categories: blog
 permalink:  ":categories/:title/"
-standalone: true
-appendix:   true
+series:     appendix
 tags:       complex analysis, mobius transformations, möbius transformations, fractional linear transformations, fixed points
 ---
 

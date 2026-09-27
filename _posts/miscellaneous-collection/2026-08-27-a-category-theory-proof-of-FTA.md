@@ -4,13 +4,13 @@ title:      "A Category Theory Proof of the Fundamental Theorem of Arithmetic"
 date:       2026-08-27
 categories: blog
 permalink:  ":categories/:title/"
-standalone: true
+series:     miscellaneous
 tags:       category theory, number theory, the fundamental theorem of arithmetic
 ---
 
 ### Preamble
 
-In a previous post, I gave an alternative proof of the Fundamental Theorem of Arithmetic (FTA), using the [Jordan-H&ouml;lder Theorem](https://en.wikipedia.org/wiki/Composition_series) for finite groups. In this post, I want to modify that proof and look at it through the lens of category theory. The underlying argument is identical, but this is an exercise in applying category theory principles.
+In a [previous post](/blog/a-group-theory-proof-of-FTA), I gave an alternative proof of the Fundamental Theorem of Arithmetic (FTA), using the [Jordan-H&ouml;lder Theorem](https://en.wikipedia.org/wiki/Composition_series) for finite groups. In this post, I want to modify that proof and look at it through the lens of category theory. The underlying argument is identical, but this is an exercise in applying category theory principles.
 
 What this exercise makes explicit is the connection between prime numbers and groups. I show there is a poset isomorphism between the factors of an integer $n$ and the subgroups of a cyclic group of order $n$. Thus, any time nature exhibits a cyclical nature (which anecdotally is quite often), it can be described by cyclic groups, and consequently described by prime numbers. I am trying to emphasise that prime numbers are not just an artifact of an imaginary game played by mathematicians. They are, in some sense, a fundamental aspect of symmetry itself and thus necessarily crop up in the external world. And that's just one of many reasons mathematicians care so much about prime numbers.
 
